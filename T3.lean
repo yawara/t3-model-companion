@@ -5,6 +5,7 @@ public import T3.ForMathlib.LinearMapQuotient
 public import T3.ForMathlib.PowersetCardSum
 public import T3.ForMathlib.Subgroup
 public import T3.ForMathlib.TensorProduct
+public import T3.GroupTheory.Amalgamation
 public import T3.GroupTheory.AssociatedGraded
 public import T3.GroupTheory.AssociatedGraded.Bracket
 public import T3.GroupTheory.AssociatedGraded.Generation
@@ -22,6 +23,7 @@ public import T3.GroupTheory.Coproduct.CentralSeriesCriterion
 public import T3.GroupTheory.Coproduct.FreeGraded
 public import T3.GroupTheory.Coproduct.FreeTwo
 public import T3.GroupTheory.Coproduct.FreeTwoSeparation
+public import T3.GroupTheory.Coproduct.Generation
 public import T3.GroupTheory.Coproduct.Graded
 public import T3.GroupTheory.Coproduct.GradedEquiv
 public import T3.GroupTheory.Coproduct.Presentation
@@ -81,5 +83,6 @@ public import T3.ModelTheory.ModelCompanionCriterion
 public import T3.ModelTheory.ModelCompleteness
 public import T3.ModelTheory.PiTwoDirectLimit
 public import T3.ModelTheory.RobinsonTest
+public import T3.ModelTheory.StrictEnvelope
 public import T3.ModelTheory.UniformLocalFiniteness
 public import T3.Paper

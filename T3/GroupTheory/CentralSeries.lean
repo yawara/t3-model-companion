@@ -363,4 +363,48 @@ theorem centralSeriesCoincide_iff (hG : HasExponentThree G) :
     · simpa only [Subgroup.top_lowerCentralSeries_one, Nat.reduceSub] using h₁
     · simpa only [Subgroup.upperCentralSeries_one, Nat.reduceSub] using h₂
 
+/-- Internal coincidence of the two central series is preserved by group isomorphisms.
+No exponent or finiteness condition is needed for this transport.
+
+Paper-ID: structure.strict_envelope
+TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, transporting the structure of D₃ to D.
+-/
+theorem CentralSeriesCoincide.mulEquiv {H : Type*} [Group H]
+    (hG : CentralSeriesCoincide G) (e : G ≃* H) : CentralSeriesCoincide H := by
+  intro i hi
+  calc
+    (⊤ : Subgroup H).lowerCentralSeries i =
+        ((⊤ : Subgroup G).lowerCentralSeries i).map e := by
+      rw [Subgroup.map_lowerCentralSeries, Subgroup.map_top_of_surjective _ e.surjective]
+    _ = (Subgroup.upperCentralSeries G (3 - i)).map e :=
+      congrArg (Subgroup.map e.toMonoidHom) (hG i hi)
+    _ = Subgroup.upperCentralSeries H (3 - i) := by
+      rw [← Subgroup.comap_upperCentralSeries e, Subgroup.map_comap_eq,
+        MonoidHom.range_eq_top.mpr e.surjective, top_inf_eq]
+
 end T3
+
+namespace Subgroup
+
+variable {G : Type*} [Group G]
+
+/-- A single lower-central intersection equality is equivalent to the corresponding
+inverse-image equality for the subgroup's inclusion.
+
+Paper-ID: structure.strict_envelope
+TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, the passage from the first to the
+second strictification step, lines 1224–1229.
+-/
+theorem lowerCentralSeries_eq_inf_iff_comap (S : Subgroup G) (k : ℕ) :
+    S.lowerCentralSeries k = (⊤ : Subgroup G).lowerCentralSeries k ⊓ S ↔
+      (⊤ : Subgroup S).lowerCentralSeries k =
+        ((⊤ : Subgroup G).lowerCentralSeries k).comap S.subtype := by
+  constructor
+  · intro h
+    apply map_injective (f := S.subtype) Subtype.val_injective
+    rw [top_subtype_lowerCentralSeries, map_comap_eq, range_subtype, h, inf_comm]
+  · intro h
+    have hm := congrArg (Subgroup.map S.subtype) h
+    simpa only [top_subtype_lowerCentralSeries, map_comap_eq, range_subtype, inf_comm] using hm
+
+end Subgroup

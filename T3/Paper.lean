@@ -10,6 +10,7 @@ public import T3.GroupTheory.AssociatedGraded
 public import T3.GroupTheory.AssociatedGraded.Lie
 public import T3.GroupTheory.AssociatedGraded.Generation
 public import T3.GroupTheory.AssociatedGraded.Product
+public import T3.GroupTheory.Amalgamation
 public import T3.GroupTheory.CentralSeries
 public import T3.GroupTheory.ConjugateWidth
 public import T3.GroupTheory.Coproduct.Basic
@@ -51,6 +52,7 @@ public import T3.ModelTheory.UniformLocalFiniteness
 public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ExponentThree
 public import T3.ModelTheory.ExistentiallyClosedGroups
+public import T3.ModelTheory.StrictEnvelope
 
 /-!
 # Guide to the paper
@@ -124,8 +126,11 @@ The group-theoretic bound needed to apply the criterion to `T₃` is not yet pro
 `T3.GroupTheory.ConjugateWidth` proves Proposition 3.1: every element of a principal normal
 closure is a product of at most three positive conjugates, including the trivial case.
 `T3.GroupTheory.Support` proves Lemma 3.2 with the generator bound `3(m+1)n` and a certificate
-inside the actual subgroup `H₀ = ⟨C,B,Δ⟩`. Proposition A, the bounded-witness theorem, and the
-model-companion corollary are planned.
+inside the actual subgroup `H₀ = ⟨C,B,Δ⟩`.
+`T3.ModelTheory.StrictEnvelope` proves Proposition A with the explicit function `15n²`.
+`T3.GroupTheory.Amalgamation` constructs the actual quotient by the identification relations,
+proves the canonical-map criterion, and extracts both possible nontrivial factor witnesses.
+The bounded-witness theorem and the model-companion corollary remain incomplete.
 
 ## Section 4: Structural analysis
 
@@ -171,5 +176,8 @@ model-companion corollary are planned.
   Finite diagrams transfer witnesses from the concrete root quotients and free-two coproduct,
   preserving all designated parameters. Nontriviality follows from existential closedness.
 
-Proposition 4.12 remains to be implemented before the main results.
+* `T3.ModelTheory.StrictEnvelope`: Proposition 4.12, including the trivial input at `n = 0`.
+  The two simultaneous extensions followed by a free-two coproduct produce coincident central
+  series. Finite-diagram transfer fixes the entire original subgroup. The three-stage rank
+  bound is at most `15n²`; the numerical function is defined in this module.
 -/

@@ -212,4 +212,30 @@ theorem finrank_layerTwo_le_rank [Group.FG G] :
 
 end AssociatedGraded
 
+namespace Free
+
+variable {I : Type*}
+
+/-- A free exponent-three group on finitely many generators is finitely generated.
+
+Paper-ID: preliminaries.notation.generator_rank, structure.strict_envelope
+TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, the free-two factor.
+-/
+instance fg [Finite I] : Group.FG (Free I) :=
+  Group.fg_iff.mpr ⟨Set.range of, closure_range_of, Set.finite_range of⟩
+
+/-- The rank of a free exponent-three group is bounded by the number of its generators.
+
+Paper-ID: preliminaries.notation.generator_rank, structure.strict_envelope
+TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, the two added generators.
+-/
+theorem rank_le_card [Finite I] : Group.rank (Free I) ≤ Nat.card I := by
+  classical
+  letI := Fintype.ofFinite I
+  have hgen : Subgroup.closure (↑(Finset.univ.image (of : I → Free I)) : Set (Free I)) = ⊤ := by
+    simpa only [Finset.coe_image, Finset.coe_univ, Set.image_univ] using closure_range_of (I := I)
+  exact (Group.rank_le hgen).trans (Finset.card_image_le.trans_eq (by simp))
+
+end Free
+
 end T3

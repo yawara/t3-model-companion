@@ -1247,12 +1247,14 @@ line_start = 697
 line_end = 699
 tex_label = ""
 modules = ["T3.ModelTheory.StrictEnvelope"]
-planned_declarations = ["T3.exists_bounded_strict_envelope"]
-declarations = []
-formalization = "planned"
-fidelity = "unchecked"
-notes = "Proposition 4.12 の完全な結論から得る系。alias の大量作成は不要だが量化された関数の存在との接続は確認する。"
+planned_declarations = []
+declarations = [{ name = "T3.exists_bounded_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 169 }, { name = "T3.strictEnvelopeBound", module = "T3.ModelTheory.StrictEnvelope", kind = "def", line = 43 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "Proposition 4.12 から全モデル・部分群に一様な関数の存在を明示的に証明。f₀(n)=15n²、n=0も含む。e.c. の量化は既存のcanonical semantic universeであり、一般モデル宇宙へのbridgeは別途未完成。"
 parts = []
+
+verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
 
 [[items]]
 id = "main.bounded_witness"
@@ -1262,12 +1264,13 @@ number = "3.3"
 line_start = 702
 line_end = 712
 tex_label = "thm:main"
-modules = ["T3.Main.BoundedWitness"]
+modules = ["T3.Main.BoundedWitness", "T3.GroupTheory.Amalgamation"]
 planned_declarations = ["T3.witnessBound", "T3.exists_bounded_nonamalgamation_witness"]
-declarations = []
-formalization = "planned"
+declarations = [{ name = "T3.Amalgamation.relator", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 42 }, { name = "T3.Amalgamation.relations", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 49 }, { name = "T3.Amalgamation.Pushout", module = "T3.GroupTheory.Amalgamation", kind = "abbrev", line = 63 }, { name = "T3.Amalgamation.AmalgamableOver", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 190 }, { name = "T3.Amalgamation.amalgamableOver_iff", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 201 }, { name = "T3.Amalgamation.amalgamableOver_of_amalgam", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 216 }, { name = "T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 266 }, { name = "T3.Amalgamation.exists_witness_of_generating_family", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 289 }]
+formalization = "partial"
 fidelity = "unchecked"
-notes = "f(m)=f₀((3m+4)t(m)+1)。A,B の位数ではなく B の生成元数だけで総生成元数を評価する。"
+notes = "通常のamalgamの実際の余積商、任意宇宙のtargetからcanonical商への単射性、任意生成族による関係部分群の等式、非自明な左/右因子の証人まで証明。有限生成数で抑えたDへのsupport移送とf(m)=f₀((3m+4)t(m)+1)は未完成。"
+verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
 
 [[items.parts]]
 id = "obstruction"
@@ -1630,28 +1633,31 @@ line_start = 1212
 line_end = 1220
 tex_label = "proposition:bdd LCS"
 modules = ["T3.ModelTheory.StrictEnvelope"]
-planned_declarations = ["T3.strictEnvelopeBound", "T3.exists_strict_envelope"]
-declarations = []
-formalization = "planned"
-fidelity = "unchecked"
-notes = ""
+planned_declarations = []
+declarations = [{ name = "T3.strictEnvelopeBound", module = "T3.ModelTheory.StrictEnvelope", kind = "def", line = 43 }, { name = "T3.three_stage_rank_le_strictEnvelopeBound", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 50 }, { name = "T3.StrictEnvelope.exists_centralSeries_extension", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 68 }, { name = "T3.exists_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 129 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "二段階の同時strictification、D₂∐F₂、内部中心列一致、C全体を固定する有限図式転送を原稿順に証明。有限生成性と有限性の同値を使用し、C=1/n=0を別分岐で処理。代数的構成は任意宇宙、e.c.の結論はcanonical semantic universe。一般モデル宇宙へのbridgeは未完成。"
+verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
 
 [[items.parts]]
 id = "bound"
 summary = "d(D)≤15n²"
 source_kind = "enumerated"
 source_line = 1217
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.exists_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 129 }]
+verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
 
 [[items.parts]]
 id = "internal"
 summary = "D 自身の上下中心列が逆順に一致し、D≤LCS M"
 source_kind = "enumerated"
 source_line = 1218
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.exists_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 129 }]
+verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }

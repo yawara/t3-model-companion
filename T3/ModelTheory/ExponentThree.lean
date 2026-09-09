@@ -226,4 +226,16 @@ theorem exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions
     exponentThreeTheory.HasModelCompanion :=
   exponentThreeTheory_hasModelCompanion_iff.mpr h
 
+/-- Every finitely generated exponent-three group is finite, in any universe.
+
+Paper-ID: structure.strict_envelope, model_theory.local_finiteness
+TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, the finiteness of D₃ on line 1254.
+-/
+theorem finite_of_fg_of_exponent_three {G : Type*} [Group G] [Group.FG G]
+    (hG : HasExponentThree G) : Finite G := by
+  obtain ⟨s, hs, hfin⟩ := Group.fg_iff.mp (inferInstance : Group.FG G)
+  have h : Finite (Subgroup.closure s) := finite_closure_of_exponent_three hG hfin
+  rw [hs] at h
+  exact Finite.of_surjective (⊤ : Subgroup G).subtype fun g => ⟨⟨g, Subgroup.mem_top g⟩, rfl⟩
+
 end T3

@@ -6,7 +6,7 @@
 
 番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。行・表示番号は補助情報で、安定 ID を主キーとする。
 
-項目全体の状態: `planned` 6, `partial` 3, `stated` 0, `proved` 41。
+項目全体の状態: `planned` 3, `partial` 4, `stated` 0, `proved` 43。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。
 
@@ -49,8 +49,8 @@
 | Lemma 2.31<br>`preliminaries.graded_quotient` | quotient の associated graded | `lemma:gr of quotient`<br>623–626 | `T3.GroupTheory.GradedQuotient` | proved | proof_checked |
 | Proposition 3.1<br>`main.conjugate_width` | principal normal closure の共役幅 3 | `proposition:bounded number of conjugates`<br>653–659 | `T3.GroupTheory.ConjugateWidth` | proved | proof_checked |
 | Lemma 3.2<br>`main.bounded_support` | 生成元数による support bound 3(m+1)n | `lemma:witness in bdd support`<br>668–677 | `T3.GroupTheory.Support`<br>`T3.GroupTheory.Support.Collection`<br>`T3.GroupTheory.Support.Conjugator` | proved | proof_checked |
-| Proposition A<br>`main.proposition_a` | 一様に有界な LCS strict envelope の存在 | label なし<br>697–699 | `T3.ModelTheory.StrictEnvelope` | planned | unchecked |
-| Theorem 3.3<br>`main.bounded_witness` | B の生成元数のみによる非 amalgamation 障害の総生成元数評価 | `thm:main`<br>702–712 | `T3.Main.BoundedWitness` | planned | unchecked |
+| Proposition A<br>`main.proposition_a` | 一様に有界な LCS strict envelope の存在 | label なし<br>697–699 | `T3.ModelTheory.StrictEnvelope` | proved | proof_checked |
+| Theorem 3.3<br>`main.bounded_witness` | B の生成元数のみによる非 amalgamation 障害の総生成元数評価 | `thm:main`<br>702–712 | `T3.Main.BoundedWitness`<br>`T3.GroupTheory.Amalgamation` | partial | unchecked |
 | Corollary 3.4<br>`main.model_companion` | 指数 3 群の理論は model companion をもつ | label なし<br>743–745 | `T3.Main.ModelCompanion`<br>`T3.ModelTheory.ExponentThree` | partial | unchecked |
 | Proposition 4.1<br>`structure.basis_lift` | abelianization の基底 lift による全射自由表示 | `proposition:lift`<br>759–763 | `T3.GroupTheory.Generation`<br>`T3.GroupTheory.Presentation` | proved | proof_checked |
 | Lemma 4.2<br>`structure.normal_closure_graded` | derived 内の normal closure とその graded image | `lemma:gr of normal closure`<br>802–811 | `T3.GroupTheory.GradedNormalClosure` | proved | proof_checked |
@@ -63,7 +63,7 @@
 | Lemma 4.9<br>`structure.lcs_strictification` | 高々 3·binom(n,2) 元を付加する γ₃ strictification | `lemma:number of generators for triple commutator roots`<br>1133–1141 | `T3.GroupTheory.Roots.LowerCentralStrictification`<br>`T3.GroupTheory.Roots.DefectBasis`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ForMathlib.Subgroup` | proved | proof_checked |
 | Remark 4.10<br>`structure.shared_triple_roots` | triple roots で生成元を共有する refinement | label なし<br>1177–1182 | `T3.GroupTheory.Roots.SharedTriple` | planned | unchecked |
 | Proposition 4.11<br>`structure.ec_central_series` | e.c. 群の内部中心列一致と単一の交換子・三重交換子表示 | `proposition:structure of e.c. model`<br>1185–1195 | `T3.ModelTheory.ExistentiallyClosedGroups` | proved | proof_checked |
-| Proposition 4.12<br>`structure.strict_envelope` | 総生成元数 15n²、内部中心列一致、LCS strict envelope | `proposition:bdd LCS`<br>1212–1220 | `T3.ModelTheory.StrictEnvelope` | planned | unchecked |
+| Proposition 4.12<br>`structure.strict_envelope` | 総生成元数 15n²、内部中心列一致、LCS strict envelope | `proposition:bdd LCS`<br>1212–1220 | `T3.ModelTheory.StrictEnvelope` | proved | proof_checked |
 
 ## 宣言と項目内の進捗
 
@@ -447,19 +447,19 @@ Prop 2.29の同じσとgraded LieEquivが任意の線形順序付き生成集合
 
 ### `main.proposition_a`
 
-予定宣言: `T3.exists_bounded_strict_envelope`。
+予定宣言: 型の設計時に決める。
 
-実在宣言: なし。
+実在宣言: [T3.exists_bounded_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L169), [T3.strictEnvelopeBound](../T3/ModelTheory/StrictEnvelope.lean#L43)。
 
-Proposition 4.12 の完全な結論から得る系。alias の大量作成は不要だが量化された関数の存在との接続は確認する。
+Proposition 4.12 から全モデル・部分群に一様な関数の存在を明示的に証明。f₀(n)=15n²、n=0も含む。e.c. の量化は既存のcanonical semantic universeであり、一般モデル宇宙へのbridgeは別途未完成。
 
 ### `main.bounded_witness`
 
 予定宣言: `T3.witnessBound`, `T3.exists_bounded_nonamalgamation_witness`。
 
-実在宣言: なし。
+実在宣言: [T3.Amalgamation.relator](../T3/GroupTheory/Amalgamation.lean#L42), [T3.Amalgamation.relations](../T3/GroupTheory/Amalgamation.lean#L49), [T3.Amalgamation.Pushout](../T3/GroupTheory/Amalgamation.lean#L63), [T3.Amalgamation.AmalgamableOver](../T3/GroupTheory/Amalgamation.lean#L190), [T3.Amalgamation.amalgamableOver_iff](../T3/GroupTheory/Amalgamation.lean#L201), [T3.Amalgamation.amalgamableOver_of_amalgam](../T3/GroupTheory/Amalgamation.lean#L216), [T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top](../T3/GroupTheory/Amalgamation.lean#L266), [T3.Amalgamation.exists_witness_of_generating_family](../T3/GroupTheory/Amalgamation.lean#L289)。
 
-f(m)=f₀((3m+4)t(m)+1)。A,B の位数ではなく B の生成元数だけで総生成元数を評価する。
+通常のamalgamの実際の余積商、任意宇宙のtargetからcanonical商への単射性、任意生成族による関係部分群の等式、非自明な左/右因子の証人まで証明。有限生成数で抑えたDへのsupport移送とf(m)=f₀((3m+4)t(m)+1)は未完成。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
@@ -591,11 +591,13 @@ T₃の有限言語・Π₂・局所有限性を供給しFact2.6の特殊化ま�
 
 ### `structure.strict_envelope`
 
-予定宣言: `T3.strictEnvelopeBound`, `T3.exists_strict_envelope`。
+予定宣言: 型の設計時に決める。
 
-実在宣言: なし。
+実在宣言: [T3.strictEnvelopeBound](../T3/ModelTheory/StrictEnvelope.lean#L43), [T3.three_stage_rank_le_strictEnvelopeBound](../T3/ModelTheory/StrictEnvelope.lean#L50), [T3.StrictEnvelope.exists_centralSeries_extension](../T3/ModelTheory/StrictEnvelope.lean#L68), [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129)。
+
+二段階の同時strictification、D₂∐F₂、内部中心列一致、C全体を固定する有限図式転送を原稿順に証明。有限生成性と有限性の同値を使用し、C=1/n=0を別分岐で処理。代数的構成は任意宇宙、e.c.の結論はcanonical semantic universe。一般モデル宇宙へのbridgeは未完成。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | d(D)≤15n² / 1217 | planned | unchecked | なし |
-| internal | D 自身の上下中心列が逆順に一致し、D≤LCS M / 1218 | planned | unchecked | なし |
+| bound | d(D)≤15n² / 1217 | proved | proof_checked | [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129) |
+| internal | D 自身の上下中心列が逆順に一致し、D≤LCS M / 1218 | proved | proof_checked | [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129) |
