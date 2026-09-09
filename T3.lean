@@ -30,6 +30,7 @@ public import T3.GroupTheory.Coproduct.Presentation
 public import T3.GroupTheory.Coproduct.QuotientMaps
 public import T3.GroupTheory.Coproduct.Relations
 public import T3.GroupTheory.Coproduct.Strict
+public import T3.GroupTheory.Coproduct.Support
 public import T3.GroupTheory.Free.Basic
 public import T3.GroupTheory.Free.Collection
 public import T3.GroupTheory.Free.Examples
@@ -45,6 +46,7 @@ public import T3.GroupTheory.Free.ModelComparison
 public import T3.GroupTheory.Free.NormalForm
 public import T3.GroupTheory.Generation
 public import T3.GroupTheory.GeneratorRank
+public import T3.GroupTheory.GeneratorRank.Cardinality
 public import T3.GroupTheory.GradedNormalClosure
 public import T3.GroupTheory.GradedQuotient
 public import T3.GroupTheory.Identities
@@ -58,12 +60,15 @@ public import T3.GroupTheory.Roots.Triple
 public import T3.GroupTheory.Support
 public import T3.GroupTheory.Support.Collection
 public import T3.GroupTheory.Support.Conjugator
+public import T3.GroupTheory.Support.Transport
 public import T3.LinearAlgebra.BlockDecomposition
 public import T3.LinearAlgebra.ExteriorLowDegree
 public import T3.LinearAlgebra.ExteriorSum
 public import T3.LinearAlgebra.ExteriorTensor
 public import T3.LinearAlgebra.TruncatedExterior
 public import T3.LinearAlgebra.Wedge
+public import T3.Main.BoundedWitness
+public import T3.Main.ModelCompanion
 public import T3.ModelTheory.Amalgamation
 public import T3.ModelTheory.BoundedAmalgamation
 public import T3.ModelTheory.BoundedAmalgamationCriterion
@@ -75,6 +80,7 @@ public import T3.ModelTheory.ExponentThree
 public import T3.ModelTheory.ExtensionAxioms
 public import T3.ModelTheory.FiniteDiagram
 public import T3.ModelTheory.FiniteObstructions
+public import T3.ModelTheory.GroupAmalgamation
 public import T3.ModelTheory.GroupLanguage
 public import T3.ModelTheory.Inductive
 public import T3.ModelTheory.LocallyFinite

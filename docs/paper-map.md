@@ -6,7 +6,7 @@
 
 番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。行・表示番号は補助情報で、安定 ID を主キーとする。
 
-項目全体の状態: `planned` 3, `partial` 4, `stated` 0, `proved` 43。
+項目全体の状態: `planned` 3, `partial` 2, `stated` 0, `proved` 45。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。
 
@@ -50,8 +50,8 @@
 | Proposition 3.1<br>`main.conjugate_width` | principal normal closure の共役幅 3 | `proposition:bounded number of conjugates`<br>653–659 | `T3.GroupTheory.ConjugateWidth` | proved | proof_checked |
 | Lemma 3.2<br>`main.bounded_support` | 生成元数による support bound 3(m+1)n | `lemma:witness in bdd support`<br>668–677 | `T3.GroupTheory.Support`<br>`T3.GroupTheory.Support.Collection`<br>`T3.GroupTheory.Support.Conjugator` | proved | proof_checked |
 | Proposition A<br>`main.proposition_a` | 一様に有界な LCS strict envelope の存在 | label なし<br>697–699 | `T3.ModelTheory.StrictEnvelope` | proved | proof_checked |
-| Theorem 3.3<br>`main.bounded_witness` | B の生成元数のみによる非 amalgamation 障害の総生成元数評価 | `thm:main`<br>702–712 | `T3.Main.BoundedWitness`<br>`T3.GroupTheory.Amalgamation` | partial | unchecked |
-| Corollary 3.4<br>`main.model_companion` | 指数 3 群の理論は model companion をもつ | label なし<br>743–745 | `T3.Main.ModelCompanion`<br>`T3.ModelTheory.ExponentThree` | partial | unchecked |
+| Theorem 3.3<br>`main.bounded_witness` | B の生成元数のみによる非 amalgamation 障害の総生成元数評価 | `thm:main`<br>702–712 | `T3.Main.BoundedWitness`<br>`T3.GroupTheory.Amalgamation`<br>`T3.GroupTheory.GeneratorRank.Cardinality`<br>`T3.GroupTheory.Coproduct.Support`<br>`T3.GroupTheory.Support.Transport` | proved | proof_checked |
+| Corollary 3.4<br>`main.model_companion` | 指数 3 群の理論は model companion をもつ | label なし<br>743–745 | `T3.Main.ModelCompanion`<br>`T3.ModelTheory.ExponentThree`<br>`T3.ModelTheory.GroupAmalgamation` | proved | proof_checked |
 | Proposition 4.1<br>`structure.basis_lift` | abelianization の基底 lift による全射自由表示 | `proposition:lift`<br>759–763 | `T3.GroupTheory.Generation`<br>`T3.GroupTheory.Presentation` | proved | proof_checked |
 | Lemma 4.2<br>`structure.normal_closure_graded` | derived 内の normal closure とその graded image | `lemma:gr of normal closure`<br>802–811 | `T3.GroupTheory.GradedNormalClosure` | proved | proof_checked |
 | Proposition 4.3<br>`structure.graded_coproduct` | coproduct の η₁–η₃、tensor block 分解と bracket | `proposition:gr of free product`<br>843–864 | `T3.GroupTheory.Coproduct.Graded`<br>`T3.GroupTheory.Coproduct.Presentation`<br>`T3.GroupTheory.Coproduct.Relations`<br>`T3.GroupTheory.AssociatedGraded.Subgroup`<br>`T3.GroupTheory.Free.ExteriorNaturality`<br>`T3.LinearAlgebra.ExteriorSum`<br>`T3.LinearAlgebra.ExteriorTensor`<br>`T3.ForMathlib.PowersetCardSum`<br>`T3.LinearAlgebra.ExteriorLowDegree`<br>`T3.GroupTheory.Coproduct.FreeGraded`<br>`T3.GroupTheory.Coproduct.QuotientMaps`<br>`T3.GroupTheory.Coproduct.GradedEquiv`<br>`T3.GroupTheory.Coproduct.BlockBracket`<br>`T3.GroupTheory.GradedQuotient`<br>`T3.ForMathlib.LinearMapQuotient` | proved | proof_checked |
@@ -455,24 +455,24 @@ Proposition 4.12 から全モデル・部分群に一様な関数の存在を明
 
 ### `main.bounded_witness`
 
-予定宣言: `T3.witnessBound`, `T3.exists_bounded_nonamalgamation_witness`。
+予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.Amalgamation.relator](../T3/GroupTheory/Amalgamation.lean#L42), [T3.Amalgamation.relations](../T3/GroupTheory/Amalgamation.lean#L49), [T3.Amalgamation.Pushout](../T3/GroupTheory/Amalgamation.lean#L63), [T3.Amalgamation.AmalgamableOver](../T3/GroupTheory/Amalgamation.lean#L190), [T3.Amalgamation.amalgamableOver_iff](../T3/GroupTheory/Amalgamation.lean#L201), [T3.Amalgamation.amalgamableOver_of_amalgam](../T3/GroupTheory/Amalgamation.lean#L216), [T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top](../T3/GroupTheory/Amalgamation.lean#L266), [T3.Amalgamation.exists_witness_of_generating_family](../T3/GroupTheory/Amalgamation.lean#L289)。
+実在宣言: [T3.Amalgamation.relator](../T3/GroupTheory/Amalgamation.lean#L42), [T3.Amalgamation.relations](../T3/GroupTheory/Amalgamation.lean#L49), [T3.Amalgamation.Pushout](../T3/GroupTheory/Amalgamation.lean#L63), [T3.Amalgamation.AmalgamableOver](../T3/GroupTheory/Amalgamation.lean#L190), [T3.Amalgamation.amalgamableOver_iff](../T3/GroupTheory/Amalgamation.lean#L201), [T3.Amalgamation.amalgamableOver_of_amalgam](../T3/GroupTheory/Amalgamation.lean#L216), [T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top](../T3/GroupTheory/Amalgamation.lean#L266), [T3.Amalgamation.exists_witness_of_generating_family](../T3/GroupTheory/Amalgamation.lean#L289), [T3.witnessBound](../T3/Main/BoundedWitness.lean#L35), [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112), [T3.exists_uniform_nonamalgamation_bound](../T3/Main/BoundedWitness.lean#L173), [T3.rank_eq_finrank_layerOne](../T3/GroupTheory/GeneratorRank/Cardinality.lean#L51), [T3.rank_le_log_three_natCard](../T3/GroupTheory/GeneratorRank/Cardinality.lean#L113), [T3.rank_le_freeOrderExponent_of_injective](../T3/GroupTheory/GeneratorRank/Cardinality.lean#L144), [T3.Coproduct.exists_bounded_factor_support](../T3/GroupTheory/Coproduct/Support.lean#L38), [T3.Support.normalClosureIn_mono_ambient](../T3/GroupTheory/Support/Transport.lean#L33), [T3.Support.mem_normalClosure_of_mem_normalClosureIn](../T3/GroupTheory/Support/Transport.lean#L50)。
 
-通常のamalgamの実際の余積商、任意宇宙のtargetからcanonical商への単射性、任意生成族による関係部分群の等式、非自明な左/右因子の証人まで証明。有限生成数で抑えたDへのsupport移送とf(m)=f₀((3m+4)t(m)+1)は未完成。
+f(m)=15((3m+4)t(m)+1)²を明示。rank A≤log₃|A|≤log₃|B|≤t(m)、3(m+1)nのsupport、Aと左の証人の付加、strict envelope、Φの単射性と関係族の逆像等式による内部normal closureの移送を原稿順に証明。左右両証人・零rank・自明群を含む。Mのe.c.はcanonical semantic Type、Bは任意宇宙。一般モデル宇宙へのbridgeは別途残る。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| obstruction | D と B が A 上で amalgamate しない / 709 | planned | unchecked | なし |
-| bound | 総生成元数 d(D)≤f(m) / 710 | planned | unchecked | なし |
+| obstruction | D と B が A 上で amalgamate しない / 709 | proved | proof_checked | [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112) |
+| bound | 総生成元数 d(D)≤f(m) / 710 | proved | proof_checked | [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112) |
 
 ### `main.model_companion`
 
-予定宣言: `T3.has_model_companion`。
+予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.exponentThreeTheory_hasModelCompanion_iff](../T3/ModelTheory/ExponentThree.lean#L213), [T3.exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions](../T3/ModelTheory/ExponentThree.lean#L224)。
+実在宣言: [T3.exponentThreeTheory_hasModelCompanion_iff](../T3/ModelTheory/ExponentThree.lean#L213), [T3.exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions](../T3/ModelTheory/ExponentThree.lean#L224), [T3.exponentThreeTheory_boundedAmalgamationObstructions](../T3/Main/ModelCompanion.lean#L48), [T3.has_model_companion](../T3/Main/ModelCompanion.lean#L122), [T3.GroupAmalgamation.amalgamableOver_embeddings_swap_iff](../T3/ModelTheory/GroupAmalgamation.lean#L117)。
 
-T₃の有限言語・Π₂・局所有限性を供給しFact2.6の特殊化まで証明。公開bridgeはbounded obstruction仮定付きでありTheorem3.3からの仮定供給と無条件のmodel companion存在は未完成。
+Theorem3.3から一般のbounded obstructionを供給し、有限言語・Π₂・局所有限性によるFact2.6を適用。追加のbound仮定を残さずHasModelCompanionを証明。有限構造のgroup/modelはT₃の普遍性から回復し、元のbaseと全生成数を保つ。結論は既存canonical semantic universe、一般モデル宇宙へのbridgeは未完成。
 
 ### `structure.basis_lift`
 

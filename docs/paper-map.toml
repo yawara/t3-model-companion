@@ -1264,33 +1264,35 @@ number = "3.3"
 line_start = 702
 line_end = 712
 tex_label = "thm:main"
-modules = ["T3.Main.BoundedWitness", "T3.GroupTheory.Amalgamation"]
-planned_declarations = ["T3.witnessBound", "T3.exists_bounded_nonamalgamation_witness"]
-declarations = [{ name = "T3.Amalgamation.relator", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 42 }, { name = "T3.Amalgamation.relations", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 49 }, { name = "T3.Amalgamation.Pushout", module = "T3.GroupTheory.Amalgamation", kind = "abbrev", line = 63 }, { name = "T3.Amalgamation.AmalgamableOver", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 190 }, { name = "T3.Amalgamation.amalgamableOver_iff", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 201 }, { name = "T3.Amalgamation.amalgamableOver_of_amalgam", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 216 }, { name = "T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 266 }, { name = "T3.Amalgamation.exists_witness_of_generating_family", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 289 }]
-formalization = "partial"
-fidelity = "unchecked"
-notes = "通常のamalgamの実際の余積商、任意宇宙のtargetからcanonical商への単射性、任意生成族による関係部分群の等式、非自明な左/右因子の証人まで証明。有限生成数で抑えたDへのsupport移送とf(m)=f₀((3m+4)t(m)+1)は未完成。"
-verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
+modules = ["T3.Main.BoundedWitness", "T3.GroupTheory.Amalgamation", "T3.GroupTheory.GeneratorRank.Cardinality", "T3.GroupTheory.Coproduct.Support", "T3.GroupTheory.Support.Transport"]
+planned_declarations = []
+declarations = [{ name = "T3.Amalgamation.relator", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 42 }, { name = "T3.Amalgamation.relations", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 49 }, { name = "T3.Amalgamation.Pushout", module = "T3.GroupTheory.Amalgamation", kind = "abbrev", line = 63 }, { name = "T3.Amalgamation.AmalgamableOver", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 190 }, { name = "T3.Amalgamation.amalgamableOver_iff", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 201 }, { name = "T3.Amalgamation.amalgamableOver_of_amalgam", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 216 }, { name = "T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 266 }, { name = "T3.Amalgamation.exists_witness_of_generating_family", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 289 }, { name = "T3.witnessBound", module = "T3.Main.BoundedWitness", kind = "def", line = 35 }, { name = "T3.exists_bounded_nonamalgamation_witness", module = "T3.Main.BoundedWitness", kind = "theorem", line = 112 }, { name = "T3.exists_uniform_nonamalgamation_bound", module = "T3.Main.BoundedWitness", kind = "theorem", line = 173 }, { name = "T3.rank_eq_finrank_layerOne", module = "T3.GroupTheory.GeneratorRank.Cardinality", kind = "theorem", line = 51 }, { name = "T3.rank_le_log_three_natCard", module = "T3.GroupTheory.GeneratorRank.Cardinality", kind = "theorem", line = 113 }, { name = "T3.rank_le_freeOrderExponent_of_injective", module = "T3.GroupTheory.GeneratorRank.Cardinality", kind = "theorem", line = 144 }, { name = "T3.Coproduct.exists_bounded_factor_support", module = "T3.GroupTheory.Coproduct.Support", kind = "theorem", line = 38 }, { name = "T3.Support.normalClosureIn_mono_ambient", module = "T3.GroupTheory.Support.Transport", kind = "theorem", line = 33 }, { name = "T3.Support.mem_normalClosure_of_mem_normalClosureIn", module = "T3.GroupTheory.Support.Transport", kind = "theorem", line = 50 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "f(m)=15((3m+4)t(m)+1)²を明示。rank A≤log₃|A|≤log₃|B|≤t(m)、3(m+1)nのsupport、Aと左の証人の付加、strict envelope、Φの単射性と関係族の逆像等式による内部normal closureの移送を原稿順に証明。左右両証人・零rank・自明群を含む。Mのe.c.はcanonical semantic Type、Bは任意宇宙。一般モデル宇宙へのbridgeは別途残る。"
+verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
 
 [[items.parts]]
 id = "obstruction"
 summary = "D と B が A 上で amalgamate しない"
 source_kind = "enumerated"
 source_line = 709
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.exists_bounded_nonamalgamation_witness", module = "T3.Main.BoundedWitness", kind = "theorem", line = 112 }]
+verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
 
 [[items.parts]]
 id = "bound"
 summary = "総生成元数 d(D)≤f(m)"
 source_kind = "enumerated"
 source_line = 710
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.exists_bounded_nonamalgamation_witness", module = "T3.Main.BoundedWitness", kind = "theorem", line = 112 }]
+verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
 
 [[items]]
 id = "main.model_companion"
@@ -1300,14 +1302,14 @@ number = "3.4"
 line_start = 743
 line_end = 745
 tex_label = ""
-modules = ["T3.Main.ModelCompanion", "T3.ModelTheory.ExponentThree"]
-planned_declarations = ["T3.has_model_companion"]
-declarations = [{ name = "T3.exponentThreeTheory_hasModelCompanion_iff", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 213 }, { name = "T3.exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 224 }]
-formalization = "partial"
-fidelity = "unchecked"
-notes = "T₃の有限言語・Π₂・局所有限性を供給しFact2.6の特殊化まで証明。公開bridgeはbounded obstruction仮定付きでありTheorem3.3からの仮定供給と無条件のmodel companion存在は未完成。"
+modules = ["T3.Main.ModelCompanion", "T3.ModelTheory.ExponentThree", "T3.ModelTheory.GroupAmalgamation"]
+planned_declarations = []
+declarations = [{ name = "T3.exponentThreeTheory_hasModelCompanion_iff", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 213 }, { name = "T3.exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 224 }, { name = "T3.exponentThreeTheory_boundedAmalgamationObstructions", module = "T3.Main.ModelCompanion", kind = "theorem", line = 48 }, { name = "T3.has_model_companion", module = "T3.Main.ModelCompanion", kind = "theorem", line = 122 }, { name = "T3.GroupAmalgamation.amalgamableOver_embeddings_swap_iff", module = "T3.ModelTheory.GroupAmalgamation", kind = "theorem", line = 117 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "Theorem3.3から一般のbounded obstructionを供給し、有限言語・Π₂・局所有限性によるFact2.6を適用。追加のbound仮定を残さずHasModelCompanionを証明。有限構造のgroup/modelはT₃の普遍性から回復し、元のbaseと全生成数を保つ。結論は既存canonical semantic universe、一般モデル宇宙へのbridgeは未完成。"
 parts = []
-verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
 
 [[items]]
 id = "structure.basis_lift"

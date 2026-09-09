@@ -295,4 +295,31 @@ theorem exists_witness_of_generating_family {I : Type*} (a : I → A)
   rw [normalClosure_relators_eq_of_closure_range_eq_top f g a ha]
   exact exists_witness_of_not_amalgamableOver f g h
 
+/-- Precomposing the common base maps preserves any existing amalgam.
+
+Paper-ID: main.model_companion
+TeX: T3_modelcompanion_v4.tex, applying `thm:main` to an embedded copy of the finite base.
+-/
+theorem AmalgamableOver.precomp {A' : Type*} [Group A'] (e : A' →* A)
+    (h : AmalgamableOver f g) : AmalgamableOver (f.comp e) (g.comp e) := by
+  obtain ⟨K, hK, hpow, i, j, hi, hj, hij⟩ := h
+  refine ⟨K, hK, hpow, i, j, hi, hj, ?_⟩
+  exact congrArg (fun k : A →* K => k.comp e) hij
+
+/-- Replacing the common base by a surjective parametrization preserves amalgamability.
+In particular this applies to the isomorphism onto the base's image in a model.
+
+Paper-ID: main.model_companion
+TeX: T3_modelcompanion_v4.tex, applying `thm:main` to an embedded copy of the finite base.
+-/
+theorem amalgamableOver_precomp_iff {A' : Type*} [Group A'] (e : A' →* A)
+    (he : Function.Surjective e) :
+    AmalgamableOver (f.comp e) (g.comp e) ↔ AmalgamableOver f g := by
+  refine ⟨?_, AmalgamableOver.precomp f g e⟩
+  rintro ⟨K, hK, hpow, i, j, hi, hj, hij⟩
+  refine ⟨K, hK, hpow, i, j, hi, hj, ?_⟩
+  ext a
+  obtain ⟨b, rfl⟩ := he a
+  exact DFunLike.congr_fun hij b
+
 end T3.Amalgamation

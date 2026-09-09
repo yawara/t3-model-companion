@@ -19,6 +19,7 @@
 - [同時交換子 roots・e.c. 群・support の検証境界](notes/commutator-roots-and-support-checkpoint.md)
 - [基底による二段階 strictification の検証境界](notes/strictification-checkpoint.md)
 - [Strict envelope と amalgam の商表示の検証境界](notes/strict-envelope-and-pushout-checkpoint.md)
+- [主定理と model companion の存在の検証境界](notes/main-theorem-checkpoint.md)
 
 Lean/mathlib は v4.32.2、mathlib の commit は
 `905b95818eb32af7874a58b427f50c1711a5e96c` に固定しています。

@@ -53,6 +53,8 @@ public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ExponentThree
 public import T3.ModelTheory.ExistentiallyClosedGroups
 public import T3.ModelTheory.StrictEnvelope
+public import T3.Main.BoundedWitness
+public import T3.Main.ModelCompanion
 
 /-!
 # Guide to the paper
@@ -119,7 +121,7 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
 The index records exactly which parts have been proved and checked against the paper.
 The companion, existential-closedness and local-finiteness predicates use the documented
 canonical semantic universe; bridges to arbitrary model universes remain separate work.
-The group-theoretic bound needed to apply the criterion to `T₃` is not yet proved.
+The group-theoretic bound and its application to `T₃` are proved in the main-result modules.
 
 ## Section 3: Main results
 
@@ -130,7 +132,12 @@ inside the actual subgroup `H₀ = ⟨C,B,Δ⟩`.
 `T3.ModelTheory.StrictEnvelope` proves Proposition A with the explicit function `15n²`.
 `T3.GroupTheory.Amalgamation` constructs the actual quotient by the identification relations,
 proves the canonical-map criterion, and extracts both possible nontrivial factor witnesses.
-The bounded-witness theorem and the model-companion corollary remain incomplete.
+`T3.Main.BoundedWitness` proves Theorem 3.3 with
+`f(m) = 15 * ((3*m+4)*t(m)+1)^2`, retaining the paper's logarithmic rank comparison,
+actual internal normal closure, strict coproduct comparison, and both witness alternatives.
+`T3.Main.ModelCompanion` supplies the bounded obstruction hypothesis to Fact 2.6 and proves
+the unconditional existence of the model companion in Corollary 3.4. The original finite
+base is preserved when moving to its image in the model and back to language structures.
 
 ## Section 4: Structural analysis
 
