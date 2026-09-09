@@ -6,7 +6,7 @@
 
 番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。行・表示番号は補助情報で、安定 ID を主キーとする。
 
-項目全体の状態: `planned` 8, `partial` 6, `stated` 0, `proved` 36。
+項目全体の状態: `planned` 6, `partial` 5, `stated` 0, `proved` 39。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。
 
@@ -48,7 +48,7 @@
 | Remark 2.30<br>`preliminaries.infinite_free_graded` | 無限 rank の graded 同型 | label なし<br>600–602 | `T3.GroupTheory.Free.Exterior`<br>`T3.GroupTheory.Free.ExteriorLie` | proved | proof_checked |
 | Lemma 2.31<br>`preliminaries.graded_quotient` | quotient の associated graded | `lemma:gr of quotient`<br>623–626 | `T3.GroupTheory.GradedQuotient` | proved | proof_checked |
 | Proposition 3.1<br>`main.conjugate_width` | principal normal closure の共役幅 3 | `proposition:bounded number of conjugates`<br>653–659 | `T3.GroupTheory.ConjugateWidth` | proved | proof_checked |
-| Lemma 3.2<br>`main.bounded_support` | 生成元数による support bound 3(m+1)n | `lemma:witness in bdd support`<br>668–677 | `T3.GroupTheory.Support` | planned | unchecked |
+| Lemma 3.2<br>`main.bounded_support` | 生成元数による support bound 3(m+1)n | `lemma:witness in bdd support`<br>668–677 | `T3.GroupTheory.Support`<br>`T3.GroupTheory.Support.Collection`<br>`T3.GroupTheory.Support.Conjugator` | proved | proof_checked |
 | Proposition A<br>`main.proposition_a` | 一様に有界な LCS strict envelope の存在 | label なし<br>697–699 | `T3.ModelTheory.StrictEnvelope` | planned | unchecked |
 | Theorem 3.3<br>`main.bounded_witness` | B の生成元数のみによる非 amalgamation 障害の総生成元数評価 | `thm:main`<br>702–712 | `T3.Main.BoundedWitness` | planned | unchecked |
 | Corollary 3.4<br>`main.model_companion` | 指数 3 群の理論は model companion をもつ | label なし<br>743–745 | `T3.Main.ModelCompanion`<br>`T3.ModelTheory.ExponentThree` | partial | unchecked |
@@ -57,12 +57,12 @@
 | Proposition 4.3<br>`structure.graded_coproduct` | coproduct の η₁–η₃、tensor block 分解と bracket | `proposition:gr of free product`<br>843–864 | `T3.GroupTheory.Coproduct.Graded`<br>`T3.GroupTheory.Coproduct.Presentation`<br>`T3.GroupTheory.Coproduct.Relations`<br>`T3.GroupTheory.AssociatedGraded.Subgroup`<br>`T3.GroupTheory.Free.ExteriorNaturality`<br>`T3.LinearAlgebra.ExteriorSum`<br>`T3.LinearAlgebra.ExteriorTensor`<br>`T3.ForMathlib.PowersetCardSum`<br>`T3.LinearAlgebra.ExteriorLowDegree`<br>`T3.GroupTheory.Coproduct.FreeGraded`<br>`T3.GroupTheory.Coproduct.QuotientMaps`<br>`T3.GroupTheory.Coproduct.GradedEquiv`<br>`T3.GroupTheory.Coproduct.BlockBracket`<br>`T3.GroupTheory.GradedQuotient`<br>`T3.ForMathlib.LinearMapQuotient` | proved | proof_checked |
 | Lemma 4.4<br>`structure.strict_coproduct` | strict inclusion が coproduct の単射性を保存する | `lemma:free-product-amalgam`<br>946–951 | `T3.GroupTheory.Coproduct.Strict` | proved | proof_checked |
 | Lemma 4.5<br>`structure.free_two_stabilization` | 非自明群と F₂ の coproduct の strictness と内部中心列一致 | `lemma:coincidence of central series`<br>962–967 | `T3.GroupTheory.Coproduct.CentralSeries`<br>`T3.GroupTheory.Coproduct.CentralSeriesCriterion`<br>`T3.GroupTheory.Coproduct.FreeTwoSeparation`<br>`T3.GroupTheory.Coproduct.FreeTwo`<br>`T3.ForMathlib.TensorProduct` | proved | proof_checked |
-| Lemma 4.6<br>`structure.simultaneous_commutator_roots` | G * F₂ₙ の quotient における同時 commutator roots と単射性 | `lemma:basic commutator root`<br>1010–1017 | `T3.GroupTheory.Roots.Commutator`<br>`T3.GroupTheory.Roots.CommutatorRelations` | partial | unchecked |
+| Lemma 4.6<br>`structure.simultaneous_commutator_roots` | G * F₂ₙ の quotient における同時 commutator roots と単射性 | `lemma:basic commutator root`<br>1010–1017 | `T3.GroupTheory.Roots.Commutator`<br>`T3.GroupTheory.Roots.CommutatorRelations` | proved | proof_checked |
 | Lemma 4.7<br>`structure.derived_strictification` | 高々 2m 元を付加する derived strictification | `lemma:commutator root`<br>1076–1082 | `T3.GroupTheory.Roots.DerivedStrictification`<br>`T3.GroupTheory.GeneratorRank` | partial | unchecked |
 | Lemma 4.8<br>`structure.simultaneous_triple_roots` | G × F₃ₙ の quotient における同時 triple roots と単射性 | `lemma:triple commutator root`<br>1110–1117 | `T3.GroupTheory.Roots.Triple` | proved | proof_checked |
 | Lemma 4.9<br>`structure.lcs_strictification` | 高々 3·binom(n,2) 元を付加する γ₃ strictification | `lemma:number of generators for triple commutator roots`<br>1133–1141 | `T3.GroupTheory.Roots.LowerCentralStrictification`<br>`T3.GroupTheory.GeneratorRank` | partial | unchecked |
 | Remark 4.10<br>`structure.shared_triple_roots` | triple roots で生成元を共有する refinement | label なし<br>1177–1182 | `T3.GroupTheory.Roots.SharedTriple` | planned | unchecked |
-| Proposition 4.11<br>`structure.ec_central_series` | e.c. 群の内部中心列一致と単一の交換子・三重交換子表示 | `proposition:structure of e.c. model`<br>1185–1195 | `T3.ModelTheory.ExistentiallyClosedGroups` | planned | unchecked |
+| Proposition 4.11<br>`structure.ec_central_series` | e.c. 群の内部中心列一致と単一の交換子・三重交換子表示 | `proposition:structure of e.c. model`<br>1185–1195 | `T3.ModelTheory.ExistentiallyClosedGroups` | proved | proof_checked |
 | Proposition 4.12<br>`structure.strict_envelope` | 総生成元数 15n²、内部中心列一致、LCS strict envelope | `proposition:bdd LCS`<br>1212–1220 | `T3.ModelTheory.StrictEnvelope` | planned | unchecked |
 
 ## 宣言と項目内の進捗
@@ -436,12 +436,14 @@ Prop 2.29の同じσとgraded LieEquivが任意の線形順序付き生成集合
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: なし。
+実在宣言: [T3.Support.normalClosureIn](../T3/GroupTheory/Support.lean#L36), [T3.Support.exists_finite_support](../T3/GroupTheory/Support.lean#L97), [T3.Support.exists_bounded_support](../T3/GroupTheory/Support.lean#L171), [T3.Support.exists_bounded_support_set](../T3/GroupTheory/Support.lean#L197), [T3.Support.exists_bounded_support_rank](../T3/GroupTheory/Support.lean#L216)。
+
+全Lemma3.2完成。生成列のみでclass2 collectionを行い、H/γ₃からliftしてm+1個のG元で右共役を圧縮する。各principal幅3と有限relator族の積分解・支持和集合から3(m+1)n。C=closureY≤G、literal Group.rank Cの上界、実際のH₀内部normal closureのcertificateを同時に得る。Set Δはencard≤nから有限性を導く。B.FGは自然数rankの定義域のみ、ambient有限性や非自明性を追加しない。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | d(C)≤3(m+1)n / 673 | planned | unchecked | なし |
-| certificate | H₀=〈C,B,Δ〉内で normal-closure certificate が成立 / 674 | planned | unchecked | なし |
+| bound | d(C)≤3(m+1)n / 673 | proved | proof_checked | [T3.Support.exists_bounded_support_rank](../T3/GroupTheory/Support.lean#L216) |
+| certificate | H₀=〈C,B,Δ〉内で normal-closure certificate が成立 / 674 | proved | proof_checked | [T3.Support.exists_bounded_support_set](../T3/GroupTheory/Support.lean#L197) |
 
 ### `main.proposition_a`
 
@@ -527,9 +529,9 @@ T₃の有限言語・Π₂・局所有限性を供給しFact2.6の特殊化ま�
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.CommutatorRoots.derivedBracketHom](../T3/GroupTheory/Roots/CommutatorRelations.lean#L37), [T3.CommutatorRoots.normalWord](../T3/GroupTheory/Roots/CommutatorRelations.lean#L58), [T3.CommutatorRoots.exists_normalWord](../T3/GroupTheory/Roots/CommutatorRelations.lean#L94)。
+実在宣言: [T3.CommutatorRoots.Ambient](../T3/GroupTheory/Roots/Commutator.lean#L74), [T3.CommutatorRoots.relator](../T3/GroupTheory/Roots/Commutator.lean#L81), [T3.CommutatorRoots.kernel](../T3/GroupTheory/Roots/Commutator.lean#L97), [T3.CommutatorRoots.Extension](../T3/GroupTheory/Roots/Commutator.lean#L158), [T3.CommutatorRoots.baseMap](../T3/GroupTheory/Roots/Commutator.lean#L165), [T3.CommutatorRoots.kernel_eq_sup_commutator](../T3/GroupTheory/Roots/Commutator.lean#L139), [T3.CommutatorRoots.mem_normalClosure_singleton_iff](../T3/GroupTheory/Roots/Commutator.lean#L340), [T3.CommutatorRoots.mem_kernel_iff_mul_commutator](../T3/GroupTheory/Roots/Commutator.lean#L368), [T3.CommutatorRoots.coefficients_eq_zero](../T3/GroupTheory/Roots/Commutator.lean#L246), [T3.CommutatorRoots.centralWord_eq_one](../T3/GroupTheory/Roots/Commutator.lean#L443), [T3.CommutatorRoots.baseMap_injective](../T3/GroupTheory/Roots/Commutator.lean#L505), [T3.CommutatorRoots.baseMap_root](../T3/GroupTheory/Roots/Commutator.lean#L188)。
 
-ClaimAで使う同時有限積表示のみ証明。derived relator族のnormal closureの各元を整数係数の∏rᵢ^mᵢ[rᵢ,hᵢ]で表す。F₃係数への還元、singleton集合等式、具体的G*F₂ₙの一括商とClaimB/C・base embedding単射性は未完成。
+原稿のG*F₂ₙを全relatorで一括して割る具体的商と自然なbase embeddingの単射性を完成。ClaimAはK[K,H₀]とsingletonのF₃係数表示、ClaimBは独立な自由第二層のpair係数、ClaimCはη₃逆のmixed(1,2)成分からsᵢ=0→pure左成分0→a=1。任意G/任意rank/n=0/gᵢ=1を含む。
 
 ### `structure.derived_strictification`
 
@@ -577,13 +579,15 @@ dim gr₂(C)≤binom(n,2)とその有限次元性を有限生成族/Group.rank�
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: なし。
+実在宣言: [T3.ExistentiallyClosedGroups.exists_group_embedding](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L48), [T3.ExistentiallyClosedGroups.exists_copy_of_tuples](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L67), [T3.ExistentiallyClosedGroups.nontrivial](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L87)。
+
+既存canonical semantic universe内のe.c.T₃モデルについて3結論完成。有限生成部分群を局所有限性で有限化し、有限図式embeddingにより全パラメータを固定して等式・不等式を転送。具体的同時root商のn=1特殊化から単一交換子/三重交換子、非自明性をe.c.から導いてF₂の分離から中心列一致を得る。Nontrivial/有限性を仮定しない。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| central_series | 上下中心列の逆順での一致 / 1186 | planned | unchecked | なし |
-| commutator_width | γ₂ の各元が単一の交換子 / 1190 | planned | unchecked | なし |
-| triple_width | γ₃ の各元が単一の三重交換子 / 1193 | planned | unchecked | なし |
+| central_series | 上下中心列の逆順での一致 / 1186 | proved | proof_checked | [T3.ExistentiallyClosedGroups.centralSeriesCoincide](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L279) |
+| commutator_width | γ₂ の各元が単一の交換子 / 1190 | proved | proof_checked | [T3.ExistentiallyClosedGroups.commutator_eq_setOf_commutator](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L323) |
+| triple_width | γ₃ の各元が単一の三重交換子 / 1193 | proved | proof_checked | [T3.ExistentiallyClosedGroups.lowerCentralSeries_two_eq_setOf_triple_commutator](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L308) |
 
 ### `structure.strict_envelope`
 

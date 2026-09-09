@@ -86,6 +86,14 @@ block bracket 包含、任意群の strict coproduct、非自明 G と F₂ の�
 できたが、同時交換子 roots の単射性と strictification・e.c. 転送・15n² は未完成である。
 主定理の bounded obstruction を仮定する model companion への橋は、無条件の存在とは区別する。
 
+[同時交換子 roots・e.c. 群・support の境界](commutator-roots-and-support-checkpoint.md) では、
+原稿の同時 quotient と Claim A–C により Lemma 4.6 を完成した。
+具体的な roots と F₂ の分離から有限図式で witness を戻し、Proposition 4.11 の3結論も得た。
+段階6では、旧コードの全要素列挙を生成列に拡張し、Lemma 3.2 の正確な `3(m+1)n` と
+H₀内部の normal-closure certificate を完成した。
+次は段階5の二段階 strictification と `15n²` envelope を組み立て、群論的 amalgamation
+表示と主定理の明示 bound へ接続する。
+
 ## どこに時間がかかるか
 
 現在の監査から言えるのは、既存 Lean の終端までに 66 モジュール・約 1.8 万行がある一方、

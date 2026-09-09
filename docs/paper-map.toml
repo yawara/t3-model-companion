@@ -1208,32 +1208,35 @@ number = "3.2"
 line_start = 668
 line_end = 677
 tex_label = "lemma:witness in bdd support"
-modules = ["T3.GroupTheory.Support"]
+modules = ["T3.GroupTheory.Support", "T3.GroupTheory.Support.Collection", "T3.GroupTheory.Support.Conjugator"]
 planned_declarations = []
-declarations = []
-formalization = "planned"
-fidelity = "unchecked"
-notes = ""
+declarations = [{ name = "T3.Support.normalClosureIn", module = "T3.GroupTheory.Support", kind = "def", line = 36 }, { name = "T3.Support.exists_finite_support", module = "T3.GroupTheory.Support", kind = "theorem", line = 97 }, { name = "T3.Support.exists_bounded_support", module = "T3.GroupTheory.Support", kind = "theorem", line = 171 }, { name = "T3.Support.exists_bounded_support_set", module = "T3.GroupTheory.Support", kind = "theorem", line = 197 }, { name = "T3.Support.exists_bounded_support_rank", module = "T3.GroupTheory.Support", kind = "theorem", line = 216 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "全Lemma3.2完成。生成列のみでclass2 collectionを行い、H/γ₃からliftしてm+1個のG元で右共役を圧縮する。各principal幅3と有限relator族の積分解・支持和集合から3(m+1)n。C=closureY≤G、literal Group.rank Cの上界、実際のH₀内部normal closureのcertificateを同時に得る。Set Δはencard≤nから有限性を導く。B.FGは自然数rankの定義域のみ、ambient有限性や非自明性を追加しない。"
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items.parts]]
 id = "bound"
 summary = "d(C)≤3(m+1)n"
 source_kind = "enumerated"
 source_line = 673
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.Support.exists_bounded_support_rank", module = "T3.GroupTheory.Support", kind = "theorem", line = 216 }]
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items.parts]]
 id = "certificate"
 summary = "H₀=〈C,B,Δ〉内で normal-closure certificate が成立"
 source_kind = "enumerated"
 source_line = 674
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.Support.exists_bounded_support_set", module = "T3.GroupTheory.Support", kind = "theorem", line = 197 }]
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items]]
 id = "main.proposition_a"
@@ -1453,12 +1456,12 @@ line_end = 1017
 tex_label = "lemma:basic commutator root"
 modules = ["T3.GroupTheory.Roots.Commutator", "T3.GroupTheory.Roots.CommutatorRelations"]
 planned_declarations = []
-declarations = [{ name = "T3.CommutatorRoots.derivedBracketHom", module = "T3.GroupTheory.Roots.CommutatorRelations", kind = "def", line = 37 }, { name = "T3.CommutatorRoots.normalWord", module = "T3.GroupTheory.Roots.CommutatorRelations", kind = "def", line = 58 }, { name = "T3.CommutatorRoots.exists_normalWord", module = "T3.GroupTheory.Roots.CommutatorRelations", kind = "theorem", line = 94 }]
-formalization = "partial"
-fidelity = "unchecked"
-notes = "ClaimAで使う同時有限積表示のみ証明。derived relator族のnormal closureの各元を整数係数の∏rᵢ^mᵢ[rᵢ,hᵢ]で表す。F₃係数への還元、singleton集合等式、具体的G*F₂ₙの一括商とClaimB/C・base embedding単射性は未完成。"
+declarations = [{ name = "T3.CommutatorRoots.Ambient", module = "T3.GroupTheory.Roots.Commutator", kind = "abbrev", line = 74 }, { name = "T3.CommutatorRoots.relator", module = "T3.GroupTheory.Roots.Commutator", kind = "def", line = 81 }, { name = "T3.CommutatorRoots.kernel", module = "T3.GroupTheory.Roots.Commutator", kind = "def", line = 97 }, { name = "T3.CommutatorRoots.Extension", module = "T3.GroupTheory.Roots.Commutator", kind = "abbrev", line = 158 }, { name = "T3.CommutatorRoots.baseMap", module = "T3.GroupTheory.Roots.Commutator", kind = "def", line = 165 }, { name = "T3.CommutatorRoots.kernel_eq_sup_commutator", module = "T3.GroupTheory.Roots.Commutator", kind = "theorem", line = 139 }, { name = "T3.CommutatorRoots.mem_normalClosure_singleton_iff", module = "T3.GroupTheory.Roots.Commutator", kind = "theorem", line = 340 }, { name = "T3.CommutatorRoots.mem_kernel_iff_mul_commutator", module = "T3.GroupTheory.Roots.Commutator", kind = "theorem", line = 368 }, { name = "T3.CommutatorRoots.coefficients_eq_zero", module = "T3.GroupTheory.Roots.Commutator", kind = "theorem", line = 246 }, { name = "T3.CommutatorRoots.centralWord_eq_one", module = "T3.GroupTheory.Roots.Commutator", kind = "theorem", line = 443 }, { name = "T3.CommutatorRoots.baseMap_injective", module = "T3.GroupTheory.Roots.Commutator", kind = "theorem", line = 505 }, { name = "T3.CommutatorRoots.baseMap_root", module = "T3.GroupTheory.Roots.Commutator", kind = "theorem", line = 188 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "原稿のG*F₂ₙを全relatorで一括して割る具体的商と自然なbase embeddingの単射性を完成。ClaimAはK[K,H₀]とsingletonのF₃係数表示、ClaimBは独立な自由第二層のpair係数、ClaimCはη₃逆のmixed(1,2)成分からsᵢ=0→pure左成分0→a=1。任意G/任意rank/n=0/gᵢ=1を含む。"
 parts = []
-verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items]]
 id = "structure.derived_strictification"
@@ -1575,40 +1578,44 @@ line_end = 1195
 tex_label = "proposition:structure of e.c. model"
 modules = ["T3.ModelTheory.ExistentiallyClosedGroups"]
 planned_declarations = []
-declarations = []
-formalization = "planned"
-fidelity = "unchecked"
-notes = ""
+declarations = [{ name = "T3.ExistentiallyClosedGroups.exists_group_embedding", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 48 }, { name = "T3.ExistentiallyClosedGroups.exists_copy_of_tuples", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 67 }, { name = "T3.ExistentiallyClosedGroups.nontrivial", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 87 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "既存canonical semantic universe内のe.c.T₃モデルについて3結論完成。有限生成部分群を局所有限性で有限化し、有限図式embeddingにより全パラメータを固定して等式・不等式を転送。具体的同時root商のn=1特殊化から単一交換子/三重交換子、非自明性をe.c.から導いてF₂の分離から中心列一致を得る。Nontrivial/有限性を仮定しない。"
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items.parts]]
 id = "central_series"
 summary = "上下中心列の逆順での一致"
 source_kind = "clause"
 source_line = 1186
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.ExistentiallyClosedGroups.centralSeriesCoincide", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 279 }]
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items.parts]]
 id = "commutator_width"
 summary = "γ₂ の各元が単一の交換子"
 source_kind = "clause"
 source_line = 1190
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.ExistentiallyClosedGroups.commutator_eq_setOf_commutator", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 323 }]
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items.parts]]
 id = "triple_width"
 summary = "γ₃ の各元が単一の三重交換子"
 source_kind = "clause"
 source_line = 1193
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.ExistentiallyClosedGroups.lowerCentralSeries_two_eq_setOf_triple_commutator", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 308 }]
+verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
 
 [[items]]
 id = "structure.strict_envelope"

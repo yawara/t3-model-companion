@@ -16,6 +16,7 @@
 - [Coproduct の tensor 分解と model companion 判定の検証境界](notes/coproduct-tensor-and-companion-checkpoint.md)
 - [一般 bounded-amalgamation criterion の実装境界](notes/bounded-amalgamation-implementation-frontier.md)
 - [Graded coproduct と一般 amalgamation 判定の検証境界](notes/graded-coproduct-and-amalgamation-checkpoint.md)
+- [同時交換子 roots・e.c. 群・support の検証境界](notes/commutator-roots-and-support-checkpoint.md)
 
 Lean/mathlib は v4.32.2、mathlib の commit は
 `905b95818eb32af7874a58b427f50c1711a5e96c` に固定しています。

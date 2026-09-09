@@ -337,7 +337,7 @@ def render(data: dict) -> str:
         "このスクリプトは TeX の網羅性、モジュールと宣言の字句上の所在、表示の整合性を"
         "検査する。Lean の elaboration・公理依存・lint・数学的 faithful 性は別途検証する。"
         "予定名は実在宣言ではなく、未着手の項目のために Lean stub を作らない。", "",
-        "| 論文項目 / 安定 ID | 内容 | 原文 label / 行 | 公開モジュール（予定を含む） | formalization | fidelity |", 
+        "| 論文項目 / 安定 ID | 内容 | 原文 label / 行 | 公開モジュール（予定を含む） | formalization | fidelity |",
         "| --- | --- | --- | --- | --- | --- |",
     ]
     for item in items:

@@ -46,8 +46,12 @@ public import T3.GroupTheory.GradedNormalClosure
 public import T3.GroupTheory.GradedQuotient
 public import T3.GroupTheory.Identities
 public import T3.GroupTheory.Presentation
+public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.CommutatorRelations
 public import T3.GroupTheory.Roots.Triple
+public import T3.GroupTheory.Support
+public import T3.GroupTheory.Support.Collection
+public import T3.GroupTheory.Support.Conjugator
 public import T3.LinearAlgebra.BlockDecomposition
 public import T3.LinearAlgebra.ExteriorLowDegree
 public import T3.LinearAlgebra.ExteriorSum
@@ -60,6 +64,7 @@ public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ElementaryChain
 public import T3.ModelTheory.ExistentialWitness
 public import T3.ModelTheory.ExistentiallyClosedExtension
+public import T3.ModelTheory.ExistentiallyClosedGroups
 public import T3.ModelTheory.ExponentThree
 public import T3.ModelTheory.ExtensionAxioms
 public import T3.ModelTheory.FiniteDiagram

@@ -30,8 +30,10 @@ public import T3.GroupTheory.GradedNormalClosure
 public import T3.GroupTheory.GradedQuotient
 public import T3.GroupTheory.GeneratorRank
 public import T3.GroupTheory.Presentation
+public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.CommutatorRelations
 public import T3.GroupTheory.Roots.Triple
+public import T3.GroupTheory.Support
 public import T3.LinearAlgebra.BlockDecomposition
 public import T3.LinearAlgebra.ExteriorSum
 public import T3.LinearAlgebra.ExteriorTensor
@@ -45,6 +47,7 @@ public import T3.ModelTheory.ModelCompleteness
 public import T3.ModelTheory.UniformLocalFiniteness
 public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ExponentThree
+public import T3.ModelTheory.ExistentiallyClosedGroups
 
 /-!
 # Guide to the paper
@@ -117,8 +120,9 @@ The group-theoretic bound needed to apply the criterion to `T₃` is not yet pro
 
 `T3.GroupTheory.ConjugateWidth` proves Proposition 3.1: every element of a principal normal
 closure is a product of at most three positive conjugates, including the trivial case.
-The support bound, Proposition A, the bounded-witness theorem, and the model-companion
-corollary are planned.
+`T3.GroupTheory.Support` proves Lemma 3.2 with the generator bound `3(m+1)n` and a certificate
+inside the actual subgroup `H₀ = ⟨C,B,Δ⟩`. Proposition A, the bounded-witness theorem, and the
+model-companion corollary are planned.
 
 ## Section 4: Structural analysis
 
@@ -149,12 +153,14 @@ corollary are planned.
   inclusion, Lemma 4.4, using the natural graded isomorphisms.
 * `T3.GroupTheory.Coproduct.CentralSeries`: Lemma 4.5 for arbitrary nontrivial `G` and `F₂`.
   The two graded separation claims follow the paper's component calculations.
-* `T3.GroupTheory.Roots.CommutatorRelations`: simultaneous normal words for finite families
-  of derived relators, supporting Claim A of Lemma 4.6. The root embedding is not yet proved.
+* `T3.GroupTheory.Roots.Commutator`: the simultaneous quotient by all commutator-root relations,
+  with injective base map and root equations, Lemma 4.6. The proof follows Claims A, B, and C.
 * `T3.GroupTheory.GeneratorRank`: the first two graded dimensions are bounded by the number
   of generators and its second binomial coefficient, for the proofs of Lemmas 4.7 and 4.9.
   Finite dimensionality is proved; the strictification constructions remain unfinished.
+* `T3.ModelTheory.ExistentiallyClosedGroups`: all three conclusions of Proposition 4.11.
+  Finite diagrams transfer witnesses from the concrete root quotients and free-two coproduct,
+  preserving all designated parameters. Nontriviality follows from existential closedness.
 
-Simultaneous commutator roots, strictification, and Proposition 4.12 remain to be implemented
-before the main results.
+Strictification and Proposition 4.12 remain to be implemented before the main results.
 -/
