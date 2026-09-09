@@ -6,7 +6,7 @@
 
 番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。行・表示番号は補助情報で、安定 ID を主キーとする。
 
-項目全体の状態: `planned` 1, `partial` 2, `stated` 0, `proved` 47。
+項目全体の状態: `planned` 1, `partial` 1, `stated` 0, `proved` 48。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。
 
@@ -16,7 +16,7 @@
 | --- | --- | --- | --- | --- | --- |
 | §2 冒頭<br>`preliminaries.exponent_three` | 指数は 3 を割る条件を用い、自明群を含める | label なし<br>136–142 | `T3.GroupTheory.Basic`<br>`T3.ModelTheory.GroupLanguage`<br>`T3.ModelTheory.ExponentThree` | proved | proof_checked |
 | Notation 2.1<br>`preliminaries.notation` | 群の記法、生成元数、自由指数群、coproduct | label なし<br>145–172 | `T3.GroupTheory.Basic`<br>`T3.GroupTheory.Free.Basic`<br>`T3.GroupTheory.Coproduct.Basic`<br>`T3.GroupTheory.CentralSeries`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ModelTheory.ExponentThree` | partial | unchecked |
-| Definition 2.2<br>`model_theory.basic_definitions` | companion、model completeness、e.c.、Π₂、有限図式 | label なし<br>178–193 | `T3.ModelTheory.ModelCompanion`<br>`T3.ModelTheory.Inductive`<br>`T3.ModelTheory.FiniteDiagram`<br>`T3.ModelTheory.ModelCompleteness`<br>`T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness` | proved | proof_checked |
+| Definition 2.2<br>`model_theory.basic_definitions` | companion、model completeness、e.c.、Π₂、有限図式 | label なし<br>178–193 | `T3.ModelTheory.ModelCompanion`<br>`T3.ModelTheory.Inductive`<br>`T3.ModelTheory.FiniteDiagram`<br>`T3.ModelTheory.ModelCompleteness`<br>`T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.ModelEmbeddings` | proved | proof_checked |
 | Fact 2.3<br>`model_theory.companion_iff_ec` | Π₂ 理論の model companion と e.c. class の一致 | label なし<br>195–201 | `T3.ModelTheory.Inductive`<br>`T3.ModelTheory.PiTwoDirectLimit`<br>`T3.ModelTheory.ExistentiallyClosedExtension`<br>`T3.ModelTheory.ElementaryChain`<br>`T3.ModelTheory.RobinsonTest`<br>`T3.ModelTheory.ModelCompanionCriterion` | proved | proof_checked |
 | Definition 2.4<br>`model_theory.local_finiteness` | 理論の局所有限性 | label なし<br>203–206 | `T3.ModelTheory.LocallyFinite` | proved | proof_checked |
 | Fact 2.5<br>`model_theory.uniform_local_finiteness` | 有限言語における一様な生成部分構造の位数評価 | label なし<br>209–212 | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness` | proved | proof_checked |
@@ -36,7 +36,7 @@
 | Definition 2.18<br>`preliminaries.associated_graded` | 群の associated graded Lie algebra | label なし<br>391–408 | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
 | Lemma 2.19<br>`preliminaries.associated_graded_properties` | 次数 4 の消滅、三重 bracket 恒等式、次数 1 による生成 | label なし<br>411–420 | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie`<br>`T3.GroupTheory.AssociatedGraded.Generation` | proved | proof_checked |
 | Notation 2.20<br>`preliminaries.graded_image` | 元の初期成分と部分群の graded image | label なし<br>422–437 | `T3.GroupTheory.AssociatedGraded` | proved | proof_checked |
-| Example 2.21<br>`preliminaries.associated_graded_examples` | 可換群・直積・2 生成自由群の graded | label なし<br>439–445 | `T3.GroupTheory.AssociatedGradedExamples`<br>`T3.GroupTheory.AssociatedGraded.Product` | partial | unchecked |
+| Example 2.21<br>`preliminaries.associated_graded_examples` | 可換群・直積・2 生成自由群の graded | label なし<br>439–445 | `T3.GroupTheory.AssociatedGradedExamples`<br>`T3.GroupTheory.AssociatedGraded.Product` | proved | proof_checked |
 | Definition 2.22<br>`preliminaries.associated_graded_map` | 準同型が誘導する gr(f) | label なし<br>449–456 | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
 | Definition 2.23<br>`preliminaries.lcs_strictness` | lower-central strict inclusion | label なし<br>460–468 | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
 | Proposition 2.24<br>`preliminaries.graded_injectivity_strictness` | gr(f) の単射性、f の単射性、strictness | `proposition:gr(f) and LCS`<br>470–480 | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
@@ -101,11 +101,11 @@
 
 実在宣言: なし。
 
-項目1–6を実装。構文的model completenessとcanonical universeでの意味論的条件の同値、一般有限言語の図式、局所有限性の下で全QF図式のT同値類の有限代表集合まで証明。companion/e.c.のモデル量化はType (max u v)を用いる既存規約に従う。これらの他宇宙への移行bridgeは独立の残件であり、論文全体の完了を意味しない。
+項目1–6を実装。model completenessの構文/意味論同値と有限図式を証明。companionのModelsEmbedIntoは有限Skolem hullとQF diagramのcompactnessにより任意宇宙のモデルからの埋込みへ拡張済み。e.c.と局所有限性およびそれらを使う結果の一般宇宙bridgeは別残件。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| companion | 双方のモデルへの埋込み / 180 | proved | proof_checked | [FirstOrder.Language.Theory.ModelsEmbedInto](../T3/ModelTheory/ModelCompanion.lean#L49), [FirstOrder.Language.Theory.IsCompanion](../T3/ModelTheory/ModelCompanion.lean#L70) |
+| companion | 双方のモデルへの埋込み / 180 | proved | proof_checked | [FirstOrder.Language.Theory.ModelsEmbedInto](../T3/ModelTheory/ModelCompanion.lean#L49), [FirstOrder.Language.Theory.IsCompanion](../T3/ModelTheory/ModelCompanion.lean#L70), [FirstOrder.Language.Theory.ModelsEmbedInto.exists_embedding](../T3/ModelTheory/ModelEmbeddings.lean#L100) |
 | model_complete | 全式を existential formula に書き換える model completeness / 181 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelComplete](../T3/ModelTheory/ModelCompanion.lean#L104), [FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff](../T3/ModelTheory/ModelCompanion.lean#L136), [FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails](../T3/ModelTheory/ModelCompleteness.lean#L294), [FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete](../T3/ModelTheory/ModelCompleteness.lean#L395), [FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary](../T3/ModelTheory/ModelCompleteness.lean#L457) |
 | model_companion | model-complete companion / 182 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelCompanionOf](../T3/ModelTheory/ModelCompanion.lean#L162), [FirstOrder.Language.Theory.HasModelCompanion](../T3/ModelTheory/ModelCompanion.lean#L188) |
 | existentially_closed | QF 行列をもつ existential formula に関する閉性 / 183 | proved | proof_checked | [FirstOrder.Language.Theory.IsExistentiallyClosed](../T3/ModelTheory/ModelCompanion.lean#L197) |
@@ -325,13 +325,13 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 実在宣言: なし。
 
-項目2を完了。全次数で中心列の直積公式と、射影・包含から得るcanonicalなlayerのLinearEquivを証明。項目1の可換群と項目3のF₂の具体的記述は未完了。
+全3項目完成。可換群は実際のgraded Lie同型・代表元保持・次数の消失・自然性まで証明。F₂はγ₂が交換子の3冪であること、γ₃=1、実際のx̄/ȳ/[x,y]の基底と全graded空間の座標同型・括弧の行列式・各次数を証明。既存の直積の全次数公式も保持。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| abelian | 可換群の graded / 441 | planned | unchecked | なし |
+| abelian | 可換群の graded / 441 | proved | proof_checked | [T3.AssociatedGraded.abelianLieEquiv](../T3/GroupTheory/AssociatedGradedExamples.lean#L193), [T3.AssociatedGraded.abelianEquiv_lof_mk](../T3/GroupTheory/AssociatedGradedExamples.lean#L145), [T3.AssociatedGraded.grade_one_eq_top_of_commutative](../T3/GroupTheory/AssociatedGradedExamples.lean#L205), [T3.AssociatedGraded.grade_eq_bot_of_commutative](../T3/GroupTheory/AssociatedGradedExamples.lean#L215), [T3.AssociatedGraded.abelianEquiv_mapLie](../T3/GroupTheory/AssociatedGradedExamples.lean#L229) |
 | product | 直積の中心列と graded 直和 / 442 | proved | proof_checked | [T3.AssociatedGraded.term_prod](../T3/GroupTheory/AssociatedGraded/Product.lean#L45), [T3.AssociatedGraded.layerProdEquiv](../T3/GroupTheory/AssociatedGraded/Product.lean#L84), [T3.AssociatedGraded.layerProdEquiv_apply](../T3/GroupTheory/AssociatedGraded/Product.lean#L93) |
-| free_two | F₂ の中心列と gr₁・gr₂ / 443 | planned | unchecked | なし |
+| free_two | F₂ の中心列と gr₁・gr₂ / 443 | proved | proof_checked | [T3.FreeTwo.mem_term_two_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L369), [T3.FreeTwo.term_three_eq_bot](../T3/GroupTheory/AssociatedGradedExamples.lean#L327), [T3.FreeTwo.firstLayerBasis](../T3/GroupTheory/AssociatedGradedExamples.lean#L291), [T3.FreeTwo.secondLayerBasis](../T3/GroupTheory/AssociatedGradedExamples.lean#L299), [T3.FreeTwo.firstLayerBasis_apply](../T3/GroupTheory/AssociatedGradedExamples.lean#L307), [T3.FreeTwo.secondLayerBasis_apply](../T3/GroupTheory/AssociatedGradedExamples.lean#L316), [T3.FreeTwo.coordinates](../T3/GroupTheory/AssociatedGradedExamples.lean#L456), [T3.FreeTwo.coordinates_bracket](../T3/GroupTheory/AssociatedGradedExamples.lean#L501), [T3.FreeTwo.mem_grade_one_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L513), [T3.FreeTwo.mem_grade_two_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L530), [T3.FreeTwo.grade_eq_bot](../T3/GroupTheory/AssociatedGradedExamples.lean#L550) |
 
 ### `preliminaries.associated_graded_map`
 

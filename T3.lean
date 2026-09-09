@@ -13,6 +13,7 @@ public import T3.GroupTheory.AssociatedGraded.Lie
 public import T3.GroupTheory.AssociatedGraded.Product
 public import T3.GroupTheory.AssociatedGraded.Subgroup
 public import T3.GroupTheory.AssociatedGraded.Truncation
+public import T3.GroupTheory.AssociatedGradedExamples
 public import T3.GroupTheory.Basic
 public import T3.GroupTheory.CentralSeries
 public import T3.GroupTheory.ConjugateWidth
@@ -88,6 +89,7 @@ public import T3.ModelTheory.LocallyFinite
 public import T3.ModelTheory.ModelCompanion
 public import T3.ModelTheory.ModelCompanionCriterion
 public import T3.ModelTheory.ModelCompleteness
+public import T3.ModelTheory.ModelEmbeddings
 public import T3.ModelTheory.PiTwoDirectLimit
 public import T3.ModelTheory.RobinsonTest
 public import T3.ModelTheory.StrictEnvelope

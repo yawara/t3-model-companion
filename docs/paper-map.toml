@@ -147,13 +147,13 @@ number = "2.2"
 line_start = 178
 line_end = 193
 tex_label = ""
-modules = ["T3.ModelTheory.ModelCompanion", "T3.ModelTheory.Inductive", "T3.ModelTheory.FiniteDiagram", "T3.ModelTheory.ModelCompleteness", "T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness"]
+modules = ["T3.ModelTheory.ModelCompanion", "T3.ModelTheory.Inductive", "T3.ModelTheory.FiniteDiagram", "T3.ModelTheory.ModelCompleteness", "T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness", "T3.ModelTheory.ModelEmbeddings"]
 planned_declarations = []
 declarations = []
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "項目1–6を実装。構文的model completenessとcanonical universeでの意味論的条件の同値、一般有限言語の図式、局所有限性の下で全QF図式のT同値類の有限代表集合まで証明。companion/e.c.のモデル量化はType (max u v)を用いる既存規約に従う。これらの他宇宙への移行bridgeは独立の残件であり、論文全体の完了を意味しない。"
-verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+notes = "項目1–6を実装。model completenessの構文/意味論同値と有限図式を証明。companionのModelsEmbedIntoは有限Skolem hullとQF diagramのcompactnessにより任意宇宙のモデルからの埋込みへ拡張済み。e.c.と局所有限性およびそれらを使う結果の一般宇宙bridgeは別残件。"
+verification = { record = "notes/examples-and-model-embeddings-checkpoint.md", code_revision = "sha256:4361f8312b86001a2ef7f9d59326d9165f8afa6e2e6f2aae37ff9169b2a2817d" }
 
 [[items.parts]]
 id = "companion"
@@ -163,8 +163,8 @@ source_line = 180
 formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
-declarations = [{ name = "FirstOrder.Language.Theory.ModelsEmbedInto", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 49 }, { name = "FirstOrder.Language.Theory.IsCompanion", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 70 }]
-verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+declarations = [{ name = "FirstOrder.Language.Theory.ModelsEmbedInto", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 49 }, { name = "FirstOrder.Language.Theory.IsCompanion", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 70 }, { name = "FirstOrder.Language.Theory.ModelsEmbedInto.exists_embedding", module = "T3.ModelTheory.ModelEmbeddings", kind = "theorem", line = 100 }]
+verification = { record = "notes/examples-and-model-embeddings-checkpoint.md", code_revision = "sha256:4361f8312b86001a2ef7f9d59326d9165f8afa6e2e6f2aae37ff9169b2a2817d" }
 
 [[items.parts]]
 id = "model_complete"
@@ -891,19 +891,21 @@ tex_label = ""
 modules = ["T3.GroupTheory.AssociatedGradedExamples", "T3.GroupTheory.AssociatedGraded.Product"]
 planned_declarations = []
 declarations = []
-formalization = "partial"
-fidelity = "unchecked"
-notes = "項目2を完了。全次数で中心列の直積公式と、射影・包含から得るcanonicalなlayerのLinearEquivを証明。項目1の可換群と項目3のF₂の具体的記述は未完了。"
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "全3項目完成。可換群は実際のgraded Lie同型・代表元保持・次数の消失・自然性まで証明。F₂はγ₂が交換子の3冪であること、γ₃=1、実際のx̄/ȳ/[x,y]の基底と全graded空間の座標同型・括弧の行列式・各次数を証明。既存の直積の全次数公式も保持。"
+verification = { record = "notes/examples-and-model-embeddings-checkpoint.md", code_revision = "sha256:4361f8312b86001a2ef7f9d59326d9165f8afa6e2e6f2aae37ff9169b2a2817d" }
 
 [[items.parts]]
 id = "abelian"
 summary = "可換群の graded"
 source_kind = "enumerated"
 source_line = 441
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.AssociatedGraded.abelianLieEquiv", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "def", line = 193 }, { name = "T3.AssociatedGraded.abelianEquiv_lof_mk", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 145 }, { name = "T3.AssociatedGraded.grade_one_eq_top_of_commutative", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 205 }, { name = "T3.AssociatedGraded.grade_eq_bot_of_commutative", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 215 }, { name = "T3.AssociatedGraded.abelianEquiv_mapLie", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 229 }]
+verification = { record = "notes/examples-and-model-embeddings-checkpoint.md", code_revision = "sha256:4361f8312b86001a2ef7f9d59326d9165f8afa6e2e6f2aae37ff9169b2a2817d" }
 
 [[items.parts]]
 id = "product"
@@ -921,10 +923,11 @@ id = "free_two"
 summary = "F₂ の中心列と gr₁・gr₂"
 source_kind = "enumerated"
 source_line = 443
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.FreeTwo.mem_term_two_iff", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 369 }, { name = "T3.FreeTwo.term_three_eq_bot", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 327 }, { name = "T3.FreeTwo.firstLayerBasis", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "def", line = 291 }, { name = "T3.FreeTwo.secondLayerBasis", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "def", line = 299 }, { name = "T3.FreeTwo.firstLayerBasis_apply", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 307 }, { name = "T3.FreeTwo.secondLayerBasis_apply", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 316 }, { name = "T3.FreeTwo.coordinates", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "def", line = 456 }, { name = "T3.FreeTwo.coordinates_bracket", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 501 }, { name = "T3.FreeTwo.mem_grade_one_iff", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 513 }, { name = "T3.FreeTwo.mem_grade_two_iff", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 530 }, { name = "T3.FreeTwo.grade_eq_bot", module = "T3.GroupTheory.AssociatedGradedExamples", kind = "theorem", line = 550 }]
+verification = { record = "notes/examples-and-model-embeddings-checkpoint.md", code_revision = "sha256:4361f8312b86001a2ef7f9d59326d9165f8afa6e2e6f2aae37ff9169b2a2817d" }
 
 [[items]]
 id = "preliminaries.associated_graded_map"

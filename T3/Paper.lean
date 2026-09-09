@@ -10,6 +10,7 @@ public import T3.GroupTheory.AssociatedGraded
 public import T3.GroupTheory.AssociatedGraded.Lie
 public import T3.GroupTheory.AssociatedGraded.Generation
 public import T3.GroupTheory.AssociatedGraded.Product
+public import T3.GroupTheory.AssociatedGradedExamples
 public import T3.GroupTheory.Amalgamation
 public import T3.GroupTheory.CentralSeries
 public import T3.GroupTheory.ConjugateWidth
@@ -49,6 +50,7 @@ public import T3.ModelTheory.LocallyFinite
 public import T3.ModelTheory.ModelCompanion
 public import T3.ModelTheory.ModelCompanionCriterion
 public import T3.ModelTheory.ModelCompleteness
+public import T3.ModelTheory.ModelEmbeddings
 public import T3.ModelTheory.UniformLocalFiniteness
 public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ExponentThree
@@ -88,6 +90,9 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
   as asserted in Lemma 2.19(3).
 * `T3.GroupTheory.AssociatedGraded.Product`: the lower central terms and canonical layer
   equivalences for direct products, Example 2.21(2).
+* `T3.GroupTheory.AssociatedGradedExamples`: the canonical abelian Lie equivalence and the
+  exact central series, named bases, and full bracket coordinates of the free group on two
+  generators, Example 2.21(1,3).
 * `T3.LinearAlgebra.TruncatedExterior`: the actual exterior powers, signed bracket and
   graded Lie algebra in Example 2.9, without dimension assumptions.
 * `T3.LinearAlgebra.GradedLie`: Definition 2.7 and Remark 2.8 using the native Lie classes.
@@ -110,6 +115,8 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
   theories, using existentially closed extensions and the syntactic Robinson test.
 * `T3.ModelTheory.ModelCompleteness`: the equivalence of syntactic model completeness with
   elementary preservation by embeddings, proved using finite diagrams and compactness.
+* `T3.ModelTheory.ModelEmbeddings`: the companion's model embeddings extend to arbitrary
+  model universes, using finite Skolem hulls and compactness of quantifier-free diagrams.
 * `T3.ModelTheory.FiniteDiagram`: finite function and relation tables, tuple diagrams,
   and existentially closed transfer fixing a finite common substructure.
 * `T3.ModelTheory.LocallyFinite`: local finiteness and the representation of a full tuple's
@@ -123,8 +130,8 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
   axiomatization and local finiteness, including the trivial group.
 
 The index records exactly which parts have been proved and checked against the paper.
-The companion, existential-closedness and local-finiteness predicates use the documented
-canonical semantic universe; bridges to arbitrary model universes remain separate work.
+The semantic predicates use the documented canonical universe. Model embeddings now extend
+to arbitrary universes; existential-closedness and local-finiteness bridges remain separate work.
 The group-theoretic bound and its application to `T₃` are proved in the main-result modules.
 
 ## Section 3: Main results
