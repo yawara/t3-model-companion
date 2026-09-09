@@ -31,6 +31,8 @@ public import T3.GroupTheory.Free.NormalForm
 public import T3.GroupTheory.GradedNormalClosure
 public import T3.GroupTheory.GradedQuotient
 public import T3.GroupTheory.GeneratorRank
+public import T3.GroupTheory.GeneratorRank.Cardinal
+public import T3.GroupTheory.Notation
 public import T3.GroupTheory.Presentation
 public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.CommutatorRelations
@@ -47,11 +49,15 @@ public import T3.LinearAlgebra.ExteriorLowDegree
 public import T3.LinearAlgebra.TruncatedExterior
 public import T3.ModelTheory.Inductive
 public import T3.ModelTheory.LocallyFinite
+public import T3.ModelTheory.LocallyFinite.Universes
 public import T3.ModelTheory.ModelCompanion
 public import T3.ModelTheory.ModelCompanionCriterion
 public import T3.ModelTheory.ModelCompleteness
 public import T3.ModelTheory.ModelEmbeddings
+public import T3.ModelTheory.ElementaryReflection
+public import T3.ModelTheory.ExistentialClosedness
 public import T3.ModelTheory.UniformLocalFiniteness
+public import T3.ModelTheory.UniformLocalFiniteness.Universes
 public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ExponentThree
 public import T3.ModelTheory.ExistentiallyClosedGroups
@@ -72,6 +78,10 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
 ## Section 2: Preliminaries
 
 * `T3.GroupTheory.Basic`: the exponent-three condition, including the trivial group.
+* `T3.GroupTheory.Notation`: the paper's commutator and right-conjugation conventions,
+  ordinary free-product universal property, and least normal closure, Notation 2.1.
+* `T3.GroupTheory.GeneratorRank.Cardinal`: the least generating cardinal of an arbitrary group,
+  attained by a generating set and equal to `Group.rank` for finitely generated groups.
 * `T3.GroupTheory.Identities`: elementary group identities from Fact 2.15,
   `fact:elementary equations`.
 * `T3.GroupTheory.Free.Examples`: the noncommutative second center in Fact 2.15(3).
@@ -117,12 +127,19 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
   elementary preservation by embeddings, proved using finite diagrams and compactness.
 * `T3.ModelTheory.ModelEmbeddings`: the companion's model embeddings extend to arbitrary
   model universes, using finite Skolem hulls and compactness of quantifier-free diagrams.
+* `T3.ModelTheory.ElementaryReflection`: existential reflection into a model-complete target
+  gives an elementary embedding, in independent source and target universes.
+* `T3.ModelTheory.ExistentialClosedness`: existential closedness in arbitrary universes,
+  its exact canonical comparison, reflection from every extension universe, and the equality
+  with the companion's model class for Pi-two theories.
 * `T3.ModelTheory.FiniteDiagram`: finite function and relation tables, tuple diagrams,
   and existentially closed transfer fixing a finite common substructure.
 * `T3.ModelTheory.LocallyFinite`: local finiteness and the representation of a full tuple's
   quantifier-free diagram by a finite conjunction in a finite language.
 * `T3.ModelTheory.UniformLocalFiniteness`: the uniform bound of Fact 2.5 and finitely many
   quantifier-free formulas up to theory equivalence, completing Definition 2.2(6).
+  The `LocallyFinite.Universes` and `UniformLocalFiniteness.Universes` modules transfer finite
+  diagrams and the same uniform bounds to arbitrary models via small elementary hulls.
 * `T3.ModelTheory.BoundedAmalgamationCriterion`: both directions of Fact 2.6 in a finite
   language, with Pi-two and local-finiteness hypotheses. The obstruction bound counts all
   generators, and the finite structures need not themselves be models of the theory.
@@ -130,9 +147,10 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
   axiomatization and local finiteness, including the trivial group.
 
 The index records exactly which parts have been proved and checked against the paper.
-The semantic predicates use the documented canonical universe. Model embeddings now extend
-to arbitrary universes; existential-closedness and local-finiteness bridges remain separate work.
-The group-theoretic bound and its application to `T₃` are proved in the main-result modules.
+The original semantic predicates have exact bridges to arbitrary model universes.
+`IsExistentiallyClosedAt` expresses this general form and reflects existential formulas from
+extensions in every universe. The group-theoretic bounds now apply directly to arbitrary models.
+The corresponding general-universe bridge for the bounded-amalgamation criterion remains open.
 
 ## Section 3: Main results
 

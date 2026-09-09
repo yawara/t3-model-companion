@@ -6,7 +6,7 @@
 
 番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。行・表示番号は補助情報で、安定 ID を主キーとする。
 
-項目全体の状態: `planned` 1, `partial` 1, `stated` 0, `proved` 48。
+項目全体の状態: `planned` 1, `partial` 0, `stated` 0, `proved` 49。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。
 
@@ -15,11 +15,11 @@
 | 論文項目 / 安定 ID | 内容 | 原文 label / 行 | 公開モジュール（予定を含む） | formalization | fidelity |
 | --- | --- | --- | --- | --- | --- |
 | §2 冒頭<br>`preliminaries.exponent_three` | 指数は 3 を割る条件を用い、自明群を含める | label なし<br>136–142 | `T3.GroupTheory.Basic`<br>`T3.ModelTheory.GroupLanguage`<br>`T3.ModelTheory.ExponentThree` | proved | proof_checked |
-| Notation 2.1<br>`preliminaries.notation` | 群の記法、生成元数、自由指数群、coproduct | label なし<br>145–172 | `T3.GroupTheory.Basic`<br>`T3.GroupTheory.Free.Basic`<br>`T3.GroupTheory.Coproduct.Basic`<br>`T3.GroupTheory.CentralSeries`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ModelTheory.ExponentThree` | partial | unchecked |
-| Definition 2.2<br>`model_theory.basic_definitions` | companion、model completeness、e.c.、Π₂、有限図式 | label なし<br>178–193 | `T3.ModelTheory.ModelCompanion`<br>`T3.ModelTheory.Inductive`<br>`T3.ModelTheory.FiniteDiagram`<br>`T3.ModelTheory.ModelCompleteness`<br>`T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.ModelEmbeddings` | proved | proof_checked |
-| Fact 2.3<br>`model_theory.companion_iff_ec` | Π₂ 理論の model companion と e.c. class の一致 | label なし<br>195–201 | `T3.ModelTheory.Inductive`<br>`T3.ModelTheory.PiTwoDirectLimit`<br>`T3.ModelTheory.ExistentiallyClosedExtension`<br>`T3.ModelTheory.ElementaryChain`<br>`T3.ModelTheory.RobinsonTest`<br>`T3.ModelTheory.ModelCompanionCriterion` | proved | proof_checked |
-| Definition 2.4<br>`model_theory.local_finiteness` | 理論の局所有限性 | label なし<br>203–206 | `T3.ModelTheory.LocallyFinite` | proved | proof_checked |
-| Fact 2.5<br>`model_theory.uniform_local_finiteness` | 有限言語における一様な生成部分構造の位数評価 | label なし<br>209–212 | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness` | proved | proof_checked |
+| Notation 2.1<br>`preliminaries.notation` | 群の記法、生成元数、自由指数群、coproduct | label なし<br>145–172 | `T3.GroupTheory.Basic`<br>`T3.GroupTheory.Free.Basic`<br>`T3.GroupTheory.Coproduct.Basic`<br>`T3.GroupTheory.CentralSeries`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ModelTheory.ExponentThree`<br>`T3.GroupTheory.Notation`<br>`T3.GroupTheory.GeneratorRank.Cardinal` | proved | proof_checked |
+| Definition 2.2<br>`model_theory.basic_definitions` | companion、model completeness、e.c.、Π₂、有限図式 | label なし<br>178–193 | `T3.ModelTheory.ModelCompanion`<br>`T3.ModelTheory.Inductive`<br>`T3.ModelTheory.FiniteDiagram`<br>`T3.ModelTheory.ModelCompleteness`<br>`T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.ModelEmbeddings`<br>`T3.ModelTheory.LocallyFinite.Universes`<br>`T3.ModelTheory.UniformLocalFiniteness.Universes`<br>`T3.ModelTheory.ExistentialClosedness`<br>`T3.ModelTheory.ElementaryReflection` | proved | proof_checked |
+| Fact 2.3<br>`model_theory.companion_iff_ec` | Π₂ 理論の model companion と e.c. class の一致 | label なし<br>195–201 | `T3.ModelTheory.Inductive`<br>`T3.ModelTheory.PiTwoDirectLimit`<br>`T3.ModelTheory.ExistentiallyClosedExtension`<br>`T3.ModelTheory.ElementaryChain`<br>`T3.ModelTheory.RobinsonTest`<br>`T3.ModelTheory.ModelCompanionCriterion`<br>`T3.ModelTheory.ExistentialClosedness` | proved | proof_checked |
+| Definition 2.4<br>`model_theory.local_finiteness` | 理論の局所有限性 | label なし<br>203–206 | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.LocallyFinite.Universes` | proved | proof_checked |
+| Fact 2.5<br>`model_theory.uniform_local_finiteness` | 有限言語における一様な生成部分構造の位数評価 | label なし<br>209–212 | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.UniformLocalFiniteness.Universes` | proved | proof_checked |
 | Fact 2.6<br>`model_theory.bounded_amalgamation_criterion` | model companion の存在と有界非 amalgamation 障害の同値 | `fact:locally finiteness and model companion`<br>214–228 | `T3.ModelTheory.ExistentialWitness`<br>`T3.ModelTheory.Amalgamation`<br>`T3.ModelTheory.BoundedAmalgamation`<br>`T3.ModelTheory.FiniteObstructions`<br>`T3.ModelTheory.ExtensionAxioms`<br>`T3.ModelTheory.BoundedAmalgamationCriterion` | proved | proof_checked |
 | Definition 2.7<br>`linear_algebra.graded_lie` | graded Lie ring と graded Lie algebra | label なし<br>267–279 | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
 | Remark 2.8<br>`linear_algebra.degree_one_generation` | 反対称性と次数 1 からの生成の特徴づけ | label なし<br>281–287 | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
@@ -73,7 +73,7 @@
 
 実在宣言: [T3.HasExponentThree](../T3/GroupTheory/Basic.lean#L32), [T3.hasExponentThree_iff_exponent_dvd](../T3/GroupTheory/Basic.lean#L39), [T3.hasExponentThree_of_subsingleton](../T3/GroupTheory/Basic.lean#L48), [FirstOrder.Language.group](../T3/ModelTheory/GroupLanguage.lean#L51), [FirstOrder.Language.Theory.group](../T3/ModelTheory/GroupLanguage.lean#L190), [FirstOrder.Group.groupOfModelGroup](../T3/ModelTheory/GroupLanguage.lean#L242), [FirstOrder.Group.embeddingOfInjectiveMonoidHom](../T3/ModelTheory/GroupLanguage.lean#L304), [FirstOrder.Group.coe_substructure_closure_eq](../T3/ModelTheory/GroupLanguage.lean#L392), [T3.exponentGroupTheory](../T3/ModelTheory/ExponentThree.lean#L104), [T3.exponentThreeTheory](../T3/ModelTheory/ExponentThree.lean#L131), [T3.exponentThreeTheory_model_iff](../T3/ModelTheory/ExponentThree.lean#L139), [T3.exponentThreeTheory_isPiTwo](../T3/ModelTheory/ExponentThree.lean#L148), [T3.finite_substructure_closure_of_model_exponentThreeTheory](../T3/ModelTheory/ExponentThree.lean#L187), [T3.exponentThreeTheory_isLocallyFinite](../T3/ModelTheory/ExponentThree.lean#L204)。
 
-実際の群言語とTₙ、n=3でHasExponentThreeとの同値、Π₂、局所有限性を証明。元の演算を保ち自明群・任意宇宙の群・空の生成集合を含む。companion/e.c.の最後の判定のみ既存canonical semantic universeを継承する。
+実際の群言語とTₙ、n=3でHasExponentThreeとの同値、Π₂、局所有限性を証明。元の演算を保ち自明群・任意宇宙の群・空の生成集合を含む。companion/e.c.定義は任意宇宙への埋込み・ECAtとのbridgeを備える。
 
 ### `preliminaries.notation`
 
@@ -81,17 +81,17 @@
 
 実在宣言: なし。
 
-自由群・coproduct の cube quotient 表示と普遍性、および反復交換子を実装。残る記法の個別対応は未登録。
+全記法を登録。native交換子・右共役、自由積の普遍性、最小normal closure、自由指数群とcoproduct、反復交換子に対応。d(G)は任意群で実際の生成集合が達成する最小基数とし、FG下でmathlib Group.rankと一致する。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| commutator | 交換子 aba⁻¹b⁻¹ / 147 | planned | unchecked | なし |
+| commutator | 交換子 aba⁻¹b⁻¹ / 147 | proved | proof_checked | [T3.commutator_eq](../T3/GroupTheory/Notation.lean#L33) |
 | iterated_commutator | 左結合の反復交換子 / 148 | proved | proof_checked | [T3.iteratedCommutator](../T3/GroupTheory/CentralSeries.lean#L161) |
-| conjugation | 共役 aᵇ=b⁻¹ab / 149 | planned | unchecked | なし |
+| conjugation | 共役 aᵇ=b⁻¹ab / 149 | proved | proof_checked | [T3.right_conjugation_eq](../T3/GroupTheory/Notation.lean#L41) |
 | variety | 指数 3 の variety V₃ / 150 | proved | proof_checked | [T3.exponentThreeTheory_model_iff](../T3/ModelTheory/ExponentThree.lean#L139) |
-| free_product | 通常の自由積 / 151 | planned | unchecked | なし |
-| normal_closure | 集合の normal closure / 152 | planned | unchecked | なし |
-| generator_rank | 最小生成元数 d(G) / 155 | partial | unchecked | [Group.fg_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L43), [T3.AssociatedGraded.finrank_layerOne_le_rank](../T3/GroupTheory/GeneratorRank.lean#L195), [T3.AssociatedGraded.finrank_layerTwo_le_rank](../T3/GroupTheory/GeneratorRank.lean#L207) |
+| free_product | 通常の自由積 / 151 | proved | proof_checked | [Monoid.Coprod.existsUnique_lift](../T3/GroupTheory/Notation.lean#L54) |
+| normal_closure | 集合の normal closure / 152 | proved | proof_checked | [Subgroup.isLeast_normalClosure](../T3/GroupTheory/Notation.lean#L70) |
+| generator_rank | 最小生成元数 d(G) / 155 | proved | proof_checked | [Group.fg_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L43), [T3.AssociatedGraded.finrank_layerOne_le_rank](../T3/GroupTheory/GeneratorRank.lean#L195), [T3.AssociatedGraded.finrank_layerTwo_le_rank](../T3/GroupTheory/GeneratorRank.lean#L207), [Group.cardinalRank](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L35), [Group.cardinalRank_spec](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L47), [Group.cardinalRank_le](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L57), [Group.cardinalRank_le_nat_iff](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L67), [Group.cardinalRank_eq_rank](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L98), [Group.cardinalRank_lt_aleph0_iff](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L122) |
 | coproduct | variety 内の coproduct と quotient 表示 / 156 | proved | proof_checked | [T3.Coproduct](../T3/GroupTheory/Coproduct/Basic.lean#L33), [T3.Coproduct.lift](../T3/GroupTheory/Coproduct/Basic.lean#L69), [T3.Coproduct.hom_ext](../T3/GroupTheory/Coproduct/Basic.lean#L86) |
 | free_group | 自由指数群と Burnside 群 B(r,3) / 162 | proved | proof_checked | [T3.Free](../T3/GroupTheory/Free/Basic.lean#L122), [T3.Free.of](../T3/GroupTheory/Free/Basic.lean#L132), [T3.Free.lift](../T3/GroupTheory/Free/Basic.lean#L157), [T3.Free.hom_ext](../T3/GroupTheory/Free/Basic.lean#L170) |
 
@@ -101,40 +101,40 @@
 
 実在宣言: なし。
 
-項目1–6を実装。model completenessの構文/意味論同値と有限図式を証明。companionのModelsEmbedIntoは有限Skolem hullとQF diagramのcompactnessにより任意宇宙のモデルからの埋込みへ拡張済み。e.c.と局所有限性およびそれらを使う結果の一般宇宙bridgeは別残件。
+全項目に任意宇宙へのbridgeを実装。companionの埋込みはQF diagramのcompactness、ECAtの反映は入力モデル全体の像を含むSkolem hull、有限図式・一様有限性は有限tupleの小さい初等hullから得る。canonical ECとECAtは同じ宇宙で定義的に一致し、ECAtは任意拡大宇宙から反映する。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
 | companion | 双方のモデルへの埋込み / 180 | proved | proof_checked | [FirstOrder.Language.Theory.ModelsEmbedInto](../T3/ModelTheory/ModelCompanion.lean#L49), [FirstOrder.Language.Theory.IsCompanion](../T3/ModelTheory/ModelCompanion.lean#L70), [FirstOrder.Language.Theory.ModelsEmbedInto.exists_embedding](../T3/ModelTheory/ModelEmbeddings.lean#L100) |
-| model_complete | 全式を existential formula に書き換える model completeness / 181 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelComplete](../T3/ModelTheory/ModelCompanion.lean#L104), [FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff](../T3/ModelTheory/ModelCompanion.lean#L136), [FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails](../T3/ModelTheory/ModelCompleteness.lean#L294), [FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete](../T3/ModelTheory/ModelCompleteness.lean#L395), [FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary](../T3/ModelTheory/ModelCompleteness.lean#L457) |
+| model_complete | 全式を existential formula に書き換える model completeness / 181 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelComplete](../T3/ModelTheory/ModelCompanion.lean#L104), [FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff](../T3/ModelTheory/ModelCompanion.lean#L136), [FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails](../T3/ModelTheory/ModelCompleteness.lean#L294), [FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete](../T3/ModelTheory/ModelCompleteness.lean#L395), [FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary](../T3/ModelTheory/ModelCompleteness.lean#L457), [FirstOrder.Language.Theory.IsModelComplete.exists_elementaryEmbedding_of_reflects_existential](../T3/ModelTheory/ElementaryReflection.lean#L64) |
 | model_companion | model-complete companion / 182 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelCompanionOf](../T3/ModelTheory/ModelCompanion.lean#L162), [FirstOrder.Language.Theory.HasModelCompanion](../T3/ModelTheory/ModelCompanion.lean#L188) |
-| existentially_closed | QF 行列をもつ existential formula に関する閉性 / 183 | proved | proof_checked | [FirstOrder.Language.Theory.IsExistentiallyClosed](../T3/ModelTheory/ModelCompanion.lean#L197) |
+| existentially_closed | QF 行列をもつ existential formula に関する閉性 / 183 | proved | proof_checked | [FirstOrder.Language.Theory.IsExistentiallyClosed](../T3/ModelTheory/ModelCompanion.lean#L197), [FirstOrder.Language.Theory.IsExistentiallyClosedAt](../T3/ModelTheory/ExistentialClosedness.lean#L44), [FirstOrder.Language.Theory.isExistentiallyClosedAt_iff](../T3/ModelTheory/ExistentialClosedness.lean#L55), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.reflects_of_model](../T3/ModelTheory/ExistentialClosedness.lean#L64), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.realize_of_finite](../T3/ModelTheory/ExistentialClosedness.lean#L149), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.exists_embedding_over_tuple](../T3/ModelTheory/ExistentialClosedness.lean#L176) |
 | pi_two | ∀∃ 文による同値な公理化 / 184 | proved | proof_checked | [FirstOrder.Language.BoundedFormula.IsUniversalExistential](../T3/ModelTheory/Inductive.lean#L51), [FirstOrder.Language.Theory.IsPiTwo](../T3/ModelTheory/Inductive.lean#L109) |
-| finite_diagram | 有限 tuple の QF 図式と有限言語・局所有限性の下での有限性 / 185 | proved | proof_checked | [FirstOrder.Language.tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L229), [FirstOrder.Language.realize_finiteGeneratedDiagram_iff_tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L321), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram](../T3/ModelTheory/LocallyFinite.lean#L68), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qf_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L208), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L241) |
+| finite_diagram | 有限 tuple の QF 図式と有限言語・局所有限性の下での有限性 / 185 | proved | proof_checked | [FirstOrder.Language.tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L229), [FirstOrder.Language.realize_finiteGeneratedDiagram_iff_tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L321), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram](../T3/ModelTheory/LocallyFinite.lean#L68), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qf_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L208), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L241), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_of_model](../T3/ModelTheory/LocallyFinite/Universes.lean#L66), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives_of_model](../T3/ModelTheory/UniformLocalFiniteness/Universes.lean#L113) |
 
 ### `model_theory.companion_iff_ec`
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [FirstOrder.Language.Theory.IsModelCompanionOf.models_iff_isExistentiallyClosed](../T3/ModelTheory/Inductive.lean#L202), [FirstOrder.Language.DirectLimit.models_of_isPiTwo](../T3/ModelTheory/PiTwoDirectLimit.lean#L76), [FirstOrder.Language.Theory.exists_isExistentiallyClosed_embedding](../T3/ModelTheory/ExistentiallyClosedExtension.lean#L326), [FirstOrder.Language.DirectLimit.realize_boundedFormula_of](../T3/ModelTheory/ElementaryChain.lean#L107), [FirstOrder.Language.Theory.isModelComplete_of_isExistentiallyClosedInModels](../T3/ModelTheory/RobinsonTest.lean#L433), [FirstOrder.Language.Theory.isModelCompanionOf_of_isExistentiallyClosed_iff](../T3/ModelTheory/ModelCompanionCriterion.lean#L43), [FirstOrder.Language.Theory.isModelCompanionOf_iff_models_iff_isExistentiallyClosed](../T3/ModelTheory/ModelCompanionCriterion.lean#L65)。
+実在宣言: [FirstOrder.Language.Theory.IsModelCompanionOf.models_iff_isExistentiallyClosed](../T3/ModelTheory/Inductive.lean#L202), [FirstOrder.Language.DirectLimit.models_of_isPiTwo](../T3/ModelTheory/PiTwoDirectLimit.lean#L76), [FirstOrder.Language.Theory.exists_isExistentiallyClosed_embedding](../T3/ModelTheory/ExistentiallyClosedExtension.lean#L326), [FirstOrder.Language.DirectLimit.realize_boundedFormula_of](../T3/ModelTheory/ElementaryChain.lean#L107), [FirstOrder.Language.Theory.isModelComplete_of_isExistentiallyClosedInModels](../T3/ModelTheory/RobinsonTest.lean#L433), [FirstOrder.Language.Theory.isModelCompanionOf_of_isExistentiallyClosed_iff](../T3/ModelTheory/ModelCompanionCriterion.lean#L43), [FirstOrder.Language.Theory.isModelCompanionOf_iff_models_iff_isExistentiallyClosed](../T3/ModelTheory/ModelCompanionCriterion.lean#L65), [FirstOrder.Language.Theory.IsModelCompanionOf.models_of_isPiTwo_in_universe](../T3/ModelTheory/ExistentialClosedness.lean#L92), [FirstOrder.Language.Theory.IsModelCompanionOf.models_iff_isExistentiallyClosedAt](../T3/ModelTheory/ExistentialClosedness.lean#L128)。
 
-一般Π₂理論について全同値を証明。旧e.c.拡大・Robinson test・elementary chainを再利用し、普遍理論に限定されていた極限のモデル性を一般Π₂に拡張。finite-language/local-finiteness/amalgamationの追加仮定なし。逆向きも実際の存在式生成による構文的model completenessまで到達する。既存canonical Type (max u v)規約下で完成。任意の上位宇宙でのcompanion/e.c.への移行は別残件。
+一般Π₂理論について両方向と任意宇宙のmodel class一致を証明。旧e.c.拡大・Robinson test・elementary chainの再利用を保持。一般宇宙のモデルをcompanionへ埋め、構文的model completenessとTarski-VaughtからECAtとの同値を得る。finite language/local finiteness/amalgamationの追加仮定なし。
 
 ### `model_theory.local_finiteness`
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [FirstOrder.Language.Theory.IsLocallyFinite](../T3/ModelTheory/LocallyFinite.lean#L44), [FirstOrder.Language.Theory.IsLocallyFinite.finite_closure_range](../T3/ModelTheory/LocallyFinite.lean#L55)。
+実在宣言: [FirstOrder.Language.Theory.IsLocallyFinite](../T3/ModelTheory/LocallyFinite.lean#L44), [FirstOrder.Language.Theory.IsLocallyFinite.finite_closure_range](../T3/ModelTheory/LocallyFinite.lean#L55), [FirstOrder.Language.Theory.IsLocallyFinite.finite_closure](../T3/ModelTheory/LocallyFinite/Universes.lean#L37)。
 
-任意の有限subsetが生成する実際のSubstructureの有限性として定義。有限言語や生成部分構造がTのmodelであることは仮定しない。companion/e.c.定義と同じcanonical semantic universeを用い、他宇宙へのbridgeは未実装。
+任意有限subsetが生成する実際のSubstructureの有限性。有限言語や生成部分構造のTmodel性を要求しない。小さい初等Skolem hullによるfinite_closureが任意モデル宇宙を扱い、Small仮定を残さない。
 
 ### `model_theory.uniform_local_finiteness`
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qfType_cover](../T3/ModelTheory/UniformLocalFiniteness.lean#L89), [FirstOrder.Language.Theory.exists_card_closure_le_of_isLocallyFinite](../T3/ModelTheory/UniformLocalFiniteness.lean#L182)。
+実在宣言: [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qfType_cover](../T3/ModelTheory/UniformLocalFiniteness.lean#L89), [FirstOrder.Language.Theory.exists_card_closure_le_of_isLocallyFinite](../T3/ModelTheory/UniformLocalFiniteness.lean#L182), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qfType_cover_of_model](../T3/ModelTheory/UniformLocalFiniteness/Universes.lean#L38), [FirstOrder.Language.Theory.exists_card_closure_le_of_isLocallyFinite_of_model](../T3/ModelTheory/UniformLocalFiniteness/Universes.lean#L87)。
 
-一般の局所有限T・有限言語について、compactnessで有限個の生成tupleのQF型が全モデルのtupleを覆うことを証明し、その生成部分構造の位数の最大値から共通上界を得る。任意n・card≤nの全有限subset・空集合を含む。有限部分構造自身にTmodel条件は要求しない。モデル宇宙はIsLocallyFiniteのcanonical規約どおり。
+compactnessで得る有限QF型coverを任意宇宙のtupleへ移し、同じ有限coverの最大位数から共通上界を得る。全n・card≤nの有限subset・空集合を含む。有限部分構造自身のTmodel条件は要求しない。
 
 ### `model_theory.bounded_amalgamation_criterion`
 
@@ -455,7 +455,7 @@ Prop 2.29の同じσとgraded LieEquivが任意の線形順序付き生成集合
 
 実在宣言: [T3.exists_bounded_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L169), [T3.strictEnvelopeBound](../T3/ModelTheory/StrictEnvelope.lean#L43)。
 
-Proposition 4.12 から全モデル・部分群に一様な関数の存在を明示的に証明。f₀(n)=15n²、n=0も含む。e.c. の量化は既存のcanonical semantic universeであり、一般モデル宇宙へのbridgeは別途未完成。
+Proposition4.12から任意宇宙の全e.c.モデル・部分群に一様な関数f₀(n)=15n²を明示。n=0も含み、ECAtから任意宇宙の拡大の有限図式を元のMへ転送する。
 
 ### `main.bounded_witness`
 
@@ -463,7 +463,7 @@ Proposition 4.12 から全モデル・部分群に一様な関数の存在を明
 
 実在宣言: [T3.Amalgamation.relator](../T3/GroupTheory/Amalgamation.lean#L42), [T3.Amalgamation.relations](../T3/GroupTheory/Amalgamation.lean#L49), [T3.Amalgamation.Pushout](../T3/GroupTheory/Amalgamation.lean#L63), [T3.Amalgamation.AmalgamableOver](../T3/GroupTheory/Amalgamation.lean#L190), [T3.Amalgamation.amalgamableOver_iff](../T3/GroupTheory/Amalgamation.lean#L201), [T3.Amalgamation.amalgamableOver_of_amalgam](../T3/GroupTheory/Amalgamation.lean#L216), [T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top](../T3/GroupTheory/Amalgamation.lean#L266), [T3.Amalgamation.exists_witness_of_generating_family](../T3/GroupTheory/Amalgamation.lean#L289), [T3.witnessBound](../T3/Main/BoundedWitness.lean#L35), [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112), [T3.exists_uniform_nonamalgamation_bound](../T3/Main/BoundedWitness.lean#L173), [T3.rank_eq_finrank_layerOne](../T3/GroupTheory/GeneratorRank/Cardinality.lean#L51), [T3.rank_le_log_three_natCard](../T3/GroupTheory/GeneratorRank/Cardinality.lean#L113), [T3.rank_le_freeOrderExponent_of_injective](../T3/GroupTheory/GeneratorRank/Cardinality.lean#L144), [T3.Coproduct.exists_bounded_factor_support](../T3/GroupTheory/Coproduct/Support.lean#L38), [T3.Support.normalClosureIn_mono_ambient](../T3/GroupTheory/Support/Transport.lean#L33), [T3.Support.mem_normalClosure_of_mem_normalClosureIn](../T3/GroupTheory/Support/Transport.lean#L50)。
 
-f(m)=15((3m+4)t(m)+1)²を明示。rank A≤log₃|A|≤log₃|B|≤t(m)、3(m+1)nのsupport、Aと左の証人の付加、strict envelope、Φの単射性と関係族の逆像等式による内部normal closureの移送を原稿順に証明。左右両証人・零rank・自明群を含む。Mのe.c.はcanonical semantic Type、Bは任意宇宙。一般モデル宇宙へのbridgeは別途残る。
+f(m)=15((3m+4)t(m)+1)²を明示。rank/log/cardinalの連鎖、3(m+1)nのsupport、Aと左証人の付加、strict envelope、Φの単射性と関係族の逆像等式による内部normal closure輸送を原稿順に証明。左右両証人・零rank・自明群を含む。MとBは独立な任意宇宙、e.c.は一般のECAt。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
@@ -476,7 +476,7 @@ f(m)=15((3m+4)t(m)+1)²を明示。rank A≤log₃|A|≤log₃|B|≤t(m)、3(m+1
 
 実在宣言: [T3.exponentThreeTheory_hasModelCompanion_iff](../T3/ModelTheory/ExponentThree.lean#L213), [T3.exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions](../T3/ModelTheory/ExponentThree.lean#L224), [T3.exponentThreeTheory_boundedAmalgamationObstructions](../T3/Main/ModelCompanion.lean#L48), [T3.has_model_companion](../T3/Main/ModelCompanion.lean#L122), [T3.GroupAmalgamation.amalgamableOver_embeddings_swap_iff](../T3/ModelTheory/GroupAmalgamation.lean#L117)。
 
-Theorem3.3から一般のbounded obstructionを供給し、有限言語・Π₂・局所有限性によるFact2.6を適用。追加のbound仮定を残さずHasModelCompanionを証明。有限構造のgroup/modelはT₃の普遍性から回復し、元のbaseと全生成数を保つ。結論は既存canonical semantic universe、一般モデル宇宙へのbridgeは未完成。
+Theorem3.3から一般のbounded obstructionを供給しFact2.6を適用、追加仮定なしにHasModelCompanionを証明。有限構造のgroup/modelはT₃の普遍性から回復し元のbaseと全生成数を保つ。ModelEmbeddingsとECAtのbridgeにより結論のcompanion/model classは任意宇宙にも適用できる。一般Fact2.6自体の任意宇宙amalgam判定は別残件。
 
 ### `structure.basis_lift`
 
@@ -585,7 +585,7 @@ Theorem3.3から一般のbounded obstructionを供給し、有限言語・Π₂�
 
 実在宣言: [T3.ExistentiallyClosedGroups.exists_group_embedding](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L48), [T3.ExistentiallyClosedGroups.exists_copy_of_tuples](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L67), [T3.ExistentiallyClosedGroups.nontrivial](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L87)。
 
-既存canonical semantic universe内のe.c.T₃モデルについて3結論完成。有限生成部分群を局所有限性で有限化し、有限図式embeddingにより全パラメータを固定して等式・不等式を転送。具体的同時root商のn=1特殊化から単一交換子/三重交換子、非自明性をe.c.から導いてF₂の分離から中心列一致を得る。Nontrivial/有限性を仮定しない。
+任意宇宙のe.c.T₃モデルについて3結論完成。有限生成部分群を有限化し、任意宇宙の拡大からの有限図式embeddingにより全パラメータを固定して転送。同時root商のn=1特殊化から単一交換子/三重交換子、e.c.から非自明性、F₂の分離から中心列一致を得る。Nontrivial/有限性の追加仮定なし。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
@@ -599,7 +599,7 @@ Theorem3.3から一般のbounded obstructionを供給し、有限言語・Π₂�
 
 実在宣言: [T3.strictEnvelopeBound](../T3/ModelTheory/StrictEnvelope.lean#L43), [T3.three_stage_rank_le_strictEnvelopeBound](../T3/ModelTheory/StrictEnvelope.lean#L50), [T3.StrictEnvelope.exists_centralSeries_extension](../T3/ModelTheory/StrictEnvelope.lean#L68), [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129)。
 
-二段階の同時strictification、D₂∐F₂、内部中心列一致、C全体を固定する有限図式転送を原稿順に証明。有限生成性と有限性の同値を使用し、C=1/n=0を別分岐で処理。代数的構成は任意宇宙、e.c.の結論はcanonical semantic universe。一般モデル宇宙へのbridgeは未完成。
+二段階の同時strictification、D₂∐F₂、内部中心列一致、C全体を固定する有限図式転送を原稿順に証明。FGと有限性の同値を使用しC=1/n=0を別処理。代数的構成とe.c.の結論はいずれも任意宇宙、追加Small仮定なし。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |

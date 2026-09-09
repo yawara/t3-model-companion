@@ -40,8 +40,8 @@ private theorem support_card_le_argument {m n : ℕ} (hn : n ≤ freeOrderExpone
     _ = (3 * m + 4) * n + 1 := by ring
     _ ≤ _ := Nat.add_le_add_right (Nat.mul_le_mul_left _ hn) _
 
-private theorem exists_strict_support {M : Type} [Group M] [CompatibleGroup M]
-    (hM : exponentThreeTheory.IsExistentiallyClosed M) (A : Subgroup M) {B : Type*} [Group B]
+private theorem exists_strict_support {M : Type*} [Group M] [CompatibleGroup M]
+    (hM : exponentThreeTheory.IsExistentiallyClosedAt M) (A : Subgroup M) {B : Type*} [Group B]
     [Group.FG B] (j : A →* B) {m : ℕ} (hBm : Group.rank B ≤ m)
     (s : Finset A) (hs : Subgroup.closure (↑s : Set A) = ⊤)
     (hn : s.card ≤ freeOrderExponent m) {w : Coproduct M B}
@@ -109,8 +109,8 @@ by at most `witnessBound m` elements. The bound is independent of the common sub
 Paper-ID: main.bounded_witness
 TeX: T3_modelcompanion_v4.tex, `thm:main`, Theorem 3.3, including both factor-witness cases.
 -/
-theorem exists_bounded_nonamalgamation_witness {M : Type} [Group M] [CompatibleGroup M]
-    (hM : exponentThreeTheory.IsExistentiallyClosed M) (A : Subgroup M) [Group.FG A]
+theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [CompatibleGroup M]
+    (hM : exponentThreeTheory.IsExistentiallyClosedAt M) (A : Subgroup M) [Group.FG A]
     {B : Type*} [Group B] [Group.FG B] (hB : HasExponentThree B)
     (j : A →* B) (hj : Function.Injective j) {m : ℕ} (hBm : Group.rank B ≤ m)
     (hna : ¬ Amalgamation.AmalgamableOver A.subtype j) :
@@ -171,8 +171,8 @@ Paper-ID: main.bounded_witness
 TeX: T3_modelcompanion_v4.tex, `thm:main`, lines 702–712.
 -/
 theorem exists_uniform_nonamalgamation_bound :
-    ∃ f : ℕ → ℕ, ∀ (m : ℕ) (M : Type) [Group M] [CompatibleGroup M],
-      exponentThreeTheory.IsExistentiallyClosed M →
+    ∃ f : ℕ → ℕ, ∀ (m : ℕ) (M : Type*) [Group M] [CompatibleGroup M],
+      exponentThreeTheory.IsExistentiallyClosedAt M →
         ∀ (A : Subgroup M) [Group.FG A] (B : Type*) [Group B] [Group.FG B],
           HasExponentThree B → ∀ (j : A →* B), Function.Injective j → Group.rank B ≤ m →
             ¬ Amalgamation.AmalgamableOver A.subtype j →

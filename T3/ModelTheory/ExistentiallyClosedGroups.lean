@@ -6,7 +6,7 @@ Authors: Yawara Ishida
 module
 
 public import T3.ModelTheory.ExponentThree
-public import T3.ModelTheory.FiniteDiagram
+public import T3.ModelTheory.ExistentialClosedness
 public import T3.GroupTheory.Coproduct.CentralSeries
 public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.Triple
@@ -17,7 +17,7 @@ public import T3.GroupTheory.Roots.Triple
 Finite diagrams transfer the root witnesses and the noncommuting elements from the paper's
 extensions back to the existentially closed group, fixing every designated parameter.
 The existentially closed group is proved nontrivial before using the free-two stabilization.
-The model and its extensions lie in the canonical semantic universe of `exponentThreeTheory`.
+The model and its extensions may lie in arbitrary, independent universes.
 The simultaneous root constructions supply single commutator and triple-commutator witnesses,
 and the graded free-two separation supplies the reverse central-series inclusions.
 
@@ -34,8 +34,8 @@ namespace T3.ExistentiallyClosedGroups
 open FirstOrder FirstOrder.Language FirstOrder.Group
 open AssociatedGraded
 
-variable {M : Type} [Group M] [CompatibleGroup M]
-  (hM : exponentThreeTheory.IsExistentiallyClosed M)
+variable {M : Type*} [Group M] [CompatibleGroup M]
+  (hM : exponentThreeTheory.IsExistentiallyClosedAt M)
 
 include hM
 
@@ -45,7 +45,7 @@ fixing each designated parameter. The finite group is not assumed to model the t
 Paper-ID: structure.ec_central_series
 TeX: T3_modelcompanion_v4.tex, `proposition:structure of e.c. model`, finite-diagram transfer.
 -/
-theorem exists_group_embedding {N : Type} {A : Type*} [Group N] [Group A] [Finite A]
+theorem exists_group_embedding {N : Type*} {A : Type*} [Group N] [Group A] [Finite A]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
     (r : A →* N) (hr : Function.Injective r) {α : Type*} [Finite α]
     (a : α → A) (b : α → M) (hab : r ∘ a = f ∘ b) :
@@ -53,7 +53,7 @@ theorem exists_group_embedding {N : Type} {A : Type*} [Group N] [Group A] [Finit
   letI : CompatibleGroup N := compatibleGroupOfGroup N
   letI : CompatibleGroup A := compatibleGroupOfGroup A
   letI : N ⊨ exponentThreeTheory := exponentThreeTheory_model_iff.mpr hN
-  obtain ⟨g, hg⟩ := hM.exists_embedding_over_tuple (Theory.ModelType.of exponentThreeTheory N)
+  obtain ⟨g, hg⟩ := hM.exists_embedding_over_tuple N
     (show M ↪[Language.group] N from embeddingOfInjectiveMonoidHom f hf) a b
     (show A ↪[Language.group] N from embeddingOfInjectiveMonoidHom r hr) hab
   exact ⟨embeddingToMonoidHom g, g.injective, hg⟩
@@ -64,7 +64,7 @@ which embeds back while fixing all the parameters.
 Paper-ID: structure.ec_central_series
 TeX: T3_modelcompanion_v4.tex, `proposition:structure of e.c. model`, finite witness transfer.
 -/
-theorem exists_copy_of_tuples {N : Type} [Group N] (hN : HasExponentThree N)
+theorem exists_copy_of_tuples {N : Type*} [Group N] (hN : HasExponentThree N)
     (f : M →* N) (hf : Function.Injective f) {α β : Type*} [Finite α] [Finite β]
     (a : α → M) (b : β → N) :
     ∃ (C : Subgroup N) (ha : ∀ i, f (a i) ∈ C) (_hb : ∀ j, b j ∈ C)
@@ -107,7 +107,7 @@ theorem nontrivial : Nontrivial M := by
 Paper-ID: structure.ec_central_series
 TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1198–1201.
 -/
-theorem exists_commutator_eq_of_extension {N : Type} [Group N]
+theorem exists_commutator_eq_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
     (a : M) (b c : N) (h : f a = ⁅b, c⁆) : ∃ x y : M, a = ⁅x, y⁆ := by
   obtain ⟨C, ha, hb, g, _, hg⟩ := exists_copy_of_tuples hM hN f hf
@@ -123,7 +123,7 @@ theorem exists_commutator_eq_of_extension {N : Type} [Group N]
 Paper-ID: structure.ec_central_series
 TeX: T3_modelcompanion_v4.tex, Proposition 4.11, line 1202.
 -/
-theorem exists_triple_commutator_eq_of_extension {N : Type} [Group N]
+theorem exists_triple_commutator_eq_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
     (a : M) (b c d : N) (h : f a = ⁅⁅b, c⁆, d⁆) :
     ∃ x y z : M, a = ⁅⁅x, y⁆, z⁆ := by
@@ -141,7 +141,7 @@ theorem exists_triple_commutator_eq_of_extension {N : Type} [Group N]
 Paper-ID: structure.ec_central_series
 TeX: T3_modelcompanion_v4.tex, Proposition 4.11, line 1209.
 -/
-theorem exists_commutator_ne_one_of_extension {N : Type} [Group N]
+theorem exists_commutator_ne_one_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
     (a : M) (b : N) (h : ⁅f a, b⁆ ≠ 1) : ∃ x : M, ⁅a, x⁆ ≠ 1 := by
   obtain ⟨C, ha, hb, g, hg, hga⟩ := exists_copy_of_tuples hM hN f hf
@@ -159,7 +159,7 @@ theorem exists_commutator_ne_one_of_extension {N : Type} [Group N]
 Paper-ID: structure.ec_central_series
 TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1204–1208.
 -/
-theorem exists_triple_commutator_ne_one_of_extension {N : Type} [Group N]
+theorem exists_triple_commutator_ne_one_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
     (a : M) (b c : N) (h : ⁅⁅f a, b⁆, c⁆ ≠ 1) :
     ∃ x y : M, ⁅⁅a, x⁆, y⁆ ≠ 1 := by

@@ -24,9 +24,9 @@ planned_declarations = []
 declarations = [{ name = "T3.HasExponentThree", module = "T3.GroupTheory.Basic", kind = "def", line = 32 }, { name = "T3.hasExponentThree_iff_exponent_dvd", module = "T3.GroupTheory.Basic", kind = "theorem", line = 39 }, { name = "T3.hasExponentThree_of_subsingleton", module = "T3.GroupTheory.Basic", kind = "theorem", line = 48 }, { name = "FirstOrder.Language.group", module = "T3.ModelTheory.GroupLanguage", kind = "def", line = 51 }, { name = "FirstOrder.Language.Theory.group", module = "T3.ModelTheory.GroupLanguage", kind = "def", line = 190 }, { name = "FirstOrder.Group.groupOfModelGroup", module = "T3.ModelTheory.GroupLanguage", kind = "abbrev", line = 242 }, { name = "FirstOrder.Group.embeddingOfInjectiveMonoidHom", module = "T3.ModelTheory.GroupLanguage", kind = "def", line = 304 }, { name = "FirstOrder.Group.coe_substructure_closure_eq", module = "T3.ModelTheory.GroupLanguage", kind = "theorem", line = 392 }, { name = "T3.exponentGroupTheory", module = "T3.ModelTheory.ExponentThree", kind = "def", line = 104 }, { name = "T3.exponentThreeTheory", module = "T3.ModelTheory.ExponentThree", kind = "abbrev", line = 131 }, { name = "T3.exponentThreeTheory_model_iff", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 139 }, { name = "T3.exponentThreeTheory_isPiTwo", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 148 }, { name = "T3.finite_substructure_closure_of_model_exponentThreeTheory", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 187 }, { name = "T3.exponentThreeTheory_isLocallyFinite", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 204 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "実際の群言語とTₙ、n=3でHasExponentThreeとの同値、Π₂、局所有限性を証明。元の演算を保ち自明群・任意宇宙の群・空の生成集合を含む。companion/e.c.の最後の判定のみ既存canonical semantic universeを継承する。"
+notes = "実際の群言語とTₙ、n=3でHasExponentThreeとの同値、Π₂、局所有限性を証明。元の演算を保ち自明群・任意宇宙の群・空の生成集合を含む。companion/e.c.定義は任意宇宙への埋込み・ECAtとのbridgeを備える。"
 parts = []
-verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "preliminaries.notation"
@@ -36,22 +36,24 @@ number = "2.1"
 line_start = 145
 line_end = 172
 tex_label = ""
-modules = ["T3.GroupTheory.Basic", "T3.GroupTheory.Free.Basic", "T3.GroupTheory.Coproduct.Basic", "T3.GroupTheory.CentralSeries", "T3.GroupTheory.GeneratorRank", "T3.ModelTheory.ExponentThree"]
+modules = ["T3.GroupTheory.Basic", "T3.GroupTheory.Free.Basic", "T3.GroupTheory.Coproduct.Basic", "T3.GroupTheory.CentralSeries", "T3.GroupTheory.GeneratorRank", "T3.ModelTheory.ExponentThree", "T3.GroupTheory.Notation", "T3.GroupTheory.GeneratorRank.Cardinal"]
 planned_declarations = []
 declarations = []
-formalization = "partial"
-fidelity = "unchecked"
-notes = "自由群・coproduct の cube quotient 表示と普遍性、および反復交換子を実装。残る記法の個別対応は未登録。"
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "全記法を登録。native交換子・右共役、自由積の普遍性、最小normal closure、自由指数群とcoproduct、反復交換子に対応。d(G)は任意群で実際の生成集合が達成する最小基数とし、FG下でmathlib Group.rankと一致する。"
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "commutator"
 summary = "交換子 aba⁻¹b⁻¹"
 source_kind = "enumerated"
 source_line = 147
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.commutator_eq", module = "T3.GroupTheory.Notation", kind = "theorem", line = 33 }]
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "iterated_commutator"
@@ -69,10 +71,11 @@ id = "conjugation"
 summary = "共役 aᵇ=b⁻¹ab"
 source_kind = "enumerated"
 source_line = 149
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.right_conjugation_eq", module = "T3.GroupTheory.Notation", kind = "theorem", line = 41 }]
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "variety"
@@ -90,32 +93,34 @@ id = "free_product"
 summary = "通常の自由積"
 source_kind = "enumerated"
 source_line = 151
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "Monoid.Coprod.existsUnique_lift", module = "T3.GroupTheory.Notation", kind = "theorem", line = 54 }]
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "normal_closure"
 summary = "集合の normal closure"
 source_kind = "enumerated"
 source_line = 152
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "Subgroup.isLeast_normalClosure", module = "T3.GroupTheory.Notation", kind = "theorem", line = 70 }]
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "generator_rank"
 summary = "最小生成元数 d(G)"
 source_kind = "enumerated"
 source_line = 155
-formalization = "partial"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = [{ name = "Group.fg_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 43 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 195 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 207 }]
-notes = "有限生成群ではmathlib Group.rankを用いる。有限生成族からFGを供給し、第一/第二層の次元をrankで評価。無限生成群の最小生成基数の一般定義は未登録。"
-verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+declarations = [{ name = "Group.fg_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 43 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 195 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 207 }, { name = "Group.cardinalRank", module = "T3.GroupTheory.GeneratorRank.Cardinal", kind = "def", line = 35 }, { name = "Group.cardinalRank_spec", module = "T3.GroupTheory.GeneratorRank.Cardinal", kind = "theorem", line = 47 }, { name = "Group.cardinalRank_le", module = "T3.GroupTheory.GeneratorRank.Cardinal", kind = "theorem", line = 57 }, { name = "Group.cardinalRank_le_nat_iff", module = "T3.GroupTheory.GeneratorRank.Cardinal", kind = "theorem", line = 67 }, { name = "Group.cardinalRank_eq_rank", module = "T3.GroupTheory.GeneratorRank.Cardinal", kind = "theorem", line = 98 }, { name = "Group.cardinalRank_lt_aleph0_iff", module = "T3.GroupTheory.GeneratorRank.Cardinal", kind = "theorem", line = 122 }]
+notes = "任意群で最小生成基数を定義し、実際の生成集合による達成と最小性、有限基数とFGの同値、FG下でGroup.rankとの一致を証明。本文の有限rank評価はこのbridgeにより同じ記法に対応する。"
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "coproduct"
@@ -147,13 +152,13 @@ number = "2.2"
 line_start = 178
 line_end = 193
 tex_label = ""
-modules = ["T3.ModelTheory.ModelCompanion", "T3.ModelTheory.Inductive", "T3.ModelTheory.FiniteDiagram", "T3.ModelTheory.ModelCompleteness", "T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness", "T3.ModelTheory.ModelEmbeddings"]
+modules = ["T3.ModelTheory.ModelCompanion", "T3.ModelTheory.Inductive", "T3.ModelTheory.FiniteDiagram", "T3.ModelTheory.ModelCompleteness", "T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness", "T3.ModelTheory.ModelEmbeddings", "T3.ModelTheory.LocallyFinite.Universes", "T3.ModelTheory.UniformLocalFiniteness.Universes", "T3.ModelTheory.ExistentialClosedness", "T3.ModelTheory.ElementaryReflection"]
 planned_declarations = []
 declarations = []
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "項目1–6を実装。model completenessの構文/意味論同値と有限図式を証明。companionのModelsEmbedIntoは有限Skolem hullとQF diagramのcompactnessにより任意宇宙のモデルからの埋込みへ拡張済み。e.c.と局所有限性およびそれらを使う結果の一般宇宙bridgeは別残件。"
-verification = { record = "notes/examples-and-model-embeddings-checkpoint.md", code_revision = "sha256:4361f8312b86001a2ef7f9d59326d9165f8afa6e2e6f2aae37ff9169b2a2817d" }
+notes = "全項目に任意宇宙へのbridgeを実装。companionの埋込みはQF diagramのcompactness、ECAtの反映は入力モデル全体の像を含むSkolem hull、有限図式・一様有限性は有限tupleの小さい初等hullから得る。canonical ECとECAtは同じ宇宙で定義的に一致し、ECAtは任意拡大宇宙から反映する。"
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "companion"
@@ -174,8 +179,8 @@ source_line = 181
 formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
-declarations = [{ name = "FirstOrder.Language.Theory.IsModelComplete", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 104 }, { name = "FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff", module = "T3.ModelTheory.ModelCompanion", kind = "theorem", line = 136 }, { name = "FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 294 }, { name = "FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 395 }, { name = "FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 457 }]
-verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+declarations = [{ name = "FirstOrder.Language.Theory.IsModelComplete", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 104 }, { name = "FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff", module = "T3.ModelTheory.ModelCompanion", kind = "theorem", line = 136 }, { name = "FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 294 }, { name = "FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 395 }, { name = "FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 457 }, { name = "FirstOrder.Language.Theory.IsModelComplete.exists_elementaryEmbedding_of_reflects_existential", module = "T3.ModelTheory.ElementaryReflection", kind = "theorem", line = 64 }]
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "model_companion"
@@ -196,8 +201,8 @@ source_line = 183
 formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
-declarations = [{ name = "FirstOrder.Language.Theory.IsExistentiallyClosed", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 197 }]
-verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+declarations = [{ name = "FirstOrder.Language.Theory.IsExistentiallyClosed", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 197 }, { name = "FirstOrder.Language.Theory.IsExistentiallyClosedAt", module = "T3.ModelTheory.ExistentialClosedness", kind = "def", line = 44 }, { name = "FirstOrder.Language.Theory.isExistentiallyClosedAt_iff", module = "T3.ModelTheory.ExistentialClosedness", kind = "theorem", line = 55 }, { name = "FirstOrder.Language.Theory.IsExistentiallyClosedAt.reflects_of_model", module = "T3.ModelTheory.ExistentialClosedness", kind = "theorem", line = 64 }, { name = "FirstOrder.Language.Theory.IsExistentiallyClosedAt.realize_of_finite", module = "T3.ModelTheory.ExistentialClosedness", kind = "theorem", line = 149 }, { name = "FirstOrder.Language.Theory.IsExistentiallyClosedAt.exists_embedding_over_tuple", module = "T3.ModelTheory.ExistentialClosedness", kind = "theorem", line = 176 }]
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "pi_two"
@@ -218,8 +223,8 @@ source_line = 185
 formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
-declarations = [{ name = "FirstOrder.Language.tupleQfDiagram", module = "T3.ModelTheory.FiniteDiagram", kind = "def", line = 229 }, { name = "FirstOrder.Language.realize_finiteGeneratedDiagram_iff_tupleQfDiagram", module = "T3.ModelTheory.FiniteDiagram", kind = "theorem", line = 321 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram", module = "T3.ModelTheory.LocallyFinite", kind = "theorem", line = 68 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qf_representatives", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 208 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 241 }]
-verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+declarations = [{ name = "FirstOrder.Language.tupleQfDiagram", module = "T3.ModelTheory.FiniteDiagram", kind = "def", line = 229 }, { name = "FirstOrder.Language.realize_finiteGeneratedDiagram_iff_tupleQfDiagram", module = "T3.ModelTheory.FiniteDiagram", kind = "theorem", line = 321 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram", module = "T3.ModelTheory.LocallyFinite", kind = "theorem", line = 68 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qf_representatives", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 208 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 241 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_of_model", module = "T3.ModelTheory.LocallyFinite.Universes", kind = "theorem", line = 66 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives_of_model", module = "T3.ModelTheory.UniformLocalFiniteness.Universes", kind = "theorem", line = 113 }]
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "model_theory.companion_iff_ec"
@@ -229,14 +234,14 @@ number = "2.3"
 line_start = 195
 line_end = 201
 tex_label = ""
-modules = ["T3.ModelTheory.Inductive", "T3.ModelTheory.PiTwoDirectLimit", "T3.ModelTheory.ExistentiallyClosedExtension", "T3.ModelTheory.ElementaryChain", "T3.ModelTheory.RobinsonTest", "T3.ModelTheory.ModelCompanionCriterion"]
+modules = ["T3.ModelTheory.Inductive", "T3.ModelTheory.PiTwoDirectLimit", "T3.ModelTheory.ExistentiallyClosedExtension", "T3.ModelTheory.ElementaryChain", "T3.ModelTheory.RobinsonTest", "T3.ModelTheory.ModelCompanionCriterion", "T3.ModelTheory.ExistentialClosedness"]
 planned_declarations = []
-declarations = [{ name = "FirstOrder.Language.Theory.IsModelCompanionOf.models_iff_isExistentiallyClosed", module = "T3.ModelTheory.Inductive", kind = "theorem", line = 202 }, { name = "FirstOrder.Language.DirectLimit.models_of_isPiTwo", module = "T3.ModelTheory.PiTwoDirectLimit", kind = "theorem", line = 76 }, { name = "FirstOrder.Language.Theory.exists_isExistentiallyClosed_embedding", module = "T3.ModelTheory.ExistentiallyClosedExtension", kind = "theorem", line = 326 }, { name = "FirstOrder.Language.DirectLimit.realize_boundedFormula_of", module = "T3.ModelTheory.ElementaryChain", kind = "theorem", line = 107 }, { name = "FirstOrder.Language.Theory.isModelComplete_of_isExistentiallyClosedInModels", module = "T3.ModelTheory.RobinsonTest", kind = "theorem", line = 433 }, { name = "FirstOrder.Language.Theory.isModelCompanionOf_of_isExistentiallyClosed_iff", module = "T3.ModelTheory.ModelCompanionCriterion", kind = "theorem", line = 43 }, { name = "FirstOrder.Language.Theory.isModelCompanionOf_iff_models_iff_isExistentiallyClosed", module = "T3.ModelTheory.ModelCompanionCriterion", kind = "theorem", line = 65 }]
+declarations = [{ name = "FirstOrder.Language.Theory.IsModelCompanionOf.models_iff_isExistentiallyClosed", module = "T3.ModelTheory.Inductive", kind = "theorem", line = 202 }, { name = "FirstOrder.Language.DirectLimit.models_of_isPiTwo", module = "T3.ModelTheory.PiTwoDirectLimit", kind = "theorem", line = 76 }, { name = "FirstOrder.Language.Theory.exists_isExistentiallyClosed_embedding", module = "T3.ModelTheory.ExistentiallyClosedExtension", kind = "theorem", line = 326 }, { name = "FirstOrder.Language.DirectLimit.realize_boundedFormula_of", module = "T3.ModelTheory.ElementaryChain", kind = "theorem", line = 107 }, { name = "FirstOrder.Language.Theory.isModelComplete_of_isExistentiallyClosedInModels", module = "T3.ModelTheory.RobinsonTest", kind = "theorem", line = 433 }, { name = "FirstOrder.Language.Theory.isModelCompanionOf_of_isExistentiallyClosed_iff", module = "T3.ModelTheory.ModelCompanionCriterion", kind = "theorem", line = 43 }, { name = "FirstOrder.Language.Theory.isModelCompanionOf_iff_models_iff_isExistentiallyClosed", module = "T3.ModelTheory.ModelCompanionCriterion", kind = "theorem", line = 65 }, { name = "FirstOrder.Language.Theory.IsModelCompanionOf.models_of_isPiTwo_in_universe", module = "T3.ModelTheory.ExistentialClosedness", kind = "theorem", line = 92 }, { name = "FirstOrder.Language.Theory.IsModelCompanionOf.models_iff_isExistentiallyClosedAt", module = "T3.ModelTheory.ExistentialClosedness", kind = "theorem", line = 128 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "一般Π₂理論について全同値を証明。旧e.c.拡大・Robinson test・elementary chainを再利用し、普遍理論に限定されていた極限のモデル性を一般Π₂に拡張。finite-language/local-finiteness/amalgamationの追加仮定なし。逆向きも実際の存在式生成による構文的model completenessまで到達する。既存canonical Type (max u v)規約下で完成。任意の上位宇宙でのcompanion/e.c.への移行は別残件。"
+notes = "一般Π₂理論について両方向と任意宇宙のmodel class一致を証明。旧e.c.拡大・Robinson test・elementary chainの再利用を保持。一般宇宙のモデルをcompanionへ埋め、構文的model completenessとTarski-VaughtからECAtとの同値を得る。finite language/local finiteness/amalgamationの追加仮定なし。"
 parts = []
-verification = { record = "notes/coproduct-tensor-and-companion-checkpoint.md", code_revision = "sha256:ab88bd971dc348f35c07e9402f1ee244391eaad8fd3709962be1a7c7a111b7d8" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "model_theory.local_finiteness"
@@ -246,14 +251,14 @@ number = "2.4"
 line_start = 203
 line_end = 206
 tex_label = ""
-modules = ["T3.ModelTheory.LocallyFinite"]
+modules = ["T3.ModelTheory.LocallyFinite", "T3.ModelTheory.LocallyFinite.Universes"]
 planned_declarations = []
-declarations = [{ name = "FirstOrder.Language.Theory.IsLocallyFinite", module = "T3.ModelTheory.LocallyFinite", kind = "def", line = 44 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.finite_closure_range", module = "T3.ModelTheory.LocallyFinite", kind = "theorem", line = 55 }]
+declarations = [{ name = "FirstOrder.Language.Theory.IsLocallyFinite", module = "T3.ModelTheory.LocallyFinite", kind = "def", line = 44 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.finite_closure_range", module = "T3.ModelTheory.LocallyFinite", kind = "theorem", line = 55 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.finite_closure", module = "T3.ModelTheory.LocallyFinite.Universes", kind = "theorem", line = 37 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "任意の有限subsetが生成する実際のSubstructureの有限性として定義。有限言語や生成部分構造がTのmodelであることは仮定しない。companion/e.c.定義と同じcanonical semantic universeを用い、他宇宙へのbridgeは未実装。"
+notes = "任意有限subsetが生成する実際のSubstructureの有限性。有限言語や生成部分構造のTmodel性を要求しない。小さい初等Skolem hullによるfinite_closureが任意モデル宇宙を扱い、Small仮定を残さない。"
 parts = []
-verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "model_theory.uniform_local_finiteness"
@@ -263,14 +268,14 @@ number = "2.5"
 line_start = 209
 line_end = 212
 tex_label = ""
-modules = ["T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness"]
+modules = ["T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness", "T3.ModelTheory.UniformLocalFiniteness.Universes"]
 planned_declarations = []
-declarations = [{ name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qfType_cover", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 89 }, { name = "FirstOrder.Language.Theory.exists_card_closure_le_of_isLocallyFinite", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 182 }]
+declarations = [{ name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qfType_cover", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 89 }, { name = "FirstOrder.Language.Theory.exists_card_closure_le_of_isLocallyFinite", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 182 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qfType_cover_of_model", module = "T3.ModelTheory.UniformLocalFiniteness.Universes", kind = "theorem", line = 38 }, { name = "FirstOrder.Language.Theory.exists_card_closure_le_of_isLocallyFinite_of_model", module = "T3.ModelTheory.UniformLocalFiniteness.Universes", kind = "theorem", line = 87 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "一般の局所有限T・有限言語について、compactnessで有限個の生成tupleのQF型が全モデルのtupleを覆うことを証明し、その生成部分構造の位数の最大値から共通上界を得る。任意n・card≤nの全有限subset・空集合を含む。有限部分構造自身にTmodel条件は要求しない。モデル宇宙はIsLocallyFiniteのcanonical規約どおり。"
+notes = "compactnessで得る有限QF型coverを任意宇宙のtupleへ移し、同じ有限coverの最大位数から共通上界を得る。全n・card≤nの有限subset・空集合を含む。有限部分構造自身のTmodel条件は要求しない。"
 parts = []
-verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "model_theory.bounded_amalgamation_criterion"
@@ -1262,10 +1267,10 @@ planned_declarations = []
 declarations = [{ name = "T3.exists_bounded_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 169 }, { name = "T3.strictEnvelopeBound", module = "T3.ModelTheory.StrictEnvelope", kind = "def", line = 43 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "Proposition 4.12 から全モデル・部分群に一様な関数の存在を明示的に証明。f₀(n)=15n²、n=0も含む。e.c. の量化は既存のcanonical semantic universeであり、一般モデル宇宙へのbridgeは別途未完成。"
+notes = "Proposition4.12から任意宇宙の全e.c.モデル・部分群に一様な関数f₀(n)=15n²を明示。n=0も含み、ECAtから任意宇宙の拡大の有限図式を元のMへ転送する。"
 parts = []
 
-verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "main.bounded_witness"
@@ -1280,8 +1285,8 @@ planned_declarations = []
 declarations = [{ name = "T3.Amalgamation.relator", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 42 }, { name = "T3.Amalgamation.relations", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 49 }, { name = "T3.Amalgamation.Pushout", module = "T3.GroupTheory.Amalgamation", kind = "abbrev", line = 63 }, { name = "T3.Amalgamation.AmalgamableOver", module = "T3.GroupTheory.Amalgamation", kind = "def", line = 190 }, { name = "T3.Amalgamation.amalgamableOver_iff", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 201 }, { name = "T3.Amalgamation.amalgamableOver_of_amalgam", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 216 }, { name = "T3.Amalgamation.normalClosure_relators_eq_of_closure_range_eq_top", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 266 }, { name = "T3.Amalgamation.exists_witness_of_generating_family", module = "T3.GroupTheory.Amalgamation", kind = "theorem", line = 289 }, { name = "T3.witnessBound", module = "T3.Main.BoundedWitness", kind = "def", line = 35 }, { name = "T3.exists_bounded_nonamalgamation_witness", module = "T3.Main.BoundedWitness", kind = "theorem", line = 112 }, { name = "T3.exists_uniform_nonamalgamation_bound", module = "T3.Main.BoundedWitness", kind = "theorem", line = 173 }, { name = "T3.rank_eq_finrank_layerOne", module = "T3.GroupTheory.GeneratorRank.Cardinality", kind = "theorem", line = 51 }, { name = "T3.rank_le_log_three_natCard", module = "T3.GroupTheory.GeneratorRank.Cardinality", kind = "theorem", line = 113 }, { name = "T3.rank_le_freeOrderExponent_of_injective", module = "T3.GroupTheory.GeneratorRank.Cardinality", kind = "theorem", line = 144 }, { name = "T3.Coproduct.exists_bounded_factor_support", module = "T3.GroupTheory.Coproduct.Support", kind = "theorem", line = 38 }, { name = "T3.Support.normalClosureIn_mono_ambient", module = "T3.GroupTheory.Support.Transport", kind = "theorem", line = 33 }, { name = "T3.Support.mem_normalClosure_of_mem_normalClosureIn", module = "T3.GroupTheory.Support.Transport", kind = "theorem", line = 50 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "f(m)=15((3m+4)t(m)+1)²を明示。rank A≤log₃|A|≤log₃|B|≤t(m)、3(m+1)nのsupport、Aと左の証人の付加、strict envelope、Φの単射性と関係族の逆像等式による内部normal closureの移送を原稿順に証明。左右両証人・零rank・自明群を含む。Mのe.c.はcanonical semantic Type、Bは任意宇宙。一般モデル宇宙へのbridgeは別途残る。"
-verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
+notes = "f(m)=15((3m+4)t(m)+1)²を明示。rank/log/cardinalの連鎖、3(m+1)nのsupport、Aと左証人の付加、strict envelope、Φの単射性と関係族の逆像等式による内部normal closure輸送を原稿順に証明。左右両証人・零rank・自明群を含む。MとBは独立な任意宇宙、e.c.は一般のECAt。"
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "obstruction"
@@ -1292,7 +1297,7 @@ formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
 declarations = [{ name = "T3.exists_bounded_nonamalgamation_witness", module = "T3.Main.BoundedWitness", kind = "theorem", line = 112 }]
-verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "bound"
@@ -1303,7 +1308,7 @@ formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
 declarations = [{ name = "T3.exists_bounded_nonamalgamation_witness", module = "T3.Main.BoundedWitness", kind = "theorem", line = 112 }]
-verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "main.model_companion"
@@ -1318,9 +1323,9 @@ planned_declarations = []
 declarations = [{ name = "T3.exponentThreeTheory_hasModelCompanion_iff", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 213 }, { name = "T3.exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 224 }, { name = "T3.exponentThreeTheory_boundedAmalgamationObstructions", module = "T3.Main.ModelCompanion", kind = "theorem", line = 48 }, { name = "T3.has_model_companion", module = "T3.Main.ModelCompanion", kind = "theorem", line = 122 }, { name = "T3.GroupAmalgamation.amalgamableOver_embeddings_swap_iff", module = "T3.ModelTheory.GroupAmalgamation", kind = "theorem", line = 117 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "Theorem3.3から一般のbounded obstructionを供給し、有限言語・Π₂・局所有限性によるFact2.6を適用。追加のbound仮定を残さずHasModelCompanionを証明。有限構造のgroup/modelはT₃の普遍性から回復し、元のbaseと全生成数を保つ。結論は既存canonical semantic universe、一般モデル宇宙へのbridgeは未完成。"
+notes = "Theorem3.3から一般のbounded obstructionを供給しFact2.6を適用、追加仮定なしにHasModelCompanionを証明。有限構造のgroup/modelはT₃の普遍性から回復し元のbaseと全生成数を保つ。ModelEmbeddingsとECAtのbridgeにより結論のcompanion/model classは任意宇宙にも適用できる。一般Fact2.6自体の任意宇宙amalgam判定は別残件。"
 parts = []
-verification = { record = "notes/main-theorem-checkpoint.md", code_revision = "sha256:59bf3bacaa6981adddf1d216ff2a71f2b9d8bc23e3512909e25883280251f699" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "structure.basis_lift"
@@ -1601,8 +1606,8 @@ planned_declarations = []
 declarations = [{ name = "T3.ExistentiallyClosedGroups.exists_group_embedding", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 48 }, { name = "T3.ExistentiallyClosedGroups.exists_copy_of_tuples", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 67 }, { name = "T3.ExistentiallyClosedGroups.nontrivial", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 87 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "既存canonical semantic universe内のe.c.T₃モデルについて3結論完成。有限生成部分群を局所有限性で有限化し、有限図式embeddingにより全パラメータを固定して等式・不等式を転送。具体的同時root商のn=1特殊化から単一交換子/三重交換子、非自明性をe.c.から導いてF₂の分離から中心列一致を得る。Nontrivial/有限性を仮定しない。"
-verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
+notes = "任意宇宙のe.c.T₃モデルについて3結論完成。有限生成部分群を有限化し、任意宇宙の拡大からの有限図式embeddingにより全パラメータを固定して転送。同時root商のn=1特殊化から単一交換子/三重交換子、e.c.から非自明性、F₂の分離から中心列一致を得る。Nontrivial/有限性の追加仮定なし。"
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "central_series"
@@ -1613,7 +1618,7 @@ formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
 declarations = [{ name = "T3.ExistentiallyClosedGroups.centralSeriesCoincide", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 279 }]
-verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "commutator_width"
@@ -1624,7 +1629,7 @@ formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
 declarations = [{ name = "T3.ExistentiallyClosedGroups.commutator_eq_setOf_commutator", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 323 }]
-verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "triple_width"
@@ -1635,7 +1640,7 @@ formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
 declarations = [{ name = "T3.ExistentiallyClosedGroups.lowerCentralSeries_two_eq_setOf_triple_commutator", module = "T3.ModelTheory.ExistentiallyClosedGroups", kind = "theorem", line = 308 }]
-verification = { record = "notes/commutator-roots-and-support-checkpoint.md", code_revision = "sha256:b6d901b5f03089873409af74e0de6236f8f35350ba89106b8a763e67926b4b64" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items]]
 id = "structure.strict_envelope"
@@ -1650,8 +1655,8 @@ planned_declarations = []
 declarations = [{ name = "T3.strictEnvelopeBound", module = "T3.ModelTheory.StrictEnvelope", kind = "def", line = 43 }, { name = "T3.three_stage_rank_le_strictEnvelopeBound", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 50 }, { name = "T3.StrictEnvelope.exists_centralSeries_extension", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 68 }, { name = "T3.exists_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 129 }]
 formalization = "proved"
 fidelity = "proof_checked"
-notes = "二段階の同時strictification、D₂∐F₂、内部中心列一致、C全体を固定する有限図式転送を原稿順に証明。有限生成性と有限性の同値を使用し、C=1/n=0を別分岐で処理。代数的構成は任意宇宙、e.c.の結論はcanonical semantic universe。一般モデル宇宙へのbridgeは未完成。"
-verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
+notes = "二段階の同時strictification、D₂∐F₂、内部中心列一致、C全体を固定する有限図式転送を原稿順に証明。FGと有限性の同値を使用しC=1/n=0を別処理。代数的構成とe.c.の結論はいずれも任意宇宙、追加Small仮定なし。"
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "bound"
@@ -1662,7 +1667,7 @@ formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
 declarations = [{ name = "T3.exists_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 129 }]
-verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }
 
 [[items.parts]]
 id = "internal"
@@ -1673,4 +1678,4 @@ formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
 declarations = [{ name = "T3.exists_strict_envelope", module = "T3.ModelTheory.StrictEnvelope", kind = "theorem", line = 129 }]
-verification = { record = "notes/strict-envelope-and-pushout-checkpoint.md", code_revision = "sha256:74f7ca9dd544ffce1448cd86f75c50d9d379d721b2823d6ec23403fd845b6d6c" }
+verification = { record = "notes/semantic-universes-and-notation-checkpoint.md", code_revision = "sha256:a7c4521c9a402b1b112ae00824f55b728bf1dcdbd405d92c384c63c688ed0d49" }

@@ -47,10 +47,12 @@ public import T3.GroupTheory.Free.ModelComparison
 public import T3.GroupTheory.Free.NormalForm
 public import T3.GroupTheory.Generation
 public import T3.GroupTheory.GeneratorRank
+public import T3.GroupTheory.GeneratorRank.Cardinal
 public import T3.GroupTheory.GeneratorRank.Cardinality
 public import T3.GroupTheory.GradedNormalClosure
 public import T3.GroupTheory.GradedQuotient
 public import T3.GroupTheory.Identities
+public import T3.GroupTheory.Notation
 public import T3.GroupTheory.Presentation
 public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.CommutatorRelations
@@ -75,6 +77,8 @@ public import T3.ModelTheory.Amalgamation
 public import T3.ModelTheory.BoundedAmalgamation
 public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ElementaryChain
+public import T3.ModelTheory.ElementaryReflection
+public import T3.ModelTheory.ExistentialClosedness
 public import T3.ModelTheory.ExistentialWitness
 public import T3.ModelTheory.ExistentiallyClosedExtension
 public import T3.ModelTheory.ExistentiallyClosedGroups
@@ -86,6 +90,7 @@ public import T3.ModelTheory.GroupAmalgamation
 public import T3.ModelTheory.GroupLanguage
 public import T3.ModelTheory.Inductive
 public import T3.ModelTheory.LocallyFinite
+public import T3.ModelTheory.LocallyFinite.Universes
 public import T3.ModelTheory.ModelCompanion
 public import T3.ModelTheory.ModelCompanionCriterion
 public import T3.ModelTheory.ModelCompleteness
@@ -94,4 +99,5 @@ public import T3.ModelTheory.PiTwoDirectLimit
 public import T3.ModelTheory.RobinsonTest
 public import T3.ModelTheory.StrictEnvelope
 public import T3.ModelTheory.UniformLocalFiniteness
+public import T3.ModelTheory.UniformLocalFiniteness.Universes
 public import T3.Paper

@@ -22,8 +22,8 @@ the whole original subgroup. The trivial subgroup is handled separately, so the 
 holds at zero.
 
 The numerical function `strictEnvelopeBound` is defined here, at the paper result supplying it.
-The model-theoretic conclusion uses the existing canonical semantic universe; the preceding
-algebraic extension construction works in every universe.
+Both the model-theoretic conclusion and the preceding algebraic extension construction
+work in every universe.
 
 Paper-ID: structure.strict_envelope, main.proposition_a
 TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, v4 Proposition 4.12, and Proposition A.
@@ -126,8 +126,8 @@ an actual overgroup of `C` inside `M`, with its intrinsic central-series structu
 Paper-ID: structure.strict_envelope, main.proposition_a
 TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, v4 Proposition 4.12, and Proposition A.
 -/
-theorem exists_strict_envelope {M : Type} [Group M] [CompatibleGroup M]
-    (hM : exponentThreeTheory.IsExistentiallyClosed M) (C : Subgroup M) [Group.FG C]
+theorem exists_strict_envelope {M : Type*} [Group M] [CompatibleGroup M]
+    (hM : exponentThreeTheory.IsExistentiallyClosedAt M) (C : Subgroup M) [Group.FG C]
     {n : ℕ} (hC : Group.rank C ≤ n) :
     ∃ (D : Subgroup M) (hD : Group.FG D),
       letI := hD
@@ -167,8 +167,8 @@ Paper-ID: main.proposition_a
 TeX: T3_modelcompanion_v4.tex, Proposition A, lines 697–699.
 -/
 theorem exists_bounded_strict_envelope :
-    ∃ f₀ : ℕ → ℕ, ∀ (n : ℕ) (M : Type) [Group M] [CompatibleGroup M],
-      exponentThreeTheory.IsExistentiallyClosed M → ∀ (C : Subgroup M) [Group.FG C],
+    ∃ f₀ : ℕ → ℕ, ∀ (n : ℕ) (M : Type u) [Group M] [CompatibleGroup M],
+      exponentThreeTheory.IsExistentiallyClosedAt M → ∀ (C : Subgroup M) [Group.FG C],
         Group.rank C ≤ n → ∃ (D : Subgroup M) (hD : Group.FG D),
           letI := hD
           C ≤ D ∧ Group.rank D ≤ f₀ n ∧ IsStrict D := by
