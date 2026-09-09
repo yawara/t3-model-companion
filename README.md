@@ -3,12 +3,16 @@
 *Existence of a Model Companion for Groups of Exponent 3* の Lean 形式化。
 対象原稿は [T3_modelcompanion_v4.tex](T3_modelcompanion_v4.tex) です。
 
+現在の実装と最終検証の記録は [論文全体の形式化](notes/paper-faithful-completion.md) を参照。
+主定理・model companion の存在に加え、例・remark・記法と一般モデル宇宙への接続を含め、
+原稿との対応を [50項目・75部分項目](docs/paper-map.md) で管理しています。
+
 - [Lean で論文を読む入口](T3/Paper.lean)
 - [論文項目と実装状況](docs/paper-map.md)
 - [モジュール・namespace の方針](notes/lean-architecture.md)
 - [実装順序と暫定見積もり](notes/implementation-plan.md)
-- [既存実装との fidelity 監査](notes/paper-faithfulness-audit.md)
-- [論文の数学的検証](notes/paper-mathematical-audit.md)
+- [既存実装との初期 fidelity 監査](notes/paper-faithfulness-audit.md)
+- [論文の初期数学的検証](notes/paper-mathematical-audit.md)
 - [無限正規形・中心列・次数商の検証境界](notes/infinite-normal-form-and-graded-checkpoint.md)
 - [graded Lie 構造とモデル完全性の検証境界](notes/graded-lie-checkpoint.md)
 - [自由群の外積同型・quotient・有限図式の検証境界](notes/exterior-quotient-diagram-checkpoint.md)
@@ -21,6 +25,12 @@
 - [Strict envelope と amalgam の商表示の検証境界](notes/strict-envelope-and-pushout-checkpoint.md)
 - [主定理と model companion の存在の検証境界](notes/main-theorem-checkpoint.md)
 - [正次数 graded Lie の定義と生成条件の検証境界](notes/positive-grading-checkpoint.md)
+- [Associated graded の例とモデル埋込みの検証境界](notes/examples-and-model-embeddings-checkpoint.md)
+- [任意宇宙の意味論と群の記法の検証境界](notes/semantic-universes-and-notation-checkpoint.md)
+- [論文全体の最終検証](notes/paper-faithful-completion.md)
+
+過去の監査・検証境界は当時の状態を固定した記録です。現在の証明状況は最終検証と対応表を
+参照してください。
 
 Lean/mathlib は v4.32.2、mathlib の commit は
 `905b95818eb32af7874a58b427f50c1711a5e96c` に固定しています。

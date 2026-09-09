@@ -40,6 +40,10 @@ public import T3.GroupTheory.Roots.DefectBasis
 public import T3.GroupTheory.Roots.DerivedStrictification
 public import T3.GroupTheory.Roots.LowerCentralStrictification
 public import T3.GroupTheory.Roots.Triple
+public import T3.GroupTheory.Roots.SharedTriple
+public import T3.GroupTheory.Roots.SharedLowerCentralStrictification
+public import T3.GroupTheory.Roots.SharedCommutator
+public import T3.GroupTheory.Roots.SharedDerivedStrictification
 public import T3.GroupTheory.Support
 public import T3.LinearAlgebra.BlockDecomposition
 public import T3.LinearAlgebra.GradedLie
@@ -59,6 +63,8 @@ public import T3.ModelTheory.ExistentialClosedness
 public import T3.ModelTheory.UniformLocalFiniteness
 public import T3.ModelTheory.UniformLocalFiniteness.Universes
 public import T3.ModelTheory.BoundedAmalgamationCriterion
+public import T3.ModelTheory.Amalgamation.Universes
+public import T3.ModelTheory.BoundedAmalgamation.Universes
 public import T3.ModelTheory.ExponentThree
 public import T3.ModelTheory.ExistentiallyClosedGroups
 public import T3.ModelTheory.StrictEnvelope
@@ -143,6 +149,9 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
 * `T3.ModelTheory.BoundedAmalgamationCriterion`: both directions of Fact 2.6 in a finite
   language, with Pi-two and local-finiteness hypotheses. The obstruction bound counts all
   generators, and the finite structures need not themselves be models of the theory.
+  `Amalgamation.Universes` permits actual amalgams in arbitrary target universes;
+  `BoundedAmalgamation.Universes` supplies the same criterion and obstruction bounds for
+  arbitrary model universes, retaining the original finite-obstruction sufficiency proof.
 * `T3.ModelTheory.ExponentThree`: the actual group language and theory `T₃`, its Pi-two
   axiomatization and local finiteness, including the trivial group.
 
@@ -150,7 +159,7 @@ The index records exactly which parts have been proved and checked against the p
 The original semantic predicates have exact bridges to arbitrary model universes.
 `IsExistentiallyClosedAt` expresses this general form and reflects existential formulas from
 extensions in every universe. The group-theoretic bounds now apply directly to arbitrary models.
-The corresponding general-universe bridge for the bounded-amalgamation criterion remains open.
+The bounded-amalgamation criterion also has both directions in arbitrary semantic universes.
 
 ## Section 3: Main results
 
@@ -176,6 +185,11 @@ base is preserved when moving to its image in the model and back to language str
   subgroup of the derived subgroup, including nonhomogeneous relations.
 * `T3.GroupTheory.Roots.Triple`: the concrete simultaneous quotient construction and base
   embedding of Lemma 4.8 using `G × Free (Fin (3 * n))`.
+* `T3.GroupTheory.Roots.SharedTriple` and `SharedLowerCentralStrictification`: Remark 4.10's
+  four roots share the four generators of `F₄`. The actual quotient preserves the base group,
+  supplies the four root equations, and removes the third-layer defect with four new generators.
+* `T3.GroupTheory.Roots.SharedCommutator` and `SharedDerivedStrictification`: the analogous
+  three commutator roots share three generators, preserving the derived-intersection conclusion.
 * `T3.LinearAlgebra.ExteriorSum`: direct decomposition into exterior-basis blocks, supporting
   the proof of Proposition 4.3.
 * `T3.LinearAlgebra.ExteriorTensor`: exterior powers of a direct sum as complementary tensor

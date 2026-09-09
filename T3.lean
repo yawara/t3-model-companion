@@ -54,11 +54,17 @@ public import T3.GroupTheory.GradedQuotient
 public import T3.GroupTheory.Identities
 public import T3.GroupTheory.Notation
 public import T3.GroupTheory.Presentation
+public import T3.GroupTheory.Roots.CentralRelations
 public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.CommutatorRelations
 public import T3.GroupTheory.Roots.DefectBasis
 public import T3.GroupTheory.Roots.DerivedStrictification
 public import T3.GroupTheory.Roots.LowerCentralStrictification
+public import T3.GroupTheory.Roots.SharedCommutator
+public import T3.GroupTheory.Roots.SharedDerivedStrictification
+public import T3.GroupTheory.Roots.SharedLowerCentralStrictification
+public import T3.GroupTheory.Roots.SharedTriple
+public import T3.GroupTheory.Roots.SharedTripleCoordinates
 public import T3.GroupTheory.Roots.Triple
 public import T3.GroupTheory.Support
 public import T3.GroupTheory.Support.Collection
@@ -74,7 +80,9 @@ public import T3.LinearAlgebra.Wedge
 public import T3.Main.BoundedWitness
 public import T3.Main.ModelCompanion
 public import T3.ModelTheory.Amalgamation
+public import T3.ModelTheory.Amalgamation.Universes
 public import T3.ModelTheory.BoundedAmalgamation
+public import T3.ModelTheory.BoundedAmalgamation.Universes
 public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.ElementaryChain
 public import T3.ModelTheory.ElementaryReflection
