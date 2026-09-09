@@ -1471,33 +1471,35 @@ number = "4.7"
 line_start = 1076
 line_end = 1082
 tex_label = "lemma:commutator root"
-modules = ["T3.GroupTheory.Roots.DerivedStrictification", "T3.GroupTheory.GeneratorRank"]
+modules = ["T3.GroupTheory.Roots.DerivedStrictification", "T3.GroupTheory.Roots.DefectBasis", "T3.GroupTheory.GeneratorRank", "T3.ForMathlib.Subgroup"]
 planned_declarations = []
-declarations = [{ name = "T3.AssociatedGraded.finite_layerOne_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 130 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 151 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 195 }]
-formalization = "partial"
-fidelity = "unchecked"
-notes = "dim gr₁(C)≤mとその有限次元性を有限生成族/Group.rankから証明。defect商空間の基底選択、追加根による具体的拡大・生成元数・strictness本体は未完成。"
-verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+declarations = [{ name = "T3.AssociatedGraded.finite_layerOne_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 130 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 151 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 195 }, { name = "T3.AssociatedGraded.exists_layer_kernel_basis_representatives", module = "T3.GroupTheory.Roots.DefectBasis", kind = "theorem", line = 46 }, { name = "T3.AssociatedGraded.exists_derived_defect_generators", module = "T3.GroupTheory.Roots.DefectBasis", kind = "theorem", line = 114 }, { name = "T3.DerivedStrictification.Extension", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "abbrev", line = 47 }, { name = "T3.DerivedStrictification.baseMap", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "def", line = 54 }, { name = "T3.DerivedStrictification.enlarged", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "def", line = 70 }, { name = "T3.DerivedStrictification.newGenerators_card_le", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 108 }, { name = "T3.DerivedStrictification.enlarged_eq_closure", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 117 }, { name = "T3.DerivedStrictification.comap_commutator_quotientMap", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 143 }, { name = "T3.DerivedStrictification.inf_commutator_eq", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 186 }, { name = "T3.DerivedStrictification.rank_enlarged_le", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 276 }, { name = "T3.DerivedStrictification.exists_derived_strictification", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 306 }, { name = "Subgroup.exists_mul_mul_commutator_of_mem_sup", module = "T3.ForMathlib.Subgroup", kind = "theorem", line = 39 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "実際の一次graded kernelの基底を群へ持ち上げ、defectの生成等式と個数≤rank Cを証明。同時交換子商でDをCの像と2d個の自由生成元から生成する。商は一次商を保ち、coproductの二つの射影で成分を分離してD∩γ₂(H)=γ₂(D)を得る。追加≤2m、総rank≤3m、同一宇宙の単射拡大。有限性・非自明性のambient仮定なし。"
+verification = { record = "notes/strictification-checkpoint.md", code_revision = "sha256:d86762cb017ab8a27f8e33c6f717027eb2f8930df5d71b17508576b04d3706f8" }
 
 [[items.parts]]
 id = "bound"
 summary = "C に追加する生成元数≤2m"
 source_kind = "enumerated"
 source_line = 1079
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.DerivedStrictification.newGenerators_card_le", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 108 }, { name = "T3.DerivedStrictification.rank_enlarged_le", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 276 }, { name = "T3.DerivedStrictification.exists_derived_strictification", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 306 }]
+verification = { record = "notes/strictification-checkpoint.md", code_revision = "sha256:d86762cb017ab8a27f8e33c6f717027eb2f8930df5d71b17508576b04d3706f8" }
 
 [[items.parts]]
 id = "strict"
 summary = "D∩γ₂(H)=γ₂(D)"
 source_kind = "enumerated"
 source_line = 1080
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.DerivedStrictification.inf_commutator_eq", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 186 }, { name = "T3.DerivedStrictification.derived_strict", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 248 }, { name = "T3.DerivedStrictification.exists_derived_strictification", module = "T3.GroupTheory.Roots.DerivedStrictification", kind = "theorem", line = 306 }]
+verification = { record = "notes/strictification-checkpoint.md", code_revision = "sha256:d86762cb017ab8a27f8e33c6f717027eb2f8930df5d71b17508576b04d3706f8" }
 
 [[items]]
 id = "structure.simultaneous_triple_roots"
@@ -1524,33 +1526,35 @@ number = "4.9"
 line_start = 1133
 line_end = 1141
 tex_label = "lemma:number of generators for triple commutator roots"
-modules = ["T3.GroupTheory.Roots.LowerCentralStrictification", "T3.GroupTheory.GeneratorRank"]
+modules = ["T3.GroupTheory.Roots.LowerCentralStrictification", "T3.GroupTheory.Roots.DefectBasis", "T3.GroupTheory.GeneratorRank", "T3.ForMathlib.Subgroup"]
 planned_declarations = []
-declarations = [{ name = "T3.AssociatedGraded.finite_layerTwo_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 141 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 163 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 207 }]
-formalization = "partial"
-fidelity = "unchecked"
-notes = "dim gr₂(C)≤binom(n,2)とその有限次元性を有限生成族/Group.rankから証明。defect商空間の基底選択、追加根による具体的拡大・生成元数・strictness本体は未完成。"
-verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+declarations = [{ name = "T3.AssociatedGraded.finite_layerTwo_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 141 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 163 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 207 }, { name = "T3.AssociatedGraded.exists_layer_kernel_basis_representatives", module = "T3.GroupTheory.Roots.DefectBasis", kind = "theorem", line = 46 }, { name = "T3.AssociatedGraded.exists_lowerCentral_defect_generators", module = "T3.GroupTheory.Roots.DefectBasis", kind = "theorem", line = 135 }, { name = "T3.LowerCentralStrictification.enlargedSubgroup", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "def", line = 54 }, { name = "T3.LowerCentralStrictification.enlargedSubgroup_eq_sup", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 84 }, { name = "T3.LowerCentralStrictification.kernel_le_lowerCentralSeries", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 112 }, { name = "T3.LowerCentralStrictification.kernel_le_product_derived", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 128 }, { name = "T3.LowerCentralStrictification.isStrict_enlargedSubgroup", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 184 }, { name = "T3.LowerCentralStrictification.exists_generating_finset", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 236 }, { name = "T3.LowerCentralStrictification.rank_enlargedSubgroup_le", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 267 }, { name = "T3.LowerCentralStrictification.exists_strict_extension", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 300 }, { name = "Subgroup.map_inf_of_ker_le", module = "T3.ForMathlib.Subgroup", kind = "theorem", line = 76 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "第一strict性を使って二次graded kernelを原稿の欠損商と同定し、その基底代表元を≤binom(rank C,2)個選ぶ。G×Free(Fin(3d))の同時商とC×Freeの像Dを構成し、kernel包含・直積中心列・商内の交叉から両strict等式を証明。追加≤3*binom(m,2)、総rank≤m+3*binom(m,2)、Dの有限生成性と同一宇宙の単射拡大を返す。自明群と空の欠損族を含む。"
+verification = { record = "notes/strictification-checkpoint.md", code_revision = "sha256:d86762cb017ab8a27f8e33c6f717027eb2f8930df5d71b17508576b04d3706f8" }
 
 [[items.parts]]
 id = "bound"
 summary = "C に追加する生成元数≤3·binom(n,2)"
 source_kind = "enumerated"
 source_line = 1138
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.LowerCentralStrictification.exists_generating_finset", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 236 }, { name = "T3.LowerCentralStrictification.rank_enlargedSubgroup_le", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 267 }, { name = "T3.LowerCentralStrictification.exists_strict_extension", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 300 }]
+verification = { record = "notes/strictification-checkpoint.md", code_revision = "sha256:d86762cb017ab8a27f8e33c6f717027eb2f8930df5d71b17508576b04d3706f8" }
 
 [[items.parts]]
 id = "strict"
 summary = "D が γ₂ と γ₃ で strict"
 source_kind = "enumerated"
 source_line = 1139
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "T3.LowerCentralStrictification.isStrict_enlargedSubgroup", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 184 }, { name = "T3.LowerCentralStrictification.exists_strict_extension", module = "T3.GroupTheory.Roots.LowerCentralStrictification", kind = "theorem", line = 300 }]
+verification = { record = "notes/strictification-checkpoint.md", code_revision = "sha256:d86762cb017ab8a27f8e33c6f717027eb2f8930df5d71b17508576b04d3706f8" }
 
 [[items]]
 id = "structure.shared_triple_roots"

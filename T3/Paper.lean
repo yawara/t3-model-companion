@@ -32,6 +32,9 @@ public import T3.GroupTheory.GeneratorRank
 public import T3.GroupTheory.Presentation
 public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.CommutatorRelations
+public import T3.GroupTheory.Roots.DefectBasis
+public import T3.GroupTheory.Roots.DerivedStrictification
+public import T3.GroupTheory.Roots.LowerCentralStrictification
 public import T3.GroupTheory.Roots.Triple
 public import T3.GroupTheory.Support
 public import T3.LinearAlgebra.BlockDecomposition
@@ -157,10 +160,16 @@ model-companion corollary are planned.
   with injective base map and root equations, Lemma 4.6. The proof follows Claims A, B, and C.
 * `T3.GroupTheory.GeneratorRank`: the first two graded dimensions are bounded by the number
   of generators and its second binomial coefficient, for the proofs of Lemmas 4.7 and 4.9.
-  Finite dimensionality is proved; the strictification constructions remain unfinished.
+  Finite dimensionality is proved before using the numerical bounds.
+* `T3.GroupTheory.Roots.DefectBasis`: representatives of bases of the actual graded kernels,
+  with the group-level generation equalities for both strictness defects.
+* `T3.GroupTheory.Roots.DerivedStrictification`: Lemma 4.7 in the simultaneous commutator-root
+  quotient, with at most `2m` new generators and total rank at most `3m`.
+* `T3.GroupTheory.Roots.LowerCentralStrictification`: Lemma 4.9 in the simultaneous product
+  quotient, with at most `3 * binom(m,2)` new generators and both strictness equalities.
 * `T3.ModelTheory.ExistentiallyClosedGroups`: all three conclusions of Proposition 4.11.
   Finite diagrams transfer witnesses from the concrete root quotients and free-two coproduct,
   preserving all designated parameters. Nontriviality follows from existential closedness.
 
-Strictification and Proposition 4.12 remain to be implemented before the main results.
+Proposition 4.12 remains to be implemented before the main results.
 -/

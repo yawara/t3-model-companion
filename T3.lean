@@ -3,6 +3,7 @@ module  -- shake: keep-all --deprecated_module: ignore
 public import T3.ForMathlib.DirectSum
 public import T3.ForMathlib.LinearMapQuotient
 public import T3.ForMathlib.PowersetCardSum
+public import T3.ForMathlib.Subgroup
 public import T3.ForMathlib.TensorProduct
 public import T3.GroupTheory.AssociatedGraded
 public import T3.GroupTheory.AssociatedGraded.Bracket
@@ -48,6 +49,9 @@ public import T3.GroupTheory.Identities
 public import T3.GroupTheory.Presentation
 public import T3.GroupTheory.Roots.Commutator
 public import T3.GroupTheory.Roots.CommutatorRelations
+public import T3.GroupTheory.Roots.DefectBasis
+public import T3.GroupTheory.Roots.DerivedStrictification
+public import T3.GroupTheory.Roots.LowerCentralStrictification
 public import T3.GroupTheory.Roots.Triple
 public import T3.GroupTheory.Support
 public import T3.GroupTheory.Support.Collection

@@ -94,6 +94,12 @@ H₀内部の normal-closure certificate を完成した。
 次は段階5の二段階 strictification と `15n²` envelope を組み立て、群論的 amalgamation
 表示と主定理の明示 bound へ接続する。
 
+[基底による二段階 strictification の境界](strictification-checkpoint.md) では、
+実際の graded kernel の基底を群の元へ持ち上げ、欠損の生成等式を証明した。
+同時交換子商で Lemma 4.7 の `2m`、同時三重交換子商で Lemma 4.9 の
+`3 * binom(m,2)` を得る。次は二段階の拡大に F₂ を付け、有限図式で e.c. 群へ戻すことで
+段階5の終端 Proposition 4.12 の `15n²` と内部中心列一致を完成する。
+
 ## どこに時間がかかるか
 
 現在の監査から言えるのは、既存 Lean の終端までに 66 モジュール・約 1.8 万行がある一方、

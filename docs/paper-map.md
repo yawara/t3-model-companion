@@ -6,7 +6,7 @@
 
 番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。行・表示番号は補助情報で、安定 ID を主キーとする。
 
-項目全体の状態: `planned` 6, `partial` 5, `stated` 0, `proved` 39。
+項目全体の状態: `planned` 6, `partial` 3, `stated` 0, `proved` 41。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。
 
@@ -58,9 +58,9 @@
 | Lemma 4.4<br>`structure.strict_coproduct` | strict inclusion が coproduct の単射性を保存する | `lemma:free-product-amalgam`<br>946–951 | `T3.GroupTheory.Coproduct.Strict` | proved | proof_checked |
 | Lemma 4.5<br>`structure.free_two_stabilization` | 非自明群と F₂ の coproduct の strictness と内部中心列一致 | `lemma:coincidence of central series`<br>962–967 | `T3.GroupTheory.Coproduct.CentralSeries`<br>`T3.GroupTheory.Coproduct.CentralSeriesCriterion`<br>`T3.GroupTheory.Coproduct.FreeTwoSeparation`<br>`T3.GroupTheory.Coproduct.FreeTwo`<br>`T3.ForMathlib.TensorProduct` | proved | proof_checked |
 | Lemma 4.6<br>`structure.simultaneous_commutator_roots` | G * F₂ₙ の quotient における同時 commutator roots と単射性 | `lemma:basic commutator root`<br>1010–1017 | `T3.GroupTheory.Roots.Commutator`<br>`T3.GroupTheory.Roots.CommutatorRelations` | proved | proof_checked |
-| Lemma 4.7<br>`structure.derived_strictification` | 高々 2m 元を付加する derived strictification | `lemma:commutator root`<br>1076–1082 | `T3.GroupTheory.Roots.DerivedStrictification`<br>`T3.GroupTheory.GeneratorRank` | partial | unchecked |
+| Lemma 4.7<br>`structure.derived_strictification` | 高々 2m 元を付加する derived strictification | `lemma:commutator root`<br>1076–1082 | `T3.GroupTheory.Roots.DerivedStrictification`<br>`T3.GroupTheory.Roots.DefectBasis`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ForMathlib.Subgroup` | proved | proof_checked |
 | Lemma 4.8<br>`structure.simultaneous_triple_roots` | G × F₃ₙ の quotient における同時 triple roots と単射性 | `lemma:triple commutator root`<br>1110–1117 | `T3.GroupTheory.Roots.Triple` | proved | proof_checked |
-| Lemma 4.9<br>`structure.lcs_strictification` | 高々 3·binom(n,2) 元を付加する γ₃ strictification | `lemma:number of generators for triple commutator roots`<br>1133–1141 | `T3.GroupTheory.Roots.LowerCentralStrictification`<br>`T3.GroupTheory.GeneratorRank` | partial | unchecked |
+| Lemma 4.9<br>`structure.lcs_strictification` | 高々 3·binom(n,2) 元を付加する γ₃ strictification | `lemma:number of generators for triple commutator roots`<br>1133–1141 | `T3.GroupTheory.Roots.LowerCentralStrictification`<br>`T3.GroupTheory.Roots.DefectBasis`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ForMathlib.Subgroup` | proved | proof_checked |
 | Remark 4.10<br>`structure.shared_triple_roots` | triple roots で生成元を共有する refinement | label なし<br>1177–1182 | `T3.GroupTheory.Roots.SharedTriple` | planned | unchecked |
 | Proposition 4.11<br>`structure.ec_central_series` | e.c. 群の内部中心列一致と単一の交換子・三重交換子表示 | `proposition:structure of e.c. model`<br>1185–1195 | `T3.ModelTheory.ExistentiallyClosedGroups` | proved | proof_checked |
 | Proposition 4.12<br>`structure.strict_envelope` | 総生成元数 15n²、内部中心列一致、LCS strict envelope | `proposition:bdd LCS`<br>1212–1220 | `T3.ModelTheory.StrictEnvelope` | planned | unchecked |
@@ -537,14 +537,14 @@ T₃の有限言語・Π₂・局所有限性を供給しFact2.6の特殊化ま�
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.AssociatedGraded.finite_layerOne_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L130), [T3.AssociatedGraded.finrank_layerOne_le_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L151), [T3.AssociatedGraded.finrank_layerOne_le_rank](../T3/GroupTheory/GeneratorRank.lean#L195)。
+実在宣言: [T3.AssociatedGraded.finite_layerOne_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L130), [T3.AssociatedGraded.finrank_layerOne_le_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L151), [T3.AssociatedGraded.finrank_layerOne_le_rank](../T3/GroupTheory/GeneratorRank.lean#L195), [T3.AssociatedGraded.exists_layer_kernel_basis_representatives](../T3/GroupTheory/Roots/DefectBasis.lean#L46), [T3.AssociatedGraded.exists_derived_defect_generators](../T3/GroupTheory/Roots/DefectBasis.lean#L114), [T3.DerivedStrictification.Extension](../T3/GroupTheory/Roots/DerivedStrictification.lean#L47), [T3.DerivedStrictification.baseMap](../T3/GroupTheory/Roots/DerivedStrictification.lean#L54), [T3.DerivedStrictification.enlarged](../T3/GroupTheory/Roots/DerivedStrictification.lean#L70), [T3.DerivedStrictification.newGenerators_card_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L108), [T3.DerivedStrictification.enlarged_eq_closure](../T3/GroupTheory/Roots/DerivedStrictification.lean#L117), [T3.DerivedStrictification.comap_commutator_quotientMap](../T3/GroupTheory/Roots/DerivedStrictification.lean#L143), [T3.DerivedStrictification.inf_commutator_eq](../T3/GroupTheory/Roots/DerivedStrictification.lean#L186), [T3.DerivedStrictification.rank_enlarged_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L276), [T3.DerivedStrictification.exists_derived_strictification](../T3/GroupTheory/Roots/DerivedStrictification.lean#L306), [Subgroup.exists_mul_mul_commutator_of_mem_sup](../T3/ForMathlib/Subgroup.lean#L39)。
 
-dim gr₁(C)≤mとその有限次元性を有限生成族/Group.rankから証明。defect商空間の基底選択、追加根による具体的拡大・生成元数・strictness本体は未完成。
+実際の一次graded kernelの基底を群へ持ち上げ、defectの生成等式と個数≤rank Cを証明。同時交換子商でDをCの像と2d個の自由生成元から生成する。商は一次商を保ち、coproductの二つの射影で成分を分離してD∩γ₂(H)=γ₂(D)を得る。追加≤2m、総rank≤3m、同一宇宙の単射拡大。有限性・非自明性のambient仮定なし。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | C に追加する生成元数≤2m / 1079 | planned | unchecked | なし |
-| strict | D∩γ₂(H)=γ₂(D) / 1080 | planned | unchecked | なし |
+| bound | C に追加する生成元数≤2m / 1079 | proved | proof_checked | [T3.DerivedStrictification.newGenerators_card_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L108), [T3.DerivedStrictification.rank_enlarged_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L276), [T3.DerivedStrictification.exists_derived_strictification](../T3/GroupTheory/Roots/DerivedStrictification.lean#L306) |
+| strict | D∩γ₂(H)=γ₂(D) / 1080 | proved | proof_checked | [T3.DerivedStrictification.inf_commutator_eq](../T3/GroupTheory/Roots/DerivedStrictification.lean#L186), [T3.DerivedStrictification.derived_strict](../T3/GroupTheory/Roots/DerivedStrictification.lean#L248), [T3.DerivedStrictification.exists_derived_strictification](../T3/GroupTheory/Roots/DerivedStrictification.lean#L306) |
 
 ### `structure.simultaneous_triple_roots`
 
@@ -558,14 +558,14 @@ dim gr₁(C)≤mとその有限次元性を有限生成族/Group.rankから証�
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.AssociatedGraded.finite_layerTwo_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L141), [T3.AssociatedGraded.finrank_layerTwo_le_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L163), [T3.AssociatedGraded.finrank_layerTwo_le_rank](../T3/GroupTheory/GeneratorRank.lean#L207)。
+実在宣言: [T3.AssociatedGraded.finite_layerTwo_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L141), [T3.AssociatedGraded.finrank_layerTwo_le_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L163), [T3.AssociatedGraded.finrank_layerTwo_le_rank](../T3/GroupTheory/GeneratorRank.lean#L207), [T3.AssociatedGraded.exists_layer_kernel_basis_representatives](../T3/GroupTheory/Roots/DefectBasis.lean#L46), [T3.AssociatedGraded.exists_lowerCentral_defect_generators](../T3/GroupTheory/Roots/DefectBasis.lean#L135), [T3.LowerCentralStrictification.enlargedSubgroup](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L54), [T3.LowerCentralStrictification.enlargedSubgroup_eq_sup](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L84), [T3.LowerCentralStrictification.kernel_le_lowerCentralSeries](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L112), [T3.LowerCentralStrictification.kernel_le_product_derived](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L128), [T3.LowerCentralStrictification.isStrict_enlargedSubgroup](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L184), [T3.LowerCentralStrictification.exists_generating_finset](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L236), [T3.LowerCentralStrictification.rank_enlargedSubgroup_le](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L267), [T3.LowerCentralStrictification.exists_strict_extension](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L300), [Subgroup.map_inf_of_ker_le](../T3/ForMathlib/Subgroup.lean#L76)。
 
-dim gr₂(C)≤binom(n,2)とその有限次元性を有限生成族/Group.rankから証明。defect商空間の基底選択、追加根による具体的拡大・生成元数・strictness本体は未完成。
+第一strict性を使って二次graded kernelを原稿の欠損商と同定し、その基底代表元を≤binom(rank C,2)個選ぶ。G×Free(Fin(3d))の同時商とC×Freeの像Dを構成し、kernel包含・直積中心列・商内の交叉から両strict等式を証明。追加≤3*binom(m,2)、総rank≤m+3*binom(m,2)、Dの有限生成性と同一宇宙の単射拡大を返す。自明群と空の欠損族を含む。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | C に追加する生成元数≤3·binom(n,2) / 1138 | planned | unchecked | なし |
-| strict | D が γ₂ と γ₃ で strict / 1139 | planned | unchecked | なし |
+| bound | C に追加する生成元数≤3·binom(n,2) / 1138 | proved | proof_checked | [T3.LowerCentralStrictification.exists_generating_finset](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L236), [T3.LowerCentralStrictification.rank_enlargedSubgroup_le](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L267), [T3.LowerCentralStrictification.exists_strict_extension](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L300) |
+| strict | D が γ₂ と γ₃ で strict / 1139 | proved | proof_checked | [T3.LowerCentralStrictification.isStrict_enlargedSubgroup](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L184), [T3.LowerCentralStrictification.exists_strict_extension](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L300) |
 
 ### `structure.shared_triple_roots`
 
