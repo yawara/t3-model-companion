@@ -1,0 +1,7 @@
+Probe.publicGood: privateName=false; local=true; localExporting=false; private=true; privateExporting=true; exported=true; exportedExporting=true; nonpublic=true; nonpublicExporting=false
+Probe.publicDef: privateName=false; local=true; localExporting=false; private=true; privateExporting=true; exported=true; exportedExporting=true; nonpublic=true; nonpublicExporting=false
+_private.T3.Probe.0.Probe.hiddenDef: privateName=true; local=false; localExporting=false; private=true; privateExporting=true; exported=false; exportedExporting=false; nonpublic=false; nonpublicExporting=false
+_private.T3.Probe.0.Probe.hiddenPrivate: privateName=true; local=false; localExporting=false; private=true; privateExporting=true; exported=false; exportedExporting=false; nonpublic=false; nonpublicExporting=false
+_private.T3.Probe.0.Probe.hiddenOrdinary: privateName=true; local=false; localExporting=false; private=true; privateExporting=true; exported=false; exportedExporting=false; nonpublic=false; nonpublicExporting=false
+hiddenModulePublic: privateName=false; local=false; localExporting=false; private=true; privateExporting=true; exported=false; exportedExporting=false; nonpublic=false; nonpublicExporting=false
+isModule private=false exported=true

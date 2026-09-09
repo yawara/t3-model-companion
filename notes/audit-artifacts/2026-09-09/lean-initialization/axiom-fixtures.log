@@ -1,0 +1,14 @@
+build-T3-Probe exit 0 
+build-T3 exit 0 
+positive exit 0 Axiom audit passed: 2 declarations in 2 source modules.
+
+fixture /tmp/t3-audit-fixture-241ryr8n
+negative-build-T3-Probe exit 0 
+negative-build-T3 exit 0 
+negative-private exit 1 Tests/Axioms.lean:84:0: error: `_private.T3.Probe.0.hiddenBad` from `T3.Probe` uses disallowed axioms: [_private.T3.Probe.0.hiddenBad]
+
+standard-build-T3-Probe exit 0 
+standard-build-T3 exit 0 
+negative-standard exit 1 Tests/Axioms.lean:84:0: error: `Nat.auditFixtureBad` from `T3.Probe` uses disallowed axioms: [Nat.auditFixtureBad]
+
+all controls passed

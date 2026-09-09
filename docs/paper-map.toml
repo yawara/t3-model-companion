@@ -1,0 +1,1646 @@
+# Stable paper IDs are primary; displayed theorem numbers and lines are auxiliary.
+# planned_declarations are intentions, never evidence of an existing Lean declaration.
+# Actual bindings: { name = "T3.name", module = "T3.GroupTheory.Basic", kind = "theorem", line = 42 }.
+# proved requires verification = { record = "path/to/audit.md", code_revision = "reviewed revision" }.
+# --check performs lexical checks; --declarations-json additionally checks the Lean environment manifest.
+schema_version = 1
+
+[source]
+path = "T3_modelcompanion_v4.tex"
+sha256 = "79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b"
+numbered_items = 47
+custom_items = 1
+
+[[items]]
+id = "preliminaries.exponent_three"
+title = "指数は 3 を割る条件を用い、自明群を含める"
+environment = "prose"
+number = "2.preamble"
+line_start = 136
+line_end = 142
+tex_label = ""
+modules = ["T3.GroupTheory.Basic", "T3.ModelTheory.GroupLanguage", "T3.ModelTheory.ExponentThree"]
+planned_declarations = []
+declarations = [{ name = "T3.HasExponentThree", module = "T3.GroupTheory.Basic", kind = "def", line = 32 }, { name = "T3.hasExponentThree_iff_exponent_dvd", module = "T3.GroupTheory.Basic", kind = "theorem", line = 39 }, { name = "T3.hasExponentThree_of_subsingleton", module = "T3.GroupTheory.Basic", kind = "theorem", line = 48 }, { name = "FirstOrder.Language.group", module = "T3.ModelTheory.GroupLanguage", kind = "def", line = 51 }, { name = "FirstOrder.Language.Theory.group", module = "T3.ModelTheory.GroupLanguage", kind = "def", line = 190 }, { name = "FirstOrder.Group.groupOfModelGroup", module = "T3.ModelTheory.GroupLanguage", kind = "abbrev", line = 242 }, { name = "FirstOrder.Group.embeddingOfInjectiveMonoidHom", module = "T3.ModelTheory.GroupLanguage", kind = "def", line = 304 }, { name = "FirstOrder.Group.coe_substructure_closure_eq", module = "T3.ModelTheory.GroupLanguage", kind = "theorem", line = 392 }, { name = "T3.exponentGroupTheory", module = "T3.ModelTheory.ExponentThree", kind = "def", line = 104 }, { name = "T3.exponentThreeTheory", module = "T3.ModelTheory.ExponentThree", kind = "abbrev", line = 131 }, { name = "T3.exponentThreeTheory_model_iff", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 139 }, { name = "T3.exponentThreeTheory_isPiTwo", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 148 }, { name = "T3.finite_substructure_closure_of_model_exponentThreeTheory", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 187 }, { name = "T3.exponentThreeTheory_isLocallyFinite", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 204 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "実際の群言語とTₙ、n=3でHasExponentThreeとの同値、Π₂、局所有限性を証明。元の演算を保ち自明群・任意宇宙の群・空の生成集合を含む。companion/e.c.の最後の判定のみ既存canonical semantic universeを継承する。"
+parts = []
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items]]
+id = "preliminaries.notation"
+title = "群の記法、生成元数、自由指数群、coproduct"
+environment = "notation"
+number = "2.1"
+line_start = 145
+line_end = 172
+tex_label = ""
+modules = ["T3.GroupTheory.Basic", "T3.GroupTheory.Free.Basic", "T3.GroupTheory.Coproduct.Basic", "T3.GroupTheory.CentralSeries", "T3.GroupTheory.GeneratorRank", "T3.ModelTheory.ExponentThree"]
+planned_declarations = []
+declarations = []
+formalization = "partial"
+fidelity = "unchecked"
+notes = "自由群・coproduct の cube quotient 表示と普遍性、および反復交換子を実装。残る記法の個別対応は未登録。"
+
+[[items.parts]]
+id = "commutator"
+summary = "交換子 aba⁻¹b⁻¹"
+source_kind = "enumerated"
+source_line = 147
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "iterated_commutator"
+summary = "左結合の反復交換子"
+source_kind = "enumerated"
+source_line = 148
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.iteratedCommutator", module = "T3.GroupTheory.CentralSeries", kind = "def", line = 161 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "conjugation"
+summary = "共役 aᵇ=b⁻¹ab"
+source_kind = "enumerated"
+source_line = 149
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "variety"
+summary = "指数 3 の variety V₃"
+source_kind = "enumerated"
+source_line = 150
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.exponentThreeTheory_model_iff", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 139 }]
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "free_product"
+summary = "通常の自由積"
+source_kind = "enumerated"
+source_line = 151
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "normal_closure"
+summary = "集合の normal closure"
+source_kind = "enumerated"
+source_line = 152
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "generator_rank"
+summary = "最小生成元数 d(G)"
+source_kind = "enumerated"
+source_line = 155
+formalization = "partial"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = [{ name = "Group.fg_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 43 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 195 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 207 }]
+notes = "有限生成群ではmathlib Group.rankを用いる。有限生成族からFGを供給し、第一/第二層の次元をrankで評価。無限生成群の最小生成基数の一般定義は未登録。"
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "coproduct"
+summary = "variety 内の coproduct と quotient 表示"
+source_kind = "enumerated"
+source_line = 156
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.Coproduct", module = "T3.GroupTheory.Coproduct.Basic", kind = "abbrev", line = 33 }, { name = "T3.Coproduct.lift", module = "T3.GroupTheory.Coproduct.Basic", kind = "def", line = 69 }, { name = "T3.Coproduct.hom_ext", module = "T3.GroupTheory.Coproduct.Basic", kind = "theorem", line = 86 }]
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items.parts]]
+id = "free_group"
+summary = "自由指数群と Burnside 群 B(r,3)"
+source_kind = "enumerated"
+source_line = 162
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.Free", module = "T3.GroupTheory.Free.Basic", kind = "abbrev", line = 122 }, { name = "T3.Free.of", module = "T3.GroupTheory.Free.Basic", kind = "def", line = 132 }, { name = "T3.Free.lift", module = "T3.GroupTheory.Free.Basic", kind = "def", line = 157 }, { name = "T3.Free.hom_ext", module = "T3.GroupTheory.Free.Basic", kind = "theorem", line = 170 }]
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items]]
+id = "model_theory.basic_definitions"
+title = "companion、model completeness、e.c.、Π₂、有限図式"
+environment = "definition"
+number = "2.2"
+line_start = 178
+line_end = 193
+tex_label = ""
+modules = ["T3.ModelTheory.ModelCompanion", "T3.ModelTheory.Inductive", "T3.ModelTheory.FiniteDiagram", "T3.ModelTheory.ModelCompleteness", "T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "項目1–6を実装。構文的model completenessとcanonical universeでの意味論的条件の同値、一般有限言語の図式、局所有限性の下で全QF図式のT同値類の有限代表集合まで証明。companion/e.c.のモデル量化はType (max u v)を用いる既存規約に従う。これらの他宇宙への移行bridgeは独立の残件であり、論文全体の完了を意味しない。"
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items.parts]]
+id = "companion"
+summary = "双方のモデルへの埋込み"
+source_kind = "enumerated"
+source_line = 180
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.ModelsEmbedInto", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 49 }, { name = "FirstOrder.Language.Theory.IsCompanion", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 70 }]
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items.parts]]
+id = "model_complete"
+summary = "全式を existential formula に書き換える model completeness"
+source_kind = "enumerated"
+source_line = 181
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.IsModelComplete", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 104 }, { name = "FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff", module = "T3.ModelTheory.ModelCompanion", kind = "theorem", line = 136 }, { name = "FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 294 }, { name = "FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 395 }, { name = "FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary", module = "T3.ModelTheory.ModelCompleteness", kind = "theorem", line = 457 }]
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items.parts]]
+id = "model_companion"
+summary = "model-complete companion"
+source_kind = "enumerated"
+source_line = 182
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.IsModelCompanionOf", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 162 }, { name = "FirstOrder.Language.Theory.HasModelCompanion", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 188 }]
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items.parts]]
+id = "existentially_closed"
+summary = "QF 行列をもつ existential formula に関する閉性"
+source_kind = "enumerated"
+source_line = 183
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.IsExistentiallyClosed", module = "T3.ModelTheory.ModelCompanion", kind = "def", line = 197 }]
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items.parts]]
+id = "pi_two"
+summary = "∀∃ 文による同値な公理化"
+source_kind = "enumerated"
+source_line = 184
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.BoundedFormula.IsUniversalExistential", module = "T3.ModelTheory.Inductive", kind = "inductive", line = 51 }, { name = "FirstOrder.Language.Theory.IsPiTwo", module = "T3.ModelTheory.Inductive", kind = "def", line = 109 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "finite_diagram"
+summary = "有限 tuple の QF 図式と有限言語・局所有限性の下での有限性"
+source_kind = "enumerated"
+source_line = 185
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.tupleQfDiagram", module = "T3.ModelTheory.FiniteDiagram", kind = "def", line = 229 }, { name = "FirstOrder.Language.realize_finiteGeneratedDiagram_iff_tupleQfDiagram", module = "T3.ModelTheory.FiniteDiagram", kind = "theorem", line = 321 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram", module = "T3.ModelTheory.LocallyFinite", kind = "theorem", line = 68 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qf_representatives", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 208 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 241 }]
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items]]
+id = "model_theory.companion_iff_ec"
+title = "Π₂ 理論の model companion と e.c. class の一致"
+environment = "fact"
+number = "2.3"
+line_start = 195
+line_end = 201
+tex_label = ""
+modules = ["T3.ModelTheory.Inductive", "T3.ModelTheory.PiTwoDirectLimit", "T3.ModelTheory.ExistentiallyClosedExtension", "T3.ModelTheory.ElementaryChain", "T3.ModelTheory.RobinsonTest", "T3.ModelTheory.ModelCompanionCriterion"]
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.IsModelCompanionOf.models_iff_isExistentiallyClosed", module = "T3.ModelTheory.Inductive", kind = "theorem", line = 202 }, { name = "FirstOrder.Language.DirectLimit.models_of_isPiTwo", module = "T3.ModelTheory.PiTwoDirectLimit", kind = "theorem", line = 76 }, { name = "FirstOrder.Language.Theory.exists_isExistentiallyClosed_embedding", module = "T3.ModelTheory.ExistentiallyClosedExtension", kind = "theorem", line = 326 }, { name = "FirstOrder.Language.DirectLimit.realize_boundedFormula_of", module = "T3.ModelTheory.ElementaryChain", kind = "theorem", line = 107 }, { name = "FirstOrder.Language.Theory.isModelComplete_of_isExistentiallyClosedInModels", module = "T3.ModelTheory.RobinsonTest", kind = "theorem", line = 433 }, { name = "FirstOrder.Language.Theory.isModelCompanionOf_of_isExistentiallyClosed_iff", module = "T3.ModelTheory.ModelCompanionCriterion", kind = "theorem", line = 43 }, { name = "FirstOrder.Language.Theory.isModelCompanionOf_iff_models_iff_isExistentiallyClosed", module = "T3.ModelTheory.ModelCompanionCriterion", kind = "theorem", line = 65 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "一般Π₂理論について全同値を証明。旧e.c.拡大・Robinson test・elementary chainを再利用し、普遍理論に限定されていた極限のモデル性を一般Π₂に拡張。finite-language/local-finiteness/amalgamationの追加仮定なし。逆向きも実際の存在式生成による構文的model completenessまで到達する。既存canonical Type (max u v)規約下で完成。任意の上位宇宙でのcompanion/e.c.への移行は別残件。"
+parts = []
+verification = { record = "notes/coproduct-tensor-and-companion-checkpoint.md", code_revision = "sha256:ab88bd971dc348f35c07e9402f1ee244391eaad8fd3709962be1a7c7a111b7d8" }
+
+[[items]]
+id = "model_theory.local_finiteness"
+title = "理論の局所有限性"
+environment = "definition"
+number = "2.4"
+line_start = 203
+line_end = 206
+tex_label = ""
+modules = ["T3.ModelTheory.LocallyFinite"]
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.IsLocallyFinite", module = "T3.ModelTheory.LocallyFinite", kind = "def", line = 44 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.finite_closure_range", module = "T3.ModelTheory.LocallyFinite", kind = "theorem", line = 55 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の有限subsetが生成する実際のSubstructureの有限性として定義。有限言語や生成部分構造がTのmodelであることは仮定しない。companion/e.c.定義と同じcanonical semantic universeを用い、他宇宙へのbridgeは未実装。"
+parts = []
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items]]
+id = "model_theory.uniform_local_finiteness"
+title = "有限言語における一様な生成部分構造の位数評価"
+environment = "fact"
+number = "2.5"
+line_start = 209
+line_end = 212
+tex_label = ""
+modules = ["T3.ModelTheory.LocallyFinite", "T3.ModelTheory.UniformLocalFiniteness"]
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qfType_cover", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 89 }, { name = "FirstOrder.Language.Theory.exists_card_closure_le_of_isLocallyFinite", module = "T3.ModelTheory.UniformLocalFiniteness", kind = "theorem", line = 182 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "一般の局所有限T・有限言語について、compactnessで有限個の生成tupleのQF型が全モデルのtupleを覆うことを証明し、その生成部分構造の位数の最大値から共通上界を得る。任意n・card≤nの全有限subset・空集合を含む。有限部分構造自身にTmodel条件は要求しない。モデル宇宙はIsLocallyFiniteのcanonical規約どおり。"
+parts = []
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items]]
+id = "model_theory.bounded_amalgamation_criterion"
+title = "model companion の存在と有界非 amalgamation 障害の同値"
+environment = "fact"
+number = "2.6"
+line_start = 214
+line_end = 228
+tex_label = "fact:locally finiteness and model companion"
+modules = ["T3.ModelTheory.ExistentialWitness", "T3.ModelTheory.Amalgamation", "T3.ModelTheory.BoundedAmalgamation", "T3.ModelTheory.FiniteObstructions", "T3.ModelTheory.ExtensionAxioms", "T3.ModelTheory.BoundedAmalgamationCriterion"]
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.hasModelCompanion_iff_boundedAmalgamationObstructions", module = "T3.ModelTheory.BoundedAmalgamationCriterion", kind = "theorem", line = 196 }, { name = "FirstOrder.Language.Theory.extensionTheory", module = "T3.ModelTheory.BoundedAmalgamationCriterion", kind = "def", line = 88 }, { name = "FirstOrder.Language.Theory.AmalgamableOver", module = "T3.ModelTheory.Amalgamation", kind = "def", line = 85 }, { name = "FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_bad_marked_cover", module = "T3.ModelTheory.FiniteObstructions", kind = "theorem", line = 193 }, { name = "FirstOrder.Language.extensionAxiom", module = "T3.ModelTheory.ExtensionAxioms", kind = "def", line = 64 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "一般有限言語・Π₂・局所有限Tについて両方向完成。存在式の一様witness数から必要方向、有界生成障害の有限marked代表と実際のextension sentencesから十分方向を証明。有限A/B/C自身にはT-model条件を置かず空の構造も許す。上界は有限包含A→Bを固定して選び全e.c.MとA→Mに共通、Cの総生成元数を数える。モデル量化は既存canonical semantic universe規約。"
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "model_companion"
+summary = "model companion の存在"
+source_kind = "enumerated"
+source_line = 219
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.hasModelCompanion_of_boundedAmalgamationObstructions", module = "T3.ModelTheory.BoundedAmalgamationCriterion", kind = "theorem", line = 172 }]
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "bounded_obstruction"
+summary = "e.c. モデル内の総生成元数が有界な非 amalgamation 障害"
+source_kind = "enumerated"
+source_line = 220
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "FirstOrder.Language.Theory.BoundedAmalgamationObstructions", module = "T3.ModelTheory.BoundedAmalgamation", kind = "def", line = 101 }, { name = "FirstOrder.Language.Theory.HasModelCompanion.boundedAmalgamationObstructions", module = "T3.ModelTheory.BoundedAmalgamation", kind = "theorem", line = 183 }, { name = "FirstOrder.Language.Theory.IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction", module = "T3.ModelTheory.BoundedAmalgamation", kind = "theorem", line = 118 }]
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items]]
+id = "linear_algebra.graded_lie"
+title = "graded Lie ring と graded Lie algebra"
+environment = "definition"
+number = "2.7"
+line_start = 267
+line_end = 279
+tex_label = ""
+modules = ["T3.LinearAlgebra.GradedLie"]
+planned_declarations = []
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = ""
+
+[[items.parts]]
+id = "grading"
+summary = "bracket の次数整合性"
+source_kind = "enumerated"
+source_line = 272
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "bilinear"
+summary = "bracket の双加法性"
+source_kind = "enumerated"
+source_line = 273
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "alternating"
+summary = "交代性"
+source_kind = "enumerated"
+source_line = 274
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "jacobi"
+summary = "Jacobi 恒等式"
+source_kind = "enumerated"
+source_line = 275
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "linear_algebra.degree_one_generation"
+title = "反対称性と次数 1 からの生成の特徴づけ"
+environment = "remark"
+number = "2.8"
+line_start = 281
+line_end = 287
+tex_label = ""
+modules = ["T3.LinearAlgebra.GradedLie"]
+planned_declarations = []
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = ""
+
+[[items.parts]]
+id = "antisymmetry"
+summary = "bracket の反対称性"
+source_kind = "enumerated"
+source_line = 283
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "generation"
+summary = "次数 1 からの生成と各次数の bracket による生成"
+source_kind = "enumerated"
+source_line = 284
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "linear_algebra.truncated_exterior"
+title = "次数 1–3 の外冪と符号付き Lie bracket"
+environment = "example"
+number = "2.9"
+line_start = 289
+line_end = 306
+tex_label = "example:Grassmann algebra"
+modules = ["T3.LinearAlgebra.Wedge", "T3.LinearAlgebra.TruncatedExterior"]
+planned_declarations = []
+declarations = [
+  { name = "T3.TruncatedExterior", module = "T3.LinearAlgebra.TruncatedExterior", kind = "def", line = 35 },
+  { name = "T3.TruncatedExterior.instLieRing", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 133 },
+  { name = "T3.TruncatedExterior.instLieAlgebra", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 160 },
+  { name = "T3.TruncatedExterior.ofOne_lie_ofOne", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 214 },
+  { name = "T3.TruncatedExterior.ofTwo_lie_ofOne", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 222 },
+  { name = "T3.TruncatedExterior.ofOne_lie_ofTwo", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 230 },
+  { name = "T3.TruncatedExterior.ofThree_lie", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 236 },
+  { name = "T3.TruncatedExterior.lie_ofThree", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 241 },
+  { name = "T3.TruncatedExterior.ofTwo_lie_ofTwo", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 246 },
+  { name = "T3.TruncatedExterior.grade", module = "T3.LinearAlgebra.TruncatedExterior", kind = "def", line = 289 },
+  { name = "T3.TruncatedExterior.grade_eq_bot", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 326 },
+  { name = "T3.TruncatedExterior.instGradedBracket", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 334 },
+  { name = "T3.TruncatedExterior.instDecomposition", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 421 },
+  { name = "T3.TruncatedExterior.instGradedLieAlgebra", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 429 },
+]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の F₃ ベクトル空間 V の mathlib 外冪 Λ¹V × Λ²V × Λ³V を用いる。次数 (1,1),(2,1) は正、(1,2) は負の外積で、次数和 ≥ 4 の bracket は零。LieRing・LieAlgebra と明示的内部直和分解・GradedLieAlgebra を構成。ℕ grading の次数 0 および ≥ 4 は零で、原稿の正次数 grading と一致する。Jacobi は三重外積の巡回性と標数 3 から証明し、有限次元や基底の仮定はない。"
+parts = []
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items]]
+id = "linear_algebra.block_homogeneous"
+title = "block-homogeneous subspace"
+environment = "definition"
+number = "2.10"
+line_start = 308
+line_end = 312
+tex_label = ""
+modules = ["T3.LinearAlgebra.BlockDecomposition"]
+planned_declarations = []
+declarations = [{ name = "T3.IsBlockHomogeneous", module = "T3.LinearAlgebra.BlockDecomposition", kind = "abbrev", line = 43 }, { name = "T3.isBlockHomogeneous_iff_iSup_eq", module = "T3.LinearAlgebra.BlockDecomposition", kind = "theorem", line = 51 }, { name = "T3.blockIntersections_independent", module = "T3.LinearAlgebra.BlockDecomposition", kind = "theorem", line = 82 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "mathlibのDirectSum.Decompositionとhomogeneous predicateを用い、原稿のW=⨁(W∩Bᵢ)との同値をiSup等式と独立性で証明。任意index、一般Ring上のmoduleで成立し、原稿のvector spaceを含む。"
+parts = []
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items]]
+id = "linear_algebra.block_quotient"
+title = "block-homogeneous quotient の直和分解"
+environment = "proposition"
+number = "2.11"
+line_start = 314
+line_end = 317
+tex_label = ""
+modules = ["T3.LinearAlgebra.BlockDecomposition"]
+planned_declarations = []
+declarations = [{ name = "T3.BlockDecomposition.QuotientBlock", module = "T3.LinearAlgebra.BlockDecomposition", kind = "abbrev", line = 97 }, { name = "T3.BlockDecomposition.quotientEquiv", module = "T3.LinearAlgebra.BlockDecomposition", kind = "def", line = 177 }, { name = "T3.BlockDecomposition.quotientEquiv_mk_apply", module = "T3.LinearAlgebra.BlockDecomposition", kind = "theorem", line = 203 }, { name = "T3.BlockDecomposition.quotientEquiv_symm_lof_mk", module = "T3.LinearAlgebra.BlockDecomposition", kind = "theorem", line = 222 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "各componentをその交差部分空間で割る具体的写像の核=W・全射性から、原稿のcanonical LinearEquivを構成。代表元の各成分の像と単一成分に対する逆写像の公式も証明。有限index仮定はない。"
+parts = []
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items]]
+id = "preliminaries.set_commutator"
+title = "任意の二つの集合の交換子が生成する部分群"
+environment = "prose"
+number = "2.group_preamble"
+line_start = 324
+line_end = 325
+tex_label = ""
+modules = ["T3.GroupTheory.Basic"]
+planned_declarations = []
+declarations = [{ name = "T3.commutatorOfSets", module = "T3.GroupTheory.Basic", kind = "def", line = 59 }, { name = "T3.commutator_mem_commutatorOfSets", module = "T3.GroupTheory.Basic", kind = "theorem", line = 68 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の集合 A,B を扱う。Fact 2.15 の集合積に関する包含の公開 API に接続する。"
+parts = []
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items]]
+id = "preliminaries.central_series"
+title = "下部中心列と上部中心列"
+environment = "definition"
+number = "2.12"
+line_start = 326
+line_end = 339
+tex_label = ""
+modules = ["T3.GroupTheory.CentralSeries"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "mathlib のlower index nは原稿γₙ₊₁、upper index nはZₙ。任意群・任意nの再帰式と反復交換子による定義を接続。"
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "lower"
+summary = "下部中心列 γ₁=G, γₙ₊₁=[γₙ,G]"
+source_kind = "enumerated"
+source_line = 328
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.lowerCentralSeries_initial", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 208 }, { name = "T3.lowerCentralSeries_step", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 217 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "upper"
+summary = "反復交換子による上部中心列 Zₙ"
+source_kind = "enumerated"
+source_line = 332
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.mem_upperCentralSeries_iff_forall_fin", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 192 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.upper_central_recursive"
+title = "上部中心列の反復交換子による定義と再帰的定義の同値"
+environment = "remark"
+number = "2.13"
+line_start = 340
+line_end = 342
+tex_label = ""
+modules = ["T3.GroupTheory.CentralSeries"]
+planned_declarations = []
+declarations = [{ name = "T3.mem_upperCentralSeries_iff_forall_iteratedCommutator", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 170 }, { name = "T3.mem_upperCentralSeries_iff_forall_fin", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 192 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = ""
+parts = []
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.central_series_properties"
+title = "中心列の交換子評価と nilpotent 群の上下中心列の包含"
+environment = "fact"
+number = "2.14"
+line_start = 344
+line_end = 349
+tex_label = ""
+modules = ["T3.GroupTheory.CentralSeries"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "一般群のまま証明。次数評価はThree Subgroups Lemmaをquotientで用い、nilpotency classの仮定は原稿どおり保持。"
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "commutator_degree"
+summary = "[γᵢ,γⱼ]≤γᵢ₊ⱼ と次数商の可換性"
+source_kind = "enumerated"
+source_line = 346
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "Subgroup.commutator_lowerCentralSeries_le", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 65 }, { name = "Subgroup.isMulCommutative_lowerCentralSeries_quotient", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 137 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "upper_bound"
+summary = "class≤n の群の γᵢ≤Zₙ₊₁₋ᵢ"
+source_kind = "enumerated"
+source_line = 347
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "Subgroup.lowerCentralSeries_le_upperCentralSeries", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 103 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.elementary_identities"
+title = "指数 3 群の基本恒等式 11 項目"
+environment = "fact"
+number = "2.15"
+line_start = 355
+line_end = 371
+tex_label = "fact:elementary equations"
+modules = ["T3.GroupTheory.Identities", "T3.GroupTheory.Free.Examples"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "全 11 項目を検証済み。項目 3 の Z₂ 非可換例は自由群 F₂ で実証し、γ₂ の可換性と合わせた。"
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items.parts]]
+id = "quadruple_commutator"
+summary = "四重交換子の消滅、nilpotency class≤3"
+source_kind = "enumerated"
+source_line = 359
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutator_quadruple", module = "T3.GroupTheory.Identities", kind = "theorem", line = 665 }, { name = "T3.lowerCentralSeries_three_eq_bot", module = "T3.GroupTheory.Identities", kind = "theorem", line = 621 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "central_series_inclusions"
+summary = "γ₃≤Z と γ₂≤Z₂"
+source_kind = "enumerated"
+source_line = 360
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.lowerCentralSeries_two_le_center", module = "T3.GroupTheory.Identities", kind = "theorem", line = 609 }, { name = "T3.commutator_le_upperCentralSeries_two", module = "T3.GroupTheory.Identities", kind = "theorem", line = 673 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "derived_abelian"
+summary = "γ₂ の可換性と、一般には Z₂ が可換でないこと"
+source_kind = "enumerated"
+source_line = 361
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.isMulCommutative_commutator", module = "T3.GroupTheory.Identities", kind = "theorem", line = 657 }, { name = "T3.Free.not_isMulCommutative_upperCentralSeries_two_fin_two", module = "T3.GroupTheory.Free.Examples", kind = "theorem", line = 69 }]
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items.parts]]
+id = "triple_cyclic"
+summary = "三重交換子の巡回対称性と 2-Engel 性"
+source_kind = "enumerated"
+source_line = 362
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutator_triple_cyclic", module = "T3.GroupTheory.Identities", kind = "theorem", line = 504 }, { name = "T3.commutator_self_right", module = "T3.GroupTheory.Identities", kind = "theorem", line = 139 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "commutator_inverse"
+summary = "各引数の逆元と交換子の逆元"
+source_kind = "enumerated"
+source_line = 363
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutator_inv_left", module = "T3.GroupTheory.Identities", kind = "theorem", line = 686 }, { name = "T3.commutator_inv_right", module = "T3.GroupTheory.Identities", kind = "theorem", line = 694 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "normal_closure_abelian"
+summary = "同じ元の共役同士の可換性と principal normal closure の可換性"
+source_kind = "enumerated"
+source_line = 364
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutator_conjugates", module = "T3.GroupTheory.Identities", kind = "theorem", line = 703 }, { name = "T3.isMulCommutative_normalClosure", module = "T3.GroupTheory.Identities", kind = "theorem", line = 711 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "triple_swap"
+summary = "三重交換子の第 1・2 引数交換による反転"
+source_kind = "enumerated"
+source_line = 365
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutator_triple_swap", module = "T3.GroupTheory.Identities", kind = "theorem", line = 492 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "commutator_mul_right"
+summary = "右引数の積に対する交換子展開"
+source_kind = "enumerated"
+source_line = 366
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutator_mul_right", module = "T3.GroupTheory.Identities", kind = "theorem", line = 720 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "commutator_mul_left"
+summary = "左引数の積に対する交換子展開"
+source_kind = "enumerated"
+source_line = 367
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutator_mul_left", module = "T3.GroupTheory.Identities", kind = "theorem", line = 730 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "subgroup_product_right"
+summary = "集合の右積に対する交換子部分群包含"
+source_kind = "enumerated"
+source_line = 368
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutatorOfSets_mul_right", module = "T3.GroupTheory.Identities", kind = "theorem", line = 763 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items.parts]]
+id = "subgroup_product_left"
+summary = "集合の左積に対する交換子部分群包含"
+source_kind = "enumerated"
+source_line = 369
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.commutatorOfSets_mul_left", module = "T3.GroupTheory.Identities", kind = "theorem", line = 797 }]
+verification = { record = "notes/initial-lean-checkpoint.md", code_revision = "sha256:546edf575b27afe80eea1fd59089c5566fd4cf9297af6b51f06688b9fe1d51db" }
+
+[[items]]
+id = "preliminaries.free_coproduct"
+title = "生成集合の非交和の自由群と coproduct"
+environment = "fact"
+number = "2.16"
+line_start = 374
+line_end = 376
+tex_label = ""
+modules = ["T3.GroupTheory.Coproduct.Basic"]
+planned_declarations = []
+declarations = [{ name = "T3.Free.sumEquivCoproduct", module = "T3.GroupTheory.Coproduct.Basic", kind = "def", line = 221 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "非交和を Sum で符号化し、生成元に関して自然な同型を両方向の普遍性から構成。有限性・非空性の仮定なし。"
+parts = []
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items]]
+id = "preliminaries.coproduct_factor_injective"
+title = "coproduct の因子写像の単射性"
+environment = "lemma"
+number = "2.17"
+line_start = 378
+line_end = 382
+tex_label = ""
+modules = ["T3.GroupTheory.Coproduct.Basic"]
+planned_declarations = []
+declarations = [{ name = "T3.Coproduct.fst", module = "T3.GroupTheory.Coproduct.Basic", kind = "def", line = 99 }, { name = "T3.Coproduct.snd", module = "T3.GroupTheory.Coproduct.Basic", kind = "def", line = 106 }, { name = "T3.Coproduct.inl_injective", module = "T3.GroupTheory.Coproduct.Basic", kind = "theorem", line = 172 }, { name = "T3.Coproduct.inr_injective", module = "T3.GroupTheory.Coproduct.Basic", kind = "theorem", line = 181 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "原稿の retraction による証明。各因子への retraction と単射性には、その因子の指数 3 条件だけで十分。有限性は仮定しない。"
+parts = []
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items]]
+id = "preliminaries.associated_graded"
+title = "群の associated graded Lie algebra"
+environment = "definition"
+number = "2.18"
+line_start = 391
+line_end = 408
+tex_label = ""
+modules = ["T3.GroupTheory.AssociatedGraded", "T3.GroupTheory.AssociatedGraded.Bracket", "T3.GroupTheory.AssociatedGraded.Lie"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "実際の中心列商上に交換子を二変数とも降下し、標準ZMod3双線形bracketを構成。DirectSum上のLieRing/LieAlgebra/GradedLieAlgebra、全正次数での代表元式と次数0の消滅を証明。"
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items.parts]]
+id = "degree_piece"
+summary = "次数 n の中心列商"
+source_kind = "enumerated"
+source_line = 394
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.Layer", module = "T3.GroupTheory.AssociatedGraded", kind = "abbrev", line = 99 }, { name = "T3.AssociatedGraded.layerModule", module = "T3.GroupTheory.AssociatedGraded", kind = "instance", line = 165 }, { name = "T3.AssociatedGraded.GradedModule", module = "T3.GroupTheory.AssociatedGraded", kind = "abbrev", line = 557 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "bracket"
+summary = "代表元による bracket と graded Lie algebra 構造"
+source_kind = "enumerated"
+source_line = 395
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.bracketLayer", module = "T3.GroupTheory.AssociatedGraded.Bracket", kind = "def", line = 182 }, { name = "T3.AssociatedGraded.bracketLayer_mk", module = "T3.GroupTheory.AssociatedGraded.Bracket", kind = "theorem", line = 192 }, { name = "T3.AssociatedGraded.gradedLieRing", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "instance", line = 106 }, { name = "T3.AssociatedGraded.gradedLieAlgebra", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "instance", line = 121 }, { name = "T3.AssociatedGraded.grade", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "def", line = 203 }, { name = "T3.AssociatedGraded.gradedLieGrading", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "instance", line = 220 }, { name = "T3.AssociatedGraded.bracket_lof_mk", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 190 }, { name = "T3.AssociatedGraded.grade_zero", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 238 }]
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items]]
+id = "preliminaries.associated_graded_properties"
+title = "次数 4 の消滅、三重 bracket 恒等式、次数 1 による生成"
+environment = "lemma"
+number = "2.19"
+line_start = 411
+line_end = 420
+tex_label = ""
+modules = ["T3.GroupTheory.AssociatedGraded", "T3.GroupTheory.AssociatedGraded.Bracket", "T3.GroupTheory.AssociatedGraded.Lie", "T3.GroupTheory.AssociatedGraded.Generation"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "次数4以上の消滅、全Lie algebra上の三重bracket恒等式、次数1像によるLie生成を、任意指数3群について証明。"
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items.parts]]
+id = "degree_four"
+summary = "gr₄=0"
+source_kind = "enumerated"
+source_line = 414
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.layer_four_subsingleton", module = "T3.GroupTheory.AssociatedGraded", kind = "theorem", line = 310 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "triple_identities"
+summary = "三重 bracket の巡回性と反復引数の消滅"
+source_kind = "enumerated"
+source_line = 415
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.triple_bracket_cyclic", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 141 }, { name = "T3.AssociatedGraded.triple_bracket_self", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 149 }]
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items.parts]]
+id = "generation"
+summary = "gr₁ による Lie algebra の生成"
+source_kind = "enumerated"
+source_line = 417
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.lieSubalgebra_eq_top_of_degree_one", module = "T3.GroupTheory.AssociatedGraded.Generation", kind = "theorem", line = 69 }, { name = "T3.AssociatedGraded.lieSpan_range_lof_one_eq_top", module = "T3.GroupTheory.AssociatedGraded.Generation", kind = "theorem", line = 95 }]
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items]]
+id = "preliminaries.graded_image"
+title = "元の初期成分と部分群の graded image"
+environment = "notation"
+number = "2.20"
+line_start = 422
+line_end = 437
+tex_label = ""
+modules = ["T3.GroupTheory.AssociatedGraded"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonical LinearEquivと代表元の式を証明。intrinsicな中心列への取り違えなし。"
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "initial_form"
+summary = "元の次数 i の像"
+source_kind = "enumerated"
+source_line = 424
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.mk", module = "T3.GroupTheory.AssociatedGraded", kind = "def", line = 106 }, { name = "T3.AssociatedGraded.mk_eq_zero", module = "T3.GroupTheory.AssociatedGraded", kind = "theorem", line = 123 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "subgroup_image"
+summary = "部分群 K の graded image と中心列商の同型"
+source_kind = "enumerated"
+source_line = 426
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.subgroupImage", module = "T3.GroupTheory.AssociatedGraded", kind = "def", line = 461 }, { name = "T3.AssociatedGraded.mem_subgroupImage", module = "T3.GroupTheory.AssociatedGraded", kind = "theorem", line = 469 }, { name = "T3.AssociatedGraded.subgroupLayerEquiv", module = "T3.GroupTheory.AssociatedGraded", kind = "def", line = 483 }, { name = "T3.AssociatedGraded.subgroupLayerEquiv_mk", module = "T3.GroupTheory.AssociatedGraded", kind = "theorem", line = 500 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.associated_graded_examples"
+title = "可換群・直積・2 生成自由群の graded"
+environment = "example"
+number = "2.21"
+line_start = 439
+line_end = 445
+tex_label = ""
+modules = ["T3.GroupTheory.AssociatedGradedExamples", "T3.GroupTheory.AssociatedGraded.Product"]
+planned_declarations = []
+declarations = []
+formalization = "partial"
+fidelity = "unchecked"
+notes = "項目2を完了。全次数で中心列の直積公式と、射影・包含から得るcanonicalなlayerのLinearEquivを証明。項目1の可換群と項目3のF₂の具体的記述は未完了。"
+
+[[items.parts]]
+id = "abelian"
+summary = "可換群の graded"
+source_kind = "enumerated"
+source_line = 441
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "product"
+summary = "直積の中心列と graded 直和"
+source_kind = "enumerated"
+source_line = 442
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.term_prod", module = "T3.GroupTheory.AssociatedGraded.Product", kind = "theorem", line = 45 }, { name = "T3.AssociatedGraded.layerProdEquiv", module = "T3.GroupTheory.AssociatedGraded.Product", kind = "def", line = 84 }, { name = "T3.AssociatedGraded.layerProdEquiv_apply", module = "T3.GroupTheory.AssociatedGraded.Product", kind = "theorem", line = 93 }]
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items.parts]]
+id = "free_two"
+summary = "F₂ の中心列と gr₁・gr₂"
+source_kind = "enumerated"
+source_line = 443
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "preliminaries.associated_graded_map"
+title = "準同型が誘導する gr(f)"
+environment = "definition"
+number = "2.22"
+line_start = 449
+line_end = 456
+tex_label = ""
+modules = ["T3.GroupTheory.AssociatedGraded", "T3.GroupTheory.AssociatedGraded.Bracket", "T3.GroupTheory.AssociatedGraded.Lie"]
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.mapLayer", module = "T3.GroupTheory.AssociatedGraded", kind = "def", line = 510 }, { name = "T3.AssociatedGraded.mapLayer_mk", module = "T3.GroupTheory.AssociatedGraded", kind = "theorem", line = 519 }, { name = "T3.AssociatedGraded.mapLie", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "def", line = 275 }, { name = "T3.AssociatedGraded.map_bracket", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 263 }, { name = "T3.AssociatedGraded.mapLie_mem_grade", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 291 }, { name = "T3.AssociatedGraded.mapLie_id", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 302 }, { name = "T3.AssociatedGraded.mapLie_comp", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 313 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "各次数商の誘導線形写像を実際のLieHomに持ち上げ、bracket・grading・恒等写像・合成の保存を証明。"
+parts = []
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items]]
+id = "preliminaries.lcs_strictness"
+title = "lower-central strict inclusion"
+environment = "definition"
+number = "2.23"
+line_start = 460
+line_end = 468
+tex_label = ""
+modules = ["T3.GroupTheory.CentralSeries"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = ""
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "derived"
+summary = "γ₂ の交わり条件"
+source_kind = "enumerated"
+source_line = 465
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.IsStrict", module = "T3.GroupTheory.CentralSeries", kind = "def", line = 228 }, { name = "T3.isStrict_iff_comap_subtype", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 334 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "third"
+summary = "γ₃ の交わり条件"
+source_kind = "enumerated"
+source_line = 466
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.IsStrict", module = "T3.GroupTheory.CentralSeries", kind = "def", line = 228 }, { name = "T3.isStrict_iff_comap_subtype", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 334 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.graded_injectivity_strictness"
+title = "gr(f) の単射性、f の単射性、strictness"
+environment = "proposition"
+number = "2.24"
+line_start = 470
+line_end = 480
+tex_label = "proposition:gr(f) and LCS"
+modules = ["T3.GroupTheory.AssociatedGraded", "T3.GroupTheory.AssociatedGraded.Lie"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "原稿の仮定のまま、実際のassociated graded LieHomについて両主張を証明。全次数の線形写像の検出結果を同じ写像のLieHom構造へ接続する。"
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items.parts]]
+id = "injective"
+summary = "gr(f) の単射性から f の単射性"
+source_kind = "enumerated"
+source_line = 473
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.injective_of_mapLie_injective", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 324 }]
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items.parts]]
+id = "strict_iff"
+summary = "単射 f に対する gr(f) の単射性と strictness の同値"
+source_kind = "enumerated"
+source_line = 474
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.mapLie_injective_iff_isStrict", module = "T3.GroupTheory.AssociatedGraded.Lie", kind = "theorem", line = 332 }]
+verification = { record = "notes/graded-lie-checkpoint.md", code_revision = "sha256:b9195744eed2e24da93b089b98ccbb16d690fccdcc7807e98b0c092abff93132" }
+
+[[items]]
+id = "preliminaries.central_series_coincide"
+title = "上下中心列が逆順に一致する条件"
+environment = "definition"
+number = "2.25"
+line_start = 503
+line_end = 508
+tex_label = ""
+modules = ["T3.GroupTheory.CentralSeries"]
+planned_declarations = []
+declarations = [{ name = "T3.CentralSeriesCoincide", module = "T3.GroupTheory.CentralSeries", kind = "def", line = 238 }, { name = "T3.centralSeriesCoincide_iff", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 349 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = ""
+parts = []
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.strict_of_internal"
+title = "内部中心列一致から任意 ambient における strictness"
+environment = "lemma"
+number = "2.26"
+line_start = 510
+line_end = 517
+tex_label = ""
+modules = ["T3.GroupTheory.CentralSeries"]
+planned_declarations = []
+declarations = []
+formalization = "proved"
+fidelity = "proof_checked"
+notes = ""
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "inclusions"
+summary = "部分群の下部中心列から上部中心列への包含鎖"
+source_kind = "enumerated"
+source_line = 513
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.centralSeries_inclusions", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 299 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items.parts]]
+id = "strict"
+summary = "内部中心列一致から strictness"
+source_kind = "enumerated"
+source_line = 514
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.isStrict_of_centralSeriesCoincide", module = "T3.GroupTheory.CentralSeries", kind = "theorem", line = 316 }]
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.finite_normal_form"
+title = "Levi–van der Waerden の有限 rank 正規形と位数"
+environment = "fact"
+number = "2.27"
+line_start = 525
+line_end = 533
+tex_label = "fact:Levi and van der Waerden"
+modules = ["T3.GroupTheory.Free.Basic", "T3.GroupTheory.Free.Model", "T3.GroupTheory.Free.ModelComparison", "T3.GroupTheory.Free.Collection", "T3.GroupTheory.Free.NormalForm"]
+planned_declarations = []
+declarations = [{ name = "T3.freeOrderExponent", module = "T3.GroupTheory.Free.NormalForm", kind = "def", line = 67 }, { name = "T3.Free.finite", module = "T3.GroupTheory.Free.Collection", kind = "theorem", line = 1082 }, { name = "T3.Free.natCard_eq_pow_freeOrderExponent", module = "T3.GroupTheory.Free.NormalForm", kind = "theorem", line = 599 }, { name = "T3.Free.normalWord", module = "T3.GroupTheory.Free.NormalForm", kind = "def", line = 756 }, { name = "T3.Free.existsUnique_normalWord", module = "T3.GroupTheory.Free.NormalForm", kind = "theorem", line = 882 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の有限線形順序付き生成集合について正確な位数と原稿の三ブロック積の存在一意性を証明。生成元の積は昇順。座標群全体を自由群と同一視しない。"
+parts = []
+verification = { record = "notes/free-normal-form-checkpoint.md", code_revision = "sha256:0987ef1d84e8a33728c7653ca76ef5d030ca4573f86091d87cf271f692712bec" }
+
+[[items]]
+id = "preliminaries.infinite_normal_form"
+title = "任意 rank の有限支持正規形"
+environment = "remark"
+number = "2.28"
+line_start = 535
+line_end = 545
+tex_label = "remark:infinite dim"
+modules = ["T3.GroupTheory.Free.FiniteSupport", "T3.GroupTheory.Free.InfiniteNormalForm"]
+planned_declarations = []
+declarations = [{ name = "T3.Free.exists_finset_map", module = "T3.GroupTheory.Free.FiniteSupport", kind = "theorem", line = 51 }, { name = "T3.Free.collect_toLvdW_injective", module = "T3.GroupTheory.Free.FiniteSupport", kind = "theorem", line = 175 }, { name = "T3.Free.normalWordFinsupp", module = "T3.GroupTheory.Free.InfiniteNormalForm", kind = "def", line = 104 }, { name = "T3.Free.existsUnique_normalWordFinsupp", module = "T3.GroupTheory.Free.InfiniteNormalForm", kind = "theorem", line = 279 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の線形順序付き生成集合について、有限支持の三係数族による実際の昇順積の存在一意性。有限・可算・非空の仮定なし。有限版と有限生成支持への還元を再利用。"
+parts = []
+verification = { record = "notes/infinite-normal-form-and-graded-checkpoint.md", code_revision = "sha256:e2760b67d2a0dfc9fb89001661f5eab529216bf08b2da05919b9aa9bc180bad0" }
+
+[[items]]
+id = "preliminaries.free_graded_equiv"
+title = "自由指数 3 群の associated graded と truncated exterior Lie algebra"
+environment = "proposition"
+number = "2.29"
+line_start = 550
+line_end = 570
+tex_label = "proposition:gr(F) is Grassmann algebra"
+modules = ["T3.GroupTheory.Free.Graded", "T3.GroupTheory.Free.Exterior", "T3.GroupTheory.Free.ExteriorBracket", "T3.GroupTheory.Free.ExteriorLie"]
+planned_declarations = []
+declarations = [{ name = "T3.Free.exteriorLinearEquiv", module = "T3.GroupTheory.Free.ExteriorLie", kind = "def", line = 41 }, { name = "T3.Free.exteriorLinearEquiv_map_bracket", module = "T3.GroupTheory.Free.ExteriorLie", kind = "theorem", line = 146 }, { name = "T3.Free.exteriorLieEquiv", module = "T3.GroupTheory.Free.ExteriorLie", kind = "def", line = 163 }, { name = "T3.Free.exteriorLieEquiv_grade", module = "T3.GroupTheory.Free.ExteriorLie", kind = "theorem", line = 191 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "実際の中心列商から、任意の基底付きF₃ベクトル空間VのΛ¹V・Λ²V・Λ³Vへのσ₁・σ₂・σ₃を構成。原稿の生成元上の式、双線形性によるbracket保存、各次数部分空間の像の等式を証明し、σの直和をgraded LieEquivとして完成。昇順の対・三つ組の外冪基底を用いる原稿の証明経路を保つ。"
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items.parts]]
+id = "degree_one"
+summary = "次数 1 の同型"
+source_kind = "enumerated"
+source_line = 556
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.Free.sigmaOne", module = "T3.GroupTheory.Free.Exterior", kind = "def", line = 106 }, { name = "T3.Free.sigmaOne_of", module = "T3.GroupTheory.Free.Exterior", kind = "theorem", line = 163 }]
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items.parts]]
+id = "degree_two"
+summary = "次数 2 の同型"
+source_kind = "enumerated"
+source_line = 557
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.Free.sigmaTwo", module = "T3.GroupTheory.Free.Exterior", kind = "def", line = 115 }, { name = "T3.Free.sigmaTwo_commutator", module = "T3.GroupTheory.Free.Exterior", kind = "theorem", line = 173 }, { name = "T3.Free.sigmaTwo_bracketLayer", module = "T3.GroupTheory.Free.ExteriorBracket", kind = "theorem", line = 127 }]
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items.parts]]
+id = "degree_three"
+summary = "次数 3 の同型と Lie 構造の整合"
+source_kind = "enumerated"
+source_line = 559
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.Free.sigmaThree", module = "T3.GroupTheory.Free.Exterior", kind = "def", line = 125 }, { name = "T3.Free.sigmaThree_tripleCommutator", module = "T3.GroupTheory.Free.Exterior", kind = "theorem", line = 185 }, { name = "T3.Free.sigmaThree_bracketLayer", module = "T3.GroupTheory.Free.ExteriorBracket", kind = "theorem", line = 197 }]
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items]]
+id = "preliminaries.infinite_free_graded"
+title = "無限 rank の graded 同型"
+environment = "remark"
+number = "2.30"
+line_start = 600
+line_end = 602
+tex_label = ""
+modules = ["T3.GroupTheory.Free.Exterior", "T3.GroupTheory.Free.ExteriorLie"]
+planned_declarations = []
+declarations = [{ name = "T3.Free.sigmaOne", module = "T3.GroupTheory.Free.Exterior", kind = "def", line = 106 }, { name = "T3.Free.sigmaTwo", module = "T3.GroupTheory.Free.Exterior", kind = "def", line = 115 }, { name = "T3.Free.sigmaThree", module = "T3.GroupTheory.Free.Exterior", kind = "def", line = 125 }, { name = "T3.Free.exteriorLieEquiv", module = "T3.GroupTheory.Free.ExteriorLie", kind = "def", line = 163 }, { name = "T3.Free.exteriorLieEquiv_grade", module = "T3.GroupTheory.Free.ExteriorLie", kind = "theorem", line = 191 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "Prop 2.29の同じσとgraded LieEquivが任意の線形順序付き生成集合Iと基底bに対して成立する。有限・可算・非空の仮定はない。有限積化するのは非零になり得る3次数だけであり、rankを有限に制限しない。"
+parts = []
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items]]
+id = "preliminaries.graded_quotient"
+title = "quotient の associated graded"
+environment = "lemma"
+number = "2.31"
+line_start = 623
+line_end = 626
+tex_label = "lemma:gr of quotient"
+modules = ["T3.GroupTheory.GradedQuotient"]
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.mapLayer_quotient_surjective", module = "T3.GroupTheory.GradedQuotient", kind = "theorem", line = 137 }, { name = "T3.AssociatedGraded.mapLayer_quotient_ker", module = "T3.GroupTheory.GradedQuotient", kind = "theorem", line = 145 }, { name = "T3.AssociatedGraded.quotientLayerEquiv", module = "T3.GroupTheory.GradedQuotient", kind = "def", line = 179 }, { name = "T3.AssociatedGraded.quotientLayerEquiv_mapLayer", module = "T3.GroupTheory.GradedQuotient", kind = "theorem", line = 190 }, { name = "T3.AssociatedGraded.quotientLayerEquiv_mk", module = "T3.GroupTheory.GradedQuotient", kind = "theorem", line = 200 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の正規部分群Nと全次数nについて、自然な商写像の全射性と核=grₙ(N)を証明して原稿の同型を得る。代表元上の公式も含む。有限生成・strictnessは仮定しない。"
+parts = []
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items]]
+id = "main.conjugate_width"
+title = "principal normal closure の共役幅 3"
+environment = "proposition"
+number = "3.1"
+line_start = 653
+line_end = 659
+tex_label = "proposition:bounded number of conjugates"
+modules = ["T3.GroupTheory.ConjugateWidth"]
+planned_declarations = []
+declarations = [{ name = "T3.principalNormalForm", module = "T3.GroupTheory.ConjugateWidth", kind = "def", line = 81 }, { name = "T3.principalNormalForm_eq_normalClosure", module = "T3.GroupTheory.ConjugateWidth", kind = "theorem", line = 118 }, { name = "T3.exists_conjList_of_mem_normalClosure", module = "T3.GroupTheory.ConjugateWidth", kind = "theorem", line = 150 }, { name = "T3.normalClosure_eq_conjList", module = "T3.GroupTheory.ConjugateWidth", kind = "theorem", line = 197 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "原稿のEₐ={aᵏ[a,g]}の部分群性とnormal closureとの一致を経て、全ての元を高々3個のg⁻¹*a*gの積として表す。逆元a⁻¹を別の共役因子として許してはいない。k=0,1,2に応じた原稿の圧縮を使い、自明なaと任意rankを含む。"
+parts = []
+verification = { record = "notes/exterior-quotient-diagram-checkpoint.md", code_revision = "sha256:e3de61dd26f9d1aae8103af7978dd3efdcb8656534e580c143c83938a8ec654a" }
+
+[[items]]
+id = "main.bounded_support"
+title = "生成元数による support bound 3(m+1)n"
+environment = "lemma"
+number = "3.2"
+line_start = 668
+line_end = 677
+tex_label = "lemma:witness in bdd support"
+modules = ["T3.GroupTheory.Support"]
+planned_declarations = []
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = ""
+
+[[items.parts]]
+id = "bound"
+summary = "d(C)≤3(m+1)n"
+source_kind = "enumerated"
+source_line = 673
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "certificate"
+summary = "H₀=〈C,B,Δ〉内で normal-closure certificate が成立"
+source_kind = "enumerated"
+source_line = 674
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "main.proposition_a"
+title = "一様に有界な LCS strict envelope の存在"
+environment = "customproposition"
+number = "A"
+line_start = 697
+line_end = 699
+tex_label = ""
+modules = ["T3.ModelTheory.StrictEnvelope"]
+planned_declarations = ["T3.exists_bounded_strict_envelope"]
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = "Proposition 4.12 の完全な結論から得る系。alias の大量作成は不要だが量化された関数の存在との接続は確認する。"
+parts = []
+
+[[items]]
+id = "main.bounded_witness"
+title = "B の生成元数のみによる非 amalgamation 障害の総生成元数評価"
+environment = "theorem"
+number = "3.3"
+line_start = 702
+line_end = 712
+tex_label = "thm:main"
+modules = ["T3.Main.BoundedWitness"]
+planned_declarations = ["T3.witnessBound", "T3.exists_bounded_nonamalgamation_witness"]
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = "f(m)=f₀((3m+4)t(m)+1)。A,B の位数ではなく B の生成元数だけで総生成元数を評価する。"
+
+[[items.parts]]
+id = "obstruction"
+summary = "D と B が A 上で amalgamate しない"
+source_kind = "enumerated"
+source_line = 709
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "bound"
+summary = "総生成元数 d(D)≤f(m)"
+source_kind = "enumerated"
+source_line = 710
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "main.model_companion"
+title = "指数 3 群の理論は model companion をもつ"
+environment = "corollary"
+number = "3.4"
+line_start = 743
+line_end = 745
+tex_label = ""
+modules = ["T3.Main.ModelCompanion", "T3.ModelTheory.ExponentThree"]
+planned_declarations = ["T3.has_model_companion"]
+declarations = [{ name = "T3.exponentThreeTheory_hasModelCompanion_iff", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 213 }, { name = "T3.exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions", module = "T3.ModelTheory.ExponentThree", kind = "theorem", line = 224 }]
+formalization = "partial"
+fidelity = "unchecked"
+notes = "T₃の有限言語・Π₂・局所有限性を供給しFact2.6の特殊化まで証明。公開bridgeはbounded obstruction仮定付きでありTheorem3.3からの仮定供給と無条件のmodel companion存在は未完成。"
+parts = []
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items]]
+id = "structure.basis_lift"
+title = "abelianization の基底 lift による全射自由表示"
+environment = "proposition"
+number = "4.1"
+line_start = 759
+line_end = 763
+tex_label = "proposition:lift"
+modules = ["T3.GroupTheory.Generation", "T3.GroupTheory.Presentation"]
+planned_declarations = []
+declarations = [{ name = "T3.Free.presentation_of_basis", module = "T3.GroupTheory.Presentation", kind = "theorem", line = 184 }, { name = "T3.Free.liftLayerOneEquiv", module = "T3.GroupTheory.Presentation", kind = "def", line = 150 }, { name = "T3.Free.liftLayerOneEquiv_apply", module = "T3.GroupTheory.Presentation", kind = "theorem", line = 159 }, { name = "T3.commutator_le_sup_commutator_of_sup_eq_top", module = "T3.GroupTheory.Generation", kind = "theorem", line = 81 }, { name = "T3.commutator_right_le_of_sup_commutator_eq_top", module = "T3.GroupTheory.Generation", kind = "theorem", line = 119 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の指定済みBasis I F₃ (Layer G 1)と代表元aを引数にし、そのFree.liftが全射で核がderivedに入ることを証明。原稿のG=Hγ₂から二段階の交換子包含を経る群の生成性を保つ。Iに有限・可算・順序の仮定はなく、次数1の同型の証明中でのみ順序を選択する。"
+parts = []
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items]]
+id = "structure.normal_closure_graded"
+title = "derived 内の normal closure とその graded image"
+environment = "lemma"
+number = "4.2"
+line_start = 802
+line_end = 811
+tex_label = "lemma:gr of normal closure"
+modules = ["T3.GroupTheory.GradedNormalClosure"]
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.subgroupImage_normalClosure_one", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 322 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "一般Gと任意K≤derivedについて全3項を証明。実際の積K[K,G]を経て、次数3では先にL∩γ₃=(K∩γ₃)[K,G]を計算する。Kの非斉次relationを成分ごとに分離しない。bracket部分空間はmathlib Submodule.map₂で表し、有限性・自由性・Kの正規性を追加しない。"
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items.parts]]
+id = "normal_closure"
+summary = "L=K[K,G]"
+source_kind = "enumerated"
+source_line = 807
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.normalClosure_eq_sup_commutator", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 63 }, { name = "T3.mem_normalClosure_iff_mul_commutator", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 107 }, { name = "T3.normalClosure_le_commutator", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 120 }]
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items.parts]]
+id = "degree_two"
+summary = "normal closure の次数 2 の像"
+source_kind = "enumerated"
+source_line = 808
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.subgroupImage_normalClosure_two", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 269 }]
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items.parts]]
+id = "degree_three"
+summary = "normal closure の次数 3 の像"
+source_kind = "enumerated"
+source_line = 809
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.normalClosure_inf_term_three", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 282 }, { name = "T3.AssociatedGraded.subgroupImage_commutator_top", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 224 }, { name = "T3.AssociatedGraded.subgroupImage_normalClosure_three", module = "T3.GroupTheory.GradedNormalClosure", kind = "theorem", line = 306 }]
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items]]
+id = "structure.graded_coproduct"
+title = "coproduct の η₁–η₃、tensor block 分解と bracket"
+environment = "proposition"
+number = "4.3"
+line_start = 843
+line_end = 864
+tex_label = "proposition:gr of free product"
+modules = ["T3.GroupTheory.Coproduct.Graded", "T3.GroupTheory.Coproduct.Presentation", "T3.GroupTheory.Coproduct.Relations", "T3.GroupTheory.AssociatedGraded.Subgroup", "T3.GroupTheory.Free.ExteriorNaturality", "T3.LinearAlgebra.ExteriorSum", "T3.LinearAlgebra.ExteriorTensor", "T3.ForMathlib.PowersetCardSum", "T3.LinearAlgebra.ExteriorLowDegree", "T3.GroupTheory.Coproduct.FreeGraded", "T3.GroupTheory.Coproduct.QuotientMaps", "T3.GroupTheory.Coproduct.GradedEquiv", "T3.GroupTheory.Coproduct.BlockBracket", "T3.GroupTheory.GradedQuotient", "T3.ForMathlib.LinearMapQuotient"]
+planned_declarations = []
+declarations = [{ name = "T3.Coproduct.Presentation.quotientEquiv", module = "T3.GroupTheory.Coproduct.Presentation", kind = "def", line = 362 }, { name = "T3.Coproduct.Presentation.presentationMap_ker", module = "T3.GroupTheory.Coproduct.Presentation", kind = "theorem", line = 407 }, { name = "T3.Coproduct.Presentation.relationSubgroup_inf_term", module = "T3.GroupTheory.Coproduct.Presentation", kind = "theorem", line = 506 }, { name = "T3.Coproduct.Presentation.subgroupImage_relationKernel_two", module = "T3.GroupTheory.Coproduct.Relations", kind = "theorem", line = 268 }, { name = "T3.Coproduct.Presentation.subgroupImage_relationKernel_three", module = "T3.GroupTheory.Coproduct.Relations", kind = "theorem", line = 283 }, { name = "T3.AssociatedGraded.bracketLayer_subgroupImage_top_le", module = "T3.GroupTheory.Coproduct.Relations", kind = "theorem", line = 40 }, { name = "T3.AssociatedGraded.subgroupImage_map_of_leftInverse", module = "T3.GroupTheory.AssociatedGraded.Subgroup", kind = "theorem", line = 84 }, { name = "T3.Free.sigmaThree_mapLayer", module = "T3.GroupTheory.Free.ExteriorNaturality", kind = "theorem", line = 82 }, { name = "T3.Free.sigmaThree_bracket_factors_one_two", module = "T3.GroupTheory.Free.ExteriorNaturality", kind = "theorem", line = 216 }, { name = "T3.ExteriorTensor.tensorEquiv", module = "T3.LinearAlgebra.ExteriorTensor", kind = "def", line = 228 }, { name = "T3.ExteriorTensor.tensorEquiv_symm_comp_lof", module = "T3.LinearAlgebra.ExteriorTensor", kind = "theorem", line = 263 }, { name = "T3.ExteriorTensor.blockTensorEquiv", module = "T3.LinearAlgebra.ExteriorTensor", kind = "def", line = 382 }, { name = "T3.Coproduct.Presentation.subgroupImage_relationKernel_three_eq_four_blocks", module = "T3.GroupTheory.Coproduct.Relations", kind = "theorem", line = 329 }, { name = "T3.Coproduct.freeSumLayerTwoMap_bijective", module = "T3.GroupTheory.Coproduct.FreeGraded", kind = "theorem", line = 332 }, { name = "T3.Coproduct.freeSumLayerThreeMap_bijective", module = "T3.GroupTheory.Coproduct.FreeGraded", kind = "theorem", line = 359 }, { name = "T3.Coproduct.layerThreeBlockMap_ker_map_freeSum", module = "T3.GroupTheory.Coproduct.QuotientMaps", kind = "theorem", line = 180 }, { name = "T3.Coproduct.freeSumLayerThreeMap_quotient_square", module = "T3.GroupTheory.Coproduct.QuotientMaps", kind = "theorem", line = 230 }, { name = "T3.AssociatedGraded.mapLayer_ker", module = "T3.GroupTheory.GradedQuotient", kind = "theorem", line = 103 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "全項目完成。自由表示・関係像の四成分分解・符号付き外積tensor同型・kernel輸送によりcanonical η₂/η₃の全単射性を証明。η₁–η₃は基底非依存の元の写像と自然性を保ち任意群/任意rankを許す。実際のgraded Lie algebraの全次数blockでbracket包含も証明。η₁だけは原稿のpresentation経由を短縮し同じ写像をcoproduct普遍性とretractionで直接証明する。"
+
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "isomorphisms"
+summary = "η₁,η₂,η₃ の次数別同型"
+source_kind = "enumerated"
+source_line = 846
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.Coproduct.layerOneEquiv", module = "T3.GroupTheory.Coproduct.Graded", kind = "def", line = 152 }, { name = "T3.Coproduct.layerTwoMap", module = "T3.GroupTheory.Coproduct.Graded", kind = "def", line = 217 }, { name = "T3.Coproduct.layerThreeMap", module = "T3.GroupTheory.Coproduct.Graded", kind = "def", line = 233 }, { name = "T3.Coproduct.mixedMap_tmul", module = "T3.GroupTheory.Coproduct.Graded", kind = "theorem", line = 200 }, { name = "T3.Coproduct.layerOneEquiv_natural", module = "T3.GroupTheory.Coproduct.Graded", kind = "theorem", line = 292 }, { name = "T3.Coproduct.layerTwoMap_natural", module = "T3.GroupTheory.Coproduct.Graded", kind = "theorem", line = 327 }, { name = "T3.Coproduct.layerThreeMap_natural", module = "T3.GroupTheory.Coproduct.Graded", kind = "theorem", line = 340 }, { name = "T3.Coproduct.layerTwoEquiv", module = "T3.GroupTheory.Coproduct.GradedEquiv", kind = "def", line = 101 }, { name = "T3.Coproduct.layerThreeEquiv", module = "T3.GroupTheory.Coproduct.GradedEquiv", kind = "def", line = 110 }, { name = "T3.Coproduct.layerTwoEquiv_apply", module = "T3.GroupTheory.Coproduct.GradedEquiv", kind = "theorem", line = 120 }, { name = "T3.Coproduct.layerThreeEquiv_apply", module = "T3.GroupTheory.Coproduct.GradedEquiv", kind = "theorem", line = 129 }]
+
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "bracket"
+summary = "直和・tensor block 上の bracket"
+source_kind = "enumerated"
+source_line = 858
+formalization = "proved"
+fidelity = "proof_checked"
+planned_declarations = []
+declarations = [{ name = "T3.Coproduct.block", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "def", line = 66 }, { name = "T3.Coproduct.bracket_block_le", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 270 }, { name = "T3.Coproduct.bracket_mem_block", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 342 }, { name = "T3.Coproduct.bracket_mixedMap_tmul_inl", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 208 }, { name = "T3.Coproduct.bracket_mixedMap_tmul_inr", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 222 }]
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items]]
+id = "structure.strict_coproduct"
+title = "strict inclusion が coproduct の単射性を保存する"
+environment = "lemma"
+number = "4.4"
+line_start = 946
+line_end = 951
+tex_label = "lemma:free-product-amalgam"
+modules = ["T3.GroupTheory.Coproduct.Strict"]
+planned_declarations = []
+declarations = [{ name = "T3.Coproduct.map_injective_of_strict", module = "T3.GroupTheory.Coproduct.Strict", kind = "theorem", line = 114 }, { name = "T3.Coproduct.mapLayer_map_injective", module = "T3.GroupTheory.Coproduct.Strict", kind = "theorem", line = 62 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "任意の指数3群とstrict inclusionについて、η₁–η₃の自然性と体上のtensor単射性から全graded層の単射性を得てProposition2.24で群の単射性を導く。有限性仮定なし。"
+parts = []
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items]]
+id = "structure.free_two_stabilization"
+title = "非自明群と F₂ の coproduct の strictness と内部中心列一致"
+environment = "lemma"
+number = "4.5"
+line_start = 962
+line_end = 967
+tex_label = "lemma:coincidence of central series"
+modules = ["T3.GroupTheory.Coproduct.CentralSeries", "T3.GroupTheory.Coproduct.CentralSeriesCriterion", "T3.GroupTheory.Coproduct.FreeTwoSeparation", "T3.GroupTheory.Coproduct.FreeTwo", "T3.ForMathlib.TensorProduct"]
+planned_declarations = []
+declarations = [{ name = "T3.Coproduct.freeTwo_stabilization", module = "T3.GroupTheory.Coproduct.CentralSeries", kind = "theorem", line = 44 }, { name = "T3.Coproduct.FreeTwoSeparation.exists_triple_bracket_ne_zero", module = "T3.GroupTheory.Coproduct.FreeTwoSeparation", kind = "theorem", line = 86 }, { name = "T3.Coproduct.FreeTwoSeparation.exists_bracket_ne_zero", module = "T3.GroupTheory.Coproduct.FreeTwoSeparation", kind = "theorem", line = 127 }, { name = "T3.AssociatedGraded.centralSeriesCoincide_of_bracket_separation", module = "T3.GroupTheory.Coproduct.CentralSeriesCriterion", kind = "theorem", line = 119 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "原稿の任意の非自明GとF₂についてfull statementを証明。ClaimAは第一層の左右成分、ClaimBはα₂/α₁/α₁′/β₂の分岐を保ちη₃逆座標で非零を検出。群交換子へ戻し中心列の等式を得る。旧有限群+F₃ theoremとは区別する。"
+parts = []
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items]]
+id = "structure.simultaneous_commutator_roots"
+title = "G * F₂ₙ の quotient における同時 commutator roots と単射性"
+environment = "lemma"
+number = "4.6"
+line_start = 1010
+line_end = 1017
+tex_label = "lemma:basic commutator root"
+modules = ["T3.GroupTheory.Roots.Commutator", "T3.GroupTheory.Roots.CommutatorRelations"]
+planned_declarations = []
+declarations = [{ name = "T3.CommutatorRoots.derivedBracketHom", module = "T3.GroupTheory.Roots.CommutatorRelations", kind = "def", line = 37 }, { name = "T3.CommutatorRoots.normalWord", module = "T3.GroupTheory.Roots.CommutatorRelations", kind = "def", line = 58 }, { name = "T3.CommutatorRoots.exists_normalWord", module = "T3.GroupTheory.Roots.CommutatorRelations", kind = "theorem", line = 94 }]
+formalization = "partial"
+fidelity = "unchecked"
+notes = "ClaimAで使う同時有限積表示のみ証明。derived relator族のnormal closureの各元を整数係数の∏rᵢ^mᵢ[rᵢ,hᵢ]で表す。F₃係数への還元、singleton集合等式、具体的G*F₂ₙの一括商とClaimB/C・base embedding単射性は未完成。"
+parts = []
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items]]
+id = "structure.derived_strictification"
+title = "高々 2m 元を付加する derived strictification"
+environment = "lemma"
+number = "4.7"
+line_start = 1076
+line_end = 1082
+tex_label = "lemma:commutator root"
+modules = ["T3.GroupTheory.Roots.DerivedStrictification", "T3.GroupTheory.GeneratorRank"]
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.finite_layerOne_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 130 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 151 }, { name = "T3.AssociatedGraded.finrank_layerOne_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 195 }]
+formalization = "partial"
+fidelity = "unchecked"
+notes = "dim gr₁(C)≤mとその有限次元性を有限生成族/Group.rankから証明。defect商空間の基底選択、追加根による具体的拡大・生成元数・strictness本体は未完成。"
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "bound"
+summary = "C に追加する生成元数≤2m"
+source_kind = "enumerated"
+source_line = 1079
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "strict"
+summary = "D∩γ₂(H)=γ₂(D)"
+source_kind = "enumerated"
+source_line = 1080
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "structure.simultaneous_triple_roots"
+title = "G × F₃ₙ の quotient における同時 triple roots と単射性"
+environment = "lemma"
+number = "4.8"
+line_start = 1110
+line_end = 1117
+tex_label = "lemma:triple commutator root"
+modules = ["T3.GroupTheory.Roots.Triple"]
+planned_declarations = []
+declarations = [{ name = "T3.TripleRoots.relator", module = "T3.GroupTheory.Roots.Triple", kind = "def", line = 73 }, { name = "T3.TripleRoots.kernel", module = "T3.GroupTheory.Roots.Triple", kind = "def", line = 80 }, { name = "T3.TripleRoots.Extension", module = "T3.GroupTheory.Roots.Triple", kind = "abbrev", line = 225 }, { name = "T3.TripleRoots.baseMap", module = "T3.GroupTheory.Roots.Triple", kind = "def", line = 232 }, { name = "T3.TripleRoots.baseMap_injective", module = "T3.GroupTheory.Roots.Triple", kind = "theorem", line = 269 }, { name = "T3.TripleRoots.baseMap_root", module = "T3.GroupTheory.Roots.Triple", kind = "theorem", line = 277 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "原稿どおりG×Free(Fin(3*n))を全関係式((gᵢ)⁻¹,[xᵢ,yᵢ,zᵢ])のnormal closureで一括して割る。中心性からclosureに落とし、独立な三重座標で有限積の整数係数をmod3で回収してGとの交叉が自明と証明。任意G、空族、重複する中心元、自明な中心元を含み、逐次の単一root構成には置き換えない。"
+parts = []
+verification = { record = "notes/presentation-roots-and-uniformity-checkpoint.md", code_revision = "sha256:88d4fa414ea6f4325b55f71fe25d94cac332589e26d49974b601fcc0132b06ee" }
+
+[[items]]
+id = "structure.lcs_strictification"
+title = "高々 3·binom(n,2) 元を付加する γ₃ strictification"
+environment = "lemma"
+number = "4.9"
+line_start = 1133
+line_end = 1141
+tex_label = "lemma:number of generators for triple commutator roots"
+modules = ["T3.GroupTheory.Roots.LowerCentralStrictification", "T3.GroupTheory.GeneratorRank"]
+planned_declarations = []
+declarations = [{ name = "T3.AssociatedGraded.finite_layerTwo_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 141 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_of_generating_family", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 163 }, { name = "T3.AssociatedGraded.finrank_layerTwo_le_rank", module = "T3.GroupTheory.GeneratorRank", kind = "theorem", line = 207 }]
+formalization = "partial"
+fidelity = "unchecked"
+notes = "dim gr₂(C)≤binom(n,2)とその有限次元性を有限生成族/Group.rankから証明。defect商空間の基底選択、追加根による具体的拡大・生成元数・strictness本体は未完成。"
+verification = { record = "notes/graded-coproduct-and-amalgamation-checkpoint.md", code_revision = "sha256:698dc3a221b576e31035d9440bcc24d9fba16ad95a9e882b6ef718084d660653" }
+
+[[items.parts]]
+id = "bound"
+summary = "C に追加する生成元数≤3·binom(n,2)"
+source_kind = "enumerated"
+source_line = 1138
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "strict"
+summary = "D が γ₂ と γ₃ で strict"
+source_kind = "enumerated"
+source_line = 1139
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "structure.shared_triple_roots"
+title = "triple roots で生成元を共有する refinement"
+environment = "remark"
+number = "4.10"
+line_start = 1177
+line_end = 1182
+tex_label = ""
+modules = ["T3.GroupTheory.Roots.SharedTriple"]
+planned_declarations = []
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = "主定理では使わない refinement だが、論文全体の対応対象に含める。"
+parts = []
+
+[[items]]
+id = "structure.ec_central_series"
+title = "e.c. 群の内部中心列一致と単一の交換子・三重交換子表示"
+environment = "proposition"
+number = "4.11"
+line_start = 1185
+line_end = 1195
+tex_label = "proposition:structure of e.c. model"
+modules = ["T3.ModelTheory.ExistentiallyClosedGroups"]
+planned_declarations = []
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = ""
+
+[[items.parts]]
+id = "central_series"
+summary = "上下中心列の逆順での一致"
+source_kind = "clause"
+source_line = 1186
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "commutator_width"
+summary = "γ₂ の各元が単一の交換子"
+source_kind = "clause"
+source_line = 1190
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "triple_width"
+summary = "γ₃ の各元が単一の三重交換子"
+source_kind = "clause"
+source_line = 1193
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items]]
+id = "structure.strict_envelope"
+title = "総生成元数 15n²、内部中心列一致、LCS strict envelope"
+environment = "proposition"
+number = "4.12"
+line_start = 1212
+line_end = 1220
+tex_label = "proposition:bdd LCS"
+modules = ["T3.ModelTheory.StrictEnvelope"]
+planned_declarations = ["T3.strictEnvelopeBound", "T3.exists_strict_envelope"]
+declarations = []
+formalization = "planned"
+fidelity = "unchecked"
+notes = ""
+
+[[items.parts]]
+id = "bound"
+summary = "d(D)≤15n²"
+source_kind = "enumerated"
+source_line = 1217
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []
+
+[[items.parts]]
+id = "internal"
+summary = "D 自身の上下中心列が逆順に一致し、D≤LCS M"
+source_kind = "enumerated"
+source_line = 1218
+formalization = "planned"
+fidelity = "unchecked"
+planned_declarations = []
+declarations = []

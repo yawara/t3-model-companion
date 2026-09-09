@@ -1,0 +1,11 @@
+✔ [1981/1991] Built T3.GroupTheory.GradedQuotient (852ms)
+✔ [1982/1991] Built T3.GroupTheory.AssociatedGraded.Product (1.3s)
+✔ [1983/1991] Built T3.GroupTheory.Roots.Triple (1.1s)
+✔ [1984/1991] Built T3.LinearAlgebra.TruncatedExterior (7.0s)
+✔ [1985/1991] Built T3.GroupTheory.AssociatedGraded.Lie (9.1s)
+✔ [1986/1991] Built T3.GroupTheory.AssociatedGraded.Truncation (1.0s)
+✔ [1987/1991] Built T3.GroupTheory.AssociatedGraded.Generation (1.1s)
+✔ [1988/1991] Built T3.GroupTheory.Free.ExteriorLie (1.5s)
+✔ [1989/1991] Built T3.Paper (713ms)
+✔ [1990/1991] Built T3 (689ms)
+Build completed successfully (1991 jobs).

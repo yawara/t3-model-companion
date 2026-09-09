@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "inputs": {
+    "T3/ForMathlib/DirectSum.lean": "e658a3edd3f16e115335bfe504ee82e0a3bc70025cbca097c713e9909352cb88",
+    "T3/GroupTheory/AssociatedGraded/Bracket.lean": "29f1f7fe630a2985f02d07e1c8d636352a37b1c592a29cd35c9c09ad98a7d436",
+    "T3/GroupTheory/AssociatedGraded/Generation.lean": "0dfdb525eb9b9328449305a825d5d903566c6aae6e2e21988b4f881c6cad2ea9",
+    "T3/GroupTheory/AssociatedGraded/Lie.lean": "3b031af88cc797f99d908e0143787e023d897a8814ec9511ee24ab2ba1ab0514",
+    "T3/GroupTheory/AssociatedGraded/Product.lean": "913e352246146f68a1af850df1822c3c016a288d01472c3dccf8f5db4fdb5fdf",
+    "T3/GroupTheory/AssociatedGraded/Truncation.lean": "c20eae126b9f55fec64137745cc85a854c7f7393803f04ee74bcfa0a5d89ce9f",
+    "T3/GroupTheory/AssociatedGraded.lean": "62cbbf1a95b0ca38b0bd4b546c72e45199b0f000634bde09aae87956d6e9b98f",
+    "T3/GroupTheory/Basic.lean": "2aa01ad7be26820429e5bcff058fd556620c875f3988967650fd6278357990cd",
+    "T3/GroupTheory/CentralSeries.lean": "4b0ed7a99b0021fe8f664c824b8d1ad0f366047a8b4933f29327b250ac136acc",
+    "T3/GroupTheory/ConjugateWidth.lean": "0aa2cbe1b5812bea7147d9ce6e348eb476561be2c6c169d5a956d4780a1cf87e",
+    "T3/GroupTheory/Coproduct/Basic.lean": "34be403619f170276cfaf1ddebc7a53e854b98860ba595cb48d9085dd9490ca1",
+    "T3/GroupTheory/Free/Basic.lean": "b86425e7c2c9d56ccbd4e172d345f63de6f2853f869aaa9550fe7db7d4f461e2",
+    "T3/GroupTheory/Free/Collection.lean": "33d779fd0f386374d2ab717213b18a61a57769e1c104ecbd2a3093040822bb2a",
+    "T3/GroupTheory/Free/Examples.lean": "f1d3bdf6e37c1d3dd83c57472dcf5956c857d0d1c9b073e71b632dd61dcfe2e2",
+    "T3/GroupTheory/Free/Exterior.lean": "2e50a4a9280c396ad8a33d5cf8ed956b30a87af087213b4b5aec4fff7f182f26",
+    "T3/GroupTheory/Free/ExteriorBracket.lean": "8747cdca0e1c1542d65adcb9e7c8d811611e96439ffeb3a30b54a85c0325b310",
+    "T3/GroupTheory/Free/ExteriorLie.lean": "65091f519688e59ef629573b6822e576b51aecd4ea809e2ffd7bcddc534dd22b",
+    "T3/GroupTheory/Free/FiniteSupport.lean": "f0342b5369e37ece886a1bb77e5993992ce1fce98de950856d31b9984fd6858d",
+    "T3/GroupTheory/Free/Graded.lean": "bb3a0253c4a496d38c14d2fe257abefe26e812656d14b566c519ec72b3f9b8f6",
+    "T3/GroupTheory/Free/InfiniteNormalForm.lean": "714f114b6e963a443cbef42577d71bcbce61c8bda54e9c09c4cf1a8f4e575a55",
+    "T3/GroupTheory/Free/Model.lean": "32a7b460de29f1bde949d5e0bbddf4d368ea23f8b8c8ca0cf40cc3be3669a124",
+    "T3/GroupTheory/Free/ModelComparison.lean": "8507748aa35e281c286503d921d4aa70e0e74609055f13a72894e653e8b2c79c",
+    "T3/GroupTheory/Free/NormalForm.lean": "42269dcfab54752b8b6898f08f53e042e039922d1967fef84481f9c16daf43a0",
+    "T3/GroupTheory/Generation.lean": "61d7a49e08519d37c85ab8e667d5b446756d576feb11c77305b99b24c117a02f",
+    "T3/GroupTheory/GradedNormalClosure.lean": "95a3cdfcb8ca71631e2f30a126281c0619ccad22fb522fa393187dab75956cbb",
+    "T3/GroupTheory/GradedQuotient.lean": "e80e8295f1ce611e3bfff9d5c8a36f35826699ee619551d9536a9ced07c80d42",
+    "T3/GroupTheory/Identities.lean": "e5a3fcd638a908f457f245bbb0e0806e3388befebf83d9d70a376111a4a51bd9",
+    "T3/GroupTheory/Presentation.lean": "9edb5ecd3ad544ad045ce88ebaa29821fb4585b9f4e5e9ec95012ff12a8b96da",
+    "T3/GroupTheory/Roots/Triple.lean": "51b2a95ee91507e84a395e858d85cb219583505d88d9bdde6eb79aa473ee4650",
+    "T3/LinearAlgebra/BlockDecomposition.lean": "b5ca6d7e592b95ba9b24a2fbba6874903b8d9ee3ec8b6740673c34dc50f5d09f",
+    "T3/LinearAlgebra/ExteriorSum.lean": "fb59edddfc8b3e69429de9e2cca68e3862ee04bf733eefae25bf29867ff6cd03",
+    "T3/LinearAlgebra/TruncatedExterior.lean": "26c5c7b87cb7fc5ddec180c08eecf8b8323477845fbd03ed1a3c3cd16e56695f",
+    "T3/LinearAlgebra/Wedge.lean": "f31d30d86efc09a8cea6ccfcf4e140898ca103d2be3f4219bbcee2a386279a7d",
+    "T3/ModelTheory/FiniteDiagram.lean": "eeec8ec6b8eab2a95cf14334c14b8e00b788f34a469e9033279418685bd1a58b",
+    "T3/ModelTheory/Inductive.lean": "f9659d38f6404226dbb897a67b0812ad03de00e4bc947b119c1420f3be21b4c6",
+    "T3/ModelTheory/LocallyFinite.lean": "d6466719db1b23a6db1abff4d455cdc2eab42cdc2bdce3c5f45481244f3b600d",
+    "T3/ModelTheory/ModelCompanion.lean": "5f05af6a646845712f1bc901e88f6d448b2bbf06c860be252af287b3436b274b",
+    "T3/ModelTheory/ModelCompleteness.lean": "81a64081ddb4a2c10dec5ffd8ba1b116701aa3b3dd280af6c87191f7f8d326ce",
+    "T3/ModelTheory/UniformLocalFiniteness.lean": "b85013f192e3c8ba400019785be965bfb5efb145de87a8b68bf99367dc0c1b31",
+    "T3/Paper.lean": "585bb9168e313097cc2ad0e9ca6ac97711f58620cbd23b2f89dff13ff0379fd2",
+    "T3.lean": "1c485f771c9b55586eec68eed07bf1579997ee5def4f113775793b4935c7f862",
+    "T3_modelcompanion_v4.tex": "79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b",
+    "Tests/Axioms.lean": "18d89fac38a96988d8b85875d78b8c6d24501799bd2ba203cb364b96a7abe94a",
+    "Tests/TextLint.lean": "7dead694bbbab7441708aa3e28d3e72fd37b47d1e7d91880da37f959e8831492",
+    "docs/paper-map.md": "7baf6067a0bb8de9d5d32ca9ad26bdb0d32d605b28b16244d584fd210bfb352f",
+    "docs/paper-map.toml": "ca0ba3ed14b66fe95cf90c53446b8a334f1aa6749d24e18672ec378f4d5765d8",
+    "lake-manifest.json": "446e1902b9d80e3a041f1a61a095f7236ea23bd24ed3b5081c282b374e58c401",
+    "lakefile.toml": "3eafb146143fe9b6e16210e5fb1929f0542357dfe984e5b13379e5aab67a1c2c",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "scripts/check.py": "1e9c2c2228e21408424fa5b49cb4aa5e5a87a76d8ca13e329650aafed90f5794",
+    "scripts/paper_map.py": "f745599aaee9c1cd912ec9c7286862de9f191f020833b97fb7093dba391b4bcd"
+  },
+  "steps": [
+    {
+      "name": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 2.423
+    },
+    {
+      "name": "imports",
+      "command": [
+        "lake",
+        "exe",
+        "mk_all",
+        "--check",
+        "--lib",
+        "T3"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 0.514
+    },
+    {
+      "name": "environment-lint",
+      "command": [
+        "lake",
+        "lint",
+        "--",
+        "--no-build",
+        "T3"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 1.797
+    },
+    {
+      "name": "text-lint",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DautoImplicit=false",
+        "-Dlinter.mathlibStandardSet=true",
+        "-Dlinter.style.header=true",
+        "-Dlinter.style.longFile=1500",
+        "-DwarningAsError=true",
+        "Tests/TextLint.lean"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 3.05
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DautoImplicit=false",
+        "-Dlinter.mathlibStandardSet=true",
+        "-Dlinter.style.header=true",
+        "-Dlinter.style.longFile=1500",
+        "-DwarningAsError=true",
+        "Tests/Axioms.lean"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 91.269
+    },
+    {
+      "name": "paper-map",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/paper_map.py",
+        "--check",
+        "--declarations-json",
+        "/home/ywr/t3-model-companion/.audit/declarations.json"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 0.145
+    }
+  ],
+  "passed": true,
+  "inputs_unchanged": true
+}

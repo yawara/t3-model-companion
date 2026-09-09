@@ -1,0 +1,11 @@
+{
+  "files": {
+    "T3_modelcompanion_v4.tex": "79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b",
+    "notes/paper-mathematical-audit.md": "f95fd94e888bbc5902fe45757e2fb128a280beb07f5659bb99765ecadf5e7708",
+    "notes/audit-artifacts/2026-09-09/check_paper_identities.py": "6edd9104c61f02e50debab685af44f3959d40a23cee35f6bba32dc9418c0468a",
+    "notes/audit-artifacts/2026-09-09/paper-identities.json": "18aadd30a591722258ad7c937e1ba4c92ffa59ddbd729902e5726cfbf2b85467",
+    "references/publications/levi-van-der-waerden-1933-besondere-klasse-von-gruppen-published.pdf": "1c7a7c744d1e79f952acdb4be321bc1aca4b258515fcdd2493ae838ea578847a",
+    "references/publications/hall-1958-burnside-problem-exponent-six-published.pdf": "b7a52d0b979ec6c8d0e2158bd75a920988281e97159f0004d3cc4f1436922452"
+  },
+  "history_redaction": "Historical record edited to omit private development locations and identifiers. Recorded verification results and input hashes refer to the original snapshot."
+}

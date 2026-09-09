@@ -1,0 +1,76 @@
+{
+  "sympy_version": "1.14.0",
+  "coefficient_field": "GF(3)",
+  "free_rank": 4,
+  "coordinate_count": 14,
+  "generic_element_count": 4,
+  "polynomial_indeterminate_count": 56,
+  "checks": [
+    {
+      "name": "coordinate law associative",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "coordinate law left identity",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "coordinate law right identity",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "coordinate law exponent three",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "fourfold commutator",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "derived commutators commute",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "triple cyclic",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "two Engel",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "inverse right",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "inverse left",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "conjugates of same element commute",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "triple antisymmetric",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "TeX 366 right multiplication",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "TeX 367 left multiplication",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "TeX 662 commutator compression",
+      "zero_coordinate_residuals": 14
+    },
+    {
+      "name": "TeX 663 conjugate expression",
+      "zero_coordinate_residuals": 14
+    }
+  ],
+  "negative_controls": "nonzero triple and both incorrect product signs detected",
+  "scope": "elementary identities only; not the coproduct or model-companion proof"
+}

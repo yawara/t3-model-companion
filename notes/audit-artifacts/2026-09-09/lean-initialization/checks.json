@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "inputs": {
+    "T3/GroupTheory/Basic.lean": "2aa01ad7be26820429e5bcff058fd556620c875f3988967650fd6278357990cd",
+    "T3/GroupTheory/Identities.lean": "e5a3fcd638a908f457f245bbb0e0806e3388befebf83d9d70a376111a4a51bd9",
+    "T3/Paper.lean": "3572ba8378a8a5583eff9c8f63022c7a203e1391444ac1482d1d4d19c76e0a5b",
+    "T3.lean": "5d0679af18fbbb6de5e930e577906db87c989c801af9787661fd85396c7be6e2",
+    "T3_modelcompanion_v4.tex": "79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b",
+    "Tests/Axioms.lean": "18d89fac38a96988d8b85875d78b8c6d24501799bd2ba203cb364b96a7abe94a",
+    "Tests/TextLint.lean": "7dead694bbbab7441708aa3e28d3e72fd37b47d1e7d91880da37f959e8831492",
+    "docs/paper-map.md": "b56ceebf54f2423566fd213be31e6dc6460ee1aa8899bf6e87636c1308d3fb5c",
+    "docs/paper-map.toml": "c3eaa100d7437da99f6213f42697f39df1980716d170afd07cef53e9721795dc",
+    "lake-manifest.json": "446e1902b9d80e3a041f1a61a095f7236ea23bd24ed3b5081c282b374e58c401",
+    "lakefile.toml": "3eafb146143fe9b6e16210e5fb1929f0542357dfe984e5b13379e5aab67a1c2c",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "scripts/check.py": "1e9c2c2228e21408424fa5b49cb4aa5e5a87a76d8ca13e329650aafed90f5794",
+    "scripts/paper_map.py": "054cdd2d6652f86878b621a6548db6e82efeca9444923072fac07c6f225e632f"
+  },
+  "steps": [
+    {
+      "name": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 0.618
+    },
+    {
+      "name": "imports",
+      "command": [
+        "lake",
+        "exe",
+        "mk_all",
+        "--check",
+        "--lib",
+        "T3"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 0.456
+    },
+    {
+      "name": "environment-lint",
+      "command": [
+        "lake",
+        "lint",
+        "--",
+        "--no-build",
+        "T3"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 1.362
+    },
+    {
+      "name": "text-lint",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DautoImplicit=false",
+        "-Dlinter.mathlibStandardSet=true",
+        "-Dlinter.style.header=true",
+        "-Dlinter.style.longFile=1500",
+        "-DwarningAsError=true",
+        "Tests/TextLint.lean"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 0.867
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DautoImplicit=false",
+        "-Dlinter.mathlibStandardSet=true",
+        "-Dlinter.style.header=true",
+        "-Dlinter.style.longFile=1500",
+        "-DwarningAsError=true",
+        "Tests/Axioms.lean"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 9.088
+    },
+    {
+      "name": "paper-map",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/paper_map.py",
+        "--check",
+        "--declarations-json",
+        "/home/ywr/t3-model-companion/.audit/declarations.json"
+      ],
+      "exit_code": 0,
+      "warnings": 0,
+      "seconds": 0.056
+    }
+  ],
+  "passed": true,
+  "inputs_unchanged": true
+}

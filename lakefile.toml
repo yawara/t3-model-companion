@@ -1,0 +1,22 @@
+name = "T3"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["T3"]
+lintDriver = "batteries/runLinter"
+fixedToolchain = true
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+maxSynthPendingDepth = 3
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = true
+weak.linter.style.longFile = 1500
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"
+
+[[lean_lib]]
+name = "T3"
