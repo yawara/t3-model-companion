@@ -39,6 +39,7 @@ public import T3.GroupTheory.Roots.LowerCentralStrictification
 public import T3.GroupTheory.Roots.Triple
 public import T3.GroupTheory.Support
 public import T3.LinearAlgebra.BlockDecomposition
+public import T3.LinearAlgebra.GradedLie
 public import T3.LinearAlgebra.ExteriorSum
 public import T3.LinearAlgebra.ExteriorTensor
 public import T3.LinearAlgebra.ExteriorLowDegree
@@ -89,6 +90,9 @@ Declarations carry a `Paper-ID` and, when available, the original TeX label.
   equivalences for direct products, Example 2.21(2).
 * `T3.LinearAlgebra.TruncatedExterior`: the actual exterior powers, signed bracket and
   graded Lie algebra in Example 2.9, without dimension assumptions.
+* `T3.LinearAlgebra.GradedLie`: Definition 2.7 and Remark 2.8 using the native Lie classes.
+  Positive grading means the degree-zero component is zero. Generation by degree one is
+  equivalent to the successor-bracket condition in every degree, over any commutative ring.
 * `T3.LinearAlgebra.BlockDecomposition`: block homogeneity and the canonical direct sum of
   block quotients in Definition 2.10 and Proposition 2.11, with arbitrary index sets.
 * `T3.GroupTheory.Free.Graded`: the actual degree quotients of the free group identified

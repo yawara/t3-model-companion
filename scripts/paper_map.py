@@ -26,7 +26,8 @@ ENVIRONMENTS = {
 }
 FORMALIZATION = {"planned", "partial", "stated", "proved"}
 FIDELITY = {"unchecked", "statement_checked", "proof_checked"}
-NAME = r"[A-Za-z_][A-Za-z0-9_'.]*"
+# Ordinary Lean identifiers include Unicode letters and subscripts, as in `map₂`.
+NAME = r"[^\W\d][\w'.]*"
 
 
 class MapError(ValueError):

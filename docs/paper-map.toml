@@ -320,50 +320,55 @@ line_end = 279
 tex_label = ""
 modules = ["T3.LinearAlgebra.GradedLie"]
 planned_declarations = []
-declarations = []
-formalization = "planned"
-fidelity = "unchecked"
-notes = ""
+declarations = [{ name = "LieRing.ofCyclicJacobi", module = "T3.LinearAlgebra.GradedLie", kind = "def", line = 77 }, { name = "GradedLieAlgebra.IsPositive", module = "T3.LinearAlgebra.GradedLie", kind = "def", line = 150 }, { name = "GradedLieAlgebra.map₂_le_grade", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 157 }, { name = "LieRing.bracket_biadditive", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 106 }, { name = "LieRing.bracket_alternating", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 115 }, { name = "LieRing.cyclic_jacobi", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 123 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "native LieRing/LieAlgebra/GradedLieAlgebraと次数0=⊥により原稿の正次数直和を表す。原稿の四公理とnative classの対応、cyclic JacobiからのLieRing constructorを証明。任意可換環、ℤ上でLie ring、体上でLie algebra。"
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items.parts]]
 id = "grading"
 summary = "bracket の次数整合性"
 source_kind = "enumerated"
 source_line = 272
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "GradedLieAlgebra.map₂_le_grade", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 157 }]
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items.parts]]
 id = "bilinear"
 summary = "bracket の双加法性"
 source_kind = "enumerated"
 source_line = 273
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "LieRing.bracket_biadditive", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 106 }]
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items.parts]]
 id = "alternating"
 summary = "交代性"
 source_kind = "enumerated"
 source_line = 274
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "LieRing.bracket_alternating", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 115 }]
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items.parts]]
 id = "jacobi"
 summary = "Jacobi 恒等式"
 source_kind = "enumerated"
 source_line = 275
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "LieRing.cyclic_jacobi", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 123 }]
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items]]
 id = "linear_algebra.degree_one_generation"
@@ -375,30 +380,33 @@ line_end = 287
 tex_label = ""
 modules = ["T3.LinearAlgebra.GradedLie"]
 planned_declarations = []
-declarations = []
-formalization = "planned"
-fidelity = "unchecked"
-notes = ""
+declarations = [{ name = "LieRing.bracket_eq_neg_swap", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 133 }, { name = "GradedLieAlgebra.lieSpan_eq_top_iff_map₂_eq_grade", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 263 }, { name = "GradedLieAlgebra.lieSpan_eq_top_of_map₂_eq_grade", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 219 }, { name = "GradedLieAlgebra.map₂_eq_grade_of_lieSpan_eq_top", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 246 }]
+formalization = "proved"
+fidelity = "proof_checked"
+notes = "反対称性と次数1のLie spanが全体となることの特徴づけを全i≥1で両方向証明。[Lᵢ,L₁]はSubmodule.map₂によるbracketの線形span。Jacobiによる反復括弧とactual直和射影を使用。任意可換環・任意rank、次数0消失は逆方向だけに必要。"
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items.parts]]
 id = "antisymmetry"
 summary = "bracket の反対称性"
 source_kind = "enumerated"
 source_line = 283
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "LieRing.bracket_eq_neg_swap", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 133 }]
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items.parts]]
 id = "generation"
 summary = "次数 1 からの生成と各次数の bracket による生成"
 source_kind = "enumerated"
 source_line = 284
-formalization = "planned"
-fidelity = "unchecked"
+formalization = "proved"
+fidelity = "proof_checked"
 planned_declarations = []
-declarations = []
+declarations = [{ name = "GradedLieAlgebra.lieSpan_eq_top_iff_map₂_eq_grade", module = "T3.LinearAlgebra.GradedLie", kind = "theorem", line = 263 }]
+verification = { record = "notes/positive-grading-checkpoint.md", code_revision = "sha256:2ef0132ae129a20ad6d8cc61a2dab5b9648d3882b57201f8d85bfa65feb4b915" }
 
 [[items]]
 id = "linear_algebra.truncated_exterior"

@@ -65,6 +65,7 @@ public import T3.LinearAlgebra.BlockDecomposition
 public import T3.LinearAlgebra.ExteriorLowDegree
 public import T3.LinearAlgebra.ExteriorSum
 public import T3.LinearAlgebra.ExteriorTensor
+public import T3.LinearAlgebra.GradedLie
 public import T3.LinearAlgebra.TruncatedExterior
 public import T3.LinearAlgebra.Wedge
 public import T3.Main.BoundedWitness

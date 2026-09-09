@@ -6,7 +6,7 @@
 
 番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。行・表示番号は補助情報で、安定 ID を主キーとする。
 
-項目全体の状態: `planned` 3, `partial` 2, `stated` 0, `proved` 45。
+項目全体の状態: `planned` 1, `partial` 2, `stated` 0, `proved` 47。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。
 
@@ -21,8 +21,8 @@
 | Definition 2.4<br>`model_theory.local_finiteness` | 理論の局所有限性 | label なし<br>203–206 | `T3.ModelTheory.LocallyFinite` | proved | proof_checked |
 | Fact 2.5<br>`model_theory.uniform_local_finiteness` | 有限言語における一様な生成部分構造の位数評価 | label なし<br>209–212 | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness` | proved | proof_checked |
 | Fact 2.6<br>`model_theory.bounded_amalgamation_criterion` | model companion の存在と有界非 amalgamation 障害の同値 | `fact:locally finiteness and model companion`<br>214–228 | `T3.ModelTheory.ExistentialWitness`<br>`T3.ModelTheory.Amalgamation`<br>`T3.ModelTheory.BoundedAmalgamation`<br>`T3.ModelTheory.FiniteObstructions`<br>`T3.ModelTheory.ExtensionAxioms`<br>`T3.ModelTheory.BoundedAmalgamationCriterion` | proved | proof_checked |
-| Definition 2.7<br>`linear_algebra.graded_lie` | graded Lie ring と graded Lie algebra | label なし<br>267–279 | `T3.LinearAlgebra.GradedLie` | planned | unchecked |
-| Remark 2.8<br>`linear_algebra.degree_one_generation` | 反対称性と次数 1 からの生成の特徴づけ | label なし<br>281–287 | `T3.LinearAlgebra.GradedLie` | planned | unchecked |
+| Definition 2.7<br>`linear_algebra.graded_lie` | graded Lie ring と graded Lie algebra | label なし<br>267–279 | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
+| Remark 2.8<br>`linear_algebra.degree_one_generation` | 反対称性と次数 1 からの生成の特徴づけ | label なし<br>281–287 | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
 | Example 2.9<br>`linear_algebra.truncated_exterior` | 次数 1–3 の外冪と符号付き Lie bracket | `example:Grassmann algebra`<br>289–306 | `T3.LinearAlgebra.Wedge`<br>`T3.LinearAlgebra.TruncatedExterior` | proved | proof_checked |
 | Definition 2.10<br>`linear_algebra.block_homogeneous` | block-homogeneous subspace | label なし<br>308–312 | `T3.LinearAlgebra.BlockDecomposition` | proved | proof_checked |
 | Proposition 2.11<br>`linear_algebra.block_quotient` | block-homogeneous quotient の直和分解 | label なし<br>314–317 | `T3.LinearAlgebra.BlockDecomposition` | proved | proof_checked |
@@ -153,25 +153,29 @@
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: なし。
+実在宣言: [LieRing.ofCyclicJacobi](../T3/LinearAlgebra/GradedLie.lean#L77), [GradedLieAlgebra.IsPositive](../T3/LinearAlgebra/GradedLie.lean#L150), [GradedLieAlgebra.map₂_le_grade](../T3/LinearAlgebra/GradedLie.lean#L157), [LieRing.bracket_biadditive](../T3/LinearAlgebra/GradedLie.lean#L106), [LieRing.bracket_alternating](../T3/LinearAlgebra/GradedLie.lean#L115), [LieRing.cyclic_jacobi](../T3/LinearAlgebra/GradedLie.lean#L123)。
+
+native LieRing/LieAlgebra/GradedLieAlgebraと次数0=⊥により原稿の正次数直和を表す。原稿の四公理とnative classの対応、cyclic JacobiからのLieRing constructorを証明。任意可換環、ℤ上でLie ring、体上でLie algebra。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| grading | bracket の次数整合性 / 272 | planned | unchecked | なし |
-| bilinear | bracket の双加法性 / 273 | planned | unchecked | なし |
-| alternating | 交代性 / 274 | planned | unchecked | なし |
-| jacobi | Jacobi 恒等式 / 275 | planned | unchecked | なし |
+| grading | bracket の次数整合性 / 272 | proved | proof_checked | [GradedLieAlgebra.map₂_le_grade](../T3/LinearAlgebra/GradedLie.lean#L157) |
+| bilinear | bracket の双加法性 / 273 | proved | proof_checked | [LieRing.bracket_biadditive](../T3/LinearAlgebra/GradedLie.lean#L106) |
+| alternating | 交代性 / 274 | proved | proof_checked | [LieRing.bracket_alternating](../T3/LinearAlgebra/GradedLie.lean#L115) |
+| jacobi | Jacobi 恒等式 / 275 | proved | proof_checked | [LieRing.cyclic_jacobi](../T3/LinearAlgebra/GradedLie.lean#L123) |
 
 ### `linear_algebra.degree_one_generation`
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: なし。
+実在宣言: [LieRing.bracket_eq_neg_swap](../T3/LinearAlgebra/GradedLie.lean#L133), [GradedLieAlgebra.lieSpan_eq_top_iff_map₂_eq_grade](../T3/LinearAlgebra/GradedLie.lean#L263), [GradedLieAlgebra.lieSpan_eq_top_of_map₂_eq_grade](../T3/LinearAlgebra/GradedLie.lean#L219), [GradedLieAlgebra.map₂_eq_grade_of_lieSpan_eq_top](../T3/LinearAlgebra/GradedLie.lean#L246)。
+
+反対称性と次数1のLie spanが全体となることの特徴づけを全i≥1で両方向証明。[Lᵢ,L₁]はSubmodule.map₂によるbracketの線形span。Jacobiによる反復括弧とactual直和射影を使用。任意可換環・任意rank、次数0消失は逆方向だけに必要。
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| antisymmetry | bracket の反対称性 / 283 | planned | unchecked | なし |
-| generation | 次数 1 からの生成と各次数の bracket による生成 / 284 | planned | unchecked | なし |
+| antisymmetry | bracket の反対称性 / 283 | proved | proof_checked | [LieRing.bracket_eq_neg_swap](../T3/LinearAlgebra/GradedLie.lean#L133) |
+| generation | 次数 1 からの生成と各次数の bracket による生成 / 284 | proved | proof_checked | [GradedLieAlgebra.lieSpan_eq_top_iff_map₂_eq_grade](../T3/LinearAlgebra/GradedLie.lean#L263) |
 
 ### `linear_algebra.truncated_exterior`
 
