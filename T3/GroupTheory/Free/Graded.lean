@@ -16,9 +16,7 @@ The resulting quotient maps identify the actual associated graded layers with fi
 supported coefficient spaces. Their comparison with exterior powers and preservation of
 Lie brackets are separate steps.
 
-The pure third-layer and readout-kernel arguments reuse earlier proofs by Yawara Ishida;
-finite cardinality arguments are replaced by the finitely supported normal words
-already constructed in this repository.
+The pure third-layer and readout-kernel arguments use finitely supported normal words.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
 TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`,

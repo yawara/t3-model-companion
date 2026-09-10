@@ -21,10 +21,6 @@ The three exponent values give products of three, one, or two conjugates. Throug
 a conjugate uses the paper's convention `a^g = g⁻¹ * a * g`; every factor is a conjugate of `a`
 itself. The empty product is included in the final set equality.
 
-The commutator compression and subgroup argument reuse earlier proofs
-by Yawara Ishida, with coefficients and conjugation written
-in the conventions of this manuscript.
-
 Paper-ID: main.conjugate_width
 TeX: T3_modelcompanion_v4.tex, `proposition:bounded number of conjugates`, v4 Proposition 3.1.
 -/

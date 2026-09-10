@@ -71,8 +71,6 @@ amalgam が存在しない場合、左または右の因子の非自明元が関
 さらに、A の任意の生成族に対応する relators の normal closure が全 relators の
 normal closure と等しいことを証明する。商への二つの準同型が生成族上で一致するため、
 A 全体で一致するという原稿の省略を展開した。生成族の添字の有限性は不要である。
-旧 `ExponentThree/PushoutWitness.lean` の証人の取り出しを再利用し、実際の canonical
-coproduct と論文の左右・符号に合わせた。
 
 これで Theorem 3.3 の冒頭の quotient criterion と両方の証人を供給するが、
 有限部分群 D での非 amalgamation はまだ得ていない。対応表は主定理を partial のまま保つ。
@@ -80,7 +78,7 @@ coproduct と論文の左右・符号に合わせた。
 ## 次の数学的境界
 
 1. `rank A ≤ log₃|A| ≤ log₃|B| ≤ t(m)` を正確な位数・冪の不等式で接続する。
-   B の生成元数だけによる上界を保ち、位数依存の旧 bound で代用しない。
+   B の生成元数だけによる上界を保つ。
 2. Lemma 3.2 の support を M に引き戻し、A と必要なら左の証人を加えて
    `rank C ≤ (3m+4)t(m)+1` を得る。
 3. strict envelope を適用し、`D ∐ B → M ∐ B` の単射性を使って、実際の小さい H₀ 内の

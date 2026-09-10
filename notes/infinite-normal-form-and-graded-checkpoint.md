@@ -58,9 +58,9 @@ Def 2.2(5) の Π₂ 条件を実装した。universal theory に弱めず、mod
 各モデルが元の理論のモデルであり e.c. になることを証明した。
 これは Fact 2.3 のモデル類の等式の一方の包含であり、Fact 全体の完了ではない。
 
-`T3/ModelTheory/ModelCompleteness.lean` は旧 `RobinsonTest` の QF diagram と
-canonical embedding を再利用した。semantic model completeness の下で真な
-parameter formula が理論と有限個の QF diagram 文から従うことを compactness で得た。
+`T3/ModelTheory/ModelCompleteness.lean` は QF diagram と canonical embedding を構成した。
+semantic model completeness の下で真な parameter formula が理論と有限個の
+QF diagram 文から従うことを compactness で得た。
 semantic から syntactic への逆 bridge は、有限図式の定数を存在量化変数へ戻す操作と、
 局所存在公式を有限個にまとめる操作が残っている。companion/e.c. の universe 変更
 bridge と一般 bounded-amalgamation criterion も引き続き残件である。

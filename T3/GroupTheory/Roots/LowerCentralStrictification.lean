@@ -16,9 +16,8 @@ The enlarged subgroup is the image of `C × Free(Fin(3*n))` in the paper's simul
 quotient of `G × Free(Fin(3*n))`. Intersections and lower central terms are computed through
 this same quotient. The defect generators become triple commutators in the enlarged subgroup.
 
-The product and quotient calculations adapt earlier proofs by Yawara Ishida.
-The present construction adjoins all roots simultaneously and chooses a basis of the defect,
-as in the source.
+The construction adjoins all roots simultaneously and chooses a basis of the defect, as in
+the source.
 
 Paper-ID: structure.lcs_strictification
 TeX: T3_modelcompanion_v4.tex, `lemma:number of generators for triple commutator roots`,

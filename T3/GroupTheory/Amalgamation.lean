@@ -17,9 +17,8 @@ amalgam exists precisely when both canonical factor maps to this quotient are in
 A failure is witnessed by a nontrivial factor element in the normal closure of the relators.
 For any generating family of the base, its relators already generate this normal subgroup.
 
-The witness argument adapts earlier proofs by Yawara Ishida.
-No finite generation or strong-amalgamation condition is imposed.
-The universal target may have an arbitrary universe.
+No finite generation or strong-amalgamation condition is imposed. The universal target may
+have an arbitrary universe.
 
 Paper-ID: main.bounded_witness
 TeX: T3_modelcompanion_v4.tex, `thm:main`, lines 717–738.

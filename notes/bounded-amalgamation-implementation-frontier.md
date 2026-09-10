@@ -1,21 +1,20 @@
 # Fact 2.6 の実装 frontier
 
-2026-09-10。コードは変更していない。本稿は実装済み定理と次に作る API を区別した設計記録。
+2026-09-10。本稿は作成時点の実装済み定理と次に作る API を区別した設計記録。
+現在の実装・検証状況は [論文対応表](../docs/paper-map.md) を参照する。
 Paper-ID: `model_theory.bounded_amalgamation_criterion`。
-原稿は [T3_modelcompanion_v4.tex:214](/home/ywr/t3-model-companion/T3_modelcompanion_v4.tex:214)、
+原稿は [T3_modelcompanion_v4.tex](../T3_modelcompanion_v4.tex)、
 label `fact:locally finiteness and model companion`、statement 214–228、proof 230–263。
 source SHA256: `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。
 
 **次のまとまった終端は一般の必要方向 `MC ⇒ bounded obstruction`。**
 そのために新たな compactness 証明は不要であり、有限相対図式、存在式の一様な有限 witness、
-amalgam の合成を接続すればよい。十分方向は既存の指数3用 extension scheme を一般化し、
+amalgam の合成を接続すればよい。十分方向は一般言語の extension scheme を構成し、
 禁止拡大の有限代表族を供給するのが主な未実装部分。
 
-旧コード調査の [paper-faithfulness-audit.md:115](/home/ywr/t3-model-companion/notes/paper-faithfulness-audit.md:115)
-は、一般 Π₂ criterion と必要方向が旧 repository に存在しないことを記録している。
-[paper-mathematical-audit.md:202](/home/ywr/t3-model-companion/notes/paper-mathematical-audit.md:202)
-には原稿の数学的確認がある。本 note はその説明を繰り返さず、現在の API からの接続を記す。
-旧監査当時に未実装だった Fact 2.3 は現在完成している。
+[数学的監査](paper-mathematical-audit.md) には原稿の数学的確認がある。
+本 note はその説明を繰り返さず、作成時点の API からの接続を記す。
+Fact 2.3 はこの設計記録の前提として完成している。
 
 ## 1. 終端の型と量化順
 
@@ -67,8 +66,7 @@ theorem hasModelCompanion_iff_boundedAmalgamationObstructions
 
 - `n` は有限 inclusion `d` ごとに一つ。e.c. モデル `M`、その中の marking `j`、失敗した
   amalgam ごとに選んではならない。
-- 上界は `C` の**総生成元数**。原稿 224。旧 `BoundedWitness` の「base に加えて n 個」と
-  同一視しない。旧値 `b(d)` からこの型へは `Nat.card d.base + b(d)` で移行できる。
+- 上界は `C` の**総生成元数**。原稿 224。base の生成元もこの上界に含める。
 - `A,B,C ⊨ T` を要求しない。一般 Π₂ 理論の部分構造はモデルとは限らない。
   `C` の有限性は `hLF`、生成元の有限性、`C ≤ M ⊨ T` から得る。
 - amalgam の二つの写像は embedding。像の交差がちょうど `A` という強い条件は付けない。
@@ -82,17 +80,17 @@ theorem hasModelCompanion_iff_boundedAmalgamationObstructions
 
 | 現在の宣言 | 消費箇所 |
 | --- | --- |
-| [ModelCompanionCriterion.lean:65](/home/ywr/t3-model-companion/T3/ModelTheory/ModelCompanionCriterion.lean:65) `isModelCompanionOf_iff_models_iff_isExistentiallyClosed` | 必要方向で e.c. `M` を `T*` のモデルとする。十分方向で extension scheme のモデル類等式を MC にする。 |
-| [ModelCompanionCriterion.lean:43](/home/ywr/t3-model-companion/T3/ModelTheory/ModelCompanionCriterion.lean:43) `isModelCompanionOf_of_isExistentiallyClosed_iff` | 十分方向の二つのモデル類包含をそのまま渡せる終端。 |
-| [ExistentiallyClosedExtension.lean:326](/home/ywr/t3-model-companion/T3/ModelTheory/ExistentiallyClosedExtension.lean:326) `exists_isExistentiallyClosed_embedding` | 上記 Fact 2.3 の内部 producer。十分方向で新しく拡大列を作り直す必要はない。 |
-| [ModelCompanion.lean:104](/home/ywr/t3-model-companion/T3/ModelTheory/ModelCompanion.lean:104) `IsModelComplete` | 必要方向で `¬ Ext(B/A)` を存在式に変換。既存定義は構文的な同値を返す。 |
-| [FiniteDiagram.lean:101](/home/ywr/t3-model-companion/T3/ModelTheory/FiniteDiagram.lean:101), [同:142](/home/ywr/t3-model-companion/T3/ModelTheory/FiniteDiagram.lean:142) `finiteDiagram`, `realize_finiteDiagram_iff` | base の図式。任意有限構造に使用可能。 |
-| [FiniteDiagram.lean:353](/home/ywr/t3-model-companion/T3/ModelTheory/FiniteDiagram.lean:353), [同:373](/home/ywr/t3-model-companion/T3/ModelTheory/FiniteDiagram.lean:373) `embeddingExtensionDiagram`, `realize_exists_embeddingExtensionDiagram_iff` | 相対図式 `θ(B/A)` と「B の embedding が A 上延長する」の同値。既に一般言語で完成。 |
-| [FiniteDiagram.lean:426](/home/ywr/t3-model-companion/T3/ModelTheory/FiniteDiagram.lean:426) `IsExistentiallyClosed.exists_embedding_over_tuple` | e.c. `M` に対して `AmalgamableOver(B,M;A) ↔ ∃ B ↪ M over A`。有限 `B` にモデル条件は不要。 |
-| [UniformLocalFiniteness.lean:182](/home/ywr/t3-model-companion/T3/ModelTheory/UniformLocalFiniteness.lean:182) `exists_card_closure_le_of_isLocallyFinite` | 原稿 251 の `n_{A,B}` から cardinal bound `m_{A,B}` への移行。 |
-| [同:89](/home/ywr/t3-model-companion/T3/ModelTheory/UniformLocalFiniteness.lean:89) `IsLocallyFinite.exists_finite_qfType_cover` | 有限 marked extension の有限同型代表族を実際に選ぶ producer に使える。下記 §4。 |
-| [同:208](/home/ywr/t3-model-companion/T3/ModelTheory/UniformLocalFiniteness.lean:208) `exists_finite_qf_representatives` | 有限個の QF 型を Boolean 真偽ベクトルで符号化する別入口。有限な禁止式の代表族を得るまでの追加証明は必要。 |
-| [FiniteDiagram.lean:298](/home/ywr/t3-model-companion/T3/ModelTheory/FiniteDiagram.lean:298) `realize_finiteGeneratedDiagram_iff` | 同じ QF 型の生成 tuple から生成部分構造間の embedding を作る。有限 marked 型分類の主要部品。 |
+| [ModelCompanionCriterion.lean](../T3/ModelTheory/ModelCompanionCriterion.lean) `isModelCompanionOf_iff_models_iff_isExistentiallyClosed` | 必要方向で e.c. `M` を `T*` のモデルとする。十分方向で extension scheme のモデル類等式を MC にする。 |
+| [ModelCompanionCriterion.lean](../T3/ModelTheory/ModelCompanionCriterion.lean) `isModelCompanionOf_of_isExistentiallyClosed_iff` | 十分方向の二つのモデル類包含をそのまま渡せる終端。 |
+| [ExistentiallyClosedExtension.lean](../T3/ModelTheory/ExistentiallyClosedExtension.lean) `exists_isExistentiallyClosed_embedding` | 上記 Fact 2.3 の内部 producer。十分方向で新しく拡大列を作り直す必要はない。 |
+| [ModelCompanion.lean](../T3/ModelTheory/ModelCompanion.lean) `IsModelComplete` | 必要方向で `¬ Ext(B/A)` を存在式に変換。既存定義は構文的な同値を返す。 |
+| [FiniteDiagram.lean](../T3/ModelTheory/FiniteDiagram.lean) `finiteDiagram`, `realize_finiteDiagram_iff` | base の図式。任意有限構造に使用可能。 |
+| [FiniteDiagram.lean](../T3/ModelTheory/FiniteDiagram.lean) `embeddingExtensionDiagram`, `realize_exists_embeddingExtensionDiagram_iff` | 相対図式 `θ(B/A)` と「B の embedding が A 上延長する」の同値。既に一般言語で完成。 |
+| [FiniteDiagram.lean](../T3/ModelTheory/FiniteDiagram.lean) `IsExistentiallyClosed.exists_embedding_over_tuple` | e.c. `M` に対して `AmalgamableOver(B,M;A) ↔ ∃ B ↪ M over A`。有限 `B` にモデル条件は不要。 |
+| [UniformLocalFiniteness.lean](../T3/ModelTheory/UniformLocalFiniteness.lean) `exists_card_closure_le_of_isLocallyFinite` | 原稿 251 の `n_{A,B}` から cardinal bound `m_{A,B}` への移行。 |
+| [UniformLocalFiniteness.lean](../T3/ModelTheory/UniformLocalFiniteness.lean) `IsLocallyFinite.exists_finite_qfType_cover` | 有限 marked extension の有限同型代表族を実際に選ぶ producer に使える。下記 §4。 |
+| [UniformLocalFiniteness.lean](../T3/ModelTheory/UniformLocalFiniteness.lean) `exists_finite_qf_representatives` | 有限個の QF 型を Boolean 真偽ベクトルで符号化する別入口。有限な禁止式の代表族を得るまでの追加証明は必要。 |
+| [FiniteDiagram.lean](../T3/ModelTheory/FiniteDiagram.lean) `realize_finiteGeneratedDiagram_iff` | 同じ QF 型の生成 tuple から生成部分構造間の embedding を作る。有限 marked 型分類の主要部品。 |
 
 ## 3. 必要方向を先に閉じる
 
@@ -127,7 +125,7 @@ theorem hasModelCompanion_iff_boundedAmalgamationObstructions
    C の subtype embedding で QF 真偽を反映させる。
    すると N は `¬ Ext(i)` と B のコピーを同時に持ち矛盾する（source 240–243）。
 
-一様 witness helper の別実装は、旧 `ExistentialWitness` の再帰に quantifier 数上界を追加し、
+一様 witness helper の別実装は、存在式の再帰に沿って quantifier 数上界を証明し、
 `∃ k, ∀ N y, ψ.Realize y → ∃ s, s.card ≤ k ∧ ...` とするもの。
 その場合も bound の `k` は realization より前に量化する。
 原稿の QF 行列を明示するには上の matrix API が最も直接的。
@@ -167,7 +165,7 @@ exists_finite_bad_extension_family (hLF) (d) (n):
 
 この方法は原稿の「有限同型型から代表を選ぶ」構成を保ち、群の自由商による符号化を使わない。
 Fact 2.5 の cardinal bound をまず使い `Fin m` 上の有限構造表を全列挙する方法も正確だが、
-現 API では有限 QF cover の方が既存コードの再利用が多い。
+作成時点の API では有限 QF cover から直接接続できる。
 `exists_finite_qf_representatives` や diagram の有限連言だけから、marked bad family が
 完成したとは主張しない。上記の同型と代表選択が追加 producer。
 
@@ -195,35 +193,33 @@ source 255 と同じ文を作る。index は `FiniteInclusion T` に制限する
   `T*` のモデルから `T` のモデルへの移行は `T ⊆ T*` による。
   A/B/C についてその移行を行ってはならない。
 
-存在式の有限 witness は旧ファイルをほぼそのまま再利用できる。
+存在式の有限 witness は構文に関する帰納法で得る。
 QF 行列 helper を先に実装した場合はその witness tuple でもよい。
 既存 finite embedding transfer は e.c.→scheme 側で使い、
 scheme→e.c. 側で未証明の e.c. 性を仮定して使わない。
 
-## 6. 旧コードの再利用範囲
+## 6. 対応する数学モジュール
 
-Yawara Ishida による以前の形式化から、以下の一般モデル理論の宣言・証明を read-only で確認した。
-新 repo に既に移植済みという意味ではない。
+この設計に対応する現在のモジュールは次のとおり。当時の予定 API と現在の検証状況は
+[論文対応表](../docs/paper-map.md) で区別する。
 
-| 旧実装の数学的内容 | 再利用と必要な変更 |
+| モジュール | 数学的な役割 |
 | --- | --- |
-| 相対図式 | relative diagram は新 `embeddingExtensionDiagram` が既に一般化済み。重複定義は不要。 |
-| 拡大公理の構成と実現条件 | `Language.group` と `groupDiagram` を L と `finiteDiagram` に変更。証明の Boolean/quantifier 部分は再利用可能。 |
-| 有限部分構造内の存在式の証人 | mathlib のみの一般言語定理。import/doc locator を更新して直接再利用可能。旧結果は有限性だけで uniform cardinal bound を返さない。 |
-| 禁止拡大の有限列挙 | `BadIndex` は有限な `MarkedFree A n` の normal subgroup、completeness は marked quotient。一般 T にその自由構造はないため、§4 の finite marked type producer に置換する。 |
-| 有限包含と有界障害 | `FiniteInclusion`・`BoundedWitness` は群/T₃特化。構造の realizability と総生成元数へ変更する。 |
-| 二つのモデル類の包含 | 二つのモデル類包含の proof body は原稿と同じ。group/subgroup の変換を L-embedding/substructure API に置換する。 |
-| 有界障害から model companion への十分方向 | 旧終端は T₃ の十分方向のみ。一般 Π₂ の終端は現在の Fact 2.3 を使う。 |
-| amalgam の合成・同型輸送 | amalgam の合成・同型輸送の発想を再利用。定義本体の `Type 0`、群、指数3条件は移植しない。 |
+| [Amalgamation.lean](../T3/ModelTheory/Amalgamation.lean) | 一般言語の embedding による amalgam と有限拡大式。 |
+| [ExistentialWitness.lean](../T3/ModelTheory/ExistentialWitness.lean) | モデルの選択に先立つ存在式の一様有限 witness 上界。 |
+| [BoundedAmalgamation.lean](../T3/ModelTheory/BoundedAmalgamation.lean) | 総生成元数による有界障害と必要方向。 |
+| [FiniteObstructions.lean](../T3/ModelTheory/FiniteObstructions.lean) | base を固定する有限 marked 障害の代表族。 |
+| [ExtensionAxioms.lean](../T3/ModelTheory/ExtensionAxioms.lean) | 一般有限言語の extension sentence と実現条件。 |
+| [BoundedAmalgamationCriterion.lean](../T3/ModelTheory/BoundedAmalgamationCriterion.lean) | extension scheme のモデル類と一般 criterion の両方向。 |
 
-旧実装の有限 subamalgam への置換説明は一般 Π₂ T には使えない。
+一般 Π₂ 理論では、amalgam を有限部分構造に置き換えるだけでは足りない。
 有限生成部分構造を取り直すと T のモデルでなくなる場合がある。
-新 amalgam は最初から canonical universe の `N : T.ModelType` とし、宇宙拡張は別途扱う。
+この設計の amalgam は canonical universe の `N : T.ModelType` とし、宇宙拡張は別途扱う。
 
 ## 7. 実装順と完了の境界
 
 1. `Amalgamation`：一般 T の embedding-based amalgam、marked transport、e.c. と有限拡大式の同値。
-2. `ExistentialWitness`：旧一般 helper の再利用と、必要方向用の一様 QF matrix。
+2. `ExistentialWitness`：一様な有限 witness 上界と、必要方向用の一様 QF matrix。
 3. `BoundedAmalgamation` の必要方向：原稿 233–243 を総生成元上界付きで完成。
 4. `FiniteObstructions`：同じ QF 型から marked generated structure の同型、有限 bad family。
 5. `ExtensionAxioms`：任意有限言語・任意有限 forbidden family の文と realization iff。
@@ -233,5 +229,3 @@ Yawara Ishida による以前の形式化から、以下の一般モデル理論
 3 と 4–5 は 1–2 完了後に独立に進められる。3 の必要方向が完成しても Fact 2.6 全体は partial。
 有限 family の存在だけでも十分方向は完成ではなく、二つの包含と終端を型で閉じる必要がある。
 この note 作成時点では Fact 2.6 本体は未実装。数学コードの build/lint の新規検証は行っていない。
-
-> 公開履歴の整理に伴い、非公開の作業場所・内部識別子を省略した。数学的記述と当時の検証結果は保持しており、ここに記す検証は当時の対象に限る。

@@ -31,9 +31,6 @@ The increasing pairs and triples index the generators of the last two layers. Co
 the three layer bounds gives `Free.natCard_le`; the matching lower bound and the actual
 normal-word bijection are proved in `NormalForm.lean`.
 
-The collection proofs reuse earlier formalization
-by Yawara Ishida.
-
 ## Main results
 
 * `Free.closure_range_of`: the canonical generators generate the free group;

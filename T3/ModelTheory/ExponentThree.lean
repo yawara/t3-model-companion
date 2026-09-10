@@ -24,10 +24,6 @@ assumption is made on the ambient group, and the algebraic result holds in arbit
 The final theorem specializes Fact 2.6 to `T₃`; existence of a model companion still requires
 the bounded-amalgamation-obstruction hypothesis furnished by the paper's main theorem.
 
-The power-term and theory definitions and the finite-closure proof reuse earlier
-formalization by Yawara Ishida, with the current paper's free group
-and finiteness theorem.
-
 Paper-ID: preliminaries.exponent_three, main.model_companion
 TeX: T3_modelcompanion_v4.tex, lines 136–142 and 742–745.
 -/
@@ -66,12 +62,13 @@ theorem realize_powerTerm {G : Type*} [Group G] [CompatibleGroup G]
   | succ n ih => simp [powerTerm, ih, pow_succ]
 
 /-- The universal sentence saying that every element has `n`-th power equal to one.
+The explicit zero index keeps its definition independent of generated auxiliary-proof names.
 
 Paper-ID: preliminaries.exponent_three
 TeX: T3_modelcompanion_v4.tex, the definition of `Tₙ`, lines 138–141.
 -/
 def exponentSentence (n : ℕ) : Language.group.Sentence :=
-  ∀' ((powerTerm n &0) =' (1 : Language.group.Term _))
+  ∀' ((powerTerm n &⟨0, Nat.zero_lt_one⟩) =' (1 : Language.group.Term _))
 
 /-- The exponent sentence has exactly the paper's exponent-dividing interpretation.
 

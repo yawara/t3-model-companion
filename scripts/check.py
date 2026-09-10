@@ -26,10 +26,15 @@ LEAN_TEST_OPTIONS = [
 
 def source_hashes() -> dict[str, str]:
     """Record inputs independently of the current Git staging state."""
-    files = [ROOT / "T3.lean", ROOT / "lean-toolchain", ROOT / "lakefile.toml",
-             ROOT / "lake-manifest.json", ROOT / "T3_modelcompanion_v4.tex"]
+    files = [ROOT / name for name in [
+        "T3.lean", "Challenge.lean", "Solution.lean", "lean-toolchain", "lakefile.toml",
+        "lake-manifest.json", "T3_modelcompanion_v4.tex", "formalization.yaml", "comparator.json",
+        "requirements-palomar.txt", "LICENSE", "scripts/palomar-schema/LICENSE",
+        "scripts/palomar-schema/PALOMAR-LICENSE",
+    ]]
     for directory, suffix in [("T3", ".lean"), ("Tests", ".lean"),
-                              ("scripts", ".py"), ("docs", ".toml"), ("docs", ".md")]:
+                              ("scripts", ".py"), ("scripts", ".sh"), ("scripts", ".json"),
+                              ("docs", ".toml"), ("docs", ".md")]:
         files.extend((ROOT / directory).rglob(f"*{suffix}"))
     return {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in sorted(files)}
@@ -65,6 +70,7 @@ def main() -> int:
     report_path = AUDIT / "checks.json"
     report_path.write_text(json.dumps(report, indent=2) + "\n")
     steps = [
+        ("palomar-metadata", [sys.executable, "scripts/check_palomar_metadata.py"]),
         ("build", ["lake", "build"]),
         ("imports", ["lake", "exe", "mk_all", "--check", "--lib", "T3"]),
         ("environment-lint", ["lake", "lint", "--", "--no-build", "T3"]),

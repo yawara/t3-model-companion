@@ -15,9 +15,12 @@
 - Place shared generic helpers in modules for their mathematical subject, and construction-specific
   helpers alongside the construction. Do not introduce a separate `ForMathlib` layer. Preserve native
   namespaces and `Paper-ID` correspondence when moving declarations.
-- Reuse and copy prior exponent-three proofs wherever their statements and constructions fit
-  the paper. The user explicitly authorizes code copying. Adapt imports, names, and source locators;
-  concentrate new proof work on actual gaps in the paper correspondence.
+- Credit Yawara Ishida as the sole formalization author and responsible maintainer. The manuscript
+  authors are Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi. Keep these authorship roles distinct.
+- Keep publication material self-contained and preserve mathematical source citations and copyright
+  headers. Do not include confidential locations or internal working notes.
+- Prepare Palomar files locally. Publishing the repository, submitting, and registering a result
+  are separate actions requiring the user's instruction.
 - Define numerical functions in their corresponding mathematical modules: the normal form,
   strict envelope, and main theorem. Do not introduce a separate `Bounds` module.
 - Do not put `sorry`, `admit`, or project axioms into the mathematical library. Pending results
@@ -29,5 +32,6 @@
   can return nonzero because it updated the aggregator; `--check` must pass afterward.
 - Keep audit/test programs outside the mathematical import graph. `T3.lean` and `T3/Paper.lean`
   are aggregation entrypoints, not imports for lower-level mathematical modules.
-
-> Historical redaction: private source locations and internal revision identifiers have been omitted. Mathematical claims and recorded historical check results are unchanged; this does not report a new verification run.
+- `Challenge.lean` is an independent Mathlib-only specification outside the mathematical graph;
+  only its two selected theorem proofs may contain deliberate holes. `Solution.lean` imports the
+  complete proofs. Keep both outside `T3` aggregation and run the separate Palomar checks.

@@ -1,0 +1,21 @@
+Building Challenge
+⚠ [1107/1108] Built Challenge (749ms)
+warning: Challenge.lean:267:8: declaration uses `sorry`
+warning: Challenge.lean:281:8: declaration uses `sorry`
+Build completed successfully (1108 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge
+Building Solution
+✔ [2036/2043] Built T3.ModelTheory.ExponentThree (742ms)
+✔ [2037/2043] Built T3.ModelTheory.GroupAmalgamation (820ms)
+✔ [2038/2043] Built T3.ModelTheory.ExistentiallyClosedGroups (1.1s)
+✔ [2039/2043] Built T3.ModelTheory.StrictEnvelope (1.1s)
+✔ [2040/2043] Built T3.Main.BoundedWitness (1.1s)
+✔ [2041/2043] Built T3.Main.ModelCompanion (1.3s)
+✔ [2042/2043] Built Solution (693ms)
+Build completed successfully (2043 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

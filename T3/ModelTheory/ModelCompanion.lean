@@ -22,11 +22,6 @@ paper. Existential formulas use mathlib's finite existential prefixes over quant
 formulas. The theory's Pi-two condition and the finite-diagram assertions of Definition 2.2 are
 separate later developments.
 
-The companion and existential-closedness definitions and the elementary companion lemmas are
-adapted from earlier formalization by Yawara Ishida.
-The semantic definition of model completeness is kept under the distinct name
-`AllEmbeddingsElementary`.
-
 Paper-ID: model_theory.basic_definitions
 TeX: T3_modelcompanion_v4.tex, v4 Definition 2.2, items 1–4, lines 180–183; no label.
 -/

@@ -21,8 +21,6 @@ from Lean's `Group` structures to first-order structures.
 The bridge is deliberately a definition rather than a global instance. To use a Lean group `G` as
 a first-order structure, write `letI := FirstOrder.Group.compatibleGroupOfGroup G`.
 
-The language, group axioms, model-to-group construction, and embedding conversions reuse
-earlier formalization by Yawara Ishida.
 Group substructures and subgroups are identified with their actual carriers.
 
 Paper-ID: preliminaries.exponent_three

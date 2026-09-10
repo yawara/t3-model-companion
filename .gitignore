@@ -1,4 +1,6 @@
 /.lake/
 /.audit/
+/.cache/
+/references/
 __pycache__/
 *.pyc

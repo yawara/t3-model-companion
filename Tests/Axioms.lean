@@ -6,6 +6,7 @@ Authors: Yawara Ishida
 module
 
 import T3
+import Solution
 public meta import Lean.Elab.Command
 public meta import Lean.Util.CollectAxioms
 public meta import Lean.Data.Json
@@ -14,9 +15,10 @@ public meta import Lean.Data.Json
 # Axiom audit for every project declaration
 
 Run `lake env lean Tests/Axioms.lean` from the repository root after `lake build`.
-The audit checks every declaration originating in a `T3` module, including private declarations
-and declarations in standard namespaces. A separate environment loads private module data so that
-unused private declarations are checked as well. It also checks that `T3` imports every source file.
+The audit checks every declaration originating in a `T3` or `Solution` module, including private
+declarations and declarations in standard namespaces. A separate environment loads private data
+so that unused private declarations are checked as well. It also checks that `T3` imports every
+source file below `T3` and that the audit imports `Solution`.
 A separate public environment records which declarations are exported through `T3`.
 
 Set `T3_DECLARATIONS_JSON` to a file path to export the checked declaration inventory as JSON.
@@ -34,7 +36,7 @@ def sourceModules : IO (Array Name) := do
   unless ← ("T3.lean" : System.FilePath).pathExists do
     throw <| IO.userError "Run the axiom audit from the repository root containing T3.lean."
   let paths ← ("T3" : System.FilePath).walkDir
-  let mut modules := #[`T3]
+  let mut modules := #[`T3, `Solution]
   for path in paths do
     if path.extension == some "lean" && !(← path.isDir) then
       modules := modules.push <|
@@ -50,14 +52,15 @@ def auditAxioms : CommandElabM Unit := do
       throwError "Project source module `{moduleName}` is not imported by T3."
   -- Normal module imports may omit private declarations. Load their complete data explicitly.
   -- With extensions left unloaded, collectAxioms traverses the kernel declaration bodies.
-  let env ← Lean.importModules #[{ module := `T3 }] {} (level := .private)
-  let publicEnv ← Lean.importModules #[{ module := `T3, isExported := true }] {}
+  let env ← Lean.importModules #[{ module := `T3 }, { module := `Solution }] {} (level := .private)
+  let publicEnv ← Lean.importModules
+    #[{ module := `T3, isExported := true }, { module := `Solution, isExported := true }] {}
     (level := .exported)
   let publicEnv := publicEnv.setExporting true
   let declarations := env.constants.map₁.fold (init := #[]) fun names name _ => Id.run do
     let some index := env.getModuleIdxFor? name | return names
     let moduleName := env.header.moduleNames[index]!
-    if moduleName.getRoot == `T3 then
+    if moduleName.getRoot == `T3 || moduleName == `Solution then
       return names.push (name, moduleName)
     return names
   let declarations := declarations.qsort fun left right => left.1.lt right.1

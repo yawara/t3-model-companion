@@ -71,12 +71,12 @@ C の像と `3*d` 個の新生成元で生成することを証明する。
 拡大 H は G と同じ宇宙にあり、ambient の有限性・非自明性を仮定しない。
 kernel 包含、商内の交叉、追加数と総数、m=0/1 と空の基底も独立担当が照合した。
 
-## 再利用と残件
+## 補助補題と残件
 
-旧 `StrictTools` の join の積分解と片側 kernel 包含下の交叉像の等式は
-`ForMathlib/Subgroup` の標準 namespace に移した。指数や有限性の仮定は不要である。
+join の積分解と片側 kernel 包含下の交叉像の等式は
+`GroupTheory/Subgroup` の標準 namespace で証明した。指数や有限性の仮定は不要である。
 直積の中心列は pin 済み mathlib の既存定理を利用する。
-旧 `GammaStrict` の直積・商・交叉の計算を同時族へ適用し、元の全要素列挙と反復は採用しない。
+直積・商・交叉を計算し、欠損の基底から選んだ族について同時 strictification を構成する。
 
 前回の80モジュール・2,481宣言の成果物は
 [同時交換子 roots・e.c. 群・support](commutator-roots-and-support-checkpoint.md) と

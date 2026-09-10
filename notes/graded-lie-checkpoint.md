@@ -17,7 +17,7 @@
 三重交換子の巡回性と標数3から Jacobi を証明する。
 `bracket_lof_mk` は、全正次数でこの Lie bracket が原稿の代表元式と一致することを示す。
 次数0は零であり、4以上も零である。canonical range submodules の分解を
-`ForMathlib/DirectSum.lean` で構成し、標準 `GradedLieAlgebra` を与えた。
+`LinearAlgebra/DirectSum.lean` で構成し、標準 `GradedLieAlgebra` を与えた。
 
 誘導写像 `mapLie` は元の quotient maps の DirectSum と同じ関数であり、bracket と
 grading、恒等写像と合成を保つ。Proposition 2.24 の二主張も実際の LieHomについて
@@ -29,13 +29,12 @@ Proposition 2.24が揃った。
 
 ## 外積と自由群
 
-`LinearAlgebra/Wedge.lean` は旧リポジトリの外積APIを再利用する。
+`LinearAlgebra/Wedge.lean` は外積の基本操作と恒等式を与える。
 `TruncatedExterior.lean` のcarrierは実際の `Λ¹V × Λ²V × Λ³V` であり、
 任意の F₃ ベクトル空間 V を扱う。次数 `(1,2)` の負符号、交代性、Jacobi、内部直和分解、
 `GradedLieAlgebra` まで実装した。基底や有限次元を仮定していない。
 
-`Free/Graded.lean` は旧 graded/readoutの証明を再利用し、有限性によるcardinality比較を
-任意rankの有限支持正規形によるkernel同定に置き換えた。実際の
+`Free/Graded.lean` は任意rankの有限支持正規形によってreadoutのkernelを同定する。実際の
 `AssociatedGraded.Layer (Free I) n` から、次数1・2・3の有限支持座標への
 `LinearEquiv` を構成し、生成元・昇順交換子・三重交換子が単位座標へ写ることを証明した。
 `I` に線形順序を置き、有限性・可算性・非空性は仮定しない。
@@ -45,8 +44,8 @@ Proposition 2.24が揃った。
 
 ## 一般モデル理論
 
-`ModelCompleteness.lean` は旧RobinsonTest・有限図式の構成を再利用し、
-有限個の図式定数を存在変数へ戻す操作とcompactnessの有限被覆を追加した。
+`ModelCompleteness.lean` は有限図式を使い、有限個の図式定数を存在変数へ戻す操作と
+compactnessの有限被覆を構成した。
 これにより `AllEmbeddingsElementary ↔ IsModelComplete` を証明した。
 意味論的仮定は既存のcanonical semantic universeを用い、構文的結論を介して
 既にある任意universeのelementary preservationに接続する。
@@ -77,8 +76,7 @@ Fact 2.3 の逆方向、companion/e.c.のuniverse変更bridge、Definition 2.2(6
 pin済みcacheによるローカル検証であり、CI実行やmathlib全体のclean rebuildではない。
 
 次はProposition 2.29・Remark 2.30の外積targetへのσとbracket保存、およびLemma 2.31の
-一般quotientを実装する。旧 `ExponentThree/Graded.lean` と `ExteriorSupport.lean` の
-基底・外積計算を再利用候補とし、任意rankの実際の次数商から接続する。
+一般quotientを実装する。基底・外積計算を用い、任意rankの実際の次数商から接続する。
 
 一般coproduct、同時roots、`15n²`、生成元ベースのsupport、主定理と系は引き続き未完成。
 数学的主張の弱化、`sorry`、独自公理による穴埋めは行わない。

@@ -287,10 +287,10 @@ TeX 本文への label 追加は、Lean 側の追跡を始めるための前提�
 命題を表す `def ... : Prop` を置くことと、その命題の証明は区別する。
 未証明の本文を `sorry` や独自 `axiom` で埋めたものを公開ライブラリの雛形にはしない。
 
-初期 pin は、監査済みの既存実装と合わせて Lean/mathlib v4.32.2、mathlib commit
+初期 pin は Lean/mathlib v4.32.2、mathlib commit
 `905b95818eb32af7874a58b427f50c1711a5e96c` を採用した。現時点の最新版を意味しない。
-旧 repo の必要な補題を移す際は出典・著作権表示を保持し、独立した project として検証する。
-隣接ディレクトリへの path dependency や、その終端への alias を形式化の完成とはしない。
+数学的な出典・著作権表示を保持し、この project の全証明を独立に検証する。
+すべての数学ライブラリ依存は manifest の固定 revision で再現できるようにする。
 
 検査方針は次を基本とする。
 

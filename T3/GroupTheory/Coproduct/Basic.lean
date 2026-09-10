@@ -12,8 +12,8 @@ public import Mathlib.GroupTheory.Coprod.Basic
 # Coproducts of exponent-three groups
 
 The coproduct is the ordinary free product modulo cubes, exactly as in the paper.
-The power quotient API is reused from the exponent-groups repository. The construction allows
-arbitrary factors; the retraction to a factor assumes its exponent divides three.
+The construction allows arbitrary factors; the retraction to a factor assumes its exponent
+divides three.
 No finite presentation is chosen.
 
 Paper-ID: preliminaries.notation, preliminaries.free_coproduct,

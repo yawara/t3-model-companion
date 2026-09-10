@@ -25,19 +25,13 @@ Lean/mathlib の pin は初期検証と同じ。これは全論文完成とは�
 `Free/` はすべて `T3/GroupTheory/Free/` の略。
 公開宣言と原稿中の所在は [対応表](../docs/paper-map.md) に記録する。
 
-## 再利用と原稿照合
-
-Yawara Ishida による以前の指数 3 群の形式化から、冪による商、自由群、
-座標モデルとその比較、collection、正規形、および model companion の一般論の証明を移した。
-元の著作者・著作権表示を保ち、新 project にコピーして使用している。
-再利用元のコードを変更せず、外部の実装への import や path dependency は追加していない。
+## 原稿照合
 
 座標群の積と逆元は原典 Levi–van der Waerden (1933) pp.155–156 に照合した。
-旧 Model の説明には生成交換子の引数が逆順の箇所があったため、原典および実装の
-`[aᵢ,aⱼ]` に合わせて説明を訂正した。座標群の積・逆元・cube の証明本体は再利用した。
-旧 Collection の積展開は、同じ内部引数順を維持する `commutator_mul_right_aux` に接続した。
+生成交換子の引数順は原典および実装の `[aᵢ,aⱼ]` に合わせる。
+積展開は、同じ内部引数順を維持する `commutator_mul_right_aux` に接続した。
 
-旧座標 bijection に加えて、原稿に表示された積を `normalWord` として構成した。
+座標 bijection とともに、原稿に表示された積を `normalWord` として構成した。
 第一ブロックは生成元の昇順、第二ブロックは `i<j` の交換子、第三ブロックは
 `i<j<k` の三重交換子で、係数は `ZMod 3` の代表値 0、1、2 を冪指数に用いる。
 第二ブロックの因子は互いに可換、第三ブロックは中心にあるため、それぞれの内部列挙順は
@@ -48,9 +42,9 @@ Yawara Ishida による以前の指数 3 群の形式化から、冪による商
 coproduct の因子単射性は原稿の retraction の証明を使い、非交和についての同型も
 両向きの普遍性から構成した。群が有限であるとの追加条件はない。
 
-モデル理論では旧実装の semantic model completeness を `AllEmbeddingsElementary`
-として区別する。旧 universal theory 向けの補助定理は残すが、Π₂ 理論についての
-Fact 2.3 や Fact 2.6 をそれで完成したとは扱わない。
+モデル理論では semantic model completeness を `AllEmbeddingsElementary` として区別する。
+universal theory 向けの補助定理だけで、Π₂ 理論についての Fact 2.3 や Fact 2.6 を
+完成したとは扱わない。
 companion と e.c. の定義は mathlib の標準 semantic universe `max u v` を用いている。
 この universe の変更に関する bridge と、semantic から syntactic への逆方向は残件である。
 
@@ -75,5 +69,3 @@ Remark 2.28 の任意 rank・有限支持の正規形は未実装。
 中心列の一般 API、associated graded と標準 Lie API への接続へ進む。
 一般 graded coproduct、同時 roots、`15n²`、生成元ベースの support、Π₂ criterion と
 model companion の最終系も引き続き未完成である。
-
-> 公開履歴の整理に伴い、非公開の作業場所・内部識別子を省略した。数学的記述と当時の検証結果は保持しており、ここに記す検証は当時の対象に限る。

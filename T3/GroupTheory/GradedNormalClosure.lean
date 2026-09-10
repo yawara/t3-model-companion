@@ -15,8 +15,6 @@ For a subgroup `K` of the derived subgroup, its normal closure is `K [K, G]`.
 The commutator factor lies in the central third term. This gives the paper's degree-two
 and degree-three formulas without splitting a nonhomogeneous relation into its components.
 
-The group-level normal-closure argument adapts earlier proofs
-by Yawara Ishida.
 The graded statements use the actual ambient layers and mathlib's bilinear image of subspaces.
 
 Paper-ID: structure.normal_closure_graded

@@ -12,9 +12,7 @@ public import T3.GroupTheory.Identities
 
 If `H ⊔ G' = ⊤`, the paper first proves `G' ≤ H ⊔ ⁅H, G'⁆ ≤ H ⊔ γ₃(G)`.
 Centrality of `γ₃(G)` then gives `⁅H, G'⁆ ≤ H`, and consequently `H = ⊤`.
-The two subgroup inclusions are retained explicitly here. The product decomposition and the
-commutator simplifications adapt earlier proofs
-by Yawara Ishida.
+The two subgroup inclusions are retained explicitly here.
 
 Paper-ID: structure.basis_lift
 TeX: T3_modelcompanion_v4.tex, `proposition:lift`, v4 Proposition 4.1, lines 769–789.

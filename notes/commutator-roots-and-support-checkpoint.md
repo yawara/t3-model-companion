@@ -63,9 +63,8 @@ claim で witness を作り、M に戻す原稿の経路で証明する。
 
 ## Lemma 3.2 の正確な support bound
 
-`GroupTheory/Support/Collection` と `Support/Conjugator` は、旧 CrossCommutator と
-ConjugatorSupport の計算を再利用する。旧仮定は B の全要素の列挙で、上界は `|B|+1` だった。
-今回は class 2 の群で、B の生成列の各元に対する交換子の表示を closure induction で B 全体へ
+`GroupTheory/Support/Collection` と `Support/Conjugator` は、class 2 の群で B の生成列に
+沿って交換子を収集する。生成列の各元に対する交換子の表示を closure induction で B 全体へ
 拡張する。このため、収集した積は B の生成元数 m に応じた m 個の混合交換子で足りる。
 H/γ₃(H) で収集し、G 成分を持ち上げると、高々 m+1 個の G の元で同じ共役作用を実現できる。
 原稿の右共役 `u⁻¹δu=v⁻¹δv` を公開する。積順序と混合交換子の向きの変更は、同じ中心的な
@@ -94,5 +93,5 @@ semantic universe bridge も全体 goal に残す。
 
 前回の75モジュールの検証記録・成果物は
 [graded coproduct と一般 amalgamation 判定](graded-coproduct-and-amalgamation-checkpoint.md)
-に固定したまま保持する。原稿と references は `[historical revision omitted]`、そこまでの Lean ライブラリは
+に固定したまま保持する。原稿は `[historical revision omitted]`、そこまでの Lean ライブラリは
 `[historical revision omitted]` にコミット済みである。

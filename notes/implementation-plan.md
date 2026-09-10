@@ -5,7 +5,6 @@
 当時の未完項目や暫定見積もりは、現在の作業予定を示すものではない。
 
 2026-09-09。対象は v4 原稿全体の paper-faithful な形式化。
-旧実装の最終結論だけを移す作業とは区別する。
 実装の状態は [論文対応表](../docs/paper-map.md)、設計は
 [構成方針](lean-architecture.md) を参照する。
 
@@ -25,15 +24,15 @@
 ただし群論と一階構造の embedding の対応は早期に固定し、最後に定義の不一致を持ち込まない。
 共役幅・support も、その群論的依存が揃えば段階 4–5 と並行できる。
 
-最初の実装では、既存の自己完結した指数 3 の恒等式を必要最小限の依存で移し、
-論文の各項目・符号に対応する公開定理を整える。旧 repo 自体は編集しない。
+最初の実装では、指数 3 の恒等式を必要最小限の依存で証明し、
+論文の各項目・符号に対応する公開定理を整える。
 各段階を終える前に build、lint、公理検査、対応表を同じソースで通す。
 主張の一部だけが完成した項目は `partial` のままにする。
 
 2026-09-09 の検証境界では、Fact 2.15 全11項目、有限正規形と正確な位数、
 自由群の普遍性、coproduct の基礎と因子単射性が完成した。
-Definition 2.2 は項目 1–4 を実装した。既存の座標モデル・collecting・位数の証明を
-再利用し、原稿に表示された積の存在一意性を追加している。
+Definition 2.2 は項目 1–4 を実装した。座標モデル・collecting・位数の証明から、
+原稿に表示された積の存在一意性を得た。
 詳細は [有限正規形の検証記録](free-normal-form-checkpoint.md) を参照。
 段階 2 の無限 rank・有限支持版と中心列の一般 API は残るため、段階全体の完了ではない。
 
@@ -69,7 +68,7 @@ Lemma 4.8の同時triple rootsも、原稿の`G × F_(3n)`の一括商で先行�
 Fact 2.3逆方向、一般criterion、companion/e.c.の他宇宙へのbridgeは残る。
 
 [Coproduct の tensor 分解と model companion 判定の境界](coproduct-tensor-and-companion-checkpoint.md)
-では、一般 Π₂ 理論の e.c. 拡大と Robinson test を旧コードから再利用・拡張し、
+では、一般 Π₂ 理論の e.c. 拡大と Robinson test を構成し、
 既存の canonical universe 規約の下で Fact 2.3 の両方向を完成した。
 群論は原稿の自由 quotient presentation、normal closure の四成分の関係像、
 任意次数・任意 rank の外積 tensor 同型と canonical な逆写像、free σ の因子自然性まで進んだ。
@@ -79,7 +78,7 @@ block 間 bracket、strict coproduct、F₂、同時 commutator roots、次元�
 一般 bounded-amalgamation criterion は残る。段階4全体の完了とはしない。
 この境界では53モジュール・1,789宣言の全検査が警告0で通過した。
 モデル理論側は [Fact 2.6 の実装境界](bounded-amalgamation-implementation-frontier.md) に
-一般の必要方向・十分方向の signature と再利用先を記録した。
+一般の必要方向・十分方向の signature と必要な補題を記録した。
 
 [Graded coproduct と一般 amalgamation 判定の境界](graded-coproduct-and-amalgamation-checkpoint.md)
 では、原稿の自由商表示と符号付き外積を通じて η₂・η₃の全単射性を証明し、
@@ -93,7 +92,7 @@ block bracket 包含、任意群の strict coproduct、非自明 G と F₂ の�
 [同時交換子 roots・e.c. 群・support の境界](commutator-roots-and-support-checkpoint.md) では、
 原稿の同時 quotient と Claim A–C により Lemma 4.6 を完成した。
 具体的な roots と F₂ の分離から有限図式で witness を戻し、Proposition 4.11 の3結論も得た。
-段階6では、旧コードの全要素列挙を生成列に拡張し、Lemma 3.2 の正確な `3(m+1)n` と
+段階6では、生成列による収集を用い、Lemma 3.2 の正確な `3(m+1)n` と
 H₀内部の normal-closure certificate を完成した。
 次は段階5の二段階 strictification と `15n²` envelope を組み立て、群論的 amalgamation
 表示と主定理の明示 bound へ接続する。
@@ -106,9 +105,9 @@ H₀内部の normal-closure certificate を完成した。
 
 ## どこに時間がかかるか
 
-現在の監査から言えるのは、既存 Lean の終端までに 66 モジュール・約 1.8 万行がある一方、
-v4 の一般 graded coproduct、F₂、同時 roots、次元評価、一般 criterion の一部は新規作業ということ。
-既存コードの行数から v4 の完成率や所要時間を直接計算することはできない。
+一般 graded coproduct、F₂、同時 roots、次元評価、一般 criterion は、
+原稿の構成と Lean の数学的 API の接続に作業を要する。
+ソースの行数から v4 の完成率や所要時間を直接計算することはできない。
 
 集中して継続する場合、**全体は数週間〜数か月、初期の計画幅としては 1〜3 か月程度**を
 見込む。これは新 project での実装速度をまだ測定していない段階の粗い見積もりである。
@@ -119,13 +118,13 @@ v4 の一般 graded coproduct、F₂、同時 roots、次元評価、一般 crit
 | 作業 | 暫定的な規模感 |
 | --- | --- |
 | 雛形と最初の基礎証明 | 数時間〜数日 |
-| 既存の基礎・正規形の移植と整理 | 数日〜1週間程度 |
+| 基礎・正規形の構成と整理 | 数日〜1週間程度 |
 | associated graded・外積・一般 coproduct | 数週間。最も不確実な部分 |
 | 同時 roots・次元評価・`15n²` | 1〜数週間 |
 | 一般モデル理論・終端接続 | 1〜数週間。群論と並行 |
 | 残項目・全体の原稿照合と検査 | 数日〜1週間程度 |
 
-最初に見積もりを更新するのは、正規形の再利用範囲と associated graded の基本 API が
+最初に見積もりを更新するのは、正規形と associated graded の基本 API が
 実際にコンパイルできた時点。次は Proposition 4.3 の η₁–η₃ と自然性が揃った時点とする。
-計測するのは、実装時間、未解決の数学的境界、再利用できた証明、API 変更による手戻りであり、
+計測するのは、実装時間、未解決の数学的境界、検証済みの証明、API 変更による手戻りであり、
 空ファイル数や `planned` の宣言予定数は進捗に数えない。

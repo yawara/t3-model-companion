@@ -16,9 +16,8 @@ The enlarged subgroup is the image of `C × Free(Fin 4)` in the paper's simultan
 quotient of `G × Free(Fin 4)`. Intersections and lower central terms are computed through
 this same quotient. The defect generators become triple commutators in the enlarged subgroup.
 
-The product and quotient calculations adapt earlier proofs by Yawara Ishida.
-The present construction uses the four increasing triples in the same four free generators,
-as in Remark 4.10.
+The construction uses the four increasing triples in the same four free generators, as in
+Remark 4.10.
 
 Paper-ID: structure.shared_triple_roots
 TeX: T3_modelcompanion_v4.tex, Remark 4.10, lines 1177–1181, applying Lemma 4.9.

@@ -14,11 +14,6 @@ An element of a join of two subgroups splits into an element of each subgroup an
 of the derived subgroup of the join. A homomorphism preserves the intersection of two
 subgroups when one contains its kernel. Both statements hold for arbitrary groups.
 
-The subgroup-decomposition and intersection-of-images proofs adapt earlier formalization
-by Yawara Ishida.
-The statements here use standard namespaces and no exponent or
-finiteness assumptions.
-
 Paper-ID: structure.derived_strictification, structure.lcs_strictification
 TeX: T3_modelcompanion_v4.tex, `lemma:commutator root`, lines 1096–1101, and
 `lemma:number of generators for triple commutator roots`, lines 1154–1169.

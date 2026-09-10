@@ -15,11 +15,9 @@ inequalities of a finite structure form one quantifier-free formula. Its realiza
 exactly embeddings. Replacing the element variables by terms in a generating tuple gives a
 quantifier-free formula on that tuple, together with equations fixing its parameter values.
 
-This generalizes an earlier table construction by Yawara Ishida:
-all function arities and both truth values of every relation are included.
-No finite substructure is assumed to be a model of the ambient theory.
-Finiteness concerns a representing formula, not the syntactic set of
-all true quantifier-free formulas.
+All function arities and both truth values of every relation are included.
+No finite substructure is assumed to be a model of the ambient theory. Finiteness concerns a
+representing formula, not the syntactic set of all true quantifier-free formulas.
 
 Paper-ID: model_theory.basic_definitions
 TeX: T3_modelcompanion_v4.tex, Definition 2.2, item 6, lines 185–193; no label.

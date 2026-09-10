@@ -1,0 +1,11 @@
+{
+  "revision_redaction": "Historical T3 revision identifiers have been omitted for publication. Recorded commands, outcomes, and source hashes describe the original checks; this edited record does not certify the rewritten historical snapshots.",
+  "baseline_git_revision": "[historical revision omitted]",
+  "changed_T3_files": 33,
+  "non_comment_changes": [
+    "T3/ModelTheory/ExponentThree.lean"
+  ],
+  "permitted_change": "exponentSentence uses the definitionally equal explicit Fin 1 zero index",
+  "copyright_headers_preserved": true,
+  "method": "Strip comments, normalize whitespace, and compare against the baseline; the Fin 1 zero index replacement is the only permitted code difference."
+}

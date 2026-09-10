@@ -23,13 +23,11 @@ model-companion existence. Examples, notation, arbitrary ranks and semantic univ
 Remark 4.10 uses actual shared-generator F4/F3 quotients and their strictification conclusions.
 Fact 2.6 has both directions with ordinary amalgams in arbitrary target universes.
 
-The two included review files are preserved snapshots from before final integration. The first
-identified only Remark 4.10 and the general-universe Fact 2.6 bridge as remaining boundaries.
-Those boundaries are now integrated and covered by this final gate. The shared-root review's
-temporary module names were replaced only in imports on promotion. The final criterion received
-independent source/type/proof review by the root; its canonical restriction preserves generators.
-The snapshots do not purport to have certified this subsequent full-library gate.
+The included shared-root review is a snapshot from before final integration. Its temporary
+module names were replaced only in imports on promotion. The final criterion also received
+agent source/type/proof review; its canonical restriction preserves generators. The snapshot
+does not purport to have certified the subsequent full-library gate.
 
 See [the completion record](../../../paper-faithful-completion.md) for source-fidelity scope,
 the exact mathematical statements and representations, reuse, and validation limits.
-All prior checkpoint artifacts remain unchanged.
+Machine-generated input manifests and gate logs are preserved as records of this revision.

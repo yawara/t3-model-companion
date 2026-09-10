@@ -22,9 +22,6 @@ The commutator is mathlib's `⁅a, b⁆ = a * b * a⁻¹ * b⁻¹`, exactly as i
 Conjugation in the paper is `a^g = g⁻¹ * a * g`; the preparatory lemmas also use conjugation
 by `g * a * g⁻¹`, and the paper-facing statement substitutes inverse conjugators explicitly.
 
-The proofs of the elementary identities and their subgroup consequences adapt earlier
-formalization by Yawara Ishida.
-They use only mathlib dependencies here.
 The exponent-three commutator calculus follows Levi–van der Waerden (1933), pp. 154–155:
 commuting conjugates give the two-Engel identity, and polarization gives cyclic triple
 commutators and vanishing four-fold commutators. The final section states the product and

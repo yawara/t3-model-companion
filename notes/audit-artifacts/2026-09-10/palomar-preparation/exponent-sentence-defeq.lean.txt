@@ -1,0 +1,7 @@
+import Solution
+
+open scoped FirstOrder
+open FirstOrder FirstOrder.Language FirstOrder.Group
+
+example (n : ℕ) : exponentSentence n =
+    (∀' ((powerTerm n &0) =' (1 : Language.group.Term _))) := rfl

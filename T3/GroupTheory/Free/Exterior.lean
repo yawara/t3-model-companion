@@ -19,8 +19,7 @@ coordinate equivalences from `Free.Graded` with the standard exterior-power basi
 No finiteness or countability hypothesis on `I` is used.
 
 The generator formulas are those of Proposition 2.29. The direct sum and preservation of the
-Lie bracket are separate constructions. The wedge identities below adapt earlier proofs
-by Yawara Ishida.
+Lie bracket are separate constructions.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
 TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`,

@@ -17,9 +17,6 @@ The resulting projections give a direct decomposition of each exterior power. Th
 basis blocks used in the paper's exterior decomposition before taking the relation quotient.
 Identification of the mixed blocks with tensor products is a separate step.
 
-The projections and their identities adapt earlier proofs
-by Yawara Ishida.
-
 Paper-ID: structure.graded_coproduct
 TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof, lines 883–910.
 -/

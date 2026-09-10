@@ -16,9 +16,7 @@ along its canonical embedding, and induction over a universal prefix therefore p
 preservation of universal-existential sentences. Passing through an equivalent axiomatization
 gives preservation for `Theory.IsPiTwo`, with no universality or finite-language assumption.
 
-This extends an earlier argument by Yawara Ishida
-from universal to Pi-two theories.
-It supplies the limit-model step in the construction of existentially closed extensions.
+This supplies the limit-model step in the construction of existentially closed extensions.
 
 Paper-ID: model_theory.companion_iff_ec
 TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.

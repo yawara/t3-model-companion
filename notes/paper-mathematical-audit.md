@@ -4,13 +4,12 @@
 
 **判定: 主定理とその系、および本文の明示的な上界を支える論証は成立すると判断する。今回確認した定理に、主張の変更・追加仮定・別証明を必要とする欠陥は見つからなかった。** 一方、いくつかの「明らか」「同様」の部分には、形式化に先立って明記すべき省略がある。その数学的内容を以下に補う。
 
-この判定は、旧 Lean のビルド成功から推定したものではない。TeX 本文の定義・量化・証明を読み、依存順に再導出した。主要な群論的外部入力は Levi–van der Waerden の原論文のページ画像で確認した。旧実装への fidelity とは別の検査であり、v4 全体の Lean 証明が完成したという意味ではない。
+この判定は、AI agent が TeX 本文の定義・量化・証明を読み、依存順に再導出した結果である。主要な群論的外部入力は Levi–van der Waerden の原論文のページ画像で確認した。原稿の読解と Lean の機械検証は別の検査であり、この読解時点の記録は v4 全体の Lean 証明の完成を主張しない。
 
-## 一次資料と Git 状態
+## 一次資料
 
-- 検査対象: [T3_modelcompanion_v4.tex](/home/ywr/t3-model-companion/T3_modelcompanion_v4.tex)、1309 行。
+- 検査対象: [T3_modelcompanion_v4.tex](../T3_modelcompanion_v4.tex)、1309 行。
 - SHA256: `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。本文は変更していない。
-- 以下の原典確認には、別途保管した文献資料を使用した。
 
 以下の原典ページを画像で読んだ。
 
@@ -19,9 +18,9 @@
 | Levi–van der Waerden (1933), pp.154–155 | (4)–(6) | 共役元との可換性、交換子の反転・巡回恒等式、derived subgroup の可換性、三重交換子の中心性 |
 | 同 pp.156–157 | (8), (9), Satz 1 | 正規形、座標積、指数 3 の群構成、一意性、位数 `3^(r+binom(r,2)+binom(r,3))` |
 | Hall (1958), p.765 | (2.1), (2.6) | 基本恒等式と collecting process の再記述。正規形の一意性は上記原論文から取る |
-| Burris–Lawrence (1979), p.162 | Claims 4–6 | 旧稿の共役圧縮との照合。v4 の幅 3 は、同論文の幅 5 を引用するだけでなく v4 本文の式から直接検証した |
+| Burris–Lawrence (1979), p.162 | Claims 4–6 | 共役圧縮の比較。v4 の幅 3 は、同論文の幅 5 を引用するだけでなく v4 本文の式から直接検証した |
 
-画像は [references/rendered-pages](/home/ywr/t3-model-companion/references/rendered-pages) に保存済みのものを使用した。原論文 PDF の版とハッシュは [MANIFEST.md](/home/ywr/t3-model-companion/references/MANIFEST.md:972) にある。
+書誌情報は原稿末尾の参考文献一覧に対応する。上表のページ番号は原典の印刷ページである。
 
 モデル理論の標準入力「inductive 理論の e.c. class の一階公理化可能性と model companion の存在の同値」は、[Kruckman, Math 509 notes, Theorem 6.38](https://akruckman.faculty.wesleyan.edu/files/2025/12/Lecture-Notes.pdf) の本文でも仮定と結論を確認した。以下の bounded-witness criterion の検証は、TeX の証明を直接追ったものである。
 
@@ -213,9 +212,9 @@ T₃ は universal、従って Π₂ で、正規形定理により局所有限�
 
 ## 9. 独立な正確計算と残る記述上の整備
 
-原論文 p.156 の座標積 (9) を独立した [Python 検査](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-09/check_paper_identities.py) に写し、F₃ 上の多項式として計算した。rank 4 の 14 座標を持つ任意の 4 元を、56 個の独立な不定元で表現している。
+原論文 p.156 の座標積 (9) を独立した [Python 検査](audit-artifacts/2026-09-09/check_paper_identities.py) に写し、F₃ 上の多項式として計算した。rank 4 の 14 座標を持つ任意の 4 元を、56 個の独立な不定元で表現している。
 
-群の結合律・単位元・指数 3 と、四重交換子消滅、巡回恒等式、二つの積公式、共役圧縮など、**16 件 / 各 14 座標**の差が厳密に 0 となった。誤った符号の積公式二つと「三重交換子は常に 1」は検出されることも確認した。浮動小数点・乱数・有限個のサンプルへの代入は用いていない。[結果 JSON](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-09/paper-identities.json) を保存した。
+群の結合律・単位元・指数 3 と、四重交換子消滅、巡回恒等式、二つの積公式、共役圧縮など、**16 件 / 各 14 座標**の差が厳密に 0 となった。誤った符号の積公式二つと「三重交換子は常に 1」は検出されることも確認した。浮動小数点・乱数・有限個のサンプルへの代入は用いていない。[結果 JSON](audit-artifacts/2026-09-09/paper-identities.json) を保存した。
 
 この計算は基本恒等式の補助検査であり、coproduct 命題や model companion の証明全体を機械検証したものではない。主たる判定根拠は上記の数学的な再導出である。
 
@@ -233,5 +232,3 @@ T₃ は universal、従って Π₂ で、正規形定理により局所有限�
 | 1223,1250–1251 | C=1 の処理、有限図式の相異性、内部中心列一致から strictness |
 
 abstract の歴史的帰属・Takeuchi の予想の出典、Introduction/Applications/Further questions の執筆 placeholder、全参考文献の書誌的照合は、この数学的な主定理検証とは別である。Saracino–Wood、Maier の原論文全文は今回取得・精査していないため、その帰属まで原典確認済みとはしない。引用される範囲の概要は [d'Elbée et al. の刊行論文の Introduction](https://www.sciencedirect.com/science/article/abs/pii/S0021869324004757) と整合するが、それを原論文全文の検証の代用にはしていない。
-
-> 公開履歴の整理に伴い、非公開の作業場所・内部識別子を省略した。数学的記述と当時の検証結果は保持しており、ここに記す検証は当時の対象に限る。

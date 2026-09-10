@@ -17,10 +17,9 @@ the elementary chain theorem makes the original embedding elementary. The existi
 `AllEmbeddingsElementary.isModelComplete` bridge supplies the syntactic conclusion required by
 Definition 2.2(2).
 
-The compactness and alternating-chain proofs reuse earlier formalization by Yawara Ishida.
-The quantifier-free diagram construction and the semantic-to-syntactic bridge
-use this repository's general model-theory API. No universal,
-Π₂, finite-language, or local-finiteness hypothesis is required for Robinson's test itself.
+The quantifier-free diagram construction and the semantic-to-syntactic bridge use the general
+model-theory API. No universal, Π₂, finite-language, or local-finiteness hypothesis is required
+for Robinson's test itself.
 Model quantifiers use the canonical semantic universe `Type (max u v)`.
 
 Paper-ID: `model_theory.companion_iff_ec`.

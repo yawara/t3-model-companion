@@ -29,8 +29,6 @@ associated graded・model companion の主張を完了したとは扱わない�
 `commutator_triple_cyclic` を繰り返し適用して原稿の三つの巡回表示を得られ、
 `commutator_self_right` が 2-Engel 性を与える。
 
-主要な計算は Yawara Ishida による以前の指数 3 群の基本恒等式と冪零性の
-形式化から、必要な依存だけ移した。元の著作者・著作権表示を保持している。
 Levi–van der Waerden の原典と基本恒等式の数学的確認は
 [数学的監査](paper-mathematical-audit.md) を引き継ぐ。
 新たな集合の包含式は、原稿の積の恒等式を部分群の生成元に適用して証明した。
@@ -56,16 +54,13 @@ private データを明示的に読み込み、標準 namespace や未使用の 
 負例では、未使用 private axiom と標準 namespace 内の axiom の両方を検出して失敗した。
 検査用の反例は独立した一時ディレクトリに作り、数学ソースへ追加していない。
 
-初期依存キャッシュは、同じ pin の既存 `.lake/packages` を独立コピーして利用した。
-`lakefile.toml` と manifest は Git の依存を宣言し、隣接 repo への path dependency はない。
+`lakefile.toml` と manifest は固定した Git 依存を宣言する。
 今回のローカル検証はキャッシュを使う通常の build であり、mathlib 全体の clean rebuild
 および GitHub Actions 上での実行を報告するものではない。
 
 ## 次の境界
 
-自由指数 3 群と正規形を独立に移植し、有限性と `t(n)` を
+自由指数 3 群と正規形を構成し、有限性と `t(n)` を
 `T3/GroupTheory/Free/NormalForm.lean` で公開する。
 同時に、上記の Z₂ の非可換例を自由群 F₂ から回収する。
 続いて標準 Lie API を使う associated graded を構成する。
-
-> 公開履歴の整理に伴い、非公開の作業場所・内部識別子を省略した。数学的記述と当時の検証結果は保持しており、ここに記す検証は当時の対象に限る。

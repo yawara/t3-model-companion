@@ -12,11 +12,10 @@
 `ModelTheory/ModelCompanionCriterion.lean` の
 `isModelCompanionOf_iff_models_iff_isExistentiallyClosed` は、一般の Π₂ 理論について
 model companion と e.c. class の公理化の同値を証明する。
-旧リポジトリの e.c. 拡大・elementary chain・Robinson test を再利用した。
 
 一段拡大では、元のモデル上で同時に実現可能な存在条件の集合を compactness と
-Zorn の補題で極大にする。これを ω 回反復する。旧コードの普遍理論の仮定が使われていた
-直極限のモデル性は、今回 `PiTwoDirectLimit.models_of_isPiTwo` で一般 Π₂ に拡張した。
+Zorn の補題で極大にする。これを ω 回反復する。
+直極限のモデル性は `PiTwoDirectLimit.models_of_isPiTwo` により一般 Π₂ 理論で証明した。
 有限 tuple を共通段階へ持ち上げて存在量化を処理し、同値な ∀∃ 公理化を通じて元の理論へ戻す。
 有限言語・局所有限性・amalgamation の仮定は加えていない。
 
@@ -55,8 +54,8 @@ retraction を用い、任意次数でその積と lower central term との交�
 
 ## 外積と tensor の canonical な同型
 
-`ForMathlib/PowersetCardSum.lean` は、左右の添字型に有限性を仮定せず、固定された大きさの
-部分集合を左右の部分集合の対へ分ける。
+`LinearAlgebra/ExteriorTensor.lean` の準備部分は、左右の添字型に有限性を仮定せず、
+固定された大きさの部分集合を左右の部分集合の対へ分ける。
 `ExteriorTensor.tensorEquiv` は、これと mathlib の exterior basis・tensor basis を組み合わせ、
 任意の可換環上の基底付き加群に対して
 

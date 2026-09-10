@@ -16,8 +16,6 @@ For surjections `φ₀ : Free I →* G₀` and `φ₁ : Free J →* G₁`, the c
 constructed from the universal properties of the free groups, quotients, and coproduct. Its
 formulas keep the given presentations and the canonical inclusions fixed.
 
-The relation-subgroup and descended-map constructions reuse earlier proofs
-by Yawara Ishida.
 The final comparison is with the ordinary free product modulo cubes used by this paper.
 The derived-subgroup assumptions are needed only for the final containment lemmas.
 

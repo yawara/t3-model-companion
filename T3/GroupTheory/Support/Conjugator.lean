@@ -15,9 +15,7 @@ Modulo the third lower central term, collection along a generating list of the f
 uses one element of the second factor per generator, and one further element. The error in
 lifting this expression is central, so the paper's right conjugation action is unchanged.
 
-The quotient, lifting, and central-error calculations reuse earlier proofs by Yawara Ishida.
-The bound by the whole first subgroup's cardinality is replaced
-by the length of a generating list.
+The bound is expressed in terms of the length of a generating list.
 
 Paper-ID: main.bounded_support
 TeX: T3_modelcompanion_v4.tex, `lemma:witness in bdd support`, lines 681–693.

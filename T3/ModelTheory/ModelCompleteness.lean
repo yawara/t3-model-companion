@@ -22,8 +22,6 @@ the original parameter tuple through equations. A second compactness argument ch
 many of these local formulas. Their quantifier-free matrices are combined under one existential
 prefix, giving the required existential equivalent.
 
-The quantifier-free diagram and its canonical embedding adapt earlier proofs
-by Yawara Ishida.
 The compactness step uses mathlib's `Theory.models_iff_finset_models`.
 
 Paper-ID: model_theory.basic_definitions

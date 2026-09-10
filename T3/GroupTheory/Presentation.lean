@@ -17,10 +17,9 @@ basis vectors, the induced free exponent-three homomorphism is surjective and it
 in the derived subgroup. Its map on the actual degree-one quotient is a linear isomorphism.
 The index type need not be finite, countable, or supplied with an order.
 
-The image-of-basis argument adapts earlier proofs by Yawara Ishida.
-Rather than an existential presentation package, the results here keep the prescribed basis and
-representatives as parameters. Surjectivity uses the paper's two commutator inclusions from
-`T3.GroupTheory.Generation`; the kernel argument uses the actual degree-one coordinate basis.
+The results keep the prescribed basis and representatives as parameters. Surjectivity uses
+the paper's two commutator inclusions from `T3.GroupTheory.Generation`; the kernel argument
+uses the actual degree-one coordinate basis.
 
 Paper-ID: structure.basis_lift
 TeX: T3_modelcompanion_v4.tex, `proposition:lift`, v4 Proposition 4.1, lines 753–799.

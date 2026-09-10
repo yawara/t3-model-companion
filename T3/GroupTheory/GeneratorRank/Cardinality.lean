@@ -24,8 +24,7 @@ integer inequalities without introducing real logarithms. An injective map into 
 generated exponent-three group also supplies finite generation of the source, so it is not
 an extra hypothesis in the final package.
 
-The free-quotient order argument follows an earlier calculation by Yawara Ishida,
-using the actual generator rank throughout.
+The free-quotient order argument uses the actual generator rank throughout.
 No model-theory module is imported.
 
 Paper-ID: main.bounded_witness

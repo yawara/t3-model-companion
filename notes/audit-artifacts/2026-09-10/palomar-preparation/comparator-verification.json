@@ -1,0 +1,30 @@
+{
+  "cwd": "/home/ywr/t3-model-companion",
+  "comparator_exit_code": 0,
+  "definitional_equality_probe_exit_code": 0,
+  "command": "lake env .cache/palomar-comparator/comparator/.lake/build/bin/comparator comparator.json",
+  "environment": {
+    "PALOMAR_LANDRUN_BIN": "/home/ywr/t3-model-companion/.cache/palomar-comparator/bin/landrun",
+    "COMPARATOR_LEAN4EXPORT": "/home/ywr/t3-model-companion/.cache/palomar-comparator/lean4export/.lake/build/bin/lean4export",
+    "COMPARATOR_NANODA": "/home/ywr/t3-model-companion/.cache/palomar-comparator/nanoda/target/release/nanoda_bin",
+    "COMPARATOR_LANDRUN": "/home/ywr/t3-model-companion/scripts/landrun-wrapper.sh"
+  },
+  "sha256": {
+    "Challenge.lean": "47434e16764771ce5894d229b4b70f6e69ab051f2e95223d8817c74bf65330a6",
+    "Solution.lean": "727f87a06aa80c4dc1fc3f6c1a3121227f778c6d478a39eba0541d5191020cfe",
+    "comparator.json": "e0350c5ab9ca77d1e76ab65c10582bed81ee14a6322b21abe4424c1a8d81a326",
+    "T3/ModelTheory/ExponentThree.lean": "29490bb8b4bb6a896ea52881bc219993a915ee446417b390899da6f06e1f226c",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "lake-manifest.json": "446e1902b9d80e3a041f1a61a095f7236ea23bd24ed3b5081c282b374e58c401"
+  },
+  "definition_change": "FirstOrder.Group.exponentSentence: &0 replaced by &\u27e80, Nat.zero_lt_one\u27e9; the original sentence is definitionally equal by rfl.",
+  "tool_revisions": {
+    "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
+    "lean4export": "86e4a339507466921dc8c5417c8cb1de1ce7df60",
+    "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+    "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+  },
+  "mathematical_source_revision": "305b6338d4129eb20885ccb54e9b994451a2eba3b479aaf41c3508f55135fccc",
+  "nanoDa_accepted": true,
+  "lean_kernel_accepted": true
+}

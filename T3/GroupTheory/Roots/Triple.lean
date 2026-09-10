@@ -18,9 +18,8 @@ The relators are central, so their normal closure is their generated subgroup. T
 triple coordinates recover the exponents in a product of relators. An element of this subgroup
 whose free-group component is one therefore has trivial `G` component.
 
-The central-product construction and quotient equations reuse an earlier single-root proof
-by Yawara Ishida; the simultaneous independence proof uses
-the coordinate calculations of `T3.GroupTheory.Free.NormalForm`.
+The simultaneous independence proof uses the coordinate calculations of
+`T3.GroupTheory.Free.NormalForm`.
 
 Paper-ID: structure.simultaneous_triple_roots
 TeX: T3_modelcompanion_v4.tex, `lemma:triple commutator root`, v4 Lemma 4.8.

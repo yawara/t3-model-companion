@@ -17,11 +17,9 @@ Iterating this step and taking a directed limit gives an existentially closed ex
 the theory is Pi-two. The directed-limit model theorem uses an equivalent universal-existential
 axiomatization, with no universal-theory, finite-language, or amalgamation assumption.
 
-The construction adapts earlier proofs by Yawara Ishida.
-The one-step construction works for arbitrary theories;
-the universal-theory limit step is extended to Pi-two theories using
-`DirectLimit.models_of_isPiTwo`. The canonical quantifier-free-diagram embedding is reused from
-`T3.ModelTheory.ModelCompleteness`. Models and extensions use the canonical semantic universe.
+The limit-model step uses `DirectLimit.models_of_isPiTwo`. The canonical quantifier-free-diagram
+embedding is supplied by `T3.ModelTheory.ModelCompleteness`. Models and extensions use the
+canonical semantic universe.
 
 Paper-ID: model_theory.companion_iff_ec
 TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.

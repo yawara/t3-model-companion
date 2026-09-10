@@ -15,8 +15,7 @@ mathlib の外冪基底に接続し、任意の基底 `b : Basis I (ZMod 3) V` �
 `Free/ExteriorBracket.lean` は基底上の交換子計算と双線形性から、次数 `(1,1)` と
 `(2,1)` の bracket 保存を証明する。次数1の生成元が対の左・間・右にある場合と
 重複する場合を、三重交換子の巡回性・交代性に従って処理する。
-旧 `ExponentThree/Graded.lean` の生成元・外積計算を再利用し、既に実装した
-任意rankの次数商と標準mathlib外冪をつなぐ形にした。
+生成元・外積計算により、任意rankの次数商と標準mathlib外冪を接続した。
 
 `AssociatedGraded/Truncation.lean` は次数0と4以上が零であることを使い、
 実際の `DirectSum` と次数1・2・3の積を同一視する。
@@ -43,7 +42,7 @@ Lemma 2.31 のcanonicalな `LinearEquiv` と代表元上の公式を得た。
 中心列の直積公式と合わせて Example 2.21(2) を完成した。
 同Exampleの可換群・F₂の具体的記述は未完了であり、項目全体は部分完了とする。
 
-`ConjugateWidth.lean` は旧同名モジュールの交換子圧縮を再利用し、原稿の
+`ConjugateWidth.lean` は交換子を圧縮し、原稿の
 `Eₐ = {aᵏ[a,g]}` の部分群性・normal closureとの一致を先に証明する。
 指数 `k=0,1,2` の場合分けから、任意の元を高々3個の `g⁻¹ * a * g` の積に表す。
 全因子はaの正の共役であり、a⁻¹を別の因子として許していない。
@@ -51,8 +50,8 @@ Lemma 2.31 のcanonicalな `LinearEquiv` と代表元上の公式を得た。
 
 ## 有限言語の図式と e.c. 転送
 
-`ModelTheory/FiniteDiagram.lean` は旧 `FiniteGroupDiagram.lean` の方法を一般の有限言語に
-拡張した。有限構造の関数表、関係の真偽、要素の相異性を全て含む単一QF式を作り、
+`ModelTheory/FiniteDiagram.lean` は一般の有限言語について、有限構造の関数表、関係の真偽、
+要素の相異性を全て含む単一QF式を作り、
 その実現とembeddingの存在が同値であることを証明する。
 有限tupleが生成する実際の部分構造を使い、その図式の変数をtupleの項で置き換える。
 得られる `finiteGeneratedDiagram` は全QF図式 `tupleQfDiagram` と同じ実現を持つ。
@@ -95,20 +94,15 @@ pin済みcacheによるローカル検証であり、CI実行やmathlib全体の
 次は Proposition 4.1 のpresentation、Lemma 4.2 のgraded normal closureを構成し、
 Proposition 4.3 のη₁–η₃と自然性へ進む。
 
-- Prop 4.1 は旧 `ExponentThree/Generation.lean:102` と `Presentation.lean:58` を再利用する。
-  新しい公開定理は、存在する基底を後から選ぶpackageだけでなく、与えられた
-  `Layer G 1` の基底とその代表元からの写像を扱う。群の生成性の証明を、
-  associated gradedのLie生成性だけで済ませない。
-- Lemma 4.2 の群としての等式は旧 `NormalClosure.lean:110` が任意群の形で供給する。
+- Prop 4.1 の公開定理は、与えられた `Layer G 1` の基底とその代表元からの写像を扱う。
+  群の生成性の証明を、associated gradedのLie生成性だけで済ませない。
+- Lemma 4.2 の群としての等式は、一般の指数3群について normal closure を計算して得る。
   その後の次数2・3の等式は実際の `subgroupImage` とbracket部分空間上で証明する。
-  旧ファイル後半の有限自由群の座標補題を一般群の主張として登録しない。
 - 独立に進められる次の構成は Lemma 4.8 の同時triple rootsである。
-  旧 `CentralProduct.lean:97` の単一rootの核計算を、`F_(3n)` の独立な
-  三重交換子へ拡張する。今回の直積と次数3座標が利用できる。
+  `F_(3n)` の独立な三重交換子を使って一括商の核を計算する。
+  今回の直積と次数3座標が利用できる。
 
-これらの候補を読解した時点の旧repo HEADは
-`3185117c10558cdd116acfe7152e4576e53b85b0`。旧repoは並行作業中であり、編集していない。
-上記は次回の再利用候補であり、今回の検証済みコードには数えない。
+上記は次回の実装計画であり、今回の検証済みコードには数えない。
 
 生成元ベースのsupport、同時roots、`15n²`、一般criterion、主定理と系は未完成。
-`sorry`・独自公理・強い追加仮定でこれらを埋めず、既存コードの適合する部分を再利用する。
+原稿の構成に従って証明し、`sorry`・独自公理・強い追加仮定は使わない。

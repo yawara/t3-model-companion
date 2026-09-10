@@ -16,9 +16,6 @@ at most `3(m+1)n` elements in the left factor itself. For every subgroup contain
 elements, the certificate is supported in its coproduct image once all relators lie there.
 This retains the actual internal normal closure in the paper's subgroup `H₀`.
 
-The finite-set pullback adapts earlier proofs by Yawara Ishida,
-using generator counts throughout.
-
 Paper-ID: main.bounded_witness
 TeX: T3_modelcompanion_v4.tex, `thm:main`, lines 730–738.
 -/

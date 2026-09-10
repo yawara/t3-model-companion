@@ -10,22 +10,22 @@
 `GroupTheory/Generation.lean` は原稿の二段階の包含
 `γ₂(G) ≤ H ⊔ [H,γ₂(G)] ≤ H ⊔ γ₃(G)` と `[H,γ₂(G)] ≤ H` を個別に証明する。
 これにより `H ⊔ γ₂(G) = G` から `H = G` を得る。
-旧 `Generation.lean`、`Nilpotent.lean` の分解・交換子恒等式を再利用し、
-v4の包含の順序を明示した。associated gradedのLie生成性だけでは済ませていない。
+部分群の分解・交換子恒等式を用い、v4の包含の順序を明示した。
+associated gradedのLie生成性だけでは済ませていない。
 
 `Presentation.lean` は任意の指定済み `Basis I (ZMod 3) (Layer G 1)` と、
 その任意の指定代表元 `a : I → G` を引数に取る。
 `Free.presentation_of_basis` は、その `Free.lift` が全射であり、核が自由群の
 導来群に含まれることを証明する。実際の次数1の誘導写像も `LinearEquiv` にした。
 `I` に有限性・可算性・順序の仮定はなく、証明内で一時的に順序を選ぶ。
-旧 `Presentation.lean` の証明を再利用し、存在packageだけでなく指定データを保つ形にした。
+自由表示と誘導写像は指定された基底と代表元を保つ。
 これで Proposition 4.1 が完成した。
 
 ## 非斉次な関係式を保った normal closure
 
 `GradedNormalClosure.lean` は任意の群Gと `K ≤ γ₂(G)` について、
 原稿の `L = K[K,G]` と `L ≤ γ₂(G)`、次数2・3の像の公式を証明する。
-群としての等式は旧 `NormalClosure.lean` を再利用し、実際の積 `k * p` の表示も公開した。
+群としての等式に加え、実際の積 `k * p` の表示も公開した。
 
 次数3では最初に `L ∩ γ₃(G) = (K ∩ γ₃(G))[K,G]` を証明し、それから像を取る。
 `K` を次数ごとの成分に分離する仮定は使わない。
@@ -40,7 +40,7 @@ bracket部分空間は双線形写像の値のspanを表す標準 `Submodule.map
 `G × Free (Fin (3*n))` を関係式 `((g i)⁻¹, [xᵢ,yᵢ,zᵢ])` のnormal closureで割る。
 原稿の符号・生成元数・一括商を保ち、単一rootの反復構成に置き換えていない。
 
-旧 `CentralProduct.lean` の構成を再利用する。関係式の中心性からnormal closureを
+関係式の中心性からnormal closureを
 生成部分群と同一視し、その有限積表示の各整数指数を独立な三重座標で回収する。
 自由因子の成分が1なら全指数が3の倍数になるため、元の群との交叉は自明である。
 `baseMap_injective` と各 `baseMap_root` の等式を証明し、Lemma 4.8 が完成した。
@@ -55,8 +55,8 @@ iSup等式と独立性で証明する。`quotientEquiv` は各成分を交差部
 各成分商と全体商内の像との同型も公開した。任意の環・任意のindexで成立するため、
 原稿の任意次元のvector spaceを含む。Definition 2.10・Proposition 2.11が完成した。
 
-`LinearAlgebra/ExteriorSum.lean` は旧 `ExteriorSupport.lean` の射影を再利用する。
-和集合に添字を持つ外冪基底を左側indexの数で分け、射影の和・冪等性・直交性から
+`LinearAlgebra/ExteriorSum.lean` は、和集合に添字を持つ外冪基底を左側indexの数で分ける。
+対応する射影の和・冪等性・直交性から
 実際の `DirectSum.Decomposition` を任意次数で構成した。
 基底の大きさを有限と仮定しない。
 これは Proposition 4.3 の証明準備であり、混合blockとtensorの同型をまだ与えていない。
@@ -99,14 +99,13 @@ pin済みcacheによるローカル検証であり、CI実行やmathlib全体の
 次の主な課題は Proposition 4.3 の混合blockをtensorとして同定し、自由表示の
 関係部分空間を各blockで計算して、canonicalなη₁–η₃と自然性に接続することである。
 外積の左index数による射影だけでは、この同型が完成したとはしない。
-旧 `ExteriorSupport.lean` の再利用範囲は今回の射影までであり、その先のcanonicalな
-tensor同型は別途構成する必要がある。
+canonicalなtensor同型は別途構成する必要がある。
 
 次回の具体的な接続順序は以下とする。
 
 1. `Finset.toLeft`、`toRight`、`disjSum` と `card_toLeft_add_card_toRight` を使い、
    外冪基底のindexを左右の部分集合の対で表す。mathlib `Basis.tensorProduct` と
-   `exteriorPower.map` がtensor基底と左右の埋め込みの再利用入口となる。
+   `exteriorPower.map` がtensor基底と左右の埋め込みを与える。
 2. `ExteriorSum.block b n k` と `ΛᵏV₀ ⊗ Λⁿ⁻ᵏV₁` の実際の同型を作り、
    原稿の次数2・3で必要な成分に特殊化する。現在のindex順はk=0からnなので、
    原稿の左成分から始まる表示には順序の入れ替えが必要である。

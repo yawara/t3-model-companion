@@ -16,10 +16,6 @@ collects into one element of each subgroup and a cross-commutator product indexe
 finite generating list of the first subgroup. Closure induction extends the single-generator
 calculation to all first-factor elements; listing the entire subgroup is unnecessary.
 
-The cross-product and collected-subgroup proofs reuse earlier formalization by Yawara Ishida.
-Replacing the full enumeration hypothesis by generation
-is required for the paper's generator bound.
-
 Paper-ID: main.bounded_support
 TeX: T3_modelcompanion_v4.tex, `lemma:witness in bdd support`, lines 677–688.
 -/

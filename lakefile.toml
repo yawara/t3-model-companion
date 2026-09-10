@@ -1,7 +1,7 @@
 name = "T3"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["T3"]
+defaultTargets = ["T3", "Solution"]
 lintDriver = "batteries/runLinter"
 fixedToolchain = true
 
@@ -20,3 +20,9 @@ rev = "905b95818eb32af7874a58b427f50c1711a5e96c"
 
 [[lean_lib]]
 name = "T3"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

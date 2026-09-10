@@ -1,0 +1,13 @@
+{
+  "before_declarations": 2973,
+  "after_declarations": 2972,
+  "before_public_names": 2394,
+  "after_public_names": 2393,
+  "removed_names": [
+    "FirstOrder.Group.exponentSentence._proof_1"
+  ],
+  "added_names": [],
+  "changed_export_private_or_module_flags": [],
+  "axiom_dependency_changes": {},
+  "interpretation": "The only removed declaration is a generated auxiliary proof, made unnecessary by the explicit bound-variable index. All handwritten declaration names and export flags are retained."
+}

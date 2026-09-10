@@ -39,13 +39,12 @@ mathlib 自体のクリーンビルドや CI 実行ではない。
 `Nat.log` は実対数の床に相当する整数評価に用いている。
 B の有限生成性と指数3性から A の有限性・有限生成性・指数3性も導出できるため、
 終端には A の有限生成性を追加仮定にしない package もある。
-旧 `StrictTools` の自由群の商による位数評価を再利用し、最小生成数に接続した。
 
 ## Theorem 3.3 の証明
 
 `Main/BoundedWitness` で `witnessBound m = strictEnvelopeBound ((3*m+4)*freeOrderExponent m+1)`
 を定義する。すなわち原稿どおり `15*((3*m+4)*t(m)+1)^2` である。
-一般の「ある上界」や A/B の位数を直接引数とする旧 bound に置き換えていない。
+上界の引数は B の生成元数だけである。
 
 A の最小生成集合 s に対する relators Δ について、amalgam の商表示から左右どちらかの
 非自明元を得る。`Coproduct/Support` は Lemma 3.2 が返す support を左因子へ引き戻し、

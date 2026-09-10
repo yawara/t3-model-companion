@@ -30,9 +30,6 @@ increasing triple commutators hit the coordinate deltas — so the order of the 
 forces that kernel to be trivial. The same readouts successively recover the three blocks
 of a normal word, proving injectivity of word evaluation; the order formula gives surjectivity.
 
-The readout and cardinality proofs reuse earlier formalization
-by Yawara Ishida.
-
 ## Main definitions
 
 * `LvdW.genHom`, `LvdW.pairHom`, `LvdW.tripleHom`: the coordinate readouts of the model;

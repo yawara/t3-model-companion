@@ -14,8 +14,7 @@ For a finite inclusion `A → B` and a finite family `A → Cᵢ`, the extension
 copy of `A` admitting none of the forbidden extensions extends to a copy of `B`. This is an
 ordinary first-order sentence, formed using the full finite diagrams and finite conjunction.
 
-This generalizes an earlier Boolean and quantifier construction by Yawara Ishida
-from the group language to any finite language.
+The Boolean and quantifier construction applies to any finite language.
 None of the finite structures is assumed to satisfy a theory or to be nonempty.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion

@@ -20,7 +20,6 @@ statement (all transitions elementary) and interleaved chains where only the com
 consecutive pairs of transitions are elementary, which is the form needed for Robinson's
 model-completeness test.
 
-This formalization reuses earlier proofs by Yawara Ishida.
 This file depends only on mathlib. It supplies the elementary-chain step in the converse of
 Fact 2.3, without any assumption on a theory.
 

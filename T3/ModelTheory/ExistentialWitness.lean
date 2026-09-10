@@ -14,10 +14,9 @@ The number of witnesses needed by an existential formula is bounded independentl
 model and parameter assignment. Once these witnesses and the parameters belong to an embedded
 structure, the formula is realized there. Empty structures and empty witness sets are allowed.
 
-This strengthens an earlier finite-witness induction by Yawara Ishida:
-the cardinal bound is chosen before the model.
-It records the length of the existential prefix over the quantifier-free matrix, as used to
-choose the bound in the necessity direction of Fact 2.6.
+The cardinal bound is chosen before the model. It records the length of the existential prefix
+over the quantifier-free matrix, as used to choose the bound in the necessity direction of
+Fact 2.6.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
 TeX: T3_modelcompanion_v4.tex, `fact:locally finiteness and model companion`, lines 234–240.
