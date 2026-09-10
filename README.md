@@ -3,7 +3,8 @@
 *Existence of a Model Companion for Groups of Exponent 3* の Lean 形式化。
 対象原稿は [T3_modelcompanion_v4.tex](T3_modelcompanion_v4.tex) です。
 
-現在の実装と最終検証の記録は [論文全体の形式化](notes/paper-faithful-completion.md) を参照。
+数学的内容と fidelity 照合は [論文全体の形式化](notes/paper-faithful-completion.md)、
+その後の配置整理と再検証は [補助補題の配置](notes/mathematical-helper-layout.md) を参照。
 主定理・model companion の存在に加え、例・remark・記法と一般モデル宇宙への接続を含め、
 原稿との対応を [50項目・75部分項目](docs/paper-map.md) で管理しています。
 
@@ -28,9 +29,10 @@
 - [Associated graded の例とモデル埋込みの検証境界](notes/examples-and-model-embeddings-checkpoint.md)
 - [任意宇宙の意味論と群の記法の検証境界](notes/semantic-universes-and-notation-checkpoint.md)
 - [論文全体の最終検証](notes/paper-faithful-completion.md)
+- [補助補題の配置整理と再検証](notes/mathematical-helper-layout.md)
 
-過去の監査・検証境界は当時の状態を固定した記録です。現在の証明状況は最終検証と対応表を
-参照してください。
+過去の監査・検証境界は当時の状態を固定した記録です。現在の証明状況は対応表と、
+そこからリンクした検証記録を参照してください。
 
 Lean/mathlib は v4.32.2、mathlib の commit は
 `905b95818eb32af7874a58b427f50c1711a5e96c` に固定しています。

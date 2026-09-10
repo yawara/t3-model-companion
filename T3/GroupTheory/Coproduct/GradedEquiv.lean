@@ -6,6 +6,7 @@ Authors: Yawara Ishida
 module
 
 public import T3.GroupTheory.Coproduct.QuotientMaps
+public import T3.LinearAlgebra.LinearMapQuotient
 public import Mathlib.Algebra.Field.ZMod
 public import Mathlib.LinearAlgebra.Basis.VectorSpace
 

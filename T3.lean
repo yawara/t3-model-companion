@@ -1,10 +1,5 @@
 module  -- shake: keep-all --deprecated_module: ignore
 
-public import T3.ForMathlib.DirectSum
-public import T3.ForMathlib.LinearMapQuotient
-public import T3.ForMathlib.PowersetCardSum
-public import T3.ForMathlib.Subgroup
-public import T3.ForMathlib.TensorProduct
 public import T3.GroupTheory.Amalgamation
 public import T3.GroupTheory.AssociatedGraded
 public import T3.GroupTheory.AssociatedGraded.Bracket
@@ -66,15 +61,19 @@ public import T3.GroupTheory.Roots.SharedLowerCentralStrictification
 public import T3.GroupTheory.Roots.SharedTriple
 public import T3.GroupTheory.Roots.SharedTripleCoordinates
 public import T3.GroupTheory.Roots.Triple
+public import T3.GroupTheory.Subgroup
 public import T3.GroupTheory.Support
 public import T3.GroupTheory.Support.Collection
 public import T3.GroupTheory.Support.Conjugator
 public import T3.GroupTheory.Support.Transport
 public import T3.LinearAlgebra.BlockDecomposition
+public import T3.LinearAlgebra.DirectSum
 public import T3.LinearAlgebra.ExteriorLowDegree
 public import T3.LinearAlgebra.ExteriorSum
 public import T3.LinearAlgebra.ExteriorTensor
 public import T3.LinearAlgebra.GradedLie
+public import T3.LinearAlgebra.LinearMapQuotient
+public import T3.LinearAlgebra.TensorProduct
 public import T3.LinearAlgebra.TruncatedExterior
 public import T3.LinearAlgebra.Wedge
 public import T3.Main.BoundedWitness

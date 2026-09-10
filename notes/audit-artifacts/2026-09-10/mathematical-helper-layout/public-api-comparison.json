@@ -1,0 +1,118 @@
+{
+  "baseline": "notes/audit-artifacts/2026-09-10/paper-completion/declarations.json",
+  "public_names_unchanged": true,
+  "public_export_status_unchanged": true,
+  "public_axiom_sets_unchanged": true,
+  "public_name_count": 2394,
+  "module_changes": [
+    {
+      "name": "DirectSum.coe_decompose_range_lof",
+      "before": "T3.ForMathlib.DirectSum",
+      "after": "T3.LinearAlgebra.DirectSum"
+    },
+    {
+      "name": "DirectSum.rangeLofDecomposition",
+      "before": "T3.ForMathlib.DirectSum",
+      "after": "T3.LinearAlgebra.DirectSum"
+    },
+    {
+      "name": "DirectSum.rangeLofDecomposition._proof_1",
+      "before": "T3.ForMathlib.DirectSum",
+      "after": "T3.LinearAlgebra.DirectSum"
+    },
+    {
+      "name": "DirectSum.rangeLofDecomposition._proof_2",
+      "before": "T3.ForMathlib.DirectSum",
+      "after": "T3.LinearAlgebra.DirectSum"
+    },
+    {
+      "name": "DirectSum.rangeLofDecomposition._proof_3",
+      "before": "T3.ForMathlib.DirectSum",
+      "after": "T3.LinearAlgebra.DirectSum"
+    },
+    {
+      "name": "LinearMap.bijective_of_bijective_of_ker_map",
+      "before": "T3.ForMathlib.LinearMapQuotient",
+      "after": "T3.LinearAlgebra.LinearMapQuotient"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv._proof_2",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv._proof_3",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv._proof_4",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv._proof_5",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv._proof_6",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv._proof_7",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv._proof_8",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv_fst",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Set.powersetCard.sumEquiv_symm_val",
+      "before": "T3.ForMathlib.PowersetCardSum",
+      "after": "T3.LinearAlgebra.ExteriorTensor"
+    },
+    {
+      "name": "Subgroup.exists_mul_mul_commutator_of_mem_sup",
+      "before": "T3.ForMathlib.Subgroup",
+      "after": "T3.GroupTheory.Subgroup"
+    },
+    {
+      "name": "Subgroup.map_inf_of_ker_le",
+      "before": "T3.ForMathlib.Subgroup",
+      "after": "T3.GroupTheory.Subgroup"
+    },
+    {
+      "name": "TensorProduct.map_ker_eq_map₂",
+      "before": "T3.ForMathlib.LinearMapQuotient",
+      "after": "T3.LinearAlgebra.TensorProduct"
+    },
+    {
+      "name": "TensorProduct.tmul_ne_zero",
+      "before": "T3.ForMathlib.TensorProduct",
+      "after": "T3.LinearAlgebra.TensorProduct"
+    }
+  ],
+  "source_modules": 109,
+  "audited_declarations": 2973,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "paper_items": 50,
+  "paper_parts": 75
+}

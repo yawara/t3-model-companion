@@ -5,7 +5,7 @@ Authors: Yawara Ishida
 -/
 module
 
-public import T3.ForMathlib.Subgroup
+public import T3.GroupTheory.Subgroup
 public import T3.GroupTheory.Roots.SharedCommutator
 public import T3.GroupTheory.Roots.DefectBasis
 

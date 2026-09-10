@@ -6,7 +6,7 @@ Authors: Yawara Ishida
 module
 
 public import T3.GroupTheory.AssociatedGraded.Bracket
-public import T3.ForMathlib.DirectSum
+public import T3.LinearAlgebra.DirectSum
 public import Mathlib.Algebra.Lie.Graded
 
 /-!

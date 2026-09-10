@@ -9,7 +9,7 @@ public import T3.GroupTheory.Coproduct.BlockBracket
 public import T3.GroupTheory.Coproduct.CentralSeriesCriterion
 public import T3.GroupTheory.Coproduct.FreeTwo
 public import T3.GroupTheory.Coproduct.GradedEquiv
-public import T3.ForMathlib.TensorProduct
+public import T3.LinearAlgebra.TensorProduct
 
 /-!
 # Graded separation in a coproduct with the two-generator free group

@@ -5,7 +5,7 @@ Authors: Yawara Ishida
 -/
 module
 
-public import T3.ForMathlib.LinearMapQuotient
+public import T3.LinearAlgebra.TensorProduct
 public import T3.GroupTheory.Coproduct.FreeGraded
 public import T3.GroupTheory.Coproduct.Relations
 public import T3.GroupTheory.GradedQuotient

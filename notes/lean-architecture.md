@@ -1,6 +1,7 @@
 # Lean 形式化の構成案
 
-2026-09-09。雛形の実装を開始した。以下は全体の配置方針であり、未実装のパス・宣言名も含む。
+2026-09-09 に雛形の実装を開始し、2026-09-10 に補助補題の配置方針を更新した。
+以下は全体の配置方針であり、未実装のパス・宣言名も含む。
 現在の実装状況は [論文対応表](../docs/paper-map.md) を参照する。
 対象は `T3_modelcompanion_v4.tex`、SHA256
 `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。
@@ -17,14 +18,17 @@
 T3.lean                         全数学モジュールの import 集約
 T3/
   Paper.lean                    論文順の案内。公開結果を import し、docstring で対応を示す
-  GroupTheory/                  指数 3 の群論、自由群、graded、roots
+  GroupTheory/                  汎用の部分群補題、指数 3 の群論、自由群、graded、roots
+    Subgroup.lean
     Free/
     Coproduct/
     Roots/
-  LinearAlgebra/                graded Lie、truncated exterior、block quotient
+  LinearAlgebra/                汎用の線形代数補題、graded Lie、truncated exterior、block quotient
+    DirectSum.lean
+    LinearMapQuotient.lean
+    TensorProduct.lean
   ModelTheory/                  一般モデル理論と指数 3 への接続
   Main/                         有界障害の主定理と model companion の系
-  ForMathlib/                   必要になった汎用補助補題
 Tests/                          公理依存・公開 API 等の検査
 scripts/                        lint、対応表の整合性検査
 docs/
@@ -37,9 +41,24 @@ docs/
 `T3.lean` と `Paper.lean` は末端の集約で、数学モジュールから import しない。
 検査プログラムは数学ライブラリの集約に含めない。
 
-`ForMathlib` は必要な補題が実際に見つかった時点で使う。一般モデル理論のように
-論文中でもまとまった役割を持つ API は `ModelTheory` に置いてよい。
-ファイルの置き場だけで upstream に適した一般性を保証するわけではない。
+共有する汎用補題は、その数学的対象に対応する `GroupTheory`、`LinearAlgebra`、
+`ModelTheory` 等に置く。用途が一つの構成に限られる準備は、その構成のモジュールに置く。
+upstream 候補かどうかを配置軸にした `ForMathlib` 層は設けない。
+論文との対応は module docstring、各宣言の `Paper-ID`、論文対応表に保持する。
+汎用の主張であることと、論文のどの証明を支えるかは別々に記録する。
+
+補助補題の具体的な配置は次のとおり。
+
+| 数学的内容 | モジュール | 宣言の namespace |
+| --- | --- | --- |
+| 外部直和の標準的な各成分への分解 | `T3/LinearAlgebra/DirectSum.lean` | `DirectSum` |
+| 部分群の join の分解、核を含む部分群との交わりの像 | `T3/GroupTheory/Subgroup.lean` | `Subgroup` |
+| 核の対応による線形写像の商への同型降下 | `T3/LinearAlgebra/LinearMapQuotient.lean` | `LinearMap` |
+| 非零純テンソル、テンソル積写像の核 | `T3/LinearAlgebra/TensorProduct.lean` | `TensorProduct` |
+| 直和上の固定濃度部分集合の分解 | `T3/LinearAlgebra/ExteriorTensor.lean` の準備部分 | `Set.powersetCard` |
+
+共有する低層補題は、その使用先の構成を import しない。
+特定の構成の準備部分に置いた汎用補題も、既存 namespace の宣言名を保つ。
 
 ## 2. モジュールと論文項目の対応
 

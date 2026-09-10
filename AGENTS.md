@@ -12,6 +12,9 @@
   source, statement, and reasoning before changing the mathematical claim.
 - Use mathlib definitions and namespaces where appropriate. Keep the pinned toolchain and manifest
   reproducible. This repository contains the substantive formal proof development.
+- Place shared generic helpers in modules for their mathematical subject, and construction-specific
+  helpers alongside the construction. Do not introduce a separate `ForMathlib` layer. Preserve native
+  namespaces and `Paper-ID` correspondence when moving declarations.
 - Reuse and copy prior exponent-three proofs wherever their statements and constructions fit
   the paper. The user explicitly authorizes code copying. Adapt imports, names, and source locators;
   concentrate new proof work on actual gaps in the paper correspondence.
