@@ -71,7 +71,7 @@ theorem isLeast_normalClosure {G : Type*} [Group G] (s : Set G) :
     IsLeast {N : Subgroup G | N.Normal ∧ s ⊆ N} (normalClosure s) := by
   refine ⟨⟨inferInstance, subset_normalClosure⟩, ?_⟩
   intro N hN
-  letI := hN.1
+  let := hN.1
   exact normalClosure_le_normal hN.2
 
 end Subgroup

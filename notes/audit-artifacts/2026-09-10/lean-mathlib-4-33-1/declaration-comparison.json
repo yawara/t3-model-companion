@@ -1,0 +1,377 @@
+{
+  "base_declarations": "../palomar-preparation/declarations.json",
+  "current_declarations": "declarations.json",
+  "base_count": 2972,
+  "current_count": 2969,
+  "base_public_count": 2393,
+  "current_public_count": 2391,
+  "modules_unchanged": true,
+  "added": [
+    {
+      "private": false,
+      "name": "T3.wedgeQV._proof_6",
+      "module": "T3.LinearAlgebra.Wedge",
+      "exported": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": true,
+      "name": "_private.T3.GroupTheory.Roots.DerivedStrictification.0.T3.DerivedStrictification.enlarged_eq_closure._simp_1_3",
+      "module": "T3.GroupTheory.Roots.DerivedStrictification",
+      "exported": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": true,
+      "name": "_private.T3.GroupTheory.Roots.SharedDerivedStrictification.0.T3.SharedDerivedStrictification.enlarged_eq_closure._simp_1_3",
+      "module": "T3.GroupTheory.Roots.SharedDerivedStrictification",
+      "exported": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": true,
+      "name": "_private.T3.LinearAlgebra.ExteriorTensor.0.T3.ExteriorTensor.appendOrderEmbedding_apply",
+      "module": "T3.LinearAlgebra.ExteriorTensor",
+      "exported": false,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "removed": [
+    {
+      "private": false,
+      "name": "T3.DerivedStrictification.newGenerator.eq_1",
+      "module": "T3.GroupTheory.Roots.DerivedStrictification",
+      "exported": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": false,
+      "name": "T3.Free.coproductToSum.eq_1",
+      "module": "T3.GroupTheory.Coproduct.Basic",
+      "exported": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": false,
+      "name": "T3.SharedDerivedStrictification.newGenerator.eq_1",
+      "module": "T3.GroupTheory.Roots.SharedDerivedStrictification",
+      "exported": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": true,
+      "name": "_private.T3.GroupTheory.Coproduct.Presentation.0.T3.Coproduct.Presentation.projectionLeft.eq_1",
+      "module": "T3.GroupTheory.Coproduct.Presentation",
+      "exported": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": true,
+      "name": "_private.T3.GroupTheory.Roots.DerivedStrictification.0.T3.DerivedStrictification.enlarged_eq_closure._simp_1_4",
+      "module": "T3.GroupTheory.Roots.DerivedStrictification",
+      "exported": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": true,
+      "name": "_private.T3.GroupTheory.Roots.SharedDerivedStrictification.0.T3.SharedDerivedStrictification.enlarged_eq_closure._simp_1_4",
+      "module": "T3.GroupTheory.Roots.SharedDerivedStrictification",
+      "exported": false,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "private": true,
+      "name": "_private.T3.LinearAlgebra.ExteriorTensor.0.T3.ExteriorTensor.appendOrderEmbedding.eq_1",
+      "module": "T3.LinearAlgebra.ExteriorTensor",
+      "exported": true,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "changed_common_entries": [
+    {
+      "name": "T3.Coproduct.lift.congr_simp",
+      "before": {
+        "private": false,
+        "name": "T3.Coproduct.lift.congr_simp",
+        "module": "T3.GroupTheory.Coproduct.Basic",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.Coproduct.lift.congr_simp",
+        "module": "T3.GroupTheory.Amalgamation",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "T3.ExteriorSum.leftCount_le",
+      "before": {
+        "private": false,
+        "name": "T3.ExteriorSum.leftCount_le",
+        "module": "T3.LinearAlgebra.ExteriorSum",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.ExteriorSum.leftCount_le",
+        "module": "T3.LinearAlgebra.ExteriorSum",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "T3.wedgeQV._proof_4",
+      "before": {
+        "private": false,
+        "name": "T3.wedgeQV._proof_4",
+        "module": "T3.LinearAlgebra.Wedge",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.wedgeQV._proof_4",
+        "module": "T3.LinearAlgebra.Wedge",
+        "exported": true,
+        "axioms": []
+      }
+    },
+    {
+      "name": "T3.wedgeQV._proof_5",
+      "before": {
+        "private": false,
+        "name": "T3.wedgeQV._proof_5",
+        "module": "T3.LinearAlgebra.Wedge",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.wedgeQV._proof_5",
+        "module": "T3.LinearAlgebra.Wedge",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "_private.T3.GroupTheory.Roots.Commutator.0.T3.CommutatorRoots.sum_tmul_freeInitial_eq_zero._simp_1_2",
+      "before": {
+        "private": true,
+        "name": "_private.T3.GroupTheory.Roots.Commutator.0.T3.CommutatorRoots.sum_tmul_freeInitial_eq_zero._simp_1_2",
+        "module": "T3.GroupTheory.Roots.Commutator",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": true,
+        "name": "_private.T3.GroupTheory.Roots.Commutator.0.T3.CommutatorRoots.sum_tmul_freeInitial_eq_zero._simp_1_2",
+        "module": "T3.GroupTheory.Roots.Commutator",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "_private.T3.GroupTheory.Roots.SharedCommutator.0.T3.SharedCommutatorRoots.sum_tmul_freeInitial_eq_zero._simp_1_2",
+      "before": {
+        "private": true,
+        "name": "_private.T3.GroupTheory.Roots.SharedCommutator.0.T3.SharedCommutatorRoots.sum_tmul_freeInitial_eq_zero._simp_1_2",
+        "module": "T3.GroupTheory.Roots.SharedCommutator",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": true,
+        "name": "_private.T3.GroupTheory.Roots.SharedCommutator.0.T3.SharedCommutatorRoots.sum_tmul_freeInitial_eq_zero._simp_1_2",
+        "module": "T3.GroupTheory.Roots.SharedCommutator",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "_private.T3.ModelTheory.LocallyFinite.0.FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram._simp_1_1",
+      "before": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.LocallyFinite.0.FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram._simp_1_1",
+        "module": "T3.ModelTheory.LocallyFinite",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.LocallyFinite.0.FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram._simp_1_1",
+        "module": "T3.ModelTheory.LocallyFinite",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "_private.T3.ModelTheory.LocallyFinite.Universes.0.FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_of_model._simp_1_1",
+      "before": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.LocallyFinite.Universes.0.FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_of_model._simp_1_1",
+        "module": "T3.ModelTheory.LocallyFinite.Universes",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.LocallyFinite.Universes.0.FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_of_model._simp_1_1",
+        "module": "T3.ModelTheory.LocallyFinite.Universes",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "_private.T3.ModelTheory.ModelEmbeddings.0.FirstOrder.Language.Theory.ModelsEmbedInto.exists_finite_assignment._simp_1_1",
+      "before": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.ModelEmbeddings.0.FirstOrder.Language.Theory.ModelsEmbedInto.exists_finite_assignment._simp_1_1",
+        "module": "T3.ModelTheory.ModelEmbeddings",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.ModelEmbeddings.0.FirstOrder.Language.Theory.ModelsEmbedInto.exists_finite_assignment._simp_1_1",
+        "module": "T3.ModelTheory.ModelEmbeddings",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "_private.T3.ModelTheory.ModelEmbeddings.0.FirstOrder.Language.Theory.ModelsEmbedInto.exists_finite_assignment._simp_1_3",
+      "before": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.ModelEmbeddings.0.FirstOrder.Language.Theory.ModelsEmbedInto.exists_finite_assignment._simp_1_3",
+        "module": "T3.ModelTheory.ModelEmbeddings",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": true,
+        "name": "_private.T3.ModelTheory.ModelEmbeddings.0.FirstOrder.Language.Theory.ModelsEmbedInto.exists_finite_assignment._simp_1_3",
+        "module": "T3.ModelTheory.ModelEmbeddings",
+        "exported": false,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "scope": "Elaborated declaration inventory, module ownership, privacy/export status, and axiom dependencies. This JSON inventory does not contain declaration types; source statement fidelity is reviewed separately."
+}

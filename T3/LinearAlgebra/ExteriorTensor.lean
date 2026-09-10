@@ -126,6 +126,10 @@ private def appendOrderEmbedding {p q : ℕ} (s : Fin p ↪o I) (t : Fin q ↪o 
     · simp only [finSumFinEquiv_apply_right, Fin.append_right, Function.comp_apply]
       exact Sum.Lex.inr_lt_inr_iff.mpr (t.strictMono (by simpa using hij)))
 
+private theorem appendOrderEmbedding_apply {p q : ℕ} (s : Fin p ↪o I) (t : Fin q ↪o J)
+    (i : Fin (p + q)) :
+    appendOrderEmbedding s t i = Fin.append (Sum.inl ∘ s) (Sum.inr ∘ t) i := rfl
+
 private theorem ofFinEmbEquiv_appendOrderEmbedding {p q : ℕ}
     (s : Set.powersetCard I p) (t : Set.powersetCard J q) :
     (Set.powersetCard.ofFinEmbEquiv
@@ -139,27 +143,27 @@ private theorem ofFinEmbEquiv_appendOrderEmbedding {p q : ℕ}
     constructor
     · rintro ⟨j, hj⟩
       obtain ⟨j | j, rfl⟩ := finSumFinEquiv.surjective j
-      · simp only [appendOrderEmbedding, OrderEmbedding.coe_ofStrictMono,
+      · simp only [appendOrderEmbedding_apply,
           finSumFinEquiv_apply_left, Fin.append_left, Function.comp_apply,
           Sum.inl.injEq] at hj
         exact (Set.powersetCard.mem_range_ofFinEmbEquiv_symm_iff_mem s i).mp ⟨j, hj⟩
-      · simp [appendOrderEmbedding] at hj
+      · simp [appendOrderEmbedding_apply] at hj
     · intro hi
       obtain ⟨j, hj⟩ := (Set.powersetCard.mem_range_ofFinEmbEquiv_symm_iff_mem s i).mpr hi
-      exact ⟨Fin.castAdd q j, by simpa [appendOrderEmbedding] using hj⟩
+      exact ⟨Fin.castAdd q j, by simpa [appendOrderEmbedding_apply] using hj⟩
   | inr i =>
     rw [Finset.inr_mem_disjSum]
     constructor
     · rintro ⟨j, hj⟩
       obtain ⟨j | j, rfl⟩ := finSumFinEquiv.surjective j
-      · simp [appendOrderEmbedding] at hj
-      · simp only [appendOrderEmbedding, OrderEmbedding.coe_ofStrictMono,
+      · simp [appendOrderEmbedding_apply] at hj
+      · simp only [appendOrderEmbedding_apply,
           finSumFinEquiv_apply_right, Fin.append_right, Function.comp_apply,
           Sum.inr.injEq] at hj
         exact (Set.powersetCard.mem_range_ofFinEmbEquiv_symm_iff_mem t i).mp ⟨j, hj⟩
     · intro hi
       obtain ⟨j, hj⟩ := (Set.powersetCard.mem_range_ofFinEmbEquiv_symm_iff_mem t i).mpr hi
-      exact ⟨Fin.natAdd p j, by simpa [appendOrderEmbedding] using hj⟩
+      exact ⟨Fin.natAdd p j, by simpa [appendOrderEmbedding_apply] using hj⟩
 
 /-- The degree-`n` exterior tensor block with left degree `k`.
 
@@ -235,7 +239,7 @@ theorem exteriorBasis_disjSum_coe {p q n : ℕ} (h : p + q = n)
   congr 1
   funext i
   refine Fin.addCases (fun i => ?_) (fun i => ?_) i <;>
-    simp [appendOrderEmbedding, Basis.prod_apply]
+    simp [appendOrderEmbedding_apply, Basis.prod_apply]
 
 /-- The tensor-product bases assembled into a basis of the external direct sum.
 

@@ -305,8 +305,8 @@ theorem exists_strict_extension (hG : HasExponentThree G) [Group.FG C]
         C.map f ≤ D ∧ ∃ Y : Finset H, Y.card ≤ 3 * m.choose 2 ∧
           D = C.map f ⊔ Subgroup.closure (Y : Set H) ∧
           Group.rank D ≤ m + 3 * m.choose 2 ∧ IsStrict D := by
-  letI : Fact (HasExponentThree G) := ⟨hG⟩
-  letI : Fact (HasExponentThree C) := ⟨fun c => Subtype.ext (hG c)⟩
+  let : Fact (HasExponentThree G) := ⟨hG⟩
+  let : Fact (HasExponentThree C) := ⟨fun c => Subtype.ext (hG c)⟩
   obtain ⟨d, hd, a, _, ha, hdefect⟩ := exists_lowerCentral_defect_generators C.subtype hfirst
   obtain ⟨Y, hY, hgen⟩ := exists_generating_finset C a
   have hdm : d ≤ m.choose 2 := hd.trans (Nat.choose_mono 2 hC)

@@ -41,7 +41,7 @@ theorem AllEmbeddingsElementary.exists_qf_existential_imp_of_model
   classical
   obtain ⟨S, hS, hsmall⟩ := exists_small_elementarySubstructure_containing_finset
     (L := L) M (Finset.univ.image a)
-  letI := hsmall
+  let := hsmall
   let N : T.ModelType.{u, v, max u v} := (ModelType.of T S).shrink
   let e : S ≃[L] N := (equivShrink S).inducedStructureEquiv
   let a' : Fin n → S := fun i => ⟨a i, hS (by simp)⟩

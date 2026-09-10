@@ -474,7 +474,7 @@ private theorem card_mult_fun {α : Type*} [Finite α] :
 private theorem card_free_eq_mul :
     Nat.card (Free I) =
       3 ^ Nat.card I * Nat.card (genReadout (I := I)).ker := by
-  letI : Finite (Free I) := finite
+  let : Finite (Free I) := finite
   rw [Subgroup.card_eq_card_quotient_mul_card_subgroup (genReadout (I := I)).ker,
     Nat.card_congr (QuotientGroup.quotientKerEquivOfSurjective _ genReadout_surjective).toEquiv,
     card_mult_fun]
@@ -482,7 +482,7 @@ private theorem card_free_eq_mul :
 private theorem card_genKer_eq_mul :
     Nat.card (genReadout (I := I)).ker =
       3 ^ (Nat.card I).choose 2 * Nat.card (pairReadout (I := I)).ker := by
-  letI : Finite (Free I) := finite
+  let : Finite (Free I) := finite
   rw [Subgroup.card_eq_card_quotient_mul_card_subgroup (pairReadout (I := I)).ker,
     Nat.card_congr (QuotientGroup.quotientKerEquivOfSurjective _ pairReadout_surjective).toEquiv,
     card_mult_fun, IncreasingPair.natCard_eq_choose]
@@ -490,7 +490,7 @@ private theorem card_genKer_eq_mul :
 private theorem card_pairKer_eq_mul :
     Nat.card (pairReadout (I := I)).ker =
       3 ^ (Nat.card I).choose 3 * Nat.card (tripleReadout (I := I)).ker := by
-  letI : Finite (Free I) := finite
+  let : Finite (Free I) := finite
   rw [Subgroup.card_eq_card_quotient_mul_card_subgroup (tripleReadout (I := I)).ker,
     Nat.card_congr
       (QuotientGroup.quotientKerEquivOfSurjective _ tripleReadout_surjective).toEquiv,
@@ -502,7 +502,7 @@ Paper-ID: preliminaries.finite_normal_form
 TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 -/
 theorem tripleReadout_ker_eq_bot : (tripleReadout (I := I)).ker = ⊥ := by
-  letI : Finite (Free I) := finite
+  let : Finite (Free I) := finite
   rw [← Subgroup.card_eq_one]
   have hchain : Nat.card (Free I) =
       3 ^ (Nat.card I + (Nat.card I).choose 2 + (Nat.card I).choose 3) *
@@ -763,7 +763,7 @@ TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 theorem genReadout_generatorWord (l : I → ZMod 3) :
     genReadout (generatorWord l) = Multiplicative.ofAdd l := by
   classical
-  letI := Fintype.ofFinite I
+  let := Fintype.ofFinite I
   apply readout_word _ _ ?_ _ (Finset.sort_nodup _ _) (Finset.sort_toFinset _ _)
   intro i
   rw [genReadout_apply, toLvdW_of]
@@ -777,7 +777,7 @@ TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 theorem pairReadout_pairWord (m : IncreasingPair I → ZMod 3) :
     pairReadout (pairWord m) = Multiplicative.ofAdd m := by
   classical
-  letI := Fintype.ofFinite (IncreasingPair I)
+  let := Fintype.ofFinite (IncreasingPair I)
   apply readout_word _ _ ?_ _ (Finset.nodup_toList _) (Finset.toList_toFinset _)
   intro p
   rw [pairReadout_apply]
@@ -794,7 +794,7 @@ TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 theorem tripleReadout_tripleWord (n : IncreasingTriple I → ZMod 3) :
     tripleReadout (tripleWord n) = Multiplicative.ofAdd n := by
   classical
-  letI := Fintype.ofFinite (IncreasingTriple I)
+  let := Fintype.ofFinite (IncreasingTriple I)
   apply readout_word _ _ ?_ _ (Finset.nodup_toList _) (Finset.toList_toFinset _)
   intro t
   rw [tripleReadout_apply]
@@ -863,7 +863,7 @@ TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 theorem normalWord_bijective : Function.Bijective
     (fun c : (I → ZMod 3) × (IncreasingPair I → ZMod 3) × (IncreasingTriple I → ZMod 3) =>
       normalWord c.1 c.2.1 c.2.2) := by
-  letI : Finite (Free I) := finite
+  let : Finite (Free I) := finite
   rw [Nat.bijective_iff_injective_and_card]
   refine ⟨normalWord_injective, ?_⟩
   rw [natCard_eq, Nat.card_prod, Nat.card_prod, Nat.card_fun, Nat.card_fun, Nat.card_fun,

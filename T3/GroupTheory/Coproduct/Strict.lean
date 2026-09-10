@@ -63,7 +63,7 @@ theorem mapLayer_map_injective (hf : ∀ n, Function.Injective (mapLayer f n))
     (hg : ∀ n, Function.Injective (mapLayer g n)) (n : ℕ) :
     Function.Injective (mapLayer (map f g) n) := by
   by_cases hn : 4 ≤ n
-  · letI := layer_subsingleton_of_four_le (G := Coproduct G H) Fact.out hn
+  · let := layer_subsingleton_of_four_le (G := Coproduct G H) Fact.out hn
     exact fun _ _ _ => Subsingleton.elim _ _
   have hn' : n ≤ 3 := by omega
   interval_cases n
@@ -114,7 +114,7 @@ TeX: T3_modelcompanion_v4.tex, `lemma:free-product-amalgam`, lines 946–959.
 theorem map_injective_of_strict (D : Subgroup G) (hD : IsStrict D) :
     Function.Injective (map D.subtype (MonoidHom.id B)) := by
   have hG : HasExponentThree G := Fact.out
-  letI : Fact (HasExponentThree D) := ⟨fun x => Subtype.ext (hG x)⟩
+  let : Fact (HasExponentThree D) := ⟨fun x => Subtype.ext (hG x)⟩
   have hgraded : Function.Injective (AssociatedGraded.map D.subtype) :=
     (map_injective_iff_isStrict D.subtype D.subtype_injective).mpr (by simpa using hD)
   apply map_injective_of_mapLayer_injective D.subtype (MonoidHom.id B)

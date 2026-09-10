@@ -79,23 +79,23 @@ theorem exists_centralSeries_extension (hG : HasExponentThree G) (C : Subgroup G
                 ∃ a : C →* A, r.comp a = f.comp C.subtype := by
   obtain ⟨H₁, hH₁, hpow₁, f₁, hf₁, D₁, hfg₁, hC₁, _, _, _, hrank₁, hstrict₁⟩ :=
     DerivedStrictification.exists_derived_strictification hG C hC
-  letI : Group H₁ := hH₁
-  letI : Group.FG D₁ := hfg₁
+  let : Group H₁ := hH₁
+  let : Group.FG D₁ := hfg₁
   have hfirst : (commutator H₁).comap D₁.subtype = commutator D₁ := by
     simpa only [Subgroup.top_lowerCentralSeries_one] using
       ((Subgroup.lowerCentralSeries_eq_inf_iff_comap D₁ 1).mp hstrict₁).symm
   obtain ⟨H₂, hH₂, hpow₂, f₂, hf₂, D₂, hfg₂, hC₂, _, _, _, hrank₂, hstrict₂⟩ :=
     LowerCentralStrictification.exists_strict_extension D₁ hpow₁ hfirst hrank₁
-  letI : Group H₂ := hH₂
-  letI : Group.FG D₂ := hfg₂
-  letI : Fact (HasExponentThree H₂) := ⟨hpow₂⟩
-  letI : Fact (HasExponentThree D₂) := ⟨fun d => Subtype.ext (hpow₂ d)⟩
+  let : Group H₂ := hH₂
+  let : Group.FG D₂ := hfg₂
+  let : Fact (HasExponentThree H₂) := ⟨hpow₂⟩
+  let : Fact (HasExponentThree D₂) := ⟨fun d => Subtype.ext (hpow₂ d)⟩
   let c : C →* D₂ := ((f₂.comp f₁).comp C.subtype).codRestrict D₂ fun x =>
     hC₂ (Subgroup.mem_map_of_mem f₂ (hC₁ (Subgroup.mem_map_of_mem f₁ x.property)))
   have hc : Function.Injective c := by
     intro x y h
     exact Subtype.ext ((hf₂.comp hf₁) (congrArg Subtype.val h))
-  letI : Nontrivial D₂ := hc.nontrivial
+  let : Nontrivial D₂ := hc.nontrivial
   let A := Coproduct D₂ (Free (Fin 2))
   let H := Coproduct H₂ (Free (Fin 2))
   let r : A →* H := Coproduct.map D₂.subtype (MonoidHom.id _)
@@ -135,20 +135,20 @@ theorem exists_strict_envelope {M : Type*} [Group M] [CompatibleGroup M]
   classical
   have hpow : HasExponentThree M := exponentThreeTheory_model_iff.mp hM.2.1
   by_cases htriv : Subsingleton C
-  · letI : Subsingleton C := htriv
+  · let : Subsingleton C := htriv
     have hcoincide : CentralSeriesCoincide C := fun _ _ => Subsingleton.elim _ _
     refine ⟨C, inferInstance, le_rfl, ?_, hcoincide,
       isStrict_of_centralSeriesCoincide hpow C hcoincide⟩
     rw [Group.rank_eq_zero]
     exact Nat.zero_le _
-  · letI : Nontrivial C := not_subsingleton_iff_nontrivial.mp htriv
-    letI : Finite C := finite_of_fg_of_exponent_three (fun c => Subtype.ext (hpow c))
+  · let : Nontrivial C := not_subsingleton_iff_nontrivial.mp htriv
+    let : Finite C := finite_of_fg_of_exponent_three (fun c => Subtype.ext (hpow c))
     obtain ⟨H, hH, hpowH, f, hf, A, hA, hfgA, hfinA, hcoincide, hbound, r, hr, a, ha⟩ :=
       StrictEnvelope.exists_centralSeries_extension hpow C hC
-    letI : Group H := hH
-    letI : Group A := hA
-    letI : Group.FG A := hfgA
-    letI : Finite A := hfinA
+    let : Group H := hH
+    let : Group A := hA
+    let : Group.FG A := hfgA
+    let : Finite A := hfinA
     obtain ⟨g, hg, hga⟩ := ExistentiallyClosedGroups.exists_group_embedding hM hpowH f hf r hr
       a C.subtype (funext (DFunLike.congr_fun ha))
     have hCimage : C ≤ g.range := by

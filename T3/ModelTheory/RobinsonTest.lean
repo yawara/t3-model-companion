@@ -72,7 +72,7 @@ theorem IsExistentiallyClosedInModels.exists_assignment
     (hQF : ∀ θ, (ff θ).IsQF) (hReal : ∀ θ, (ff θ).Realize (bb θ)) :
     ∃ v : B → (A : Type (max u v)), v ∘ ⇑h = id ∧ ∀ θ, (ff θ).Realize (v ∘ bb θ) := by
   classical
-  letI : Fintype κ := Fintype.ofFinite κ
+  let : Fintype κ := Fintype.ofFinite κ
   -- The finite parameter support, split into the range of `h` and its complement.
   set s : Finset (B : Type (max u v)) :=
     Finset.univ.biUnion (fun θ : κ => Finset.image (bb θ) Finset.univ) with hs
@@ -198,9 +198,9 @@ theorem IsExistentiallyClosedInModels.exists_embedding_elementary_comp
     choose nn ff bb hQF hReal hEq using hdata
     obtain ⟨v, hvh, hv⟩ := hec.exists_assignment A B h ff bb hQF hReal
     -- Interpret the constants of `B` in `A` through the assignment.
-    letI : (constantsOn (B : Type (max u v))).Structure (A : Type (max u v)) :=
+    let : (constantsOn (B : Type (max u v))).Structure (A : Type (max u v)) :=
       constantsOn.structure v
-    haveI : (L.lhomWithConstantsMap (⇑h : ↥A → ↥B)).IsExpansionOn (A : Type (max u v)) := by
+    have : (L.lhomWithConstantsMap (⇑h : ↥A → ↥B)).IsExpansionOn (A : Type (max u v)) := by
       refine ⟨fun {n} F xa => ?_, fun {n} R xa => ?_⟩
       · match F with
         | Sum.inl F => rfl
@@ -210,7 +210,7 @@ theorem IsExistentiallyClosedInModels.exists_embedding_elementary_comp
       · match R with
         | Sum.inl R => rfl
         | Sum.inr r => exact isEmptyElim r
-    haveI hmodel : (A : Type (max u v)) ⊨ (↑Θ₀ : L[[(B : Type (max u v))]].Theory) := by
+    have hmodel : (A : Type (max u v)) ⊨ (↑Θ₀ : L[[(B : Type (max u v))]].Theory) := by
       rw [model_iff]
       intro θ hθ
       rcases hΘ₀ hθ with hθ₁ | hθ₂
@@ -228,15 +228,15 @@ theorem IsExistentiallyClosedInModels.exists_embedding_elementary_comp
     exact Model.isSatisfiable (A : Type (max u v))
   obtain ⟨P0⟩ := hsat
   -- The reducts of the compactness model.
-  letI : L.Structure P0 := (L.lhomWithConstants (B : Type (max u v))).reduct P0
-  letI : L[[(A : Type (max u v))]].Structure P0 :=
+  let : L.Structure P0 := (L.lhomWithConstants (B : Type (max u v))).reduct P0
+  let : L[[(A : Type (max u v))]].Structure P0 :=
     (L.lhomWithConstantsMap (⇑h : ↥A → ↥B)).reduct P0
-  haveI : (L.lhomWithConstants (A : Type (max u v))).IsExpansionOn (P0 : Type (max u v)) :=
+  have : (L.lhomWithConstants (A : Type (max u v))).IsExpansionOn (P0 : Type (max u v)) :=
     ⟨fun {n} F x => rfl, fun {n} R x => rfl⟩
-  haveI : (L.lhomWithConstants (B : Type (max u v))).IsExpansionOn (P0 : Type (max u v)) :=
+  have : (L.lhomWithConstants (B : Type (max u v))).IsExpansionOn (P0 : Type (max u v)) :=
     ⟨fun {n} F x => rfl, fun {n} R x => rfl⟩
   -- The canonical elementary embedding of `A`.
-  haveI hPdiag : (P0 : Type (max u v)) ⊨ L.elementaryDiagram (A : Type (max u v)) := by
+  have hPdiag : (P0 : Type (max u v)) ⊨ L.elementaryDiagram (A : Type (max u v)) := by
     have h1 : (P0 : Type (max u v)) ⊨ (L.lhomWithConstantsMap (⇑h : ↥A → ↥B)).onTheory
         (L.elementaryDiagram (A : Type (max u v))) :=
       P0.is_model.mono Set.subset_union_left
@@ -244,12 +244,12 @@ theorem IsExistentiallyClosedInModels.exists_embedding_elementary_comp
   let e : (A : Type (max u v)) ↪ₑ[L] P0 :=
     ElementaryEmbedding.ofModelsElementaryDiagram L (A : Type (max u v)) P0
   -- The canonical embedding supplied by the quantifier-free diagram.
-  haveI : (P0 : Type (max u v)) ⊨ L.qfDiagram (B : Type (max u v)) :=
+  have : (P0 : Type (max u v)) ⊨ L.qfDiagram (B : Type (max u v)) :=
     P0.is_model.mono Set.subset_union_right
   let g : (B : Type (max u v)) ↪[L] (P0 : Type (max u v)) :=
     Embedding.ofModelsQfDiagram L (B : Type (max u v)) P0
   -- Bundle `P0` as a model of `T` via the elementary embedding.
-  haveI hPT : (P0 : Type (max u v)) ⊨ T := (e.theory_model_iff T).1 A.is_model
+  have hPT : (P0 : Type (max u v)) ⊨ T := (e.theory_model_iff T).1 A.is_model
   refine ⟨ModelType.of T (P0 : Type (max u v)), g, ?_⟩
   intro n φ x
   -- `g ∘ h` and `e` agree definitionally: both send `a` to the constant `h a` of `P0`.

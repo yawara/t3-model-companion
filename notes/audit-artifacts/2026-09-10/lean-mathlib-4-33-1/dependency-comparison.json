@@ -1,0 +1,63 @@
+{
+  "revision_redaction": "Historical T3 revision identifiers have been omitted for publication. Recorded commands, outcomes, and source hashes describe the original checks; this edited record does not certify the rewritten historical snapshots.",
+  "baseline_commit": "[historical revision omitted]",
+  "from_toolchain": "leanprover/lean4:v4.32.2",
+  "to_toolchain": "leanprover/lean4:v4.33.1",
+  "package_names_and_urls_unchanged": true,
+  "revision_changes": [
+    {
+      "name": "Cli",
+      "url": "https://github.com/leanprover/lean4-cli",
+      "before": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+      "after": "6130a47896ce867c6a4a55373441e59e565bad0f"
+    },
+    {
+      "name": "LeanSearchClient",
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "before": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+      "after": "5f4d51b81cbd3f6b32b156bfad9056621a040404"
+    },
+    {
+      "name": "Qq",
+      "url": "https://github.com/leanprover-community/quote4",
+      "before": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+      "after": "92c15be17b7caf78c2ad767ec40f89052d908d81"
+    },
+    {
+      "name": "aesop",
+      "url": "https://github.com/leanprover-community/aesop",
+      "before": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+      "after": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e"
+    },
+    {
+      "name": "batteries",
+      "url": "https://github.com/leanprover-community/batteries",
+      "before": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+      "after": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d"
+    },
+    {
+      "name": "importGraph",
+      "url": "https://github.com/leanprover-community/import-graph",
+      "before": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+      "after": "16f02aa7642864af59f1ff0e384a015994db9118"
+    },
+    {
+      "name": "mathlib",
+      "url": "https://github.com/leanprover-community/mathlib4",
+      "before": "905b95818eb32af7874a58b427f50c1711a5e96c",
+      "after": "0df444a360eaa60ab8c11dca51a86af692955474"
+    },
+    {
+      "name": "plausible",
+      "url": "https://github.com/leanprover-community/plausible",
+      "before": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+      "after": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb"
+    },
+    {
+      "name": "proofwidgets",
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "before": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+      "after": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957"
+    }
+  ]
+}

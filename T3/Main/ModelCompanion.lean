@@ -50,20 +50,20 @@ theorem exponentThreeTheory_boundedAmalgamationObstructions :
   classical
   intro d
   obtain ⟨N, ⟨e⟩⟩ := d.embeddable
-  letI : d.ext ⊨ exponentThreeTheory := Theory.IsUniversal.models_of_embedding e
-  letI : d.ext ⊨ Theory.group := (inferInstance : d.ext ⊨ exponentThreeTheory).mono
+  let : d.ext ⊨ exponentThreeTheory := Theory.IsUniversal.models_of_embedding e
+  let : d.ext ⊨ Theory.group := (inferInstance : d.ext ⊨ exponentThreeTheory).mono
     (fun _ h => Set.mem_insert_of_mem _ h)
-  letI : Group d.ext := groupOfModelGroup d.ext
-  letI : CompatibleGroup d.ext := compatibleGroupOfGroupStructure d.ext
-  letI : d.base ⊨ Theory.group := Theory.IsUniversal.models_of_embedding d.incl
-  letI : Group d.base := groupOfModelGroup d.base
-  letI : CompatibleGroup d.base := compatibleGroupOfGroupStructure d.base
+  let : Group d.ext := groupOfModelGroup d.ext
+  let : CompatibleGroup d.ext := compatibleGroupOfGroupStructure d.ext
+  let : d.base ⊨ Theory.group := Theory.IsUniversal.models_of_embedding d.incl
+  let : Group d.base := groupOfModelGroup d.base
+  let : CompatibleGroup d.base := compatibleGroupOfGroupStructure d.base
   refine ⟨witnessBound (Group.rank d.ext), ?_⟩
   intro M hM j hna
-  letI : M ⊨ Theory.group := (inferInstance : M ⊨ exponentThreeTheory).mono
+  let : M ⊨ Theory.group := (inferInstance : M ⊨ exponentThreeTheory).mono
     (fun _ h => Set.mem_insert_of_mem _ h)
-  letI : Group M := groupOfModelGroup M
-  letI : CompatibleGroup M := compatibleGroupOfGroupStructure M
+  let : Group M := groupOfModelGroup M
+  let : CompatibleGroup M := compatibleGroupOfGroupStructure M
   let ι := embeddingToMonoidHom j
   let A := ι.range
   let q : d.base ≃* A := MonoidHom.ofInjective j.injective
@@ -80,14 +80,14 @@ theorem exponentThreeTheory_boundedAmalgamationObstructions :
   obtain ⟨D, hD, hAD, hbound, hbad⟩ := exists_bounded_nonamalgamation_witness hM A
     (exponentThreeTheory_model_iff.mp (inferInstance : d.ext ⊨ exponentThreeTheory))
     jB hjB le_rfl hnaA
-  letI : Group.FG D := hD
+  let : Group.FG D := hD
   let C := subgroupToSubstructure D
   have hjC : ∀ a, j a ∈ C := fun a => hAD ⟨a, rfl⟩
   refine ⟨C, hjC, generatedByAtMost_of_rank_le D hbound, ?_⟩
   intro ham
-  letI : C ⊨ Theory.group := Theory.IsUniversal.models_of_embedding C.subtype
-  letI : Group C := groupOfModelGroup C
-  letI : CompatibleGroup C := compatibleGroupOfGroupStructure C
+  let : C ⊨ Theory.group := Theory.IsUniversal.models_of_embedding C.subtype
+  let : Group C := groupOfModelGroup C
+  let : CompatibleGroup C := compatibleGroupOfGroupStructure C
   let eD : D →* C :=
     { toFun := fun x => ⟨x.1, x.2⟩
       map_one' := by
@@ -103,7 +103,7 @@ theorem exponentThreeTheory_boundedAmalgamationObstructions :
   have h := (GroupAmalgamation.amalgamableOver_embeddings_swap_iff
     d.incl (j.codRestrict C hjC)).mp ham
   obtain ⟨K, hK, hpow, iC, iB, hiC, hiB, hij⟩ := h
-  letI : Group K := hK
+  let : Group K := hK
   apply hbad
   refine ⟨K, hK, hpow, iC.comp eD, iB, hiC.comp heD, hiB, ?_⟩
   apply MonoidHom.ext

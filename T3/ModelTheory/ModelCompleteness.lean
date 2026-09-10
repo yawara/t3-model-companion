@@ -269,10 +269,10 @@ theorem AllEmbeddingsElementary.models_equivSentence_of_qfDiagram
       L.qfDiagram (M : Type (max u v)) ⊨ᵇ Formula.equivSentence (φ.relabel a) := by
   apply models_sentence_iff.mpr
   intro N
-  letI : L.Structure N := (L.lhomWithConstants (M : Type (max u v))).reduct N
-  haveI hNT : N ⊨ T := (LHom.onTheory_model _ _).mp
+  let : L.Structure N := (L.lhomWithConstants (M : Type (max u v))).reduct N
+  have hNT : N ⊨ T := (LHom.onTheory_model _ _).mp
     (N.is_model.mono Set.subset_union_left)
-  haveI : N ⊨ L.qfDiagram (M : Type (max u v)) :=
+  have : N ⊨ L.qfDiagram (M : Type (max u v)) :=
     N.is_model.mono Set.subset_union_right
   let f := Embedding.ofModelsQfDiagram L (M : Type (max u v)) N
   obtain ⟨e, he⟩ := h M (ModelType.of T N) f
@@ -303,7 +303,7 @@ theorem AllEmbeddingsElementary.exists_finset_qfDiagram_entails
   refine ⟨Δ, fun θ hθ => (Finset.mem_filter.mp hθ).2, ?_⟩
   apply models_sentence_iff.mpr
   intro N
-  haveI : N ⊨ (Θ : L[[(M : Type (max u v))]].Theory) := N.is_model.mono (by
+  have : N ⊨ (Θ : L[[(M : Type (max u v))]].Theory) := N.is_model.mono (by
     intro θ hθ
     rcases hΘ hθ with hT | hd
     · exact Set.mem_union_left _ hT
@@ -363,17 +363,17 @@ theorem AllEmbeddingsElementary.exists_qf_existential_imp
     let val : M → N := fun b => if hb : b ∈ s then w (s.equivFin ⟨b, hb⟩)
       else Classical.choice (inferInstance : Nonempty N)
     have hval (b : M) (hb : b ∈ s) : val b = w (s.equivFin ⟨b, hb⟩) := dif_pos hb
-    letI : (constantsOn (M : Type (max u v))).Structure N := constantsOn.structure val
-    haveI hNT : N ⊨ (L.lhomWithConstants (M : Type (max u v))).onTheory T :=
+    let : (constantsOn (M : Type (max u v))).Structure N := constantsOn.structure val
+    have hNT : N ⊨ (L.lhomWithConstants (M : Type (max u v))).onTheory T :=
       (LHom.onTheory_model _ _).mpr N.is_model
-    haveI hND : N ⊨ (Δ : L[[(M : Type (max u v))]].Theory) := by
+    have hND : N ⊨ (Δ : L[[(M : Type (max u v))]].Theory) := by
       apply (Theory.model_iff _).mpr
       intro δ hδ
       have hδeq : δ = Formula.equivSentence ((ff ⟨δ, hδ⟩).relabel (bb ⟨δ, hδ⟩)) := heq ⟨δ, hδ⟩
       rw [hδeq, realize_equivSentence_relabel]
       change (ff ⟨δ, hδ⟩).Realize (fun i => val (bb ⟨δ, hδ⟩ i))
       simpa only [hval _ (hb _ _), ib] using hwfacts ⟨δ, hδ⟩
-    haveI : N ⊨ (L.lhomWithConstants (M : Type (max u v))).onTheory T ∪
+    have : N ⊨ (L.lhomWithConstants (M : Type (max u v))).onTheory T ∪
         (Δ : L[[(M : Type (max u v))]].Theory) := hNT.union hND
     have hN := hforces.realize_sentence N
     rw [realize_equivSentence_relabel] at hN
@@ -400,8 +400,8 @@ theorem AllEmbeddingsElementary.isModelComplete (h : T.AllEmbeddingsElementary) 
       (Formula.equivSentence φ).not := by
     apply models_sentence_iff.mpr
     intro M
-    letI : L.Structure M := (L.lhomWithConstants (Fin n)).reduct M
-    haveI : M ⊨ T := (LHom.onTheory_model _ _).mp
+    let : L.Structure M := (L.lhomWithConstants (Fin n)).reduct M
+    have : M ⊨ T := (LHom.onTheory_model _ _).mp
       (M.is_model.mono Set.subset_union_left)
     rw [Sentence.realize_not, Formula.realize_equivSentence]
     intro hφ
@@ -425,10 +425,10 @@ theorem AllEmbeddingsElementary.isModelComplete (h : T.AllEmbeddingsElementary) 
     intro N a hφ
     apply (Formula.realize_existentialDisjunction kk θ a).mpr
     by_contra hn
-    letI : (constantsOn (Fin n)).Structure N := constantsOn.structure a
-    haveI hNT : N ⊨ (L.lhomWithConstants (Fin n)).onTheory T :=
+    let : (constantsOn (Fin n)).Structure N := constantsOn.structure a
+    have hNT : N ⊨ (L.lhomWithConstants (Fin n)).onTheory T :=
       (LHom.onTheory_model _ _).mpr N.is_model
-    haveI : N ⊨ (Ω : L[[Fin n]].Theory) := by
+    have : N ⊨ (Ω : L[[Fin n]].Theory) := by
       apply (Theory.model_iff _).mpr
       intro δ hδ
       rcases hΩ hδ with hδT | hδneg

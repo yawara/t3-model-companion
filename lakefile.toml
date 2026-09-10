@@ -16,7 +16,7 @@ weak.linter.style.longFile = 1500
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "905b95818eb32af7874a58b427f50c1711a5e96c"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
 
 [[lean_lib]]
 name = "T3"

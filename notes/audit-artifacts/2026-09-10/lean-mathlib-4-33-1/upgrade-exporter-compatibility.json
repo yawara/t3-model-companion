@@ -1,0 +1,91 @@
+{
+  "test": "exporter-toolchain-compatibility-guard",
+  "script": "scripts/verify-comparator.sh",
+  "cases": [
+    {
+      "project": "v4.33.1",
+      "exporter_source": "v4.33.1",
+      "expected_compatible": true,
+      "actual_compatible": true,
+      "passed": true
+    },
+    {
+      "project": "v4.33.0",
+      "exporter_source": "v4.33.0",
+      "expected_compatible": true,
+      "actual_compatible": true,
+      "passed": true
+    },
+    {
+      "project": "v4.34.0-rc1",
+      "exporter_source": "v4.34.0-rc1",
+      "expected_compatible": true,
+      "actual_compatible": true,
+      "passed": true
+    },
+    {
+      "project": "v4.33.1",
+      "exporter_source": "v4.33.0",
+      "expected_compatible": true,
+      "actual_compatible": true,
+      "passed": true
+    },
+    {
+      "project": "v4.33.12",
+      "exporter_source": "v4.33.0",
+      "expected_compatible": true,
+      "actual_compatible": true,
+      "passed": true
+    },
+    {
+      "project": "v4.33.1",
+      "exporter_source": "v4.32.0",
+      "expected_compatible": false,
+      "actual_compatible": false,
+      "passed": true
+    },
+    {
+      "project": "v5.33.1",
+      "exporter_source": "v4.33.0",
+      "expected_compatible": false,
+      "actual_compatible": false,
+      "passed": true
+    },
+    {
+      "project": "v4.33.0-rc1",
+      "exporter_source": "v4.33.0",
+      "expected_compatible": false,
+      "actual_compatible": false,
+      "passed": true
+    },
+    {
+      "project": "v4.33.1",
+      "exporter_source": "v4.33.0-rc1",
+      "expected_compatible": false,
+      "actual_compatible": false,
+      "passed": true
+    },
+    {
+      "project": "v4.33.2",
+      "exporter_source": "v4.33.1",
+      "expected_compatible": false,
+      "actual_compatible": false,
+      "passed": true
+    },
+    {
+      "project": "v4.33.0",
+      "exporter_source": "v4.33.1",
+      "expected_compatible": false,
+      "actual_compatible": false,
+      "passed": true
+    },
+    {
+      "project": "stable",
+      "exporter_source": "stable",
+      "expected_compatible": false,
+      "actual_compatible": false,
+      "passed": true
+    }
+  ],
+  "passed": 12
+}

@@ -220,7 +220,7 @@ TeX: T3_modelcompanion_v4.tex, v4 Fact 2.16.
 -/
 def sumEquivCoproduct : Free (X ⊕ Y) ≃* Coproduct (Free X) (Free Y) :=
   MonoidHom.toMulEquiv sumToCoproduct coproductToSum
-    (hom_ext fun x => by cases x <;> simp [coproductToSum])
+    (hom_ext fun x => by cases x <;> rfl)
     (Coproduct.hom_ext
       (fun x => DFunLike.congr_fun
         (show sumToCoproduct.comp (map Sum.inl) = Coproduct.inl from

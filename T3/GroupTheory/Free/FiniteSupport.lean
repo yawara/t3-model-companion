@@ -137,7 +137,7 @@ theorem eq_one_of_toLvdW_coords {g : Free I}
     (htriple : ∀ t : IncreasingTriple I, (toLvdW g).triple t.first t.second t.third = 0) :
     g = 1 := by
   obtain ⟨s, h, hh⟩ := exists_finset_map g
-  letI : DecidableEq s := (inferInstance : LinearOrder s).toDecidableEq
+  let : DecidableEq s := (inferInstance : LinearOrder s).toDecidableEq
   have hr := restrict_toLvdW_map (f := (Subtype.val : s → I)) Subtype.val_injective h
   rw [hh] at hr
   have he : h = 1 := by

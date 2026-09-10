@@ -203,9 +203,9 @@ theorem presentationMap_comp_coproductToSum :
     (Presentation.presentationMap f g).comp Free.coproductToSum = map f g := by
   apply hom_ext
   · intro x
-    simp [Free.coproductToSum]
+    exact Presentation.presentationMap_map_inl f g x
   · intro x
-    simp [Free.coproductToSum]
+    exact Presentation.presentationMap_map_inr f g x
 
 /-- The degree-two free decomposition commutes with the presentation quotient maps.
 

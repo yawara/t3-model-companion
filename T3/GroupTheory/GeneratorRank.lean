@@ -78,7 +78,7 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree 
 -/
 instance finite_layerOne [Finite I] : Module.Finite (ZMod 3) (Layer (Free I) 1) := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
   exact Module.Finite.of_basis (Module.Basis.ofRepr layerOneEquiv)
 
 /-- The second graded layer of a free group on finitely many generators is finite dimensional.
@@ -88,7 +88,7 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree 
 -/
 instance finite_layerTwo [Finite I] : Module.Finite (ZMod 3) (Layer (Free I) 2) := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
   exact Module.Finite.of_basis (Module.Basis.ofRepr layerTwoEquiv)
 
 /-- The dimension of the first free graded layer is the number of free generators.
@@ -99,8 +99,8 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree 
 theorem finrank_layerOne [Finite I] :
     Module.finrank (ZMod 3) (Layer (Free I) 1) = Nat.card I := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
-  letI : Fintype I := Fintype.ofFinite I
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : Fintype I := Fintype.ofFinite I
   rw [layerOneEquiv.finrank_eq, Module.finrank_finsupp_self, Nat.card_eq_fintype_card]
 
 /-- The dimension of the second free graded layer counts increasing pairs of generators.
@@ -111,8 +111,8 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree 
 theorem finrank_layerTwo [Finite I] :
     Module.finrank (ZMod 3) (Layer (Free I) 2) = (Nat.card I).choose 2 := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
-  letI : Fintype (IncreasingPair I) := Fintype.ofFinite _
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : Fintype (IncreasingPair I) := Fintype.ofFinite _
   rw [layerTwoEquiv.finrank_eq, Module.finrank_finsupp_self,
     ← Nat.card_eq_fintype_card, IncreasingPair.natCard_eq_choose]
 
@@ -173,7 +173,7 @@ TeX: T3_modelcompanion_v4.tex, `lemma:commutator root`, the finite-dimensional b
 -/
 instance finite_layerOne [Group.FG G] : Module.Finite (ZMod 3) (Layer G 1) := by
   obtain ⟨s, hs, hfin⟩ := Group.fg_iff.mp (inferInstance : Group.FG G)
-  letI : Finite s := hfin.to_subtype
+  let : Finite s := hfin.to_subtype
   exact finite_layerOne_of_generating_family (Subtype.val : s → G) (by simpa using hs)
 
 /-- The second layer of a finitely generated exponent-three group is finite dimensional.
@@ -184,7 +184,7 @@ the finite-dimensional basis choice.
 -/
 instance finite_layerTwo [Group.FG G] : Module.Finite (ZMod 3) (Layer G 2) := by
   obtain ⟨s, hs, hfin⟩ := Group.fg_iff.mp (inferInstance : Group.FG G)
-  letI : Finite s := hfin.to_subtype
+  let : Finite s := hfin.to_subtype
   exact finite_layerTwo_of_generating_family (Subtype.val : s → G) (by simpa using hs)
 
 /-- The paper's generator rank bounds the first graded dimension.
@@ -231,7 +231,7 @@ TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, the two added generators.
 -/
 theorem rank_le_card [Finite I] : Group.rank (Free I) ≤ Nat.card I := by
   classical
-  letI := Fintype.ofFinite I
+  let := Fintype.ofFinite I
   have hgen : Subgroup.closure (↑(Finset.univ.image (of : I → Free I)) : Set (Free I)) = ⊤ := by
     simpa only [Finset.coe_image, Finset.coe_univ, Set.image_univ] using closure_range_of (I := I)
   exact (Group.rank_le hgen).trans (Finset.card_image_le.trans_eq (by simp))

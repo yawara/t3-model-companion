@@ -119,7 +119,9 @@ theorem enlarged_eq_closure (g : Fin 3 → C) :
   rw [MonoidHom.range_eq_map, ← Free.closure_range_of (I := Fin 3),
     MonoidHom.map_closure]
   congr 1
-  simp [newGenerators, newGenerator, ← Set.image_univ, Set.image_image]
+  simp only [newGenerators, Finset.coe_image, Finset.coe_univ, ← Set.image_univ,
+    Set.image_image]
+  rfl
 
 private theorem map_commutator_le_of_range_le {A B : Type*} [Group A] [Group B]
     (f : A →* B) (S : Subgroup B) (hf : f.range ≤ S) :
@@ -207,7 +209,8 @@ theorem inf_commutator_eq (hG : HasExponentThree G) (g : Fin 3 → C)
       simpa only [map_mul, Coproduct.fst_inl, Coproduct.fst_inr, mul_one] using hm
     have hwder : w ∈ commutator (Free (Fin 3)) := by
       have hm := map_mem_commutator (Coproduct.snd Free.pow_three) hamb
-      simpa only [map_mul, Coproduct.snd_inl, Coproduct.snd_inr, one_mul] using hm
+      simpa only [map_mul, Coproduct.snd_inl Free.pow_three c,
+        Coproduct.snd_inr Free.pow_three w, one_mul] using hm
     have hcD : baseMap g c ∈ ⁅enlarged g, enlarged g⁆ :=
       image_defect_le_commutator g hdefect (show (⟨c, hc⟩ : C) ∈
         (commutator G).comap C.subtype from hcder)
@@ -260,7 +263,7 @@ instance enlarged_fg [Group.FG C] (g : Fin 3 → C) : Group.FG (enlarged g) := b
   · have h : Group.FG ((baseMap g).comp C.subtype).range := inferInstance
     rw [MonoidHom.range_comp, Subgroup.range_subtype] at h
     exact (Group.fg_iff_subgroup_fg _).mp h
-  · letI : Group.FG (Free (Fin 3)) :=
+  · let : Group.FG (Free (Fin 3)) :=
       Group.fg_of_generating_family Free.of Free.closure_range_of
     exact (Group.fg_iff_subgroup_fg _).mp inferInstance
 

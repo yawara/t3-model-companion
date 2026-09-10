@@ -159,7 +159,7 @@ Paper-ID: structure.shared_triple_roots
 TeX: T3_modelcompanion_v4.tex, Remark 4.10, lines 1177–1181. -/
 theorem hasExponentThree_extension (hG : HasExponentThree G) (z : Fin 4 → G) :
     HasExponentThree (Extension z) := by
-  letI : Fact (HasExponentThree G) := ⟨hG⟩
+  let : Fact (HasExponentThree G) := ⟨hG⟩
   exact Fact.out
 
 /-- The natural map into the paper's concrete simultaneous root quotient has trivial kernel.

@@ -52,7 +52,7 @@ def truncationEquiv : GradedModule G ≃ₗ[ZMod 3] Layer G 1 × Layer G 2 × La
       simp [DirectSum.lof_eq_of, DirectSum.of_eq_of_ne]
     rcases Nat.eq_zero_or_pos n with rfl | hn
     · exact Subsingleton.elim _ _
-    · haveI := layer_subsingleton_of_four_le (G := G) Fact.out (show 4 ≤ n by omega)
+    · have := layer_subsingleton_of_four_le (G := G) Fact.out (show 4 ≤ n by omega)
       exact Subsingleton.elim _ _
   right_inv x := by
     apply Prod.ext

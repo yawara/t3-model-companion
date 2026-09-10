@@ -60,10 +60,10 @@ theorem exists_amalgam_of_small [Small.{max u v z} B] [Small.{max u v z} C]
   classical
   let s : Set N := Set.range (Sum.elim f g)
   let S := (Substructure.closure (L.sum L.skolem₁) s).elementarySkolem₁Reduct
-  haveI : Small.{max u v z} S := by
+  have : Small.{max u v z} S := by
     change Small.{max u v z} (Substructure.closure (L.sum L.skolem₁) s)
     rw [← SetLike.coe_sort_coe, Substructure.coe_closure_eq_range_term_realize]
-    haveI : Small.{max u v z} ((L.sum L.skolem₁).Term s) :=
+    have : Small.{max u v z} ((L.sum L.skolem₁).Term s) :=
       small_of_injective (Term.relabelEquiv (equivShrink.{max u v z} s)).injective
     exact small_range _
   let P : T.ModelType.{u, v, max u v z} := (ModelType.of T S).shrink
@@ -143,8 +143,8 @@ theorem IsExistentiallyClosedAt.amalgamableOverAt_iff_exists_embedding [Finite L
       (congrArg DFunLike.coe heq)
     exact ⟨e, Embedding.ext (congrFun he)⟩
   · rintro ⟨f, heq⟩
-    letI : Nonempty M := hM.1
-    letI : M ⊨ T := hM.2.1
+    let : Nonempty M := hM.1
+    let : M ⊨ T := hM.2.1
     exact AmalgamableOverAt.of_amalgam M f (Embedding.refl L M) heq
 
 /-- The same finite extension formula expresses amalgamation with an existentially closed

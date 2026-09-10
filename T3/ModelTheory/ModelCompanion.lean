@@ -255,7 +255,7 @@ TeX: T3_modelcompanion_v4.tex, supporting Definition 2.2, items 3 and 4; no labe
 theorem IsModelCompanionOf.isExistentiallyClosed_of_isUniversal [T.IsUniversal]
     (h : T'.IsModelCompanionOf T) (M : T'.ModelType.{u, v, max u v}) :
     T.IsExistentiallyClosed M := by
-  letI : M ⊨ T := h.models_of_isUniversal M
+  let : M ⊨ T := h.models_of_isUniversal M
   exact h.isExistentiallyClosed_of_models M
 
 end FirstOrder.Language.Theory

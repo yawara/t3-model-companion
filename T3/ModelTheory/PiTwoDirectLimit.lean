@@ -76,14 +76,14 @@ theorem models_of_isPiTwo {T : L.Theory} [∀ i, Nonempty (G i)] (hT : T.IsPiTwo
   classical
   obtain ⟨S, hS, hTS, hST⟩ := hT
   let i : ι := Classical.choice inferInstance
-  letI : Nonempty (DirectLimit G f) := Nonempty.map (of L ι G f i) inferInstance
+  let : Nonempty (DirectLimit G f) := Nonempty.map (of L ι G f i) inferInstance
   have hmodels : ∀ i, G i ⊨ S := fun i =>
     (Theory.model_iff_of_mutual_consequence hTS hST (G i)).mp (h i)
   have hlim : DirectLimit G f ⊨ S := by
     rw [Theory.model_iff]
     intro φ hφ
     refine realize_of_isUniversalExistential f (hS φ hφ) (fun i xs => ?_) default
-    letI := hmodels i
+    let := hmodels i
     have hi : G i ⊨ φ := Theory.realize_sentence_of_mem S hφ
     rwa [Subsingleton.elim xs default]
   exact (Theory.model_iff_of_mutual_consequence hTS hST (DirectLimit G f)).mpr hlim

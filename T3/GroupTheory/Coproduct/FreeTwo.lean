@@ -87,7 +87,7 @@ Paper-ID: structure.free_two_stabilization
 TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, `β₂ ∧ y = 0`.
 -/
 theorem layerThree_subsingleton : Subsingleton (Layer (Free (Fin 2)) 3) := by
-  letI : IsEmpty (IncreasingTriple (Fin 2)) := ⟨fun t => by
+  let : IsEmpty (IncreasingTriple (Fin 2)) := ⟨fun t => by
     have h₁ := t.first_lt_second
     have h₂ := t.second_lt_third
     have h₃ := t.third.isLt

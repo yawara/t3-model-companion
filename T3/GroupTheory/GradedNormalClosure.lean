@@ -63,9 +63,9 @@ theorem normalClosure_eq_sup_commutator (hG : HasExponentThree G) {K : Subgroup 
     Subgroup.normalClosure (K : Set G) = K ⊔ ⁅K, (⊤ : Subgroup G)⁆ := by
   have hcen : ⁅K, (⊤ : Subgroup G)⁆ ≤ Subgroup.center G :=
     (commutator_top_le_term_three hK).trans (lowerCentralSeries_two_le_center hG)
-  letI := commutator_top_normal hG hK
+  let := commutator_top_normal hG hK
   refine le_antisymm ?_ ?_
-  · haveI hsupN : Subgroup.Normal (K ⊔ ⁅K, (⊤ : Subgroup G)⁆) := by
+  · have hsupN : Subgroup.Normal (K ⊔ ⁅K, (⊤ : Subgroup G)⁆) := by
       constructor
       intro n hn g
       rw [← SetLike.mem_coe, Subgroup.mul_normal] at hn
@@ -106,7 +106,7 @@ theorem mem_normalClosure_iff_mul_commutator (hG : HasExponentThree G) {K : Subg
     (hK : K ≤ commutator G) (a : G) :
     a ∈ Subgroup.normalClosure (K : Set G) ↔
       ∃ k ∈ K, ∃ p ∈ ⁅K, (⊤ : Subgroup G)⁆, k * p = a := by
-  letI := commutator_top_normal hG hK
+  let := commutator_top_normal hG hK
   rw [normalClosure_eq_sup_commutator hG hK, ← SetLike.mem_coe, Subgroup.mul_normal]
   rfl
 
@@ -281,7 +281,7 @@ theorem normalClosure_inf_term_three {K : Subgroup G} (hK : K ≤ commutator G) 
     Subgroup.normalClosure (K : Set G) ⊓ term G 3 =
       (K ⊓ term G 3) ⊔ ⁅K, (⊤ : Subgroup G)⁆ := by
   have hP := commutator_top_le_term_three hK
-  letI := commutator_top_normal (Fact.out (p := HasExponentThree G)) hK
+  let := commutator_top_normal (Fact.out (p := HasExponentThree G)) hK
   rw [normalClosure_eq_sup_commutator Fact.out hK]
   apply le_antisymm
   · rintro a ⟨ha, ha3⟩

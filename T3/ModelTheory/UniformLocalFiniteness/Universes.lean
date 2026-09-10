@@ -46,7 +46,7 @@ theorem IsLocallyFinite.exists_finite_qfType_cover_of_model [Finite L.Symbols]
   intro M _ _ _ a
   obtain ⟨S, hS, hsmall⟩ := exists_small_elementarySubstructure_containing_finset
     (L := L) M (Finset.univ.image a)
-  letI := hsmall
+  let := hsmall
   let N : T.ModelType.{u, v, max u v} := (ModelType.of T S).shrink
   let e : S ≃[L] N := (equivShrink S).inducedStructureEquiv
   let a' : Fin n → S := fun i => ⟨a i, hS (by simp)⟩
@@ -73,7 +73,7 @@ theorem IsLocallyFinite.exists_card_closure_range_le_of_model [Finite L.Symbols]
   refine ⟨P.sup size, ?_⟩
   intro N _ _ _ b
   obtain ⟨⟨M, a⟩, hp, hpb⟩ := hP N b
-  letI := hT.finite_closure_range M a
+  let := hT.finite_closure_range M a
   have hb : Nat.card (Substructure.closure L (Set.range b)) ≤ size ⟨M, a⟩ :=
     Substructure.card_closure_range_le_of_qfType a b hpb
   exact hb.trans (Finset.le_sup (f := size) hp)
@@ -100,7 +100,7 @@ theorem exists_card_closure_le_of_isLocallyFinite_of_model [Finite L.Symbols]
     intro x hx
     exact ⟨e ⟨x, hx⟩, e.injective.extend_apply ((↑) : s → M)
       (fun _ => Classical.choice (inferInstance : Nonempty M)) ⟨x, hx⟩⟩
-  letI := hT.finite_closure M (Set.range b) (Set.finite_range b)
+  let := hT.finite_closure M (Set.range b) (Set.finite_range b)
   let f := Substructure.inclusion (Substructure.closure_mono (L := L) hsrange)
   exact (Nat.card_le_card_of_injective f f.injective).trans (hm M b)
 

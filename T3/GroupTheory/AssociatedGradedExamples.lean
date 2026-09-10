@@ -128,7 +128,7 @@ def abelianEquiv : GradedModule G ≃ₗ[ZMod 3] Additive G where
     by_cases hn : n = 1
     · subst n
       simp [DirectSum.lof_eq_of]
-    · letI := layer_subsingleton_of_commutative G hn
+    · let := layer_subsingleton_of_commutative G hn
       exact Subsingleton.elim _ _
   right_inv x := by simp [DirectSum.lof_eq_of]
   map_add' x y := by simp
@@ -213,7 +213,7 @@ Paper-ID: preliminaries.associated_graded_examples
 TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
 -/
 theorem grade_eq_bot_of_commutative {n : ℕ} (hn : n ≠ 1) : grade G n = ⊥ := by
-  letI := layer_subsingleton_of_commutative G hn
+  let := layer_subsingleton_of_commutative G hn
   apply eq_bot_iff.mpr
   rintro x ⟨y, rfl⟩
   have hy : y = 0 := Subsingleton.elim _ _
@@ -337,7 +337,7 @@ theorem layer_subsingleton {n : ℕ} (hn : 3 ≤ n) : Subsingleton (Layer (Free 
     apply bot_unique
     exact ((⊤ : Subgroup (Free (Fin 2))).lowerCentralSeries_antitone
       (show 2 ≤ n - 1 by omega)).trans_eq term_three_eq_bot
-  haveI : Subsingleton (term (Free (Fin 2)) n) := by rw [hterm]; infer_instance
+  have : Subsingleton (term (Free (Fin 2)) n) := by rw [hterm]; infer_instance
   exact Function.Surjective.subsingleton (mk_surjective (Free (Fin 2)) n)
 
 private theorem mk_two_injective : Function.Injective (mk (Free (Fin 2)) 2) := by
@@ -437,7 +437,7 @@ theorem graded_bracket_eq_determinant (v w : GradedModule (Free (Fin 2))) :
       (firstLayerBasis.repr (v 1) 0 * firstLayerBasis.repr (w 1) 1 -
         firstLayerBasis.repr (v 1) 1 * firstLayerBasis.repr (w 1) 0) •
         DirectSum.lof (ZMod 3) ℕ (Layer (Free (Fin 2))) 2 (secondLayerBasis 0) := by
-  letI := layer_subsingleton (n := 3) le_rfl
+  let := layer_subsingleton (n := 3) le_rfl
   rw [bracket_eq, bracketLayer_eq_determinant]
   have hz : bracketLayer (by decide) (by decide) (v 2) (w 1) -
       bracketLayer (by decide) (by decide) (w 2) (v 1) = 0 := Subsingleton.elim _ _
@@ -472,7 +472,7 @@ def coordinates : GradedModule (Free (Fin 2)) ≃ₗ[ZMod 3] (ZMod 3 × ZMod 3) 
         (secondLayer_eq_repr_smul (v 2)).symm
     rcases Nat.eq_zero_or_pos n with rfl | hn
     · exact Subsingleton.elim _ _
-    · letI := layer_subsingleton (show 3 ≤ n by omega)
+    · let := layer_subsingleton (show 3 ≤ n by omega)
       exact Subsingleton.elim _ _
   right_inv c := by
     rcases c with ⟨⟨a, b⟩, c⟩
@@ -551,7 +551,7 @@ theorem grade_eq_bot {n : ℕ} (h1 : n ≠ 1) (h2 : n ≠ 2) :
     grade (Free (Fin 2)) n = ⊥ := by
   rcases Nat.eq_zero_or_pos n with rfl | hn
   · exact AssociatedGraded.grade_zero
-  letI := layer_subsingleton (show 3 ≤ n by omega)
+  let := layer_subsingleton (show 3 ≤ n by omega)
   apply eq_bot_iff.mpr
   rintro x ⟨y, rfl⟩
   have hy : y = 0 := Subsingleton.elim _ _

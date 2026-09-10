@@ -124,7 +124,7 @@ theorem IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction [Finite L.
         ∃ (C : L.Substructure M) (hj : ∀ a, j a ∈ C), C.GeneratedByAtMost n ∧
           ¬ T.AmalgamableOver i (j.codRestrict C hj) := by
   classical
-  letI : Fintype A := Fintype.ofFinite A
+  let : Fintype A := Fintype.ofFinite A
   let a := Fintype.card A
   let eA : A ≃ Fin a := Fintype.equivFin A
   let δ : L.Formula (Fin a) := (extensionFormula (L := L) (i : A → B)).relabel eA
@@ -132,7 +132,7 @@ theorem IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction [Finite L.
   obtain ⟨k, hk⟩ := hψ.exists_bounded_finite_witnesses_formula
   refine ⟨k + a, ?_⟩
   intro M hM j hbad
-  letI : M ⊨ Tstar := (hMC.models_iff_isExistentiallyClosed hPi M).mpr hM
+  let : M ⊨ Tstar := (hMC.models_iff_isExistentiallyClosed hPi M).mpr hM
   let vA : Fin a → M := j ∘ eA.symm
   have hvA : vA ∘ eA = j := by
     funext x

@@ -111,12 +111,12 @@ theorem exists_equiv {C : Type w'} [L.Structure C] [Finite C]
       e.toEmbedding.comp j = p.mark := by
   classical
   let k : Fin (m + 1) := ⟨Nat.card C, Nat.lt_succ_of_le hC⟩
-  letI : Fintype C := Fintype.ofFinite C
+  let : Fintype C := Fintype.ofFinite C
   let e₀ : C ≃ Fin (Nat.card C) := by
     simpa only [Nat.card_eq_fintype_card] using Fintype.equivFin C
   let e : C ≃ ULift.{max u v} (Fin k) :=
     e₀.trans Equiv.ulift.symm
-  letI : L.Structure (ULift.{max u v} (Fin k)) := e.inducedStructure
+  let : L.Structure (ULift.{max u v} (Fin k)) := e.inducedStructure
   let eL : C ≃[L] ULift.{max u v} (Fin k) := e.inducedStructureEquiv
   exact ⟨⟨k, inferInstance, eL.toEmbedding.comp j⟩, eL, rfl⟩
 
@@ -200,7 +200,7 @@ theorem IsLocallyFinite.exists_finite_bad_marked_cover [Finite L.Symbols]
   obtain ⟨m, hm⟩ := exists_card_closure_le_of_isLocallyFinite hLF n
   refine ⟨m, ?_⟩
   intro M C j hgen hbad
-  letI : Finite C := hgen.finite hLF
+  let : Finite C := hgen.finite hLF
   have hcard : Nat.card C ≤ m := by
     obtain ⟨s, hs, hC⟩ := hgen
     rw [← hC]

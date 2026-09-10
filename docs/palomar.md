@@ -89,13 +89,33 @@ formalization is claimed. The manuscript separately describes its use of a
 GPT-5.6 Sol proof outline and subsequent work by the paper's authors.
 
 The mathematical development has recorded local build, lint, import,
-paper-map, and axiom audits. On 2026-09-10, the pinned Comparator accepted the
-two selected statements and their definitions; both NanoDa and Lean's default
-kernel accepted the solution. See the [preparation checkpoint](../notes/palomar-preparation.md)
+paper-map, and axiom audits. On 2026-09-10, following the upgrade to Lean and
+mathlib v4.33.1, the pinned Comparator accepted the two selected statements
+and their definitions; both NanoDa and Lean's default kernel accepted the
+solution. See the [upgrade checkpoint](../notes/lean-mathlib-4-33-1-upgrade.md)
 for the input revision, tool pins, and verification artifacts. These are local
 checks. No Palomar review, submission, or registration has occurred.
 
 The repository license is [Apache-2.0](../LICENSE), as declared in the metadata.
+
+## Lean version support
+
+As checked on 2026-09-10, this project selects Lean and mathlib v4.33.1, the
+newest stable release meeting Palomar's current version-support conditions.
+The mathlib revision is `0df444a360eaa60ab8c11dca51a86af692955474`.
+Palomar accepts release toolchains at or above its recorded minimum,
+currently v4.28.0, with compatible exporter and rendering tools; it does not
+require a particular mathlib stable release. See the
+[version policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/e9c8c238f5695b10f75db7175648a1d0195352c1/CONTRIBUTING.md#21-lean-and-lake-files)
+and [minimum version](https://github.com/PalomarRegistry/PalomarSubmission/blob/ef2fa1eadcb246c2346ddba39b52eaa53d4bb763/toolchains.json).
+
+For stable patch releases without an exact tool tag, Palomar can use the
+same major/minor version's patch-zero source and rebuild it with the
+submission's exact Lean toolchain. Accordingly, our exporter is pinned to
+v4.33.0 source `15f6055e299ad5b89345e533cc2192f4cc00f659` and built with Lean
+v4.33.1. The script rejects cross-minor fallbacks and requires exact toolchain
+matches for release candidates. The upstream renderer applies the
+[corresponding rule to Verso](https://github.com/PalomarRegistry/PalomarSubmission/blob/ef2fa1eadcb246c2346ddba39b52eaa53d4bb763/scripts/render_challenge.py#L673-L728).
 
 ## Before a future submission
 

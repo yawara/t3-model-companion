@@ -101,7 +101,7 @@ theorem kernel_eq_closure (z : Fin n → G) (hz : ∀ i, z i ∈ Subgroup.center
     kernel z = Subgroup.closure (Set.range (relator z)) := by
   have hc : Subgroup.closure (Set.range (relator z)) ≤ Subgroup.center _ :=
     (Subgroup.closure_le _).2 (by rintro _ ⟨i, rfl⟩; exact relator_mem_center z hz i)
-  haveI : (Subgroup.closure (Set.range (relator z))).Normal := by
+  have : (Subgroup.closure (Set.range (relator z))).Normal := by
     constructor
     intro a ha g
     rw [Subgroup.mem_center_iff.mp (hc ha) g, mul_assoc, mul_inv_cancel, mul_one]
@@ -244,7 +244,7 @@ Paper-ID: structure.simultaneous_triple_roots
 TeX: T3_modelcompanion_v4.tex, `lemma:triple commutator root`, v4 Lemma 4.8. -/
 theorem hasExponentThree_extension (hG : HasExponentThree G) (z : Fin n → G) :
     HasExponentThree (Extension z) := by
-  letI : Fact (HasExponentThree G) := ⟨hG⟩
+  let : Fact (HasExponentThree G) := ⟨hG⟩
   exact Fact.out
 
 /-- The natural map into the paper's concrete simultaneous root quotient has trivial kernel.

@@ -201,7 +201,7 @@ theorem amalgamableOver_iff : AmalgamableOver f g ↔
     Function.Injective (leftMap f g) ∧ Function.Injective (rightMap f g) := by
   constructor
   · rintro ⟨K, hK, hpow, i, j, hi, hj, hij⟩
-    letI : Group K := hK
+    let : Group K := hK
     exact canonicalMaps_injective_of_amalgam f g hpow i j hi hj hij
   · rintro ⟨hl, hr⟩
     exact ⟨Pushout f g, inferInstance, hasExponentThree_pushout f g,

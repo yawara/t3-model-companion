@@ -625,7 +625,8 @@ theorem layerTwoEquiv_commutator (p : IncreasingPair I) :
     layerTwoEquiv (AssociatedGraded.mk (Free I) 2
       (derivedCommutator (of p.first) (of p.second))) = Finsupp.single p 1 := by
   ext q
-  rw [layerTwoEquiv_mk, pairFinsuppReadout_apply]
+  rw [layerTwoEquiv_mk (derivedCommutator (of p.first) (of p.second)),
+    pairFinsuppReadout_apply]
   change (toLvdW ⁅of p.first, of p.second⁆).pair q.first q.second = _
   rw [map_commutatorElement, toLvdW_of, toLvdW_of,
     LvdW.commutator_of_pair_of_lt p.first_lt_second q.first_lt_second, Finsupp.single_apply]

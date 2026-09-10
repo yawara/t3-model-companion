@@ -63,10 +63,10 @@ theorem ModelsEmbedInto.exists_finite_assignment (h : T.ModelsEmbedInto T')
     ∃ N : T'.ModelType.{u, v, max u v}, ∃ b : M → N,
       ∀ i, (φ i).Realize (b ∘ a i) := by
   classical
-  letI := Fintype.ofFinite ι
+  let := Fintype.ofFinite ι
   let s : Finset M := Finset.univ.biUnion fun i => Finset.univ.image (a i)
   obtain ⟨S, hs, hsmall⟩ := exists_small_elementarySubstructure_containing_finset (L := L) M s
-  letI := hsmall
+  let := hsmall
   let S' : T.ModelType.{u, v, max u v} := (ModelType.of T S).shrink
   let e : S ≃[L] S' := (equivShrink S).inducedStructureEquiv
   obtain ⟨N, ⟨f⟩⟩ := h S'
@@ -111,8 +111,8 @@ theorem ModelsEmbedInto.exists_embedding (h : T.ModelsEmbedInto T')
       fun θ => (Finset.mem_filter.mp θ.2).2
     choose n φ a hφ ha heq using hdata
     obtain ⟨N, b, hb⟩ := h.exists_finite_assignment M n φ a hφ ha
-    letI : (constantsOn M).Structure N := constantsOn.structure b
-    haveI : N ⊨ (Θ : L[[M]].Theory) := by
+    let : (constantsOn M).Structure N := constantsOn.structure b
+    have : N ⊨ (Θ : L[[M]].Theory) := by
       rw [model_iff]
       intro θ hθ
       rcases hΘ hθ with hT' | hdiag
@@ -127,10 +127,10 @@ theorem ModelsEmbedInto.exists_embedding (h : T.ModelsEmbedInto T')
         exact hb ⟨θ, hθ'⟩
     exact Model.isSatisfiable N
   obtain ⟨N⟩ := hsat
-  letI : L.Structure N := (L.lhomWithConstants M).reduct N
-  haveI : N ⊨ T' := (LHom.onTheory_model _ _).mp
+  let : L.Structure N := (L.lhomWithConstants M).reduct N
+  have : N ⊨ T' := (LHom.onTheory_model _ _).mp
     (N.is_model.mono Set.subset_union_left)
-  haveI : N ⊨ L.qfDiagram M := N.is_model.mono Set.subset_union_right
+  have : N ⊨ L.qfDiagram M := N.is_model.mono Set.subset_union_right
   exact ⟨ModelType.of T' N, ⟨Embedding.ofModelsQfDiagram L M N⟩⟩
 
 end Theory

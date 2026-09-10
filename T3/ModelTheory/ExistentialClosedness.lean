@@ -67,10 +67,10 @@ theorem IsExistentiallyClosedAt.reflects_of_model {M : Type w} [L.Structure M]
     (hφ : φ.IsExistential) (hN : φ.Realize (f ∘ x)) : φ.Realize x := by
   classical
   let S := (Substructure.closure (L.sum L.skolem₁) (Set.range f)).elementarySkolem₁Reduct
-  haveI : Small.{max u v w} S := by
+  have : Small.{max u v w} S := by
     change Small.{max u v w} (Substructure.closure (L.sum L.skolem₁) (Set.range f))
     rw [← SetLike.coe_sort_coe, Substructure.coe_closure_eq_range_term_realize]
-    haveI : Small.{max u v w} ((L.sum L.skolem₁).Term (Set.range f)) :=
+    have : Small.{max u v w} ((L.sum L.skolem₁).Term (Set.range f)) :=
       small_of_injective (Term.relabelEquiv (equivShrink.{max u v w} (Set.range f))).injective
     exact small_range _
   let S' : T.ModelType.{u, v, max u v w} := (ModelType.of T S).shrink
@@ -130,12 +130,12 @@ theorem IsModelCompanionOf.models_iff_isExistentiallyClosedAt (hT : T.IsPiTwo)
     M ⊨ T' ↔ T.IsExistentiallyClosedAt M := by
   constructor
   · intro hM
-    letI : M ⊨ T := h.models_of_isPiTwo_in_universe hT M
+    let : M ⊨ T := h.models_of_isPiTwo_in_universe hT M
     exact h.isExistentiallyClosedAt_of_models M
   · intro hM
-    letI : M ⊨ T := hM.2.1
+    let : M ⊨ T := hM.2.1
     obtain ⟨N, ⟨f⟩⟩ := h.isCompanion.2.exists_embedding M
-    letI : N ⊨ T := h.models_of_isPiTwo_in_universe hT N
+    let : N ⊨ T := h.models_of_isPiTwo_in_universe hT N
     obtain ⟨e, _⟩ := IsModelComplete.exists_elementaryEmbedding_of_reflects_existential
       h.isModelComplete N f (fun φ x hφ hN => hM.reflects_of_model N f φ x hφ hN)
     exact (e.theory_model_iff T').mpr N.is_model
@@ -150,7 +150,7 @@ theorem IsExistentiallyClosedAt.realize_of_finite {M : Type w} [L.Structure M]
     (hM : T.IsExistentiallyClosedAt M) (N : Type w') [L.Structure N] [Nonempty N] [N ⊨ T]
     (f : M ↪[L] N) {α : Type*} [Finite α] (φ : L.Formula α) (a : α → M)
     (hφ : φ.IsExistential) (hN : φ.Realize (f ∘ a)) : φ.Realize a := by
-  letI := Fintype.ofFinite α
+  let := Fintype.ofFinite α
   let e := Fintype.equivFin α
   let ψ : L.Formula (Fin (Fintype.card α)) := φ.relabel e
   have hψ : ψ.IsExistential := hφ.relabel _

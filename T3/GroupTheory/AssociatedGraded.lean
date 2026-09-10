@@ -87,7 +87,7 @@ TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, underlying degree quotients a
 instance mulLayerCommGroup (n : ℕ) : CommGroup (MulLayer G n) where
   __ := QuotientGroup.Quotient.group (relation G n)
   mul_comm := by
-    letI : IsMulCommutative (MulLayer G n) :=
+    let : IsMulCommutative (MulLayer G n) :=
       Subgroup.Normal.quotient_commutative_iff_commutator_le.mpr (commutator_le_relation G n)
     exact mul_comm'
 
@@ -418,7 +418,7 @@ instance subgroupMulLayerCommGroup (S : Subgroup G) (n : ℕ) :
     CommGroup (SubgroupMulLayer S n) where
   __ := QuotientGroup.Quotient.group _
   mul_comm := by
-    letI : IsMulCommutative (SubgroupMulLayer S n) :=
+    let : IsMulCommutative (SubgroupMulLayer S n) :=
       Subgroup.Normal.quotient_commutative_iff_commutator_le.mpr
         (Abelianization.commutator_subset_ker (subgroupMk S n))
     exact mul_comm'

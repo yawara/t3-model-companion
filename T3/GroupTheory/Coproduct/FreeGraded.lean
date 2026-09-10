@@ -68,10 +68,7 @@ theorem freeSumLayerEquiv_inl (n : ℕ) (x : Layer (Free I) n) :
     freeSumLayerEquiv n (mapLayer (inl (H := Free J)) n x) =
       mapLayer (Free.map (Sum.inl : I → I ⊕ J)) n x := by
   have h : Free.coproductToSum.comp (inl (G := Free I) (H := Free J)) =
-      Free.map (Sum.inl : I → I ⊕ J) := by
-    apply MonoidHom.ext
-    intro y
-    simp [Free.coproductToSum]
+      Free.map (Sum.inl : I → I ⊕ J) := rfl
   rw [freeSumLayerEquiv_apply, ← LinearMap.comp_apply, ← mapLayer_comp]
   rw [h]
 
@@ -85,10 +82,7 @@ theorem freeSumLayerEquiv_inr (n : ℕ) (x : Layer (Free J) n) :
     freeSumLayerEquiv n (mapLayer (inr (G := Free I)) n x) =
       mapLayer (Free.map (Sum.inr : J → I ⊕ J)) n x := by
   have h : Free.coproductToSum.comp (inr (G := Free I) (H := Free J)) =
-      Free.map (Sum.inr : J → I ⊕ J) := by
-    apply MonoidHom.ext
-    intro y
-    simp [Free.coproductToSum]
+      Free.map (Sum.inr : J → I ⊕ J) := rfl
   rw [freeSumLayerEquiv_apply, ← LinearMap.comp_apply, ← mapLayer_comp]
   rw [h]
 
@@ -332,9 +326,9 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, free case of `�
 theorem freeSumLayerTwoMap_bijective :
     Function.Bijective (freeSumLayerTwoMap (I := I) (J := J)) := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
-  letI : LinearOrder J := linearOrderOfSTO WellOrderingRel
-  letI : LinearOrder (I ⊕ J) := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder J := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder (I ⊕ J) := linearOrderOfSTO WellOrderingRel
   let b : Basis I (ZMod 3) (I →₀ ZMod 3) := Finsupp.basisSingleOne
   let c : Basis J (ZMod 3) (J →₀ ZMod 3) := Finsupp.basisSingleOne
   have he : (Free.sigmaTwo (b.prod c)) ∘ freeSumLayerTwoMap =
@@ -359,9 +353,9 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, free case of `�
 theorem freeSumLayerThreeMap_bijective :
     Function.Bijective (freeSumLayerThreeMap (I := I) (J := J)) := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
-  letI : LinearOrder J := linearOrderOfSTO WellOrderingRel
-  letI : LinearOrder (I ⊕ J) := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder J := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder (I ⊕ J) := linearOrderOfSTO WellOrderingRel
   let b : Basis I (ZMod 3) (I →₀ ZMod 3) := Finsupp.basisSingleOne
   let c : Basis J (ZMod 3) (J →₀ ZMod 3) := Finsupp.basisSingleOne
   have he : (Free.sigmaThree (b.prod c)) ∘ freeSumLayerThreeMap =

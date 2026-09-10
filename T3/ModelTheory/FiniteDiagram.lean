@@ -397,7 +397,7 @@ theorem IsExistentiallyClosed.realize_of_finite (hM : T.IsExistentiallyClosed M)
     (N : T.ModelType.{u, v, max u v}) (f : M ↪[L] N)
     {α : Type*} [Finite α] (φ : L.Formula α) (a : α → M)
     (hφ : φ.IsExistential) (hN : φ.Realize (f ∘ a)) : φ.Realize a := by
-  letI := Fintype.ofFinite α
+  let := Fintype.ofFinite α
   let e := Fintype.equivFin α
   let ψ : L.Formula (Fin (Fintype.card α)) := φ.relabel e
   have hψ : ψ.IsExistential := hφ.relabel _

@@ -123,7 +123,8 @@ theorem enlarged_eq_closure (g : Fin n → C) :
   rw [MonoidHom.range_eq_map, ← Free.closure_range_of (I := Fin (2 * n)),
     MonoidHom.map_closure]
   congr 1
-  simp [newGenerators, newGenerator, ← Set.image_univ, Set.image_image]
+  simp only [newGenerators, Finset.coe_image, Finset.coe_univ, ← Set.image_univ, Set.image_image]
+  rfl
 
 private theorem map_commutator_le_of_range_le {A B : Type*} [Group A] [Group B]
     (f : A →* B) (S : Subgroup B) (hf : f.range ≤ S) :
@@ -211,7 +212,8 @@ theorem inf_commutator_eq (hG : HasExponentThree G) (g : Fin n → C)
       simpa only [map_mul, Coproduct.fst_inl, Coproduct.fst_inr, mul_one] using hm
     have hwder : w ∈ commutator (Free (Fin (2 * n))) := by
       have hm := map_mem_commutator (Coproduct.snd Free.pow_three) hamb
-      simpa only [map_mul, Coproduct.snd_inl, Coproduct.snd_inr, one_mul] using hm
+      simpa only [map_mul, Coproduct.snd_inl Free.pow_three c,
+        Coproduct.snd_inr Free.pow_three w, one_mul] using hm
     have hcD : baseMap g c ∈ ⁅enlarged g, enlarged g⁆ :=
       image_defect_le_commutator g hdefect (show (⟨c, hc⟩ : C) ∈
         (commutator G).comap C.subtype from hcder)
@@ -264,7 +266,7 @@ instance enlarged_fg [Group.FG C] (g : Fin n → C) : Group.FG (enlarged g) := b
   · have h : Group.FG ((baseMap g).comp C.subtype).range := inferInstance
     rw [MonoidHom.range_comp, Subgroup.range_subtype] at h
     exact (Group.fg_iff_subgroup_fg _).mp h
-  · letI : Group.FG (Free (Fin (2 * n))) :=
+  · let : Group.FG (Free (Fin (2 * n))) :=
       Group.fg_of_generating_family Free.of Free.closure_range_of
     exact (Group.fg_iff_subgroup_fg _).mp inferInstance
 
@@ -314,8 +316,8 @@ theorem exists_derived_strictification (hG : HasExponentThree G) (C : Subgroup G
             D = Subgroup.closure ((C.map f : Set H) ∪ ↑Y) ∧
             Group.rank D ≤ 3 * m ∧
             D.lowerCentralSeries 1 = (⊤ : Subgroup H).lowerCentralSeries 1 ⊓ D := by
-  letI : Fact (HasExponentThree G) := ⟨hG⟩
-  letI : Fact (HasExponentThree C) := ⟨fun c => Subtype.ext (hG c)⟩
+  let : Fact (HasExponentThree G) := ⟨hG⟩
+  let : Fact (HasExponentThree C) := ⟨fun c => Subtype.ext (hG c)⟩
   obtain ⟨d, hd, g, hg, hdefect⟩ := exists_derived_defect_generators C.subtype
   have hdm : d ≤ m := hd.trans hC
   refine ⟨Extension g, inferInstance, hasExponentThree_extension g, baseMap g,

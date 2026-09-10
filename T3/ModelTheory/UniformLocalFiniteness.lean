@@ -47,7 +47,7 @@ TeX: T3_modelcompanion_v4.tex, supporting Fact 2.5; no label.
 theorem Substructure.card_closure_range_le_of_embedding {A : Type w} {N : Type w'}
     [L.Structure A] [L.Structure N] [Finite A] {α : Type*} (a : α → A) (f : A ↪[L] N) :
     Nat.card (Substructure.closure L (Set.range (f ∘ a))) ≤ Nat.card A := by
-  letI : Finite f.toHom.range := Finite.of_equiv A f.equivRange.toEquiv
+  let : Finite f.toHom.range := Finite.of_equiv A f.equivRange.toEquiv
   have hle : Substructure.closure L (Set.range (f ∘ a)) ≤ f.toHom.range := by
     apply Substructure.closure_le.mpr
     rintro _ ⟨i, rfl⟩
@@ -97,15 +97,15 @@ theorem IsLocallyFinite.exists_finite_qfType_cover [Finite L.Symbols]
     finiteGeneratedDiagram a
   have hdiagram (M : T.ModelType.{u, v, max u v}) (a : Fin n → M) :
       (diagram M a).Realize a := by
-    letI := hT.finite_closure_range M a
+    let := hT.finite_closure_range M a
     exact (finiteGeneratedDiagram_mem_tupleQfDiagram a).2
   let negs : L[[Fin n]].Theory := {σ | ∃ (M : T.ModelType.{u, v, max u v}) (a : Fin n → M),
     σ = (Formula.equivSentence (diagram M a)).not}
   have hfalse : (L.lhomWithConstants (Fin n)).onTheory T ∪ negs ⊨ᵇ (⊥ : L[[Fin n]].Sentence) := by
     apply models_sentence_iff.mpr
     intro M
-    letI : L.Structure M := (L.lhomWithConstants (Fin n)).reduct M
-    haveI : M ⊨ T := (LHom.onTheory_model _ _).mp
+    let : L.Structure M := (L.lhomWithConstants (Fin n)).reduct M
+    have : M ⊨ T := (LHom.onTheory_model _ _).mp
       (M.is_model.mono Set.subset_union_left)
     let a : Fin n → M := fun i => (L.con i : M)
     have hmem : (Formula.equivSentence (diagram (ModelType.of T M) a)).not ∈
@@ -125,10 +125,10 @@ theorem IsLocallyFinite.exists_finite_qfType_cover [Finite L.Symbols]
   intro N b
   have hcover : ∃ δ : Δ, (diagram (models δ) (tuples δ)).Realize b := by
     by_contra hn
-    letI : (constantsOn (Fin n)).Structure N := constantsOn.structure b
-    haveI hNT : N ⊨ (L.lhomWithConstants (Fin n)).onTheory T :=
+    let : (constantsOn (Fin n)).Structure N := constantsOn.structure b
+    have hNT : N ⊨ (L.lhomWithConstants (Fin n)).onTheory T :=
       (LHom.onTheory_model _ _).mpr N.is_model
-    haveI : N ⊨ (Ω : L[[Fin n]].Theory) := by
+    have : N ⊨ (Ω : L[[Fin n]].Theory) := by
       apply (Theory.model_iff _).mpr
       intro σ hσ
       rcases hΩ hσ with hσT | hσneg
@@ -140,7 +140,7 @@ theorem IsLocallyFinite.exists_finite_qfType_cover [Finite L.Symbols]
         exact fun h => hn ⟨⟨σ, hσΔ⟩, h⟩
     exact Sentence.not_realize_bot N (hforces.realize_sentence N)
   obtain ⟨δ, hδ⟩ := hcover
-  letI := hT.finite_closure_range (models δ) (tuples δ)
+  let := hT.finite_closure_range (models δ) (tuples δ)
   refine ⟨⟨models δ, tuples δ⟩, Finset.mem_image.mpr ⟨δ, Finset.mem_univ δ, rfl⟩, ?_⟩
   have hall := (realize_finiteGeneratedDiagram_iff_tupleQfDiagram (tuples δ) b).mp hδ
   intro φ hφ
@@ -167,7 +167,7 @@ theorem IsLocallyFinite.exists_card_closure_range_le [Finite L.Symbols]
   refine ⟨S.sup size, ?_⟩
   intro N b
   obtain ⟨⟨M, a⟩, hp, hpb⟩ := hS N b
-  letI := hT.finite_closure_range M a
+  let := hT.finite_closure_range M a
   have hb : Nat.card (Substructure.closure L (Set.range b)) ≤ size ⟨M, a⟩ :=
     Substructure.card_closure_range_le_of_qfType a b hpb
   exact hb.trans (Finset.le_sup (f := size) hp)
@@ -194,7 +194,7 @@ theorem exists_card_closure_le_of_isLocallyFinite [Finite L.Symbols]
     intro x hx
     exact ⟨e ⟨x, hx⟩, e.injective.extend_apply ((↑) : s → M)
       (fun _ => Classical.choice M.nonempty') ⟨x, hx⟩⟩
-  letI := hT.finite_closure_range M b
+  let := hT.finite_closure_range M b
   let f := Substructure.inclusion (Substructure.closure_mono (L := L) hsrange)
   exact (Nat.card_le_card_of_injective f f.injective).trans (hm M b)
 

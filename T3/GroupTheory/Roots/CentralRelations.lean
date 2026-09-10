@@ -52,7 +52,7 @@ theorem normalClosure_eq_closure :
       Subgroup.closure (Set.range (relator S z w)) := by
   have hc : Subgroup.closure (Set.range (relator S z w)) ≤ Subgroup.center _ :=
     (Subgroup.closure_le _).2 (by rintro _ ⟨i, rfl⟩; exact relator_mem_center S hS z hz w i)
-  haveI : (Subgroup.closure (Set.range (relator S z w))).Normal := by
+  have : (Subgroup.closure (Set.range (relator S z w))).Normal := by
     constructor
     intro a ha g
     rw [Subgroup.mem_center_iff.mp (hc ha) g, mul_assoc, mul_inv_cancel, mul_one]
@@ -163,7 +163,7 @@ theorem eq_one_of_inl_mem_normalClosure [Finite I] [DecidableEq I]
     (hc : ∀ i j, c i (w j) = Multiplicative.ofAdd (if i = j then 1 else 0)) {g : G}
     (hg : MonoidHom.inl G K g ∈ Subgroup.normalClosure (Set.range (relator S z w))) : g = 1 := by
   classical
-  letI := Fintype.ofFinite I
+  let := Fintype.ofFinite I
   obtain ⟨m, hm⟩ := exists_relationWord S hS z hz w hg
   have hcoeff (i : I) : (m i : ZMod 3) = 0 := by
     have hp : projection S (relationWord S hS z hz w m) = 1 := by

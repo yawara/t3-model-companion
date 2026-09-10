@@ -1,0 +1,12 @@
+import Init
+
+/-!
+# Verso toolchain compatibility check
+
+This independent smoke check builds and renders a minimal Lean module.
+It does not assert project theorem verification or Palomar registration.
+-/
+
+/-- Addition by zero preserves a natural number. -/
+theorem versoCompatibilityCheck (n : Nat) : n + 0 = n := by
+  rfl

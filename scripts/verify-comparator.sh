@@ -12,7 +12,8 @@ lean4export_dir="$cache_root/lean4export"
 nanoda_dir="$cache_root/nanoda"
 
 comparator_commit=575674928e239f5bc452aab72d1dd7b0f1326494
-lean4export_commit=86e4a339507466921dc8c5417c8cb1de1ce7df60
+# v4.33.0 source, rebuilt below with the project's exact Lean v4.33.1 toolchain.
+lean4export_commit=15f6055e299ad5b89345e533cc2192f4cc00f659
 landrun_commit=811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
 nanoda_commit=68d5ca9db226849b41a6fff59d796ff19d0a8840
 
@@ -67,13 +68,31 @@ fi
 
 project_toolchain=$(tr -d '[:space:]' < "$repository_root/lean-toolchain")
 lean4export_toolchain=$(tr -d '[:space:]' < "$lean4export_dir/lean-toolchain")
-if [ "$project_toolchain" != "$lean4export_toolchain" ]; then
-  echo "error: project toolchain $project_toolchain does not match" >&2
-  echo "the pinned lean4export toolchain $lean4export_toolchain" >&2
+
+# Follow Palomar's compatible_lean4export_toolchain rule: exact toolchains, or
+# stable positive patch releases using patch-zero source from the same major/minor.
+# Release candidates and other release lines must match exactly.
+# https://github.com/PalomarRegistry/PalomarSubmission/blob/ef2fa1eadcb246c2346ddba39b52eaa53d4bb763/scripts/verify_submission.py
+compatible_exporter_toolchain() {
+  local project=$1
+  local exporter=$2
+  if [ "$project" = "$exporter" ]; then
+    [[ "$project" =~ ^leanprover/lean4:v[0-9]+\.[0-9]+\.[0-9]+(-rc[0-9]+)?$ ]]
+  elif [[ "$project" =~ ^leanprover/lean4:v([0-9]+)\.([0-9]+)\.([1-9][0-9]*)$ ]]; then
+    [ "$exporter" = "leanprover/lean4:v${BASH_REMATCH[1]}.${BASH_REMATCH[2]}.0" ]
+  else
+    return 1
+  fi
+}
+
+if ! compatible_exporter_toolchain "$project_toolchain" "$lean4export_toolchain"; then
+  echo "error: project toolchain $project_toolchain is incompatible with" >&2
+  echo "the pinned lean4export source toolchain $lean4export_toolchain" >&2
   echo "update lean4export_commit when changing lean-toolchain, then review" >&2
   echo "Comparator and NanoDa compatibility with the export format" >&2
   exit 1
 fi
+echo "Building lean4export source $lean4export_toolchain with $project_toolchain"
 
 checkout_exact https://github.com/leanprover/comparator.git "$comparator_dir" "$comparator_commit"
 checkout_exact https://github.com/robsimmons/nanoda_lib.git "$nanoda_dir" "$nanoda_commit"
@@ -81,7 +100,7 @@ checkout_exact https://github.com/robsimmons/nanoda_lib.git "$nanoda_dir" "$nano
 CGO_ENABLED=0 GOBIN="$bin_dir" go install "github.com/zouuup/landrun/cmd/landrun@$landrun_commit"
 
 (cd "$comparator_dir" && lake build comparator)
-(cd "$lean4export_dir" && lake build lean4export)
+(cd "$lean4export_dir" && ELAN_TOOLCHAIN="$project_toolchain" lake build lean4export)
 (cd "$nanoda_dir" && cargo build --release --locked)
 
 cd "$repository_root"

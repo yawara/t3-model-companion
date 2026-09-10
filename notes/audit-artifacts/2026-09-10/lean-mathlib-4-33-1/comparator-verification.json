@@ -1,0 +1,37 @@
+{
+  "command": "PATH=/home/ywr/.local/go/bin:$PATH scripts/verify-comparator.sh",
+  "exit_code": 0,
+  "mathematical_source_revision": "39c01de9e5e5b1789f938f3f73d67164f2507fa9739dba1efc9a331e05eaf522",
+  "sha256": {
+    "Challenge.lean": "3bf5fdc841c75490ed1088129da7582c6e26118681d6b6f7dc7fe23e2a59ac0b",
+    "Solution.lean": "727f87a06aa80c4dc1fc3f6c1a3121227f778c6d478a39eba0541d5191020cfe",
+    "comparator.json": "e0350c5ab9ca77d1e76ab65c10582bed81ee14a6322b21abe4424c1a8d81a326",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lakefile.toml": "289529dc56c3f9b394dde5022af542997e1120ffb39b789d7e724ec2d1815bf4",
+    "lake-manifest.json": "209b27f34d703b793ccb99f80dcac6d86a28d0ba9f6dd29f4d664c9afa591c03",
+    "scripts/verify-comparator.sh": "048f0340b4aba17c677439c5c9f63ede16df6e22c9075c10b49f1d5de837f954",
+    "scripts/landrun-wrapper.sh": "a3398550ce76811ed57f354641ba8ba4f738905dc80732075189a7ecca2eb696"
+  },
+  "log": "comparator.log",
+  "log_sha256": "5f3264ab4ebb561595ebb15737cf379051f0b26106d788ea3987975f5a7116e1",
+  "project_toolchain": "leanprover/lean4:v4.33.1",
+  "exporter_source_toolchain": "leanprover/lean4:v4.33.0",
+  "exporter_build_toolchain": "leanprover/lean4:v4.33.1",
+  "tool_revisions": {
+    "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
+    "lean4export": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+    "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+    "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+  },
+  "nanoDa_accepted": true,
+  "lean_kernel_accepted": true,
+  "challenge_warnings": {
+    "count": 2,
+    "kind": "intentional theorem holes in the independent specification",
+    "lines": [
+      267,
+      281
+    ]
+  },
+  "scope": "Local end-to-end verification of both selected statements and their definition closures. No remote submission or acceptance decision."
+}

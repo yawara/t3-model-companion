@@ -73,9 +73,9 @@ theorem amalgamableOver_iff (f : A →* G) (g : A →* H)
       (embeddingOfInjectiveMonoidHom f hf) (embeddingOfInjectiveMonoidHom g hg) := by
   constructor
   · rintro ⟨K, hK, hpow, i, j, hi, hj, hij⟩
-    letI : Group K := hK
-    letI : CompatibleGroup K := compatibleGroupOfGroup K
-    letI : K ⊨ exponentThreeTheory := exponentThreeTheory_model_iff.mpr hpow
+    let : Group K := hK
+    let : CompatibleGroup K := compatibleGroupOfGroup K
+    let : K ⊨ exponentThreeTheory := exponentThreeTheory_model_iff.mpr hpow
     let i' : G ↪[Language.group] K := embeddingOfInjectiveMonoidHom i hi
     let j' : H ↪[Language.group] K := embeddingOfInjectiveMonoidHom j hj
     refine ⟨Theory.ModelType.of exponentThreeTheory K,
@@ -84,10 +84,10 @@ theorem amalgamableOver_iff (f : A →* G) (g : A →* H)
     intro a
     exact DFunLike.congr_fun hij a
   · rintro ⟨N, i, j, hij⟩
-    letI : N ⊨ Theory.group := (inferInstance : N ⊨ exponentThreeTheory).mono
+    let : N ⊨ Theory.group := (inferInstance : N ⊨ exponentThreeTheory).mono
       (fun _ h => Set.mem_insert_of_mem _ h)
-    letI : Group N := groupOfModelGroup N
-    letI : CompatibleGroup N := compatibleGroupOfGroupStructure N
+    let : Group N := groupOfModelGroup N
+    let : CompatibleGroup N := compatibleGroupOfGroupStructure N
     refine ⟨N, inferInstance, exponentThreeTheory_model_iff.mp inferInstance,
       embeddingToMonoidHom i, embeddingToMonoidHom j, i.injective, j.injective, ?_⟩
     apply MonoidHom.ext

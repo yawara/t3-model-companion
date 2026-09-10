@@ -126,8 +126,8 @@ theorem IsExistentiallyClosed.amalgamableOver_iff_exists_embedding [Finite L.Sym
       (congrArg DFunLike.coe heq)
     exact ⟨e, Embedding.ext (congrFun he)⟩
   · rintro ⟨f, heq⟩
-    letI : Nonempty M := hM.1
-    letI : M ⊨ T := hM.2.1
+    let : Nonempty M := hM.1
+    let : M ⊨ T := hM.2.1
     exact ⟨ModelType.of T M, f, Embedding.refl L M, heq⟩
 
 /-- The finite extension formula expresses amalgamation with an existentially closed model.

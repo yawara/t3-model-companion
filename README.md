@@ -38,7 +38,7 @@ Agent fidelity review is distinct from Lean's kernel checks and from human peer 
 
 ## Verification
 
-Lean is pinned to v4.32.2 and mathlib to `905b95818eb32af7874a58b427f50c1711a5e96c`.
+Lean is pinned to v4.33.1 and mathlib to `0df444a360eaa60ab8c11dca51a86af692955474`.
 With elan and Python 3.11 or later:
 
 ```sh
@@ -57,7 +57,7 @@ The separate statement comparison needs Linux, Cargo, Go, Git, Lake, and Python:
 scripts/verify-comparator.sh
 ```
 
-The script builds pinned Comparator, a Lean-4.32.2 exporter, NanoDa, and Landrun in `.cache/`.
+The script builds pinned Comparator, an exporter built with Lean v4.33.1, NanoDa, and Landrun in `.cache/`.
 It verifies the selected statements and runs the independent NanoDa kernel checker.
 Challenge's two intentional proof-hole warnings are expected only in this separate gate.
 GitHub Actions runs both verification jobs without submitting or registering anything.

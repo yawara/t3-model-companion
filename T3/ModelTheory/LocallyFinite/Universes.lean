@@ -40,7 +40,7 @@ theorem IsLocallyFinite.finite_closure (hT : T.IsLocallyFinite) (M : Type w)
   classical
   obtain ⟨S, hS, hsmall⟩ :=
     exists_small_elementarySubstructure_containing_finset (L := L) M hs.toFinset
-  letI := hsmall
+  let := hsmall
   let N : T.ModelType.{u, v, max u v} := (ModelType.of T S).shrink
   let e : S ≃[L] N := (equivShrink S).inducedStructureEquiv
   let j : N ↪[L] M := S.subtype.toEmbedding.comp e.symm.toEmbedding
@@ -51,7 +51,7 @@ theorem IsLocallyFinite.finite_closure (hT : T.IsLocallyFinite) (M : Type w)
   let t : Set N := j ⁻¹' s
   have ht : t.Finite := hs.preimage j.injective.injOn
   have himage : j '' t = s := Set.image_preimage_eq_of_subset hsrange
-  letI := hT N t ht
+  let := hT N t ht
   have hfinite : Set.Finite (Substructure.closure L s : Set M) := by
     rw [← himage, ← Embedding.coe_toHom (f := j), Substructure.closure_image j.toHom]
     exact (Set.toFinite (Substructure.closure L t : Set N)).image j
@@ -70,7 +70,7 @@ theorem IsLocallyFinite.exists_finite_tupleQfDiagram_of_model [Finite L.Symbols]
       ∀ (N : Type w') [L.Structure N] (b : α → N),
         (∀ φ ∈ Δ, φ.Realize b) ↔ ∀ φ ∈ tupleQfDiagram (L := L) a, φ.Realize b := by
   classical
-  letI := hT.finite_closure M (Set.range a) (Set.finite_range a)
+  let := hT.finite_closure M (Set.range a) (Set.finite_range a)
   refine ⟨{finiteGeneratedDiagram (L := L) a}, ?_, ?_⟩
   · intro φ hφ
     obtain rfl := Finset.mem_singleton.mp hφ

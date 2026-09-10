@@ -47,12 +47,12 @@ theorem isModelCompanionOf_of_isExistentiallyClosed_iff (hT : T.IsPiTwo)
   have hcomp : Tstar.IsCompanion T := by
     constructor
     · intro M
-      letI : M ⊨ T := (h₁ M).2.1
+      let : M ⊨ T := (h₁ M).2.1
       exact ⟨ModelType.of T M, ⟨Embedding.refl L M⟩⟩
     · exact modelsEmbedInto_of_isExistentiallyClosed_models hT h₂
   refine ⟨hcomp, isModelComplete_of_isExistentiallyClosedInModels ?_⟩
   intro M N f n φ x hφ hN
-  letI : N ⊨ T := (h₁ N).2.1
+  let : N ⊨ T := (h₁ N).2.1
   exact (h₁ M).2.2 (ModelType.of T N) f φ x hφ hN
 
 /-- **Fact 2.3.** For a Pi-two theory, model companionship is equivalent to equality of the

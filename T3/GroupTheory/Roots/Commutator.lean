@@ -201,7 +201,7 @@ private theorem mk_two_derivedBracketHom {A : Type*} [Group A] [Fact (HasExponen
 private theorem mk_two_normalWord {A : Type*} [Group A] [Fact (HasExponentThree A)]
     (r : Fin n → commutator A) (m : Fin n → ℤ) (h : Fin n → A) :
     mk A 2 (normalWord r m h) = ∑ i, (m i : ZMod 3) • mk A 2 (r i) := by
-  letI : IsMulCommutative (commutator A) := isMulCommutative_commutator Fact.out
+  let : IsMulCommutative (commutator A) := isMulCommutative_commutator Fact.out
   let f : commutator A →* MulLayer A 2 := QuotientGroup.mk' (relation A 2)
   change Additive.ofMul (f (normalWord r m h)) = _
   rw [normalWord, map_prod, ofMul_prod]
@@ -232,11 +232,13 @@ private theorem mapLayer_snd_relator (g : Fin n → G) (hg : ∀ i, g i ∈ comm
     (i : Fin n) :
     mapLayer (Coproduct.snd (G := G) Free.pow_three) 2
       (mk (Ambient G n) 2 (bundledRelator g hg i)) = freeInitial i := by
-  rw [mapLayer_mk, freeInitial, Free.layerTwoBasis_apply]
+  rw [mapLayer_mk (Coproduct.snd (G := G) Free.pow_three) 2 (bundledRelator g hg i),
+    freeInitial, Free.layerTwoBasis_apply]
   apply congrArg (mk (Free (Fin (2 * n))) 2)
   apply Subtype.ext
   change Coproduct.snd Free.pow_three (relator g i) = witness i
-  simp [relator]
+  simp [relator, Coproduct.snd_inl Free.pow_three (g i),
+    Coproduct.snd_inr Free.pow_three (witness i)]
 
 /-- Claim B: all exponent coefficients vanish in the coefficient field.
 
@@ -249,11 +251,12 @@ theorem coefficients_eq_zero (g : Fin n → G) (hg : ∀ i, g i ∈ commutator G
     ∀ i, (m i : ZMod 3) = 0 := by
   have hz : mapLayer (Coproduct.snd (G := G) Free.pow_three) 2
       (mk (Ambient G n) 2 (normalWord (bundledRelator g hg) m h)) = 0 := by
-    rw [mapLayer_mk, mk_eq_zero]
+    rw [mapLayer_mk (Coproduct.snd (G := G) Free.pow_three) 2
+      (normalWord (bundledRelator g hg) m h), mk_eq_zero]
     change Coproduct.snd Free.pow_three
       (normalWord (bundledRelator g hg) m h : Ambient G n) ∈
         (⊤ : Subgroup (Free (Fin (2 * n)))).lowerCentralSeries 2
-    rw [ha, Coproduct.snd_inl]
+    rw [ha, Coproduct.snd_inl Free.pow_three a]
     exact Subgroup.one_mem _
   rw [mk_two_normalWord, map_sum] at hz
   simp only [map_smul, mapLayer_snd_relator] at hz
@@ -271,7 +274,7 @@ private def centralWord {A : Type*} [Group A] [Fact (HasExponentThree A)]
 private theorem normalWord_zero_eq {A : Type*} [Group A] [Fact (HasExponentThree A)]
     (r : Fin n → commutator A) (h : Fin n → A) :
     (normalWord r 0 h : A) = (centralWord r h : A) := by
-  letI : IsMulCommutative (commutator A) := isMulCommutative_commutator Fact.out
+  let : IsMulCommutative (commutator A) := isMulCommutative_commutator Fact.out
   have hle : term A 3 ≤ commutator A :=
     (⊤ : Subgroup A).lowerCentralSeries_antitone (show 1 ≤ 2 by decide)
   have he : Subgroup.inclusion hle (centralWord r h) = normalWord r 0 h := by
@@ -305,7 +308,7 @@ private theorem normalWord_eq_zero_coefficients {A : Type*} [Group A]
     [Fact (HasExponentThree A)] (r : Fin n → commutator A) (m : Fin n → ℤ)
     (h : Fin n → A) (hm : ∀ i, (m i : ZMod 3) = 0) :
     normalWord r m h = normalWord r 0 h := by
-  letI : IsMulCommutative (commutator A) := isMulCommutative_commutator Fact.out
+  let : IsMulCommutative (commutator A) := isMulCommutative_commutator Fact.out
   unfold normalWord
   apply Finset.prod_congr rfl
   intro i _
@@ -380,10 +383,7 @@ private theorem relator_initial (g : Fin n → G) (hg : ∀ i, g i ∈ commutato
     mk (Ambient G n) 2 (bundledRelator g hg i) =
       -mapLayer Coproduct.inl 2 (mk G 2 ⟨g i, hg i⟩) +
         mapLayer Coproduct.inr 2 (freeInitial i) := by
-  rw [freeInitial, Free.layerTwoBasis_apply, mapLayer_mk, mapLayer_mk,
-    ← mk_inv, ← mk_mul]
-  apply congrArg (mk (Ambient G n) 2)
-  apply Subtype.ext
+  rw [freeInitial, Free.layerTwoBasis_apply]
   rfl
 
 private theorem bracket_inr_inl {H : Type*} [Group H] [Fact (HasExponentThree H)]
@@ -490,7 +490,7 @@ TeX: T3_modelcompanion_v4.tex, `lemma:basic commutator root`, v4 Lemma 4.6.
 -/
 theorem baseMap_ker (hG : HasExponentThree G) (g : Fin n → G)
     (hg : ∀ i, g i ∈ commutator G) : (baseMap g).ker = ⊥ := by
-  letI : Fact (HasExponentThree G) := ⟨hG⟩
+  let : Fact (HasExponentThree G) := ⟨hG⟩
   apply le_antisymm _ bot_le
   intro a ha
   apply Subgroup.mem_bot.mpr

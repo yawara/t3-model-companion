@@ -33,10 +33,10 @@ variable {L : Language.{u, v}} {T Tstar : L.Theory}
 private theorem isExistentiallyClosedAt_equiv {M : Type w} {N : Type w'}
     [L.Structure M] [L.Structure N] (hM : T.IsExistentiallyClosedAt M) (e : M ≃[L] N) :
     T.IsExistentiallyClosedAt N := by
-  letI : Nonempty M := hM.1
-  letI : Nonempty N := e.toEquiv.symm.nonempty
-  letI : M ⊨ T := hM.2.1
-  haveI : N ⊨ T := (e.toElementaryEmbedding.theory_model_iff T).mp hM.2.1
+  let : Nonempty M := hM.1
+  let : Nonempty N := e.toEquiv.symm.nonempty
+  let : M ⊨ T := hM.2.1
+  have : N ⊨ T := (e.toElementaryEmbedding.theory_model_iff T).mp hM.2.1
   refine ⟨inferInstance, inferInstance, ?_⟩
   intro P f n φ x hφ hP
   have hPx : φ.Realize ((f.comp e.toEmbedding) ∘ (e.symm ∘ x)) := by
@@ -64,7 +64,7 @@ theorem IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction_in_univers
         ∃ (C : L.Substructure M) (hj : ∀ a, j a ∈ C), C.GeneratedByAtMost n ∧
           ¬ T.AmalgamableOverAt i (j.codRestrict C hj) := by
   classical
-  letI : Fintype A := Fintype.ofFinite A
+  let : Fintype A := Fintype.ofFinite A
   let a := Fintype.card A
   let eA : A ≃ Fin a := Fintype.equivFin A
   let δ : L.Formula (Fin a) := (extensionFormula (L := L) (i : A → B)).relabel eA
@@ -72,9 +72,9 @@ theorem IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction_in_univers
   obtain ⟨k, hk⟩ := hψ.exists_bounded_finite_witnesses_formula
   refine ⟨k + a, ?_⟩
   intro M _ hM j hbad
-  letI : Nonempty M := hM.1
-  letI : M ⊨ T := hM.2.1
-  letI : M ⊨ Tstar := (hMC.models_iff_isExistentiallyClosedAt hPi M).mpr hM
+  let : Nonempty M := hM.1
+  let : M ⊨ T := hM.2.1
+  let : M ⊨ Tstar := (hMC.models_iff_isExistentiallyClosedAt hPi M).mpr hM
   let vA : Fin a → M := j ∘ eA.symm
   have hvA : vA ∘ eA = j := by
     funext x
@@ -155,8 +155,8 @@ theorem HasModelCompanion.exists_finite_bounded_obstruction_in_universe
       hPi hMC i
   refine ⟨n, ?_⟩
   intro M _ hM j hbad
-  letI : Nonempty M := hM.1
-  letI : M ⊨ T := hM.2.1
+  let : Nonempty M := hM.1
+  let : M ⊨ T := hM.2.1
   obtain ⟨C, hj, hgen, hbadC⟩ := hn M hM j hbad
   refine ⟨C, hj, ?_, hgen, hbadC⟩
   obtain ⟨s, _, heq⟩ := hgen

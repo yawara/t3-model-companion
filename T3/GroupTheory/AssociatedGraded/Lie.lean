@@ -158,7 +158,7 @@ theorem bracket_lof {i j : ℕ} (hi : 0 < i) (hj : 0 < j) (x : Layer G i) (y : L
     ⁅DirectSum.lof (ZMod 3) ℕ (Layer G) i x, DirectSum.lof (ZMod 3) ℕ (Layer G) j y⁆ =
       DirectSum.lof (ZMod 3) ℕ (Layer G) (i + j) (bracketLayer hi hj x y) := by
   by_cases hsum : 4 ≤ i + j
-  · haveI := layer_subsingleton_of_four_le (G := G) Fact.out hsum
+  · have := layer_subsingleton_of_four_le (G := G) Fact.out hsum
     have hz : bracketLayer hi hj x y = 0 := Subsingleton.elim _ _
     rw [hz, map_zero]
     by_cases hi1 : i = 1
@@ -247,7 +247,7 @@ Paper-ID: preliminaries.associated_graded_properties
 TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 1.
 -/
 theorem grade_eq_bot_of_four_le {n : ℕ} (hn : 4 ≤ n) : grade G n = ⊥ := by
-  haveI := layer_subsingleton_of_four_le (G := G) Fact.out hn
+  have := layer_subsingleton_of_four_le (G := G) Fact.out hn
   apply le_antisymm ?_ bot_le
   rintro x ⟨y, rfl⟩
   have hy : y = 0 := Subsingleton.elim _ _

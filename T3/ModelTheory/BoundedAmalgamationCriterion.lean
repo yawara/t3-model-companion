@@ -130,10 +130,10 @@ theorem isExistentiallyClosed_of_models_extensionTheory (hLF : T.IsLocallyFinite
   obtain ⟨k, hk⟩ := hφ.exists_bounded_finite_witnesses_formula
   obtain ⟨s, hs, htransfer⟩ := hk N (f ∘ x) hreal
   let A : L.Substructure M := Substructure.closure L (Set.range x)
-  letI : Finite A := hLF.finite_closure_range M x
+  let : Finite A := hLF.finite_closure_range M x
   let B : L.Substructure N := Substructure.closure L
     ((s : Set N) ∪ Set.range (f ∘ A.subtype))
-  letI : Finite B := hLF N _ (s.finite_toSet.union (Set.finite_range (f ∘ A.subtype)))
+  let : Finite B := hLF N _ (s.finite_toSet.union (Set.finite_range (f ∘ A.subtype)))
   have hmemB : ∀ a : A, f (a : M) ∈ B := fun a =>
     Substructure.subset_closure (Set.mem_union_right _ ⟨a, rfl⟩)
   let i : A ↪[L] B := (f.comp A.subtype).codRestrict B hmemB
@@ -177,7 +177,7 @@ theorem hasModelCompanion_of_boundedAmalgamationObstructions (hPi : T.IsPiTwo)
   let Tstar := T ∪ extensionTheory hLF bound
   refine ⟨Tstar, isModelCompanionOf_of_isExistentiallyClosed_iff hPi ?_ ?_⟩
   · intro M
-    letI : M ⊨ T := M.is_model.mono Set.subset_union_left
+    let : M ⊨ T := M.is_model.mono Set.subset_union_left
     exact isExistentiallyClosed_of_models_extensionTheory hLF bound (ModelType.of T M)
       (M.is_model.mono Set.subset_union_right)
   · intro M hM

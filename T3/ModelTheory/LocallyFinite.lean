@@ -72,7 +72,7 @@ theorem IsLocallyFinite.exists_finite_tupleQfDiagram [Finite L.Symbols]
       ∀ (N : Type w') [L.Structure N] (b : α → N),
         (∀ φ ∈ Δ, φ.Realize b) ↔ ∀ φ ∈ tupleQfDiagram (L := L) a, φ.Realize b := by
   classical
-  letI := hT.finite_closure_range M a
+  let := hT.finite_closure_range M a
   refine ⟨{finiteGeneratedDiagram (L := L) a}, ?_, ?_⟩
   · intro φ hφ
     obtain rfl := Finset.mem_singleton.mp hφ

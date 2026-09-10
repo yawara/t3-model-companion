@@ -50,9 +50,9 @@ theorem exists_group_embedding {N : Type*} {A : Type*} [Group N] [Group A] [Fini
     (r : A →* N) (hr : Function.Injective r) {α : Type*} [Finite α]
     (a : α → A) (b : α → M) (hab : r ∘ a = f ∘ b) :
     ∃ g : A →* M, Function.Injective g ∧ g ∘ a = b := by
-  letI : CompatibleGroup N := compatibleGroupOfGroup N
-  letI : CompatibleGroup A := compatibleGroupOfGroup A
-  letI : N ⊨ exponentThreeTheory := exponentThreeTheory_model_iff.mpr hN
+  let : CompatibleGroup N := compatibleGroupOfGroup N
+  let : CompatibleGroup A := compatibleGroupOfGroup A
+  let : N ⊨ exponentThreeTheory := exponentThreeTheory_model_iff.mpr hN
   obtain ⟨g, hg⟩ := hM.exists_embedding_over_tuple N
     (show M ↪[Language.group] N from embeddingOfInjectiveMonoidHom f hf) a b
     (show A ↪[Language.group] N from embeddingOfInjectiveMonoidHom r hr) hab
@@ -70,7 +70,7 @@ theorem exists_copy_of_tuples {N : Type*} [Group N] (hN : HasExponentThree N)
     ∃ (C : Subgroup N) (ha : ∀ i, f (a i) ∈ C) (_hb : ∀ j, b j ∈ C)
       (g : C →* M), Function.Injective g ∧ ∀ i, g ⟨f (a i), ha i⟩ = a i := by
   let C := Subgroup.closure (Set.range (f ∘ a) ∪ Set.range b)
-  letI : Finite C := finite_closure_of_exponent_three hN
+  let : Finite C := finite_closure_of_exponent_three hN
     ((Set.finite_range (f ∘ a)).union (Set.finite_range b))
   have ha : ∀ i, f (a i) ∈ C := fun i => Subgroup.subset_closure (Or.inl ⟨i, rfl⟩)
   have hb : ∀ j, b j ∈ C := fun j => Subgroup.subset_closure (Or.inr ⟨j, rfl⟩)
@@ -86,7 +86,7 @@ TeX: T3_modelcompanion_v4.tex, `proposition:structure of e.c. model`, use of Lem
 -/
 theorem nontrivial : Nontrivial M := by
   have hG : HasExponentThree M := exponentThreeTheory_model_iff.mp hM.2.1
-  letI : Finite (Free (Fin 2)) := finite_free_of_finite _
+  let : Finite (Free (Fin 2)) := finite_free_of_finite _
   obtain ⟨g, hg, _⟩ := exists_group_embedding hM
     (N := Coproduct M (Free (Fin 2))) Coproduct.pow_three Coproduct.inl
     (Coproduct.inl_injective hG) Coproduct.inr (Coproduct.inr_injective Free.pow_three)
@@ -215,8 +215,8 @@ TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1204–1208.
 theorem exists_triple_commutator_ne_one (a : M) (ha : a ∉ commutator M) :
     ∃ b c : M, ⁅⁅a, b⁆, c⁆ ≠ 1 := by
   have hG : HasExponentThree M := exponentThreeTheory_model_iff.mp hM.2.1
-  letI : Fact (HasExponentThree M) := ⟨hG⟩
-  letI : Nontrivial M := nontrivial hM
+  let : Fact (HasExponentThree M) := ⟨hG⟩
+  let : Nontrivial M := nontrivial hM
   let H := Coproduct M (Free (Fin 2))
   let a₁ : Layer M 1 := mk M 1 ⟨a, Subgroup.mem_top _⟩
   have ha₁ : a₁ ≠ 0 := fun h => ha ((mk_eq_zero M 1 _).mp h)
@@ -248,8 +248,8 @@ TeX: T3_modelcompanion_v4.tex, Proposition 4.11, line 1209.
 theorem exists_commutator_ne_one (a : M) (ha : a ∈ commutator M)
     (ha₃ : a ∉ (⊤ : Subgroup M).lowerCentralSeries 2) : ∃ b : M, ⁅a, b⁆ ≠ 1 := by
   have hG : HasExponentThree M := exponentThreeTheory_model_iff.mp hM.2.1
-  letI : Fact (HasExponentThree M) := ⟨hG⟩
-  letI : Nontrivial M := nontrivial hM
+  let : Fact (HasExponentThree M) := ⟨hG⟩
+  let : Nontrivial M := nontrivial hM
   let H := Coproduct M (Free (Fin 2))
   let a₂ : Layer M 2 := mk M 2 ⟨a, ha⟩
   have ha₂ : a₂ ≠ 0 := fun h => ha₃ ((mk_eq_zero M 2 _).mp h)

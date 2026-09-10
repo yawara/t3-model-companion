@@ -126,7 +126,7 @@ theorem cardinalRank_lt_aleph0_iff : cardinalRank G < Cardinal.aleph0 ↔ FG G :
     have hfin : s.Finite := Cardinal.lt_aleph0_iff_set_finite.mp (hcard.trans_lt h)
     exact fg_iff.mpr ⟨s, hs, hfin⟩
   · intro h
-    letI := h
+    let := h
     rw [cardinalRank_eq_rank]
     exact Cardinal.natCast_lt_aleph0
 

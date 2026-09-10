@@ -1,0 +1,359 @@
+{
+  "revision_redaction": "Historical T3 revision identifiers have been omitted for publication. Recorded commands, outcomes, and source hashes describe the original checks; this edited record does not certify the rewritten historical snapshots.",
+  "base_commit": "[historical revision omitted]",
+  "snapshot_at_utc": "2026-09-10T11:11:07.005475+00:00",
+  "diff_sha256": "05ab13677e496e4263a0ae86574b1f9a6df6023cc416ba1eb244197861450ead",
+  "reviewed_file_count": 40,
+  "reviewed_files": [
+    {
+      "path": "T3/GroupTheory/Amalgamation.lean",
+      "base_sha256": "1c0e2bc1cb884683904b346d0c1d5b3522ca7e8db235e993170eac84c97d1805",
+      "reviewed_sha256": "3bd8d8cbbd949614e888e6e8e6a382c5de226785c8d33d010c106084deb020dd",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/AssociatedGraded.lean",
+      "base_sha256": "e0e5fea2cf1119f6a38125e18d80b42c6ef7565f7689edfa089661ec67e78a6d",
+      "reviewed_sha256": "1055c71ca5b54881906da4e36dc10846be883b8cd2eb250307d44b37d18b5651",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/AssociatedGraded/Lie.lean",
+      "base_sha256": "2f90304d6230492d68c5d399f787eb72d80b411fd17f7edee6cc0db564871fe1",
+      "reviewed_sha256": "cc3b2107b53bcabe032a3c2ae88fe0fac09ae7a9b87daccb55de57443e294dc8",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/AssociatedGraded/Truncation.lean",
+      "base_sha256": "c20eae126b9f55fec64137745cc85a854c7f7393803f04ee74bcfa0a5d89ce9f",
+      "reviewed_sha256": "f267ab3a9368b9b4f11911ba881f3297986de38ad4e09c54ab52c109e5567720",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Coproduct/Basic.lean",
+      "base_sha256": "63926a8647dfd0174f1c11a42428a591bfd9a53356ef79dcad0f6b959be5eae6",
+      "reviewed_sha256": "d10026adc579c646e819685323f3621e6d9c8d4abd5db9fa367f749f00abc7e4",
+      "change_kind": "proof_reduction_or_helper",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Coproduct/Presentation.lean",
+      "base_sha256": "a00b899de30f5f1e3773222a690700f1fe75af07afe8aeaed1402abad3ab69e9",
+      "reviewed_sha256": "2f0fab05ce959e504c7a8b91c0b9e551af1dee59cd94176a7eb56af1a8d1dd19",
+      "change_kind": "proof_reduction_or_helper",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Free/Collection.lean",
+      "base_sha256": "f089e5c0072e78caeb6d33a49c219dae2e074774c474af384ad6134b221d80bb",
+      "reviewed_sha256": "a6d1dd2ac404f8a01393906cb0587d4d3a71dd630989a186e7e47f620c33cf5c",
+      "change_kind": "proof_reduction_or_helper",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Free/Examples.lean",
+      "base_sha256": "f1d3bdf6e37c1d3dd83c57472dcf5956c857d0d1c9b073e71b632dd61dcfe2e2",
+      "reviewed_sha256": "114360babe78293a7f1c450f1d73105b2587a62d9febb3e982708a2c18e02aac",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Free/FiniteSupport.lean",
+      "base_sha256": "f0342b5369e37ece886a1bb77e5993992ce1fce98de950856d31b9984fd6858d",
+      "reviewed_sha256": "feb4548cc7a6c69e4e458a51c72f5e80f3a6b9566b577a2ae194c9949d031257",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Free/Graded.lean",
+      "base_sha256": "9edfe259f921f80365cc024d1c85b72668cd55103b4b59d6f849a3928e52ffeb",
+      "reviewed_sha256": "ade0abf4157fde82a224c08430b340be7528309dbe803758e7b1a4d16a4b253c",
+      "change_kind": "proof_reduction_or_helper",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Free/NormalForm.lean",
+      "base_sha256": "32355e01d3513d9db541ed0ea16383d391613222d17592f04268b9f640dca19a",
+      "reviewed_sha256": "a7e4f2f3413b969f221b1add30d56511ac99edeaaf96587b50f210a126c22e36",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/GeneratorRank/Cardinal.lean",
+      "base_sha256": "bf0c7e67893827f1143c220eb8de0f76a9dcbdb654006d5636b2e3de2b15353c",
+      "reviewed_sha256": "de7434d70061d7d8e3fed92344956126505caf95981e90f9b5904c2fe217ec4c",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/GradedNormalClosure.lean",
+      "base_sha256": "3caba3bfe1f34db9a3d6d2ec1901cbd121481cee40465da5d51b50b493fc1201",
+      "reviewed_sha256": "05851793f66c8799456ecf975dc0f2862111878835fee35677dd4ade83085c58",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Notation.lean",
+      "base_sha256": "90060ebead68d5d69134ef25697800c29644e723aedba9ab42f35b3500950abc",
+      "reviewed_sha256": "ed10addcd9a6ae8bc43b39b2ac018b5fa37f5cf286955024efb19b6af80c2197",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Roots/CentralRelations.lean",
+      "base_sha256": "8fd6c3a2f6e4570c93f65e9651f375f256aa60ae1bb2d90a68255f15f8bb9aa3",
+      "reviewed_sha256": "f8f05e5bdc29c9e95ec654fb4387f0d74058ef6605c580ca5c042fa062a45ea9",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/GroupTheory/Roots/Triple.lean",
+      "base_sha256": "9f9a5a1a77f46cc3c828b2a3a5d291d8b9a09d0f691e53202f9b2a1b4d778540",
+      "reviewed_sha256": "2e645ed291aedd7736d71c2645c3775d3d7e4019c91af86335229987dd860ffc",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/LinearAlgebra/ExteriorTensor.lean",
+      "base_sha256": "bb9c8eca93bb394ede4da0374bc54e6b17a02f6913bccadc59218debf897ab89",
+      "reviewed_sha256": "6254c9205bbf8ea3de2d858bd20e09132c5e3b93e15681f8bfac30c82786ad15",
+      "change_kind": "proof_reduction_or_helper",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/Amalgamation.lean",
+      "base_sha256": "ae31d83b0e035cffcc75cab6cc52bf10b93695ec1770a7a5f1eb0710521a1d3b",
+      "reviewed_sha256": "176b1e852a996de04451b4a874a264871e942bb9a7c934ed55987708515c5d84",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/Amalgamation/Universes.lean",
+      "base_sha256": "80df78c5be65bde1e6d50dfdd2332229dd6edd4a46b469c99b9309d5f67dd72b",
+      "reviewed_sha256": "67fd693d47db7c30b1a5f48f8b64936a9f7edf75a307062eb3021eb366654fb9",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/BoundedAmalgamation.lean",
+      "base_sha256": "b7b4a209dcdc42d491f610272e49b0d87bef159d70221d9d5940735c219aa7fa",
+      "reviewed_sha256": "61dfc237e8970282ee09990f7162f1417dc19c16ed86ce9ce94e251665c92b95",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/BoundedAmalgamation/Universes.lean",
+      "base_sha256": "d420096d72849d656509f0437221e361ec5b3370c87434714f80da03fe9dc34c",
+      "reviewed_sha256": "851f604fbce60a05b3617a1b5be429a8ef75364b5cf87fe2d15d6d6ba0527c4a",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/BoundedAmalgamationCriterion.lean",
+      "base_sha256": "3955de8df0b78a3f72146fff1da1b66573e9153c6a03520b4d3a9708e8e79f33",
+      "reviewed_sha256": "c48b3ecbf8420f97cea825b49f1141782228eb921b9bd8fd58a500384ad1710f",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ElementaryReflection.lean",
+      "base_sha256": "998e7368c08b5be6202edb020f6c2a3e5396369a122416444f9dca3938eb3395",
+      "reviewed_sha256": "154902603e17ba4ee694a67eb63a8db9e16815aec37cf987c9d96ff72b773c79",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ExistentialClosedness.lean",
+      "base_sha256": "f839eb08900f9503e10f7d05c48c1e44ed2f17fb852e1780f4cf039fb11d13d8",
+      "reviewed_sha256": "7b5d894d1fd09704a39d1e678a9fd1044ae756eeb2d4e01758fe5efaf2c99379",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ExistentiallyClosedExtension.lean",
+      "base_sha256": "94de5d21c190b76ae8dcc0195e6bc43cc02a1d15a9a510830409427ead040ba1",
+      "reviewed_sha256": "3311658a588748c5abf8d6e6d7afb169e5f570de813b5bc9b0b0789cb7a0885d",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ExponentThree.lean",
+      "base_sha256": "29490bb8b4bb6a896ea52881bc219993a915ee446417b390899da6f06e1f226c",
+      "reviewed_sha256": "bcdb65b9e84eb85b47ce7b8879e49b47ad2d922fe0648625374f89c2412f4497",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/FiniteDiagram.lean",
+      "base_sha256": "c5a9626a2744cc577c4a2a2544187bb18ca09aae44e33cda1023ed7c48b2c696",
+      "reviewed_sha256": "af9b87dcfa97890633908348747ee34f8781be13a5e8176b7f18ee1e6a02e88b",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/FiniteObstructions.lean",
+      "base_sha256": "870df04a7544aff0b5e590e735416f1af8dbfbb429becd25557432c4c66f925b",
+      "reviewed_sha256": "a49aa54e9ec1c72dc3b10f90320572cc95c921fe32dddeef45c9245f9dc0de85",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/GroupAmalgamation.lean",
+      "base_sha256": "ca612e1baed6890b350d7a6f3b656179480521bb2479ac3f56c9be7524dbb5c2",
+      "reviewed_sha256": "c7a9a1ef7679b3c95541cc9b3bd5ea2f0121debbb81d2dfaf23e927ed668b6bc",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/Inductive.lean",
+      "base_sha256": "f9659d38f6404226dbb897a67b0812ad03de00e4bc947b119c1420f3be21b4c6",
+      "reviewed_sha256": "edb6b388e9cd7d83b0d13f1c395a8332a32988a77ad1763d63f3e2dbef35f6b3",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/LocallyFinite.lean",
+      "base_sha256": "d6466719db1b23a6db1abff4d455cdc2eab42cdc2bdce3c5f45481244f3b600d",
+      "reviewed_sha256": "8cd7efb41a81ef32642ed377f3416c8b71fa117d284b8f2aa8a4b5ff91d55f48",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/LocallyFinite/Universes.lean",
+      "base_sha256": "b6fae5668ea50d5b8cdf9ca013681c644d8eb2e37b0688a52cbda372682cc330",
+      "reviewed_sha256": "882bd9bb76613e67bf1caa5b179f3434ed1c0a8fe36e31c5adb1277b8bc4519a",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ModelCompanion.lean",
+      "base_sha256": "e0b8c8094433aab7979c30137218b7997a31fec9383b1e2caff9401aaabd55f8",
+      "reviewed_sha256": "93016f3ad754dc0c1d7b314fcb71905f87daee23e979a8a03f74e334ebc96902",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ModelCompanionCriterion.lean",
+      "base_sha256": "9d7bcbcc7958fb09145750de336e333345d37b3114d7634ff59035dc07717857",
+      "reviewed_sha256": "f134b0d3e3bde0f4d058945d7b23c36816e4fb665eb73e9b36e8694ab59d0555",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ModelCompleteness.lean",
+      "base_sha256": "2d070b0e634b97854f776f0706200a4dd8d0501788cdd657a5f129137e3b72ee",
+      "reviewed_sha256": "693321bae6ac6f0e68b3fdc3611b3499a5696db612de3c3e8542b2f22682c26a",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/ModelEmbeddings.lean",
+      "base_sha256": "e74d2f0ad757465b0fd5f48fd4ca5a88acc109a6f6ef6a9d9ab2c4937e8f3cf3",
+      "reviewed_sha256": "87ee3af272fad0fa68a6e17218fe9130bb24fe514bf851cf65364c9e480910a0",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/PiTwoDirectLimit.lean",
+      "base_sha256": "25fd4d770d12e145468d63ff0012777585313fccb4a3ab6033e5a108e15d08a0",
+      "reviewed_sha256": "ac152fe02d191c7f02d91e70087d88f01ed99ef2c7c402d680b4dd5a900ea3d9",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/RobinsonTest.lean",
+      "base_sha256": "1505ff9e64b82fc8d26d7579c228f62906c5ac6c9776433ca63a29940377c239",
+      "reviewed_sha256": "2c47ce80706d43bd815f59125ebb62dbc8db3957f7dfcff70848502153989b27",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/UniformLocalFiniteness.lean",
+      "base_sha256": "b85013f192e3c8ba400019785be965bfb5efb145de87a8b68bf99367dc0c1b31",
+      "reviewed_sha256": "4a564f09906b595b4a40634d420fcfeb87bbd5227fa8029b54289bf5833ba972",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    },
+    {
+      "path": "T3/ModelTheory/UniformLocalFiniteness/Universes.lean",
+      "base_sha256": "b987ec1d30c262e67e0dbca5cb66706728cd52e3331da08944e5ce0422f5aed8",
+      "reviewed_sha256": "fd6abec2623a2768273f15fc735ecb0a28633c95bcd32b9129b9b22ae446b39a",
+      "change_kind": "local_instance_syntax_only",
+      "attribution_and_paper_locators_unchanged": true
+    }
+  ],
+  "review_type": "Read-only source migration fidelity review, with complete unified diff manually read and source passages reviewed. No Lean invocation. Complements the separate build, lint and kernel audit.",
+  "findings": [],
+  "conclusions": {
+    "existing_declaration_statements_hypotheses_constants_unchanged": true,
+    "principal_constructions_and_proof_routes_preserved": true,
+    "paper_id_tex_source_copyright_author_lines_identical": true,
+    "local_instance_syntax_only_file_count": 35,
+    "explicit_reduction_or_typed_proof_file_count": 5,
+    "new_declarations": [
+      "private theorem appendOrderEmbedding_apply in T3/LinearAlgebra/ExteriorTensor.lean, proved by rfl"
+    ],
+    "no_new_assumptions_or_weakened_bounds": true,
+    "scope_limit": "Source migration delta only. The root agent must still complete full Lean build, lint, axiom audit, paper map checks and Comparator/NanoDa for this final snapshot."
+  },
+  "detailed_review": [
+    {
+      "file": "T3/GroupTheory/Coproduct/Basic.lean",
+      "assessment": "The generator identity for the same sumToCoproduct/coproductToSum inverse maps is discharged by definitional equality. Both maps and sumEquivCoproduct signature are unchanged."
+    },
+    {
+      "file": "T3/GroupTheory/Coproduct/Presentation.lean",
+      "assessment": "Explicit Free.lift_of on left/right sum generators proves the same factor restrictions. The projectionLeft calculation still applies identity on the left and the trivial homomorphism on the right; no relation subgroup, projection or filtration is changed."
+    },
+    {
+      "file": "T3/GroupTheory/Free/Collection.lean",
+      "assessment": "The explicit Pairwise Commute proof is derived from the existing IsMulCommutative G hypothesis. The map remains Subgroup.noncommPiCoprod on the same cyclic subgroups, with unchanged finite and 3^Nat.card J conclusions."
+    },
+    {
+      "file": "T3/GroupTheory/Free/Graded.lean",
+      "assessment": "The existing derived commutator is supplied explicitly to layerTwoEquiv_mk. Generator order, bracket convention and graded readout are unchanged."
+    },
+    {
+      "file": "T3/LinearAlgebra/ExteriorTensor.lean",
+      "assessment": "The private rfl lemma exposes the same Fin.append function of appendOrderEmbedding. Subsequent proofs use it instead of unfolding the OrderEmbedding constructor. Left-before-right ordering and exterior tensor construction are preserved."
+    }
+  ],
+  "source_passages_reviewed": [
+    {
+      "path": "T3_modelcompanion_v4.tex",
+      "lines": [
+        373,
+        376
+      ],
+      "item": "Fact 2.16, free group on disjoint union as coproduct"
+    },
+    {
+      "path": "T3_modelcompanion_v4.tex",
+      "lines": [
+        525,
+        533
+      ],
+      "item": "Fact 2.27, finite normal form and cardinal bound"
+    },
+    {
+      "path": "T3_modelcompanion_v4.tex",
+      "lines": [
+        550,
+        594
+      ],
+      "item": "Proposition 2.29, graded exterior algebra identification"
+    },
+    {
+      "path": "T3_modelcompanion_v4.tex",
+      "lines": [
+        843,
+        903
+      ],
+      "item": "Proposition 4.3, coproduct presentation and exterior tensor decomposition"
+    }
+  ]
+}

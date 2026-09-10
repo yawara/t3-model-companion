@@ -119,8 +119,8 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifi
 -/
 @[simp]
 theorem freeProjectionLeft_map_inl (x : Free I) :
-    freeProjectionLeft (Free.map (Sum.inl : I → I ⊕ J) x) = x := by
-  simp [freeProjectionLeft]
+    freeProjectionLeft (Free.map (Sum.inl : I → I ⊕ J) x) = x :=
+  liftFree_map_inl Free.pow_three (MonoidHom.id _) 1 x
 
 /-- The left projection kills the entire right free factor.
 
@@ -129,8 +129,8 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifi
 -/
 @[simp]
 theorem freeProjectionLeft_map_inr (x : Free J) :
-    freeProjectionLeft (Free.map (Sum.inr : J → I ⊕ J) x) = 1 := by
-  simp [freeProjectionLeft]
+    freeProjectionLeft (Free.map (Sum.inr : J → I ⊕ J) x) = 1 :=
+  liftFree_map_inr Free.pow_three (MonoidHom.id _) 1 x
 
 /-- The right projection kills the entire left free factor.
 
@@ -139,8 +139,8 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifi
 -/
 @[simp]
 theorem freeProjectionRight_map_inl (x : Free I) :
-    freeProjectionRight (Free.map (Sum.inl : I → I ⊕ J) x) = 1 := by
-  simp [freeProjectionRight]
+    freeProjectionRight (Free.map (Sum.inl : I → I ⊕ J) x) = 1 :=
+  liftFree_map_inl Free.pow_three 1 (MonoidHom.id _) x
 
 /-- The right projection is a retraction on the entire right free factor.
 
@@ -149,8 +149,8 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifi
 -/
 @[simp]
 theorem freeProjectionRight_map_inr (x : Free J) :
-    freeProjectionRight (Free.map (Sum.inr : J → I ⊕ J) x) = x := by
-  simp [freeProjectionRight]
+    freeProjectionRight (Free.map (Sum.inr : J → I ⊕ J) x) = x :=
+  liftFree_map_inr Free.pow_three 1 (MonoidHom.id _) x
 
 /-- The left projection and inclusion compose to the identity homomorphism.
 

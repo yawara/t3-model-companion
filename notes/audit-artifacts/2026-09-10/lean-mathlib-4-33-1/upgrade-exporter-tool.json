@@ -1,0 +1,13 @@
+{
+  "source_repository": "https://github.com/leanprover/lean4export",
+  "source_revision": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+  "source_tag": "v4.33.0",
+  "source_toolchain": "leanprover/lean4:v4.33.0",
+  "build_toolchain": "leanprover/lean4:v4.33.1",
+  "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "source_worktree_clean": true,
+  "build_command": "ELAN_TOOLCHAIN=leanprover/lean4:v4.33.1 lake build lean4export",
+  "build_exit_code": 0,
+  "binary_sha256": "805ab4cc6a88dcef109644d201c3142261f524aecaf58b04913a9f029e21e9b5",
+  "scope": "Exporter build only; Comparator and NanoDa replay are separate."
+}

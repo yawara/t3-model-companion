@@ -155,9 +155,9 @@ theorem isRealizable_of_forall_finite {M : Type (max u v)} [L.Structure M]
     choose pp hppS hppEq using hdata
     obtain ⟨N, g, hg⟩ := h (Set.range pp) (by rintro _ ⟨θ, rfl⟩; exact hppS θ) (Set.finite_range pp)
     -- Interpret the constants of `M` in `N` through the embedding.
-    letI : (constantsOn M).Structure (N : Type (max u v)) := constantsOn.structure ⇑g
+    let : (constantsOn M).Structure (N : Type (max u v)) := constantsOn.structure ⇑g
     have hcon : ∀ a : M, (L.con a : (N : Type (max u v))) = g a := fun _ => rfl
-    haveI hmodel : (N : Type (max u v)) ⊨ (↑Θ₀ : L[[M]].Theory) := by
+    have hmodel : (N : Type (max u v)) ⊨ (↑Θ₀ : L[[M]].Theory) := by
       rw [model_iff]
       intro θ hθ
       rcases hΘ₀ hθ with (h1 | h2) | h3
@@ -184,13 +184,13 @@ theorem isRealizable_of_forall_finite {M : Type (max u v)} [L.Structure M]
     exact Model.isSatisfiable (N : Type (max u v))
   obtain ⟨P0⟩ := hsat
   -- The `L`-reduct of the compactness model.
-  letI : L.Structure (P0 : Type (max u v)) := (L.lhomWithConstants M).reduct P0
-  haveI : (L.lhomWithConstants M).IsExpansionOn (P0 : Type (max u v)) :=
+  let : L.Structure (P0 : Type (max u v)) := (L.lhomWithConstants M).reduct P0
+  have : (L.lhomWithConstants M).IsExpansionOn (P0 : Type (max u v)) :=
     ⟨fun {_} _ _ => rfl, fun {_} _ _ => rfl⟩
-  haveI hPT : (P0 : Type (max u v)) ⊨ T :=
+  have hPT : (P0 : Type (max u v)) ⊨ T :=
     (LHom.onTheory_model _ _).1
       (P0.is_model.mono (Set.subset_union_left.trans Set.subset_union_left))
-  haveI hPqf : (P0 : Type (max u v)) ⊨ L.qfDiagram M :=
+  have hPqf : (P0 : Type (max u v)) ⊨ L.qfDiagram M :=
     P0.is_model.mono (Set.subset_union_right.trans Set.subset_union_left)
   refine ⟨ModelType.of T (P0 : Type (max u v)),
     (Embedding.ofModelsQfDiagram L M (P0 : Type (max u v))), ?_⟩
@@ -324,11 +324,11 @@ TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
 theorem exists_isExistentiallyClosed_embedding (hT : T.IsPiTwo) (M : T.ModelType.{u, v, max u v}) :
     ∃ N : T.ModelType.{u, v, max u v}, T.IsExistentiallyClosed (N : Type (max u v)) ∧
       Nonempty ((M : Type (max u v)) ↪[L] N) := by
-  haveI : ∀ n : ℕ, Nonempty (ecCarrier M n) := fun n => (ecTower M n).nonempty'
+  have : ∀ n : ℕ, Nonempty (ecCarrier M n) := fun n => (ecTower M n).nonempty'
   have hmodels : ∀ n : ℕ, (ecCarrier M n) ⊨ T := fun n => (ecTower M n).is_model
-  haveI hlim : DirectLimit (ecCarrier M) (DirectedSystem.natLERec (ecTransition M)) ⊨ T :=
+  have hlim : DirectLimit (ecCarrier M) (DirectedSystem.natLERec (ecTransition M)) ⊨ T :=
     DirectLimit.models_of_isPiTwo (DirectedSystem.natLERec (ecTransition M)) hT hmodels
-  haveI : Nonempty (DirectLimit (ecCarrier M) (DirectedSystem.natLERec (ecTransition M))) :=
+  have : Nonempty (DirectLimit (ecCarrier M) (DirectedSystem.natLERec (ecTransition M))) :=
     ⟨DirectLimit.of L ℕ (ecCarrier M) (DirectedSystem.natLERec (ecTransition M)) 0
       (Classical.arbitrary _)⟩
   refine ⟨ModelType.of T (DirectLimit (ecCarrier M) (DirectedSystem.natLERec (ecTransition M))),
@@ -392,7 +392,7 @@ theorem modelsEmbedInto_of_isExistentiallyClosed_models (hT : T.IsPiTwo)
     T.ModelsEmbedInto Tstar := by
   intro M
   obtain ⟨N, hec, ⟨e⟩⟩ := exists_isExistentiallyClosed_embedding hT M
-  haveI : (N : Type (max u v)) ⊨ Tstar := h N hec
+  have : (N : Type (max u v)) ⊨ Tstar := h N hec
   exact ⟨ModelType.of Tstar (N : Type (max u v)), ⟨e⟩⟩
 
 end Corollaries

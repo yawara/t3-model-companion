@@ -145,15 +145,17 @@ theorem finite_of_commuting_generators
     (x : J → G) (hpow : ∀ j, x j ^ 3 = 1)
     (hcomm : IsMulCommutative G)
     (hgen : Subgroup.closure (Set.range x) = ⊤) : Finite G := by
-  letI := Fintype.ofFinite J
-  letI : IsMulCommutative G := hcomm
+  let := Fintype.ofFinite J
+  let : IsMulCommutative G := hcomm
   let K : J → Subgroup G := fun j => Subgroup.zpowers (x j)
   have hfin (j : J) : (K j : Set G).Finite := by
     apply IsOfFinOrder.finite_zpowers
     exact isOfFinOrder_iff_pow_eq_one.mpr ⟨3, by omega, hpow j⟩
-  letI (j : J) : Finite (K j) := hfin j
-  let φ : (∀ j, K j) →* G :=
-    Subgroup.noncommPiCoprod fun _ _ _ a b _ _ => mul_comm' a b
+  let (j : J) : Finite (K j) := hfin j
+  have hcommK : Pairwise fun i j => ∀ a b : G, a ∈ K i → b ∈ K j → Commute a b := by
+    intro i j hij a b ha hb
+    exact (commute_iff_eq a b).2 (mul_comm' a b)
+  let φ : (∀ j, K j) →* G := Subgroup.noncommPiCoprod hcommK
   apply Finite.of_surjective φ
   rw [← MonoidHom.range_eq_top]
   dsimp only [φ]
@@ -175,15 +177,17 @@ theorem natCard_le_three_pow_of_commuting_generators
     (hcomm : IsMulCommutative G)
     (hgen : Subgroup.closure (Set.range x) = ⊤) :
     Nat.card G ≤ 3 ^ Nat.card J := by
-  letI := Fintype.ofFinite J
-  letI : IsMulCommutative G := hcomm
+  let := Fintype.ofFinite J
+  let : IsMulCommutative G := hcomm
   let K : J → Subgroup G := fun j => Subgroup.zpowers (x j)
   have hfin (j : J) : (K j : Set G).Finite := by
     apply IsOfFinOrder.finite_zpowers
     exact isOfFinOrder_iff_pow_eq_one.mpr ⟨3, by omega, hpow j⟩
-  letI (j : J) : Finite (K j) := hfin j
-  let φ : (∀ j, K j) →* G :=
-    Subgroup.noncommPiCoprod fun _ _ _ a b _ _ => mul_comm' a b
+  let (j : J) : Finite (K j) := hfin j
+  have hcommK : Pairwise fun i j => ∀ a b : G, a ∈ K i → b ∈ K j → Commute a b := by
+    intro i j hij a b ha hb
+    exact (commute_iff_eq a b).2 (mul_comm' a b)
+  let φ : (∀ j, K j) →* G := Subgroup.noncommPiCoprod hcommK
   have hφ : Function.Surjective φ := by
     rw [← MonoidHom.range_eq_top]
     dsimp only [φ]
@@ -927,7 +931,7 @@ Paper-ID: preliminaries.finite_normal_form
 TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 -/
 theorem finite_pairQuotient : Finite (PairQuotient (I := I)) := by
-  letI : Finite (IncreasingPair I) :=
+  let : Finite (IncreasingPair I) :=
     Finite.of_equiv (Set.powersetCard I 2) IncreasingPair.equivPowersetCard.symm
   apply finite_of_commuting_generators (x := increasingPairQuotient (I := I))
   · intro p
@@ -946,7 +950,7 @@ TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 -/
 theorem natCard_pairQuotient_le :
     Nat.card (PairQuotient (I := I)) ≤ 3 ^ (Nat.card I).choose 2 := by
-  letI : Finite (IncreasingPair I) :=
+  let : Finite (IncreasingPair I) :=
     Finite.of_equiv (Set.powersetCard I 2) IncreasingPair.equivPowersetCard.symm
   calc
     Nat.card (PairQuotient (I := I)) ≤ 3 ^ Nat.card (IncreasingPair I) := by
@@ -971,7 +975,7 @@ TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 theorem finite_lowerCentralSeries_two :
     Finite ((⊤ : Subgroup (Free I)).lowerCentralSeries 2) := by
   let K := increasingTripleClosure (I := I)
-  letI : Finite (IncreasingTriple I) :=
+  let : Finite (IncreasingTriple I) :=
     Finite.of_equiv (Set.powersetCard I 3) IncreasingTriple.equivPowersetCard.symm
   rw [lowerCentralSeries_two_eq_increasingTripleClosure]
   apply finite_of_commuting_generators
@@ -997,7 +1001,7 @@ theorem natCard_lowerCentralSeries_two_le :
     Nat.card ((⊤ : Subgroup (Free I)).lowerCentralSeries 2) ≤
       3 ^ (Nat.card I).choose 3 := by
   let K := increasingTripleClosure (I := I)
-  letI : Finite (IncreasingTriple I) :=
+  let : Finite (IncreasingTriple I) :=
     Finite.of_equiv (Set.powersetCard I 3) IncreasingTriple.equivPowersetCard.symm
   rw [lowerCentralSeries_two_eq_increasingTripleClosure]
   calc
@@ -1029,7 +1033,7 @@ theorem finite_gammaThreeInDerived : Finite (GammaThreeInDerived (I := I)) := by
         commutator (Free I) :=
     (⊤ : Subgroup (Free I)).lowerCentralSeries_antitone
       (show 1 ≤ 2 by omega)
-  letI : Finite ((⊤ : Subgroup (Free I)).lowerCentralSeries 2) :=
+  let : Finite ((⊤ : Subgroup (Free I)).lowerCentralSeries 2) :=
     finite_lowerCentralSeries_two
   exact Finite.of_equiv
     ((⊤ : Subgroup (Free I)).lowerCentralSeries 2)
@@ -1041,8 +1045,8 @@ Paper-ID: preliminaries.finite_normal_form
 TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 -/
 theorem finite_derived : Finite (Derived (I := I)) := by
-  letI : Finite (GammaThreeInDerived (I := I)) := finite_gammaThreeInDerived
-  letI : Finite (PairQuotient (I := I)) := finite_pairQuotient
+  let : Finite (GammaThreeInDerived (I := I)) := finite_gammaThreeInDerived
+  let : Finite (PairQuotient (I := I)) := finite_pairQuotient
   exact Finite.of_subgroup_quotient (GammaThreeInDerived (I := I))
 
 /-- The derived subgroup has the expected collected-form upper bound.
@@ -1077,8 +1081,8 @@ Paper-ID: preliminaries.finite_normal_form
 TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
 -/
 theorem finite : Finite (Free I) := by
-  letI : Finite (Derived (I := I)) := finite_derived
-  letI : Finite (Free I ⧸ commutator (Free I)) :=
+  let : Finite (Derived (I := I)) := finite_derived
+  let : Finite (Free I ⧸ commutator (Free I)) :=
     finite_abelianization (of : I → Free I) pow_three closure_range_of
   exact Finite.of_subgroup_quotient (commutator (Free I))
 

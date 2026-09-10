@@ -153,7 +153,7 @@ TeX: T3_modelcompanion_v4.tex, Fact 2.27 and its application to local finiteness
 -/
 theorem finite_free_of_finite (I : Type*) [Finite I] : Finite (Free I) := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
   exact Free.finite
 
 /-- Every finitely generated subgroup of an exponent-three group is finite, via the image
@@ -164,8 +164,8 @@ TeX: T3_modelcompanion_v4.tex, Definition 2.4 and the finite free-group theorem,
 -/
 theorem finite_closure_of_exponent_three {G : Type*} [Group G] (hG : HasExponentThree G)
     {s : Set G} (hs : s.Finite) : Finite (Subgroup.closure s) := by
-  letI : Finite s := hs.to_subtype
-  letI : Finite (Free s) := finite_free_of_finite s
+  let : Finite s := hs.to_subtype
+  let : Finite (Free s) := finite_free_of_finite s
   let f : Free s →* G := Free.lift hG Subtype.val
   have hcoe : f ∘ Free.of = (Subtype.val : s → G) :=
     funext fun z => Free.lift_of hG Subtype.val z
@@ -184,11 +184,11 @@ TeX: T3_modelcompanion_v4.tex, Definition 2.4 and the application of Fact 2.6, l
 theorem finite_substructure_closure_of_model_exponentThreeTheory
     {M : Type*} [Language.group.Structure M] [hM : M ⊨ exponentThreeTheory]
     {s : Set M} (hs : s.Finite) : Finite (Substructure.closure Language.group s) := by
-  letI : M ⊨ Theory.group := hM.mono (fun _ h => Set.mem_insert_of_mem _ h)
-  letI : Group M := FirstOrder.Group.groupOfModelGroup M
-  letI : FirstOrder.Group.CompatibleGroup M := FirstOrder.Group.compatibleGroupOfGroupStructure M
+  let : M ⊨ Theory.group := hM.mono (fun _ h => Set.mem_insert_of_mem _ h)
+  let : Group M := FirstOrder.Group.groupOfModelGroup M
+  let : FirstOrder.Group.CompatibleGroup M := FirstOrder.Group.compatibleGroupOfGroupStructure M
   have hpow : HasExponentThree M := exponentThreeTheory_model_iff.mp hM
-  letI : Finite (Subgroup.closure s) := finite_closure_of_exponent_three hpow hs
+  let : Finite (Subgroup.closure s) := finite_closure_of_exponent_three hpow hs
   exact Finite.of_equiv (Subgroup.closure s)
     (Equiv.setCongr (FirstOrder.Group.coe_substructure_closure_eq s)).symm
 

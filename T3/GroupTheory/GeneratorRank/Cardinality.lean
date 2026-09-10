@@ -65,8 +65,8 @@ TeX: T3_modelcompanion_v4.tex, `thm:main`, the rank and order comparison on line
 private theorem finite_of_fg : Finite G := by
   classical
   obtain ⟨s, _, hs⟩ := Group.rank_spec G
-  letI : LinearOrder s := linearOrderOfSTO WellOrderingRel
-  letI : Finite (Free s) := Free.finite
+  let : LinearOrder s := linearOrderOfSTO WellOrderingRel
+  let : Finite (Free s) := Free.finite
   have hsur := Free.lift_surjective_of_generating_family (Subtype.val : s → G)
     (by simpa using hs)
   exact Finite.of_surjective _ hsur
@@ -77,7 +77,7 @@ Paper-ID: main.bounded_witness
 TeX: T3_modelcompanion_v4.tex, `thm:main`, the rank and order comparison on lines 730–733.
 -/
 theorem three_pow_rank_le_natCard : 3 ^ Group.rank G ≤ Nat.card G := by
-  letI : Finite G := finite_of_fg
+  let : Finite G := finite_of_fg
   have hsur : Function.Surjective (fun x : G => mk G 1 ⟨x, Subgroup.mem_top _⟩) := by
     intro y
     obtain ⟨x, rfl⟩ := mk_surjective G 1 y
@@ -96,8 +96,8 @@ theorem natCard_le_three_pow_freeOrderExponent_rank :
     Nat.card G ≤ 3 ^ freeOrderExponent (Group.rank G) := by
   classical
   obtain ⟨s, hcard, hs⟩ := Group.rank_spec G
-  letI : LinearOrder s := linearOrderOfSTO WellOrderingRel
-  letI : Finite (Free s) := Free.finite
+  let : LinearOrder s := linearOrderOfSTO WellOrderingRel
+  let : Finite (Free s) := Free.finite
   have hsur := Free.lift_surjective_of_generating_family (Subtype.val : s → G)
     (by simpa using hs)
   have h := Nat.card_le_card_of_surjective _ hsur
@@ -143,9 +143,9 @@ TeX: T3_modelcompanion_v4.tex, `thm:main`, the rank and order comparison on line
 theorem rank_le_freeOrderExponent_of_injective [Group.FG A] [Group.FG B]
     (hB : HasExponentThree B) (f : A →* B) (hf : Function.Injective f)
     {m : ℕ} (hBm : Group.rank B ≤ m) : Group.rank A ≤ freeOrderExponent m := by
-  letI : Fact (HasExponentThree B) := ⟨hB⟩
-  letI : Finite B := finite_of_fg
-  letI : Fact (HasExponentThree A) := ⟨fun a => hf (by rw [map_pow, hB, map_one])⟩
+  let : Fact (HasExponentThree B) := ⟨hB⟩
+  let : Finite B := finite_of_fg
+  let : Fact (HasExponentThree A) := ⟨fun a => hf (by rw [map_pow, hB, map_one])⟩
   exact rank_le_log_three_natCard.trans ((Nat.log_mono_right
     (Nat.card_le_card_of_injective f hf)).trans
       (log_three_natCard_le_freeOrderExponent_rank.trans (monotone_freeOrderExponent hBm)))
@@ -161,9 +161,9 @@ theorem exists_fg_and_rank_le_freeOrderExponent_of_injective [Group.FG B]
     (hB : HasExponentThree B) (f : A →* B) (hf : Function.Injective f)
     {m : ℕ} (hBm : Group.rank B ≤ m) :
     ∃ hA : Group.FG A, letI := hA; Group.rank A ≤ freeOrderExponent m := by
-  letI : Fact (HasExponentThree B) := ⟨hB⟩
-  letI : Finite B := finite_of_fg
-  letI : Finite A := Finite.of_injective f hf
+  let : Fact (HasExponentThree B) := ⟨hB⟩
+  let : Finite B := finite_of_fg
+  let : Finite A := Finite.of_injective f hf
   exact ⟨inferInstance, rank_le_freeOrderExponent_of_injective hB f hf hBm⟩
 
 end T3

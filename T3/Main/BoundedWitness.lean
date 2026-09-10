@@ -76,7 +76,7 @@ private theorem exists_strict_support {M : Type*} [Group M] [CompatibleGroup M]
     exact Finset.mem_union_left _ (Finset.mem_union_right _ (Finset.mem_image_of_mem _ ha))
   obtain ⟨D, hD, hCD, hbound, _, hstrict⟩ := exists_strict_envelope hM C
     ((Subgroup.rank_closure_finset_le_card S).trans hS)
-  letI : Group.FG D := hD
+  let : Group.FG D := hD
   have hSD : (↑S : Set M) ⊆ D := fun _ hx => hCD (Subgroup.subset_closure hx)
   have hAD : A ≤ D := hAC.trans hCD
   refine ⟨D, hD, hAD, (fun z hz => hSD (Finset.mem_union_right _ hz)), hbound, hstrict, ?_⟩
@@ -119,8 +119,8 @@ theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [Compatible
       Group.rank D ≤ witnessBound m ∧
         ¬ Amalgamation.AmalgamableOver (Subgroup.inclusion hAD) j := by
   classical
-  letI : Fact (HasExponentThree M) := ⟨exponentThreeTheory_model_iff.mp hM.2.1⟩
-  letI : Fact (HasExponentThree B) := ⟨hB⟩
+  let : Fact (HasExponentThree M) := ⟨exponentThreeTheory_model_iff.mp hM.2.1⟩
+  let : Fact (HasExponentThree B) := ⟨hB⟩
   obtain ⟨s, hcard, hs⟩ := Group.rank_spec A
   have hgen : Subgroup.closure (Set.range (Subtype.val : s → A)) = ⊤ := by simpa using hs
   have hn : s.card ≤ freeOrderExponent m :=
@@ -130,7 +130,7 @@ theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [Compatible
   · obtain ⟨x, hx, hmem⟩ := hleft
     obtain ⟨D, hD, hAD, hXD, hbound, hstrict, hcert⟩ :=
       exists_strict_support hM A j hBm s hs hn hmem {x} (by simp)
-    letI : Group.FG D := hD
+    let : Group.FG D := hD
     have hxD : x ∈ D := hXD (Finset.mem_singleton_self x)
     let Φ := Coproduct.map D.subtype (MonoidHom.id B)
     have hΦ : Function.Injective Φ := Coproduct.map_injective_of_strict D hstrict
@@ -149,7 +149,7 @@ theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [Compatible
   · obtain ⟨x, hx, hmem⟩ := hright
     obtain ⟨D, hD, hAD, _, hbound, hstrict, hcert⟩ :=
       exists_strict_support hM A j hBm s hs hn hmem ∅ (by simp)
-    letI : Group.FG D := hD
+    let : Group.FG D := hD
     let Φ := Coproduct.map D.subtype (MonoidHom.id B)
     have hΦ : Function.Injective Φ := Coproduct.map_injective_of_strict D hstrict
     have hpull := Support.mem_normalClosure_of_mem_normalClosureIn Φ hΦ Φ.range le_rfl

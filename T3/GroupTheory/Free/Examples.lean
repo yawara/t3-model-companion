@@ -69,7 +69,7 @@ TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 3
 theorem not_isMulCommutative_upperCentralSeries_two_fin_two :
     ¬ IsMulCommutative (Subgroup.upperCentralSeries (Free (Fin 2)) 2) := by
   intro h
-  letI := h
+  let := h
   apply commutator_of_ne_one (show (0 : Fin 2) ≠ 1 by decide)
   rw [commutatorElement_eq_one_iff_mul_comm]
   apply setLike_mul_comm (s := Subgroup.upperCentralSeries (Free (Fin 2)) 2)

@@ -122,7 +122,7 @@ TeX: T3_modelcompanion_v4.tex, `proposition:lift`, induced abelianization isomor
 -/
 theorem mapLayer_lift_bijective_of_basis : Function.Bijective (mapLayer (lift hG a) 1) := by
   classical
-  letI : LinearOrder I := linearOrderOfSTO WellOrderingRel
+  let : LinearOrder I := linearOrderOfSTO WellOrderingRel
   let e : Layer (Free I) 1 ≃ₗ[ZMod 3] Layer G 1 := layerOneEquiv.trans b.repr.symm
   have he : mapLayer (lift hG a) 1 = e.toLinearMap := by
     apply (Basis.ofRepr (layerOneEquiv (I := I))).ext
@@ -136,7 +136,7 @@ theorem mapLayer_lift_bijective_of_basis : Function.Bijective (mapLayer (lift hG
     change mk G 1 ⟨lift hG a (of i), _⟩ =
       b.repr.symm (layerOneEquiv (mk (Free I) 1 ⟨of i, Subgroup.mem_top _⟩))
     rw [layerOneEquiv_of, Basis.repr_symm_single_one]
-    simpa only [lift_of] using ha i
+    simpa only [lift_of hG a i] using ha i
   rw [he]
   exact e.bijective
 

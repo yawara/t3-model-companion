@@ -1,0 +1,85 @@
+{
+  "checked_at_utc": "2026-09-10T11:06:36.171600+00:00",
+  "scope": "Independent minimal Challenge literate extraction and raw HTML rendering; verifies Verso source/toolchain compatibility, not project Challenge rendering, Palomar sandbox, sanitization, editorial review, submission, or registration.",
+  "status": "passed",
+  "upstream_renderer_commit": "ef2fa1eadcb246c2346ddba39b52eaa53d4bb763",
+  "verso_commit": "3bdedf29bada13d8103e6c979001c51dcee210c8",
+  "verso_source_toolchain": "leanprover/lean4:v4.33.0",
+  "build_toolchain": "leanprover/lean4:v4.33.1",
+  "build_lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "commands": [
+    {
+      "command": "ELAN_TOOLCHAIN=leanprover/lean4:v4.33.1 lake update",
+      "exit_code": 0,
+      "log": "setup.log",
+      "notes": "Initial dependency setup emitted the existing subverso missing-manifest warning."
+    },
+    {
+      "command": "ELAN_TOOLCHAIN=leanprover/lean4:v4.33.1 lake build Challenge:literate",
+      "exit_code": 0,
+      "log": "literate.log",
+      "warning_count": 0,
+      "error_count": 0
+    },
+    {
+      "command": "ELAN_TOOLCHAIN=leanprover/lean4:v4.33.1 lake exe verso-html .lake/build/literate render-raw",
+      "exit_code": 0,
+      "log": "html.log",
+      "warning_count": 0,
+      "error_count": 0
+    }
+  ],
+  "pinned_dependencies": {
+    "verso": {
+      "url": "https://github.com/leanprover/verso.git",
+      "rev": "3bdedf29bada13d8103e6c979001c51dcee210c8"
+    },
+    "illuminate": {
+      "url": "https://github.com/leanprover/illuminate",
+      "rev": "6bc815869cba1f19515715dc6b47795acd521f1c"
+    },
+    "plausible": {
+      "url": "https://github.com/leanprover-community/plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb"
+    },
+    "MD4Lean": {
+      "url": "https://github.com/acmepjz/md4lean",
+      "rev": "31907cc18f48a95384f99cee5582c00fb39e0f67"
+    },
+    "subverso": {
+      "url": "https://github.com/leanprover/subverso",
+      "rev": "3a75ede05278806fd3249bb0c97a6fb5777a4f7d"
+    }
+  },
+  "project_manifest_overlap": [
+    {
+      "name": "plausible",
+      "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "url": "https://github.com/leanprover-community/plausible"
+    }
+  ],
+  "input_sha256": {
+    "Challenge.lean": "60a828aa347957d71c0e2c0cb7cd2e70596dec24fe15625f0e44acda5f6903f2",
+    "lakefile.toml": "ac3d84d964f763988740db69581a74ca1c052724d4efa4ecf78709a645241501",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "9487f62d3193003649d6ee185afcd8b3b87730b9f594313b1c7bb7a1d277b4bf"
+  },
+  "output_sha256": {
+    ".lake/build/literate/Challenge.json": "b014d9d7366a48a9b4aec6cd6aa7d6e98ed1757094b227e83a6158acee1ea2b5",
+    "render-raw/Challenge/index.html": "bbb74afb62f549e353349a6e3be51f56a986be56af3a56c168d36fd3ff90d48c",
+    "setup.log": "356bdb4b8b2db4dcf718ecbfa06911a62c02a26615d8df844847859f5d6803d5",
+    "literate.log": "337430c9330327590f4860701b342a93480910675008e1f86844b0be55348938",
+    "html.log": "8ba5083a4be39f35261dbd481161e93c16db5b8aba15ff88acf21a1e0d5d9ee3"
+  },
+  "rendered_file_count": 30,
+  "theorem_name_present_in_html": true,
+  "archived_files": {
+    "setup.log": "verso-setup.log",
+    "literate.log": "verso-literate.log",
+    "html.log": "verso-html.log",
+    "Challenge.lean": "verso-smoke-Challenge.lean.txt",
+    "lakefile.toml": "verso-smoke-lakefile.toml.txt",
+    "lean-toolchain": "verso-smoke-lean-toolchain.txt",
+    "lake-manifest.json": "verso-smoke-lake-manifest.json.txt"
+  }
+}

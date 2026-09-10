@@ -122,7 +122,9 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, free factor uni
 theorem liftFree_map_inl (hH : HasExponentThree H) (f₀ : Free I →* H) (f₁ : Free J →* H)
     (x : Free I) : liftFree hH f₀ f₁ (Free.map Sum.inl x) = f₀ x :=
   DFunLike.congr_fun (show (liftFree hH f₀ f₁).comp (Free.map Sum.inl) = f₀ from
-    Free.hom_ext fun i => by simp [liftFree]) x
+    Free.hom_ext fun i => by
+      change Free.lift hH _ (Free.of (Sum.inl i)) = f₀ (Free.of i)
+      exact Free.lift_of hH _ (Sum.inl i)) x
 
 /-- The combination restricts to the specified map on the right free factor.
 
@@ -132,7 +134,9 @@ TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, free factor uni
 theorem liftFree_map_inr (hH : HasExponentThree H) (f₀ : Free I →* H) (f₁ : Free J →* H)
     (x : Free J) : liftFree hH f₀ f₁ (Free.map Sum.inr x) = f₁ x :=
   DFunLike.congr_fun (show (liftFree hH f₀ f₁).comp (Free.map Sum.inr) = f₁ from
-    Free.hom_ext fun j => by simp [liftFree]) x
+    Free.hom_ext fun j => by
+      change Free.lift hH _ (Free.of (Sum.inr j)) = f₁ (Free.of j)
+      exact Free.lift_of hH _ (Sum.inr j)) x
 
 /-- Killing both factor relations kills their normal closure in the combined free group.
 
@@ -518,7 +522,15 @@ theorem relationSubgroup_inf_term (h₀ : K₀ ≤ commutator (Free I))
     have ha' : a ∈ AssociatedGraded.term (Free I) n := by
       have h := (AssociatedGraded.termMap (projectionLeft (I := I) (J := J)) n
         ⟨Free.map Sum.inl a * Free.map Sum.inr b, hx.2⟩).property
-      simpa [projectionLeft, map_mul] using h
+      change projectionLeft (Free.map Sum.inl a * Free.map Sum.inr b) ∈
+        AssociatedGraded.term (Free I) n at h
+      rw [map_mul] at h
+      change liftFree Free.pow_three (MonoidHom.id _) 1 (Free.map Sum.inl a) *
+        liftFree Free.pow_three (MonoidHom.id _) 1 (Free.map Sum.inr b) ∈
+        AssociatedGraded.term (Free I) n at h
+      rw [liftFree_map_inl Free.pow_three (MonoidHom.id _) (1 : Free J →* Free I) a,
+        liftFree_map_inr Free.pow_three (MonoidHom.id _) (1 : Free J →* Free I) b] at h
+      simpa using h
     have hal : Free.map (Sum.inl : I → I ⊕ J) a ∈
         AssociatedGraded.term (Free (I ⊕ J)) n :=
       (AssociatedGraded.termMap (Free.map Sum.inl) n ⟨a, ha'⟩).property

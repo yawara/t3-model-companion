@@ -171,7 +171,7 @@ TeX: T3_modelcompanion_v4.tex, one inclusion in Fact 2.3, lines 195–201; no la
 theorem IsModelCompanionOf.isExistentiallyClosed_of_isPiTwo (hT : T.IsPiTwo)
     (h : T'.IsModelCompanionOf T) (M : T'.ModelType.{u, v, max u v}) :
     T.IsExistentiallyClosed M := by
-  letI : M ⊨ T := h.models_of_isPiTwo hT M
+  let : M ⊨ T := h.models_of_isPiTwo hT M
   exact h.isExistentiallyClosed_of_models M
 
 /-- An existentially closed model of a Pi-two theory satisfies every axiom of its model
@@ -184,10 +184,10 @@ TeX: T3_modelcompanion_v4.tex, converse class inclusion in Fact 2.3, lines 195�
 theorem IsExistentiallyClosed.models_of_isModelCompanionOf (hT : T.IsPiTwo)
     (h : T'.IsModelCompanionOf T) {M : Type (max u v)} [L.Structure M]
     (hM : T.IsExistentiallyClosed M) : M ⊨ T' := by
-  letI : Nonempty M := hM.1
-  letI : M ⊨ T := hM.2.1
+  let : Nonempty M := hM.1
+  let : M ⊨ T := hM.2.1
   obtain ⟨N, ⟨f⟩⟩ := h.isCompanion.2 (ModelType.of T M)
-  letI : N ⊨ T := h.models_of_isPiTwo hT N
+  let : N ⊨ T := h.models_of_isPiTwo hT N
   obtain ⟨e, _⟩ := IsModelComplete.exists_elementaryEmbedding_of_existential_reflection
     h.isModelComplete N f (fun φ a hφ hN => hM.2.2 (ModelType.of T N) f φ a hφ hN)
   exact (e.theory_model_iff T').mpr N.is_model
