@@ -1,0 +1,19 @@
+{
+  "baseline_snapshot": "notes/audit-artifacts/2026-09-10/palomar-preparation/checks.json",
+  "changed_inputs": [
+    "Challenge.lean"
+  ],
+  "unchanged_input_count": 133,
+  "source_locator_corrections": {
+    "freeOrderExponent": {
+      "before": 732,
+      "after": 730
+    },
+    "witnessBound": {
+      "before": 734,
+      "after": 732
+    }
+  },
+  "lean_code_unchanged_after_removing_comments": true,
+  "mathematical_source_revision": "305b6338d4129eb20885ccb54e9b994451a2eba3b479aaf41c3508f55135fccc"
+}

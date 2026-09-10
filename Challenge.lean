@@ -230,7 +230,7 @@ abbrev exponentThreeTheory : Language.group.Theory := exponentGroupTheory 3
 
 /-- The exponent `t(n)` in the order of the free exponent-three group.
 Paper-ID: preliminaries.finite_normal_form;
-TeX: `fact:Levi and van der Waerden`, Fact 2.27, and line 732.
+TeX: `fact:Levi and van der Waerden`, Fact 2.27, and line 730.
 -/
 def freeOrderExponent (n : ℕ) : ℕ := n + n.choose 2 + n.choose 3
 
@@ -241,7 +241,7 @@ TeX: `proposition:bdd LCS`, Proposition 4.12, lines 1212–1218.
 def strictEnvelopeBound (n : ℕ) : ℕ := 15 * n ^ 2
 
 /-- The explicit bound `f(m) = f₀((3m + 4)t(m) + 1)`.
-Paper-ID: main.bounded_witness; TeX: `thm:main`, line 734.
+Paper-ID: main.bounded_witness; TeX: `thm:main`, line 732.
 -/
 def witnessBound (m : ℕ) : ℕ := strictEnvelopeBound ((3 * m + 4) * freeOrderExponent m + 1)
 

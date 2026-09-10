@@ -1,0 +1,26 @@
+From https://github.com/leanprover/lean4export
+ * branch            86e4a339507466921dc8c5417c8cb1de1ce7df60 -> FETCH_HEAD
+HEAD is now at 86e4a33 chore: bump toolchain to v4.32.2
+From https://github.com/leanprover/comparator
+ * branch            575674928e239f5bc452aab72d1dd7b0f1326494 -> FETCH_HEAD
+HEAD is now at 5756749 Merge pull request #75 from leanprover/hbv/multikernel
+From https://github.com/robsimmons/nanoda_lib
+ * branch            68d5ca9db226849b41a6fff59d796ff19d0a8840 -> FETCH_HEAD
+HEAD is now at 68d5ca9 chore: even more misc. bounds checks
+Build completed successfully (15 jobs).
+Build completed successfully (6 jobs).
+    Finished `release` profile [optimized] target(s) in 0.04s
+Building Challenge
+⚠ [1107/1108] Built Challenge (757ms)
+warning: Challenge.lean:267:8: declaration uses `sorry`
+warning: Challenge.lean:281:8: declaration uses `sorry`
+Build completed successfully (1108 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge
+Building Solution
+Build completed successfully (2043 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

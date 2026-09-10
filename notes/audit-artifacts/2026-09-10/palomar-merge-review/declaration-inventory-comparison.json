@@ -1,0 +1,7 @@
+{
+  "current_manifest_sha256": "2891d26109e8e0c430653759f210359ec9f9d414b100b143781d98f441ce15e2",
+  "identical_to": "notes/audit-artifacts/2026-09-10/palomar-preparation/declarations.json",
+  "byte_identical": true,
+  "declarations": 2972,
+  "modules": 110
+}
