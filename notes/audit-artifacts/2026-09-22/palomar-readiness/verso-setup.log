@@ -1,0 +1,16 @@
+info: PalomarVersoCompatibilityCheck434: no previous manifest, creating one from scratch
+info: verso: cloning https://github.com/leanprover/verso.git
+info: verso: checking out revision 'cad4b633e75ea769b851f12f9ca3b4f0dfcc625f'
+info: toolchain not updated; already up-to-date
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision 'e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204'
+info: illuminate: cloning https://github.com/leanprover/illuminate
+info: illuminate: checking out revision 'a1a61c9678da010e958ed24cdfa6f635b85f172a'
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '118aa17ee84656b8bd727fef7c458ee8c833385c'
+info: MD4Lean: cloning https://github.com/acmepjz/md4lean
+info: MD4Lean: checking out revision '31907cc18f48a95384f99cee5582c00fb39e0f67'
+info: subverso: cloning https://github.com/leanprover/subverso
+info: subverso: checking out revision '9b90b7f938d6169246325df002351014f49945ef'
+warning: subverso: ignoring missing manifest:
+  /home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/.lake/packages/subverso/lake-manifest.json

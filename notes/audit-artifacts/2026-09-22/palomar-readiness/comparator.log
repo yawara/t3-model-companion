@@ -1,0 +1,33 @@
+From https://github.com/leanprover/lean4export
+ * branch            076e8e57707e813375e8f9da8bf989799ace9680 -> FETCH_HEAD
+Previous HEAD position was 15f6055 chore: bump toolchain to v4.33.0 (#44)
+HEAD is now at 076e8e5 chore: bump toolchain to v4.34.0 (#49)
+Building lean4export source leanprover/lean4:v4.34.0 with leanprover/lean4:v4.34.0
+From https://github.com/leanprover/comparator
+ * branch            575674928e239f5bc452aab72d1dd7b0f1326494 -> FETCH_HEAD
+HEAD is now at 5756749 Merge pull request #75 from leanprover/hbv/multikernel
+From https://github.com/robsimmons/nanoda_lib
+ * branch            68d5ca9db226849b41a6fff59d796ff19d0a8840 -> FETCH_HEAD
+HEAD is now at 68d5ca9 chore: even more misc. bounds checks
+Build completed successfully (15 jobs).
+✔ [2/6] Built Export (1.3s)
+✔ [3/6] Built Main (559ms)
+✔ [4/6] Built Main:c.o (129ms)
+✔ [5/6] Built Export:c.o (1.6s)
+✔ [6/6] Built lean4export:exe (541ms)
+Build completed successfully (6 jobs).
+    Finished `release` profile [optimized] target(s) in 0.07s
+Building Challenge
+⚠ [1121/1122] Built Challenge (797ms)
+warning: Challenge.lean:267:8: declaration uses `sorry`
+warning: Challenge.lean:281:8: declaration uses `sorry`
+Build completed successfully (1122 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge
+Building Solution
+Build completed successfully (2073 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

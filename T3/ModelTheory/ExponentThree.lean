@@ -190,7 +190,7 @@ theorem finite_substructure_closure_of_model_exponentThreeTheory
   have hpow : HasExponentThree M := exponentThreeTheory_model_iff.mp hM
   let : Finite (Subgroup.closure s) := finite_closure_of_exponent_three hpow hs
   exact Finite.of_equiv (Subgroup.closure s)
-    (Equiv.setCongr (FirstOrder.Group.coe_substructure_closure_eq s)).symm
+    (Set.equivOfEq (FirstOrder.Group.coe_substructure_closure_eq s)).symm
 
 /-- The theory `T₃` is locally finite in the first-order sense. This provides the remaining
 hypothesis for applying the general bounded-amalgamation criterion.

@@ -937,7 +937,7 @@ theorem finite_pairQuotient : Finite (PairQuotient (I := I)) := by
   · intro p
     exact pow_three_quotient (GammaThreeInDerived (I := I))
       (fun d : Derived (I := I) => Subtype.ext (pow_three d.1)) _
-  · exact Function.Surjective.mul_comm
+  · exact Function.Surjective.isMulCommutative
       (f := QuotientGroup.mk' (GammaThreeInDerived (I := I)))
       (QuotientGroup.mk'_surjective (GammaThreeInDerived (I := I)))
       (isMulCommutative_commutator (G := Free I) pow_three)
@@ -959,7 +959,7 @@ theorem natCard_pairQuotient_le :
       · intro p
         exact pow_three_quotient (GammaThreeInDerived (I := I))
           (fun d : Derived (I := I) => Subtype.ext (pow_three d.1)) _
-      · exact Function.Surjective.mul_comm
+      · exact Function.Surjective.isMulCommutative
           (f := QuotientGroup.mk' (GammaThreeInDerived (I := I)))
           (QuotientGroup.mk'_surjective (GammaThreeInDerived (I := I)))
           (isMulCommutative_commutator (G := Free I) pow_three)

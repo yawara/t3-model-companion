@@ -6,7 +6,7 @@ Authors: Yawara Ishida
 module
 
 public import T3.ModelTheory.ModelCompanion
-public import Mathlib.Data.Finite.Sigma
+public import Mathlib.Basic.Finite.Sigma
 
 /-!
 # Syntactic and semantic model completeness
@@ -362,7 +362,7 @@ theorem AllEmbeddingsElementary.exists_qf_existential_imp
       Sum.elim_inl, Sum.elim_inr] at hweqs
     let val : M → N := fun b => if hb : b ∈ s then w (s.equivFin ⟨b, hb⟩)
       else Classical.choice (inferInstance : Nonempty N)
-    have hval (b : M) (hb : b ∈ s) : val b = w (s.equivFin ⟨b, hb⟩) := dif_pos hb
+    have hval (b : M) (hb : b ∈ s) : val b = w (s.equivFin ⟨b, hb⟩) := dite_eq_left hb
     let : (constantsOn (M : Type (max u v))).Structure N := constantsOn.structure val
     have hNT : N ⊨ (L.lhomWithConstants (M : Type (max u v))).onTheory T :=
       (LHom.onTheory_model _ _).mpr N.is_model

@@ -1,0 +1,18 @@
+✔ [37/52] Built Batteries.Tactic.Basic:c.o (51ms)
+✔ [38/52] Built Batteries.Lean.TagAttribute:c.o (103ms)
+✔ [39/52] Built Batteries.Linter:c.o (70ms)
+✔ [40/52] Built Batteries.Classes.Order:c.o (77ms)
+✔ [41/52] Built Batteries.Data.UInt:c.o (54ms)
+✔ [42/52] Built Batteries.Lean.AttributeExtra:c.o (283ms)
+✔ [43/52] Built Batteries.Tactic.Init:c.o (332ms)
+✔ [44/52] Built Batteries.Tactic.SeqFocus:c.o (317ms)
+✔ [45/52] Built Batteries.CodeAction.Deprecated:c.o (403ms)
+✔ [46/52] Built Batteries.Linter.UnnecessarySeqFocus:c.o (551ms)
+✔ [47/52] Built Batteries.Data.Array.Basic:c.o (536ms)
+✔ [48/52] Built Batteries.Linter.UnreachableTactic:c.o (629ms)
+✔ [49/52] Built runLinter (757ms)
+✔ [50/52] Built runLinter:c.o (642ms)
+✔ [51/52] Built Batteries.Tactic.Alias:c.o (1.6s)
+✔ [52/52] Built runLinter:exe (606ms)
+Running linter on specified modules: [T3]
+-- Linting passed for T3.

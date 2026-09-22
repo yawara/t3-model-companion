@@ -122,13 +122,13 @@ private theorem realize_distinctnessDiagram {N : Type*} [L.Structure N] (x : A �
   · intro h a b hab
     by_contra hne
     have h' := h a b
-    rw [if_neg hne, Formula.realize_not, Formula.realize_equal] at h'
+    rw [ite_eq_right hne, Formula.realize_not, Formula.realize_equal] at h'
     exact h' hab
   · intro h a b
     by_cases hab : a = b
-    · rw [if_pos hab]
+    · rw [ite_eq_left hab]
       exact Formula.realize_top.mpr trivial
-    · rw [if_neg hab, Formula.realize_not, Formula.realize_equal]
+    · rw [ite_eq_right hab, Formula.realize_not, Formula.realize_equal]
       exact fun h' => hab (h h')
 
 /-- Realizing the complete finite diagram is equivalent to being an embedding.

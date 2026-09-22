@@ -1,0 +1,19 @@
+{
+  "revision_redaction": "Historical T3 revision identifiers have been omitted for publication. Recorded commands, outcomes, and source hashes describe the original checks; this edited record does not certify the rewritten historical snapshots.",
+  "checked_date": "2026-09-22",
+  "starting_commit": "[historical revision omitted]",
+  "lean_latest_stable": "v4.34.0",
+  "lean_release_url": "https://github.com/leanprover/lean4/releases/tag/v4.34.0",
+  "mathlib_commit": "5ed2965256430c3649e86755f9576b54eca72435",
+  "mathlib_toolchain": "leanprover/lean4:v4.34.0",
+  "exporter_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "exporter_toolchain": "leanprover/lean4:v4.34.0",
+  "verso_commit": "cad4b633e75ea769b851f12f9ca3b4f0dfcc625f",
+  "verso_toolchain": "leanprover/lean4:v4.34.0",
+  "palomar_policy_commit": "792c7c0b9e798bd02719e795ef11fa2b5929e067",
+  "palomar_submission_commit": "a09f5c38ee58bf92c459b974b174ff4063ebea5f",
+  "minimum_lean": "v4.28.0",
+  "comparator_commit": "575674928e239f5bc452aab72d1dd7b0f1326494",
+  "nanoda_commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+  "landrun_commit": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+}

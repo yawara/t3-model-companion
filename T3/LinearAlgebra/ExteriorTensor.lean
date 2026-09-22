@@ -373,16 +373,16 @@ private theorem projection_basis (n k : ℕ) (s : Set.powersetCard (I ⊕ J) n) 
   ext t
   rw [ExteriorSum.projection_repr]
   by_cases hs : ExteriorSum.leftCount s = k
-  · rw [if_pos hs]
+  · rw [ite_eq_left hs]
     by_cases hst : s = t
     · subst t
-      rw [if_pos hs]
-    · simp only [Basis.repr_self_apply, if_neg hst, ite_self]
-  · rw [if_neg hs, map_zero, Finsupp.zero_apply]
+      rw [ite_eq_left hs]
+    · simp only [Basis.repr_self_apply, ite_eq_right hst, ite_self]
+  · rw [ite_eq_right hs, map_zero, Finsupp.zero_apply]
     by_cases hst : s = t
     · subst t
-      rw [if_neg hs]
-    · simp only [Basis.repr_self_apply, if_neg hst, ite_self]
+      rw [ite_eq_right hs]
+    · simp only [Basis.repr_self_apply, ite_eq_right hst, ite_self]
 
 /-- The tensor decomposition has precisely the count-based exterior blocks as its components.
 
@@ -403,9 +403,9 @@ theorem wedgeMap_tensorEquiv_component (n : ℕ) (k : Fin (n + 1)) (x : ⋀[R]^n
     DirectSum.component.of, projection_basis, leftCount_sumEquiv_symm]
   by_cases h : l = k
   · subst l
-    rw [dif_pos rfl, if_pos rfl, ← tensorEquiv_symm_comp_lof b c]
+    rw [dite_eq_left rfl, ite_eq_left rfl, ← tensorEquiv_symm_comp_lof b c]
     exact tensorEquiv_symm_basis b c n k s t
-  · rw [dif_neg h, map_zero, if_neg (fun hv => h (Fin.ext hv))]
+  · rw [dite_eq_right h, map_zero, ite_eq_right (fun hv => h (Fin.ext hv))]
 
 /-- The image of each canonical exterior tensor map is the corresponding exterior block.
 

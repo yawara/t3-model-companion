@@ -1,0 +1,179 @@
+{
+  "checked_at_utc": "2026-09-22T14:49:32.019093+00:00",
+  "status": "passed",
+  "scope": "Isolated Verso v4.34.0 minimal extraction/rendering plus actual project Challenge elaboration, literate JSON extraction, raw HTML rendering and upstream static declaration-anchor parser. Not the complete Palomar renderer workflow, sandbox, asset sanitization, publication, submission, registration or editorial review.",
+  "upstream_renderer_commit": "a09f5c38ee58bf92c459b974b174ff4063ebea5f",
+  "upstream_renderer_sha256": "fc50e66258bd185a36d2df08f901c393b306e873b38995cb23fe08938a67076e",
+  "upstream_verifier_sha256": "873b06d5cf66f342d717fdeb102c2ed07e07ca3634b038bcf189bc231c9071ab",
+  "verso_commit": "cad4b633e75ea769b851f12f9ca3b4f0dfcc625f",
+  "verso_source_toolchain": "leanprover/lean4:v4.34.0",
+  "build_toolchain": "leanprover/lean4:v4.34.0",
+  "build_lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "upstream_compatible_verso_toolchain": true,
+  "commands": [
+    {
+      "command": "ELAN_TOOLCHAIN=leanprover/lean4:v4.34.0 lake update",
+      "exit_code": 0,
+      "log": "setup.log",
+      "notes": "Existing upstream SubVerso missing-manifest setup warning; no project mathematical warnings."
+    },
+    {
+      "command": "ELAN_TOOLCHAIN=leanprover/lean4:v4.34.0 lake build Challenge:literate",
+      "exit_code": 0,
+      "log": "literate.log"
+    },
+    {
+      "command": "ELAN_TOOLCHAIN=leanprover/lean4:v4.34.0 lake exe verso-html .lake/build/literate render-raw",
+      "exit_code": 0,
+      "log": "html.log"
+    },
+    {
+      "command": [
+        "lean",
+        "-o",
+        "Challenge.olean",
+        "-i",
+        "Challenge.ilean",
+        "Challenge.lean"
+      ],
+      "cwd": "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/actual",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/.lake/packages/verso/.lake/build/bin/verso-literate",
+        "Challenge",
+        "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/actual/literate/Challenge.json"
+      ],
+      "cwd": "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/actual",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/.lake/packages/verso/.lake/build/bin/verso-html",
+        "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/actual/literate",
+        "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/actual/render-raw"
+      ],
+      "cwd": "/home/ywr/t3-model-companion/.cache/palomar-verso-v4.34.0/actual",
+      "exit_code": 0
+    }
+  ],
+  "actual_environment": "actual-environment.json",
+  "shared_mathlib_cache": "/home/ywr/t3-model-companion/.lake/packages/mathlib/.lake/build/lib/lean",
+  "root_project_build_outputs_excluded_from_actual_search_path": true,
+  "pinned_dependencies": {
+    "verso": {
+      "url": "https://github.com/leanprover/verso.git",
+      "rev": "cad4b633e75ea769b851f12f9ca3b4f0dfcc625f"
+    },
+    "Cli": {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "rev": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204"
+    },
+    "illuminate": {
+      "url": "https://github.com/leanprover/illuminate",
+      "rev": "a1a61c9678da010e958ed24cdfa6f635b85f172a"
+    },
+    "plausible": {
+      "url": "https://github.com/leanprover-community/plausible",
+      "rev": "118aa17ee84656b8bd727fef7c458ee8c833385c"
+    },
+    "MD4Lean": {
+      "url": "https://github.com/acmepjz/md4lean",
+      "rev": "31907cc18f48a95384f99cee5582c00fb39e0f67"
+    },
+    "subverso": {
+      "url": "https://github.com/leanprover/subverso",
+      "rev": "9b90b7f938d6169246325df002351014f49945ef"
+    }
+  },
+  "project_manifest_overlap": [
+    {
+      "name": "Cli",
+      "verso_revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "project_revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "same": true
+    },
+    {
+      "name": "plausible",
+      "verso_revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "project_revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "same": true
+    }
+  ],
+  "log_diagnostics": {
+    "setup.log": {
+      "warning_count": 1,
+      "error_count": 0
+    },
+    "literate.log": {
+      "warning_count": 0,
+      "error_count": 0
+    },
+    "html.log": {
+      "warning_count": 0,
+      "error_count": 0
+    },
+    "actual-elaboration.log": {
+      "warning_count": 2,
+      "error_count": 0
+    },
+    "actual-literate.log": {
+      "warning_count": 0,
+      "error_count": 0
+    },
+    "actual-html.log": {
+      "warning_count": 0,
+      "error_count": 0
+    }
+  },
+  "expected_actual_challenge_holes": 2,
+  "compared_declarations": [
+    "T3.exists_bounded_nonamalgamation_witness",
+    "T3.has_model_companion"
+  ],
+  "upstream_anchor_parser": {
+    "status": "passed",
+    "found_declarations": [
+      "T3.exists_bounded_nonamalgamation_witness",
+      "T3.has_model_companion"
+    ],
+    "base_urls": [
+      "../"
+    ],
+    "malformed_markup": false
+  },
+  "actual_literate_item_count": 59,
+  "rendered_file_count": 58,
+  "rendered_total_bytes": 649030,
+  "actual_challenge_matches_repository_source": true,
+  "input_sha256": {
+    "Challenge.lean": "8dc5fe9f34d0f481ab2756155d614e9183dc3d8f585169bc0d5b4b3a9fa5ad7b",
+    "lakefile.toml": "258141ff0bf4179c1c8db5ab054b69a508a32a64e1a6ffa042964c207453a164",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lake-manifest.json": "e0b1f73b62c0524312e2fe9182a790634d47f161724f5edd8fd3be15f1489a29",
+    "actual/Challenge.lean": "8736627ccad28846e1a6b5bbad6c6950b3f80406e843c1011aa18ac52f6f8fe9",
+    "actual-environment.json": "2d9745d1220a318e5979666b1935fb6901a9c76e4730dfeb8b11dd4716900e9f"
+  },
+  "project_input_sha256": {
+    "Challenge.lean": "8736627ccad28846e1a6b5bbad6c6950b3f80406e843c1011aa18ac52f6f8fe9",
+    "comparator.json": "e0350c5ab9ca77d1e76ab65c10582bed81ee14a6322b21abe4424c1a8d81a326",
+    "lake-manifest.json": "f2db55e8fe83ed3a3dd586f056b5f18ebf59d3e3cd71138106277a0da5197577",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632"
+  },
+  "output_sha256": {
+    ".lake/build/literate/Challenge.json": "0195ff2be9e4308c705faca1ee308fe3cf02bb8b496abaa36bc4e36d82c600ba",
+    "render-raw/Challenge/index.html": "65a9014ad09410134e8fd00001828342f0c19ab0a4f1ed2e67adcd68cb4036ba",
+    "actual/Challenge.olean": "28a02ef1056538b093a18c15176f02f6329be0c9a1c5ac734874e2d2c4feb76d",
+    "actual/Challenge.ilean": "c92b001ddf1602c68e27cf9ec1a9aa568949950a85f6e50a9b6d290f8c637db4",
+    "actual/literate/Challenge.json": "bee4c82e098beb1e9bda7ba32f7dee29d069ae7ab9f78078dc7662d9948d40f5",
+    "actual/render-raw/Challenge/index.html": "f4b1beabeec685a2e3b52964be3ac6482a98a2ee63ed3ab5367e31f847e2e33b",
+    "setup.log": "31943dd9c6695ed3c6be8d0f55fd05f085f997af71ad2d5062163abc0ec14e14",
+    "literate.log": "f749960aadd09da44548b397373acc28e72751db7963b15f48c599aff2eee5ed",
+    "html.log": "21ea5af289b90ef2e860ee29db422743775bb30cabde9c4e73bc428b897011e1",
+    "actual-elaboration.log": "74fd68f809a05fedfb74782d3192d60da4b06f17f6f593365d04886b291bc006",
+    "actual-literate.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-html.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "shared_mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435"
+}

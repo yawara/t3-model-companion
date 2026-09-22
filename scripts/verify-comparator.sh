@@ -12,8 +12,8 @@ lean4export_dir="$cache_root/lean4export"
 nanoda_dir="$cache_root/nanoda"
 
 comparator_commit=575674928e239f5bc452aab72d1dd7b0f1326494
-# v4.33.0 source, rebuilt below with the project's exact Lean v4.33.1 toolchain.
-lean4export_commit=15f6055e299ad5b89345e533cc2192f4cc00f659
+# v4.34.0 source, built below with the project's exact Lean v4.34.0 toolchain.
+lean4export_commit=076e8e57707e813375e8f9da8bf989799ace9680
 landrun_commit=811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
 nanoda_commit=68d5ca9db226849b41a6fff59d796ff19d0a8840
 
@@ -72,7 +72,7 @@ lean4export_toolchain=$(tr -d '[:space:]' < "$lean4export_dir/lean-toolchain")
 # Follow Palomar's compatible_lean4export_toolchain rule: exact toolchains, or
 # stable positive patch releases using patch-zero source from the same major/minor.
 # Release candidates and other release lines must match exactly.
-# https://github.com/PalomarRegistry/PalomarSubmission/blob/ef2fa1eadcb246c2346ddba39b52eaa53d4bb763/scripts/verify_submission.py
+# https://github.com/PalomarRegistry/PalomarSubmission/blob/a09f5c38ee58bf92c459b974b174ff4063ebea5f/scripts/verify_submission.py
 compatible_exporter_toolchain() {
   local project=$1
   local exporter=$2

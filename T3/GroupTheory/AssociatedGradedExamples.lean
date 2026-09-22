@@ -146,7 +146,7 @@ theorem abelianEquiv_lof_mk (x : G) :
     abelianEquiv G (DirectSum.lof (ZMod 3) ℕ (Layer G) 1
       (mk G 1 ⟨x, Subgroup.mem_top x⟩)) = Additive.ofMul x := by
   change abelianLayerOneAddEquiv G _ = _
-  simp [DirectSum.lof_eq_of]
+  exact abelianLayerOneAddEquiv_mk G x
 
 /-- The associated graded of an abelian group has identically zero Lie bracket.
 

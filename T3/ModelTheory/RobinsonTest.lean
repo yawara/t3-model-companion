@@ -109,12 +109,12 @@ theorem IsExistentiallyClosedInModels.exists_assignment
       funext i
       by_cases hb : bb θ i ∈ Set.range ⇑h
       · have hρi : ρ θ i = Sum.inl ⟨bb θ i, Finset.mem_filter.2 ⟨hmem θ i, hb⟩⟩ := by
-          rw [hρ]; exact dif_pos hb
+          rw [hρ]; exact dite_eq_left hb
         simp only [Function.comp_apply, hρi, Sum.elim_inl]
         rw [hXB]
         exact congrArg Subtype.val (sIn.equivFin.symm_apply_apply _)
       · have hρi : ρ θ i = Sum.inr ⟨bb θ i, Finset.mem_filter.2 ⟨hmem θ i, hb⟩⟩ := by
-          rw [hρ]; exact dif_neg hb
+          rw [hρ]; exact dite_eq_right hb
         rw [Function.comp_apply, hρi]
         rfl
     rw [hasgn]
@@ -136,7 +136,7 @@ theorem IsExistentiallyClosedInModels.exists_assignment
   · funext a
     have h1 : h a ∉ sOut := fun hmem' => (Finset.mem_filter.1 hmem').2 ⟨a, rfl⟩
     have hva : v (h a) = Function.invFun ⇑h (h a) := by
-      rw [hv]; exact dif_neg h1
+      rw [hv]; exact dite_eq_right h1
     rw [Function.comp_apply, hva, id_eq]
     exact Function.leftInverse_invFun h.injective a
   · intro θ
@@ -146,19 +146,19 @@ theorem IsExistentiallyClosedInModels.exists_assignment
       funext i
       by_cases hb : bb θ i ∈ Set.range ⇑h
       · have hρi : ρ θ i = Sum.inl ⟨bb θ i, Finset.mem_filter.2 ⟨hmem θ i, hb⟩⟩ := by
-          rw [hρ]; exact dif_pos hb
+          rw [hρ]; exact dite_eq_left hb
         have h2 : bb θ i ∉ sOut := fun hmem' => (Finset.mem_filter.1 hmem').2 hb
         have hvi : v (bb θ i) = Function.invFun ⇑h (bb θ i) := by
-          rw [hv]; exact dif_neg h2
+          rw [hv]; exact dite_eq_right h2
         simp only [Function.comp_apply, hρi, Sum.elim_inl, hvi]
         apply h.injective
         rw [hXB, Function.invFun_eq hb]
         exact congrArg Subtype.val (sIn.equivFin.symm_apply_apply _)
       · have h2 : bb θ i ∈ sOut := Finset.mem_filter.2 ⟨hmem θ i, hb⟩
         have hρi : ρ θ i = Sum.inr ⟨bb θ i, h2⟩ := by
-          rw [hρ]; exact dif_neg hb
+          rw [hρ]; exact dite_eq_right hb
         have hvi : v (bb θ i) = w ⟨bb θ i, h2⟩ := by
-          rw [hv]; exact dif_pos h2
+          rw [hv]; exact dite_eq_left h2
         rw [Function.comp_apply, Function.comp_apply, hρi, hvi]
         rfl
     rw [hasgn] at hwθ

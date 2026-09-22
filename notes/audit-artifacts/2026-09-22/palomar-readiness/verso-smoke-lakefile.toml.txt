@@ -1,0 +1,11 @@
+name = "PalomarVersoCompatibilityCheck434"
+defaultTargets = ["Challenge"]
+
+[[require]]
+name = "verso"
+git = "https://github.com/leanprover/verso.git"
+rev = "cad4b633e75ea769b851f12f9ca3b4f0dfcc625f"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]

@@ -331,8 +331,9 @@ theorem grade_eq_bot {n : ℕ} (h₁ : n ≠ 1) (h₂ : n ≠ 2) (h₃ : n ≠ 3
   exact ext (hx.1 h₁) (hx.2.1 h₂) (hx.2.2 h₃)
 
 /-- The signed exterior bracket respects the homogeneous degrees. -/
-instance instGradedBracket : SetLike.GradedBracket (grade V) where
+instance instGradedBracket : SetLike.GradedBracket (grade V) (grade V) where
   bracket_mem {i j} {x y} hx hy := by
+    change ⁅x, y⁆ ∈ grade V (i + j)
     refine ⟨fun _ => one_lie x y, fun h => ?_, fun h => ?_⟩
     · by_cases hi : i = 1
       · have hj : j ≠ 1 := by omega

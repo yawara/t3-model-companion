@@ -1,0 +1,15 @@
+[palomar-metadata] /usr/bin/python3 scripts/check_palomar_metadata.py
+[palomar-metadata] passed (0.118s)
+[build] lake build
+[build] passed (0.952s)
+[imports] lake exe mk_all --check --lib T3
+[imports] passed (7.75s)
+[environment-lint] lake lint -- --no-build T3
+[environment-lint] passed (4.63s)
+[text-lint] lake env lean -DautoImplicit=false -Dlinter.mathlibStandardSet=true -Dlinter.style.header=true -Dlinter.style.longFile=1500 -DwarningAsError=true Tests/TextLint.lean
+[text-lint] passed (6.753s)
+[axioms] lake env lean -DautoImplicit=false -Dlinter.mathlibStandardSet=true -Dlinter.style.header=true -Dlinter.style.longFile=1500 -DwarningAsError=true Tests/Axioms.lean
+[axioms] passed (224.961s)
+[paper-map] /usr/bin/python3 scripts/paper_map.py --check --declarations-json /home/ywr/t3-model-companion/.audit/declarations.json
+[paper-map] passed (0.291s)
+All checks passed with zero warnings; report: .audit/checks.json

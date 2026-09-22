@@ -106,10 +106,11 @@ theorem crossList_single [DecidableEq Q] {β μ : Q} {l : List Q} (hnd : l.Nodup
       rcases List.mem_cons.mp hβ with hx | hx
       · subst hx
         have hzero : crossList (fun z => if z = β then μ else 1) t = 1 :=
-          crossList_eq_one_of_forall fun z hz => if_neg fun hzb => hnd.1 (by rw [← hzb]; exact hz)
-        rw [if_pos rfl, hzero, mul_one]
+          crossList_eq_one_of_forall fun z hz =>
+            ite_eq_right fun hzb => hnd.1 (by rw [← hzb]; exact hz)
+        rw [ite_eq_left rfl, hzero, mul_one]
       · have hxne : x ≠ β := fun h => hnd.1 (h ▸ hx)
-        rw [if_neg hxne, commutatorElement_one_right, one_mul, ih hnd.2 hx]
+        rw [ite_eq_right hxne, commutatorElement_one_right, one_mul, ih hnd.2 hx]
 
 /-- A collected product maps to a collected product. -/
 theorem map_crossList {G H : Type*} [Group G] [Group H] (φ : G →* H) (m : G → G) (m' : H → H)

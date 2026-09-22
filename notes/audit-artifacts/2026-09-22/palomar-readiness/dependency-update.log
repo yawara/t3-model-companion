@@ -1,0 +1,66 @@
+info: leanprover-community/mathlib: checking out revision '5ed2965256430c3649e86755f9576b54eca72435'
+info: toolchain not updated; already up-to-date
+info: plausible: checking out revision '118aa17ee84656b8bd727fef7c458ee8c833385c'
+info: LeanSearchClient: checking out revision 'ddf04cf3949fa556442341e87d47f9f6e6074707'
+info: importGraph: checking out revision 'e928b72544873815af278d38681b31c0293588e3'
+info: proofwidgets: checking out revision '106ff4fafc74ef4ac99d81dbf3ab399118f497a5'
+info: aesop: checking out revision '355695d523e41d0554926416cba2a2b3544fbbc9'
+info: Qq: checking out revision '6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259'
+info: batteries: checking out revision 'f2effa3d803fda822b1f97b806c47cf2adfbcbc2'
+info: Cli: checking out revision 'e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204'
+info: mathlib: running post-update hooks
+✔ [3/41] Built Cache.Cli (217ms)
+✔ [4/41] Built Cache.Lean (238ms)
+✔ [5/41] Built Cache.Env (229ms)
+✔ [6/41] Built Cache.Cli:c.o (87ms)
+✔ [7/41] Built Cache.Lean:c.o (91ms)
+✔ [8/41] Built Cache.Env:c.o (101ms)
+✔ [9/41] Built Cache.Infra (239ms)
+✔ [10/41] Built Batteries.Tactic.OpenPrivate (575ms)
+✔ [11/41] Built Cache.Infra:c.o (144ms)
+✔ [12/41] Built Batteries.Tactic.OpenPrivate:c.o (794ms)
+✔ [13/41] Built Cache.IO (859ms)
+✔ [14/41] Built Cache.Hashing (486ms)
+✔ [15/41] Built Cache.Hashing:c.o (285ms)
+✔ [16/41] Built Cache.IO:c.o (1.0s)
+✔ [17/41] Built Cache.Requests (1.2s)
+✔ [18/41] Built Cache.Marker (337ms)
+✔ [19/41] Built Cache.Marker:c.o (78ms)
+✔ [20/41] Built Cache.Upload.Dest (367ms)
+✔ [21/41] Built Cache.Query (438ms)
+✔ [22/41] Built Cache.Upload.Dest:c.o (84ms)
+✔ [23/41] Built Cache.Query:c.o (200ms)
+✔ [24/41] Built Cache.Upload.Curl (387ms)
+✔ [25/41] Built Cache.Upload.Rclone (397ms)
+✔ [26/41] Built Cache.Warning (426ms)
+✔ [27/41] Built Cache.Upload.Curl:c.o (121ms)
+✔ [28/41] Built Cache.Upload.Rclone:c.o (111ms)
+✔ [29/41] Built Cache.Warning:c.o (166ms)
+✔ [30/41] Built Cache.Upload.Azure (367ms)
+✔ [31/41] Built Cache.Upload.S3 (431ms)
+✔ [32/41] Built Cache.Upload.Azure:c.o (83ms)
+✔ [33/41] Built Cache.Requests:c.o (1.8s)
+✔ [34/41] Built Cache.Upload.S3:c.o (212ms)
+✔ [35/41] Built Cache.Upload.Defs (360ms)
+✔ [36/41] Built Cache.Upload.Defs:c.o (97ms)
+✔ [37/41] Built Cache.Upload (345ms)
+✔ [38/41] Built Cache.Upload:c.o (71ms)
+✔ [39/41] Built Cache.Main (731ms)
+✔ [40/41] Built Cache.Main:c.o (618ms)
+✔ [41/41] Built cache:exe (449ms)
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+Attempting to download 8908 file(s) from leanprover-community/mathlib4 cache at https://cache.mathlib.org/mathlib4-master
+Downloaded: 1 file(s) [attempted 1/8908 = 0%, 1018 KB/s], Decompressed: 0[KDownloaded: 154 file(s) [attempted 154/8908 = 1%, 1813 KB/s], Decompressed: 33[KDownloaded: 309 file(s) [attempted 309/8908 = 3%, 387 KB/s], Decompressed: 33[KDownloaded: 464 file(s) [attempted 464/8908 = 5%, 432 KB/s], Decompressed: 132[KDownloaded: 580 file(s) [attempted 580/8908 = 6%, 638 KB/s], Decompressed: 312[KDownloaded: 654 file(s) [attempted 654/8908 = 7%, 1422 KB/s], Decompressed: 312[KDownloaded: 762 file(s) [attempted 762/8908 = 8%, 203 KB/s], Decompressed: 312[KDownloaded: 887 file(s) [attempted 887/8908 = 9%, 276 KB/s], Decompressed: 575[KDownloaded: 1045 file(s) [attempted 1045/8908 = 11%, 641 KB/s], Decompressed: 575[KDownloaded: 1198 file(s) [attempted 1198/8908 = 13%, 666 KB/s], Decompressed: 810[KDownloaded: 1363 file(s) [attempted 1363/8908 = 15%, 1146 KB/s], Decompressed: 810[KDownloaded: 1547 file(s) [attempted 1547/8908 = 17%, 2188 KB/s], Decompressed: 810[KDownloaded: 1724 file(s) [attempted 1724/8908 = 19%, 909 KB/s], Decompressed: 1179[KDownloaded: 1894 file(s) [attempted 1894/8908 = 21%, 1170 KB/s], Decompressed: 1179[KDownloaded: 2033 file(s) [attempted 2033/8908 = 22%, 1053 KB/s], Decompressed: 1179[KDownloaded: 2167 file(s) [attempted 2167/8908 = 24%, 149 KB/s], Decompressed: 1179[KDownloaded: 2299 file(s) [attempted 2299/8908 = 25%, 234 KB/s], Decompressed: 1179[KDownloaded: 2476 file(s) [attempted 2476/8908 = 27%, 1935 KB/s], Decompressed: 1724[KDownloaded: 2624 file(s) [attempted 2624/8908 = 29%, 1409 KB/s], Decompressed: 1724[KDownloaded: 2799 file(s) [attempted 2799/8908 = 31%, 3577 KB/s], Decompressed: 1724[KDownloaded: 2971 file(s) [attempted 2971/8908 = 33%, 125 KB/s], Decompressed: 1724[KDownloaded: 3140 file(s) [attempted 3141/8908 = 35%, 1132 KB/s], Decompressed: 1724[KDownloaded: 3317 file(s) [attempted 3318/8908 = 37%, 666 KB/s], Decompressed: 2352[KDownloaded: 3468 file(s) [attempted 3469/8908 = 38%, 2124 KB/s], Decompressed: 2352[KDownloaded: 3588 file(s) [attempted 3589/8908 = 40%, 123 KB/s], Decompressed: 2352[KDownloaded: 3741 file(s) [attempted 3742/8908 = 42%, 3216 KB/s], Decompressed: 2352[KDownloaded: 3901 file(s) [attempted 3902/8908 = 43%, 474 KB/s], Decompressed: 2352[KDownloaded: 4098 file(s) [attempted 4099/8908 = 46%, 3962 KB/s], Decompressed: 2352[KDownloaded: 4239 file(s) [attempted 4240/8908 = 47%, 319 KB/s], Decompressed: 3157[KDownloaded: 4346 file(s) [attempted 4347/8908 = 48%, 264 KB/s], Decompressed: 3157[KDownloaded: 4451 file(s) [attempted 4452/8908 = 49%, 612 KB/s], Decompressed: 3157[KDownloaded: 4542 file(s) [attempted 4543/8908 = 50%, 313 KB/s], Decompressed: 3157[KDownloaded: 4633 file(s) [attempted 4634/8908 = 52%, 592 KB/s], Decompressed: 3157[KDownloaded: 4705 file(s) [attempted 4706/8908 = 52%, 548 KB/s], Decompressed: 3157[KDownloaded: 4763 file(s) [attempted 4764/8908 = 53%, 134 KB/s], Decompressed: 3157[KDownloaded: 4837 file(s) [attempted 4838/8908 = 54%, 1224 KB/s], Decompressed: 4208[KDownloaded: 4937 file(s) [attempted 4938/8908 = 55%, 225 KB/s], Decompressed: 4208[KDownloaded: 5040 file(s) [attempted 5041/8908 = 56%, 1040 KB/s], Decompressed: 4208[KDownloaded: 5136 file(s) [attempted 5137/8908 = 57%, 1586 KB/s], Decompressed: 4208[KDownloaded: 5220 file(s) [attempted 5221/8908 = 58%, 697 KB/s], Decompressed: 4208[KDownloaded: 5316 file(s) [attempted 5317/8908 = 59%, 558 KB/s], Decompressed: 4208[KDownloaded: 5409 file(s) [attempted 5410/8908 = 60%, 243 KB/s], Decompressed: 4837[KDownloaded: 5509 file(s) [attempted 5510/8908 = 61%, 2876 KB/s], Decompressed: 4837[KDownloaded: 5603 file(s) [attempted 5604/8908 = 62%, 699 KB/s], Decompressed: 4837[KDownloaded: 5703 file(s) [attempted 5704/8908 = 64%, 56 KB/s], Decompressed: 4837[KDownloaded: 5804 file(s) [attempted 5805/8908 = 65%, 833 KB/s], Decompressed: 4837[KDownloaded: 5895 file(s) [attempted 5896/8908 = 66%, 3501 KB/s], Decompressed: 5363[KDownloaded: 5976 file(s) [attempted 5977/8908 = 67%, 90 KB/s], Decompressed: 5363[KDownloaded: 6067 file(s) [attempted 6068/8908 = 68%, 947 KB/s], Decompressed: 5363[KDownloaded: 6141 file(s) [attempted 6142/8908 = 68%, 161 KB/s], Decompressed: 5363[KDownloaded: 6236 file(s) [attempted 6238/8908 = 70%, 127 KB/s], Decompressed: 5818[KDownloaded: 6332 file(s) [attempted 6334/8908 = 71%, 384 KB/s], Decompressed: 5818[KDownloaded: 6428 file(s) [attempted 6430/8908 = 72%, 569 KB/s], Decompressed: 5818[KDownloaded: 6521 file(s) [attempted 6523/8908 = 73%, 516 KB/s], Decompressed: 6161[KDownloaded: 6608 file(s) [attempted 6610/8908 = 74%, 8218 KB/s], Decompressed: 6161[KDownloaded: 6708 file(s) [attempted 6710/8908 = 75%, 383 KB/s], Decompressed: 6161[KDownloaded: 6796 file(s) [attempted 6798/8908 = 76%, 550 KB/s], Decompressed: 6482[KDownloaded: 6897 file(s) [attempted 6899/8908 = 77%, 1568 KB/s], Decompressed: 6482[KDownloaded: 6973 file(s) [attempted 6975/8908 = 78%, 498 KB/s], Decompressed: 6482[KDownloaded: 7067 file(s) [attempted 7069/8908 = 79%, 127 KB/s], Decompressed: 6482[KDownloaded: 7153 file(s) [attempted 7155/8908 = 80%, 367 KB/s], Decompressed: 6796[KDownloaded: 7246 file(s) [attempted 7248/8908 = 81%, 462 KB/s], Decompressed: 6796[KDownloaded: 7337 file(s) [attempted 7339/8908 = 82%, 722 KB/s], Decompressed: 6796[KDownloaded: 7421 file(s) [attempted 7423/8908 = 83%, 279 KB/s], Decompressed: 7152[KDownloaded: 7480 file(s) [attempted 7482/8908 = 83%, 348 KB/s], Decompressed: 7152[KDownloaded: 7531 file(s) [attempted 7533/8908 = 84%, 119 KB/s], Decompressed: 7152[KDownloaded: 7601 file(s) [attempted 7603/8908 = 85%, 2111 KB/s], Decompressed: 7152[KDownloaded: 7701 file(s) [attempted 7703/8908 = 86%, 311 KB/s], Decompressed: 7152[KDownloaded: 7802 file(s) [attempted 7804/8908 = 87%, 4601 KB/s], Decompressed: 7152[KDownloaded: 7902 file(s) [attempted 7904/8908 = 88%, 1787 KB/s], Decompressed: 7421[KDownloaded: 8015 file(s) [attempted 8017/8908 = 89%, 991 KB/s], Decompressed: 7421[KDownloaded: 8110 file(s) [attempted 8112/8908 = 91%, 217 KB/s], Decompressed: 7421[KDownloaded: 8201 file(s) [attempted 8203/8908 = 92%, 77 KB/s], Decompressed: 7421[KDownloaded: 8295 file(s) [attempted 8297/8908 = 93%, 1672 KB/s], Decompressed: 7421[KDownloaded: 8378 file(s) [attempted 8380/8908 = 94%, 681 KB/s], Decompressed: 7421[KDownloaded: 8467 file(s) [attempted 8469/8908 = 95%, 544 KB/s], Decompressed: 7421[KDownloaded: 8565 file(s) [attempted 8567/8908 = 96%, 844 KB/s], Decompressed: 7421[KDownloaded: 8663 file(s) [attempted 8665/8908 = 97%, 1330 KB/s], Decompressed: 7881[KDownloaded: 8754 file(s) [attempted 8756/8908 = 98%, 357 KB/s], Decompressed: 7881[KDownloaded: 8843 file(s) [attempted 8845/8908 = 99%, 129 KB/s], Decompressed: 7881[KDownloaded: 8906 file(s) [attempted 8908/8908 = 100%, 129 KB/s], Decompressed: 7881[K
+Attempting to download 2 file(s) from leanprover-community/mathlib4 cache at https://cache.mathlib.org/mathlib4
+Downloaded: 0 file(s) [attempted 1/2 = 50%, 0 KB/s], Decompressed: 7881[KDownloaded: 0 file(s) [attempted 2/2 = 100%, 0 KB/s], Decompressed: 7881[K
+Warning: some files were not found in the cache.
+This usually means that your local checkout of mathlib4 has diverged from upstream.
+
+  * If you push your commits to a PR to the mathlib4 repository
+    (use a draft PR if it is not ready for review),
+    then CI will build the oleans and they will be available later.
+  * If you have already opened a PR, this may mean
+    the CI build has failed part-way through building.
+Decompressed 8906 file(s)
+Already decompressed 8906 file(s)

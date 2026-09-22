@@ -1,0 +1,6 @@
+✔ [312/317] Built VersoLiterateCode (2.3s)
+✔ [313/317] Built VersoLiterateCode:c.o (3.4s)
+✔ [314/317] Built VersoLiterateCode:shared (34ms)
+✔ [315/317] Built VersoHtmlMain (851ms)
+✔ [316/317] Built VersoHtmlMain:c.o (1.4s)
+✔ [317/317] Built «verso-html»:exe (595ms)

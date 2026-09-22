@@ -62,7 +62,7 @@ theorem exponentGroupTheory_isLocallyFinite_iff_finite_burnside (n : ℕ) :
       (Set.finite_range _)
     have hfinite' : Finite (Subgroup.closure (Set.range (Burnside.of : Fin r → G))) :=
       Finite.of_equiv (Substructure.closure Language.group (Set.range (Burnside.of : Fin r → G)))
-        (Equiv.setCongr (FirstOrder.Group.coe_substructure_closure_eq _))
+        (Set.equivOfEq (FirstOrder.Group.coe_substructure_closure_eq _))
     rw [Burnside.closure_range_of] at hfinite'
     exact Finite.of_equiv (⊤ : Subgroup G) (Subgroup.topEquiv : (⊤ : Subgroup G) ≃* G).toEquiv
   · intro hfree M s hs
@@ -75,6 +75,6 @@ theorem exponentGroupTheory_isLocallyFinite_iff_finite_burnside (n : ℕ) :
       (exponentGroupTheory_model_iff n).mp (inferInstance : M ⊨ exponentGroupTheory n)
     let := finite_closure_of_finite_burnside hfree hpow hs
     exact Finite.of_equiv (Subgroup.closure s)
-      (Equiv.setCongr (FirstOrder.Group.coe_substructure_closure_eq s)).symm
+      (Set.equivOfEq (FirstOrder.Group.coe_substructure_closure_eq s)).symm
 
 end T3

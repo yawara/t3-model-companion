@@ -1,0 +1,115 @@
+{
+  "scope": "Declaration inventory and axiom dependencies, not a theorem-type equivalence check. Source review and Comparator provide separate evidence.",
+  "before_count": 3111,
+  "after_count": 3120,
+  "module_count": 117,
+  "added": [
+    "T3.AssociatedGraded.commutatorRightHom._proof_3",
+    "T3.CentralRootRelations.projection._proof_3",
+    "T3.CentralRootRelations.projection._proof_4",
+    "T3.CommutatorRoots.derivedBracketHom._proof_4",
+    "T3.Free.gammaThreeToPairKer._proof_3",
+    "T3.Free.tripleReadout._proof_1",
+    "T3.LvdW.pairHom._proof_3",
+    "T3.Support.normalClosureIn._proof_1",
+    "T3.TruncatedExterior.instAddCommGroup._aux_3",
+    "T3.TruncatedExterior.instAddCommGroup._proof_5",
+    "_private.T3.GroupTheory.Roots.SharedTriple.0.T3.SharedTripleRoots.coordinate._proof_3",
+    "_private.T3.GroupTheory.Roots.Triple.0.T3.TripleRoots.coordinate._proof_3"
+  ],
+  "removed": [
+    "FirstOrder.Group.GroupAxiom.toCtorIdx",
+    "T3.TruncatedExterior.instAddCommGroup._aux_4",
+    "T3.TruncatedExterior.instAddCommGroup._proof_3"
+  ],
+  "changed_records": [
+    {
+      "before": {
+        "private": false,
+        "name": "T3.CentralRootRelations.projection._proof_1",
+        "module": "T3.GroupTheory.Roots.CentralRelations",
+        "exported": true,
+        "axioms": [
+          "propext"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.CentralRootRelations.projection._proof_1",
+        "module": "T3.GroupTheory.Roots.CentralRelations",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "before": {
+        "private": false,
+        "name": "T3.CentralRootRelations.projection._proof_2",
+        "module": "T3.GroupTheory.Roots.CentralRelations",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.CentralRootRelations.projection._proof_2",
+        "module": "T3.GroupTheory.Roots.CentralRelations",
+        "exported": true,
+        "axioms": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "before": {
+        "private": false,
+        "name": "T3.CommutatorRoots.derivedBracketHom._proof_1",
+        "module": "T3.GroupTheory.Roots.CommutatorRelations",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.CommutatorRoots.derivedBracketHom._proof_1",
+        "module": "T3.GroupTheory.Roots.CommutatorRelations",
+        "exported": true,
+        "axioms": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "before": {
+        "private": false,
+        "name": "T3.Free.toLvdWGenKer._proof_1",
+        "module": "T3.GroupTheory.Free.NormalForm",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "after": {
+        "private": false,
+        "name": "T3.Free.toLvdWGenKer._proof_1",
+        "module": "T3.GroupTheory.Free.NormalForm",
+        "exported": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ]
+}

@@ -437,8 +437,8 @@ declarations = [
   { name = "T3.TruncatedExterior.grade", module = "T3.LinearAlgebra.TruncatedExterior", kind = "def", line = 289 },
   { name = "T3.TruncatedExterior.grade_eq_bot", module = "T3.LinearAlgebra.TruncatedExterior", kind = "theorem", line = 326 },
   { name = "T3.TruncatedExterior.instGradedBracket", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 334 },
-  { name = "T3.TruncatedExterior.instDecomposition", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 421 },
-  { name = "T3.TruncatedExterior.instGradedLieAlgebra", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 429 },
+  { name = "T3.TruncatedExterior.instDecomposition", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 422 },
+  { name = "T3.TruncatedExterior.instGradedLieAlgebra", module = "T3.LinearAlgebra.TruncatedExterior", kind = "instance", line = 430 },
 ]
 formalization = "proved"
 fidelity = "proof_checked"
@@ -1449,7 +1449,7 @@ source_line = 939
 formalization = "proved"
 fidelity = "proof_checked"
 planned_declarations = []
-declarations = [{ name = "T3.Coproduct.block", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "def", line = 66 }, { name = "T3.Coproduct.bracket_block_le", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 270 }, { name = "T3.Coproduct.bracket_mem_block", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 342 }, { name = "T3.Coproduct.bracket_mixedMap_tmul_inl", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 208 }, { name = "T3.Coproduct.bracket_mixedMap_tmul_inr", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 222 }]
+declarations = [{ name = "T3.Coproduct.block", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "def", line = 66 }, { name = "T3.Coproduct.bracket_block_le", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 268 }, { name = "T3.Coproduct.bracket_mem_block", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 340 }, { name = "T3.Coproduct.bracket_mixedMap_tmul_inl", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 208 }, { name = "T3.Coproduct.bracket_mixedMap_tmul_inr", module = "T3.GroupTheory.Coproduct.BlockBracket", kind = "theorem", line = 222 }]
 verification = { record = "notes/lean-mathlib-4-33-1-upgrade.md", code_revision = "sha256:39c01de9e5e5b1789f938f3f73d67164f2507fa9739dba1efc9a331e05eaf522" }
 
 [[items]]

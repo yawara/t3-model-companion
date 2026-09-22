@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-09-22T14:52:10.962315+00:00",
+  "scope": "Local candidate source-tree and dependency checks; not Palomar remote verification.",
+  "file_count": 428,
+  "source_bytes": 12152876,
+  "maximum_source_bytes": 524288000,
+  "forbidden_compiled_artifacts": [],
+  "lfs_pointers": [],
+  "symlinks": [],
+  "gitlinks": [],
+  "challenge_bytes": 10128,
+  "challenge_lines": 284,
+  "challenge_imports": [
+    "public import Mathlib.Data.Nat.Choose.Basic",
+    "public import Mathlib.GroupTheory.Rank",
+    "public import Mathlib.ModelTheory.Complexity"
+  ],
+  "challenge_intentional_holes": 2,
+  "mathlib_dependencies_match": true,
+  "project_toolchain": "leanprover/lean4:v4.34.0",
+  "mathlib_toolchain": "leanprover/lean4:v4.34.0",
+  "manuscript_sha256": "fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6",
+  "selected_theorems": [
+    "T3.exists_bounded_nonamalgamation_witness",
+    "T3.has_model_companion"
+  ]
+}

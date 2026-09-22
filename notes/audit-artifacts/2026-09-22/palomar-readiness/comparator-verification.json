@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-09-22T14:51:18.676129+00:00",
+  "scope": "Local pinned Comparator with NanoDa and Lean kernel; not the Palomar remote workflow or editorial review.",
+  "status": "passed",
+  "exit_code": 0,
+  "command": "PATH=/home/ywr/.local/go/bin:$PATH scripts/verify-comparator.sh",
+  "upstream_pins": "upstream-versions.json",
+  "selected_theorems": [
+    "T3.exists_bounded_nonamalgamation_witness",
+    "T3.has_model_companion"
+  ],
+  "checks": {
+    "nanoda kernel accepts the solution": true,
+    "Lean default kernel accepts the solution": true,
+    "Your solution is okay!": true
+  },
+  "expected_challenge_hole_warnings": 2,
+  "input_sha256": {
+    "Challenge.lean": "8736627ccad28846e1a6b5bbad6c6950b3f80406e843c1011aa18ac52f6f8fe9",
+    "Solution.lean": "7ae9d899a736acee346a52c59fc7416265a51901910ca007878f3fd318d3d18d",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lakefile.toml": "774426260f196bb22fd10fc6419be597f494c970045b170b7aad6919d67b4c2c",
+    "lake-manifest.json": "f2db55e8fe83ed3a3dd586f056b5f18ebf59d3e3cd71138106277a0da5197577",
+    "comparator.json": "e0350c5ab9ca77d1e76ab65c10582bed81ee14a6322b21abe4424c1a8d81a326",
+    "scripts/verify-comparator.sh": "4930f1c8346fef74c9c80f3444b9c9029916213a2ad47d17e60670e781a49fdd",
+    "scripts/landrun-wrapper.sh": "a3398550ce76811ed57f354641ba8ba4f738905dc80732075189a7ecca2eb696"
+  },
+  "log_sha256": "fc056843505a9554a854d67fd4a7a8c6d3bc1c559ed81aa8b34da372d00a6213"
+}

@@ -127,9 +127,9 @@ theorem projection_orthogonal (n k l : ℕ) (hkl : k ≠ l) (x : ⋀[R]^n M) :
   ext s
   simp only [projection_repr, map_zero, Finsupp.zero_apply]
   by_cases hsk : leftCount s = k
-  · rw [if_pos hsk, if_neg]
+  · rw [ite_eq_left hsk, ite_eq_right]
     exact fun hsl => hkl (hsk.symm.trans hsl)
-  · rw [if_neg hsk]
+  · rw [ite_eq_right hsk]
 
 /-- The subspace with exactly `k` left indices in degree `n`.
 

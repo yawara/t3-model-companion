@@ -1,0 +1,11 @@
+import Init
+
+/-!
+# Verso v4.34.0 compatibility check
+
+This independent smoke check extracts and renders a minimal Lean module.
+-/
+
+/-- Addition by zero preserves a natural number. -/
+theorem versoCompatibilityCheck (n : Nat) : n + 0 = n := by
+  rfl

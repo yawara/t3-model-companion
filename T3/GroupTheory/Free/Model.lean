@@ -234,9 +234,9 @@ def of (i : I) : LvdW I where
 
 theorem of_gen (i j : I) : (of i).gen j = if j = i then 1 else 0 := rfl
 
-@[simp] theorem of_gen_self (i : I) : (of i).gen i = 1 := if_pos rfl
+@[simp] theorem of_gen_self (i : I) : (of i).gen i = 1 := ite_eq_left rfl
 
-theorem of_gen_of_ne {i j : I} (h : j ≠ i) : (of i).gen j = 0 := if_neg h
+theorem of_gen_of_ne {i j : I} (h : j ≠ i) : (of i).gen j = 0 := ite_eq_right h
 
 @[simp] theorem of_pair (i j k : I) : (of i).pair j k = 0 := rfl
 

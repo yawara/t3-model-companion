@@ -6,7 +6,7 @@ The formalization's author and responsible maintainer is Yawara Ishida.
 The manuscript's authors are Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi.
 The structured account is [formalization.yaml](../formalization.yaml).
 
-The repository is currently private. These files prepare a future submission;
+GitHub reported this repository as private on 2026-09-22. These files prepare a future submission;
 they do not submit the project, publish the repository, or register a result.
 Public availability and the exact submitted commit will be decided separately.
 
@@ -83,6 +83,14 @@ universality and retraction. These are documented encoding and proof choices;
 they do not supply extra mathematical hypotheses. Editorial placeholders in
 the manuscript are outside the formalized mathematical scope.
 
+The additional Section 6 research notes on
+[finite residuals](../notes/section-six-finite-residual.md),
+[coprime joins](../notes/section-six-coprime-joins.md),
+[finite obstruction criteria](../notes/section-six-obstruction-criteria.md), and
+[finite A-groups](../notes/section-six-a-groups.md) contain ordinary mathematical
+arguments and literature analysis, not additional Lean-verified results or
+Comparator declarations. They do not assert solutions to the general open questions.
+
 ## Production and verification
 
 OpenAI Codex agents implemented and reviewed the formalization under Yawara
@@ -91,36 +99,47 @@ are distinct kinds of evidence. No independent human peer review of the Lean
 formalization is claimed. The manuscript separately describes its use of a
 GPT-5.6 Sol proof outline and subsequent work by the paper's authors.
 
-The mathematical development has recorded local build, lint, import,
-paper-map, and axiom audits. On 2026-09-10, following the upgrade to Lean and
-mathlib v4.33.1, the pinned Comparator accepted the two selected statements
-and their definitions; both NanoDa and Lean's default kernel accepted the
-solution. See the [upgrade checkpoint](../notes/lean-mathlib-4-33-1-upgrade.md)
-for the input revision, tool pins, and verification artifacts. These historical
-checks concern the v4 source; they do not by themselves verify v7 additions.
-See the [v7 migration record](../notes/v7-migration.md) for the current source
-correspondence. No Palomar review, submission, or registration has occurred.
+The [v7 verification checkpoint](../notes/v7-formalization.md) records the
+2026-09-22 build, lint, import, paper-map, and axiom audits on Lean and mathlib
+v4.33.1. It also records a successful comparison of the two selected statements
+and their definitions, with both NanoDa and Lean's default kernel accepting
+the Solution. The separate
+[2026-09-10 upgrade checkpoint](../notes/lean-mathlib-4-33-1-upgrade.md)
+preserves the earlier v4 verification; it does not certify the v7 additions.
+
+The current preparation upgrades Lean and mathlib to v4.34.0. Verification of
+the full project, the independent comparison, and Challenge rendering on these
+pins is recorded in
+[Palomar readiness, 2026-09-22](../notes/palomar-readiness-2026-09-22.md).
+That checkpoint identifies the current inputs and the scope of each check;
+the earlier runs remain historical evidence for their own snapshots.
+No Palomar editorial review, submission, or registration has occurred.
 
 The repository license is [Apache-2.0](../LICENSE), as declared in the metadata.
 
 ## Lean version support
 
-As checked on 2026-09-10, this project selects Lean and mathlib v4.33.1, the
-newest stable release meeting Palomar's current version-support conditions.
-The mathlib revision is `0df444a360eaa60ab8c11dca51a86af692955474`.
-Palomar accepts release toolchains at or above its recorded minimum,
-currently v4.28.0, with compatible exporter and rendering tools; it does not
-require a particular mathlib stable release. See the
-[version policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/e9c8c238f5695b10f75db7175648a1d0195352c1/CONTRIBUTING.md#21-lean-and-lake-files)
-and [minimum version](https://github.com/PalomarRegistry/PalomarSubmission/blob/ef2fa1eadcb246c2346ddba39b52eaa53d4bb763/toolchains.json).
+As checked on 2026-09-22, this preparation selects Lean and mathlib v4.34.0,
+the [latest stable Lean release](https://github.com/leanprover/lean4/releases/tag/v4.34.0).
+The mathlib revision is `5ed2965256430c3649e86755f9576b54eca72435` and declares
+that exact Lean toolchain. The exporter source is pinned to
+`076e8e57707e813375e8f9da8bf989799ace9680`, which also declares Lean v4.34.0.
+The local comparison script builds it with the project's exact toolchain.
 
-For stable patch releases without an exact tool tag, Palomar can use the
-same major/minor version's patch-zero source and rebuild it with the
-submission's exact Lean toolchain. Accordingly, our exporter is pinned to
-v4.33.0 source `15f6055e299ad5b89345e533cc2192f4cc00f659` and built with Lean
-v4.33.1. The script rejects cross-minor fallbacks and requires exact toolchain
-matches for release candidates. The upstream renderer applies the
-[corresponding rule to Verso](https://github.com/PalomarRegistry/PalomarSubmission/blob/ef2fa1eadcb246c2346ddba39b52eaa53d4bb763/scripts/render_challenge.py#L673-L728).
+Palomar's recorded minimum remains v4.28.0. Its current policy also requires
+the project's Lean version to match the authenticated Mathlib revision's
+`lean-toolchain` exactly. Compatible exporter and rendering support are
+separate requirements. See the
+[version policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md#21-lean-and-lake-files)
+and [minimum version](https://github.com/PalomarRegistry/PalomarSubmission/blob/a09f5c38ee58bf92c459b974b174ff4063ebea5f/toolchains.json).
+
+The metadata audit used those same policy and submission revisions.
+The upstream `formalization.yaml` schema remains v0.4 at commit
+`99c678e569c7c4c0772db297c5ddd5e4c9b6322e`; the vendored schema and the extracted
+arXiv and MSC2020 taxonomy keys still match the current upstream files.
+The independent Challenge remains below the policy's size and line-count
+warning thresholds. This read-only policy audit is distinct from executing
+Palomar's own verifier and editorial review.
 
 ## Before a future submission
 

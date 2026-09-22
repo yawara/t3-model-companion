@@ -236,8 +236,7 @@ private theorem bracket_mixed_pureLeft :
   rintro x ⟨t, rfl⟩ y ⟨z, rfl⟩
   change ⁅DirectSum.lof (ZMod 3) ℕ (Layer (Coproduct G H)) 2 (mixedMap (by decide) (by decide) t),
     DirectSum.lof (ZMod 3) ℕ (Layer (Coproduct G H)) 1 (mapLayer inl 1 z)⁆ ∈ _
-  induction t using TensorProduct.induction_on with
-  | zero => simp
+  induction t using TensorProduct.inductionOn with
   | tmul x y =>
     rw [bracket_lof (by decide) (by decide), bracket_mixedMap_tmul_inl]
     exact ⟨bracketLayer (by decide) (by decide) z x ⊗ₜ[ZMod 3] y, rfl⟩
@@ -251,8 +250,7 @@ private theorem bracket_mixed_pureRight :
   rintro x ⟨t, rfl⟩ y ⟨z, rfl⟩
   change ⁅DirectSum.lof (ZMod 3) ℕ (Layer (Coproduct G H)) 2 (mixedMap (by decide) (by decide) t),
     DirectSum.lof (ZMod 3) ℕ (Layer (Coproduct G H)) 1 (mapLayer inr 1 z)⁆ ∈ _
-  induction t using TensorProduct.induction_on with
-  | zero => simp
+  induction t using TensorProduct.inductionOn with
   | tmul x y =>
     rw [bracket_lof (by decide) (by decide), bracket_mixedMap_tmul_inr, map_neg]
     apply Submodule.neg_mem

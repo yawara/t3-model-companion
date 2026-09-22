@@ -12,8 +12,8 @@ of generators needed to witness non-amalgamation with an existentially closed gr
 `15 * ((3*m+4) * (m + choose(m,2) + choose(m,3)) + 1)^2`.
 The proof includes the trivial group and arbitrary ranks and model universes as documented.
 
-This repository contains the substantive formal proof development. It is currently private;
-Palomar files prepare a future submission. No submission or registration has occurred.
+This repository contains the substantive formal proof development. GitHub confirmed it was private
+on 2026-09-22. Palomar files prepare a future submission. No submission or registration has occurred.
 
 ## Reading the formalization
 
@@ -37,6 +37,11 @@ The map records 57 proved items and 80 proved parts, including every Section 5
 example and result and the Section 6 Burnside/local-finiteness equivalence.
 Questions 6.1 and 6.2 and Takeuchi's conjecture remain open; their analysis is
 recorded separately from the formal proofs.
+The additional notes on [finite residuals](notes/section-six-finite-residual.md),
+[coprime joins](notes/section-six-coprime-joins.md),
+[obstruction criteria](notes/section-six-obstruction-criteria.md), and
+[finite A-groups](notes/section-six-a-groups.md) are mathematical research notes;
+their arguments have not been formalized in Lean.
 The previous manuscript and PDF are preserved in [archives](archives/README.md).
 
 OpenAI Codex agents implemented and reviewed the Lean development under Yawara Ishida's
@@ -45,7 +50,10 @@ Agent fidelity review is distinct from Lean's kernel checks and from human peer 
 
 ## Verification
 
-Lean is pinned to v4.33.1 and mathlib to `0df444a360eaa60ab8c11dca51a86af692955474`.
+Lean is pinned to v4.34.0 and mathlib to `5ed2965256430c3649e86755f9576b54eca72435`.
+The [readiness checkpoint](notes/palomar-readiness-2026-09-22.md) records
+verification on these pins. The earlier [v7 checks](notes/v7-formalization.md)
+used v4.33.1 and remain available as historical evidence.
 With elan and Python 3.11 or later:
 
 ```sh
@@ -64,7 +72,7 @@ The separate statement comparison needs Linux, Cargo, Go, Git, Lake, and Python:
 scripts/verify-comparator.sh
 ```
 
-The script builds pinned Comparator, an exporter built with Lean v4.33.1, NanoDa, and Landrun in `.cache/`.
+The script builds pinned Comparator, an exporter built with Lean v4.34.0, NanoDa, and Landrun in `.cache/`.
 It verifies the selected statements and runs the independent NanoDa kernel checker.
 Challenge's two intentional proof-hole warnings are expected only in this separate gate.
 GitHub Actions runs both verification jobs without submitting or registering anything.

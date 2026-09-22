@@ -30,7 +30,7 @@ open FirstOrder FirstOrder.Language FirstOrder.Group
 /-- The paper's uniform bound, depending only on the number of generators of the extension.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v7.tex, `thm:main`, `f(m)=f₀((3m+4)t(m)+1)` on line 812.
+TeX: T3_modelcompanion_v7.tex, `thm:main`, `f(m)=f₀((3m+4)t(m)+1)` on line 810.
 -/
 def witnessBound (m : ℕ) : ℕ := strictEnvelopeBound ((3 * m + 4) * freeOrderExponent m + 1)
 

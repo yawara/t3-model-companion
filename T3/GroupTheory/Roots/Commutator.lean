@@ -326,7 +326,7 @@ private theorem sum_tmul_freeInitial_eq_zero {V : Type*} [AddCommGroup V]
     Finsupp.coe_zero, Pi.zero_apply] at he
   simpa only [e, freeInitial, TensorProduct.equivFinsuppOfBasisRight_apply_tmul_apply,
     Basis.repr_self, Finsupp.single_apply, pair_injective.eq_iff, ite_smul,
-    one_smul, zero_smul, Finset.sum_ite_eq', Finset.mem_univ, if_true] using he
+    one_smul, zero_smul, Finset.sum_ite_eq', Finset.mem_univ, ite_true] using he
 
 private theorem zpow_eq_pow_cast {A : Type*} [Group A] [Fact (HasExponentThree A)]
     (r : A) (m : ℤ) : r ^ m = r ^ (m : ZMod 3).val := by

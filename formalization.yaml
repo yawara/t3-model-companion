@@ -112,8 +112,13 @@ review:
     Section 5 and the known Section 6 reduction are documented with the new
     verification snapshot in notes/v7-formalization.md; the remaining
     questions are discussed in notes/section-six-analysis.md.
+    The additional Section 6 research notes contain unformalized mathematical
+    arguments and are outside the Lean proof and Comparator scope.
     The mathematical library has recorded local build, lint, import,
-    paper-map, and axiom audits. No
+    paper-map, and axiom audits, and the v7 snapshot passed Comparator and
+    NanoDa on Lean v4.33.1. Verification after upgrading to Lean and mathlib
+    v4.34.0 is recorded, with its precise scope and inputs, in
+    notes/palomar-readiness-2026-09-22.md. No
     independent human peer review of the Lean formalization is claimed.
     Comparator, NanoDa, and Palomar review are separate from those existing
     library checks; see docs/palomar.md for the preparation status.
