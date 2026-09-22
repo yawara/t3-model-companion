@@ -139,3 +139,49 @@ model companion の存在との同値を証明したことにはならない。
 `ISP(K)` の定義を確認した。RBP 原典の書誌と著者の還元説明も参照したが、
 原典の深い証明全体の監査を行ったという意味ではない。
 新しい主張を実装する際は、上記の未証明入力を仮定として隠さず、その供給を先に確認する。
+
+## 6. 追加検討：具体的な肯定例と、使えない一般化
+
+同日、第6節をさらに検討し、以下を別ノートへまとめた。
+いずれも通常の数学的証明・文献による結果であり、新しいLean定理として登録したものではない。
+Questions 6.1、6.2、Takeuchi予想の一般形は引き続き未解決として扱う。
+
+1. [有限A-groupのvariety](section-six-a-groups.md)。OlshanskiiとBurrisの定理を
+   組み合わせることで、Sylow部分群がすべて可換な有限群が生成するvarietyに
+   model companionがあると分かる。`S₃,A₅` は具体例である。
+   さらに `V=ISP(K)`、`K` が有限・centerless・monolithicなら、e.c. 群内部の
+   `n` 元生成部分群を `E≅K^r`、`r≤|K|^n` に拡張できる。
+   `E` はこのvarietyでabsolute retractとなるため、amalgamationの障害を
+   `d(E)≤d(K)|K|^n` という明示的な上界で証言できる。
+
+2. [有限商での検出とretractの限界](section-six-finite-residual.md)。
+   e.c. 指数3群 `M` は `1≠Z(M)≤R_fin(M)` を満たすことを、明示的な
+   Heisenberg群とのcentral productから証明した。
+   従って「MCがあるからe.c. 群自身が残余有限」は誤りである。
+   また非自明有限指数3群は、有限な指数3拡大だけを考えてもabsolute retractではない。
+   上の有限retract構成をそのままQuestion 6.1全体へ拡張する経路は使えない。
+
+3. [互いに素な指数の独立な結合](section-six-coprime-joins.md)。
+   指数が互いに素な `V,W` について、`V∨W` がMCを持つことと、両者がMCを
+   持つことは同値である。中国剰余定理による定義可能な射影と、有限直積の
+   論理式の分解から証明する。`V₂∨V₃` は肯定例だが、`S₃` を含まないので
+   指数6群すべてのvariety `V₆` とは異なる。
+
+4. [障害の有限リストによる判定](section-six-obstruction-criteria.md)。
+   Lippariniの必要十分条件を、群言語とv7のFact 2.6に合わせて整理する。
+   一般の局所有限なalgebraic varietyにはMCのない例があるため、群の構造を使う
+   入力が必要である。coherence、equational Noetherianity、residual smallnessを
+   混同してMCの必要十分条件とする経路も区別する。
+
+Question 6.1で残る中心的な課題は、有限retractを要求せずに、amalgamationの障害を
+有限部分群へ移す仕組みを一般のe.c. 群の中で作れるか、という点である。
+指数3のlower-central strictnessはその一例だが、一般varietyで同じ役割を持つ
+条件とその内部での構成は、まだ得られていない。
+
+Question 6.2では、e.c. 群全体の残余有限性を経由する案は除外された。
+必要なのは有限rankの相対自由群の有限商、同値に非恒等式を有限memberで検出することである。
+この有限検出性をmodel companionの存在から導く含意は、今回も証明できていない。
+
+今回の追加ノートは独立に数学的検算を行ったが、Leanによる検証とは区別する。
+原稿・数学ライブラリ・paper mapの証明状態は変更していない。
+2026-09-22に `python3 scripts/check.py` を再実行し、全チェックが警告ゼロで通過した。
