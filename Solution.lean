@@ -15,5 +15,5 @@ and `T3.has_model_companion`. The independent specification lives in `Challenge`
 compares their statements and all definitions used in those statements across the two modules.
 
 Paper-ID: main.bounded_witness, main.model_companion
-TeX: T3_modelcompanion_v4.tex, `thm:main`, Theorem 3.3 and Corollary 3.4, lines 702–745.
+TeX: T3_modelcompanion_v7.tex, `thm:main`, Theorem 3.3 and Corollary 3.4, lines 780–823.
 -/

@@ -18,7 +18,7 @@ Normality of a factor relation subgroup absorbs its brackets with that same fact
 third-degree relation space. No finite-rank or homogeneous-relation assumption is used.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof lines 875–926.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 956–1007.
 -/
 
 @[expose] public section
@@ -35,7 +35,7 @@ variable {G H : Type*} [Group G] [Group H]
 In degrees two and one this is the paper's inclusion `Rₙ ∧ Vₙ ⊆ Sₙ`.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof line 914.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof line 995.
 -/
 theorem bracketLayer_subgroupImage_top_le (K : Subgroup G) [K.Normal]
     {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
@@ -54,7 +54,7 @@ theorem bracketLayer_subgroupImage_top_le (K : Subgroup G) [K.Normal]
 The relation subgroup need only be normal in the source factor, not in the target group.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof line 914.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof line 995.
 -/
 theorem bracketLayer_map_subgroupImage_range_le (f : G →* H) (K : Subgroup G) [K.Normal]
     {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
@@ -72,7 +72,7 @@ The two bracket maps differ by a minus sign; closure under negation removes that
 at the level of subspaces.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof lines 915–918.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 996–999.
 -/
 theorem map₂_bracketLayer_one_two (A : Submodule (ZMod 3) (Layer G 1))
     (B : Submodule (ZMod 3) (Layer G 2)) :
@@ -99,7 +99,7 @@ variable {I J : Type*}
 /-- The left free-factor retraction kills all generators of the right factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifications.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor identifications.
 -/
 def freeProjectionLeft : Free (I ⊕ J) →* Free I :=
   liftFree Free.pow_three (MonoidHom.id _) 1
@@ -107,7 +107,7 @@ def freeProjectionLeft : Free (I ⊕ J) →* Free I :=
 /-- The right free-factor retraction kills all generators of the left factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifications.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor identifications.
 -/
 def freeProjectionRight : Free (I ⊕ J) →* Free J :=
   liftFree Free.pow_three 1 (MonoidHom.id _)
@@ -115,7 +115,7 @@ def freeProjectionRight : Free (I ⊕ J) →* Free J :=
 /-- The left projection is a retraction on the entire left free factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifications.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor identifications.
 -/
 @[simp]
 theorem freeProjectionLeft_map_inl (x : Free I) :
@@ -125,7 +125,7 @@ theorem freeProjectionLeft_map_inl (x : Free I) :
 /-- The left projection kills the entire right free factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifications.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor identifications.
 -/
 @[simp]
 theorem freeProjectionLeft_map_inr (x : Free J) :
@@ -135,7 +135,7 @@ theorem freeProjectionLeft_map_inr (x : Free J) :
 /-- The right projection kills the entire left free factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifications.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor identifications.
 -/
 @[simp]
 theorem freeProjectionRight_map_inl (x : Free I) :
@@ -145,7 +145,7 @@ theorem freeProjectionRight_map_inl (x : Free I) :
 /-- The right projection is a retraction on the entire right free factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor identifications.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor identifications.
 -/
 @[simp]
 theorem freeProjectionRight_map_inr (x : Free J) :
@@ -155,7 +155,7 @@ theorem freeProjectionRight_map_inr (x : Free J) :
 /-- The left projection and inclusion compose to the identity homomorphism.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor retraction.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor retraction.
 -/
 @[simp]
 theorem freeProjectionLeft_comp_map_inl :
@@ -166,7 +166,7 @@ theorem freeProjectionLeft_comp_map_inl :
 /-- The right projection and inclusion compose to the identity homomorphism.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, factor retraction.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, factor retraction.
 -/
 @[simp]
 theorem freeProjectionRight_comp_map_inr :
@@ -177,7 +177,7 @@ theorem freeProjectionRight_comp_map_inr :
 /-- The left relation space is the transported ambient graded image computed in the left factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof lines 899–901.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 980–982.
 -/
 theorem subgroupImage_map_inl (K : Subgroup (Free I)) (n : ℕ) :
     subgroupImage (K.map (Free.map (Sum.inl : I → I ⊕ J))) n =
@@ -187,7 +187,7 @@ theorem subgroupImage_map_inl (K : Subgroup (Free I)) (n : ℕ) :
 /-- The right relation space is the transported ambient graded image computed in the right factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof lines 899–901.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 980–982.
 -/
 theorem subgroupImage_map_inr (K : Subgroup (Free J)) (n : ℕ) :
     subgroupImage (K.map (Free.map (Sum.inr : J → I ⊕ J))) n =
@@ -197,7 +197,7 @@ theorem subgroupImage_map_inr (K : Subgroup (Free J)) (n : ℕ) :
 /-- Every first-degree vector is the sum of its two canonical factor projections.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, equality `V = V₀ ⊕ V₁`.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, equality `V = V₀ ⊕ V₁`.
 -/
 theorem mapLayer_inl_projection_add_inr_projection (x : Layer (Free (I ⊕ J)) 1) :
     mapLayer (Free.map Sum.inl) 1 (mapLayer freeProjectionLeft 1 x) +
@@ -224,7 +224,7 @@ theorem mapLayer_inl_projection_add_inr_projection (x : Layer (Free (I ⊕ J)) 1
 /-- The two first-degree factor images exhaust the first layer of the combined free group.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, equality `V = V₀ ⊕ V₁`.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, equality `V = V₀ ⊕ V₁`.
 -/
 theorem range_mapLayer_inl_sup_range_mapLayer_inr_one :
     LinearMap.range (mapLayer (Free.map (Sum.inl : I → I ⊕ J)) 1) ⊔
@@ -241,7 +241,7 @@ variable (K₀ : Subgroup (Free I)) (K₁ : Subgroup (Free J))
 transported by the canonical free inclusions.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof lines 899–915.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 980–996.
 -/
 theorem subgroupImage_relationSubgroup_eq_sup_map (h₀ : K₀ ≤ commutator (Free I))
     (h₁ : K₁ ≤ commutator (Free J)) (n : ℕ) :
@@ -254,7 +254,7 @@ theorem subgroupImage_relationSubgroup_eq_sup_map (h₀ : K₀ ≤ commutator (F
 /-- The normal closure of the factor relations has zero first-degree image.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof line 879.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof line 960.
 -/
 theorem subgroupImage_relationKernel_one (h₀ : K₀ ≤ commutator (Free I))
     (h₁ : K₁ ≤ commutator (Free J)) : subgroupImage (relationKernel K₀ K₁) 1 = ⊥ :=
@@ -263,7 +263,7 @@ theorem subgroupImage_relationKernel_one (h₀ : K₀ ≤ commutator (Free I))
 /-- The second-degree relations of the normal closure are exactly the transported factor images.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof lines 879–906.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 960–987.
 -/
 theorem subgroupImage_relationKernel_two (h₀ : K₀ ≤ commutator (Free I))
     (h₁ : K₁ ≤ commutator (Free J)) :
@@ -278,7 +278,7 @@ theorem subgroupImage_relationKernel_two (h₀ : K₀ ≤ commutator (Free I))
 second-degree relations with the full first layer of the combined free group.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof lines 912–915.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 993–996.
 -/
 theorem subgroupImage_relationKernel_three (h₀ : K₀ ≤ commutator (Free I))
     (h₁ : K₁ ≤ commutator (Free J)) :
@@ -296,7 +296,7 @@ theorem subgroupImage_relationKernel_three (h₀ : K₀ ≤ commutator (Free I))
 /-- Normal left-factor relations absorb their brackets with the left first-degree component.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, inclusion `R₀ ∧ V₀ ⊆ S₀`.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, inclusion `R₀ ∧ V₀ ⊆ S₀`.
 -/
 theorem bracketLayer_inl_relation_le [K₀.Normal] :
     Submodule.map₂ (bracketLayer (i := 2) (j := 1) (by decide) (by decide))
@@ -308,7 +308,7 @@ theorem bracketLayer_inl_relation_le [K₀.Normal] :
 /-- Normal right-factor relations absorb their brackets with the right first-degree component.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, inclusion `R₁ ∧ V₁ ⊆ S₁`.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, inclusion `R₁ ∧ V₁ ⊆ S₁`.
 -/
 theorem bracketLayer_inr_relation_le [K₁.Normal] :
     Submodule.map₂ (bracketLayer (i := 2) (j := 1) (by decide) (by decide))
@@ -324,7 +324,7 @@ The right mixed term is written with the left first-degree factor first. Its sig
 valid because this is an equality of subspaces, not an equality of the two bracket maps.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, equality on line 916.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, equality on line 997.
 -/
 theorem subgroupImage_relationKernel_three_eq_four_blocks [K₀.Normal] [K₁.Normal]
     (h₀ : K₀ ≤ commutator (Free I)) (h₁ : K₁ ≤ commutator (Free J)) :

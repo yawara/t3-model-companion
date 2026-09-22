@@ -23,7 +23,7 @@ An amalgam is ordinary amalgamation: its factor images need only agree on the co
 Finite generation of the base is equivalent to finiteness here by local finiteness of `T₃`.
 
 Paper-ID: main.bounded_witness, main.model_companion
-TeX: T3_modelcompanion_v4.tex, `thm:main`, Theorem 3.3 and Corollary 3.4, lines 702–745.
+TeX: T3_modelcompanion_v7.tex, `thm:main`, Theorem 3.3 and Corollary 3.4, lines 780–823.
 -/
 
 @[expose] public section
@@ -39,7 +39,7 @@ variable {α : Type*}
 namespace FirstOrder
 
 /-- Symbols for the group operations.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 inductive GroupFunc : ℕ → Type
   | one : GroupFunc 0
@@ -48,7 +48,7 @@ inductive GroupFunc : ℕ → Type
   deriving DecidableEq
 
 /-- The purely functional language of groups.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 def Language.group : Language where
   Functions := GroupFunc
@@ -59,31 +59,31 @@ namespace Group
 
 open GroupFunc Language
 
-/-- Identity symbol. Paper-ID: preliminaries.exponent_three; TeX: lines 136–142. -/
+/-- Identity symbol. Paper-ID: preliminaries.exponent_three; TeX: lines 215–221. -/
 abbrev oneFunc : Language.group.Functions 0 := one
 
-/-- Inversion symbol. Paper-ID: preliminaries.exponent_three; TeX: lines 136–142. -/
+/-- Inversion symbol. Paper-ID: preliminaries.exponent_three; TeX: lines 215–221. -/
 abbrev invFunc : Language.group.Functions 1 := inv
 
-/-- Multiplication symbol. Paper-ID: preliminaries.exponent_three; TeX: lines 136–142. -/
+/-- Multiplication symbol. Paper-ID: preliminaries.exponent_three; TeX: lines 215–221. -/
 abbrev mulFunc : Language.group.Functions 2 := mul
 
-/-- Identity term. Paper-ID: preliminaries.exponent_three; TeX: lines 136–142. -/
+/-- Identity term. Paper-ID: preliminaries.exponent_three; TeX: lines 215–221. -/
 instance (α : Type*) : One (Language.group.Term α) where
   one := Constants.term oneFunc
 
-/-- Inverse term. Paper-ID: preliminaries.exponent_three; TeX: lines 136–142. -/
+/-- Inverse term. Paper-ID: preliminaries.exponent_three; TeX: lines 215–221. -/
 instance (α : Type*) : Inv (Language.group.Term α) where
   inv := invFunc.apply₁
 
-/-- Product term. Paper-ID: preliminaries.exponent_three; TeX: lines 136–142. -/
+/-- Product term. Paper-ID: preliminaries.exponent_three; TeX: lines 215–221. -/
 instance (α : Type*) : Mul (Language.group.Term α) where
   mul := mulFunc.apply₂
 
 open Structure
 
 /-- The first-order operations agree with the given algebraic operations.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 class CompatibleGroup (G : Type*) [One G] [Inv G] [Mul G]
     extends Language.group.Structure G where
@@ -95,7 +95,7 @@ class CompatibleGroup (G : Type*) [One G] [Inv G] [Mul G]
   funMap_mul : ∀ x, funMap mulFunc x = x 0 * x 1
 
 /-- The canonical compatible structure on a Lean group.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 @[instance_reducible]
 def compatibleGroupOfGroup (G : Type*) [Group G] : CompatibleGroup G where
@@ -109,7 +109,7 @@ def compatibleGroupOfGroup (G : Type*) [Group G] : CompatibleGroup G where
   funMap_mul := fun _ => rfl
 
 /-- Three left-handed group axioms.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 inductive GroupAxiom
   | mulAssoc
@@ -118,7 +118,7 @@ inductive GroupAxiom
   deriving DecidableEq
 
 /-- The sentences asserting associativity, left identity, and left inverse.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 def GroupAxiom.toSentence : GroupAxiom → Language.group.Sentence
   | .mulAssoc => ∀' ∀' ∀' (((&0 * &1) * &2) =' (&0 * (&1 * &2)))
@@ -126,7 +126,7 @@ def GroupAxiom.toSentence : GroupAxiom → Language.group.Sentence
   | .invMul => ∀' (((&0)⁻¹ * &0) =' (1 : Language.group.Term _))
 
 /-- The first-order theory of groups.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 def _root_.FirstOrder.Language.Theory.group : Language.group.Theory :=
   Set.range GroupAxiom.toSentence
@@ -144,7 +144,7 @@ namespace Group
 open Language
 
 /-- The natural-power term.
-Paper-ID: preliminaries.exponent_three; TeX: lines 138–141.
+Paper-ID: preliminaries.exponent_three; TeX: lines 217–220.
 -/
 def powerTerm {α : Type*} (n : ℕ) (t : Language.group.Term α) : Language.group.Term α :=
   match n with
@@ -152,7 +152,7 @@ def powerTerm {α : Type*} (n : ℕ) (t : Language.group.Term α) : Language.gro
   | n + 1 => powerTerm n t * t
 
 /-- The sentence asserting that every element has `n`-th power one.
-Paper-ID: preliminaries.exponent_three; TeX: lines 138–141.
+Paper-ID: preliminaries.exponent_three; TeX: lines 217–220.
 -/
 def exponentSentence (n : ℕ) : Language.group.Sentence :=
   ∀' ((powerTerm n &⟨0, Nat.zero_lt_one⟩) =' (1 : Language.group.Term _))
@@ -164,39 +164,39 @@ namespace Language.Theory
 variable {L : Language.{u, v}}
 
 /-- Every nonempty model of the first theory embeds into one of the second.
-Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 1, line 180.
+Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 1, line 259.
 -/
 def ModelsEmbedInto (T T' : L.Theory) : Prop :=
   ∀ M : T.ModelType.{u, v, max u v},
     ∃ N : T'.ModelType.{u, v, max u v}, Nonempty (M ↪[L] N)
 
 /-- Each theory's models embed into models of the other theory.
-Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 1, line 180.
+Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 1, line 259.
 -/
 def IsCompanion (T T' : L.Theory) : Prop :=
   T.ModelsEmbedInto T' ∧ T'.ModelsEmbedInto T
 
 /-- Every formula is equivalent modulo the theory to an existential formula.
-Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 2, line 181.
+Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 2, line 260.
 -/
 def IsModelComplete (T : L.Theory) : Prop :=
   ∀ {n : ℕ} (φ : L.Formula (Fin n)),
     ∃ ψ : L.Formula (Fin n), ψ.IsExistential ∧ (φ ⇔[T] ψ)
 
 /-- A model companion is a model-complete companion.
-Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 3, line 182.
+Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 3, line 261.
 -/
 def IsModelCompanionOf (Tstar T : L.Theory) : Prop :=
   Tstar.IsCompanion T ∧ Tstar.IsModelComplete
 
 /-- Existence of a model-complete companion theory.
-Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 3, line 182.
+Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 3, line 261.
 -/
 def HasModelCompanion (T : L.Theory) : Prop :=
   ∃ Tstar : L.Theory, Tstar.IsModelCompanionOf T
 
 /-- Existential formulas over the model reflect from extensions in its semantic universe.
-Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 4, line 183.
+Paper-ID: model_theory.basic_definitions; TeX: Definition 2.2, item 4, line 262.
 -/
 def IsExistentiallyClosedAt (T : L.Theory) (M : Type w) [L.Structure M] : Prop :=
   Nonempty M ∧ M ⊨ T ∧
@@ -213,35 +213,35 @@ namespace T3
 open FirstOrder FirstOrder.Language FirstOrder.Group
 
 /-- Every element has cube one, including in the trivial group.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 def HasExponentThree (G : Type*) [Group G] : Prop := ∀ g : G, g ^ 3 = 1
 
 /-- Group theory together with the universal exponent law.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 def exponentGroupTheory (n : ℕ) : Language.group.Theory :=
   insert (FirstOrder.Group.exponentSentence n) Language.Theory.group
 
 /-- The first-order theory `T₃`.
-Paper-ID: preliminaries.exponent_three; TeX: lines 136–142.
+Paper-ID: preliminaries.exponent_three; TeX: lines 215–221.
 -/
 abbrev exponentThreeTheory : Language.group.Theory := exponentGroupTheory 3
 
 /-- The exponent `t(n)` in the order of the free exponent-three group.
 Paper-ID: preliminaries.finite_normal_form;
-TeX: `fact:Levi and van der Waerden`, Fact 2.27, and line 730.
+TeX: `fact:Levi and van der Waerden`, Fact 2.27, and line 808.
 -/
 def freeOrderExponent (n : ℕ) : ℕ := n + n.choose 2 + n.choose 3
 
 /-- The strict-envelope bound `f₀(n) = 15n²`.
 Paper-ID: structure.strict_envelope, main.proposition_a;
-TeX: `proposition:bdd LCS`, Proposition 4.12, lines 1212–1218.
+TeX: `proposition:bdd LCS`, Proposition 4.13, lines 1293–1299.
 -/
 def strictEnvelopeBound (n : ℕ) : ℕ := 15 * n ^ 2
 
 /-- The explicit bound `f(m) = f₀((3m + 4)t(m) + 1)`.
-Paper-ID: main.bounded_witness; TeX: `thm:main`, line 732.
+Paper-ID: main.bounded_witness; TeX: `thm:main`, line 810.
 -/
 def witnessBound (m : ℕ) : ℕ := strictEnvelopeBound ((3 * m + 4) * freeOrderExponent m + 1)
 
@@ -262,7 +262,7 @@ def AmalgamableOver : Prop :=
 end Amalgamation
 
 /-- Non-amalgamation has a witness with the paper's explicit uniform generator bound.
-Paper-ID: main.bounded_witness; TeX: `thm:main`, Theorem 3.3, lines 702–740.
+Paper-ID: main.bounded_witness; TeX: `thm:main`, Theorem 3.3, lines 780–818.
 -/
 theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [CompatibleGroup M]
     (hM : exponentThreeTheory.IsExistentiallyClosedAt M) (A : Subgroup M) [Group.FG A]
@@ -276,7 +276,7 @@ theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [Compatible
   sorry
 
 /-- The theory of groups of exponent three has a model companion.
-Paper-ID: main.model_companion; TeX: Corollary 3.4, lines 743–745; no label.
+Paper-ID: main.model_companion; TeX: Corollary 3.4, lines 821–823; no label.
 -/
 theorem has_model_companion : exponentThreeTheory.HasModelCompanion := by
   sorry

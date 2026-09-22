@@ -1,0 +1,41 @@
+From https://github.com/leanprover/lean4export
+ * branch            15f6055e299ad5b89345e533cc2192f4cc00f659 -> FETCH_HEAD
+HEAD is now at 15f6055 chore: bump toolchain to v4.33.0 (#44)
+Building lean4export source leanprover/lean4:v4.33.0 with leanprover/lean4:v4.33.1
+From https://github.com/leanprover/comparator
+ * branch            575674928e239f5bc452aab72d1dd7b0f1326494 -> FETCH_HEAD
+HEAD is now at 5756749 Merge pull request #75 from leanprover/hbv/multikernel
+From https://github.com/robsimmons/nanoda_lib
+ * branch            68d5ca9db226849b41a6fff59d796ff19d0a8840 -> FETCH_HEAD
+HEAD is now at 68d5ca9 chore: even more misc. bounds checks
+Build completed successfully (15 jobs).
+Build completed successfully (6 jobs).
+    Finished `release` profile [optimized] target(s) in 0.09s
+Building Challenge
+⚠ [1110/1111] Built Challenge (776ms)
+warning: Challenge.lean:267:8: declaration uses `sorry`
+warning: Challenge.lean:281:8: declaration uses `sorry`
+Build completed successfully (1111 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge
+Building Solution
+✔ [2032/2046] Built T3.ModelTheory.ExistentialClosedness (875ms)
+✔ [2033/2046] Built T3.GroupTheory.Roots.Triple (1.4s)
+✔ [2034/2046] Built T3.GroupTheory.Support.Conjugator (1.8s)
+✔ [2035/2046] Built T3.GroupTheory.Support (1.1s)
+✔ [2036/2046] Built T3.GroupTheory.Roots.LowerCentralStrictification (1.7s)
+✔ [2037/2046] Built T3.GroupTheory.Roots.Commutator (3.2s)
+✔ [2038/2046] Built T3.GroupTheory.Support.Transport (911ms)
+✔ [2039/2046] Built T3.GroupTheory.Coproduct.Support (1.0s)
+✔ [2040/2046] Built T3.ModelTheory.ExistentiallyClosedGroups (1.6s)
+✔ [2041/2046] Built T3.GroupTheory.Roots.DerivedStrictification (1.7s)
+✔ [2042/2046] Built T3.ModelTheory.StrictEnvelope (1.2s)
+✔ [2043/2046] Built T3.Main.BoundedWitness (1.2s)
+✔ [2044/2046] Built T3.Main.ModelCompanion (1.4s)
+✔ [2045/2046] Built Solution (783ms)
+Build completed successfully (2046 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, T3.exists_bounded_nonamalgamation_witness, T3.has_model_companion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

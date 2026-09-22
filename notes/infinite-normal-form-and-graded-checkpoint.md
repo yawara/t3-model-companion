@@ -1,5 +1,8 @@
 # 無限正規形・中心列と associated graded の次数商
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 2026-09-09。対象は v4 TeX、SHA256
 `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。
 [前回の有限正規形の境界](free-normal-form-checkpoint.md) から進めた記録であり、

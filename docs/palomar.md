@@ -47,8 +47,8 @@ a group satisfying `x^3 = 1` for every element, so the trivial group is included
    hypothesis from the first theorem; no unproved structural hypothesis is
    added to the conclusion.
 
-The [source manuscript](../T3_modelcompanion_v4.tex) is identified by SHA256
-`79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`.
+The [source manuscript](../T3_modelcompanion_v7.tex) is identified by SHA256
+`fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6`.
 No DOI, arXiv identifier, or external publication status is asserted.
 
 ## Statement boundary and fidelity
@@ -66,8 +66,11 @@ The deliberate Challenge holes are excluded from the proof-development
 free of holes. The permitted axioms are `propext`, `Classical.choice`, and
 `Quot.sound`.
 
-The [paper map](paper-map.md) covers 50 mathematical items and 75 parts,
-including supporting facts, examples, remarks, and universe bridges. The
+The [paper map](paper-map.md) tracks 60 v7 items and 80 parts,
+including supporting facts, examples, remarks, universe bridges, and Section 6.
+The two questions and Takeuchi's conjecture are explicitly marked open.
+Their registration does not assert a proof, and the new items' implementation
+states are recorded individually. The
 Comparator selection covers the two principal results above. A successful
 comparison of those declarations does not by itself independently certify
 every natural-language correspondence in the paper map.
@@ -93,8 +96,10 @@ paper-map, and axiom audits. On 2026-09-10, following the upgrade to Lean and
 mathlib v4.33.1, the pinned Comparator accepted the two selected statements
 and their definitions; both NanoDa and Lean's default kernel accepted the
 solution. See the [upgrade checkpoint](../notes/lean-mathlib-4-33-1-upgrade.md)
-for the input revision, tool pins, and verification artifacts. These are local
-checks. No Palomar review, submission, or registration has occurred.
+for the input revision, tool pins, and verification artifacts. These historical
+checks concern the v4 source; they do not by themselves verify v7 additions.
+See the [v7 migration record](../notes/v7-migration.md) for the current source
+correspondence. No Palomar review, submission, or registration has occurred.
 
 The repository license is [Apache-2.0](../LICENSE), as declared in the metadata.
 

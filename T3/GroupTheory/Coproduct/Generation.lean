@@ -16,10 +16,10 @@ Consequently finite generating sets for the factors give a finite generating set
 coproduct, with cardinality at most the sum of their cardinalities. Neither factor is required
 to have exponent three, and the two factor universes may differ.
 
-The free-two specialization is the final addition of two generators in Proposition 4.12.
+The free-two specialization is the final addition of two generators in Proposition 4.13.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, lines 1235–1254.
+TeX: T3_modelcompanion_v7.tex, `proposition:bdd LCS`, lines 1316–1335.
 -/
 
 @[expose] public section
@@ -34,7 +34,7 @@ variable {G H : Type*} [Group G] [Group H]
 relations. This follows by mapping the ordinary free-product generation theorem to the quotient.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, generation of the free product.
+TeX: T3_modelcompanion_v7.tex, `proposition:bdd LCS`, generation of the free product.
 -/
 theorem range_inl_sup_range_inr :
     (inl : G →* Coproduct G H).range ⊔ (inr : H →* Coproduct G H).range = ⊤ := by
@@ -45,7 +45,7 @@ theorem range_inl_sup_range_inr :
 /-- Images of generating sets of the factors generate the actual exponent-three coproduct.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, generation of the free product.
+TeX: T3_modelcompanion_v7.tex, `proposition:bdd LCS`, generation of the free product.
 -/
 theorem closure_image_inl_union_image_inr {s : Set G} {t : Set H}
     (hs : Subgroup.closure s = ⊤) (ht : Subgroup.closure t = ⊤) :
@@ -56,7 +56,7 @@ theorem closure_image_inl_union_image_inr {s : Set G} {t : Set H}
 /-- Coproducts of finitely generated groups are finitely generated.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, finite generation of `D₃`.
+TeX: T3_modelcompanion_v7.tex, `proposition:bdd LCS`, finite generation of `D₃`.
 -/
 instance fg [Group.FG G] [Group.FG H] : Group.FG (Coproduct G H) := by
   obtain ⟨s, hs, hfs⟩ := Group.fg_iff.mp (inferInstance : Group.FG G)
@@ -67,7 +67,7 @@ instance fg [Group.FG G] [Group.FG H] : Group.FG (Coproduct G H) := by
 /-- The rank of the coproduct is at most the sum of the ranks of its factors.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, the generator count for `D₃`.
+TeX: T3_modelcompanion_v7.tex, `proposition:bdd LCS`, the generator count for `D₃`.
 -/
 theorem rank_le [Group.FG G] [Group.FG H] :
     Group.rank (Coproduct G H) ≤ Group.rank G + Group.rank H := by
@@ -84,7 +84,7 @@ theorem rank_le [Group.FG G] [Group.FG H] :
 /-- Adjoining a free factor on two generators increases the rank by at most two.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v4.tex, `proposition:bdd LCS`, lines 1245–1250.
+TeX: T3_modelcompanion_v7.tex, `proposition:bdd LCS`, lines 1326–1331.
 -/
 theorem rank_freeTwo_le [Group.FG G] :
     Group.rank (Coproduct G (Free (Fin 2))) ≤ Group.rank G + 2 :=

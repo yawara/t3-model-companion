@@ -17,7 +17,7 @@ finite generating list of the first subgroup. Closure induction extends the sing
 calculation to all first-factor elements; listing the entire subgroup is unnecessary.
 
 Paper-ID: main.bounded_support
-TeX: T3_modelcompanion_v4.tex, `lemma:witness in bdd support`, lines 677–688.
+TeX: T3_modelcompanion_v7.tex, `lemma:witness in bdd support`, lines 755–766.
 -/
 
 @[expose] public section
@@ -159,7 +159,7 @@ theorem crossList_inv (m : Q → Q) (l : List Q) :
 an expression for every element of a group with central derived subgroup.
 
 Paper-ID: main.bounded_support
-TeX: T3_modelcompanion_v4.tex, `lemma:witness in bdd support`, lines 681–688.
+TeX: T3_modelcompanion_v7.tex, `lemma:witness in bdd support`, lines 759–766.
 -/
 theorem exists_crossList_normalForm
     {BB MM : Subgroup Q} (hgen : BB ⊔ MM = ⊤) {l : List Q} (hnd : l.Nodup)

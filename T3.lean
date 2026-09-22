@@ -1,6 +1,7 @@
 module  -- shake: keep-all --deprecated_module: ignore
 
 public import T3.GroupTheory.Amalgamation
+public import T3.GroupTheory.Amalgamation.Cyclic
 public import T3.GroupTheory.AssociatedGraded
 public import T3.GroupTheory.AssociatedGraded.Bracket
 public import T3.GroupTheory.AssociatedGraded.Generation
@@ -28,7 +29,9 @@ public import T3.GroupTheory.Coproduct.Relations
 public import T3.GroupTheory.Coproduct.Strict
 public import T3.GroupTheory.Coproduct.Support
 public import T3.GroupTheory.Free.Basic
+public import T3.GroupTheory.Free.Burnside
 public import T3.GroupTheory.Free.Collection
+public import T3.GroupTheory.Free.CommutatorRank
 public import T3.GroupTheory.Free.Examples
 public import T3.GroupTheory.Free.Exterior
 public import T3.GroupTheory.Free.ExteriorBracket
@@ -39,7 +42,9 @@ public import T3.GroupTheory.Free.Graded
 public import T3.GroupTheory.Free.InfiniteNormalForm
 public import T3.GroupTheory.Free.Model
 public import T3.GroupTheory.Free.ModelComparison
+public import T3.GroupTheory.Free.NonStrictExamples
 public import T3.GroupTheory.Free.NormalForm
+public import T3.GroupTheory.Free.UnboundedWitnessRank
 public import T3.GroupTheory.Generation
 public import T3.GroupTheory.GeneratorRank
 public import T3.GroupTheory.GeneratorRank.Cardinal
@@ -68,6 +73,7 @@ public import T3.GroupTheory.Support.Conjugator
 public import T3.GroupTheory.Support.Transport
 public import T3.LinearAlgebra.BlockDecomposition
 public import T3.LinearAlgebra.DirectSum
+public import T3.LinearAlgebra.ExteriorContraction
 public import T3.LinearAlgebra.ExteriorLowDegree
 public import T3.LinearAlgebra.ExteriorSum
 public import T3.LinearAlgebra.ExteriorTensor
@@ -83,6 +89,7 @@ public import T3.ModelTheory.Amalgamation.Universes
 public import T3.ModelTheory.BoundedAmalgamation
 public import T3.ModelTheory.BoundedAmalgamation.Universes
 public import T3.ModelTheory.BoundedAmalgamationCriterion
+public import T3.ModelTheory.Burnside
 public import T3.ModelTheory.ElementaryChain
 public import T3.ModelTheory.ElementaryReflection
 public import T3.ModelTheory.ExistentialClosedness

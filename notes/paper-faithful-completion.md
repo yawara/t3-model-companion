@@ -1,5 +1,8 @@
 # v4 論文全体の paper-faithful 形式化
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 2026-09-10。対象原稿の全数学項目の形式化・fidelity 照合を完了した。
 110モジュールの最終全体検査が終了コード0・警告0で通過した。
 

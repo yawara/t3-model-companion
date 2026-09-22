@@ -21,7 +21,7 @@ quotient maps. Its kernel is exactly `W` and it is surjective. No finiteness con
 index or module is needed. The ring generality below includes the vector spaces in the paper.
 
 Paper-ID: linear_algebra.block_homogeneous; linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Definition 2.10 and Proposition 2.11.
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Definition 2.10 and Proposition 2.11.
 -/
 
 @[expose] public section
@@ -39,7 +39,7 @@ This is mathlib's homogeneous-substructure predicate. The equality with the dire
 intersections is recorded in `isBlockHomogeneous_iff_iSup_eq`.
 
 Paper-ID: linear_algebra.block_homogeneous
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Definition 2.10. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Definition 2.10. -/
 abbrev IsBlockHomogeneous : Prop := DirectSum.SetLike.IsHomogeneous B W
 
 /-- Block homogeneity is equivalent to the paper's equality with the sum of block intersections.
@@ -47,7 +47,7 @@ abbrev IsBlockHomogeneous : Prop := DirectSum.SetLike.IsHomogeneous B W
 Since the ambient blocks form a direct sum, their intersections with `W` are independent.
 
 Paper-ID: linear_algebra.block_homogeneous
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Definition 2.10. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Definition 2.10. -/
 theorem isBlockHomogeneous_iff_iSup_eq :
     IsBlockHomogeneous B W ↔ W = ⨆ i, W ⊓ B i := by
   classical
@@ -78,7 +78,7 @@ theorem isBlockHomogeneous_iff_iSup_eq :
 /-- The block intersections are independent, so the sum in the definition is an internal sum.
 
 Paper-ID: linear_algebra.block_homogeneous
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Definition 2.10. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Definition 2.10. -/
 theorem blockIntersections_independent : iSupIndep (fun i => W ⊓ B i) :=
   (DirectSum.Decomposition.isInternal B).submodule_iSupIndep.mono fun _ => inf_le_right
 
@@ -87,13 +87,13 @@ namespace BlockDecomposition
 /-- The intersection with `W`, regarded as a submodule of the block itself.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 abbrev intersection (i : ι) : Submodule R (B i) := W.comap (B i).subtype
 
 /-- The quotient `B i / (W ∩ B i)` appearing in the paper.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 abbrev QuotientBlock (i : ι) := (B i) ⧸ intersection B W i
 
 /-- The quotient of a block is canonically its image in the ambient quotient.
@@ -101,7 +101,7 @@ abbrev QuotientBlock (i : ι) := (B i) ⧸ intersection B W i
 This individual-block isomorphism does not require block homogeneity of `W`.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 noncomputable def blockImageEquiv (i : ι) :
     QuotientBlock B W i ≃ₗ[R] (B i).map W.mkQ :=
   (Submodule.quotEquivOfEq (intersection B W i) (W.mkQ.comp (B i).subtype).ker
@@ -113,7 +113,7 @@ omit [DecidableEq ι] [DirectSum.Decomposition B] in
 /-- The component quotient isomorphism sends a block representative to its ambient quotient class.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 @[simp]
 theorem blockImageEquiv_mk (i : ι) (v : B i) :
     (blockImageEquiv B W i (Submodule.Quotient.mk v) : V ⧸ W) =
@@ -123,7 +123,7 @@ theorem blockImageEquiv_mk (i : ι) (v : B i) :
 /-- Decompose a vector and take the class of each component modulo its block intersection.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 def toQuotientSum : V →ₗ[R] ⨁ i, QuotientBlock B W i :=
   (DirectSum.lmap fun i => (intersection B W i).mkQ).comp
     (DirectSum.decomposeLinearEquiv B).toLinearMap
@@ -131,7 +131,7 @@ def toQuotientSum : V →ₗ[R] ⨁ i, QuotientBlock B W i :=
 /-- The `i`-th component is the quotient class of the `i`-th component of the original vector.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 @[simp]
 theorem toQuotientSum_apply (v : V) (i : ι) :
     toQuotientSum B W v i = Submodule.Quotient.mk (DirectSum.decompose B v i) := rfl
@@ -139,7 +139,7 @@ theorem toQuotientSum_apply (v : V) (i : ι) :
 /-- A vector supported in a single block maps to the corresponding single quotient component.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 @[simp]
 theorem toQuotientSum_coe (i : ι) (v : B i) :
     toQuotientSum B W v =
@@ -149,7 +149,7 @@ theorem toQuotientSum_coe (i : ι) (v : B i) :
 /-- All finitely supported families of quotient components have representatives in `V`.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 theorem toQuotientSum_surjective : Function.Surjective (toQuotientSum B W) :=
   ((DirectSum.lmap_surjective _).mpr fun i => (intersection B W i).mkQ_surjective).comp
     (DirectSum.decomposeLinearEquiv B).surjective
@@ -157,7 +157,7 @@ theorem toQuotientSum_surjective : Function.Surjective (toQuotientSum B W) :=
 /-- For a block-homogeneous submodule, the component quotient map has precisely that kernel.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 theorem toQuotientSum_ker (hW : IsBlockHomogeneous B W) :
     (toQuotientSum B W).ker = W := by
   ext v
@@ -173,7 +173,7 @@ theorem toQuotientSum_ker (hW : IsBlockHomogeneous B W) :
 /-- The standard isomorphism from the quotient of a block decomposition to the sum of quotients.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 noncomputable def quotientEquiv (hW : IsBlockHomogeneous B W) :
     (V ⧸ W) ≃ₗ[R] ⨁ i, QuotientBlock B W i :=
   LinearEquiv.ofBijective
@@ -190,7 +190,7 @@ noncomputable def quotientEquiv (hW : IsBlockHomogeneous B W) :
 /-- On a representative, the quotient equivalence is the direct sum of its component classes.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 @[simp]
 theorem quotientEquiv_mk (hW : IsBlockHomogeneous B W) (v : V) :
     quotientEquiv B W hW (Submodule.Quotient.mk v) = toQuotientSum B W v := rfl
@@ -198,7 +198,7 @@ theorem quotientEquiv_mk (hW : IsBlockHomogeneous B W) (v : V) :
 /-- The coordinate formula printed in the paper for the canonical quotient isomorphism.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 @[simp]
 theorem quotientEquiv_mk_apply (hW : IsBlockHomogeneous B W) (v : V) (i : ι) :
     quotientEquiv B W hW (Submodule.Quotient.mk v) i =
@@ -208,7 +208,7 @@ theorem quotientEquiv_mk_apply (hW : IsBlockHomogeneous B W) (v : V) (i : ι) :
 /-- A single block class has its canonical position under the quotient isomorphism.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 theorem quotientEquiv_mk_coe (hW : IsBlockHomogeneous B W) (i : ι) (v : B i) :
     quotientEquiv B W hW (Submodule.Quotient.mk (v : V)) =
       DirectSum.lof R ι (QuotientBlock B W) i (Submodule.Quotient.mk v) := by
@@ -217,7 +217,7 @@ theorem quotientEquiv_mk_coe (hW : IsBlockHomogeneous B W) (i : ι) (v : B i) :
 /-- The inverse equivalence sends a single quotient component to its class in the ambient quotient.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 @[simp]
 theorem quotientEquiv_symm_lof_mk (hW : IsBlockHomogeneous B W) (i : ι) (v : B i) :
     (quotientEquiv B W hW).symm
@@ -228,7 +228,7 @@ theorem quotientEquiv_symm_lof_mk (hW : IsBlockHomogeneous B W) (i : ι) (v : B 
 /-- Under the full quotient decomposition, the image of an individual block is its own summand.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 @[simp]
 theorem quotientEquiv_blockImageEquiv (hW : IsBlockHomogeneous B W) (i : ι)
     (v : QuotientBlock B W i) :
@@ -240,7 +240,7 @@ theorem quotientEquiv_blockImageEquiv (hW : IsBlockHomogeneous B W) (i : ι)
 /-- The ambient image of a block is exactly the range of its canonical quotient-sum inclusion.
 
 Paper-ID: linear_algebra.block_quotient
-TeX: T3_modelcompanion_v4.tex, unlabelled v4 Proposition 2.11. -/
+TeX: T3_modelcompanion_v7.tex, unlabelled v7 Proposition 2.11. -/
 theorem map_blockImage (hW : IsBlockHomogeneous B W) (i : ι) :
     ((B i).map W.mkQ).map (quotientEquiv B W hW).toLinearMap =
       (DirectSum.lof R ι (QuotientBlock B W) i).range := by

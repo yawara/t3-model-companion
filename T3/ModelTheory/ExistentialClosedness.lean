@@ -19,10 +19,10 @@ the original predicate. For a Pi-two theory, the models of a model companion are
 the existentially closed models in every universe.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, Definition 2.2, item 4, line 183; no label.
+TeX: T3_modelcompanion_v7.tex, Definition 2.2, item 4, line 262; no label.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.3, lines 274–280; no label.
 -/
 
 @[expose] public section
@@ -39,7 +39,7 @@ variable {L : Language.{u, v}} {T T' : L.Theory}
 universe and the language universes suffice, as `reflects_of_model` proves.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, Definition 2.2, item 4, line 183; no label.
+TeX: T3_modelcompanion_v7.tex, Definition 2.2, item 4, line 262; no label.
 -/
 def IsExistentiallyClosedAt (T : L.Theory) (M : Type w) [L.Structure M] : Prop :=
   Nonempty M ∧ M ⊨ T ∧
@@ -50,7 +50,7 @@ def IsExistentiallyClosedAt (T : L.Theory) (M : Type w) [L.Structure M] : Prop :
 /-- In the canonical semantic universe the general predicate is the original one.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, Definition 2.2, item 4; no label.
+TeX: T3_modelcompanion_v7.tex, Definition 2.2, item 4; no label.
 -/
 theorem isExistentiallyClosedAt_iff (M : Type (max u v)) [L.Structure M] :
     T.IsExistentiallyClosedAt M ↔ T.IsExistentiallyClosed M := Iff.rfl
@@ -59,7 +59,7 @@ theorem isExistentiallyClosedAt_iff (M : Type (max u v)) [L.Structure M] :
 Skolem hull contains the entire image of the source, without assuming that the source is small.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, Definition 2.2, item 4; no label.
+TeX: T3_modelcompanion_v7.tex, Definition 2.2, item 4; no label.
 -/
 theorem IsExistentiallyClosedAt.reflects_of_model {M : Type w} [L.Structure M]
     (hM : T.IsExistentiallyClosedAt M) (N : Type w') [L.Structure N] [Nonempty N] [N ⊨ T]
@@ -87,7 +87,7 @@ theorem IsExistentiallyClosedAt.reflects_of_model {M : Type w} [L.Structure M]
 The two companion embeddings have elementary composite, which reflects the Pi-two axioms.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.3, lines 274–280; no label.
 -/
 theorem IsModelCompanionOf.models_of_isPiTwo_in_universe (hT : T.IsPiTwo)
     (h : T'.IsModelCompanionOf T) (M : Type w) [L.Structure M] [Nonempty M] [M ⊨ T'] :
@@ -107,7 +107,7 @@ theorem IsModelCompanionOf.models_of_isPiTwo_in_universe (hT : T.IsPiTwo)
 arbitrary universes. No Pi-two hypothesis is needed when the latter model assumption is given.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, Definition 2.2, items 3 and 4; no label.
+TeX: T3_modelcompanion_v7.tex, Definition 2.2, items 3 and 4; no label.
 -/
 theorem IsModelCompanionOf.isExistentiallyClosedAt_of_models
     (h : T'.IsModelCompanionOf T) (M : Type w) [L.Structure M] [Nonempty M]
@@ -123,7 +123,7 @@ theorem IsModelCompanionOf.isExistentiallyClosedAt_of_models
 universe are precisely the models of the companion.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.3, lines 274–280; no label.
 -/
 theorem IsModelCompanionOf.models_iff_isExistentiallyClosedAt (hT : T.IsPiTwo)
     (h : T'.IsModelCompanionOf T) (M : Type w) [L.Structure M] [Nonempty M] :
@@ -144,7 +144,7 @@ theorem IsModelCompanionOf.models_iff_isExistentiallyClosedAt (hT : T.IsPiTwo)
 the universes of the parameters, the original model, and the extension model.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, Definition 2.2, item 4; no label.
+TeX: T3_modelcompanion_v7.tex, Definition 2.2, item 4; no label.
 -/
 theorem IsExistentiallyClosedAt.realize_of_finite {M : Type w} [L.Structure M]
     (hM : T.IsExistentiallyClosedAt M) (N : Type w') [L.Structure N] [Nonempty N] [N ⊨ T]
@@ -170,7 +170,7 @@ theorem IsExistentiallyClosedAt.realize_of_finite {M : Type w} [L.Structure M]
 a prescribed finite tuple. The finite structure itself need not model the theory.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, supporting Definition 2.2(6) and Proposition 4.12,
+TeX: T3_modelcompanion_v7.tex, supporting Definition 2.2(6) and Proposition 4.13,
 `proposition:bdd LCS`, final finite-diagram transfer.
 -/
 theorem IsExistentiallyClosedAt.exists_embedding_over_tuple [Finite L.Symbols]

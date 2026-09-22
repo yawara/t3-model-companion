@@ -1,5 +1,8 @@
 # 実装順序と暫定見積もり
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 以下は初期計画と段階ごとの履歴。現在の実装・検証状況は
 [論文全体の形式化](paper-faithful-completion.md) と [対応表](../docs/paper-map.md) に集約する。
 当時の未完項目や暫定見積もりは、現在の作業予定を示すものではない。

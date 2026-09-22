@@ -18,7 +18,7 @@ are the actual group-commutator quotient maps constructed in `AssociatedGraded.B
 
 Paper-ID: preliminaries.associated_graded, preliminaries.associated_graded_properties,
 preliminaries.associated_graded_map, preliminaries.graded_injectivity_strictness
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, Lemma 2.19, Definition 2.22,
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, Lemma 2.19, Definition 2.22,
 and Proposition 2.24, `proposition:gr(f) and LCS`.
 -/
 
@@ -33,7 +33,7 @@ variable {G : Type*} [Group G] [Fact (HasExponentThree G)]
 /-- The bilinear extension of the positive-degree commutator bracket to the direct sum.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
 -/
 def bracketLinear : GradedModule G →ₗ[ZMod 3] GradedModule G →ₗ[ZMod 3] GradedModule G :=
   LinearMap.mk₂ (ZMod 3) (fun x y =>
@@ -51,14 +51,14 @@ def bracketLinear : GradedModule G →ₗ[ZMod 3] GradedModule G →ₗ[ZMod 3] 
 /-- The associated graded bracket, extending the commutator on homogeneous representatives.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
 -/
 instance gradedBracket : Bracket (GradedModule G) (GradedModule G) := ⟨fun x y => bracketLinear x y⟩
 
 /-- The bracket is the sum of its degree-two and degree-three components.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
 -/
 theorem bracket_eq (x y : GradedModule G) :
     ⁅x, y⁆ =
@@ -71,7 +71,7 @@ theorem bracket_eq (x y : GradedModule G) :
 /-- A bracket has no degree-one component.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18.
 -/
 @[simp]
 theorem bracket_one (x y : GradedModule G) : ⁅x, y⁆ 1 = 0 := by
@@ -80,7 +80,7 @@ theorem bracket_one (x y : GradedModule G) : ⁅x, y⁆ 1 = 0 := by
 /-- The degree-two component is the bracket of the degree-one components.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18.
 -/
 @[simp]
 theorem bracket_two (x y : GradedModule G) :
@@ -101,7 +101,7 @@ private theorem triple_neg (x y z : Layer G 1) :
 /-- The commutator bracket satisfies alternation and Jacobi on the associated graded.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, Lie axioms.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, Lie axioms.
 -/
 instance gradedLieRing : LieRing (GradedModule G) where
   add_lie x y z := by exact LinearMap.congr_fun (map_add bracketLinear x y) z
@@ -116,7 +116,7 @@ instance gradedLieRing : LieRing (GradedModule G) where
 /-- The associated graded Lie bracket is bilinear over the canonical field `𝔽₃`.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, Lie algebra structure.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, Lie algebra structure.
 -/
 instance gradedLieAlgebra : LieAlgebra (ZMod 3) (GradedModule G) where
   lie_smul r x y := by exact map_smul (bracketLinear x) r y
@@ -124,7 +124,7 @@ instance gradedLieAlgebra : LieAlgebra (ZMod 3) (GradedModule G) where
 /-- A triple bracket depends only on the three degree-one components.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 2.
 -/
 theorem triple_bracket_eq (x y z : GradedModule G) :
     ⁅⁅x, y⁆, z⁆ = DirectSum.lof (ZMod 3) ℕ (Layer G) 3
@@ -136,7 +136,7 @@ theorem triple_bracket_eq (x y z : GradedModule G) :
 /-- The triple bracket is cyclically invariant on the whole associated graded Lie algebra.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 2.
 -/
 theorem triple_bracket_cyclic (x y z : GradedModule G) : ⁅⁅x, y⁆, z⁆ = ⁅⁅y, z⁆, x⁆ := by
   simp only [triple_bracket_eq, bracketLayer_triple_cyclic (x 1) (y 1) (z 1)]
@@ -144,7 +144,7 @@ theorem triple_bracket_cyclic (x y z : GradedModule G) : ⁅⁅x, y⁆, z⁆ = �
 /-- A repeated final argument annihilates a triple bracket.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 2.
 -/
 theorem triple_bracket_self (x y : GradedModule G) : ⁅⁅x, y⁆, y⁆ = 0 := by
   rw [triple_bracket_eq, bracketLayer_triple_self, map_zero]
@@ -152,7 +152,7 @@ theorem triple_bracket_self (x y : GradedModule G) : ⁅⁅x, y⁆, y⁆ = 0 := 
 /-- The direct-sum bracket agrees with the group-commutator quotient in every positive degree.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
 -/
 theorem bracket_lof {i j : ℕ} (hi : 0 < i) (hj : 0 < j) (x : Layer G i) (y : Layer G j) :
     ⁅DirectSum.lof (ZMod 3) ℕ (Layer G) i x, DirectSum.lof (ZMod 3) ℕ (Layer G) j y⁆ =
@@ -184,7 +184,7 @@ theorem bracket_lof {i j : ℕ} (hi : 0 < i) (hj : 0 < j) (x : Layer G i) (y : L
 /-- On homogeneous initial forms the full Lie bracket is the initial form of the commutator.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
 -/
 @[simp]
 theorem bracket_lof_mk {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
@@ -198,7 +198,7 @@ theorem bracket_lof_mk {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
 /-- The degree-`n` homogeneous subspace in the associated graded Lie algebra.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, direct-sum grading.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, direct-sum grading.
 -/
 def grade (G : Type*) [Group G] [Fact (HasExponentThree G)] (n : ℕ) :
     Submodule (ZMod 3) (GradedModule G) :=
@@ -207,7 +207,7 @@ def grade (G : Type*) [Group G] [Fact (HasExponentThree G)] (n : ℕ) :
 /-- The canonical homogeneous subspaces decompose the associated graded.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, direct-sum grading.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, direct-sum grading.
 -/
 instance gradedDecomposition : DirectSum.Decomposition (grade G) :=
   DirectSum.rangeLofDecomposition (ZMod 3) ℕ (Layer G)
@@ -215,7 +215,7 @@ instance gradedDecomposition : DirectSum.Decomposition (grade G) :=
 /-- The positive central grading is compatible with the Lie bracket.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, graded Lie algebra structure.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, graded Lie algebra structure.
 -/
 instance gradedLieGrading : GradedLieAlgebra (grade G) where
   bracket_mem {i j} {x y} hx hy := by
@@ -232,7 +232,7 @@ instance gradedLieGrading : GradedLieAlgebra (grade G) where
 /-- The artificial degree zero contributes no vectors to the positive grading.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.18, positive grading.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, positive grading.
 -/
 @[simp]
 theorem grade_zero : grade G 0 = ⊥ := by
@@ -244,7 +244,7 @@ theorem grade_zero : grade G 0 = ⊥ := by
 /-- All homogeneous subspaces of degree at least four vanish.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 1.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 1.
 -/
 theorem grade_eq_bot_of_four_le {n : ℕ} (hn : 4 ≤ n) : grade G n = ⊥ := by
   have := layer_subsingleton_of_four_le (G := G) Fact.out hn
@@ -258,7 +258,7 @@ variable {H : Type*} [Group H] [Fact (HasExponentThree H)]
 /-- The associated graded map preserves the actual Lie bracket.
 
 Paper-ID: preliminaries.associated_graded_map
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.22.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.22.
 -/
 theorem map_bracket (f : G →* H) (x y : GradedModule G) :
     map f ⁅x, y⁆ = ⁅map f x, map f y⁆ := by
@@ -270,7 +270,7 @@ theorem map_bracket (f : G →* H) (x y : GradedModule G) :
 /-- The natural Lie algebra homomorphism induced by a group homomorphism.
 
 Paper-ID: preliminaries.associated_graded_map
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.22.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.22.
 -/
 def mapLie (f : G →* H) : GradedModule G →ₗ⁅ZMod 3⁆ GradedModule H :=
   { map f with map_lie' := fun {x y} => map_bracket f x y }
@@ -278,7 +278,7 @@ def mapLie (f : G →* H) : GradedModule G →ₗ⁅ZMod 3⁆ GradedModule H :=
 /-- The Lie homomorphism is the already constructed direct sum of quotient maps.
 
 Paper-ID: preliminaries.associated_graded_map
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.22.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.22.
 -/
 @[simp]
 theorem mapLie_apply (f : G →* H) (x : GradedModule G) : mapLie f x = map f x := rfl
@@ -286,7 +286,7 @@ theorem mapLie_apply (f : G →* H) (x : GradedModule G) : mapLie f x = map f x 
 /-- The natural Lie map preserves every homogeneous subspace.
 
 Paper-ID: preliminaries.associated_graded_map
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.22.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.22.
 -/
 theorem mapLie_mem_grade (f : G →* H) (n : ℕ) {x : GradedModule G} (hx : x ∈ grade G n) :
     mapLie f x ∈ grade H n := by
@@ -296,7 +296,7 @@ theorem mapLie_mem_grade (f : G →* H) (n : ℕ) {x : GradedModule G} (hx : x �
 /-- The induced Lie map respects identity homomorphisms.
 
 Paper-ID: preliminaries.associated_graded_map
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.22.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.22.
 -/
 @[simp]
 theorem mapLie_id : mapLie (MonoidHom.id G) = LieHom.id := by
@@ -307,7 +307,7 @@ theorem mapLie_id : mapLie (MonoidHom.id G) = LieHom.id := by
 /-- The induced Lie map respects composition.
 
 Paper-ID: preliminaries.associated_graded_map
-TeX: T3_modelcompanion_v4.tex, v4 Definition 2.22.
+TeX: T3_modelcompanion_v7.tex, v7 Definition 2.22.
 -/
 @[simp]
 theorem mapLie_comp {K : Type*} [Group K] [Fact (HasExponentThree K)]
@@ -319,7 +319,7 @@ theorem mapLie_comp {K : Type*} [Group K] [Fact (HasExponentThree K)]
 /-- Injectivity of the associated graded Lie map implies injectivity of the group map.
 
 Paper-ID: preliminaries.graded_injectivity_strictness
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(f) and LCS`, v4 Proposition 2.24, item 1.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(f) and LCS`, v7 Proposition 2.24, item 1.
 -/
 theorem injective_of_mapLie_injective (f : G →* H) (hf : Function.Injective (mapLie f)) :
     Function.Injective f := injective_of_map_injective f hf
@@ -327,7 +327,7 @@ theorem injective_of_mapLie_injective (f : G →* H) (hf : Function.Injective (m
 /-- An embedding induces an injective Lie map exactly when its image is lower-central strict.
 
 Paper-ID: preliminaries.graded_injectivity_strictness
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(f) and LCS`, v4 Proposition 2.24, item 2.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(f) and LCS`, v7 Proposition 2.24, item 2.
 -/
 theorem mapLie_injective_iff_isStrict (f : G →* H) (hf : Function.Injective f) :
     Function.Injective (mapLie f) ↔ IsStrict f.range := map_injective_iff_isStrict f hf

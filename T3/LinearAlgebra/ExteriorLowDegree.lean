@@ -20,7 +20,7 @@ three have positive signs here; the sign in the degree-one by degree-two Lie bra
 The bases may have arbitrary cardinality, and the coefficient ring is any commutative ring.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, lines 883–887.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, lines 964–968.
 -/
 
 @[expose] public section
@@ -36,7 +36,7 @@ variable {R V W I J : Type*} [CommRing R]
 /-- List three dependent components in decreasing order of their indices.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, supporting `proposition:gr of free product`, degree two blocks.
+TeX: T3_modelcompanion_v7.tex, supporting `proposition:gr of free product`, degree two blocks.
 -/
 def piThreeEquiv (M : Fin 3 → Type*) [∀ i, AddCommGroup (M i)]
     [∀ i, Module R (M i)] : (∀ i, M i) ≃ₗ[R] M 2 × M 1 × M 0 where
@@ -50,7 +50,7 @@ def piThreeEquiv (M : Fin 3 → Type*) [∀ i, AddCommGroup (M i)]
 /-- List four dependent components in decreasing order of their indices.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, supporting `proposition:gr of free product`, degree three blocks.
+TeX: T3_modelcompanion_v7.tex, supporting `proposition:gr of free product`, degree three blocks.
 -/
 def piFourEquiv (M : Fin 4 → Type*) [∀ i, AddCommGroup (M i)]
     [∀ i, Module R (M i)] : (∀ i, M i) ≃ₗ[R] M 3 × M 2 × M 1 × M 0 where
@@ -65,7 +65,7 @@ def piFourEquiv (M : Fin 4 → Type*) [∀ i, AddCommGroup (M i)]
 /-- Remove the exterior degree-zero factor on the left of a tensor product.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, supporting `proposition:gr of free product`, pure exterior blocks.
+TeX: T3_modelcompanion_v7.tex, supporting `proposition:gr of free product`, pure exterior blocks.
 -/
 noncomputable def zeroLeftEquiv (n : ℕ) :
     ((⋀[R]^0 V) ⊗[R] (⋀[R]^n W)) ≃ₗ[R] ⋀[R]^n W :=
@@ -75,7 +75,7 @@ noncomputable def zeroLeftEquiv (n : ℕ) :
 /-- Remove the exterior degree-zero factor on the right of a tensor product.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, supporting `proposition:gr of free product`, pure exterior blocks.
+TeX: T3_modelcompanion_v7.tex, supporting `proposition:gr of free product`, pure exterior blocks.
 -/
 noncomputable def zeroRightEquiv (n : ℕ) :
     ((⋀[R]^n V) ⊗[R] (⋀[R]^0 W)) ≃ₗ[R] ⋀[R]^n V :=
@@ -144,7 +144,7 @@ variable (R V W) in
 /-- Include a tensor of vectors by exterior multiplication, with the left factor first.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree two decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree two decomposition.
 -/
 noncomputable def mixedTwoMap : V ⊗[R] W →ₗ[R] ⋀[R]^2 (V × W) :=
   (ExteriorTensor.wedgeMap R V W 2 1).comp
@@ -155,7 +155,7 @@ variable (R V W) in
 /-- Include the mixed tensor of a left two-form and a right vector by exterior multiplication.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree three decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree three decomposition.
 -/
 noncomputable def mixedTwoOneMap : (⋀[R]^2 V) ⊗[R] W →ₗ[R] ⋀[R]^3 (V × W) :=
   (ExteriorTensor.wedgeMap R V W 3 2).comp
@@ -165,7 +165,7 @@ variable (R V W) in
 /-- Include the mixed tensor of a left vector and a right two-form by exterior multiplication.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree three decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree three decomposition.
 -/
 noncomputable def mixedOneTwoMap : V ⊗[R] (⋀[R]^2 W) →ₗ[R] ⋀[R]^3 (V × W) :=
   (ExteriorTensor.wedgeMap R V W 3 1).comp
@@ -174,7 +174,7 @@ noncomputable def mixedOneTwoMap : V ⊗[R] (⋀[R]^2 W) →ₗ[R] ⋀[R]^3 (V �
 /-- On a pure tensor the mixed degree-two map is the usual wedge of the included vectors.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree two decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree two decomposition.
 -/
 theorem mixedTwoMap_tmul (v : V) (w : W) :
     mixedTwoMap R V W (v ⊗ₜ[R] w) =
@@ -186,7 +186,7 @@ theorem mixedTwoMap_tmul (v : V) (w : W) :
 /-- On a pure tensor the left degree-two mixed map is the usual wedge, with positive sign.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree three decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree three decomposition.
 -/
 theorem mixedTwoOneMap_tmul (q : ⋀[R]^2 V) (w : W) :
     mixedTwoOneMap R V W (q ⊗ₜ[R] w) =
@@ -197,7 +197,7 @@ theorem mixedTwoOneMap_tmul (q : ⋀[R]^2 V) (w : W) :
 /-- On a pure tensor the right degree-two mixed map is the usual wedge, with positive sign.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree three decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree three decomposition.
 -/
 theorem mixedOneTwoMap_tmul (v : V) (q : ⋀[R]^2 W) :
     mixedOneTwoMap R V W (v ⊗ₜ[R] q) =
@@ -209,7 +209,7 @@ variable (R V W) in
 /-- Recompose the three degree-two components by the pure inclusions and the mixed wedge map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree two decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree two decomposition.
 -/
 noncomputable def twoMap :
     (⋀[R]^2 V) × (V ⊗[R] W) × (⋀[R]^2 W) →ₗ[R] ⋀[R]^2 (V × W) :=
@@ -220,7 +220,7 @@ variable (R V W) in
 /-- Recompose the four degree-three components by the pure inclusions and the mixed wedge maps.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree three decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree three decomposition.
 -/
 noncomputable def threeMap :
     (⋀[R]^3 V) × ((⋀[R]^2 V) ⊗[R] W) × (V ⊗[R] (⋀[R]^2 W)) × (⋀[R]^3 W) →ₗ[R]
@@ -232,7 +232,7 @@ noncomputable def threeMap :
 /-- Simplify and reorder the three exterior tensor blocks in degree two.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, supporting `proposition:gr of free product`, degree two blocks.
+TeX: T3_modelcompanion_v7.tex, supporting `proposition:gr of free product`, degree two blocks.
 -/
 noncomputable def twoBlocksEquiv :
     (⨁ k : Fin 3, ExteriorTensor.TensorBlock R V W 2 k) ≃ₗ[R]
@@ -246,7 +246,7 @@ noncomputable def twoBlocksEquiv :
 /-- Simplify and reorder the four exterior tensor blocks in degree three.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, supporting `proposition:gr of free product`, degree three blocks.
+TeX: T3_modelcompanion_v7.tex, supporting `proposition:gr of free product`, degree three blocks.
 -/
 noncomputable def threeBlocksEquiv :
     (⨁ k : Fin 4, ExteriorTensor.TensorBlock R V W 3 k) ≃ₗ[R]
@@ -263,7 +263,7 @@ variable [LinearOrder I] [LinearOrder J] (b : Basis I R V) (c : Basis J R W)
 /-- The degree-two exterior sum decomposition, with the paper's right-associated product.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, lines 883–887.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, lines 964–968.
 -/
 noncomputable def twoEquiv :
     ((⋀[R]^2 V) × (V ⊗[R] W) × (⋀[R]^2 W)) ≃ₗ[R] ⋀[R]^2 (V × W) :=
@@ -273,7 +273,7 @@ noncomputable def twoEquiv :
 /-- The degree-three exterior sum decomposition, with both mixed wedge components positive.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, lines 883–887.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, lines 964–968.
 -/
 noncomputable def threeEquiv :
     ((⋀[R]^3 V) × ((⋀[R]^2 V) ⊗[R] W) × (V ⊗[R] (⋀[R]^2 W)) × (⋀[R]^3 W)) ≃ₗ[R]
@@ -284,7 +284,7 @@ noncomputable def threeEquiv :
 /-- Degree-two recomposition is the sum of the two pure inclusions and the mixed wedge.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree two decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree two decomposition.
 -/
 theorem twoEquiv_apply (q : ⋀[R]^2 V) (t : V ⊗[R] W) (r : ⋀[R]^2 W) :
     twoEquiv b c (q, t, r) = exteriorPower.map 2 (LinearMap.inl R V W) q +
@@ -304,7 +304,7 @@ theorem twoEquiv_apply (q : ⋀[R]^2 V) (t : V ⊗[R] W) (r : ⋀[R]^2 W) :
 /-- Degree-three recomposition is the sum of the pure inclusions and the two positive wedges.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree three decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree three decomposition.
 -/
 theorem threeEquiv_apply (q : ⋀[R]^3 V) (t : (⋀[R]^2 V) ⊗[R] W)
     (u : V ⊗[R] (⋀[R]^2 W)) (r : ⋀[R]^3 W) :
@@ -326,7 +326,7 @@ theorem threeEquiv_apply (q : ⋀[R]^3 V) (t : (⋀[R]^2 V) ⊗[R] W)
 /-- The degree-two equivalence has the canonical, basis-independent recomposition map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree two decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree two decomposition.
 -/
 theorem twoEquiv_toLinearMap : (twoEquiv b c).toLinearMap = twoMap R V W := by
   apply LinearMap.ext
@@ -337,7 +337,7 @@ theorem twoEquiv_toLinearMap : (twoEquiv b c).toLinearMap = twoMap R V W := by
 /-- The degree-three equivalence has the canonical, basis-independent recomposition map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree three decomposition.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree three decomposition.
 -/
 theorem threeEquiv_toLinearMap : (threeEquiv b c).toLinearMap = threeMap R V W := by
   apply LinearMap.ext

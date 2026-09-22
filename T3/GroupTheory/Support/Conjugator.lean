@@ -18,7 +18,7 @@ lifting this expression is central, so the paper's right conjugation action is u
 The bound is expressed in terms of the length of a generating list.
 
 Paper-ID: main.bounded_support
-TeX: T3_modelcompanion_v4.tex, `lemma:witness in bdd support`, lines 681–693.
+TeX: T3_modelcompanion_v7.tex, `lemma:witness in bdd support`, lines 759–771.
 -/
 
 @[expose] public section
@@ -109,7 +109,7 @@ theorem crossList_mem_closure {S : Set F} {m : F → F} :
 conjugator using at most `k + 1` elements of the other factor. The ambient group may be infinite.
 
 Paper-ID: main.bounded_support
-TeX: T3_modelcompanion_v4.tex, `lemma:witness in bdd support`, lines 681–693.
+TeX: T3_modelcompanion_v7.tex, `lemma:witness in bdd support`, lines 759–771.
 -/
 theorem exists_compressed_conjugator (hF : HasExponentThree F) {BB MM : Subgroup F}
     (hgen : BB ⊔ MM = ⊤) (b : List F)

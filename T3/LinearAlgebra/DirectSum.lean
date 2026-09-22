@@ -15,7 +15,7 @@ external direct sum. The decomposition sends each coordinate to its canonical in
 regarded as an element of that inclusion's range.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, supporting the direct-sum grading in Definition 2.18.
+TeX: T3_modelcompanion_v7.tex, supporting the direct-sum grading in Definition 2.18.
 -/
 
 @[expose] public section
@@ -30,7 +30,7 @@ variable (R : Type*) [Semiring R] (ι : Type*) [DecidableEq ι]
 /-- The canonical homogeneous submodules decompose the external direct sum.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, supporting the direct-sum grading in Definition 2.18.
+TeX: T3_modelcompanion_v7.tex, supporting the direct-sum grading in Definition 2.18.
 -/
 instance rangeLofDecomposition :
     Decomposition (fun i => LinearMap.range (lof R ι M i)) := by
@@ -50,7 +50,7 @@ instance rangeLofDecomposition :
 /-- The `i`-th homogeneous component is the canonical inclusion of the `i`-th coordinate.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v4.tex, supporting the direct-sum grading in Definition 2.18.
+TeX: T3_modelcompanion_v7.tex, supporting the direct-sum grading in Definition 2.18.
 -/
 @[simp]
 theorem coe_decompose_range_lof (x : ⨁ i, M i) (i : ι) :

@@ -20,7 +20,7 @@ This is Fact 2.3 with the repository's explicit canonical semantic universe `Typ
 No finite-language, local-finiteness, or universality assumption is imposed.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.3, lines 274–280; no label.
 -/
 
 @[expose] public section
@@ -38,7 +38,7 @@ companion of that theory. In particular, model completeness has its syntactic me
 Definition 2.2(2).
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, reverse implication of Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, reverse implication of Fact 2.3, lines 274–280; no label.
 -/
 theorem isModelCompanionOf_of_isExistentiallyClosed_iff (hT : T.IsPiTwo)
     (h₁ : ∀ M : Tstar.ModelType.{u, v, max u v}, T.IsExistentiallyClosed M)
@@ -60,7 +60,7 @@ companion's model class and the class of existentially closed models of the orig
 The model-class quantifiers range over nonempty structures in the canonical semantic universe.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.3, lines 274–280; no label.
 -/
 theorem isModelCompanionOf_iff_models_iff_isExistentiallyClosed (hT : T.IsPiTwo) :
     Tstar.IsModelCompanionOf T ↔

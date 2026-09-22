@@ -16,7 +16,7 @@ models: each tuple belongs to a small elementary hull. The same finite cover con
 supplies a uniform bound for generated substructures in every universe.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v4.tex, Fact 2.5, lines 209–212; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.5, lines 288–291; no label.
 -/
 
 @[expose] public section
@@ -33,7 +33,7 @@ variable {L : Language.{u, v}} {T : L.Theory}
 all tuples in models of arbitrary cardinality and universe.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v4.tex, Fact 2.5, lines 209–212; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.5, lines 288–291; no label.
 -/
 theorem IsLocallyFinite.exists_finite_qfType_cover_of_model [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (n : ℕ) :
@@ -60,7 +60,7 @@ theorem IsLocallyFinite.exists_finite_qfType_cover_of_model [Finite L.Symbols]
 fixed length in arbitrary nonempty models.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v4.tex, Fact 2.5, lines 209–212; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.5, lines 288–291; no label.
 -/
 theorem IsLocallyFinite.exists_card_closure_range_le_of_model [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (n : ℕ) :
@@ -82,7 +82,7 @@ theorem IsLocallyFinite.exists_card_closure_range_le_of_model [Finite L.Symbols]
 of an arbitrary model of a locally finite theory in a finite language.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v4.tex, Fact 2.5, lines 209–212; no label.
+TeX: T3_modelcompanion_v7.tex, Fact 2.5, lines 288–291; no label.
 -/
 theorem exists_card_closure_le_of_isLocallyFinite_of_model [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (n : ℕ) :
@@ -108,7 +108,7 @@ theorem exists_card_closure_le_of_isLocallyFinite_of_model [Finite L.Symbols]
 subset of representatives modulo the theory.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v4.tex, Definition 2.2, item 6, lines 185–193; no label.
+TeX: T3_modelcompanion_v7.tex, Definition 2.2, item 6, lines 264–272; no label.
 -/
 theorem IsLocallyFinite.exists_finite_tupleQfDiagram_representatives_of_model
     [Finite L.Symbols] (hT : T.IsLocallyFinite) (M : Type w)

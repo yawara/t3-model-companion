@@ -13,17 +13,17 @@ public import Mathlib.LinearAlgebra.Basis.VectorSpace
 # Representatives of bases for the strictness defects
 
 For a subgroup inclusion, the kernel of its map on the first graded layer is exactly the
-defect `(C ∩ γ₂(G)) / γ₂(C)` in Lemma 4.7. In degree two the kernel describes
+defect `(C ∩ γ₂(G)) / γ₂(C)` in Lemma 4.8. In degree two the kernel describes
 `(γ₂(C) ∩ γ₃(G)) / γ₃(C)`; identifying this numerator with `C ∩ γ₃(G)` requires the
-first strictness conclusion, as in Lemma 4.9.
+first strictness conclusion, as in Lemma 4.10.
 
 This module chooses a basis of the actual kernel and lifts it to group elements. Its final
 subgroup equality states that these representatives generate the defect modulo the next
 intrinsic central term. Finiteness is required only for the source layer, not the ambient group.
 
 Paper-ID: structure.derived_strictification, structure.lcs_strictification
-TeX: T3_modelcompanion_v4.tex, `lemma:commutator root`, lines 1084–1086, and
-`lemma:number of generators for triple commutator roots`, lines 1144–1145.
+TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1165–1167, and
+`lemma:number of generators for triple commutator roots`, lines 1225–1226.
 -/
 
 @[expose] public section
@@ -40,8 +40,8 @@ For an inclusion this is the basis choice used in the two strictification steps.
 also applies to general homomorphisms and includes zero-dimensional kernels.
 
 Paper-ID: structure.derived_strictification, structure.lcs_strictification
-TeX: T3_modelcompanion_v4.tex, `lemma:commutator root`, lines 1084–1086, and
-`lemma:number of generators for triple commutator roots`, lines 1144–1145.
+TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1165–1167, and
+`lemma:number of generators for triple commutator roots`, lines 1225–1226.
 -/
 theorem exists_layer_kernel_basis_representatives (f : G →* H) (k : ℕ)
     [Module.Finite (ZMod 3) (Layer G k)] :
@@ -109,7 +109,7 @@ minimum number of generators of the source group. The generators lift a basis of
 first-layer kernel in `exists_layer_kernel_basis_representatives`.
 
 Paper-ID: structure.derived_strictification
-TeX: T3_modelcompanion_v4.tex, `lemma:commutator root`, lines 1084–1086.
+TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1165–1167.
 -/
 theorem exists_derived_defect_generators [Group.FG G] (f : G →* H) :
     ∃ d ≤ Group.rank G, ∃ g : Fin d → G,
@@ -129,8 +129,8 @@ The first strictness hypothesis is used to identify the whole inverse image of `
 its intersection with `γ₂(G)`; it is not dropped when choosing the degree-two kernel basis.
 
 Paper-ID: structure.lcs_strictification
-TeX: T3_modelcompanion_v4.tex, `lemma:number of generators for triple commutator roots`,
-lines 1144–1145.
+TeX: T3_modelcompanion_v7.tex, `lemma:number of generators for triple commutator roots`,
+lines 1225–1226.
 -/
 theorem exists_lowerCentral_defect_generators [Group.FG G] (f : G →* H)
     (hf : (commutator H).comap f = commutator G) :

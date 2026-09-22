@@ -18,7 +18,7 @@ The Boolean and quantifier construction applies to any finite language.
 None of the finite structures is assumed to satisfy a theory or to be nonempty.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v4.tex, `fact:locally finiteness and model companion`, line 255.
+TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, line 334.
 -/
 
 @[expose] public noncomputable section
@@ -38,7 +38,7 @@ variable {L : Language.{u, v}} [Finite L.Symbols]
 /-- The formula excluding every extension from a finite marked family.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v4.tex, `fact:locally finiteness and model companion`, line 255.
+TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, line 334.
 -/
 def excludedExtensions (j : ∀ k, A ↪[L] C k) : L.Formula A :=
   Formula.iInf fun k => (extensionFormula (L := L) (j k : A → C k)).not
@@ -46,7 +46,7 @@ def excludedExtensions (j : ∀ k, A ↪[L] C k) : L.Formula A :=
 /-- The exclusion formula means that no member of the family embeds over the assignment.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v4.tex, `fact:locally finiteness and model companion`, line 255.
+TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, line 334.
 -/
 theorem realize_excludedExtensions {M : Type*} [L.Structure M]
     (j : ∀ k, A ↪[L] C k) (a : A → M) :
@@ -58,7 +58,7 @@ theorem realize_excludedExtensions {M : Type*} [L.Structure M]
 The full diagram of `A` ensures that quantified assignments really are embeddings.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v4.tex, `fact:locally finiteness and model companion`, line 255.
+TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, line 334.
 -/
 def extensionAxiom (i : A ↪[L] B) (j : ∀ k, A ↪[L] C k) : L.Sentence :=
   Formula.iAlls A (((finiteDiagram (L := L) A ⊓ excludedExtensions j).imp
@@ -68,7 +68,7 @@ def extensionAxiom (i : A ↪[L] B) (j : ∀ k, A ↪[L] C k) : L.Sentence :=
 extension has an embedding of the prescribed extension over it.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v4.tex, `fact:locally finiteness and model companion`, lines 255–262.
+TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 334–341.
 -/
 theorem realize_extensionAxiom_iff {M : Type*} [L.Structure M]
     (i : A ↪[L] B) (j : ∀ k, A ↪[L] C k) :

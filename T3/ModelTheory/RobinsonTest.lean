@@ -23,7 +23,7 @@ for Robinson's test itself.
 Model quantifiers use the canonical semantic universe `Type (max u v)`.
 
 Paper-ID: `model_theory.companion_iff_ec`.
-Source: `T3_modelcompanion_v4.tex`, Fact 2.3, lines 195–201.
+Source: `T3_modelcompanion_v7.tex`, Fact 2.3, lines 274–280.
 -/
 
 @[expose] public section
@@ -47,7 +47,7 @@ variable {L : Language.{u, v}} {T : L.Theory}
 Model quantifiers use the canonical semantic universe `Type (max u v)`.
 
 Paper-ID: `model_theory.companion_iff_ec`.
-Source: `T3_modelcompanion_v4.tex`, Fact 2.3, lines 195–201. -/
+Source: `T3_modelcompanion_v7.tex`, Fact 2.3, lines 274–280. -/
 def IsExistentiallyClosedInModels (T : L.Theory) : Prop :=
   ∀ (M N : T.ModelType.{u, v, max u v}) (f : M ↪[L] N) {n : ℕ}
     (φ : L.Formula (Fin n)) (x : Fin n → M),
@@ -62,7 +62,7 @@ The shared parameter support is existentially quantified at once, so that equal 
 different facts receive the same witness.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem IsExistentiallyClosedInModels.exists_assignment
     (hec : T.IsExistentiallyClosedInModels)
@@ -174,7 +174,7 @@ renamed along `h`) and the quantifier-free diagram of `B`; finite satisfiability
 `exists_assignment`.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem IsExistentiallyClosedInModels.exists_embedding_elementary_comp
     (hec : T.IsExistentiallyClosedInModels)
@@ -260,7 +260,7 @@ One step of the alternating sandwich chain: from a state `(X, Y, h)` pass to `(Y
 `P` and `g` are produced by the sandwich lemma, so that `g ∘ h` is elementary.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 noncomputable def IsExistentiallyClosedInModels.chainStep
     (hec : T.IsExistentiallyClosedInModels)
@@ -272,7 +272,7 @@ noncomputable def IsExistentiallyClosedInModels.chainStep
 /-- The alternating sandwich chain determined by a starting embedding.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 noncomputable def IsExistentiallyClosedInModels.chainAux
     (hec : T.IsExistentiallyClosedInModels)
@@ -284,7 +284,7 @@ noncomputable def IsExistentiallyClosedInModels.chainAux
 /-- The carriers of the alternating sandwich chain.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 noncomputable abbrev IsExistentiallyClosedInModels.chainCarrier
     (hec : T.IsExistentiallyClosedInModels)
@@ -295,7 +295,7 @@ noncomputable abbrev IsExistentiallyClosedInModels.chainCarrier
 /-- The transition embeddings of the alternating sandwich chain.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 noncomputable def IsExistentiallyClosedInModels.chainEmbedding
     (hec : T.IsExistentiallyClosedInModels)
@@ -306,7 +306,7 @@ noncomputable def IsExistentiallyClosedInModels.chainEmbedding
 /-- Composites of two consecutive transitions of the sandwich chain are elementary.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem IsExistentiallyClosedInModels.chainEmbedding_comp_elementary
     (hec : T.IsExistentiallyClosedInModels)
@@ -320,7 +320,7 @@ theorem IsExistentiallyClosedInModels.chainEmbedding_comp_elementary
 /-- Transitions of the sandwich chain over an even gap are elementary.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem IsExistentiallyClosedInModels.chain_natLERec_elementary
     (hec : T.IsExistentiallyClosedInModels)
@@ -370,7 +370,7 @@ The first transition of the sandwich chain is elementary: sandwich it between th
 canonical maps into the direct limit of the chain, using the elementary chain theorem.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem IsExistentiallyClosedInModels.chainEmbedding_zero_elementary
     (hec : T.IsExistentiallyClosedInModels)
@@ -415,7 +415,7 @@ theorem IsExistentiallyClosedInModels.chainEmbedding_zero_elementary
 reflects existential formulas, then every such embedding is elementary.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem allEmbeddingsElementary_of_isExistentiallyClosedInModels
     (hec : T.IsExistentiallyClosedInModels) : T.AllEmbeddingsElementary := by
@@ -428,7 +428,7 @@ modulo the theory to an existential formula if every embedding between its model
 existential formulas.
 
 Paper-ID: `model_theory.companion_iff_ec`.
-Source: `T3_modelcompanion_v4.tex`, Fact 2.3, lines 195–201. -/
+Source: `T3_modelcompanion_v7.tex`, Fact 2.3, lines 274–280. -/
 theorem isModelComplete_of_isExistentiallyClosedInModels
     (hec : T.IsExistentiallyClosedInModels) : T.IsModelComplete :=
   (allEmbeddingsElementary_of_isExistentiallyClosedInModels hec).isModelComplete

@@ -33,7 +33,7 @@ identify the free group with the full coordinate model, or establish the normal 
   when three distinct generators are available.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 Primary source: Levi–van der Waerden (1933), p. 156, equations (8)–(9) and Satz 1.
 -/
 
@@ -54,7 +54,7 @@ variable [DecidableEq I]
 /-- The comparison map, sending each free generator to its model element.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def toLvdW : Free I →* LvdW I :=
   Free.lift LvdW.pow_three LvdW.of
@@ -62,7 +62,7 @@ def toLvdW : Free I →* LvdW I :=
 /-- The comparison map sends a free generator to the corresponding coordinate vector.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem toLvdW_of (i : I) : toLvdW (Free.of i) = LvdW.of i :=
@@ -73,7 +73,7 @@ end DecidableEq
 /-- Two distinct generators of the free exponent-three group do not commute.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem commutator_of_ne_one {i j : I} (hij : i ≠ j) :
     ⁅Free.of i, Free.of j⁆ ≠ (1 : Free I) := by
@@ -90,7 +90,7 @@ theorem commutator_of_ne_one {i j : I} (hij : i ≠ j) :
 Three distinct free generators have a nontrivial triple commutator.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem triple_commutator_of_ne_one {i j k : I} (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k) :
     ⁅⁅Free.of i, Free.of j⁆, Free.of k⁆ ≠ (1 : Free I) := by
@@ -105,7 +105,7 @@ With three distinct generators available, the third lower central term is nontri
 Mathlib numbers this term by `2`, whereas the paper denotes it by `γ₃`.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem lowerCentralSeries_two_ne_bot {i j k : I} (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k) :
     (⊤ : Subgroup (Free I)).lowerCentralSeries 2 ≠ ⊥ := by

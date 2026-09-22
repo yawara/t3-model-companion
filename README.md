@@ -6,7 +6,7 @@ Lean formalization of *Existence of a Model Companion for Groups of Exponent 3*.
 - Formalization author and responsible maintainer: **Yawara Ishida**.
 - License: [Apache-2.0](LICENSE).
 
-The [manuscript](T3_modelcompanion_v4.tex) proves that the theory of groups satisfying
+The [manuscript](T3_modelcompanion_v7.tex) proves that the theory of groups satisfying
 `x^3 = 1` has a model companion. The main group-theoretic theorem bounds the number
 of generators needed to witness non-amalgamation with an existentially closed group by
 `15 * ((3*m+4) * (m + choose(m,2) + choose(m,3)) + 1)^2`.
@@ -18,11 +18,13 @@ Palomar files prepare a future submission. No submission or registration has occ
 ## Reading the formalization
 
 - [Paper-order Lean entrypoint](T3/Paper.lean)
-- [All 50 paper items and 75 parts](docs/paper-map.md)
+- [All 60 tracked v7 items and 80 parts](docs/paper-map.md)
 - [Module and namespace policy](notes/lean-architecture.md)
-- [Mathematical source review](notes/paper-mathematical-audit.md)
+- [v7 source migration and review](notes/v7-migration.md)
+- [v7 formalization and verification](notes/v7-formalization.md)
+- [Section 6 analysis and remaining questions](notes/section-six-analysis.md)
 - [Paper correspondence](notes/paper-faithfulness-audit.md)
-- [Completed mathematical scope and encodings](notes/paper-faithful-completion.md)
+- [Historical v4 completion and encodings](notes/paper-faithful-completion.md)
 - [Palomar statements, process, and verification scope](docs/palomar.md)
 - [Structured authorship and review metadata](formalization.yaml)
 
@@ -31,6 +33,11 @@ Palomar files prepare a future submission. No submission or registration has occ
 are specification placeholders outside the mathematical import graph; all proof-library
 and Solution declarations use only `propext`, `Classical.choice`, and `Quot.sound`.
 The full paper map and the two selected Comparator declarations have distinct scopes.
+The map records 57 proved items and 80 proved parts, including every Section 5
+example and result and the Section 6 Burnside/local-finiteness equivalence.
+Questions 6.1 and 6.2 and Takeuchi's conjecture remain open; their analysis is
+recorded separately from the formal proofs.
+The previous manuscript and PDF are preserved in [archives](archives/README.md).
 
 OpenAI Codex agents implemented and reviewed the Lean development under Yawara Ishida's
 direction. The manuscript separately records its authors' mathematical work and use of AI.

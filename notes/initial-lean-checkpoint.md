@@ -1,5 +1,8 @@
 # 最初の Lean 実装
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 2026-09-09。Lean/mathlib v4.32.2、mathlib commit
 `905b95818eb32af7874a58b427f50c1711a5e96c`。
 対象は v4 TeX、SHA256

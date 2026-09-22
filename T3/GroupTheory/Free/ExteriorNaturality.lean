@@ -18,7 +18,7 @@ actual graded bracket. This identifies the factor maps in the coproduct presenta
 the canonical inclusions in the exterior algebra.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, proof, lines 870–920.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof, lines 951–1001.
 -/
 
 @[expose] public section
@@ -38,7 +38,7 @@ variable {I J V W : Type*} [LinearOrder I] [LinearOrder J]
 /-- Agreement on the free generator classes implies agreement on the entire first layer.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, identification of factor maps.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, identification of factor maps.
 -/
 theorem sigmaOne_mapLayer_of_basis
     (h : ∀ i, sigmaOne c (mapLayer φ 1 (layerOneBasis i)) =
@@ -57,7 +57,7 @@ theorem sigmaOne_mapLayer_of_basis
 /-- Agreement of the first layers forces agreement of the second layers with the exterior map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, identification of degree-two maps.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, identification of degree-two maps.
 -/
 theorem sigmaTwo_mapLayer
     (h : ∀ x, sigmaOne c (mapLayer φ 1 x) = exteriorPower.map 1 f (sigmaOne b x))
@@ -77,7 +77,7 @@ theorem sigmaTwo_mapLayer
 /-- Agreement of the first layers forces agreement of the third layers with the exterior map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, degree-three maps.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, degree-three maps.
 -/
 theorem sigmaThree_mapLayer
     (h : ∀ x, sigmaOne c (mapLayer φ 1 x) = exteriorPower.map 1 f (sigmaOne b x))
@@ -111,7 +111,7 @@ omit [LinearOrder J] in
 /-- The left free factor in degree one corresponds to the canonical vector-space inclusion.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, left factor identification.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, left factor identification.
 -/
 theorem sigmaOne_map_inl (x : Layer (Free I) 1) :
     sigmaOne (b.prod c) (mapLayer (map (Sum.inl : I → I ⊕ J)) 1 x) =
@@ -127,7 +127,7 @@ omit [LinearOrder I] in
 /-- The right free factor in degree one corresponds to the canonical vector-space inclusion.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, right factor identification.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, right factor identification.
 -/
 theorem sigmaOne_map_inr (x : Layer (Free J) 1) :
     sigmaOne (b.prod c) (mapLayer (map (Sum.inr : J → I ⊕ J)) 1 x) =
@@ -143,7 +143,7 @@ omit [LinearOrder J] in
 /-- The second graded map of the left free inclusion is its exterior-square inclusion.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, left degree-two factor.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, left degree-two factor.
 -/
 theorem sigmaTwo_map_inl (x : Layer (Free I) 2) :
     sigmaTwo (b.prod c) (mapLayer (map (Sum.inl : I → I ⊕ J)) 2 x) =
@@ -154,7 +154,7 @@ omit [LinearOrder I] in
 /-- The second graded map of the right free inclusion is its exterior-square inclusion.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, right degree-two factor.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, right degree-two factor.
 -/
 theorem sigmaTwo_map_inr (x : Layer (Free J) 2) :
     sigmaTwo (b.prod c) (mapLayer (map (Sum.inr : J → I ⊕ J)) 2 x) =
@@ -165,7 +165,7 @@ omit [LinearOrder J] in
 /-- The third graded map of the left free inclusion is its exterior-cube inclusion.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, left degree-three factor.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, left degree-three factor.
 -/
 theorem sigmaThree_map_inl (x : Layer (Free I) 3) :
     sigmaThree (b.prod c) (mapLayer (map (Sum.inl : I → I ⊕ J)) 3 x) =
@@ -176,7 +176,7 @@ omit [LinearOrder I] in
 /-- The third graded map of the right free inclusion is its exterior-cube inclusion.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, right degree-three factor.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, right degree-three factor.
 -/
 theorem sigmaThree_map_inr (x : Layer (Free J) 3) :
     sigmaThree (b.prod c) (mapLayer (map (Sum.inr : J → I ⊕ J)) 3 x) =
@@ -186,7 +186,7 @@ theorem sigmaThree_map_inr (x : Layer (Free J) 3) :
 /-- The mixed bracket in degree two is the product of the two exterior factor inclusions.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, the `(1,1)` component.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, the `(1,1)` component.
 -/
 theorem sigmaTwo_bracket_factors (x : Layer (Free I) 1) (y : Layer (Free J) 1) :
     sigmaTwo (b.prod c) (bracketLayer (by decide) (by decide)
@@ -198,7 +198,7 @@ theorem sigmaTwo_bracket_factors (x : Layer (Free I) 1) (y : Layer (Free J) 1) :
 /-- The `(2,1)` mixed bracket is the ordered exterior product, with positive sign.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, the `(2,1)` component.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, the `(2,1)` component.
 -/
 theorem sigmaThree_bracket_factors_two_one (q : Layer (Free I) 2) (y : Layer (Free J) 1) :
     sigmaThree (b.prod c) (bracketLayer (by decide) (by decide)
@@ -211,7 +211,7 @@ theorem sigmaThree_bracket_factors_two_one (q : Layer (Free I) 2) (y : Layer (Fr
 This is the sign needed when identifying the paper's `η₃` with its exterior tensor blocks.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, the `(1,2)` component.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, the `(1,2)` component.
 -/
 theorem sigmaThree_bracket_factors_one_two (x : Layer (Free I) 1) (q : Layer (Free J) 2) :
     sigmaThree (b.prod c) (bracketLayer (by decide) (by decide)

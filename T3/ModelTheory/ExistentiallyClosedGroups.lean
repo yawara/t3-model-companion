@@ -22,7 +22,7 @@ The simultaneous root constructions supply single commutator and triple-commutat
 and the graded free-two separation supplies the reverse central-series inclusions.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, `proposition:structure of e.c. model`, Proposition 4.11.
+TeX: T3_modelcompanion_v7.tex, `proposition:structure of e.c. model`, Proposition 4.12.
 -/
 
 @[expose] public section
@@ -43,7 +43,7 @@ include hM
 fixing each designated parameter. The finite group is not assumed to model the theory.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, `proposition:structure of e.c. model`, finite-diagram transfer.
+TeX: T3_modelcompanion_v7.tex, `proposition:structure of e.c. model`, finite-diagram transfer.
 -/
 theorem exists_group_embedding {N : Type*} {A : Type*} [Group N] [Group A] [Finite A]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
@@ -62,7 +62,7 @@ theorem exists_group_embedding {N : Type*} {A : Type*} [Group N] [Group A] [Fini
 which embeds back while fixing all the parameters.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, `proposition:structure of e.c. model`, finite witness transfer.
+TeX: T3_modelcompanion_v7.tex, `proposition:structure of e.c. model`, finite witness transfer.
 -/
 theorem exists_copy_of_tuples {N : Type*} [Group N] (hN : HasExponentThree N)
     (f : M →* N) (hf : Function.Injective f) {α β : Type*} [Finite α] [Finite β]
@@ -79,10 +79,10 @@ theorem exists_copy_of_tuples {N : Type*} [Group N] (hN : HasExponentThree N)
   exact ⟨C, ha, hb, g, hg, congrFun hga⟩
 
 /-- An existentially closed model of `T₃` is nontrivial; this is derived before applying
-Lemma 4.5, whose free-two separation requires a nontrivial left factor.
+Lemma 4.6, whose free-two separation requires a nontrivial left factor.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, `proposition:structure of e.c. model`, use of Lemma 4.5.
+TeX: T3_modelcompanion_v7.tex, `proposition:structure of e.c. model`, use of Lemma 4.6.
 -/
 theorem nontrivial : Nontrivial M := by
   have hG : HasExponentThree M := exponentThreeTheory_model_iff.mp hM.2.1
@@ -105,7 +105,7 @@ theorem nontrivial : Nontrivial M := by
 /-- A commutator equation with a parameter descends from an exponent-three extension.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1198–1201.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1279–1282.
 -/
 theorem exists_commutator_eq_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
@@ -121,7 +121,7 @@ theorem exists_commutator_eq_of_extension {N : Type*} [Group N]
 /-- A triple-commutator equation descends while fixing its designated parameter.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, line 1202.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, line 1283.
 -/
 theorem exists_triple_commutator_eq_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
@@ -139,7 +139,7 @@ theorem exists_triple_commutator_eq_of_extension {N : Type*} [Group N]
 /-- Noncommutation with a fixed parameter descends from an extension.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, line 1209.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, line 1290.
 -/
 theorem exists_commutator_ne_one_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
@@ -157,7 +157,7 @@ theorem exists_commutator_ne_one_of_extension {N : Type*} [Group N]
 /-- A nontrivial triple commutator with a fixed first parameter descends from an extension.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1204–1208.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1285–1289.
 -/
 theorem exists_triple_commutator_ne_one_of_extension {N : Type*} [Group N]
     (hN : HasExponentThree N) (f : M →* N) (hf : Function.Injective f)
@@ -177,7 +177,7 @@ theorem exists_triple_commutator_ne_one_of_extension {N : Type*} [Group N]
 /-- Every element of the third lower central term is a single triple commutator.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1192–1194 and 1202.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1273–1275 and 1283.
 -/
 theorem exists_triple_commutator (a : M)
     (ha : a ∈ (⊤ : Subgroup M).lowerCentralSeries 2) :
@@ -191,10 +191,10 @@ theorem exists_triple_commutator (a : M)
     (TripleRoots.generator z 0 2) (TripleRoots.baseMap_root z 0)
 
 /-- Every element of the derived subgroup is a single commutator. The witnesses are first
-adjoined by the concrete simultaneous quotient of Lemma 4.6 with one prescribed root.
+adjoined by the concrete simultaneous quotient of Lemma 4.7 with one prescribed root.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1189–1191 and 1198–1201.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1270–1272 and 1279–1282.
 -/
 theorem exists_commutator (a : M) (ha : a ∈ commutator M) :
     ∃ x y : M, a = ⁅x, y⁆ := by
@@ -210,7 +210,7 @@ theorem exists_commutator (a : M) (ha : a ∈ commutator M) :
 The witnesses first exist in the strict extension `M ∐ F₂`, and finite diagrams transfer them.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1204–1208.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1285–1289.
 -/
 theorem exists_triple_commutator_ne_one (a : M) (ha : a ∉ commutator M) :
     ∃ b c : M, ⁅⁅a, b⁆, c⁆ ≠ 1 := by
@@ -243,7 +243,7 @@ theorem exists_triple_commutator_ne_one (a : M) (ha : a ∉ commutator M) :
 The nonzero degree-two bracket in `M ∐ F₂` supplies the witness before e.c. transfer.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, line 1209.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, line 1290.
 -/
 theorem exists_commutator_ne_one (a : M) (ha : a ∈ commutator M)
     (ha₃ : a ∉ (⊤ : Subgroup M).lowerCentralSeries 2) : ∃ b : M, ⁅a, b⁆ ≠ 1 := by
@@ -274,7 +274,7 @@ theorem exists_commutator_ne_one (a : M) (ha : a ∈ commutator M)
 reverse order. No nontriviality assumption is added to existential closedness.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1186–1187 and 1204–1209.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1267–1268 and 1285–1290.
 -/
 theorem centralSeriesCoincide : CentralSeriesCoincide M := by
   have hG : HasExponentThree M := exponentThreeTheory_model_iff.mp hM.2.1
@@ -303,7 +303,7 @@ theorem centralSeriesCoincide : CentralSeriesCoincide M := by
 /-- The third lower central term is exactly the set of single triple commutators.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1192–1194.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1273–1275.
 -/
 theorem lowerCentralSeries_two_eq_setOf_triple_commutator :
     ((⊤ : Subgroup M).lowerCentralSeries 2 : Set M) = {a | ∃ x y z : M, a = ⁅⁅x, y⁆, z⁆} := by
@@ -318,7 +318,7 @@ theorem lowerCentralSeries_two_eq_setOf_triple_commutator :
 /-- The derived subgroup is exactly the set of single commutators.
 
 Paper-ID: structure.ec_central_series
-TeX: T3_modelcompanion_v4.tex, Proposition 4.11, lines 1189–1191.
+TeX: T3_modelcompanion_v7.tex, Proposition 4.12, lines 1270–1272.
 -/
 theorem commutator_eq_setOf_commutator :
     (commutator M : Set M) = {a | ∃ x y : M, a = ⁅x, y⁆} := by

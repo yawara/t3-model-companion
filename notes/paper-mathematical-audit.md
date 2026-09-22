@@ -1,5 +1,8 @@
 # T3 論文 v4 の数学的検証
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 検証日: 2026-09-09。
 
 **判定: 主定理とその系、および本文の明示的な上界を支える論証は成立すると判断する。今回確認した定理に、主張の変更・追加仮定・別証明を必要とする欠陥は見つからなかった。** 一方、いくつかの「明らか」「同様」の部分には、形式化に先立って明記すべき省略がある。その数学的内容を以下に補う。
@@ -8,7 +11,7 @@
 
 ## 一次資料
 
-- 検査対象: [T3_modelcompanion_v4.tex](../T3_modelcompanion_v4.tex)、1309 行。
+- 検査対象: [T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex)、1309 行。
 - SHA256: `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。本文は変更していない。
 
 以下の原典ページを画像で読んだ。

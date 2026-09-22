@@ -18,7 +18,7 @@ No finite presentation is chosen.
 
 Paper-ID: preliminaries.notation, preliminaries.free_coproduct,
 preliminaries.coproduct_factor_injective
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1(8), Fact 2.16, and Lemma 2.17.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1(8), Fact 2.16, and Lemma 2.17.
 -/
 
 @[expose] public section
@@ -28,7 +28,7 @@ namespace T3
 /-- The ordinary free product modulo the normal closure of cubes.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 8.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 8.
 -/
 abbrev Coproduct (G H : Type*) [Group G] [Group H] :=
   PowerQuotient (Monoid.Coprod G H) 3
@@ -40,21 +40,21 @@ variable {G H K : Type*} [Group G] [Group H] [Group K]
 /-- The left factor map into the coproduct.
 
 Paper-ID: preliminaries.coproduct_factor_injective
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.17.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.17.
 -/
 def inl : G →* Coproduct G H := powerQuotientMk.comp Monoid.Coprod.inl
 
 /-- The right factor map into the coproduct.
 
 Paper-ID: preliminaries.coproduct_factor_injective
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.17.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.17.
 -/
 def inr : H →* Coproduct G H := powerQuotientMk.comp Monoid.Coprod.inr
 
 /-- The coproduct satisfies the exponent-three law.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 8.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 8.
 -/
 theorem pow_three (g : Coproduct G H) : g ^ 3 = 1 := powerQuotient_hasExponent g
 
@@ -64,7 +64,7 @@ instance hasExponentThree : Fact (HasExponentThree (Coproduct G H)) := ⟨pow_th
 /-- A pair of homomorphisms to an exponent-three group descends from the free product.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 8.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 8.
 -/
 def lift (hK : HasExponentThree K) (f : G →* K) (g : H →* K) :
     Coproduct G H →* K :=
@@ -81,7 +81,7 @@ theorem lift_inr (hK : HasExponentThree K) (f : G →* K) (g : H →* K) (x : H)
 /-- Homomorphisms out of the coproduct are determined by their restrictions to both factors.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 8.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 8.
 -/
 theorem hom_ext {f g : Coproduct G H →* K}
     (hl : ∀ x, f (inl x) = g (inl x)) (hr : ∀ x, f (inr x) = g (inr x)) : f = g := by
@@ -94,14 +94,14 @@ theorem hom_ext {f g : Coproduct G H →* K}
 /-- The retraction to the left factor used in the paper's injectivity proof.
 
 Paper-ID: preliminaries.coproduct_factor_injective
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.17 and its proof.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.17 and its proof.
 -/
 def fst (hG : HasExponentThree G) : Coproduct G H →* G := lift hG (.id G) 1
 
 /-- The retraction to the right factor.
 
 Paper-ID: preliminaries.coproduct_factor_injective
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.17 and its proof.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.17 and its proof.
 -/
 def snd (hH : HasExponentThree H) : Coproduct G H →* H := lift hH 1 (.id H)
 
@@ -136,7 +136,7 @@ variable {G' H' G'' H'' : Type*} [Group G'] [Group H'] [Group G''] [Group H'']
 /-- The homomorphism of coproducts induced by homomorphisms of both factors.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, naturality of the factor maps.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, naturality of the factor maps.
 -/
 def map (f : G →* G') (g : H →* H') : Coproduct G H →* Coproduct G' H' :=
   lift pow_three (inl.comp f) (inr.comp g)
@@ -167,7 +167,7 @@ theorem map_comp (f : G →* G') (g : H →* H') (f' : G' →* G'') (g' : H' →
 /-- The left factor of exponent three embeds in the coproduct.
 
 Paper-ID: preliminaries.coproduct_factor_injective
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.17.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.17.
 -/
 theorem inl_injective (hG : HasExponentThree G) :
     Function.Injective (inl : G → Coproduct G H) :=
@@ -176,7 +176,7 @@ theorem inl_injective (hG : HasExponentThree G) :
 /-- The right factor of exponent three embeds in the coproduct.
 
 Paper-ID: preliminaries.coproduct_factor_injective
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.17.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.17.
 -/
 theorem inr_injective (hH : HasExponentThree H) :
     Function.Injective (inr : H → Coproduct G H) :=
@@ -191,7 +191,7 @@ variable {X Y : Type*}
 /-- The map from the free group on a disjoint union to the coproduct of its free factors.
 
 Paper-ID: preliminaries.free_coproduct
-TeX: T3_modelcompanion_v4.tex, v4 Fact 2.16.
+TeX: T3_modelcompanion_v7.tex, v7 Fact 2.16.
 -/
 def sumToCoproduct : Free (X ⊕ Y) →* Coproduct (Free X) (Free Y) :=
   lift Coproduct.pow_three (Sum.elim (fun x => Coproduct.inl (of x))
@@ -208,7 +208,7 @@ theorem sumToCoproduct_of_inr (y : Y) :
 /-- The inverse map induced by the two inclusions of generating sets.
 
 Paper-ID: preliminaries.free_coproduct
-TeX: T3_modelcompanion_v4.tex, v4 Fact 2.16.
+TeX: T3_modelcompanion_v7.tex, v7 Fact 2.16.
 -/
 def coproductToSum : Coproduct (Free X) (Free Y) →* Free (X ⊕ Y) :=
   Coproduct.lift pow_three (map Sum.inl) (map Sum.inr)
@@ -216,7 +216,7 @@ def coproductToSum : Coproduct (Free X) (Free Y) →* Free (X ⊕ Y) :=
 /-- The free exponent-three group on a disjoint union is the coproduct of the free factors.
 
 Paper-ID: preliminaries.free_coproduct
-TeX: T3_modelcompanion_v4.tex, v4 Fact 2.16.
+TeX: T3_modelcompanion_v7.tex, v7 Fact 2.16.
 -/
 def sumEquivCoproduct : Free (X ⊕ Y) ≃* Coproduct (Free X) (Free Y) :=
   MonoidHom.toMulEquiv sumToCoproduct coproductToSum

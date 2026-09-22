@@ -12,6 +12,7 @@ public import T3.GroupTheory.AssociatedGraded.Generation
 public import T3.GroupTheory.AssociatedGraded.Product
 public import T3.GroupTheory.AssociatedGradedExamples
 public import T3.GroupTheory.Amalgamation
+public import T3.GroupTheory.Amalgamation.Cyclic
 public import T3.GroupTheory.CentralSeries
 public import T3.GroupTheory.ConjugateWidth
 public import T3.GroupTheory.Coproduct.Basic
@@ -28,6 +29,8 @@ public import T3.GroupTheory.Free.ExteriorNaturality
 public import T3.GroupTheory.Free.Graded
 public import T3.GroupTheory.Free.InfiniteNormalForm
 public import T3.GroupTheory.Free.NormalForm
+public import T3.GroupTheory.Free.NonStrictExamples
+public import T3.GroupTheory.Free.UnboundedWitnessRank
 public import T3.GroupTheory.GradedNormalClosure
 public import T3.GroupTheory.GradedQuotient
 public import T3.GroupTheory.GeneratorRank
@@ -66,6 +69,7 @@ public import T3.ModelTheory.BoundedAmalgamationCriterion
 public import T3.ModelTheory.Amalgamation.Universes
 public import T3.ModelTheory.BoundedAmalgamation.Universes
 public import T3.ModelTheory.ExponentThree
+public import T3.ModelTheory.Burnside
 public import T3.ModelTheory.ExistentiallyClosedGroups
 public import T3.ModelTheory.StrictEnvelope
 public import T3.Main.BoundedWitness
@@ -75,7 +79,7 @@ public import T3.Main.ModelCompanion
 # Guide to the paper
 
 This library follows *Existence of a Model Companion for Groups of Exponent 3*,
-by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi, in `T3_modelcompanion_v4.tex`.
+by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi, in `T3_modelcompanion_v7.tex`.
 
 The source revision and the status of each paper item are recorded in
 `docs/paper-map.toml`; `docs/paper-map.md` is its generated reading index.
@@ -180,18 +184,18 @@ base is preserved when moving to its image in the model and back to language str
 ## Section 4: Structural analysis
 
 * `T3.GroupTheory.Presentation`: Proposition 4.1 for any specified basis and representatives.
-  The two group-generation inclusions are in `T3.GroupTheory.Generation`.
-* `T3.GroupTheory.GradedNormalClosure`: all three statements of Lemma 4.2 for an arbitrary
+  The two group-generation inclusions and Remark 4.2 are in `T3.GroupTheory.Generation`.
+* `T3.GroupTheory.GradedNormalClosure`: all three statements of Lemma 4.3 for an arbitrary
   subgroup of the derived subgroup, including nonhomogeneous relations.
 * `T3.GroupTheory.Roots.Triple`: the concrete simultaneous quotient construction and base
-  embedding of Lemma 4.8 using `G × Free (Fin (3 * n))`.
-* `T3.GroupTheory.Roots.SharedTriple` and `SharedLowerCentralStrictification`: Remark 4.10's
+  embedding of Lemma 4.9 using `G × Free (Fin (3 * n))`.
+* `T3.GroupTheory.Roots.SharedTriple` and `SharedLowerCentralStrictification`: Remark 4.11's
   four roots share the four generators of `F₄`. The actual quotient preserves the base group,
   supplies the four root equations, and removes the third-layer defect with four new generators.
 * `T3.GroupTheory.Roots.SharedCommutator` and `SharedDerivedStrictification`: the analogous
   three commutator roots share three generators, preserving the derived-intersection conclusion.
 * `T3.LinearAlgebra.ExteriorSum`: direct decomposition into exterior-basis blocks, supporting
-  the proof of Proposition 4.3.
+  the proof of Proposition 4.4.
 * `T3.LinearAlgebra.ExteriorTensor`: exterior powers of a direct sum as complementary tensor
   powers, with inverse given by the actual ordered exterior product, in arbitrary rank.
 * `T3.GroupTheory.Free.ExteriorNaturality`: the free factor maps agree with the standard
@@ -199,35 +203,60 @@ base is preserved when moving to its image in the model and back to language str
 * `T3.GroupTheory.Coproduct.Presentation`: the canonical free quotient presentation of the
   coproduct and componentwise intersections of its factor relations with the central terms.
 * `T3.GroupTheory.Coproduct.Relations`: the graded relation images and absorption of pure
-  commutator relations, as used in the proof of Proposition 4.3.
+  commutator relations, as used in the proof of Proposition 4.4.
 * `T3.GroupTheory.Coproduct.Graded`: the canonical degree-one isomorphism and degree-two/three
   maps, including their tensor formulas and naturality.
 * `T3.GroupTheory.Coproduct.GradedEquiv`: the actual degree-two/three isomorphisms, obtained
   from free presentations, the signed exterior decomposition, and quotient kernel transport.
   All groups and free ranks are arbitrary.
 * `T3.GroupTheory.Coproduct.BlockBracket`: the paper's block bracket inclusions and the
-  signed mixed bracket formulas, completing Proposition 4.3.
+  signed mixed bracket formulas, completing Proposition 4.4.
 * `T3.GroupTheory.Coproduct.Strict`: preservation of injectivity by coproduct along a strict
-  inclusion, Lemma 4.4, using the natural graded isomorphisms.
-* `T3.GroupTheory.Coproduct.CentralSeries`: Lemma 4.5 for arbitrary nontrivial `G` and `F₂`.
+  inclusion, Lemma 4.5, using the natural graded isomorphisms.
+* `T3.GroupTheory.Coproduct.CentralSeries`: Lemma 4.6 for arbitrary nontrivial `G` and `F₂`.
   The two graded separation claims follow the paper's component calculations.
 * `T3.GroupTheory.Roots.Commutator`: the simultaneous quotient by all commutator-root relations,
-  with injective base map and root equations, Lemma 4.6. The proof follows Claims A, B, and C.
+  with injective base map and root equations, Lemma 4.7. The proof follows Claims A, B, and C.
 * `T3.GroupTheory.GeneratorRank`: the first two graded dimensions are bounded by the number
-  of generators and its second binomial coefficient, for the proofs of Lemmas 4.7 and 4.9.
+  of generators and its second binomial coefficient, for the proofs of Lemmas 4.8 and 4.10.
   Finite dimensionality is proved before using the numerical bounds.
 * `T3.GroupTheory.Roots.DefectBasis`: representatives of bases of the actual graded kernels,
   with the group-level generation equalities for both strictness defects.
-* `T3.GroupTheory.Roots.DerivedStrictification`: Lemma 4.7 in the simultaneous commutator-root
+* `T3.GroupTheory.Roots.DerivedStrictification`: Lemma 4.8 in the simultaneous commutator-root
   quotient, with at most `2m` new generators and total rank at most `3m`.
-* `T3.GroupTheory.Roots.LowerCentralStrictification`: Lemma 4.9 in the simultaneous product
+* `T3.GroupTheory.Roots.LowerCentralStrictification`: Lemma 4.10 in the simultaneous product
   quotient, with at most `3 * binom(m,2)` new generators and both strictness equalities.
-* `T3.ModelTheory.ExistentiallyClosedGroups`: all three conclusions of Proposition 4.11.
+* `T3.ModelTheory.ExistentiallyClosedGroups`: all three conclusions of Proposition 4.12.
   Finite diagrams transfer witnesses from the concrete root quotients and free-two coproduct,
   preserving all designated parameters. Nontriviality follows from existential closedness.
 
-* `T3.ModelTheory.StrictEnvelope`: Proposition 4.12, including the trivial input at `n = 0`.
+* `T3.ModelTheory.StrictEnvelope`: Proposition 4.13, including the trivial input at `n = 0`.
   The two simultaneous extensions followed by a free-two coproduct produce coincident central
   series. Finite-diagram transfer fixes the entire original subgroup. The three-stage rank
   bound is at most `15n²`; the numerical function is defined in this module.
+
+## Section 5: Examples
+
+* `T3.GroupTheory.Free.NonStrictExamples`: Example 5.1 and Remark 5.2, including the
+  normal-form identification of the concrete subgroup with the rank-two free group,
+  its central series, failure of strictness, non-amalgamation, and the noninjective
+  coproduct comparison map.
+* `T3.LinearAlgebra.ExteriorContraction` and `T3.GroupTheory.Free.CommutatorRank`:
+  the exterior contraction argument for Lemma 5.3. The generator lower bound `2n`
+  holds for arbitrary subgroups, including those not finitely generated.
+* `T3.GroupTheory.Amalgamation.Cyclic`: Lemma 5.4, using a retraction onto the cyclic
+  subgroup and the paper's direct-product amalgam construction.
+* `T3.GroupTheory.Free.UnboundedWitnessRank`: both statements of Proposition 5.5,
+  the rank-one finite cyclic bases, their embeddings into the fixed rank-three factor,
+  and the resulting failure of both uniform bounds without existential closedness.
+
+## Section 6: Further questions
+
+Questions 6.1 and 6.2 concern locally finite and bounded-exponent varieties. Together
+with Takeuchi's conjecture they are recorded as open problems, not asserted theorems.
+`T3.GroupTheory.Free.Burnside` constructs the free group of any exponent.
+`T3.ModelTheory.Burnside` proves the equivalence between local finiteness of the
+exponent theory and finiteness of every positive finite-rank Burnside group.
+This known reduction is separate from the conjecture. The final announcement
+about sufficiently large primes concerns a separate paper.
 -/

@@ -14,14 +14,14 @@ public import T3.LinearAlgebra.TensorProduct
 /-!
 # Graded separation in a coproduct with the two-generator free group
 
-The two claims in the proof of Lemma 4.5 are proved by the paper's component calculations.
+The two claims in the proof of Lemma 4.6 are proved by the paper's component calculations.
 In degree one we separate the left and right components. In degree two we expand the mixed
 tensor against the two free generators and inspect the left pure coefficient, the two mixed
 coefficients, and the right pure coefficient in that order. The mixed brackets have the
 paper's signs, and their nonvanishing is read through the canonical degree-three equivalence.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, Claims A and B.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, Claims A and B.
 -/
 
 @[expose] public section
@@ -81,7 +81,7 @@ private theorem triple_inr_inl_inr (β w : Layer (Free (Fin 2)) 1) (g : Layer G 
 The two cases are the paper's nonzero left component and nonzero right component.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, Claim A, lines 974–987.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, Claim A, lines 1055–1068.
 -/
 theorem exists_triple_bracket_ne_zero [Nontrivial G]
     (a : Layer (Coproduct G (Free (Fin 2))) 1) (ha : a ≠ 0) :
@@ -122,7 +122,7 @@ private theorem bracket_two_inr (α₂ : Layer G 2) (α₁ α₁' : Layer G 1)
 The proof follows the paper's four coefficients `α₂`, `α₁`, `α₁'`, and `β₂`.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, Claim B, lines 988–1001.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, Claim B, lines 1069–1082.
 -/
 theorem exists_bracket_ne_zero [Nontrivial G]
     (a : Layer (Coproduct G (Free (Fin 2))) 2) (ha : a ≠ 0) :

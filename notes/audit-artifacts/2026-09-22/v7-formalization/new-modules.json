@@ -1,0 +1,13 @@
+{
+  "algorithm": "SHA256 of json.dumps(files, sort_keys=True).encode(), Python defaults, no trailing newline",
+  "sha256": "727f0916bded16958fab4f9916c1c382094e803fb23fcdd36f7847bb7358e7be",
+  "files": {
+    "T3/GroupTheory/Amalgamation/Cyclic.lean": "e3759a3e698a3d4a721268c64ff50e1d31ff130bb5ae145036270afc497ed9ab",
+    "T3/GroupTheory/Free/Burnside.lean": "4e7e7e968740ccec382d1f937f529832d492a86f6468a493a900e6ef86e1384c",
+    "T3/GroupTheory/Free/CommutatorRank.lean": "185b0b40402f573c728f05b1a335d99c0359e530946a8accd44c2561dbd5c32d",
+    "T3/GroupTheory/Free/NonStrictExamples.lean": "3fecfffbd141d25298ece68a84c688e6d6359952687883bd24cd7d7a16a03619",
+    "T3/GroupTheory/Free/UnboundedWitnessRank.lean": "7757b5218a352594d7e090a6aeeba4b1063991bc28c7c16b3d0a516dd9dd07f0",
+    "T3/LinearAlgebra/ExteriorContraction.lean": "52fb58489f6bc439844e37f00b6d00323d71cc4c932ba8fdcc578d75dec7704b",
+    "T3/ModelTheory/Burnside.lean": "81e8a02165cc28e53b1c57b3289936a9494e59241df8e122d779d0f1e12c04e2"
+  }
+}

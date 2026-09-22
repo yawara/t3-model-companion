@@ -24,7 +24,7 @@ This file depends only on mathlib. It supplies the elementary-chain step in the 
 Fact 2.3, without any assumption on a theory.
 
 Paper-ID: `model_theory.companion_iff_ec`.
-Source: `T3_modelcompanion_v4.tex`, Fact 2.3, lines 195–201.
+Source: `T3_modelcompanion_v7.tex`, Fact 2.3, lines 274–280.
 
 ## Main results
 
@@ -61,7 +61,7 @@ The hypothesis of the refined elementary chain theorem: any two indices admit a 
 bound to which the transition from the first index is elementary.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 def CofinallyElementary : Prop :=
   ∀ i j : ι, ∃ (k : ι) (hik : i ≤ k) (_hjk : j ≤ k),
@@ -71,7 +71,7 @@ def CofinallyElementary : Prop :=
 /-- If every transition map of the system is elementary, then it is cofinally elementary.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem CofinallyElementary.of_forall_elementary [IsDirectedOrder ι]
     (h : ∀ (i j : ι) (hij : i ≤ j) (n : ℕ) (φ : L.Formula (Fin n)) (x : Fin n → G i),
@@ -86,7 +86,7 @@ variable {f}
 /-- A transition map witnessing cofinal elementarity, as an elementary embedding.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 def CofinallyElementary.elementaryEmbedding {i k : ι} {hik : i ≤ k}
     (hel : ∀ (n : ℕ) (φ : L.Formula (Fin n)) (x : Fin n → G i),
@@ -101,7 +101,7 @@ variable [DirectedSystem G fun i j h => f i j h] [IsDirectedOrder ι] [Nonempty 
 system, the canonical maps into the direct limit preserve and reflect all bounded formulas.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem realize_boundedFormula_of (h : CofinallyElementary f) {α : Type u'} {n : ℕ}
     (φ : L.BoundedFormula α n) (i : ι) (v : α → G i) (xs : Fin n → G i) :
@@ -150,7 +150,7 @@ theorem realize_boundedFormula_of (h : CofinallyElementary f) {α : Type u'} {n 
 the canonical maps into the direct limit preserve and reflect all formulas.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 theorem realize_formula_of (h : CofinallyElementary f) {α : Type u'}
     (φ : L.Formula α) (i : ι) (v : α → G i) :
@@ -165,7 +165,7 @@ variable (f)
 from any component to the direct limit is an elementary embedding.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 noncomputable def ofElementary (h : CofinallyElementary f) (i : ι) :
     G i ↪ₑ[L] DirectLimit G f :=
@@ -182,7 +182,7 @@ elementary, then the canonical map from any component to the direct limit is an 
 embedding.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v4.tex, supporting Fact 2.3, lines 195–201; no label.
+TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
 -/
 noncomputable def ofElementaryOfForallElementary
     (h : ∀ (i j : ι) (hij : i ≤ j) (n : ℕ) (φ : L.Formula (Fin n)) (x : Fin n → G i),

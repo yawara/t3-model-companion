@@ -18,7 +18,7 @@ normal-closure witness is compressed by Lemma 3.2, enlarged to a strict envelope
 back through the injective comparison of coproducts. Both factor-witness alternatives are used.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v4.tex, `thm:main`, Theorem 3.3.
+TeX: T3_modelcompanion_v7.tex, `thm:main`, Theorem 3.3.
 -/
 
 @[expose] public section
@@ -30,7 +30,7 @@ open FirstOrder FirstOrder.Language FirstOrder.Group
 /-- The paper's uniform bound, depending only on the number of generators of the extension.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v4.tex, `thm:main`, `f(m)=f₀((3m+4)t(m)+1)` on line 734.
+TeX: T3_modelcompanion_v7.tex, `thm:main`, `f(m)=f₀((3m+4)t(m)+1)` on line 812.
 -/
 def witnessBound (m : ℕ) : ℕ := strictEnvelopeBound ((3 * m + 4) * freeOrderExponent m + 1)
 
@@ -107,7 +107,7 @@ finite subgroup do not amalgamate, the obstruction already occurs in a subgroup 
 by at most `witnessBound m` elements. The bound is independent of the common subgroup.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v4.tex, `thm:main`, Theorem 3.3, including both factor-witness cases.
+TeX: T3_modelcompanion_v7.tex, `thm:main`, Theorem 3.3, including both factor-witness cases.
 -/
 theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [CompatibleGroup M]
     (hM : exponentThreeTheory.IsExistentiallyClosedAt M) (A : Subgroup M) [Group.FG A]
@@ -168,7 +168,7 @@ theorem exists_bounded_nonamalgamation_witness {M : Type*} [Group M] [Compatible
 the finite base and its extension. This is the existentially quantified form of Theorem 3.3.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v4.tex, `thm:main`, lines 702–712.
+TeX: T3_modelcompanion_v7.tex, `thm:main`, lines 780–790.
 -/
 theorem exists_uniform_nonamalgamation_bound :
     ∃ f : ℕ → ℕ, ∀ (m : ℕ) (M : Type*) [Group M] [CompatibleGroup M],

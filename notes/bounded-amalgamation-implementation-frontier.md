@@ -1,9 +1,12 @@
 # Fact 2.6 の実装 frontier
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 2026-09-10。本稿は作成時点の実装済み定理と次に作る API を区別した設計記録。
 現在の実装・検証状況は [論文対応表](../docs/paper-map.md) を参照する。
 Paper-ID: `model_theory.bounded_amalgamation_criterion`。
-原稿は [T3_modelcompanion_v4.tex](../T3_modelcompanion_v4.tex)、
+原稿は [T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex)、
 label `fact:locally finiteness and model companion`、statement 214–228、proof 230–263。
 source SHA256: `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。
 

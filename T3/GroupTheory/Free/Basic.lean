@@ -17,7 +17,7 @@ this description explicit and supplies its universal property, including uniquen
 functoriality. The collected normal form and order formula are proved in later modules.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 
 @[expose] public section
@@ -113,7 +113,7 @@ variable {X : Type*}
 /-- The free group of exponent three on `X`.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 abbrev Free (X : Type*) : Type _ :=
   PowerQuotient (FreeGroup X) 3
@@ -123,7 +123,7 @@ namespace Free
 /-- The canonical map from the generating set.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 def of (x : X) : Free X :=
   powerQuotientMk (FreeGroup.of x)
@@ -131,7 +131,7 @@ def of (x : X) : Free X :=
 /-- The free group of exponent three does have exponent dividing three.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 theorem pow_three (g : Free X) : g ^ 3 = 1 :=
   by apply powerQuotient_hasExponent
@@ -139,7 +139,7 @@ theorem pow_three (g : Free X) : g ^ 3 = 1 :=
 /-- The exponent-three fact used by the canonical scalar actions on free-group layers.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 instance hasExponentThree : Fact (HasExponentThree (Free X)) := ⟨pow_three⟩
 
@@ -148,7 +148,7 @@ variable {H : Type*} [Group H]
 /-- The universal property: a map into a group of exponent three lifts to a homomorphism.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 def lift (hH : ∀ h : H, h ^ 3 = 1) (f : X → H) : Free X →* H :=
   powerQuotientLift (FreeGroup.lift f) fun _ => hH _
@@ -161,7 +161,7 @@ theorem lift_of (hH : ∀ h : H, h ^ 3 = 1) (f : X → H) (x : X) :
 /-- Two homomorphisms out of the free group of exponent three agreeing on generators are equal.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 theorem hom_ext {φ ψ : Free X →* H} (h : ∀ x : X, φ (of x) = ψ (of x)) : φ = ψ := by
   have hcomp : φ.comp (powerQuotientMk (G := FreeGroup X) (n := 3))
@@ -176,7 +176,7 @@ variable {Y Z : Type*}
 /-- Functoriality: a map of generating sets induces a homomorphism of free groups.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 def map (f : X → Y) : Free X →* Free Y :=
   lift pow_three fun x => of (f x)
@@ -197,7 +197,7 @@ A generator map with a left inverse induces an injective homomorphism: the free 
 preserves split injections, including the inclusions used to compare finite generating subsets.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v4.tex, v4 Notation 2.1, item 9.
+TeX: T3_modelcompanion_v7.tex, v7 Notation 2.1, item 9.
 -/
 theorem map_injective_of_leftInverse {f : X → Y} {r : Y → X}
     (hr : Function.LeftInverse r f) : Function.Injective (map f) := by

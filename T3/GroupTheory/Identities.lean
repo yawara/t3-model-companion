@@ -16,7 +16,7 @@ import Mathlib.Tactic.Group
 # Elementary identities in groups of exponent three
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations` (v4 Fact 2.15).
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations` (v7 Fact 2.15).
 
 The commutator is mathlib's `⁅a, b⁆ = a * b * a⁻¹ * b⁻¹`, exactly as in the paper.
 Conjugation in the paper is `a^g = g⁻¹ * a * g`; the preparatory lemmas also use conjugation
@@ -25,7 +25,7 @@ by `g * a * g⁻¹`, and the paper-facing statement substitutes inverse conjugat
 The exponent-three commutator calculus follows Levi–van der Waerden (1933), pp. 154–155:
 commuting conjugates give the two-Engel identity, and polarization gives cyclic triple
 commutators and vanishing four-fold commutators. The final section states the product and
-inverse identities in the precise order used by v4.
+inverse identities in the precise order used by v7.
 -/
 
 @[expose] public section
@@ -44,8 +44,8 @@ include hG
 /-- In a group of exponent three the inverse of an element is its square.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem inv_eq_mul_self (x : G) : x⁻¹ = x * x := by
   have h := hG x
@@ -55,8 +55,8 @@ theorem inv_eq_mul_self (x : G) : x⁻¹ = x * x := by
 /-- Levi--van der Waerden 1933, p. 154, formula (1): `c * d * c = (d * c * d)⁻¹`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem mul_three_cycle (c d : G) : c * d * c = (d * c * d)⁻¹ := by
   have h := hG (c * d)
@@ -68,8 +68,8 @@ theorem mul_three_cycle (c d : G) : c * d * c = (d * c * d)⁻¹ := by
 /-- In a group of exponent three the square of an inverse is the element itself.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem inv_mul_inv (x : G) : x⁻¹ * x⁻¹ = x := by
   have h := hG x
@@ -81,8 +81,8 @@ theorem inv_mul_inv (x : G) : x⁻¹ * x⁻¹ = x := by
 /-- The case `d₁ = d₂` of Levi--van der Waerden 1933, p. 155, formula (2).
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem inv_mul_conj_mul (c d : G) : c⁻¹ * d * c * d * c⁻¹ = d * c⁻¹ * d := by
   have h1 : c⁻¹ * d * c⁻¹ = (d * c⁻¹ * d)⁻¹ := mul_three_cycle hG c⁻¹ d
@@ -95,8 +95,8 @@ Levi--van der Waerden 1933, p. 154, formula (4): in a group of exponent three ev
 commutes with all of its conjugates.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commute_conj (c d : G) : Commute d (c * d * c⁻¹) :=
   calc d * (c * d * c⁻¹) = c * (c⁻¹ * d * c * d * c⁻¹) := by group
@@ -109,7 +109,7 @@ element of a group of exponent three is abelian. This is fact (b) in the list of
 1979, p. 161.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 6.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 6.
 -/
 theorem commute_conj_conj (a g h : G) : Commute (g * a * g⁻¹) (h * a * h⁻¹) := by
   have h1 : Commute a (g⁻¹ * h * a * (g⁻¹ * h)⁻¹) := commute_conj hG (g⁻¹ * h) a
@@ -119,8 +119,8 @@ theorem commute_conj_conj (a g h : G) : Commute (g * a * g⁻¹) (h * a * h⁻¹
 /-- A commutator commutes with its left argument.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commute_commutator_left (x y : G) : Commute x ⁅x, y⁆ := by
   have h1 : Commute x (y * x⁻¹ * y⁻¹) := Commute.inv_left_iff.mp (commute_conj hG y x⁻¹)
@@ -131,7 +131,7 @@ theorem commute_commutator_left (x y : G) : Commute x ⁅x, y⁆ := by
 /-- A commutator commutes with its right argument: the two-Engel law `⁅⁅x, y⁆, y⁆ = 1`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 4.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 4.
 -/
 theorem commutator_self_right (x y : G) : ⁅⁅x, y⁆, y⁆ = 1 := by
   rw [commutatorElement_eq_one_iff_commute]
@@ -151,7 +151,7 @@ In a group of exponent three the normal closure of a single element is abelian. 
 carrier on which the commutator calculus of `Identities` runs.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 6.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 6.
 -/
 theorem commute_of_mem_normalClosure {x a b : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G))
@@ -179,8 +179,8 @@ omit hG in
 /-- The normal closure of `x` absorbs commutators of its own elements.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_mem_normalClosure {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (g : G) :
@@ -195,8 +195,8 @@ theorem commutator_mem_normalClosure {x a : G}
 /-- On the normal closure of `x` the map `⁅·, g⁆` is additive.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_mul_left_of_mem {x a b : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G))
@@ -215,8 +215,8 @@ theorem commutator_mul_left_of_mem {x a b : G}
 /-- On the normal closure of `x` the map `⁅·, g⁆` sends inverses to inverses.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_inv_left_of_mem {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (g : G) :
@@ -229,8 +229,8 @@ omit hG in
 /-- Rewriting a conjugate through a commutator, valid in any group.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem mul_commutator_inv_of_commute {c y : G} (h : Commute c (y * c * y⁻¹)) :
     c * ⁅c, y⁆⁻¹ = y * c * y⁻¹ := by
@@ -241,8 +241,8 @@ theorem mul_commutator_inv_of_commute {c y : G} (h : Commute c (y * c * y⁻¹))
 /-- In a group of exponent three, `c * ⁅c, y⁆⁻¹` is the conjugate `y * c * y⁻¹`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem mul_commutator_inv (c y : G) : c * ⁅c, y⁆⁻¹ = y * c * y⁻¹ :=
   mul_commutator_inv_of_commute (commute_conj hG y c)
@@ -253,8 +253,8 @@ The composition rule for `⁅a, ·⁆`. In additive notation this is
 polarization identity.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_mul_right_aux (a y z : G) :
     ⁅a, y * z⁆ = ⁅a, y⁆ * ⁅a, z⁆ * ⁅⁅a, z⁆, y⁆⁻¹ :=
@@ -266,8 +266,8 @@ theorem commutator_mul_right_aux (a y z : G) :
 /-- Applying `⁅·, g⁆` to a three-fold product of elements of `⟪x⟫`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_mul_left_three {x a b c : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G))
@@ -284,8 +284,8 @@ composition rule. Writing `B g` for `⁅·, g⁆`, the five factors are, in orde
 identity used to obtain antisymmetry of the triple commutator.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem engel_polarization {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (y z : G) :
@@ -317,8 +317,8 @@ theorem engel_polarization {x a : G}
 /-- Applying `⁅·, y⁆` to the polarization kills every term but two.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem engel_step_one {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (y z : G) :
@@ -347,8 +347,8 @@ theorem engel_step_one {x a : G}
 /-- Instantiating the polarization at `⁅a, z⁆` kills every term but two.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem engel_step_two {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (y z : G) :
@@ -361,8 +361,8 @@ theorem engel_step_two {x a : G}
 /-- The polarization, reduced by `engel_step_one` and `engel_step_two`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem engel_step_three {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (y z : G) :
@@ -375,8 +375,8 @@ theorem engel_step_three {x a : G}
 /-- A four-fold commutator with a repeated entry is trivial.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_triple_repeat {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (y z : G) :
@@ -394,8 +394,8 @@ theorem commutator_triple_repeat {x a : G}
 /-- Antisymmetry of the triple commutator in its last two entries, for `a` in `⟪x⟫`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_triple_antisymm_of_mem {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (y z : G) :
@@ -408,8 +408,8 @@ Antisymmetry of the triple commutator in its last two entries. This is fact (e) 
 Burris--Lawrence 1979, p. 161.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_triple_antisymm (x y z : G) : ⁅⁅x, z⁆, y⁆ * ⁅⁅x, y⁆, z⁆ = 1 :=
   commutator_triple_antisymm_of_mem hG
@@ -419,8 +419,8 @@ omit hG in
 /-- Cancelling two inverse pairs out of a product, used to isolate a weight-four term.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem mul_cancel_of_commute {A₁ A₂ B₁ B₂ C D : G}
     (h : A₁ * A₂ * C * (B₁ * B₂ * D) = 1) (h₁ : A₁ * B₁ = 1) (h₂ : A₂ * B₂ = 1)
@@ -440,8 +440,8 @@ A group of exponent three has nilpotency class at most three. This is fact (a) i
 Burris--Lawrence 1979, p. 161.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_quadruple_of_mem {x a : G}
     (ha : a ∈ Subgroup.normalClosure ({x} : Set G)) (y z w : G) :
@@ -476,7 +476,7 @@ A group of exponent three has nilpotency class at most three: every four-fold co
 trivial.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 1.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 1.
 -/
 theorem commutator_quadruple_aux (x y z w : G) : ⁅⁅⁅x, w⁆, z⁆, y⁆ = 1 :=
   commutator_quadruple_of_mem hG (Subgroup.subset_normalClosure (Set.mem_singleton x)) y z w
@@ -484,7 +484,7 @@ theorem commutator_quadruple_aux (x y z w : G) : ⁅⁅⁅x, w⁆, z⁆, y⁆ = 
 /-- Antisymmetry of the triple commutator in its first two entries.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 7.
 -/
 theorem commutator_triple_swap (x y z : G) : ⁅⁅x, y⁆, z⁆ = ⁅⁅y, x⁆, z⁆⁻¹ := by
   have hxy : ⁅x, y⁆ ∈ Subgroup.normalClosure ({x} : Set G) :=
@@ -496,7 +496,7 @@ The triple commutator is invariant under cyclic permutation. This is fact (c) in
 Burris--Lawrence 1979, p. 161.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 4.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 4.
 -/
 theorem commutator_triple_cyclic (x y z : G) : ⁅⁅x, y⁆, z⁆ = ⁅⁅y, z⁆, x⁆ := by
   have a23 : ∀ u v t : G, ⁅⁅u, v⁆, t⁆ = ⁅⁅u, t⁆, v⁆⁻¹ := fun u v t =>
@@ -511,8 +511,8 @@ theorem commutator_triple_cyclic (x y z : G) : ⁅⁅x, y⁆, z⁆ = ⁅⁅y, z�
 /-- With class at most three, `⁅⁅x, y⁆, ·⁆` is a homomorphism.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15; proof ingredient for items 1, 4, 6 and 7.
 -/
 theorem commutator_commutator_mul_right (x y u v : G) :
     ⁅⁅x, y⁆, u * v⁆ = ⁅⁅x, y⁆, u⁆ * ⁅⁅x, y⁆, v⁆ := by
@@ -524,8 +524,8 @@ Any two commutators commute. This is the second half of fact (b) in the list of 
 1979, p. 161.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, item 3 (the derived subgroup is abelian).
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, item 3 (the derived subgroup is abelian).
 -/
 theorem commutator_commutator (x y z w : G) : ⁅⁅x, y⁆, ⁅z, w⁆⁆ = 1 := by
   have hxy : ⁅x, y⁆ ∈ Subgroup.normalClosure ({x} : Set G) :=
@@ -556,8 +556,8 @@ include hG
 /-- A triple commutator in a group of exponent three is central.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, item 2.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, item 2.
 -/
 theorem commutator_triple_mem_center (x y z : G) : ⁅⁅x, y⁆, z⁆ ∈ Subgroup.center G := by
   rw [Subgroup.mem_center_iff]
@@ -571,8 +571,8 @@ Commutators with a central second layer are multiplicative in the first argument
 subgroup, which is what lets the previous lemma spread over `γ₃`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, item 2.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, item 2.
 -/
 theorem commutator_mem_center_of_mem_commutator {a : G} (ha : a ∈ commutator G) (z : G) :
     ⁅a, z⁆ ∈ Subgroup.center G := by
@@ -600,8 +600,8 @@ theorem commutator_mem_center_of_mem_commutator {a : G} (ha : a ∈ commutator G
 /-- The third term of the lower central series of a group of exponent three is central.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, item 2.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, item 2.
 -/
 theorem lowerCentralSeries_two_le_center :
     (⊤ : Subgroup G).lowerCentralSeries 2 ≤ Subgroup.center G := by
@@ -612,8 +612,8 @@ theorem lowerCentralSeries_two_le_center :
 /-- A group of exponent three has nilpotency class at most three.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, item 1.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, item 1.
 -/
 theorem lowerCentralSeries_three_eq_bot : (⊤ : Subgroup G).lowerCentralSeries 3 = ⊥ := by
   rw [Subgroup.lowerCentralSeries_succ, Subgroup.commutator_eq_bot_iff_le_centralizer]
@@ -628,8 +628,8 @@ The derived subgroup of a group of exponent three is abelian: `⁅G', G'⁆ = 1`
 form of `commutator_commutator`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, item 3 (the derived subgroup is abelian).
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, item 3 (the derived subgroup is abelian).
 -/
 theorem commute_of_mem_commutator {a b : G} (ha : a ∈ commutator G) (hb : b ∈ commutator G) :
     Commute a b := by
@@ -648,8 +648,8 @@ theorem commute_of_mem_commutator {a b : G} (ha : a ∈ commutator G) (hb : b �
 /-- The derived subgroup of a group of exponent three is commutative.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, item 3 (the derived subgroup is abelian).
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, item 3 (the derived subgroup is abelian).
 -/
 theorem isMulCommutative_commutator : IsMulCommutative (commutator G) :=
   ⟨⟨fun a b => Subtype.ext (commute_of_mem_commutator hG a.2 b.2)⟩⟩
@@ -657,7 +657,7 @@ theorem isMulCommutative_commutator : IsMulCommutative (commutator G) :=
 /-- Every four-fold commutator is trivial, in the argument order used by the paper.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 1.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 1.
 -/
 theorem commutator_quadruple (a b c d : G) : ⁅⁅⁅a, b⁆, c⁆, d⁆ = 1 :=
   commutator_quadruple_aux hG a d c b
@@ -665,7 +665,7 @@ theorem commutator_quadruple (a b c d : G) : ⁅⁅⁅a, b⁆, c⁆, d⁆ = 1 :=
 /-- The derived subgroup lies in the second upper central subgroup.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 2.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 2.
 -/
 theorem commutator_le_upperCentralSeries_two :
     commutator G ≤ Subgroup.upperCentralSeries G 2 := by
@@ -678,7 +678,7 @@ theorem commutator_le_upperCentralSeries_two :
 /-- Inverting the first argument inverts its commutator.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 5.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 5.
 -/
 theorem commutator_inv_left (a b : G) : ⁅a⁻¹, b⁆ = ⁅a, b⁆⁻¹ :=
   commutator_inv_left_of_mem hG (Subgroup.subset_normalClosure (Set.mem_singleton a)) b
@@ -686,7 +686,7 @@ theorem commutator_inv_left (a b : G) : ⁅a⁻¹, b⁆ = ⁅a, b⁆⁻¹ :=
 /-- Inverting the second argument inverts its commutator.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 5.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 5.
 -/
 theorem commutator_inv_right (a b : G) : ⁅a, b⁻¹⁆ = ⁅a, b⁆⁻¹ := by
   rw [← commutatorElement_inv b⁻¹ a, commutator_inv_left hG, inv_inv,
@@ -695,7 +695,7 @@ theorem commutator_inv_right (a b : G) : ⁅a, b⁻¹⁆ = ⁅a, b⁆⁻¹ := by
 /-- Two conjugates of the same element commute, using the paper's conjugation convention.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 6.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 6.
 -/
 theorem commutator_conjugates (a b c : G) : ⁅b⁻¹ * a * b, c⁻¹ * a * c⁆ = 1 := by
   simpa only [inv_inv] using (commute_conj_conj hG a b⁻¹ c⁻¹).commutator_eq
@@ -703,7 +703,7 @@ theorem commutator_conjugates (a b c : G) : ⁅b⁻¹ * a * b, c⁻¹ * a * c⁆
 /-- The normal closure of a single element is an abelian group.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 6.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 6.
 -/
 theorem isMulCommutative_normalClosure (a : G) :
     IsMulCommutative (Subgroup.normalClosure ({a} : Set G)) :=
@@ -712,7 +712,7 @@ theorem isMulCommutative_normalClosure (a : G) :
 /-- The product formula in the second argument, with the paper's triple-commutator order.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 8.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 8.
 -/
 theorem commutator_mul_right (a b c : G) :
     ⁅a, b * c⁆ = ⁅a, b⁆ * ⁅a, c⁆ * ⁅⁅a, b⁆, c⁆ := by
@@ -722,7 +722,7 @@ theorem commutator_mul_right (a b c : G) :
 /-- The product formula in the first argument, with the paper's factor and sign conventions.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 9.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 9.
 -/
 theorem commutator_mul_left (a b c : G) :
     ⁅a * b, c⁆ = ⁅a, c⁆ * ⁅b, c⁆ * ⁅⁅a, b⁆, c⁆⁻¹ := by
@@ -739,8 +739,8 @@ open scoped Pointwise
 /-- The join of two subgroups of the abelian derived subgroup is their pointwise product.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`,
-v4 Fact 2.15, supporting lemma for items 10 and 11.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`,
+v7 Fact 2.15, supporting lemma for items 10 and 11.
 -/
 private theorem coe_sup_of_le_commutator {A B : Subgroup G}
     (hA : A ≤ commutator G) (hB : B ≤ commutator G) :
@@ -755,7 +755,7 @@ private theorem coe_sup_of_le_commutator {A B : Subgroup G}
 /-- The product inclusion in the second argument for arbitrary sets.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 10.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 10.
 -/
 theorem commutatorOfSets_mul_right (A B C : Set G) :
     (commutatorOfSets A (B * C) : Set G) ⊆
@@ -789,7 +789,7 @@ theorem commutatorOfSets_mul_right (A B C : Set G) :
 /-- The product inclusion in the first argument for arbitrary sets.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 11.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 11.
 -/
 theorem commutatorOfSets_mul_left (A B C : Set G) :
     (commutatorOfSets (A * B) C : Set G) ⊆

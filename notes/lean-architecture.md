@@ -1,10 +1,10 @@
 # Lean 形式化の構成案
 
-2026-09-09 に雛形の実装を開始し、2026-09-10 に補助補題の配置方針を更新した。
+2026-09-09 に雛形の実装を開始し、2026-09-22 に v7 の出典と追加項目へ更新した。
 以下は全体の配置方針であり、未実装のパス・宣言名も含む。
 現在の実装状況は [論文対応表](../docs/paper-map.md) を参照する。
-対象は `T3_modelcompanion_v4.tex`、SHA256
-`79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。
+対象は `T3_modelcompanion_v7.tex`、SHA256
+`fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6`。
 
 **数学的な内容で実装を分け、論文の掲載順で読める Lean の入口と対応表を設ける。**
 個々の公開宣言にも原稿の所在を残す。論文の番号・節順と、Lean の名前・import 順を
@@ -70,7 +70,7 @@ upstream 候補かどうかを配置軸にした `ForMathlib` 層は設けない
 `T3/ModelTheory`。各パスには `.lean` を補う。
 番号は現在の TeX の共有 theorem counter から得た表示情報であり、固定 ID ではない。
 
-| 現 v4 の項目 | TeX label または内容 | 公開モジュール案 |
+| 現 v7 の項目 | TeX label または内容 | 公開モジュール案 |
 | --- | --- | --- |
 | §2 冒頭、Notation 2.1 | 指数の規約、交換子、共役、生成元数 | `GT/Basic` |
 | Definition 2.2 | companion、model completeness、e.c.、Π₂、有限図式 | `MT/ModelCompanion`、`MT/ModelCompleteness`、`MT/Inductive`、`MT/FiniteDiagram`、`MT/UniformLocalFiniteness` |
@@ -97,27 +97,35 @@ upstream 候補かどうかを配置軸にした `ForMathlib` 層は設けない
 | Lemma 2.31 | `lemma:gr of quotient` | `GT/GradedQuotient` |
 | Proposition 3.1 | `proposition:bounded number of conjugates` | `GT/ConjugateWidth` |
 | Lemma 3.2 | `lemma:witness in bdd support` | `GT/Support` |
-| Proposition A | TeX 697–700、Proposition 4.12 から得る | `MT/StrictEnvelope` |
+| Proposition A | TeX 775–778、Proposition 4.13 から得る | `MT/StrictEnvelope` |
 | Theorem 3.3 | `thm:main` | `T3/Main/BoundedWitness` |
 | Corollary 3.4 | T₃ の model companion の存在 | `T3/Main/ModelCompanion` |
 | Proposition 4.1 | `proposition:lift` | `GT/Generation`、`GT/Presentation` |
-| Lemma 4.2 | `lemma:gr of normal closure` | `GT/GradedNormalClosure` |
-| Proposition 4.3 | `proposition:gr of free product` | `GT/Coproduct/GradedEquiv`、`GT/Coproduct/Graded`、`GT/Coproduct/BlockBracket`、`GT/Coproduct/FreeGraded`、`GT/Coproduct/QuotientMaps`、`GT/Coproduct/Presentation`、`GT/Coproduct/Relations`、`LA/ExteriorLowDegree` |
-| Lemma 4.4 | `lemma:free-product-amalgam` | `GT/Coproduct/Strict` |
-| Lemma 4.5 | `lemma:coincidence of central series` | `GT/Coproduct/CentralSeries` |
-| Lemma 4.6 | `lemma:basic commutator root` | `GT/Roots/Commutator` |
-| Lemma 4.7 | `lemma:commutator root` | `GT/Roots/DerivedStrictification` |
-| Lemma 4.8 | `lemma:triple commutator root` | `GT/Roots/Triple` |
-| Lemma 4.9 | `lemma:number of generators for triple commutator roots` | `GT/Roots/LowerCentralStrictification` |
-| Remark 4.10 | triple roots の生成元共有 | `GT/Roots/SharedTriple` |
-| Proposition 4.11 | `proposition:structure of e.c. model` | `MT/ExistentiallyClosedGroups` |
-| Proposition 4.12 | `proposition:bdd LCS` | `MT/StrictEnvelope` |
+| Remark 4.2 | `remark:G=H` | `GT/Generation` |
+| Lemma 4.3 | `lemma:gr of normal closure` | `GT/GradedNormalClosure` |
+| Proposition 4.4 | `proposition:gr of free product` | `GT/Coproduct/GradedEquiv`、`GT/Coproduct/Graded`、`GT/Coproduct/BlockBracket`、`GT/Coproduct/FreeGraded`、`GT/Coproduct/QuotientMaps`、`GT/Coproduct/Presentation`、`GT/Coproduct/Relations`、`LA/ExteriorLowDegree` |
+| Lemma 4.5 | `lemma:free-product-amalgam` | `GT/Coproduct/Strict` |
+| Lemma 4.6 | `lemma:coincidence of central series` | `GT/Coproduct/CentralSeries` |
+| Lemma 4.7 | `lemma:basic commutator root` | `GT/Roots/Commutator` |
+| Lemma 4.8 | `lemma:commutator root` | `GT/Roots/DerivedStrictification` |
+| Lemma 4.9 | `lemma:triple commutator root` | `GT/Roots/Triple` |
+| Lemma 4.10 | `lemma:number of generators for triple commutator roots` | `GT/Roots/LowerCentralStrictification` |
+| Remark 4.11 | triple roots の生成元共有 | `GT/Roots/SharedTriple` |
+| Proposition 4.12 | `proposition:structure of e.c. model` | `MT/ExistentiallyClosedGroups` |
+| Proposition 4.13 | `proposition:bdd LCS` | `MT/StrictEnvelope` |
+| Example 5.1、Remark 5.2 | 非strict部分群、非amalgamation、coproduct比較の非単射性 | `GT/Free/NonStrictExamples` |
+| Lemma 5.3 | `lemma:D can be large` | `GT/Free/CommutatorRank`、`LA/ExteriorContraction` |
+| Lemma 5.4 | `lemma:amalgam over the cyclic group` | `GT/Amalgamation/Cyclic` |
+| Proposition 5.5 | e.c.仮定なしの生成元数下界 | `GT/Free/UnboundedWitnessRank` |
+| Questions 6.1–6.2、Takeuchi予想 | 未解決の質問・予想として追跡 | Lean定理として断定しない |
+| §6 の無番号の還元 | 有限rank Burnside群と局所有限性 | `GT/Free/Burnside`、`MT/Burnside` |
 
-これで現原稿の番号付き 47 項目と Proposition A の所在を網羅する。
+これで現原稿の番号付き 55 項目と Proposition A の所在を網羅する。
 一つの Fact の複数項目は `parts` で区別し、必要なら複数の公開宣言を対応させる。
 特に Fact 2.15 の恒等式群を一つの巨大な連言定理にまとめる必要はない。
 Remarks、Examples に数学的主張がある場合も記録し、主定理で使わないものはその旨を示す。
-§1、§5、§6 の現時点の執筆用 placeholder は Lean 定理の未証明とは数えない。
+v7 の §5 は新しい数学的主張として形式化し、§6 の質問・予想は `open` として追跡する。
+§6 の既知の還元の証明と、一般的な質問・予想の解決は区別する。
 
 さらに、本文に独立した番号はないが必要となる公開補助境界を設ける。
 
@@ -141,7 +149,7 @@ Remarks、Examples に数学的主張がある場合も記録し、主定理で�
 | 論文の関数 | Lean の定義名案 | 定義するモジュール | 論文上の所在 |
 | --- | --- | --- | --- |
 | `t(n) = n + n.choose 2 + n.choose 3` | `T3.freeOrderExponent` | `GT/Free/NormalForm` | Fact 2.27：自由群の位数 `3 ^ t(n)` |
-| `f₀(n) = 15 * n ^ 2` | `T3.strictEnvelopeBound` | `MT/StrictEnvelope` | Proposition 4.12：Proposition A の上界を供給 |
+| `f₀(n) = 15 * n ^ 2` | `T3.strictEnvelopeBound` | `MT/StrictEnvelope` | Proposition 4.13：Proposition A の上界を供給 |
 | `f(m) = f₀((3*m+4)*t(m)+1)` | `T3.witnessBound` | `T3/Main/BoundedWitness` | Theorem 3.3 の証明 |
 
 各関数に付随する算術補題も同じモジュールに置く。関数を使う後続モジュールは、
@@ -174,13 +182,13 @@ T3.IsStrict                                      述語
 T3.CentralSeriesCoincide                          述語
 T3.strictEnvelopeBound                            ℕ → ℕ の関数
 T3.AssociatedGraded.freeLieEquiv                   Lie 同型というデータ
-T3.Coproduct.map_injective_of_strict               Lemma 4.4
-T3.exists_strict_envelope                         Proposition 4.12 の完全な結論
+T3.Coproduct.map_injective_of_strict               Lemma 4.5
+T3.exists_strict_envelope                         Proposition 4.13 の完全な結論
 T3.exists_bounded_nonamalgamation_witness          Theorem 3.3
 T3.has_model_companion                            Corollary 3.4
 ```
 
-Proposition A は、4.12 の結果から明示的な `strictEnvelopeBound` を取り出す通常の系とする。
+Proposition A は、4.13 の結果から明示的な `strictEnvelopeBound` を取り出す通常の系とする。
 同じ主張の番号違いだけを理由とする alias は不要で、対応表から既存の宣言を指してよい。
 公開 API に不要な計算補題は `private` または小さな対象 namespace に収める。
 
@@ -194,8 +202,8 @@ Proposition A は、4.12 の結果から明示的な `strictEnvelopeBound` を�
 /-- The comparison map on coproducts induced by a strict inclusion is injective.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v4.tex, `lemma:free-product-amalgam` (v4 Lemma 4.4).
-The proof uses the natural block isomorphisms of Proposition 4.3.
+TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam` (v7 Lemma 4.5).
+The proof uses the natural block isomorphisms of Proposition 4.4.
 -/
 ```
 
@@ -211,7 +219,7 @@ TeX 本文への label 追加は、Lean 側の追跡を始めるための前提�
 
 未実装段階では前者だけを登録できる。状況は少なくとも次の二軸で分ける。
 
-- Lean の状態：`planned` / `stated` / `proved`。
+- Lean の状態：`planned` / `partial` / `stated` / `proved`。原稿の未解決の質問・予想は `open`。
 - 原稿との照合：`unchecked` / `statement_checked` / `proof_checked`。
 
 `stated` は必要な定義と命題の型を記述できた状態で、証明済みを意味しない。
@@ -253,8 +261,9 @@ TeX 本文への label 追加は、Lean 側の追跡を始めるための前提�
 
 - 指数 3 は `∀ g, g ^ 3 = 1`、すなわち `Monoid.exponent G ∣ 3`。
   自明群も含む条件を採用する。mathlib の指数 API へ接続する。
-- `d(G)` は mathlib の `Group.rank` を使う。現 pin では `[Group.FG G]` が必要なので、
-  構成段階では有限生成集合を明示し、有限生成性を得てから rank の不等式を公開する。
+- `d(G)` は有限生成群では mathlib の `Group.rank` を使う。
+  任意群では `Group.cardinalRank` により最小生成濃度を表し、有限生成時の一致を証明する。
+  特に§5の任意部分群に対する下界に有限生成仮定を追加しない。
   総生成元数と追加生成元数は別の結論として記述する。
 - 中心列は mathlib の定義を再利用し、論文の γ₁ に対する添字のずれを一箇所で文書化する。
   wrapper を使う場合も元の名前を shadow せず、対応補題を持たせる。

@@ -16,7 +16,7 @@ previous term with the whole group. Their initial forms are Lie brackets, while 
 inverses become sums and negatives in the degree quotient.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 3, lines 417–418; no label.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 3, lines 496–497; no label.
 -/
 
 @[expose] public section
@@ -64,7 +64,7 @@ private theorem lof_mk_mem_of_degree_one
 algebra. No finite generation or rank assumption is needed.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 3, lines 417–418; no label.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 3, lines 496–497; no label.
 -/
 theorem lieSubalgebra_eq_top_of_degree_one
     (K : LieSubalgebra (ZMod 3) (GradedModule G))
@@ -90,7 +90,7 @@ theorem lieSubalgebra_eq_top_of_degree_one
 degree-one component over `ZMod 3`.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v4.tex, v4 Lemma 2.19, item 3, lines 417–418; no label.
+TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 3, lines 496–497; no label.
 -/
 theorem lieSpan_range_lof_one_eq_top :
     LieSubalgebra.lieSpan (ZMod 3) (GradedModule G)

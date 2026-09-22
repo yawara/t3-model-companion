@@ -1,5 +1,8 @@
 # 自由群の外積同型・quotient・有限図式
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 2026-09-10。対象は v4 TeX、SHA256
 `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。
 [前回の graded Lie 構造の境界](graded-lie-checkpoint.md) からの進展を記録する。

@@ -24,7 +24,7 @@ with the alternating determinant, and identify its two nonzero homogeneous subsp
 The direct-product example is proved separately in `AssociatedGraded.Product`.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, lines 439–445; no label.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, lines 518–524; no label.
 -/
 
 @[expose] public noncomputable section
@@ -38,7 +38,7 @@ variable (G : Type*) [CommGroup G]
 /-- Every lower central term after the first vanishes in an abelian group.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 theorem term_eq_bot_of_commutative {n : ℕ} (hn : 2 ≤ n) : term G n = ⊥ := by
   apply eq_bot_iff.mpr
@@ -50,7 +50,7 @@ theorem term_eq_bot_of_commutative {n : ℕ} (hn : 2 ≤ n) : term G n = ⊥ := 
 /-- The first quotient has no relations beyond the identity in an abelian group.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 theorem relation_one_eq_bot_of_commutative : relation G 1 = ⊥ := by
   apply eq_bot_iff.mpr
@@ -62,7 +62,7 @@ theorem relation_one_eq_bot_of_commutative : relation G 1 = ⊥ := by
 /-- The canonical first quotient of an abelian group is the group itself, in additive notation.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 def abelianLayerOneAddEquiv : Layer G 1 ≃+ Additive G :=
   ((QuotientGroup.quotientMulEquivOfEq (relation_one_eq_bot_of_commutative G)).trans
@@ -71,7 +71,7 @@ def abelianLayerOneAddEquiv : Layer G 1 ≃+ Additive G :=
 /-- The first-layer identification keeps the chosen representative unchanged.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 @[simp]
 theorem abelianLayerOneAddEquiv_mk (x : G) :
@@ -81,7 +81,7 @@ theorem abelianLayerOneAddEquiv_mk (x : G) :
 The artificial degree zero also vanishes.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 theorem layer_subsingleton_of_commutative {n : ℕ} (hn : n ≠ 1) :
     Subsingleton (Layer G n) := by
@@ -100,7 +100,7 @@ variable [Fact (HasExponentThree G)]
 /-- The canonical vector-space structure on an abelian exponent-three group.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 instance abelianModule : Module (ZMod 3) (Additive G) :=
   AddCommGroup.zmodModule fun x => Fact.out (p := HasExponentThree G) x.toMul
@@ -108,7 +108,7 @@ instance abelianModule : Module (ZMod 3) (Additive G) :=
 /-- The degree-one identification respects the canonical field action.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 def abelianLayerOneEquiv : Layer G 1 ≃ₗ[ZMod 3] Additive G :=
   { abelianLayerOneAddEquiv G with map_smul' := ZMod.map_smul (abelianLayerOneAddEquiv G) }
@@ -117,7 +117,7 @@ def abelianLayerOneEquiv : Layer G 1 ≃ₗ[ZMod 3] Additive G :=
 The forward map reads degree one and keeps its representative; the inverse inserts degree one.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 def abelianEquiv : GradedModule G ≃ₗ[ZMod 3] Additive G where
   toFun x := abelianLayerOneEquiv G (x 1)
@@ -139,7 +139,7 @@ def abelianEquiv : GradedModule G ≃ₗ[ZMod 3] Additive G where
 /-- The whole-graded identification sends the initial form of a group element to that element.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 @[simp]
 theorem abelianEquiv_lof_mk (x : G) :
@@ -151,7 +151,7 @@ theorem abelianEquiv_lof_mk (x : G) :
 /-- The associated graded of an abelian group has identically zero Lie bracket.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 theorem bracket_eq_zero_of_commutative (x y : GradedModule G) : ⁅x, y⁆ = 0 := by
   apply (abelianEquiv G).injective
@@ -161,7 +161,7 @@ theorem bracket_eq_zero_of_commutative (x y : GradedModule G) : ⁅x, y⁆ = 0 :
 /-- The abelian group on the right side of the example carries the zero Lie bracket.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 @[implicit_reducible]
 def abelianLieRing : LieRing (Additive G) where
@@ -176,7 +176,7 @@ attribute [local instance] abelianLieRing
 /-- The canonical field action is compatible with the zero Lie bracket.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 @[implicit_reducible]
 def abelianLieAlgebra : LieAlgebra (ZMod 3) (Additive G) where
@@ -188,7 +188,7 @@ attribute [local instance] abelianLieAlgebra
 The target uses `abelianLieRing` and `abelianLieAlgebra`, with identically zero bracket.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 def abelianLieEquiv : GradedModule G ≃ₗ⁅ZMod 3⁆ Additive G :=
   { abelianEquiv G with
@@ -200,7 +200,7 @@ def abelianLieEquiv : GradedModule G ≃ₗ⁅ZMod 3⁆ Additive G :=
 /-- Degree one is the whole graded Lie algebra of an abelian group.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 theorem grade_one_eq_top_of_commutative : grade G 1 = ⊤ := by
   apply top_unique
@@ -210,7 +210,7 @@ theorem grade_one_eq_top_of_commutative : grade G 1 = ⊤ := by
 /-- All remaining homogeneous submodules of an abelian group's graded Lie algebra vanish.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, line 520.
 -/
 theorem grade_eq_bot_of_commutative {n : ℕ} (hn : n ≠ 1) : grade G n = ⊥ := by
   let := layer_subsingleton_of_commutative G hn
@@ -224,7 +224,7 @@ theorem grade_eq_bot_of_commutative {n : ℕ} (hn : n ≠ 1) : grade G n = ⊥ :
 map acts on the same underlying group element.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 1, the canonical equality on line 441.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 1, the canonical equality on line 520.
 -/
 theorem abelianEquiv_mapLie {H : Type*} [CommGroup H] [Fact (HasExponentThree H)]
     (f : G →* H) (x : GradedModule G) :
@@ -246,14 +246,14 @@ namespace T3.FreeTwo
 /-- The unique increasing pair of the two named generator indices.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 def pairIndex : IncreasingPair (Fin 2) := ⟨0, 1, by decide⟩
 
 /-- Every increasing pair is the ordered pair of the two named generators.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem pair_eq (p : IncreasingPair (Fin 2)) : p = pairIndex := by
   apply IncreasingPair.ext
@@ -273,7 +273,7 @@ theorem pair_eq (p : IncreasingPair (Fin 2)) : p = pairIndex := by
 /-- Increasing pairs of two generator indices are indexed by a singleton.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 def pairEquiv : IncreasingPair (Fin 2) ≃ Fin 1 where
   toFun _ := 0
@@ -286,7 +286,7 @@ private theorem pairEquiv_symm (i : Fin 1) : pairEquiv.symm i = pairIndex := rfl
 /-- The two free-generator classes form the actual degree-one basis.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 def firstLayerBasis : Basis (Fin 2) (ZMod 3) (Layer (Free (Fin 2)) 1) :=
   Free.layerOneBasis
@@ -294,7 +294,7 @@ def firstLayerBasis : Basis (Fin 2) (ZMod 3) (Layer (Free (Fin 2)) 1) :=
 /-- The commutator class forms the one-element basis of the actual second layer.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 def secondLayerBasis : Basis (Fin 1) (ZMod 3) (Layer (Free (Fin 2)) 2) :=
   Free.layerTwoBasis.reindex pairEquiv
@@ -302,7 +302,7 @@ def secondLayerBasis : Basis (Fin 1) (ZMod 3) (Layer (Free (Fin 2)) 2) :=
 /-- Each degree-one basis vector is the initial form of its named free generator.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem firstLayerBasis_apply (i : Fin 2) :
     firstLayerBasis i = mk (Free (Fin 2)) 1 ⟨Free.of i, Subgroup.mem_top _⟩ :=
@@ -311,7 +311,7 @@ theorem firstLayerBasis_apply (i : Fin 2) :
 /-- The degree-two basis vector is the actual initial form of the generator commutator.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem secondLayerBasis_apply :
     secondLayerBasis 0 = mk (Free (Fin 2)) 2
@@ -322,7 +322,7 @@ theorem secondLayerBasis_apply :
 /-- The third lower central term of the free group on two generators is trivial.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem term_three_eq_bot : term (Free (Fin 2)) 3 = ⊥ :=
   Free.lowerCentralSeries_two_fin_two_eq_bot
@@ -330,7 +330,7 @@ theorem term_three_eq_bot : term (Free (Fin 2)) 3 = ⊥ :=
 /-- Every layer in degree at least three vanishes, including the actual third quotient.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem layer_subsingleton {n : ℕ} (hn : 3 ≤ n) : Subsingleton (Layer (Free (Fin 2)) n) := by
   have hterm : term (Free (Fin 2)) n = ⊥ := by
@@ -355,7 +355,7 @@ private theorem mk_pow (x : term (Free (Fin 2)) 2) (k : ℕ) :
 /-- Every second-layer vector has its unique commutator coefficient.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem secondLayer_eq_repr_smul (v : Layer (Free (Fin 2)) 2) :
     v = secondLayerBasis.repr v 0 • secondLayerBasis 0 := by
@@ -364,7 +364,7 @@ theorem secondLayer_eq_repr_smul (v : Layer (Free (Fin 2)) 2) :
 /-- The second central term consists exactly of the three powers of the generator commutator.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem mem_term_two_iff (g : Free (Fin 2)) :
     g ∈ term (Free (Fin 2)) 2 ↔
@@ -389,7 +389,7 @@ theorem mem_term_two_iff (g : Free (Fin 2)) :
 /-- Every first-layer vector has its two generator coefficients.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem firstLayer_eq_repr_smul (v : Layer (Free (Fin 2)) 1) :
     v = firstLayerBasis.repr v 0 • firstLayerBasis 0 +
@@ -399,7 +399,7 @@ theorem firstLayer_eq_repr_smul (v : Layer (Free (Fin 2)) 1) :
 /-- The bracket of the two generator classes is the commutator basis vector.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem bracket_basis :
     bracketLayer (by decide) (by decide) (firstLayerBasis 0) (firstLayerBasis 1) =
@@ -411,7 +411,7 @@ theorem bracket_basis :
 /-- The bracket in degree two is the alternating determinant of the generator coordinates.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem bracketLayer_eq_determinant (v w : Layer (Free (Fin 2)) 1) :
     bracketLayer (by decide) (by decide) v w =
@@ -430,7 +430,7 @@ theorem bracketLayer_eq_determinant (v w : Layer (Free (Fin 2)) 1) :
 the alternating determinant of the two degree-one coordinates.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem graded_bracket_eq_determinant (v w : GradedModule (Free (Fin 2))) :
     ⁅v, w⁆ =
@@ -451,7 +451,7 @@ namespace T3.FreeTwo
 single commutator coordinate in degree two, with its canonical named bases.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 def coordinates : GradedModule (Free (Fin 2)) ≃ₗ[ZMod 3] (ZMod 3 × ZMod 3) × ZMod 3 where
   toFun v := ((firstLayerBasis.repr (v 1) 0, firstLayerBasis.repr (v 1) 1),
@@ -485,7 +485,7 @@ def coordinates : GradedModule (Free (Fin 2)) ≃ₗ[ZMod 3] (ZMod 3 × ZMod 3) 
 /-- The coordinates are the three coefficients in the named homogeneous bases.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 @[simp]
 theorem coordinates_apply (v : GradedModule (Free (Fin 2))) :
@@ -496,7 +496,7 @@ theorem coordinates_apply (v : GradedModule (Free (Fin 2))) :
 in degree one, with its value on the degree-two commutator line.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem coordinates_bracket (v w : GradedModule (Free (Fin 2))) :
     coordinates ⁅v, w⁆ =
@@ -508,7 +508,7 @@ theorem coordinates_bracket (v w : GradedModule (Free (Fin 2))) :
 /-- A vector is homogeneous of degree one precisely when its commutator coordinate vanishes.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem mem_grade_one_iff (v : GradedModule (Free (Fin 2))) :
     v ∈ grade (Free (Fin 2)) 1 ↔ (coordinates v).2 = 0 := by
@@ -525,7 +525,7 @@ theorem mem_grade_one_iff (v : GradedModule (Free (Fin 2))) :
 /-- A vector is homogeneous of degree two precisely when its two generator coordinates vanish.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem mem_grade_two_iff (v : GradedModule (Free (Fin 2))) :
     v ∈ grade (Free (Fin 2)) 2 ↔ (coordinates v).1 = (0, 0) := by
@@ -545,7 +545,7 @@ theorem mem_grade_two_iff (v : GradedModule (Free (Fin 2))) :
 on two generators.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v4.tex, Example 2.21, item 3, line 443.
+TeX: T3_modelcompanion_v7.tex, Example 2.21, item 3, line 522.
 -/
 theorem grade_eq_bot {n : ℕ} (h1 : n ≠ 1) (h2 : n ≠ 2) :
     grade (Free (Fin 2)) n = ⊥ := by

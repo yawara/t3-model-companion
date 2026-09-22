@@ -22,8 +22,8 @@ The generator formulas are those of Proposition 2.29. The direct sum and preserv
 Lie bracket are separate constructions.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`,
-v4 Proposition 2.29 and Remark 2.30, lines 550–602.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`,
+v7 Proposition 2.29 and Remark 2.30, lines 629–681.
 -/
 
 @[expose] public section
@@ -39,7 +39,7 @@ variable {R V : Type*} [CommRing R] [AddCommGroup V] [Module R V]
 /-- A two-fold wedge is the canonical two-variable exterior-power map.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree two.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, degree two.
 -/
 theorem wedgeVV_eq_ιMulti (u v : V) :
     wedgeVV R V u v = exteriorPower.ιMulti R 2 ![u, v] := by
@@ -50,7 +50,7 @@ theorem wedgeVV_eq_ιMulti (u v : V) :
 /-- A wedge of a two-fold wedge with a vector is the canonical three-variable map.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree three.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, degree three.
 -/
 theorem wedgeQV_wedgeVV_eq_ιMulti (u v w : V) :
     wedgeQV R V (wedgeVV R V u v) w = exteriorPower.ιMulti R 3 ![u, v, w] := by
@@ -63,7 +63,7 @@ variable {I : Type*} [LinearOrder I]
 /-- The exterior basis vector indexed by an increasing pair is the wedge in that order.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree two.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, degree two.
 -/
 theorem exteriorPower_two_basis (b : Basis I R V) (p : IncreasingPair I) :
     b.exteriorPower 2 (IncreasingPair.equivPowersetCard p) =
@@ -79,7 +79,7 @@ theorem exteriorPower_two_basis (b : Basis I R V) (p : IncreasingPair I) :
 /-- The exterior basis vector indexed by an increasing triple is the wedge in that order.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, degree three.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, degree three.
 -/
 theorem exteriorPower_three_basis (b : Basis I R V) (t : IncreasingTriple I) :
     b.exteriorPower 3 (IncreasingTriple.equivPowersetCard t) =
@@ -100,7 +100,7 @@ variable [Module (ZMod 3) V] (b : Basis I (ZMod 3) V)
 by sending each generator class to its specified basis vector.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 1.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 1.
 -/
 noncomputable def sigmaOne :
     AssociatedGraded.Layer (Free I) 1 ≃ₗ[ZMod 3] ⋀[ZMod 3]^1 V :=
@@ -109,7 +109,7 @@ noncomputable def sigmaOne :
 /-- The second actual graded layer identifies with `⋀²V` by its increasing-pair basis.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 2.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 2.
 -/
 noncomputable def sigmaTwo :
     AssociatedGraded.Layer (Free I) 2 ≃ₗ[ZMod 3] ⋀[ZMod 3]^2 V :=
@@ -119,7 +119,7 @@ noncomputable def sigmaTwo :
 /-- The third actual graded layer identifies with `⋀³V` by its increasing-triple basis.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 3.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 3.
 -/
 noncomputable def sigmaThree :
     AssociatedGraded.Layer (Free I) 3 ≃ₗ[ZMod 3] ⋀[ZMod 3]^3 V :=
@@ -129,7 +129,7 @@ noncomputable def sigmaThree :
 /-- The first exterior identification realizes the generator coefficients in the chosen basis.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 1.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 1.
 -/
 theorem sigmaOne_apply (x : AssociatedGraded.Layer (Free I) 1) :
     sigmaOne b x = (exteriorPower.oneEquiv (ZMod 3) V).symm (b.repr.symm (layerOneEquiv x)) :=
@@ -138,7 +138,7 @@ theorem sigmaOne_apply (x : AssociatedGraded.Layer (Free I) 1) :
 /-- The second exterior identification realizes the pair coefficients in the exterior basis.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 2.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 2.
 -/
 theorem sigmaTwo_apply (x : AssociatedGraded.Layer (Free I) 2) :
     sigmaTwo b x = (b.exteriorPower 2).repr.symm
@@ -147,7 +147,7 @@ theorem sigmaTwo_apply (x : AssociatedGraded.Layer (Free I) 2) :
 /-- The third exterior identification realizes the triple coefficients in the exterior basis.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 3.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 3.
 -/
 theorem sigmaThree_apply (x : AssociatedGraded.Layer (Free I) 3) :
     sigmaThree b x = (b.exteriorPower 3).repr.symm
@@ -157,7 +157,7 @@ theorem sigmaThree_apply (x : AssociatedGraded.Layer (Free I) 3) :
 /-- A generator class maps to the corresponding degree-one exterior vector.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 1.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 1.
 -/
 theorem sigmaOne_of (i : I) :
     sigmaOne b (AssociatedGraded.mk (Free I) 1 ⟨of i, Subgroup.mem_top _⟩) =
@@ -167,7 +167,7 @@ theorem sigmaOne_of (i : I) :
 /-- An increasing generator commutator maps to the wedge of the corresponding basis vectors.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 2.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 2.
 -/
 theorem sigmaTwo_commutator (p : IncreasingPair I) :
     sigmaTwo b (AssociatedGraded.mk (Free I) 2
@@ -179,7 +179,7 @@ theorem sigmaTwo_commutator (p : IncreasingPair I) :
 /-- An increasing triple commutator maps to the ordered three-fold wedge of basis vectors.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, item 3.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, item 3.
 -/
 theorem sigmaThree_tripleCommutator (t : IncreasingTriple I) :
     sigmaThree b (AssociatedGraded.mk (Free I) 3

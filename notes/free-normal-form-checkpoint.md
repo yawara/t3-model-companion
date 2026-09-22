@@ -1,5 +1,8 @@
 # 自由群・有限正規形と coproduct の基礎
 
+> 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
+> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+
 2026-09-09。対象は `T3_modelcompanion_v4.tex`、SHA256
 `79745dfa1660a827c51ec3c6b2006ee9d6243cb4702f97a75e5b55357b89f50b`。
 Lean/mathlib の pin は初期検証と同じ。これは全論文完成とは別の中間境界である。

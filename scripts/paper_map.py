@@ -24,7 +24,7 @@ ENVIRONMENTS = {
     "theorem", "lemma", "proposition", "corollary", "definition", "example",
     "question", "fact", "remark", "notation",
 }
-FORMALIZATION = {"planned", "partial", "stated", "proved"}
+FORMALIZATION = {"planned", "partial", "stated", "proved", "open"}
 FIDELITY = {"unchecked", "statement_checked", "proof_checked"}
 # Ordinary Lean identifiers include Unicode letters and subscripts, as in `map₂`.
 NAME = r"[^\W\d][\w'.]*"
@@ -50,7 +50,7 @@ def uncomment_tex(source: str) -> str:
 
 
 def source_items(source: str) -> list[dict]:
-    """Read the v4 shared theorem counter, excluding proof-local Claims."""
+    """Read the manuscript's shared theorem counter, excluding proof-local Claims."""
     source = uncomment_tex(source)
     alternatives = "|".join(sorted(ENVIRONMENTS | {"customproposition"}))
     pattern = re.compile(
@@ -217,8 +217,11 @@ def check_progress(entry: dict, context: str, modules: list[str], cache: dict,
                     f"{context}: nonstandard axioms in kernel manifest for {name}")
     parts = entry.get("parts", [])
     actual = bool(bindings) or any(part["declarations"] for part in parts)
-    require(state != "planned" or not actual, f"{context}: actual bindings require a progress state")
-    require(state == "planned" or actual, f"{context}: {state} requires actual declarations")
+    require(state not in {"planned", "open"} or not actual,
+            f"{context}: actual bindings require a progress state")
+    require(state != "open" or (not plans and not parts and fidelity != "proof_checked"),
+            f"{context}: an open question or conjecture has no claimed proof or implementation plan")
+    require(state in {"planned", "open"} or actual, f"{context}: {state} requires actual declarations")
     if state in {"stated", "proved"}:
         require(all(part["formalization"] in {"stated", "proved"} for part in parts),
                 f"{context}: incomplete parts require formalization='partial'")
@@ -251,13 +254,13 @@ def validate(data: dict, manifest: dict | None = None) -> None:
     scanned = source_items(path.read_text())
     numbered = [item for item in scanned if item["environment"] != "customproposition"]
     custom = [item for item in scanned if item["environment"] == "customproposition"]
-    require(len(numbered) == source["numbered_items"] == 47, "Expected all 47 numbered v4 items")
+    require(len(numbered) == source["numbered_items"] == 55, "Expected all 55 numbered v7 items")
     require(len(custom) == source["custom_items"] == 1, "Expected Proposition A")
     items = data["items"]
     ids = [item["id"] for item in items]
     require(len(ids) == len(set(ids)), "Duplicate paper ID")
-    require(len(items) == len(scanned) + 2,
-            "Expected 47 numbered items, Proposition A, and two unnumbered definitions")
+    require(source["unnumbered_items"] == 4 and len(items) == len(scanned) + 4,
+            "Expected 55 numbered items, Proposition A, and four unnumbered items")
     by_location = {(item["environment"], item["number"]): item for item in items}
     require(len(by_location) == len(items), "Duplicate source item")
     for item in scanned:
@@ -276,17 +279,36 @@ def validate(data: dict, manifest: dict | None = None) -> None:
     exponent = next((item for item in items if item["id"] == "preliminaries.exponent_three"), None)
     require(exponent is not None, "Missing separate exponent-three convention")
     require(exponent["environment"] == "prose" and exponent["number"] == "2.preamble"
-            and exponent["line_start"] == 136 and exponent["line_end"] == 142
+            and exponent["line_start"] == 215 and exponent["line_end"] == 221
             and exponent["tex_label"] == "" and "T3.GroupTheory.Basic" in exponent["modules"],
             "Incorrect exponent-three convention locator or module")
     set_commutator = next((item for item in items if item["id"] == "preliminaries.set_commutator"), None)
     require(set_commutator is not None, "Missing separate set commutator definition")
     require(set_commutator["environment"] == "prose"
             and set_commutator["number"] == "2.group_preamble"
-            and set_commutator["line_start"] == 324 and set_commutator["line_end"] == 325
+            and set_commutator["line_start"] == 403 and set_commutator["line_end"] == 404
             and set_commutator["tex_label"] == ""
             and set_commutator["modules"] == ["T3.GroupTheory.Basic"],
             "Incorrect set commutator definition locator or module")
+    for item_id, number, start, end in [
+        ("questions.burnside_local_finiteness", "6.burnside_local_finiteness", 1519, 1525),
+        ("questions.takeuchi_conjecture", "6.takeuchi_conjecture", 1527, 1530),
+    ]:
+        item = next((entry for entry in items if entry["id"] == item_id), None)
+        require(item is not None and item["environment"] == "prose"
+                and item["number"] == number and item["line_start"] == start
+                and item["line_end"] == end and item["tex_label"] == "",
+                f"Incorrect unnumbered v7 source locator: {item_id}")
+    takeuchi = next(item for item in items if item["id"] == "questions.takeuchi_conjecture")
+    require(takeuchi.get("additional_source_locations") == [{
+        "line_start": 151, "line_end": 154,
+        "description": "Introduction: finitely generated groups formulation",
+    }], "Takeuchi conjecture must also track its introduction formulation")
+    for item_id in ["questions.locally_finite_varieties", "questions.bounded_exponent_varieties",
+                    "questions.takeuchi_conjecture"]:
+        item = next((entry for entry in items if entry["id"] == item_id), None)
+        require(item is not None and item["formalization"] == "open",
+                f"The manuscript leaves this question or conjecture open: {item_id}")
     identities = next((item for item in items if item["id"] == "preliminaries.elementary_identities"), None)
     require(identities is not None and identities["environment"] == "fact"
             and identities["number"] == "2.15"
@@ -299,7 +321,8 @@ def validate(data: dict, manifest: dict | None = None) -> None:
         context = item["id"]
         require(re.fullmatch(r"[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)+", context) is not None,
                 f"Invalid stable paper ID: {context}")
-        require(bool(item["title"]) and bool(item["modules"]), f"{context}: missing title or modules")
+        require(bool(item["title"]) and (bool(item["modules"]) or item["formalization"] == "open"),
+                f"{context}: missing title or modules")
         for module in item["modules"]:
             require(re.fullmatch(r"T3(?:\.[A-Z][A-Za-z0-9]*)+", module) is not None,
                     f"{context}: invalid module {module}")
@@ -327,14 +350,16 @@ def render(data: dict) -> str:
         "このファイルは `docs/paper-map.toml` から生成する。変更後は "
         "`python3 scripts/paper_map.py --write`、整合性検査は `--check` を使う。", "",
         f"対象: [{source['path']}](../{source['path']})。SHA256: `{source['sha256']}`。", "",
-        "番号付き 47 項目、Proposition A、§2 冒頭の指数条件、および集合の交換子部分群を個別登録する。"
+        "番号付き 55 項目、Proposition A、§2 の無番号定義 2 項目、"
+        "§6 の Burnside 群による還元と Takeuchi 予想を個別登録する。"
         "行・表示番号は補助情報で、安定 ID を主キーとする。", "",
         "項目全体の状態: " + ", ".join(f"`{state}` {counts[state]}" for state in
-                                       ("planned", "partial", "stated", "proved")) + "。", "",
+                                       ("planned", "partial", "stated", "proved", "open")) + "。", "",
         "`formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに"
         "実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を"
         "伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は"
-        "原稿との照合状況である。", "",
+        "原稿との照合状況である。`open` は原稿の未解決の質問・予想であり、"
+        "証明済み結果や今回の実装予定を意味しない。", "",
         "このスクリプトは TeX の網羅性、モジュールと宣言の字句上の所在、表示の整合性を"
         "検査する。Lean の elaboration・公理依存・lint・数学的 faithful 性は別途検証する。"
         "予定名は実在宣言ではなく、未着手の項目のために Lean stub を作らない。", "",
@@ -344,9 +369,14 @@ def render(data: dict) -> str:
     for item in items:
         label = f"`{item['tex_label']}`" if item["tex_label"] else "label なし"
         locator = f"{label}<br>{item['line_start']}–{item['line_end']}"
-        modules = "<br>".join(f"`{module}`" for module in item["modules"])
+        modules = "<br>".join(f"`{module}`" for module in item["modules"]) or "—"
         if item["environment"] == "prose":
-            name = "§2 冒頭" if item["number"] == "2.preamble" else "§2 群論の無番号定義"
+            name = {
+                "2.preamble": "§2 冒頭",
+                "2.group_preamble": "§2 群論の無番号定義",
+                "6.burnside_local_finiteness": "§6 Burnside 群による還元",
+                "6.takeuchi_conjecture": "§6 Takeuchi 予想",
+            }[item["number"]]
         else:
             name = item["environment"].replace("customproposition", "proposition").title() + " " + item["number"]
         lines.append("| " + " | ".join(map(cell, [f"{name}<br>`{item['id']}`", item["title"],
@@ -359,6 +389,9 @@ def render(data: dict) -> str:
         lines.extend([f"予定宣言: {planned}。", "", f"実在宣言: {actual}。", ""])
         if item.get("notes"):
             lines.extend([item["notes"], ""])
+        for locator in item.get("additional_source_locations", []):
+            lines.extend([f"追加出典: {locator['description']}、"
+                          f"{locator['line_start']}–{locator['line_end']} 行。", ""])
         if item.get("parts"):
             lines.extend(["| part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |",
                           "| --- | --- | --- | --- | --- |"])
@@ -395,7 +428,7 @@ def main() -> int:
         else:
             require(OUTPUT.is_file() and OUTPUT.read_text() == expected,
                     "Generated Markdown differs; run python3 scripts/paper_map.py --write")
-            print("Paper map OK: 47 numbered items + Proposition A + 2 unnumbered definitions; source and bindings checked.")
+            print("Paper map OK: 55 numbered items + Proposition A + 4 unnumbered items; source and bindings checked.")
             if manifest is not None:
                 print("Actual bindings also matched the supplied kernel declaration manifest.")
         return 0

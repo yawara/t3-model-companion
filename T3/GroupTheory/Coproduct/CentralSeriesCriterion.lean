@@ -18,7 +18,7 @@ elements outside the third lower central term. The general implications below ap
 finite generation; the coproduct-specific separation arguments supply their hypotheses.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, proof lines 974–1001.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, proof lines 1055–1082.
 -/
 
 @[expose] public section
@@ -33,7 +33,7 @@ variable {G : Type*} [Group G] [Fact (HasExponentThree G)]
 element outside the derived subgroup used in both claims of the paper's `F₂` argument.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, lines 982 and 999.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, lines 1063 and 1080.
 -/
 theorem exists_nonzero_layerOne [Nontrivial G] : ∃ a : Layer G 1, a ≠ 0 := by
   have hderived : commutator G ≠ ⊤ := by
@@ -54,7 +54,7 @@ theorem exists_nonzero_layerOne [Nontrivial G] : ∃ a : Layer G 1, a ≠ 0 := b
 by a triple bracket, then the second center is contained in the derived subgroup.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, Claim A, lines 974–987.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, Claim A, lines 1055–1068.
 -/
 theorem upperCentralSeries_two_le_commutator_of_triple_bracket
     (hsep : ∀ a : Layer G 1, a ≠ 0 → ∃ b c : Layer G 1,
@@ -84,7 +84,7 @@ theorem upperCentralSeries_two_le_commutator_of_triple_bracket
 subgroup, nondegeneracy of the degree-two bracket puts the center in the third lower term.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, Claim B, lines 989–1001.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, Claim B, lines 1070–1082.
 -/
 theorem center_le_lowerCentralSeries_two_of_bracket
     (hsecond : Subgroup.upperCentralSeries G 2 ≤ commutator G)
@@ -114,7 +114,7 @@ theorem center_le_lowerCentralSeries_two_of_bracket
 upper and lower central series. The automatic inclusions use exponent three.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, the two-claim proof.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, the two-claim proof.
 -/
 theorem centralSeriesCoincide_of_bracket_separation
     (hone : ∀ a : Layer G 1, a ≠ 0 → ∃ b c : Layer G 1,

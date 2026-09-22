@@ -20,8 +20,8 @@ vectors is nonzero. No finite-dimensionality assumption is used. This is the ten
 nonvanishing step in both central-series claims for a coproduct with the free group of rank two.
 
 Paper-ID: structure.graded_coproduct, structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, lines 916–926, and
-`lemma:coincidence of central series`, lines 981–1001.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, lines 997–1007, and
+`lemma:coincidence of central series`, lines 1062–1082.
 -/
 
 @[expose] public section
@@ -40,7 +40,7 @@ variable {R A B C D : Type*} [CommRing R]
 No finite-dimensionality or flatness hypothesis is required.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v4.tex, `proposition:gr of free product`, tensor quotients, lines 916–926.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, tensor quotients, lines 997–1007.
 -/
 theorem map_ker_eq_map₂ (f : A →ₗ[R] C) (g : B →ₗ[R] D)
     (hf : Function.Surjective f) (hg : Function.Surjective g) :
@@ -61,7 +61,7 @@ variable {K V W : Type*} [Field K]
 /-- A pure tensor of two nonzero vectors over a field is nonzero, in arbitrary dimensions.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v4.tex, `lemma:coincidence of central series`, tensor nonvanishing.
+TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, tensor nonvanishing.
 -/
 theorem tmul_ne_zero {v : V} {w : W} (hv : v ≠ 0) (hw : w ≠ 0) : v ⊗ₜ[K] w ≠ 0 := by
   classical

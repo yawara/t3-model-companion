@@ -59,7 +59,7 @@ namespace T3
 /-- The exponent in the order of the free exponent-three group of rank `n`.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def freeOrderExponent (n : ℕ) : ℕ := n + n.choose 2 + n.choose 3
 
@@ -72,7 +72,7 @@ variable {I : Type*}
 /-- The degree-one coordinates, as a homomorphism to the additive group of functions.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def genHom : LvdW I →* Multiplicative (I → ZMod 3) where
   toFun x := Multiplicative.ofAdd x.gen
@@ -82,7 +82,7 @@ def genHom : LvdW I →* Multiplicative (I → ZMod 3) where
 /-- Supporting declaration `genHom_apply` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem genHom_apply (x : LvdW I) : genHom x = Multiplicative.ofAdd x.gen :=
@@ -91,7 +91,7 @@ theorem genHom_apply (x : LvdW I) : genHom x = Multiplicative.ofAdd x.gen :=
 /-- Supporting declaration `mem_genHom_ker` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem mem_genHom_ker {x : LvdW I} : x ∈ genHom.ker ↔ ∀ i, x.gen i = 0 := by
   simp [MonoidHom.mem_ker, funext_iff]
@@ -100,7 +100,7 @@ theorem mem_genHom_ker {x : LvdW I} : x ∈ genHom.ker ↔ ∀ i, x.gen i = 0 :=
 degree-one coordinates.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem gen_inv_mul_eq_zero {x y : LvdW I} (hgen : x.gen = y.gen) (i : I) :
     (y⁻¹ * x).gen i = 0 := by
@@ -111,7 +111,7 @@ theorem gen_inv_mul_eq_zero {x y : LvdW I} (hgen : x.gen = y.gen) (i : I) :
 quotient vanishes in degree two at that pair.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem pair_inv_mul_eq_zero {x y : LvdW I} (hgen : x.gen = y.gen) {a b : I}
     (hpair : x.pair a b = y.pair a b) : (y⁻¹ * x).pair a b = 0 := by
@@ -122,7 +122,7 @@ theorem pair_inv_mul_eq_zero {x y : LvdW I} (hgen : x.gen = y.gen) {a b : I}
 their quotient vanishes in degree three at that triple.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem triple_inv_mul_eq_zero {x y : LvdW I} (hgen : x.gen = y.gen) {a b c : I}
     (htriple : x.triple a b c = y.triple a b c) : (y⁻¹ * x).triple a b c = 0 := by
@@ -137,7 +137,7 @@ On the kernel of `genHom`, the degree-two coordinates at increasing pairs are ad
 correction term of law (9) carries a degree-one factor.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def pairHom : (genHom (I := I)).ker →* Multiplicative (IncreasingPair I → ZMod 3) where
   toFun x := Multiplicative.ofAdd fun p => (x : LvdW I).pair p.first p.second
@@ -153,7 +153,7 @@ def pairHom : (genHom (I := I)).ker →* Multiplicative (IncreasingPair I → ZM
 /-- Supporting declaration `pairHom_apply` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem pairHom_apply (x : (genHom (I := I)).ker) :
@@ -165,7 +165,7 @@ On the kernel of `genHom`, the degree-three coordinates at increasing triples ar
 every correction term of law (9) carries a degree-one factor.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def tripleHom : (genHom (I := I)).ker →* Multiplicative (IncreasingTriple I → ZMod 3) where
   toFun x := Multiplicative.ofAdd fun t => (x : LvdW I).triple t.first t.second t.third
@@ -183,7 +183,7 @@ def tripleHom : (genHom (I := I)).ker →* Multiplicative (IncreasingTriple I �
 /-- Supporting declaration `tripleHom_apply` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem tripleHom_apply (x : (genHom (I := I)).ker) :
@@ -195,7 +195,7 @@ theorem tripleHom_apply (x : (genHom (I := I)).ker) :
 /-- At an increasing pair, the degree-two coordinate of a generator commutator is a delta.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem commutator_of_pair_of_lt {i j a b : I} (hij : i < j) (hab : a < b) :
     ⁅of i, of j⁆.pair a b = if a = i ∧ b = j then 1 else 0 := by
@@ -213,7 +213,7 @@ theorem commutator_of_pair_of_lt {i j a b : I} (hij : i < j) (hab : a < b) :
 delta.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem triple_commutator_of_triple_of_lt {i j k a b c : I}
     (hij : i < j) (hjk : j < k) (hab : a < b) (hbc : b < c) :
@@ -246,7 +246,7 @@ theorem triple_commutator_of_triple_of_lt {i j k a b c : I}
 /-- The increasing, "collected", coordinates of an exponent system.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def collect (x : LvdW I) :
     (I → ZMod 3) × (IncreasingPair I → ZMod 3) × (IncreasingTriple I → ZMod 3) :=
@@ -255,7 +255,7 @@ def collect (x : LvdW I) :
 /-- Supporting declaration `collect_one` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem collect_one : collect (1 : LvdW I) = 0 :=
@@ -272,7 +272,7 @@ variable {I : Type*} [LinearOrder I]
 /-- The degree-one readout of the comparison map.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def genReadout : Free I →* Multiplicative (I → ZMod 3) :=
   LvdW.genHom.comp toLvdW
@@ -280,7 +280,7 @@ def genReadout : Free I →* Multiplicative (I → ZMod 3) :=
 /-- Supporting declaration `genReadout_apply` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem genReadout_apply (g : Free I) :
@@ -290,7 +290,7 @@ theorem genReadout_apply (g : Free I) :
 /-- `toLvdW`, restricted to the kernel of the degree-one readout.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def toLvdWGenKer : (genReadout (I := I)).ker →* (LvdW.genHom (I := I)).ker :=
   (toLvdW.comp (genReadout (I := I)).ker.subtype).codRestrict _ fun x => x.2
@@ -298,7 +298,7 @@ def toLvdWGenKer : (genReadout (I := I)).ker →* (LvdW.genHom (I := I)).ker :=
 /-- Supporting declaration `toLvdWGenKer_coe` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem toLvdWGenKer_coe (x : (genReadout (I := I)).ker) :
@@ -308,7 +308,7 @@ theorem toLvdWGenKer_coe (x : (genReadout (I := I)).ker) :
 /-- The degree-two readout, on the kernel of the degree-one readout.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def pairReadout : (genReadout (I := I)).ker →* Multiplicative (IncreasingPair I → ZMod 3) :=
   LvdW.pairHom.comp toLvdWGenKer
@@ -316,7 +316,7 @@ def pairReadout : (genReadout (I := I)).ker →* Multiplicative (IncreasingPair 
 /-- Supporting declaration `pairReadout_apply` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem pairReadout_apply (x : (genReadout (I := I)).ker) :
@@ -328,7 +328,7 @@ theorem pairReadout_apply (x : (genReadout (I := I)).ker) :
 /-- The degree-three readout, on the kernel of the degree-two readout.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 def tripleReadout : (pairReadout (I := I)).ker →* Multiplicative (IncreasingTriple I → ZMod 3) :=
   LvdW.tripleHom.comp (toLvdWGenKer.comp (pairReadout (I := I)).ker.subtype)
@@ -336,7 +336,7 @@ def tripleReadout : (pairReadout (I := I)).ker →* Multiplicative (IncreasingTr
 /-- Supporting declaration `tripleReadout_apply` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem tripleReadout_apply (x : (pairReadout (I := I)).ker) :
@@ -349,7 +349,7 @@ theorem tripleReadout_apply (x : (pairReadout (I := I)).ker) :
 /-- Commutators die in the degree-one readout, whose target is commutative.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem commutator_mem_genReadout_ker (a b : Free I) :
     ⁅a, b⁆ ∈ (genReadout (I := I)).ker := by
@@ -359,7 +359,7 @@ theorem commutator_mem_genReadout_ker (a b : Free I) :
 /-- Triple generator commutators die in the degree-two readout as well.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem tripleCommutator_mem_pairReadout_ker (i j k : I) :
     (⟨⁅⁅of i, of j⁆, of k⁆, commutator_mem_genReadout_ker _ _⟩ :
@@ -386,7 +386,7 @@ variable [Finite I]
 /-- The degree-one readout is surjective: the generators hit the coordinate deltas.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem genReadout_surjective : Function.Surjective (genReadout (I := I)) := by
   intro v
@@ -406,7 +406,7 @@ theorem genReadout_surjective : Function.Surjective (genReadout (I := I)) := by
 /-- The degree-two readout is surjective: the increasing commutators hit the deltas.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem pairReadout_surjective : Function.Surjective (pairReadout (I := I)) := by
   intro v
@@ -432,7 +432,7 @@ theorem pairReadout_surjective : Function.Surjective (pairReadout (I := I)) := b
 /-- The degree-three readout is surjective: the increasing triple commutators hit the deltas.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem tripleReadout_surjective : Function.Surjective (tripleReadout (I := I)) := by
   intro v
@@ -499,7 +499,7 @@ private theorem card_pairKer_eq_mul :
 /-- The final kernel of the readout tower is trivial: the collected coordinates are exact.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem tripleReadout_ker_eq_bot : (tripleReadout (I := I)).ker = ⊥ := by
   let : Finite (Free I) := finite
@@ -524,7 +524,7 @@ theorem tripleReadout_ker_eq_bot : (tripleReadout (I := I)).ker = ⊥ := by
 /-- The kernel of the degree-one readout carries the degree-two and degree-three layers.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem natCard_genReadout_ker :
     Nat.card (genReadout (I := I)).ker =
@@ -535,7 +535,7 @@ theorem natCard_genReadout_ker :
 /-- The kernel of the degree-two readout carries exactly the degree-three layer.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem natCard_pairReadout_ker :
     Nat.card (pairReadout (I := I)).ker = 3 ^ (Nat.card I).choose 3 := by
@@ -544,7 +544,7 @@ theorem natCard_pairReadout_ker :
 /-- An element of the free group whose collected coordinates all vanish is the identity.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem eq_one_of_toLvdW_coords_of_finite {g : Free I}
     (hgen : ∀ i, (toLvdW g).gen i = 0)
@@ -566,7 +566,7 @@ theorem eq_one_of_toLvdW_coords_of_finite {g : Free I}
 /-- The comparison map with the Levi--van der Waerden model is injective.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem toLvdW_injective_of_finite : Function.Injective (toLvdW (I := I)) := by
   rw [← MonoidHom.ker_eq_bot_iff, eq_bot_iff]
@@ -579,7 +579,7 @@ theorem toLvdW_injective_of_finite : Function.Injective (toLvdW (I := I)) := by
 /-- The order formula for the free group of exponent three of finite rank.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem natCard_eq :
     Nat.card (Free I) =
@@ -591,7 +591,7 @@ theorem natCard_eq :
 /-- The order formula using the paper's numerical function `t`.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem natCard_eq_pow_freeOrderExponent :
     Nat.card (Free I) = 3 ^ freeOrderExponent (Nat.card I) :=
@@ -603,7 +603,7 @@ theorem natCard_eq_pow_freeOrderExponent :
 equal.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem collect_toLvdW_injective_of_finite :
     Function.Injective fun g : Free I => LvdW.collect (toLvdW g) := by
@@ -631,7 +631,7 @@ The collection theorem in coordinate form: the increasing coordinates of the com
 realise every coordinate system exactly once.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem collect_toLvdW_bijective :
     Function.Bijective fun g : Free I => LvdW.collect (toLvdW g) := by
@@ -645,7 +645,7 @@ theorem collect_toLvdW_bijective :
 /-- The collected normal form, as a bijection with the increasing coordinate systems.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 noncomputable def collectEquiv :
     Free I ≃
@@ -655,7 +655,7 @@ noncomputable def collectEquiv :
 /-- Supporting declaration `collectEquiv_apply` for the finite-rank collection theorem.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 @[simp]
 theorem collectEquiv_apply (g : Free I) :
@@ -667,7 +667,7 @@ The image of the comparison map is a graph over the increasing coordinates: on t
 `toLvdW`, the collected coordinates are a bijection onto all coordinate systems.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem collect_bijOn_range :
     Set.BijOn (LvdW.collect (I := I)) (Set.range (toLvdW (I := I))) Set.univ := by
@@ -681,7 +681,7 @@ theorem collect_bijOn_range :
 /-! ### The ascending word in the paper
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 
 private theorem readout_word {α G : Type*} [DecidableEq α] [Fintype α] [Group G]
@@ -706,7 +706,7 @@ private theorem readout_word {α G : Type*} [DecidableEq α] [Fintype α] [Group
 /-- The generator block, with generators multiplied in ascending order.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 noncomputable def generatorWord (l : I → ZMod 3) : Free I := by
   classical
@@ -718,7 +718,7 @@ All factors have increasing indices and lie in the abelian derived subgroup, so 
 choice of their enumeration has no mathematical effect.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 noncomputable def pairWord (m : IncreasingPair I → ZMod 3) :
     (genReadout (I := I)).ker := by
@@ -732,7 +732,7 @@ noncomputable def pairWord (m : IncreasingPair I → ZMod 3) :
 Every factor has increasing indices and is central.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 noncomputable def tripleWord (n : IncreasingTriple I → ZMod 3) :
     (pairReadout (I := I)).ker := by
@@ -748,7 +748,7 @@ commutator powers and increasing triple commutator powers. Exponents are the rep
 `0`, `1`, `2` of the specified elements of `ZMod 3`.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 noncomputable def normalWord (l : I → ZMod 3) (m : IncreasingPair I → ZMod 3)
     (n : IncreasingTriple I → ZMod 3) : Free I :=
@@ -758,7 +758,7 @@ noncomputable def normalWord (l : I → ZMod 3) (m : IncreasingPair I → ZMod 3
 /-- The degree-one readout recovers the generator exponents of the ascending block.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem genReadout_generatorWord (l : I → ZMod 3) :
     genReadout (generatorWord l) = Multiplicative.ofAdd l := by
@@ -772,7 +772,7 @@ theorem genReadout_generatorWord (l : I → ZMod 3) :
 /-- The degree-two readout recovers the commutator exponents of the second block.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem pairReadout_pairWord (m : IncreasingPair I → ZMod 3) :
     pairReadout (pairWord m) = Multiplicative.ofAdd m := by
@@ -789,7 +789,7 @@ theorem pairReadout_pairWord (m : IncreasingPair I → ZMod 3) :
 /-- The degree-three readout recovers the triple commutator exponents of the final block.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem tripleReadout_tripleWord (n : IncreasingTriple I → ZMod 3) :
     tripleReadout (tripleWord n) = Multiplicative.ofAdd n := by
@@ -807,7 +807,7 @@ theorem tripleReadout_tripleWord (n : IncreasingTriple I → ZMod 3) :
 /-- The degree-one readout of the whole normal word gives its generator exponents.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem genReadout_normalWord (l : I → ZMod 3) (m : IncreasingPair I → ZMod 3)
     (n : IncreasingTriple I → ZMod 3) :
@@ -820,7 +820,7 @@ theorem genReadout_normalWord (l : I → ZMod 3) (m : IncreasingPair I → ZMod 
 /-- Equality of two ascending collected words forces equality of every exponent.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem normalWord_injective : Function.Injective
     (fun c : (I → ZMod 3) × (IncreasingPair I → ZMod 3) × (IncreasingTriple I → ZMod 3) =>
@@ -858,7 +858,7 @@ free-group elements. This statement concerns the displayed words themselves, ind
 of the raw model-coordinate bijection `collectEquiv`.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem normalWord_bijective : Function.Bijective
     (fun c : (I → ZMod 3) × (IncreasingPair I → ZMod 3) × (IncreasingTriple I → ZMod 3) =>
@@ -874,7 +874,7 @@ theorem normalWord_bijective : Function.Bijective
 /-- Every element has a unique expression as the ascending collected word in the paper.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v4.tex, `fact:Levi and van der Waerden`, v4 Fact 2.27.
+TeX: T3_modelcompanion_v7.tex, `fact:Levi and van der Waerden`, v7 Fact 2.27.
 -/
 theorem existsUnique_normalWord (g : Free I) :
     ∃! c : (I → ZMod 3) × (IncreasingPair I → ZMod 3) × (IncreasingTriple I → ZMod 3),

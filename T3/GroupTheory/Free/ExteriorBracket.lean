@@ -18,8 +18,8 @@ including repeated indices. Bilinearity then extends the formulas to arbitrary v
 no restriction on the cardinality of the generating set.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`,
-v4 Proposition 2.29 and Remark 2.30, lines 573–602.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`,
+v7 Proposition 2.29 and Remark 2.30, lines 652–681.
 -/
 
 @[expose] public section
@@ -35,7 +35,7 @@ variable {R V : Type*} [CommRing R] [AddCommGroup V] [Module R V]
 /-- Exterior multiplication between two fixed powers, as a bilinear map.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, bracket comparison.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, bracket comparison.
 -/
 def gradedMulLinear {i j : ℕ} : ⋀[R]^i V →ₗ[R] ⋀[R]^j V →ₗ[R] ⋀[R]^(i + j) V :=
   LinearMap.mk₂ R gradedMul gradedMul_add_left gradedMul_smul_left
@@ -44,7 +44,7 @@ def gradedMulLinear {i j : ℕ} : ⋀[R]^i V →ₗ[R] ⋀[R]^j V →ₗ[R] ⋀[
 /-- The bilinear exterior product evaluates to the graded algebra product.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, bracket comparison.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, bracket comparison.
 -/
 theorem gradedMulLinear_apply {i j : ℕ} (x : ⋀[R]^i V) (y : ⋀[R]^j V) :
     gradedMulLinear x y = gradedMul x y := rfl
@@ -56,7 +56,7 @@ variable {I : Type*} [LinearOrder I]
 /-- The basis of the actual first layer consisting of free-generator classes.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, first displayed basis.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, first displayed basis.
 -/
 noncomputable def layerOneBasis : Basis I (ZMod 3) (Layer (Free I) 1) :=
   Basis.ofRepr layerOneEquiv
@@ -64,7 +64,7 @@ noncomputable def layerOneBasis : Basis I (ZMod 3) (Layer (Free I) 1) :=
 /-- The first layer basis vector is represented by the corresponding free generator.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, first displayed basis.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, first displayed basis.
 -/
 theorem layerOneBasis_apply (i : I) :
     layerOneBasis i = mk (Free I) 1 ⟨of i, Subgroup.mem_top _⟩ := by
@@ -75,7 +75,7 @@ theorem layerOneBasis_apply (i : I) :
 /-- The basis of the actual second layer consisting of increasing generator commutators.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, second displayed basis.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, second displayed basis.
 -/
 noncomputable def layerTwoBasis : Basis (IncreasingPair I) (ZMod 3) (Layer (Free I) 2) :=
   Basis.ofRepr layerTwoEquiv
@@ -83,7 +83,7 @@ noncomputable def layerTwoBasis : Basis (IncreasingPair I) (ZMod 3) (Layer (Free
 /-- The second layer basis vector is represented by its increasing generator commutator.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, second displayed basis.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, second displayed basis.
 -/
 theorem layerTwoBasis_apply (p : IncreasingPair I) :
     layerTwoBasis p = mk (Free I) 2 (derivedCommutator (of p.first) (of p.second)) := by
@@ -94,7 +94,7 @@ theorem layerTwoBasis_apply (p : IncreasingPair I) :
 /-- The second layer basis is the bracket of the corresponding first layer basis vectors.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, bracket comparison.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, bracket comparison.
 -/
 theorem layerTwoBasis_eq_bracket (p : IncreasingPair I) :
     layerTwoBasis p = bracketLayer (by decide) (by decide)
@@ -122,7 +122,7 @@ private theorem sigmaTwo_bracketLayer_basis (i j : I) :
 /-- The degree-two identification carries the bracket of first-layer vectors to their wedge.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, first bracket identity.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, first bracket identity.
 -/
 theorem sigmaTwo_bracketLayer (x y : Layer (Free I) 1) :
     sigmaTwo b (bracketLayer (by decide) (by decide) x y) =
@@ -192,7 +192,7 @@ private theorem sigmaThree_bracketLayer_basis (p : IncreasingPair I) (k : I) :
 vector to their exterior product.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v4.tex, `proposition:gr(F) is Grassmann algebra`, second bracket identity.
+TeX: T3_modelcompanion_v7.tex, `proposition:gr(F) is Grassmann algebra`, second bracket identity.
 -/
 theorem sigmaThree_bracketLayer (q : Layer (Free I) 2) (v : Layer (Free I) 1) :
     sigmaThree b (bracketLayer (by decide) (by decide) q v) =

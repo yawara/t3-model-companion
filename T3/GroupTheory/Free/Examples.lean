@@ -20,7 +20,7 @@ This supplies the example asserted in item 3 of the paper's elementary identitie
 commutativity of the derived subgroup is proved in `T3.GroupTheory.Identities`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 3.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 3.
 -/
 
 @[expose] public section
@@ -33,7 +33,7 @@ open scoped commutatorElement
 Mathlib numbers this term by `2`, whereas the paper denotes it by `γ₃`.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 3.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 3.
 -/
 theorem lowerCentralSeries_two_fin_two_eq_bot :
     (⊤ : Subgroup (Free (Fin 2))).lowerCentralSeries 2 = ⊥ := by
@@ -53,7 +53,7 @@ theorem lowerCentralSeries_two_fin_two_eq_bot :
 /-- The second upper central term of the free exponent-three group on two generators is full.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 3.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 3.
 -/
 theorem upperCentralSeries_two_fin_two_eq_top :
     Subgroup.upperCentralSeries (Free (Fin 2)) 2 = ⊤ :=
@@ -64,7 +64,7 @@ theorem upperCentralSeries_two_fin_two_eq_top :
 The explicit example is the free exponent-three group on two generators.
 
 Paper-ID: preliminaries.elementary_identities
-TeX: T3_modelcompanion_v4.tex, `fact:elementary equations`, v4 Fact 2.15, item 3.
+TeX: T3_modelcompanion_v7.tex, `fact:elementary equations`, v7 Fact 2.15, item 3.
 -/
 theorem not_isMulCommutative_upperCentralSeries_two_fin_two :
     ¬ IsMulCommutative (Subgroup.upperCentralSeries (Free (Fin 2)) 2) := by
