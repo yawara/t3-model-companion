@@ -1,10 +1,10 @@
 # Lean 形式化の構成案
 
-2026-09-09 に雛形の実装を開始し、2026-09-22 に v7 の出典と追加項目へ更新した。
+2026-09-09 に雛形の実装を開始し、2026-09-23 に v8 の出典と表示範囲へ更新した。
 以下は全体の配置方針であり、未実装のパス・宣言名も含む。
 現在の実装状況は [論文対応表](../docs/paper-map.md) を参照する。
-対象は `T3_modelcompanion_v7.tex`、SHA256
-`fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6`。
+対象は `T3_modelcompanion_v8.tex`、SHA256
+`9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`。
 
 **数学的な内容で実装を分け、論文の掲載順で読める Lean の入口と対応表を設ける。**
 個々の公開宣言にも原稿の所在を残す。論文の番号・節順と、Lean の名前・import 順を
@@ -70,8 +70,9 @@ upstream 候補かどうかを配置軸にした `ForMathlib` 層は設けない
 `T3/ModelTheory`。各パスには `.lean` を補う。
 番号は現在の TeX の共有 theorem counter から得た表示情報であり、固定 ID ではない。
 
-| 現 v7 の項目 | TeX label または内容 | 公開モジュール案 |
+| 現 v8 の項目 | TeX label または内容 | 公開モジュール案 |
 | --- | --- | --- |
+| Conjecture 1.1 | `conj:burnside-model-companion`、Takeuchi予想 | `open` として追跡し、Lean定理として断定しない |
 | §2 冒頭、Notation 2.1 | 指数の規約、交換子、共役、生成元数 | `GT/Basic` |
 | Definition 2.2 | companion、model completeness、e.c.、Π₂、有限図式 | `MT/ModelCompanion`、`MT/ModelCompleteness`、`MT/Inductive`、`MT/FiniteDiagram`、`MT/UniformLocalFiniteness` |
 | Fact 2.3 | Π₂ 理論の companion と e.c. class | `MT/Inductive`、`MT/ModelCompanionCriterion` |
@@ -97,7 +98,7 @@ upstream 候補かどうかを配置軸にした `ForMathlib` 層は設けない
 | Lemma 2.31 | `lemma:gr of quotient` | `GT/GradedQuotient` |
 | Proposition 3.1 | `proposition:bounded number of conjugates` | `GT/ConjugateWidth` |
 | Lemma 3.2 | `lemma:witness in bdd support` | `GT/Support` |
-| Proposition A | TeX 775–778、Proposition 4.13 から得る | `MT/StrictEnvelope` |
+| Proposition A | TeX 780–783、Proposition 4.13 から得る | `MT/StrictEnvelope` |
 | Theorem 3.3 | `thm:main` | `T3/Main/BoundedWitness` |
 | Corollary 3.4 | T₃ の model companion の存在 | `T3/Main/ModelCompanion` |
 | Proposition 4.1 | `proposition:lift` | `GT/Generation`、`GT/Presentation` |
@@ -117,15 +118,16 @@ upstream 候補かどうかを配置軸にした `ForMathlib` 層は設けない
 | Lemma 5.3 | `lemma:D can be large` | `GT/Free/CommutatorRank`、`LA/ExteriorContraction` |
 | Lemma 5.4 | `lemma:amalgam over the cyclic group` | `GT/Amalgamation/Cyclic` |
 | Proposition 5.5 | e.c.仮定なしの生成元数下界 | `GT/Free/UnboundedWitnessRank` |
-| Questions 6.1–6.2、Takeuchi予想 | 未解決の質問・予想として追跡 | Lean定理として断定しない |
-| §6 の無番号の還元 | 有限rank Burnside群と局所有限性 | `GT/Free/Burnside`、`MT/Burnside` |
+| 旧 v7 Questions 6.1–6.2（v8 では非出力） | 未解決の質問を非出力項目として保存 | Lean定理として断定しない |
+| 旧 §6 の無番号の還元（v8 では非出力） | 有限rank Burnside群と局所有限性 | `GT/Free/Burnside`、`MT/Burnside` |
 
-これで現原稿の番号付き 55 項目と Proposition A の所在を網羅する。
+これで現原稿の有効な番号付き 54 項目と Proposition A の所在を網羅する。
 一つの Fact の複数項目は `parts` で区別し、必要なら複数の公開宣言を対応させる。
 特に Fact 2.15 の恒等式群を一つの巨大な連言定理にまとめる必要はない。
 Remarks、Examples に数学的主張がある場合も記録し、主定理で使わないものはその旨を示す。
-v7 の §5 は新しい数学的主張として形式化し、§6 の質問・予想は `open` として追跡する。
-§6 の既知の還元の証明と、一般的な質問・予想の解決は区別する。
+§5 の数学的主張は形式化済みであり、Conjecture 1.1 は `open` として追跡する。
+旧 §6 は v8 の `\if0` 内にあり PDF には出ない。質問2件と既知の還元は対応表で
+非出力項目として保持し、還元の証明と一般的な質問・予想の解決を区別する。
 
 さらに、本文に独立した番号はないが必要となる公開補助境界を設ける。
 
@@ -202,7 +204,7 @@ Proposition A は、4.13 の結果から明示的な `strictEnvelopeBound` を�
 /-- The comparison map on coproducts induced by a strict inclusion is injective.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam` (v7 Lemma 4.5).
+TeX: T3_modelcompanion_v8.tex, `lemma:free-product-amalgam` (v8 Lemma 4.5).
 The proof uses the natural block isomorphisms of Proposition 4.4.
 -/
 ```

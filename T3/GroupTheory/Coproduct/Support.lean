@@ -17,7 +17,7 @@ elements, the certificate is supported in its coproduct image once all relators 
 This retains the actual internal normal closure in the paper's subgroup `H₀`.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v7.tex, `thm:main`, lines 808–816.
+TeX: T3_modelcompanion_v8.tex, `thm:main`, lines 813–821.
 -/
 
 @[expose] public section
@@ -30,7 +30,7 @@ variable {G B : Type*} [Group G] [Group B]
 the left factor. The right factor is bounded by its number of generators.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v7.tex, `thm:main`, the subgroup `C₀` and the inclusion of `H₀`.
+TeX: T3_modelcompanion_v8.tex, `thm:main`, the subgroup `C₀` and the inclusion of `H₀`.
 -/
 theorem exists_bounded_factor_support [Group.FG B] {m n : ℕ} (hB : Group.rank B ≤ m)
     (Δ : Set (Coproduct G B)) (hΔ : Δ.encard ≤ n) {w : Coproduct G B}

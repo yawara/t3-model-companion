@@ -1,0 +1,232 @@
+{
+  "date": "2026-09-24",
+  "reason": "Public reference material is held in a separate literature archive; source identities and content hashes are recorded below.",
+  "files": [
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/demrs-page-33.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs-page-33.png",
+      "sha256": "47f5e592de02f83644f97f8d912449f0fe81495a1dfd0a1ec54b809fb3e980e5",
+      "bytes": 361849
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/demrs-page-34.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs-page-34.png",
+      "sha256": "930d4b006f26c763d94aadef5a6354b974a20bc2512dbe325f1084416a05efc0",
+      "bytes": 356291
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/demrs2025.pdf",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs2025.pdf",
+      "sha256": "54ff26d744f7314a57268279a85114c9d5777b86e30276e5957470387ed32cdb",
+      "bytes": 620335
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/demrs2025.txt",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs2025.txt",
+      "sha256": "1170ee06361a83bb4e670a15abdc42d06536b59f7eac60b0a867d1c41bd2b577",
+      "bytes": 176318
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/maier1989.txt",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/maier1989.txt",
+      "sha256": "e95906f7f35b0174426a53485e8c0f8e9d78325fe5f58a0bb0521a6c82a04aef",
+      "bytes": 363
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/maier1989.xml",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/maier1989.xml",
+      "sha256": "15ab783a98f086643c15e3ebf47d437f0a604335e04d1ae66bc989ca4547789f",
+      "bytes": 1919
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/saracino_wood1979.txt",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/saracino_wood1979.txt",
+      "sha256": "a4757651e01eb0602e60cacfa7145c8f92dc207fb6dbf72891dbeace52703d40",
+      "bytes": 358
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/saracino_wood1979.xml",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/saracino_wood1979.xml",
+      "sha256": "02ca1ff1c3d6e63e5a11f54f367c93bd8d61003a8dbd0dad2f784458ed0686bf",
+      "bytes": 1914
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/chang-keisler-google-sRi0AAAAQBAJ-3.5.16.json",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/chang-keisler-google-sRi0AAAAQBAJ-3.5.16.json",
+      "sha256": "680717af389e0c1514724afa48278faecc47ef2cd0b59cbab313866a3cce6f2f",
+      "bytes": 659
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/chang-keisler-google-sRi0AAAAQBAJ-EXAMPLE-3.5.16.json",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/chang-keisler-google-sRi0AAAAQBAJ-EXAMPLE-3.5.16.json",
+      "sha256": "99fdb36f2c117635ccb638dfefc35d97731e4e36469ed06d609dde7510bf472a",
+      "bytes": 386
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/chang-keisler-google-uiHq0EmaFp0C-3.5.16.json",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/chang-keisler-google-uiHq0EmaFp0C-3.5.16.json",
+      "sha256": "f9af833e1def900b41833aaf13dd66447f3e058a07ea76c14b02574c2c20f7c6",
+      "bytes": 955
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/chang-keisler-google-uiHq0EmaFp0C-EXAMPLE-3.5.16.json",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/chang-keisler-google-uiHq0EmaFp0C-EXAMPLE-3.5.16.json",
+      "sha256": "1eaa8e3325e83495c1854add6c89ad3adc8ce83c8d4f741197df617c88d88c40",
+      "bytes": 680
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/ef1972-crossref.json",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/ef1972-crossref.json",
+      "sha256": "127435f24a3193f06bab0d172b2d50f7938786433008f99e3c990a632268f1d6",
+      "bytes": 9267
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/es1971-crossref.json",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/es1971-crossref.json",
+      "sha256": "c786821335ac0cf873e357d47841688ba812110c4196aa4485c4dbab58aa2097",
+      "bytes": 14775
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/fk-2512.09414v2.pdf",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/fk-2512.09414v2.pdf",
+      "sha256": "3450f37f578126582da6f4e1a62cdfa0ea2032dea136044503b9d84bb84d540e",
+      "bytes": 502295
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/hkty-2312.08988v2.pdf",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/hkty-2312.08988v2.pdf",
+      "sha256": "46ac1a8d7aac13bb4d193c6b51386b76f3b6ec30d1efe9d8c06db7f448ed96c4",
+      "bytes": 330966
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/ivanov-1992-arxiv-p2.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/ivanov-1992-arxiv-p2.png",
+      "sha256": "d6ed3d478feeb66fae38f67e8f1d72f0cf445eb6a060b25e42f6887bd06ee558",
+      "bytes": 436399
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/ivanov-1992-arxiv.pdf",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/ivanov-1992-arxiv.pdf",
+      "sha256": "873cfd389b1669bf7c4262e2b2effbde6b64e716b7f96727a6734f4e69464e08",
+      "bytes": 103046
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/ivanov-1992-arxiv.txt",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/ivanov-1992-arxiv.txt",
+      "sha256": "a11c2994890805fc634aba6a261f82e524b416c6996dcd5ca3359c16b3642462",
+      "bytes": 15922
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/ivanov-1994-published-p2.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/ivanov-1994-published-p2.png",
+      "sha256": "e25f51dacb5b6a221682e025f0c50e6435930f5bf9a8ac1d222aa9586de4fcff",
+      "bytes": 176867
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-1.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-1.png",
+      "sha256": "002fb3e38f5826d50fb5cc910d0c18fb0172af81295a8eb6eb84c45f659b0dc9",
+      "bytes": 95847
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-2.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-2.png",
+      "sha256": "4b9f4d4fd0bd67976abdd231f032b9aa9c2e56f3a147ee1f59b639bba8ae7012",
+      "bytes": 155217
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-2022.pdf",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-2022.pdf",
+      "sha256": "a41f35c6afa86d9984059ddd566bc923945d28a1ffa2fe7eb6567471cf452b94",
+      "bytes": 4946263
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-2022.txt",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-2022.txt",
+      "sha256": "7b2aa16484b6ad79ef5bec51da3501f5079367b625da44bf97468422d27e8e95",
+      "bytes": 6
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-3.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-3.png",
+      "sha256": "e92b601b142e5ec4b26b1302ac68c9d5aead71e2fda0bbbe38515055365af34f",
+      "bytes": 154489
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-4.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-4.png",
+      "sha256": "67b55c200dbf2ad635e2cb2dc7c3caecc89c0422a36423e56165fdd231de3349",
+      "bytes": 128147
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-5.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-5.png",
+      "sha256": "d027e7934a61f333637d9e453657945492bf60236a40aa8e6861bb8202dab95e",
+      "bytes": 166130
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-23/v8-reference-review/sources/takeuchi-6.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/takeuchi-6.png",
+      "sha256": "f99773460b218df92cf53031976ab58d48ef55de655369f1e6c6c5009f2f9df9",
+      "bytes": 50159
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/abelian-pages/ef-p140.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/abelian-pages/ef-p140.png",
+      "sha256": "f0e48fa69d6f996be5d751acf7d2e0aa545a5adec91a4d31d4b21b15eb2d430f",
+      "bytes": 91369
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/abelian-pages/ef-p158-159-44.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/abelian-pages/ef-p158-159-44.png",
+      "sha256": "c10d1d21b153fc5e68fe177f5f72df42821c7ab659d33fcbe296335de53d1f45",
+      "bytes": 115443
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/abelian-pages/ef-p158-159-45.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/abelian-pages/ef-p158-159-45.png",
+      "sha256": "a540de6168a8d25e1a3488b57f59a7ff1f4327e3b39ae171cb1071023ae072c3",
+      "bytes": 100259
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/abelian-pages/eklof-solo-p336.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/abelian-pages/eklof-solo-p336.png",
+      "sha256": "e9d985c39d4bea60b4cb0a338a8d92817f60c47e059280cea491e9e2798a28fc",
+      "bytes": 149763
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/maier-p0286-axioms.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/maier-p0286-axioms.png",
+      "sha256": "7a89ce48752d064c04912d170148ba7d8271fbbc9fa47b56e3d15ac587b2e1e2",
+      "bytes": 148271
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/solvable-pages/p-02.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/solvable-pages/p-02.png",
+      "sha256": "fb9dfa125663e1255bed9bb8b79b5bc12776e8936af04b27765bea4e3921946a",
+      "bytes": 317550
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/solvable-pages/p-03.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/solvable-pages/p-03.png",
+      "sha256": "d889eab8e77d1b95d7eedac38902375fb3dfd18d41117250cd7d31d9ff4a7547",
+      "bytes": 285138
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/solvable-pages/p0331.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/solvable-pages/p0331.png",
+      "sha256": "9724ee2f01f00c7933cf66b27d5577695fadc65d59304f864d7e4f63c554a0a4",
+      "bytes": 286964
+    },
+    {
+      "original_path": "notes/audit-artifacts/2026-09-24/v8-reference-review/sw-p0199-axioms.png",
+      "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-reference-review/sw-p0199-axioms.png",
+      "sha256": "62a4e93018be94f956a7f05658caea89fd6415d6372d9b0c8bbecb8d5c8149cd",
+      "bytes": 68794
+    }
+  ],
+  "evidence_storage": {
+    "parent_git_policy": "/references/ remains ignored; no gitlink"
+  },
+  "history_redaction": "Historical record edited to omit private development locations and identifiers. Recorded verification results and input hashes refer to the original snapshot."
+}

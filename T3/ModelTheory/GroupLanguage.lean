@@ -24,7 +24,7 @@ a first-order structure, write `letI := FirstOrder.Group.compatibleGroupOfGroup 
 Group substructures and subgroups are identified with their actual carriers.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v7.tex, the group-language and group-theory convention, lines 215–221.
+TeX: T3_modelcompanion_v8.tex, the group-language and group-theory convention, lines 220–226.
 -/
 
 @[expose] public section
@@ -335,7 +335,7 @@ namespace FirstOrder
 /-- The group language has precisely the three displayed function symbols and no relations.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v7.tex, the language convention, lines 215–217.
+TeX: T3_modelcompanion_v8.tex, the language convention, lines 220–222.
 -/
 instance finiteGroupSymbols : Finite Language.group.Symbols := by
   let f : Fin 3 → Language.group.Symbols :=
@@ -355,7 +355,7 @@ variable {G : Type*} [Group G] [CompatibleGroup G]
 /-- A subgroup is a first-order substructure for the group language, with the same carrier.
 
 Paper-ID: preliminaries.exponent_three, model_theory.local_finiteness
-TeX: T3_modelcompanion_v7.tex, lines 215–221, 282–285.
+TeX: T3_modelcompanion_v8.tex, lines 220–226, 287–290.
 -/
 def subgroupToSubstructure (H : Subgroup G) : Language.group.Substructure G where
   carrier := H
@@ -369,7 +369,7 @@ def subgroupToSubstructure (H : Subgroup G) : Language.group.Substructure G wher
 /-- A first-order substructure of a group is a subgroup, with the same carrier.
 
 Paper-ID: preliminaries.exponent_three, model_theory.local_finiteness
-TeX: T3_modelcompanion_v7.tex, lines 215–221, 282–285.
+TeX: T3_modelcompanion_v8.tex, lines 220–226, 287–290.
 -/
 def substructureToSubgroup (S : Language.group.Substructure G) : Subgroup G where
   carrier := S
@@ -385,7 +385,7 @@ def substructureToSubgroup (S : Language.group.Substructure G) : Subgroup G wher
 /-- The two notions of generated closure have exactly the same elements.
 
 Paper-ID: preliminaries.exponent_three, model_theory.local_finiteness
-TeX: T3_modelcompanion_v7.tex, applying Definition 2.4 to the group language.
+TeX: T3_modelcompanion_v8.tex, applying Definition 2.4 to the group language.
 -/
 theorem coe_substructure_closure_eq (s : Set G) :
     (Language.Substructure.closure Language.group s : Set G) = (Subgroup.closure s : Set G) := by

@@ -28,7 +28,7 @@ def source_hashes() -> dict[str, str]:
     """Record inputs independently of the current Git staging state."""
     files = [ROOT / name for name in [
         "T3.lean", "Challenge.lean", "Solution.lean", "lean-toolchain", "lakefile.toml",
-        "lake-manifest.json", "T3_modelcompanion_v7.tex", "formalization.yaml", "comparator.json",
+        "lake-manifest.json", "T3_modelcompanion_v8.tex", "formalization.yaml", "comparator.json",
         "requirements-palomar.txt", "LICENSE", "scripts/palomar-schema/LICENSE",
         "scripts/palomar-schema/PALOMAR-LICENSE",
     ]]

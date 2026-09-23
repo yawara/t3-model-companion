@@ -6,7 +6,7 @@ Lean formalization of *Existence of a Model Companion for Groups of Exponent 3*.
 - Formalization author and responsible maintainer: **Yawara Ishida**.
 - License: [Apache-2.0](LICENSE).
 
-The [manuscript](T3_modelcompanion_v7.tex) proves that the theory of groups satisfying
+The [manuscript](T3_modelcompanion_v8.tex) proves that the theory of groups satisfying
 `x^3 = 1` has a model companion. The main group-theoretic theorem bounds the number
 of generators needed to witness non-amalgamation with an existentially closed group by
 `15 * ((3*m+4) * (m + choose(m,2) + choose(m,3)) + 1)^2`.
@@ -18,11 +18,12 @@ on 2026-09-22. Palomar files prepare a future submission. No submission or regis
 ## Reading the formalization
 
 - [Paper-order Lean entrypoint](T3/Paper.lean)
-- [All 60 tracked v7 items and 80 parts](docs/paper-map.md)
+- [Paper map: 57 active v8 items and 3 retained inactive items](docs/paper-map.md)
 - [Module and namespace policy](notes/lean-architecture.md)
-- [v7 source migration and review](notes/v7-migration.md)
-- [v7 formalization and verification](notes/v7-formalization.md)
-- [Section 6 analysis and remaining questions](notes/section-six-analysis.md)
+- [v8 manuscript PDF](T3_modelcompanion_v8.pdf)
+- [v8 source migration and verification](notes/v8-migration.md)
+- [Historical v7 formalization and verification](notes/v7-formalization.md)
+- [Archived v7 Section 6 analysis and remaining questions](notes/section-six-analysis.md)
 - [Paper correspondence](notes/paper-faithfulness-audit.md)
 - [Historical v4 completion and encodings](notes/paper-faithful-completion.md)
 - [Palomar statements, process, and verification scope](docs/palomar.md)
@@ -33,16 +34,18 @@ on 2026-09-22. Palomar files prepare a future submission. No submission or regis
 are specification placeholders outside the mathematical import graph; all proof-library
 and Solution declarations use only `propext`, `Classical.choice`, and `Quot.sound`.
 The full paper map and the two selected Comparator declarations have distinct scopes.
-The map records 57 proved items and 80 proved parts, including every Section 5
-example and result and the Section 6 Burnside/local-finiteness equivalence.
-Questions 6.1 and 6.2 and Takeuchi's conjecture remain open; their analysis is
-recorded separately from the formal proofs.
+The map records 56 proved active items and the open Conjecture 1.1 in v8,
+including every Section 5 example and result. The disabled former Section 6
+retains three separately marked inactive entries: its two open questions and
+the proved Burnside/local-finiteness equivalence. Across both scopes, 57 items
+and all 80 parts are proved. The separate-paper announcement about sufficiently
+large prime exponents is outside this library's proof scope.
 The additional notes on [finite residuals](notes/section-six-finite-residual.md),
 [coprime joins](notes/section-six-coprime-joins.md),
 [obstruction criteria](notes/section-six-obstruction-criteria.md), and
 [finite A-groups](notes/section-six-a-groups.md) are mathematical research notes;
 their arguments have not been formalized in Lean.
-The previous manuscript and PDF are preserved in [archives](archives/README.md).
+The previous manuscripts and PDFs are preserved in [archives](archives/README.md).
 
 OpenAI Codex agents implemented and reviewed the Lean development under Yawara Ishida's
 direction. The manuscript separately records its authors' mathematical work and use of AI.
@@ -51,8 +54,9 @@ Agent fidelity review is distinct from Lean's kernel checks and from human peer 
 ## Verification
 
 Lean is pinned to v4.34.0 and mathlib to `5ed2965256430c3649e86755f9576b54eca72435`.
+The [v8 migration record](notes/v8-migration.md) records the current source update.
 The [readiness checkpoint](notes/palomar-readiness-2026-09-22.md) records
-verification on these pins. The earlier [v7 checks](notes/v7-formalization.md)
+verification of the v7 snapshot on these pins. The earlier [v7 checks](notes/v7-formalization.md)
 used v4.33.1 and remain available as historical evidence.
 With elan and Python 3.11 or later:
 

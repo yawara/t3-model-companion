@@ -17,7 +17,7 @@ mathematical amalgamation problem. When both sides are small, this agrees with t
 canonical-universe predicate.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 299–341.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 304–346.
 -/
 
 @[expose] public section
@@ -34,7 +34,7 @@ variable {L : Language.{u, v}} {T : L.Theory}
 No condition is imposed on the intersection of the two images.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 301–304.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 306–309.
 -/
 def AmalgamableOverAt (T : L.Theory)
     {A : Type w} {B : Type w'} {C : Type w''}
@@ -49,7 +49,7 @@ variable {A : Type w} {B : Type w'} {C : Type w''}
 all language symbols. Only the images of the two sides are placed in the Skolem hull.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, supporting `fact:locally finiteness and model companion`.
+TeX: T3_modelcompanion_v8.tex, supporting `fact:locally finiteness and model companion`.
 -/
 theorem exists_amalgam_of_small [Small.{max u v z} B] [Small.{max u v z} C]
     {i : A ↪[L] B} {j : A ↪[L] C} (N : Type w''')
@@ -82,7 +82,7 @@ theorem exists_amalgam_of_small [Small.{max u v z} B] [Small.{max u v z} C]
 /-- An amalgam in any target universe gives the standard universe-sized amalgam.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, supporting `fact:locally finiteness and model companion`.
+TeX: T3_modelcompanion_v8.tex, supporting `fact:locally finiteness and model companion`.
 -/
 theorem AmalgamableOverAt.of_amalgam {i : A ↪[L] B} {j : A ↪[L] C}
     (N : Type w''') [L.Structure N] [Nonempty N] [N ⊨ T]
@@ -94,7 +94,7 @@ theorem AmalgamableOverAt.of_amalgam {i : A ↪[L] B} {j : A ↪[L] C}
 In particular, this applies to finite structures in arbitrary universes.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, supporting `fact:locally finiteness and model companion`.
+TeX: T3_modelcompanion_v8.tex, supporting `fact:locally finiteness and model companion`.
 -/
 theorem amalgamableOverAt_iff [Small.{max u v} B] [Small.{max u v} C]
     {i : A ↪[L] B} {j : A ↪[L] C} :
@@ -108,7 +108,7 @@ theorem amalgamableOverAt_iff [Small.{max u v} B] [Small.{max u v} C]
 /-- Ordinary amalgamation is symmetric in the two extensions.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`.
 -/
 theorem AmalgamableOverAt.symm {i : A ↪[L] B} {j : A ↪[L] C}
     (h : T.AmalgamableOverAt i j) : T.AmalgamableOverAt j i := by
@@ -119,7 +119,7 @@ theorem AmalgamableOverAt.symm {i : A ↪[L] B} {j : A ↪[L] C}
 restriction changes its universe.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 339–341.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 344–346.
 -/
 theorem AmalgamableOverAt.of_comp_right {D : Type w'''} [L.Structure D]
     {i : A ↪[L] B} {j : A ↪[L] C} (e : C ↪[L] D)
@@ -131,7 +131,7 @@ theorem AmalgamableOverAt.of_comp_right {D : Type w'''} [L.Structure D]
 extension exactly when that extension embeds back into the model over the base.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 317, 336.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 322, 341.
 -/
 theorem IsExistentiallyClosedAt.amalgamableOverAt_iff_exists_embedding [Finite L.Symbols]
     [Finite A] [Finite B] {M : Type w''} [L.Structure M]
@@ -151,7 +151,7 @@ theorem IsExistentiallyClosedAt.amalgamableOverAt_iff_exists_embedding [Finite L
 model in every universe.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 317, 336.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 322, 341.
 -/
 theorem IsExistentiallyClosedAt.amalgamableOverAt_iff_realize_extensionFormula
     [Finite L.Symbols] [Finite A] [Finite B] {M : Type w''} [L.Structure M]

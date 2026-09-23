@@ -1,0 +1,21 @@
+{
+  "source_and_pdf_sha256": {
+    "T3_modelcompanion_v8.tex": "9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c",
+    "T3_modelcompanion_v8.pdf": "f50936d88ae7184d32eecda64ca2142ca9cc9ff13d4f5a5dad0cb49a9760e4a6",
+    "archives/T3_modelcompanion_v7.tex": "fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6",
+    "archives/T3_modelcompanion_v7.pdf": "82a8405e5bbadec816ae5fab4bfecdbe6e6d2e3150ca91a321d796ae7c36a397"
+  },
+  "v8_source_unchanged_from_input": true,
+  "v7_archive_byte_identical_to_head": true,
+  "pdf_pages": 21,
+  "pdf_visual_review": "All pages inspected; full-size additional checks on pages 1-3 and 20-21.",
+  "latex_final_log_warnings": 0,
+  "modified_lean_files": 117,
+  "lean_noncomment_code_unchanged": true,
+  "map_active_items": 57,
+  "map_inactive_items": 3,
+  "map_parts": 80,
+  "comparator_passed": true,
+  "nanoda_passed": true,
+  "lean_kernel_passed": true
+}

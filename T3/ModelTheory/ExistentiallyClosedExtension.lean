@@ -22,7 +22,7 @@ embedding is supplied by `T3.ModelTheory.ModelCompleteness`. Models and extensio
 canonical semantic universe.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 
 @[expose] public section
@@ -42,7 +42,7 @@ variable {L : Language.{u, v}} {M : Type w} {N : Type w'} [L.Structure M] [L.Str
 /-- Quantifier-free formulas are absolute for embeddings.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem IsQF.realize_formula_embedding {φ : L.Formula (Fin n)} (hφ : φ.IsQF) (g : M ↪[L] N)
     (v : Fin n → M) : φ.Realize (⇑g ∘ v) ↔ φ.Realize v := by
@@ -52,7 +52,7 @@ theorem IsQF.realize_formula_embedding {φ : L.Formula (Fin n)} (hφ : φ.IsQF) 
 /-- Existential formulas are preserved by embeddings.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem IsExistential.realize_formula_embedding {φ : L.Formula (Fin n)} (hφ : φ.IsExistential)
     (g : M ↪[L] N) {v : Fin n → M} (h : φ.Realize v) : φ.Realize (⇑g ∘ v) := by
@@ -66,7 +66,7 @@ An existential condition over a structure `M`: an existential formula together w
 parameters from `M`.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 structure ExCondition (L : Language.{u, v}) (M : Type w) [L.Structure M] where
   /-- The number of parameters. -/
@@ -85,7 +85,7 @@ variable {L : Language.{u, v}} {M : Type (max u v)} [L.Structure M]
 /-- The sentence of `L[[M]]` expressing a condition at its own parameters.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 def sentence (p : ExCondition L M) : L[[M]].Sentence :=
   Formula.equivSentence (p.formula.relabel p.param)
@@ -94,7 +94,7 @@ def sentence (p : ExCondition L M) : L[[M]].Sentence :=
 realizes the formula at the interpretations of the parameters.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem realize_sentence_iff (p : ExCondition L M) {N : Type (max u v)} [L[[M]].Structure N]
     [L.Structure N] [(L.lhomWithConstants M).IsExpansionOn N] :
@@ -114,7 +114,7 @@ A set of existential conditions over `M` is realizable when a single model of `T
 embedding of `M` realizing all of them at the images of their parameters.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 def IsRealizable (T : L.Theory) {M : Type (max u v)} [L.Structure M]
     (S : Set (ExCondition L M)) : Prop :=
@@ -123,7 +123,7 @@ def IsRealizable (T : L.Theory) {M : Type (max u v)} [L.Structure M]
 /-- Realizability passes to subsets.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem IsRealizable.mono {M : Type (max u v)} [L.Structure M] {S S' : Set (ExCondition L M)}
     (h : T.IsRealizable S) (hsub : S' ⊆ S) : T.IsRealizable S' := by
@@ -136,7 +136,7 @@ then `S` is realizable: apply compactness to the union of the lifted theory, the
 diagram of `M`, and the sentences of `S`.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem isRealizable_of_forall_finite {M : Type (max u v)} [L.Structure M]
     {S : Set (ExCondition L M)} (h : ∀ S₀ ⊆ S, S₀.Finite → T.IsRealizable S₀) :
@@ -211,7 +211,7 @@ maximality is used *backwards*, against a given counterexample, exactly as the t
 recursion of the classical proof is justified stage by stage after the fact.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem exists_partiallyExistentiallyClosed (T : L.Theory) (M : Type (max u v)) [L.Structure M]
     [Nonempty M] [M ⊨ T] :
@@ -252,7 +252,7 @@ variable {T : L.Theory}
 /-- The extension of a model provided by `exists_partiallyExistentiallyClosed`.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 noncomputable def ecStep (X : T.ModelType.{u, v, max u v}) : T.ModelType.{u, v, max u v} :=
   (exists_partiallyExistentiallyClosed T (X : Type (max u v))).choose
@@ -260,7 +260,7 @@ noncomputable def ecStep (X : T.ModelType.{u, v, max u v}) : T.ModelType.{u, v, 
 /-- The embedding into `ecStep X`.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 noncomputable def ecStepEmbedding (X : T.ModelType.{u, v, max u v}) :
     (X : Type (max u v)) ↪[L] (ecStep X : Type (max u v)) :=
@@ -270,7 +270,7 @@ noncomputable def ecStepEmbedding (X : T.ModelType.{u, v, max u v}) :
 are already realized in `ecStep X`.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem ecStep_spec (X : T.ModelType.{u, v, max u v}) :
     ∀ (N' : T.ModelType.{u, v, max u v}) (g' : (ecStep X : Type (max u v)) ↪[L] N') {n : ℕ}
@@ -281,7 +281,7 @@ theorem ecStep_spec (X : T.ModelType.{u, v, max u v}) :
 /-- The tower of models over `M` obtained by iterating the one-step extension.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 noncomputable def ecTower (M : T.ModelType.{u, v, max u v}) : ℕ → T.ModelType.{u, v, max u v} :=
   fun n => Nat.rec M (fun _ X => ecStep X) n
@@ -289,7 +289,7 @@ noncomputable def ecTower (M : T.ModelType.{u, v, max u v}) : ℕ → T.ModelTyp
 /-- The carriers of the tower.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 noncomputable abbrev ecCarrier (M : T.ModelType.{u, v, max u v}) (n : ℕ) : Type (max u v) :=
   (ecTower M n : Type (max u v))
@@ -297,7 +297,7 @@ noncomputable abbrev ecCarrier (M : T.ModelType.{u, v, max u v}) (n : ℕ) : Typ
 /-- The transition embeddings of the tower.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 noncomputable def ecTransition (M : T.ModelType.{u, v, max u v}) (n : ℕ) :
     ecCarrier M n ↪[L] ecCarrier M (n + 1) :=
@@ -306,7 +306,7 @@ noncomputable def ecTransition (M : T.ModelType.{u, v, max u v}) (n : ℕ) :
 /-- The one-step property, at a stage of the tower.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem ecTransition_spec (M : T.ModelType.{u, v, max u v}) (m : ℕ) :
     ∀ (N' : T.ModelType.{u, v, max u v}) (g' : ecCarrier M (m + 1) ↪[L] N') {n : ℕ}
@@ -319,7 +319,7 @@ theorem ecTransition_spec (M : T.ModelType.{u, v, max u v}) (m : ℕ) :
 direct limit of the tower of one-step extensions.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem exists_isExistentiallyClosed_embedding (hT : T.IsPiTwo) (M : T.ModelType.{u, v, max u v}) :
     ∃ N : T.ModelType.{u, v, max u v}, T.IsExistentiallyClosed (N : Type (max u v)) ∧
@@ -384,7 +384,7 @@ If every existentially closed model of `T` is a model of `Tstar`, then every mod
 into a model of `Tstar`.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v7.tex, supporting Fact 2.3, lines 274–280; no label.
+TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
 -/
 theorem modelsEmbedInto_of_isExistentiallyClosed_models (hT : T.IsPiTwo)
     (h : ∀ N : T.ModelType.{u, v, max u v}, T.IsExistentiallyClosed (N : Type (max u v)) →

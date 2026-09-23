@@ -17,7 +17,7 @@ the coordinates before such an inclusion. These facts allow finite-rank normal-f
 to be applied without assuming that the whole generating set is finite.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 
 @[expose] public section
@@ -31,7 +31,7 @@ variable {I J : Type*}
 /-- An injective map of generators induces an injective homomorphism, including the empty case.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem map_injective {f : I → J} (hf : Function.Injective f) :
     Function.Injective (map f) := by
@@ -46,7 +46,7 @@ theorem map_injective {f : I → J} (hf : Function.Injective f) :
 /-- Every element uses only finitely many of the free generators.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem exists_finset_map (g : Free I) :
     ∃ s : Finset I, ∃ h : Free s, map (Subtype.val : s → I) h = g := by
@@ -83,7 +83,7 @@ variable {I J : Type*}
 The multiplication law is local in its indices, so restriction is a homomorphism.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 def restrict (f : I → J) : LvdW J →* LvdW I where
   toFun x := ⟨fun i => x.gen (f i), fun i j => x.pair (f i) (f j),
@@ -94,7 +94,7 @@ def restrict (f : I → J) : LvdW J →* LvdW I where
 /-- Restriction along an injection recovers the corresponding model generator.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 @[simp]
 theorem restrict_of [DecidableEq I] [DecidableEq J] {f : I → J}
@@ -110,7 +110,7 @@ variable {I J : Type*} [DecidableEq I] [DecidableEq J]
 /-- Restriction of the coordinate comparison recovers the comparison before an inclusion.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem restrict_toLvdW_map {f : I → J} (hf : Function.Injective f) (g : Free I) :
     LvdW.restrict f (toLvdW (map f g)) = toLvdW g := by
@@ -129,7 +129,7 @@ variable {I : Type*} [LinearOrder I]
 /-- Vanishing collected coordinates imply that an element is one, with no rank restriction.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem eq_one_of_toLvdW_coords {g : Free I}
     (hgen : ∀ i, (toLvdW g).gen i = 0)
@@ -157,7 +157,7 @@ theorem eq_one_of_toLvdW_coords {g : Free I}
 /-- The coordinate comparison is injective for an arbitrary ordered generating set.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem toLvdW_injective : Function.Injective (toLvdW (I := I)) := by
   rw [← MonoidHom.ker_eq_bot_iff, eq_bot_iff]
@@ -170,7 +170,7 @@ theorem toLvdW_injective : Function.Injective (toLvdW (I := I)) := by
 /-- Increasing coordinates distinguish elements in every rank.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem collect_toLvdW_injective :
     Function.Injective fun g : Free I => LvdW.collect (toLvdW g) := by
@@ -202,7 +202,7 @@ variable {I : Type*}
 /-- Coordinate systems whose nonzero coordinates use only indices in the specified set.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 def supportedOn (s : Set I) : Subgroup (LvdW I) where
   carrier := {x | (∀ i, i ∉ s → x.gen i = 0) ∧
@@ -231,7 +231,7 @@ def supportedOn (s : Set I) : Subgroup (LvdW I) where
 /-- A model generator is supported on every set containing its index.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem of_mem_supportedOn [DecidableEq I] {s : Set I} {i : I} (hi : i ∈ s) :
     of i ∈ supportedOn s := by
@@ -255,7 +255,7 @@ variable {I : Type*} [LinearOrder I]
 /-- An element on finitely many generators has no coordinates involving any other index.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem toLvdW_map_mem_supportedOn (s : Finset I) (g : Free s) :
     toLvdW (map (Subtype.val : s → I) g) ∈ LvdW.supportedOn s := by
@@ -274,7 +274,7 @@ theorem toLvdW_map_mem_supportedOn (s : Finset I) (g : Free s) :
 /-- The coordinates of every free-group element involve only a finite set of indices.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem exists_finset_supportedOn (g : Free I) :
     ∃ s : Finset I, toLvdW g ∈ LvdW.supportedOn s := by
@@ -284,7 +284,7 @@ theorem exists_finset_supportedOn (g : Free I) :
 /-- Degree-one coordinates have finite support in every rank.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem finite_support_gen (g : Free I) : (Function.support (toLvdW g).gen).Finite := by
   obtain ⟨s, hs⟩ := exists_finset_supportedOn g
@@ -296,7 +296,7 @@ theorem finite_support_gen (g : Free I) : (Function.support (toLvdW g).gen).Fini
 /-- Increasing degree-two coordinates have finite support in every rank.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem finite_support_pair (g : Free I) :
     (Function.support fun p : IncreasingPair I => (toLvdW g).pair p.first p.second).Finite := by
@@ -315,7 +315,7 @@ theorem finite_support_pair (g : Free I) :
 /-- Increasing degree-three coordinates have finite support in every rank.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem finite_support_triple (g : Free I) :
     (Function.support fun t : IncreasingTriple I =>

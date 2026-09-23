@@ -19,7 +19,7 @@ over the quantifier-free matrix, as used to choose the bound in the necessity di
 Fact 2.6.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 313–319.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 318–324.
 -/
 
 @[expose] public section
@@ -35,7 +35,7 @@ containing the witnesses realizes the formula at any preimages of its parameters
 The bound is quantified before the structure and all assignments.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 313–319.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 318–324.
 -/
 theorem IsExistential.exists_bounded_finite_witnesses {n : ℕ} {φ : L.BoundedFormula α n}
     (hφ : φ.IsExistential) :
@@ -69,7 +69,7 @@ theorem IsExistential.exists_bounded_finite_witnesses {n : ℕ} {φ : L.BoundedF
 /-- The formula version of the uniform finite witness theorem.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 313–319.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 318–324.
 -/
 theorem IsExistential.exists_bounded_finite_witnesses_formula {φ : L.Formula α}
     (hφ : φ.IsExistential) :

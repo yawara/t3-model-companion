@@ -17,7 +17,7 @@ coproduct, since tensoring vector-space embeddings preserves injectivity. The gr
 injectivity criterion then gives injectivity of the group map, exactly as in the paper.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam`, v7 Lemma 4.5, lines 1027–1040.
+TeX: T3_modelcompanion_v8.tex, `lemma:free-product-amalgam`, v8 Lemma 4.5, lines 1032–1045.
 -/
 
 @[expose] public section
@@ -36,7 +36,7 @@ variable {G H G' H' : Type*} [Group G] [Group H] [Group G'] [Group H']
 /-- Injectivity on factor layers gives injectivity on the degree-two blocks.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam`, degree-two tensor argument.
+TeX: T3_modelcompanion_v8.tex, `lemma:free-product-amalgam`, degree-two tensor argument.
 -/
 theorem layerTwoBlockMap_injective (hf : ∀ n, Function.Injective (mapLayer f n))
     (hg : ∀ n, Function.Injective (mapLayer g n)) :
@@ -46,7 +46,7 @@ theorem layerTwoBlockMap_injective (hf : ∀ n, Function.Injective (mapLayer f n
 /-- Injectivity on factor layers gives injectivity on the degree-three blocks.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam`, degree-three tensor argument.
+TeX: T3_modelcompanion_v8.tex, `lemma:free-product-amalgam`, degree-three tensor argument.
 -/
 theorem layerThreeBlockMap_injective (hf : ∀ n, Function.Injective (mapLayer f n))
     (hg : ∀ n, Function.Injective (mapLayer g n)) :
@@ -57,7 +57,7 @@ theorem layerThreeBlockMap_injective (hf : ∀ n, Function.Injective (mapLayer f
 /-- The coproduct map is injective on every layer if both factor maps are.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam`, graded injectivity.
+TeX: T3_modelcompanion_v8.tex, `lemma:free-product-amalgam`, graded injectivity.
 -/
 theorem mapLayer_map_injective (hf : ∀ n, Function.Injective (mapLayer f n))
     (hg : ∀ n, Function.Injective (mapLayer g n)) (n : ℕ) :
@@ -94,7 +94,7 @@ theorem mapLayer_map_injective (hf : ∀ n, Function.Injective (mapLayer f n))
 /-- The coproduct of two maps injective on their associated graded layers is injective.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam`, graded criterion for injectivity.
+TeX: T3_modelcompanion_v8.tex, `lemma:free-product-amalgam`, graded criterion for injectivity.
 -/
 theorem map_injective_of_mapLayer_injective (hf : ∀ n, Function.Injective (mapLayer f n))
     (hg : ∀ n, Function.Injective (mapLayer g n)) : Function.Injective (map f g) :=
@@ -109,7 +109,7 @@ variable {G B : Type*} [Group G] [Group B]
 with any exponent-three group. Neither factor is assumed to be finitely generated.
 
 Paper-ID: structure.strict_coproduct
-TeX: T3_modelcompanion_v7.tex, `lemma:free-product-amalgam`, lines 1027–1040.
+TeX: T3_modelcompanion_v8.tex, `lemma:free-product-amalgam`, lines 1032–1045.
 -/
 theorem map_injective_of_strict (D : Subgroup G) (hD : IsStrict D) :
     Function.Injective (map D.subtype (MonoidHom.id B)) := by

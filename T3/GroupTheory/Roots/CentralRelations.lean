@@ -11,7 +11,7 @@ public import T3.GroupTheory.Roots.Triple
 # Independent central coordinates for shared root relations
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 
 @[expose] public section
@@ -25,7 +25,7 @@ variable {G K I : Type*} [Group G] [Group K]
 /-- The simultaneous central relation identifying one base element with its witness.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 def relator (i : I) : G × K := ((z i)⁻¹, w i)
 
@@ -33,7 +33,7 @@ include hS hz in
 /-- The simultaneous relation is central in the direct product.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 theorem relator_mem_center (i : I) : relator S z w i ∈ Subgroup.center (G × K) := by
   rw [Subgroup.mem_center_iff]
@@ -45,7 +45,7 @@ include hS hz in
 /-- Central relations generate a normal subgroup without further conjugates.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 theorem normalClosure_eq_closure :
     Subgroup.normalClosure (Set.range (relator S z w)) =
@@ -63,14 +63,14 @@ theorem normalClosure_eq_closure :
 /-- The central subgroup of the product whose second coordinate lies in the witness subgroup.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 def relationAmbient : Subgroup (G × K) := Subgroup.center _ ⊓ S.comap (MonoidHom.snd G K)
 
 /-- The central relation ambient subgroup is commutative.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 instance : CommGroup (relationAmbient (G := G) S) :=
   { (inferInstance : Group (relationAmbient (G := G) S)) with
@@ -79,7 +79,7 @@ instance : CommGroup (relationAmbient (G := G) S) :=
 /-- The simultaneous relation bundled in its commutative ambient subgroup.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 def bundledRelator (i : I) : relationAmbient (G := G) S :=
   ⟨relator S z w i, relator_mem_center S hS z hz w i, (w i).property⟩
@@ -89,7 +89,7 @@ variable [Fintype I]
 /-- The product of simultaneous relations with specified integer exponents.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 def relationWord (m : I → ℤ) : relationAmbient (G := G) S :=
   ∏ i, bundledRelator S hS z hz w i ^ m i
@@ -97,7 +97,7 @@ def relationWord (m : I → ℤ) : relationAmbient (G := G) S :=
 /-- Every element of the relation subgroup is a product with integer exponents.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 theorem exists_relationWord {a : G × K}
     (ha : a ∈ Subgroup.normalClosure (Set.range (relator S z w))) :
@@ -123,7 +123,7 @@ theorem exists_relationWord {a : G × K}
 /-- The second-coordinate homomorphism from the relation ambient subgroup.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 def projection : relationAmbient (G := G) S →* S :=
   ((MonoidHom.snd G K).comp (relationAmbient (G := G) S).subtype).codRestrict S
@@ -132,7 +132,7 @@ def projection : relationAmbient (G := G) S →* S :=
 /-- Independent witness coordinates recover each exponent modulo three.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 theorem coordinate_relationWord [DecidableEq I] (c : I → S →* Multiplicative (ZMod 3))
     (hc : ∀ i j, c i (w j) = Multiplicative.ofAdd (if i = j then 1 else 0))
@@ -155,7 +155,7 @@ include hS hz in
 /-- Independent central witness coordinates ensure that the relations kill no base element.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 theorem eq_one_of_inl_mem_normalClosure [Finite I] [DecidableEq I]
     (hG : HasExponentThree G) (hK : HasExponentThree K)

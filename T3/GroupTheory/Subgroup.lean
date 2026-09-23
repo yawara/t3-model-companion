@@ -15,8 +15,8 @@ of the derived subgroup of the join. A homomorphism preserves the intersection o
 subgroups when one contains its kernel. Both statements hold for arbitrary groups.
 
 Paper-ID: structure.derived_strictification, structure.lcs_strictification
-TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1177–1182, and
-`lemma:number of generators for triple commutator roots`, lines 1235–1250.
+TeX: T3_modelcompanion_v8.tex, `lemma:commutator root`, lines 1182–1187, and
+`lemma:number of generators for triple commutator roots`, lines 1240–1255.
 -/
 
 @[expose] public section
@@ -29,7 +29,7 @@ variable {G H : Type*} [Group G] [Group H]
 each of the two subgroups.
 
 Paper-ID: structure.derived_strictification
-TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1177–1182.
+TeX: T3_modelcompanion_v8.tex, `lemma:commutator root`, lines 1182–1187.
 -/
 theorem exists_mul_mul_commutator_of_mem_sup (A B : Subgroup G) {g : G} (hg : g ∈ A ⊔ B) :
     ∃ a ∈ A, ∃ b ∈ B, ∃ k ∈ ⁅A ⊔ B, A ⊔ B⁆, g = a * b * k := by
@@ -65,8 +65,8 @@ Neither injectivity nor surjectivity is required, and the left subgroup need not
 the kernel.
 
 Paper-ID: structure.lcs_strictification
-TeX: T3_modelcompanion_v7.tex, `lemma:number of generators for triple commutator roots`,
-lines 1235–1250.
+TeX: T3_modelcompanion_v8.tex, `lemma:number of generators for triple commutator roots`,
+lines 1240–1255.
 -/
 theorem map_inf_of_ker_le {f : G →* H} {U V : Subgroup G} (hV : f.ker ≤ V) :
     (U ⊓ V).map f = U.map f ⊓ V.map f := by

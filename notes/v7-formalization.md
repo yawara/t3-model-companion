@@ -1,6 +1,8 @@
 # v7 の形式化と検証
 
-2026-09-22。対象原稿は [T3_modelcompanion_v7.tex](../T3_modelcompanion_v7.tex)、
+> 履歴資料（v7 原稿）。原稿と PDF は [archives](../archives/README.md) に保存。現行版への移行は [v8 移行記録](v8-migration.md) を参照。
+
+2026-09-22。対象原稿は [T3_modelcompanion_v7.tex](../archives/T3_modelcompanion_v7.tex)、
 SHA256 `fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6`。
 原稿本文・toolchain・mathlib pin は変更していない。
 既存項目の出典照合と archive への移動は [移行記録](v7-migration.md) に記す。

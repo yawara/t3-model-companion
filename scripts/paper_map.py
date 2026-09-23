@@ -22,7 +22,7 @@ MAP = ROOT / "docs/paper-map.toml"
 OUTPUT = ROOT / "docs/paper-map.md"
 ENVIRONMENTS = {
     "theorem", "lemma", "proposition", "corollary", "definition", "example",
-    "question", "fact", "remark", "notation",
+    "question", "conjecture", "fact", "remark", "notation",
 }
 FORMALIZATION = {"planned", "partial", "stated", "proved", "open"}
 FIDELITY = {"unchecked", "statement_checked", "proof_checked"}
@@ -49,9 +49,48 @@ def uncomment_tex(source: str) -> str:
     return re.sub(r"(?<!\\)%[^\n]*", "", source)
 
 
-def source_items(source: str) -> list[dict]:
+def active_tex(source: str) -> str:
+    """Mask the manuscript's literal conditionals, preserving source positions.
+
+    The v8 manuscript uses a false ``\\if0 ... \\fi`` block. Literal
+    ``\\iffalse``/``\\iftrue`` and nesting are also supported. Other TeX
+    conditionals need explicit support rather than guessed source coverage.
+    """
+    result = []
+    stack: list[tuple[bool, bool, bool]] = []
+    enabled = True
+    position = 0
+    for match in re.finditer(r"\\if0(?![0-9])|\\(?:if[a-zA-Z]*|else|fi)\b", source):
+        chunk = source[position:match.start()]
+        result.append(chunk if enabled else re.sub(r"[^\n]", " ", chunk))
+        token = match.group(0)
+        if token in {r"\if0", r"\iffalse", r"\iftrue"}:
+            condition = token == r"\iftrue"
+            stack.append((enabled, condition, False))
+            enabled = enabled and condition
+        elif token == r"\else":
+            require(bool(stack), "Unmatched TeX else")
+            parent, condition, seen_else = stack[-1]
+            require(not seen_else, "Repeated TeX else")
+            stack[-1] = (parent, condition, True)
+            enabled = parent and not condition
+        elif token == r"\fi":
+            require(bool(stack), "Unmatched TeX fi")
+            enabled = stack.pop()[0]
+        else:
+            raise MapError(f"Unsupported TeX conditional: {token}")
+        result.append(" " * len(token))
+        position = match.end()
+    require(not stack, "Unclosed TeX conditional")
+    result.append(source[position:])
+    return "".join(result)
+
+
+def source_items(source: str, *, include_inactive: bool = False) -> list[dict]:
     """Read the manuscript's shared theorem counter, excluding proof-local Claims."""
     source = uncomment_tex(source)
+    if not include_inactive:
+        source = active_tex(source)
     alternatives = "|".join(sorted(ENVIRONMENTS | {"customproposition"}))
     pattern = re.compile(
         r"\\section\{[^}]*\}|\\begin\{(" + alternatives + r")\}"
@@ -251,22 +290,36 @@ def validate(data: dict, manifest: dict | None = None) -> None:
     path = repo_path(source["path"])
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
     require(digest == source["sha256"], "TeX SHA256 changed; review and repin the source map")
-    scanned = source_items(path.read_text())
+    tex = path.read_text()
+    active_source_lines = active_tex(uncomment_tex(tex)).splitlines()
+    scanned = source_items(tex)
+    active_lines = {item["line_start"] for item in scanned}
+    inactive_scanned = [item for item in source_items(tex, include_inactive=True)
+                        if item["line_start"] not in active_lines]
     numbered = [item for item in scanned if item["environment"] != "customproposition"]
     custom = [item for item in scanned if item["environment"] == "customproposition"]
-    require(len(numbered) == source["numbered_items"] == 55, "Expected all 55 numbered v7 items")
+    require(len(numbered) == source["numbered_items"] == 54, "Expected all 54 active numbered v8 items")
     require(len(custom) == source["custom_items"] == 1, "Expected Proposition A")
     items = data["items"]
     ids = [item["id"] for item in items]
     require(len(ids) == len(set(ids)), "Duplicate paper ID")
-    require(source["unnumbered_items"] == 4 and len(items) == len(scanned) + 4,
-            "Expected 55 numbered items, Proposition A, and four unnumbered items")
+    active = [item for item in items if item.get("source_status", "active") == "active"]
+    inactive = [item for item in items if item.get("source_status") == "inactive"]
+    require(len(active) + len(inactive) == len(items), "Invalid source_status")
+    require(source["unnumbered_items"] == 2 and len(active) == len(scanned) + 2,
+            "Expected 54 active numbered items, Proposition A, and two unnumbered items")
+    require(len(inactive_scanned) == source["inactive_numbered_items"] == 2
+            and source["inactive_unnumbered_items"] == 1 and len(inactive) == 3,
+            "Expected two inactive questions and the inactive Burnside reduction")
     by_location = {(item["environment"], item["number"]): item for item in items}
     require(len(by_location) == len(items), "Duplicate source item")
-    for item in scanned:
+    for item in scanned + inactive_scanned:
         key = item["environment"], item["number"]
         require(key in by_location, f"Unregistered TeX item: {key}")
         registered = by_location[key]
+        expected_status = "active" if item["line_start"] in active_lines else "inactive"
+        require(registered.get("source_status", "active") == expected_status,
+                f"{registered['id']}: incorrect source_status")
         for field in ("line_start", "line_end", "tex_label"):
             require(registered[field] == item[field], f"{registered['id']}: incorrect {field}")
         part_lines = [part["source_line"] for part in registered.get("parts", [])
@@ -279,31 +332,31 @@ def validate(data: dict, manifest: dict | None = None) -> None:
     exponent = next((item for item in items if item["id"] == "preliminaries.exponent_three"), None)
     require(exponent is not None, "Missing separate exponent-three convention")
     require(exponent["environment"] == "prose" and exponent["number"] == "2.preamble"
-            and exponent["line_start"] == 215 and exponent["line_end"] == 221
+            and exponent["line_start"] == 220 and exponent["line_end"] == 226
             and exponent["tex_label"] == "" and "T3.GroupTheory.Basic" in exponent["modules"],
             "Incorrect exponent-three convention locator or module")
     set_commutator = next((item for item in items if item["id"] == "preliminaries.set_commutator"), None)
     require(set_commutator is not None, "Missing separate set commutator definition")
     require(set_commutator["environment"] == "prose"
             and set_commutator["number"] == "2.group_preamble"
-            and set_commutator["line_start"] == 403 and set_commutator["line_end"] == 404
+            and set_commutator["line_start"] == 408 and set_commutator["line_end"] == 409
             and set_commutator["tex_label"] == ""
             and set_commutator["modules"] == ["T3.GroupTheory.Basic"],
             "Incorrect set commutator definition locator or module")
-    for item_id, number, start, end in [
-        ("questions.burnside_local_finiteness", "6.burnside_local_finiteness", 1519, 1525),
-        ("questions.takeuchi_conjecture", "6.takeuchi_conjecture", 1527, 1530),
-    ]:
-        item = next((entry for entry in items if entry["id"] == item_id), None)
-        require(item is not None and item["environment"] == "prose"
-                and item["number"] == number and item["line_start"] == start
-                and item["line_end"] == end and item["tex_label"] == "",
-                f"Incorrect unnumbered v7 source locator: {item_id}")
+    burnside = next((item for item in inactive if item["id"] == "questions.burnside_local_finiteness"), None)
+    require(burnside is not None and burnside["environment"] == "prose"
+            and burnside["number"] == "6.burnside_local_finiteness"
+            and burnside["line_start"] == 1524 and burnside["line_end"] == 1530
+            and burnside["tex_label"] == "",
+            "Incorrect inactive Burnside reduction locator")
     takeuchi = next(item for item in items if item["id"] == "questions.takeuchi_conjecture")
+    require(takeuchi["environment"] == "conjecture" and takeuchi["number"] == "1.1"
+            and takeuchi["tex_label"] == "conj:burnside-model-companion",
+            "Takeuchi conjecture must track active v8 Conjecture 1.1")
     require(takeuchi.get("additional_source_locations") == [{
-        "line_start": 151, "line_end": 154,
-        "description": "Introduction: finitely generated groups formulation",
-    }], "Takeuchi conjecture must also track its introduction formulation")
+        "line_start": 1532, "line_end": 1535, "source_status": "inactive",
+        "description": "Inactive Further questions: finite-rank Burnside groups formulation",
+    }], "Takeuchi conjecture must retain its inactive Burnside formulation")
     for item_id in ["questions.locally_finite_varieties", "questions.bounded_exponent_varieties",
                     "questions.takeuchi_conjecture"]:
         item = next((entry for entry in items if entry["id"] == item_id), None)
@@ -323,6 +376,11 @@ def validate(data: dict, manifest: dict | None = None) -> None:
                 f"Invalid stable paper ID: {context}")
         require(bool(item["title"]) and (bool(item["modules"]) or item["formalization"] == "open"),
                 f"{context}: missing title or modules")
+        for locator in [item] + item.get("additional_source_locations", []):
+            selected_lines = active_source_lines[locator["line_start"] - 1:locator["line_end"]]
+            is_active = any(line.strip() for line in selected_lines)
+            require(is_active == (locator.get("source_status", "active") == "active"),
+                    f"{context}: source locator does not match active TeX")
         for module in item["modules"]:
             require(re.fullmatch(r"T3(?:\.[A-Z][A-Za-z0-9]*)+", module) is not None,
                     f"{context}: invalid module {module}")
@@ -344,17 +402,27 @@ def declaration_link(binding: dict) -> str:
 def render(data: dict) -> str:
     source = data["source"]
     items = data["items"]
-    counts = Counter(item["formalization"] for item in items)
+    active = [item for item in items if item.get("source_status", "active") == "active"]
+    inactive = [item for item in items if item.get("source_status") == "inactive"]
+    counts = Counter(item["formalization"] for item in active)
+    inactive_counts = Counter(item["formalization"] for item in inactive)
     lines = [
         "# 論文と Lean の対応表", "",
         "このファイルは `docs/paper-map.toml` から生成する。変更後は "
         "`python3 scripts/paper_map.py --write`、整合性検査は `--check` を使う。", "",
         f"対象: [{source['path']}](../{source['path']})。SHA256: `{source['sha256']}`。", "",
-        "番号付き 55 項目、Proposition A、§2 の無番号定義 2 項目、"
-        "§6 の Burnside 群による還元と Takeuchi 予想を個別登録する。"
+        "v8 の有効な本文は番号付き 54 項目（Conjecture 1.1 を含む）、Proposition A、"
+        "§2 の無番号定義 2 項目の計 57 項目を登録する。"
+        "`\\if0` 内の旧 §6 から Questions 6.1–6.2 と Burnside 群による還元の"
+        "3 項目を `inactive` として保持し、PDF 本文の項目数には含めない。"
         "行・表示番号は補助情報で、安定 ID を主キーとする。", "",
-        "項目全体の状態: " + ", ".join(f"`{state}` {counts[state]}" for state in
+        "有効な本文の状態: " + ", ".join(f"`{state}` {counts[state]}" for state in
                                        ("planned", "partial", "stated", "proved", "open")) + "。", "",
+        "非表示の保持項目: " + ", ".join(f"`{state}` {inactive_counts[state]}" for state in
+                                           ("proved", "open")) + "。", "",
+        "v7 からの出典差分と照合の範囲は [v8 移行記録](../notes/v8-migration.md) を参照する。"
+        "既存の `verification` と `proof_checked` は過去の検証・照合記録を保持しており、"
+        "v8 全文を新たに数学的監査したという意味ではない。", "",
         "`formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに"
         "実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を"
         "伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は"
@@ -363,8 +431,8 @@ def render(data: dict) -> str:
         "このスクリプトは TeX の網羅性、モジュールと宣言の字句上の所在、表示の整合性を"
         "検査する。Lean の elaboration・公理依存・lint・数学的 faithful 性は別途検証する。"
         "予定名は実在宣言ではなく、未着手の項目のために Lean stub を作らない。", "",
-        "| 論文項目 / 安定 ID | 内容 | 原文 label / 行 | 公開モジュール（予定を含む） | formalization | fidelity |",
-        "| --- | --- | --- | --- | --- | --- |",
+        "| 論文項目 / 安定 ID | 内容 | 原文 label / 行 | source_status | 公開モジュール（予定を含む） | formalization | fidelity |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
     ]
     for item in items:
         label = f"`{item['tex_label']}`" if item["tex_label"] else "label なし"
@@ -375,15 +443,17 @@ def render(data: dict) -> str:
                 "2.preamble": "§2 冒頭",
                 "2.group_preamble": "§2 群論の無番号定義",
                 "6.burnside_local_finiteness": "§6 Burnside 群による還元",
-                "6.takeuchi_conjecture": "§6 Takeuchi 予想",
             }[item["number"]]
         else:
             name = item["environment"].replace("customproposition", "proposition").title() + " " + item["number"]
         lines.append("| " + " | ".join(map(cell, [f"{name}<br>`{item['id']}`", item["title"],
-                     locator, modules, item["formalization"], item["fidelity"]])) + " |")
+                     locator, item.get("source_status", "active"), modules,
+                     item["formalization"], item["fidelity"]])) + " |")
     lines.extend(["", "## 宣言と項目内の進捗", ""])
     for item in items:
         lines.extend([f"### `{item['id']}`", ""])
+        if item.get("source_status") == "inactive":
+            lines.extend(["出典状態: `inactive`（v8 の `\\if0` 内。PDF 本文には表示されない）。", ""])
         planned = ", ".join(f"`{name}`" for name in item["planned_declarations"]) or "型の設計時に決める"
         actual = ", ".join(declaration_link(binding) for binding in item["declarations"]) or "なし"
         lines.extend([f"予定宣言: {planned}。", "", f"実在宣言: {actual}。", ""])
@@ -391,7 +461,8 @@ def render(data: dict) -> str:
             lines.extend([item["notes"], ""])
         for locator in item.get("additional_source_locations", []):
             lines.extend([f"追加出典: {locator['description']}、"
-                          f"{locator['line_start']}–{locator['line_end']} 行。", ""])
+                          f"{locator['line_start']}–{locator['line_end']} 行"
+                          f"（`{locator.get('source_status', 'active')}`）。", ""])
         if item.get("parts"):
             lines.extend(["| part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |",
                           "| --- | --- | --- | --- | --- |"])
@@ -428,7 +499,8 @@ def main() -> int:
         else:
             require(OUTPUT.is_file() and OUTPUT.read_text() == expected,
                     "Generated Markdown differs; run python3 scripts/paper_map.py --write")
-            print("Paper map OK: 55 numbered items + Proposition A + 4 unnumbered items; source and bindings checked.")
+            print("Paper map OK: 54 active numbered items + Proposition A + 2 unnumbered items; "
+                  "3 inactive items retained; source and bindings checked.")
             if manifest is not None:
                 print("Actual bindings also matched the supplied kernel declaration manifest.")
         return 0

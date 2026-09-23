@@ -15,7 +15,7 @@ Centrality of `γ₃(G)` then gives `⁅H, G'⁆ ≤ H`, and consequently `H = �
 The two subgroup inclusions are retained explicitly here.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, v7 Proposition 4.1, lines 847–867.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, v8 Proposition 4.1, lines 852–872.
 -/
 
 @[expose] public section
@@ -30,7 +30,7 @@ variable {G : Type*} [Group G]
 derived-subgroup element.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, equality `G = H γ₂(G)`.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, equality `G = H γ₂(G)`.
 -/
 theorem exists_mem_mul_mem_commutator {H : Subgroup G} (hsup : H ⊔ commutator G = ⊤) (g : G) :
     ∃ h ∈ H, ∃ d ∈ commutator G, g = h * d := by
@@ -46,7 +46,7 @@ include hG
 /-- A derived factor in the left argument contributes a central commutator.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, first commutator inclusion.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, first commutator inclusion.
 -/
 theorem commutator_mul_left_of_mem_commutator {d : G} (hd : d ∈ commutator G) (a b : G) :
     ⁅a * d, b⁆ = ⁅d, b⁆ * ⁅a, b⁆ := by
@@ -57,7 +57,7 @@ theorem commutator_mul_left_of_mem_commutator {d : G} (hd : d ∈ commutator G) 
 /-- A derived factor in the right argument contributes a central commutator.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, first commutator inclusion.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, first commutator inclusion.
 -/
 theorem commutator_mul_right_of_mem_commutator {d : G} (hd : d ∈ commutator G) (a b : G) :
     ⁅a, b * d⁆ = ⁅a, d⁆ * ⁅a, b⁆ := by
@@ -74,7 +74,7 @@ theorem commutator_mul_right_of_mem_commutator {d : G} (hd : d ∈ commutator G)
 `γ₂(G) ≤ H ⊔ [H, γ₂(G)]`.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, first displayed commutator inclusion.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, first displayed commutator inclusion.
 -/
 theorem commutator_le_sup_commutator_of_sup_eq_top {H : Subgroup G}
     (hsup : H ⊔ commutator G = ⊤) : commutator G ≤ H ⊔ ⁅H, commutator G⁆ := by
@@ -99,7 +99,7 @@ theorem commutator_le_sup_commutator_of_sup_eq_top {H : Subgroup G}
 /-- The first inclusion implies `γ₂(G) ≤ H γ₃(G)`.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, first displayed commutator inclusion.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, first displayed commutator inclusion.
 -/
 theorem commutator_le_sup_lowerCentralSeries_two_of_sup_eq_top {H : Subgroup G}
     (hsup : H ⊔ commutator G = ⊤) :
@@ -112,7 +112,7 @@ theorem commutator_le_sup_lowerCentralSeries_two_of_sup_eq_top {H : Subgroup G}
 /-- The second inclusion in the paper: centrality of `γ₃(G)` gives `[H, γ₂(G)] ≤ H`.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, second displayed commutator inclusion.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, second displayed commutator inclusion.
 -/
 theorem commutator_right_le_of_sup_commutator_eq_top {H : Subgroup G}
     (hsup : H ⊔ commutator G = ⊤) : ⁅H, commutator G⁆ ≤ H := by
@@ -131,7 +131,7 @@ theorem commutator_right_le_of_sup_commutator_eq_top {H : Subgroup G}
 /-- A subgroup covering the abelianization contains the entire derived subgroup.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`, conclusion of the two inclusions.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`, conclusion of the two inclusions.
 -/
 theorem commutator_le_of_sup_eq_top {H : Subgroup G} (hsup : H ⊔ commutator G = ⊤) :
     commutator G ≤ H :=
@@ -141,7 +141,7 @@ theorem commutator_le_of_sup_eq_top {H : Subgroup G} (hsup : H ⊔ commutator G 
 /-- A subgroup covering the abelianization of an exponent-three group is the whole group.
 
 Paper-ID: structure.basis_lift; structure.generation_mod_derived
-TeX: T3_modelcompanion_v7.tex, `proposition:lift`; `remark:G=H`, Remark 4.2, lines 879–881.
+TeX: T3_modelcompanion_v8.tex, `proposition:lift`; `remark:G=H`, Remark 4.2, lines 884–886.
 -/
 theorem eq_top_of_sup_commutator_eq_top {H : Subgroup G} (hsup : H ⊔ commutator G = ⊤) : H = ⊤ := by
   rw [← hsup, sup_eq_left.mpr (commutator_le_of_sup_eq_top hG hsup)]

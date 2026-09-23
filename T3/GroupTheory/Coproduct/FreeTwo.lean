@@ -19,7 +19,7 @@ bracket with one of the two basis vectors. Tensors with this first layer have th
 expansion, for arbitrary coefficient modules without a dimension or cardinality restriction.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, proof, lines 1054–1082.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, proof, lines 1059–1087.
 -/
 
 @[expose] public section
@@ -32,42 +32,42 @@ namespace T3.Coproduct.FreeTwo
 /-- The initial form of the first free generator.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, the vector `x`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, the vector `x`.
 -/
 noncomputable def x : Layer (Free (Fin 2)) 1 := Free.layerOneBasis 0
 
 /-- The initial form of the second free generator.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, the vector `y`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, the vector `y`.
 -/
 noncomputable def y : Layer (Free (Fin 2)) 1 := Free.layerOneBasis 1
 
 /-- The bracket of the two generator classes, corresponding to `x ∧ y`.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, the two-form `x ∧ y`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, the two-form `x ∧ y`.
 -/
 noncomputable def q : Layer (Free (Fin 2)) 2 := bracketLayer (by decide) (by decide) x y
 
 /-- The first generator class is nonzero.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, the basis `{x,y}`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, the basis `{x,y}`.
 -/
 theorem x_ne_zero : x ≠ 0 := Free.layerOneBasis.ne_zero 0
 
 /-- The second generator class is nonzero.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, the basis `{x,y}`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, the basis `{x,y}`.
 -/
 theorem y_ne_zero : y ≠ 0 := Free.layerOneBasis.ne_zero 1
 
 /-- The bracket of the two generator classes is the increasing-commutator basis vector.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, `x ∧ y ≠ 0`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, `x ∧ y ≠ 0`.
 -/
 theorem q_eq_basis : q = Free.layerTwoBasis (⟨0, 1, by decide⟩ : IncreasingPair (Fin 2)) :=
   (Free.layerTwoBasis_eq_bracket ⟨0, 1, by decide⟩).symm
@@ -75,7 +75,7 @@ theorem q_eq_basis : q = Free.layerTwoBasis (⟨0, 1, by decide⟩ : IncreasingP
 /-- The wedge of the two generator classes is nonzero in the actual second layer.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, `x ∧ y ≠ 0`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, `x ∧ y ≠ 0`.
 -/
 theorem q_ne_zero : q ≠ 0 := by
   rw [q_eq_basis]
@@ -84,7 +84,7 @@ theorem q_ne_zero : q ≠ 0 := by
 /-- The third layer of the two-generator free group is trivial.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, `β₂ ∧ y = 0`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, `β₂ ∧ y = 0`.
 -/
 theorem layerThree_subsingleton : Subsingleton (Layer (Free (Fin 2)) 3) := by
   let : IsEmpty (IncreasingTriple (Fin 2)) := ⟨fun t => by
@@ -98,7 +98,7 @@ theorem layerThree_subsingleton : Subsingleton (Layer (Free (Fin 2)) 3) := by
 /-- Every first-layer vector is the sum of its two generator coordinates.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, the basis `{x,y}`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, the basis `{x,y}`.
 -/
 theorem eq_repr_smul (β : Layer (Free (Fin 2)) 1) :
     β = Free.layerOneBasis.repr β 0 • x + Free.layerOneBasis.repr β 1 • y := by
@@ -107,7 +107,7 @@ theorem eq_repr_smul (β : Layer (Free (Fin 2)) 1) :
 /-- Bracketing a first-layer vector with the second generator extracts its first coordinate.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, choice of `w`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, choice of `w`.
 -/
 theorem bracket_y (β : Layer (Free (Fin 2)) 1) :
     bracketLayer (by decide) (by decide) β y = Free.layerOneBasis.repr β 0 • q := by
@@ -119,7 +119,7 @@ theorem bracket_y (β : Layer (Free (Fin 2)) 1) :
 coordinate.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, choice of `w`.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, choice of `w`.
 -/
 theorem bracket_x (β : Layer (Free (Fin 2)) 1) :
     bracketLayer (by decide) (by decide) β x = - (Free.layerOneBasis.repr β 1 • q) := by
@@ -132,7 +132,7 @@ theorem bracket_x (β : Layer (Free (Fin 2)) 1) :
 /-- A nonzero first-layer vector has a nonzero bracket with one of the free generators.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, line 1064.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, line 1069.
 -/
 theorem exists_bracket_ne_zero (β : Layer (Free (Fin 2)) 1) (hβ : β ≠ 0) :
     ∃ w : Layer (Free (Fin 2)) 1, (w = x ∨ w = y) ∧
@@ -154,7 +154,7 @@ variable {V : Type*} [AddCommGroup V] [Module (ZMod 3) V]
 /-- Every tensor with the first layer of `F₂` has the paper's two-term generator expansion.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v7.tex, `lemma:coincidence of central series`, lines 1073–1074.
+TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, lines 1078–1079.
 -/
 theorem exists_tensor_eq (t : V ⊗[ZMod 3] Layer (Free (Fin 2)) 1) :
     ∃ α α' : V, t = α ⊗ₜ[ZMod 3] x + α' ⊗ₜ[ZMod 3] y := by

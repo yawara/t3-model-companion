@@ -79,11 +79,17 @@ public import T3.Main.ModelCompanion
 # Guide to the paper
 
 This library follows *Existence of a Model Companion for Groups of Exponent 3*,
-by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi, in `T3_modelcompanion_v7.tex`.
+by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi, in `T3_modelcompanion_v8.tex`.
 
 The source revision and the status of each paper item are recorded in
 `docs/paper-map.toml`; `docs/paper-map.md` is its generated reading index.
 Declarations carry a `Paper-ID` and, when available, the original TeX label.
+
+## Section 1: Introduction
+
+Conjecture 1.1, `conj:burnside-model-companion`, remains an open problem for general
+exponents. The result announced for sufficiently large primes belongs to a separate
+paper and is not a theorem supplied by this library.
 
 ## Section 2: Preliminaries
 
@@ -250,13 +256,14 @@ base is preserved when moving to its image in the model and back to language str
   the rank-one finite cyclic bases, their embeddings into the fixed rank-three factor,
   and the resulting failure of both uniform bounds without existential closedness.
 
-## Section 6: Further questions
+## Retained material from the archived manuscript
 
-Questions 6.1 and 6.2 concern locally finite and bounded-exponent varieties. Together
-with Takeuchi's conjecture they are recorded as open problems, not asserted theorems.
+The former Section 6 is disabled in the v8 TeX source. Questions 6.1 and 6.2 from
+`archives/T3_modelcompanion_v7.tex` concern locally finite and bounded-exponent
+varieties and remain recorded as open problems, not asserted theorems.
 `T3.GroupTheory.Free.Burnside` constructs the free group of any exponent.
 `T3.ModelTheory.Burnside` proves the equivalence between local finiteness of the
 exponent theory and finiteness of every positive finite-rank Burnside group.
-This known reduction is separate from the conjecture. The final announcement
-about sufficiently large primes concerns a separate paper.
+This known reduction supports the interpretation of Conjecture 1.1 in the v8
+introduction; its detailed source remains the archived Section 6.
 -/

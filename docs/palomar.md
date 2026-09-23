@@ -47,8 +47,8 @@ a group satisfying `x^3 = 1` for every element, so the trivial group is included
    hypothesis from the first theorem; no unproved structural hypothesis is
    added to the conclusion.
 
-The [source manuscript](../T3_modelcompanion_v7.tex) is identified by SHA256
-`fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6`.
+The [source manuscript](../T3_modelcompanion_v8.tex) is identified by SHA256
+`9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`.
 No DOI, arXiv identifier, or external publication status is asserted.
 
 ## Statement boundary and fidelity
@@ -66,11 +66,13 @@ The deliberate Challenge holes are excluded from the proof-development
 free of holes. The permitted axioms are `propext`, `Classical.choice`, and
 `Quot.sound`.
 
-The [paper map](paper-map.md) tracks 60 v7 items and 80 parts,
-including supporting facts, examples, remarks, universe bridges, and Section 6.
-The two questions and Takeuchi's conjecture are explicitly marked open.
-Their registration does not assert a proof, and the new items' implementation
-states are recorded individually. The
+The [paper map](paper-map.md) tracks 57 active v8 items and three retained
+inactive entries from the disabled former Section 6, with 80 parts in total.
+The active scope contains 56 proved items and the open Conjecture 1.1.
+The inactive entries retain two open questions and the proved
+Burnside/local-finiteness equivalence. Their registration does not assert
+proofs of the conjecture or questions. The separate-paper announcement about
+sufficiently large prime exponents is outside this library's proof scope. The
 Comparator selection covers the two principal results above. A successful
 comparison of those declarations does not by itself independently certify
 every natural-language correspondence in the paper map.
@@ -83,7 +85,7 @@ universality and retraction. These are documented encoding and proof choices;
 they do not supply extra mathematical hypotheses. Editorial placeholders in
 the manuscript are outside the formalized mathematical scope.
 
-The additional Section 6 research notes on
+The additional research notes on the archived v7 Section 6, covering
 [finite residuals](../notes/section-six-finite-residual.md),
 [coprime joins](../notes/section-six-coprime-joins.md),
 [finite obstruction criteria](../notes/section-six-obstruction-criteria.md), and
@@ -107,12 +109,13 @@ the Solution. The separate
 [2026-09-10 upgrade checkpoint](../notes/lean-mathlib-4-33-1-upgrade.md)
 preserves the earlier v4 verification; it does not certify the v7 additions.
 
-The current preparation upgrades Lean and mathlib to v4.34.0. Verification of
+The project uses Lean and mathlib v4.34.0. Verification of
 the full project, the independent comparison, and Challenge rendering on these
 pins is recorded in
 [Palomar readiness, 2026-09-22](../notes/palomar-readiness-2026-09-22.md).
-That checkpoint identifies the current inputs and the scope of each check;
-the earlier runs remain historical evidence for their own snapshots.
+That checkpoint identifies the v7 inputs and the scope of each check.
+The [v8 migration record](../notes/v8-migration.md) records the current source
+update and its checks; earlier runs remain evidence for their own snapshots.
 No Palomar editorial review, submission, or registration has occurred.
 
 The repository license is [Apache-2.0](../LICENSE), as declared in the metadata.

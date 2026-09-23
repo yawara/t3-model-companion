@@ -22,8 +22,8 @@ subgroup equality states that these representatives generate the defect modulo t
 intrinsic central term. Finiteness is required only for the source layer, not the ambient group.
 
 Paper-ID: structure.derived_strictification, structure.lcs_strictification
-TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1165–1167, and
-`lemma:number of generators for triple commutator roots`, lines 1225–1226.
+TeX: T3_modelcompanion_v8.tex, `lemma:commutator root`, lines 1170–1172, and
+`lemma:number of generators for triple commutator roots`, lines 1230–1231.
 -/
 
 @[expose] public section
@@ -40,8 +40,8 @@ For an inclusion this is the basis choice used in the two strictification steps.
 also applies to general homomorphisms and includes zero-dimensional kernels.
 
 Paper-ID: structure.derived_strictification, structure.lcs_strictification
-TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1165–1167, and
-`lemma:number of generators for triple commutator roots`, lines 1225–1226.
+TeX: T3_modelcompanion_v8.tex, `lemma:commutator root`, lines 1170–1172, and
+`lemma:number of generators for triple commutator roots`, lines 1230–1231.
 -/
 theorem exists_layer_kernel_basis_representatives (f : G →* H) (k : ℕ)
     [Module.Finite (ZMod 3) (Layer G k)] :
@@ -109,7 +109,7 @@ minimum number of generators of the source group. The generators lift a basis of
 first-layer kernel in `exists_layer_kernel_basis_representatives`.
 
 Paper-ID: structure.derived_strictification
-TeX: T3_modelcompanion_v7.tex, `lemma:commutator root`, lines 1165–1167.
+TeX: T3_modelcompanion_v8.tex, `lemma:commutator root`, lines 1170–1172.
 -/
 theorem exists_derived_defect_generators [Group.FG G] (f : G →* H) :
     ∃ d ≤ Group.rank G, ∃ g : Fin d → G,
@@ -129,8 +129,8 @@ The first strictness hypothesis is used to identify the whole inverse image of `
 its intersection with `γ₂(G)`; it is not dropped when choosing the degree-two kernel basis.
 
 Paper-ID: structure.lcs_strictification
-TeX: T3_modelcompanion_v7.tex, `lemma:number of generators for triple commutator roots`,
-lines 1225–1226.
+TeX: T3_modelcompanion_v8.tex, `lemma:number of generators for triple commutator roots`,
+lines 1230–1231.
 -/
 theorem exists_lowerCentral_defect_generators [Group.FG G] (f : G →* H)
     (hf : (commutator H).comap f = commutator G) :

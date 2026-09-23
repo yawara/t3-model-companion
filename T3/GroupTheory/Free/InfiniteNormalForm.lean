@@ -16,7 +16,7 @@ increasing commutators and triple commutators, as displayed in the paper. The re
 cancellation proofs reuse the finite-rank normal-form argument.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 
 @[expose] public section
@@ -60,7 +60,7 @@ private theorem readout_word {α G : Type*} [DecidableEq α] [Group G]
 /-- The generator block, with generators multiplied in ascending order.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 noncomputable def generatorWordFinsupp (l : I →₀ ZMod 3) : Free I := by
   classical
@@ -71,7 +71,7 @@ All factors have increasing indices and lie in the abelian derived subgroup, so 
 choice of their enumeration has no mathematical effect.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 noncomputable def pairWordFinsupp (m : IncreasingPair I →₀ ZMod 3) :
     (genReadout (I := I)).ker := by
@@ -84,7 +84,7 @@ noncomputable def pairWordFinsupp (m : IncreasingPair I →₀ ZMod 3) :
 Every factor has increasing indices and is central.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 noncomputable def tripleWordFinsupp (n : IncreasingTriple I →₀ ZMod 3) :
     (pairReadout (I := I)).ker := by
@@ -99,7 +99,7 @@ commutator powers and increasing triple commutator powers. Exponents are the rep
 `0`, `1`, `2` of the specified elements of `ZMod 3`.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 noncomputable def normalWordFinsupp (l : I →₀ ZMod 3) (m : IncreasingPair I →₀ ZMod 3)
     (n : IncreasingTriple I →₀ ZMod 3) : Free I :=
@@ -109,7 +109,7 @@ noncomputable def normalWordFinsupp (l : I →₀ ZMod 3) (m : IncreasingPair I 
 /-- The degree-one readout recovers the generator exponents of the ascending block.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem genReadout_generatorWordFinsupp (l : I →₀ ZMod 3) :
     genReadout (generatorWordFinsupp l) = Multiplicative.ofAdd (l : I → ZMod 3) := by
@@ -122,7 +122,7 @@ theorem genReadout_generatorWordFinsupp (l : I →₀ ZMod 3) :
 /-- The degree-two readout recovers the commutator exponents of the second block.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem pairReadout_pairWordFinsupp (m : IncreasingPair I →₀ ZMod 3) :
     pairReadout (pairWordFinsupp m) =
@@ -139,7 +139,7 @@ theorem pairReadout_pairWordFinsupp (m : IncreasingPair I →₀ ZMod 3) :
 /-- The degree-three readout recovers the triple commutator exponents of the final block.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem tripleReadout_tripleWordFinsupp (n : IncreasingTriple I →₀ ZMod 3) :
     tripleReadout (tripleWordFinsupp n) =
@@ -157,7 +157,7 @@ theorem tripleReadout_tripleWordFinsupp (n : IncreasingTriple I →₀ ZMod 3) :
 /-- The degree-one readout of the whole normal word gives its generator exponents.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem genReadout_normalWordFinsupp (l : I →₀ ZMod 3) (m : IncreasingPair I →₀ ZMod 3)
     (n : IncreasingTriple I →₀ ZMod 3) :
@@ -171,7 +171,7 @@ theorem genReadout_normalWordFinsupp (l : I →₀ ZMod 3) (m : IncreasingPair I
 /-- Equality of two ascending collected words forces equality of every exponent.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem normalWordFinsupp_injective : Function.Injective
     (fun c : (I →₀ ZMod 3) × (IncreasingPair I →₀ ZMod 3) × (IncreasingTriple I →₀ ZMod 3) =>
@@ -207,7 +207,7 @@ theorem normalWordFinsupp_injective : Function.Injective
 /-- The final readout is injective without a finite-rank assumption.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem tripleReadout_injective : Function.Injective (tripleReadout (I := I)) := by
   rw [← MonoidHom.ker_eq_bot_iff, eq_bot_iff]
@@ -231,7 +231,7 @@ theorem tripleReadout_injective : Function.Injective (tripleReadout (I := I)) :=
 /-- Every element in arbitrary rank is represented by a finitely supported normal word.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem normalWordFinsupp_surjective : Function.Surjective
     (fun c : (I →₀ ZMod 3) × (IncreasingPair I →₀ ZMod 3) × (IncreasingTriple I →₀ ZMod 3) =>
@@ -264,7 +264,7 @@ theorem normalWordFinsupp_surjective : Function.Surjective
 /-- The finitely supported coefficient families parameterize the free group in every rank.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem normalWordFinsupp_bijective : Function.Bijective
     (fun c : (I →₀ ZMod 3) × (IncreasingPair I →₀ ZMod 3) × (IncreasingTriple I →₀ ZMod 3) =>
@@ -274,7 +274,7 @@ theorem normalWordFinsupp_bijective : Function.Bijective
 /-- Every element has the unique finitely supported expression displayed in the paper.
 
 Paper-ID: preliminaries.infinite_normal_form
-TeX: T3_modelcompanion_v7.tex, `remark:infinite dim`, v7 Remark 2.28.
+TeX: T3_modelcompanion_v8.tex, `remark:infinite dim`, v8 Remark 2.28.
 -/
 theorem existsUnique_normalWordFinsupp (g : Free I) :
     ∃! c : (I →₀ ZMod 3) × (IncreasingPair I →₀ ZMod 3) × (IncreasingTriple I →₀ ZMod 3),

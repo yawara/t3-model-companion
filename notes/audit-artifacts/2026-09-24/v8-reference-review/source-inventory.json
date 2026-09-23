@@ -1,0 +1,153 @@
+{
+  "review_date": "2026-09-24",
+  "manuscript_sha256": "9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c",
+  "references": [
+    {
+      "key": "ChangKeisler1990",
+      "active_citation": true,
+      "held_version": "public_original_excerpt",
+      "locator": "Example 3.5.16, p.199",
+      "pdf": null
+    },
+    {
+      "key": "dElbeeMuellerRamseySiniora2025",
+      "active_citation": true,
+      "held_version": "author_preprint_v3",
+      "locator": "Corollary 4.42, pp.33-34; journal numbering pending",
+      "pdf": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs2025.pdf",
+      "sha256": "54ff26d744f7314a57268279a85114c9d5777b86e30276e5957470387ed32cdb",
+      "pages": 45
+    },
+    {
+      "key": "EklofFischer1972",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "attribution requires correction",
+      "pdf": "references/publications/eklof-fischer-1972-elementary-theory-of-abelian-groups-published.pdf",
+      "sha256": "46396663dd3da750c95cf1e2ade3979dca18c23c8e8ca79a466e22fc121a2f9b",
+      "pages": 57
+    },
+    {
+      "key": "EklofSabbagh1971",
+      "active_citation": false,
+      "held_version": "publisher",
+      "locator": "Theorem 2.4, p.256; Theorem 7.17, p.291",
+      "pdf": "references/publications/eklof-sabbagh-1971-model-completions-and-modules-published.pdf",
+      "sha256": "2889f9fdadc4d9462971ae5a26a86e09fa805abc91c27a6a93cc9e956cbb4b92",
+      "pages": 45
+    },
+    {
+      "key": "FracekKowalski2025",
+      "active_citation": true,
+      "held_version": "author_preprint_v2",
+      "locator": "Theorem 3.6, p.10",
+      "pdf": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/fk-2512.09414v2.pdf",
+      "sha256": "3450f37f578126582da6f4e1a62cdfa0ea2032dea136044503b9d84bb84d540e",
+      "pages": 14
+    },
+    {
+      "key": "HoffmannKowalskiTranYe2023",
+      "active_citation": true,
+      "held_version": "author_preprint_v2",
+      "locator": "Theorem 3.3, p.18",
+      "pdf": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/hkty-2312.08988v2.pdf",
+      "sha256": "46ac1a8d7aac13bb4d193c6b51386b76f3b6ec30d1efe9d8c06db7f448ed96c4",
+      "pages": 23
+    },
+    {
+      "key": "Ivanov1992",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "Theorem A(a), printed p.258 / PDF p.2; rank > 1, exponent >= 2^48",
+      "pdf": "references/on-the-burnside-problem-on-periodic-groups-5fnzsr8mqf.pdf",
+      "sha256": "65a841d38331a1376b5c54988a9ab4ceee1e6186b92a39b14db78aa7db737ec2",
+      "pages": 4,
+      "previous_checked_copy": {
+        "held_version": "author_copy",
+        "locator": "Theorem A(a), PDF p.2; rank > 1",
+        "pdf": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/ivanov-1992-arxiv.pdf",
+        "sha256": "873cfd389b1669bf7c4262e2b2effbde6b64e716b7f96727a6734f4e69464e08",
+        "pages": 4
+      },
+      "acquisition": "user-supplied 2026-09-24; published edition; original filename preserved"
+    },
+    {
+      "key": "LeviVanDerWaerden1933",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "Satz 1, pp.156-157",
+      "pdf": "references/publications/levi-van-der-waerden-1933-besondere-klasse-von-gruppen-published.pdf",
+      "sha256": "1c7a7c744d1e79f952acdb4be321bc1aca4b258515fcdd2493ae838ea578847a",
+      "pages": 5
+    },
+    {
+      "key": "Maier1989",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "Theorem 3.5, p.285",
+      "pdf": "references/publications/maier-1989-nilpotent-groups-of-exponent-p-published.pdf",
+      "sha256": "4a13a6dba2eadf35423b0c2fe89a6ca10abbd31a89ddb59950d89f4dc3eac63d",
+      "pages": 11
+    },
+    {
+      "key": "Saracino1974",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "Theorem 1, p.327",
+      "pdf": "references/publications/saracino-1974-wreath-products-existentially-complete-solvable-groups-published.pdf",
+      "sha256": "c21795385728a024229f52a718adb777a7e65b77e0c5130ea23e5ca26e5e3b9e",
+      "pages": 13
+    },
+    {
+      "key": "Saracino1976",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "Theorem 1, p.241; Theorem 2, p.242; relevant proofs pp.243-245",
+      "pdf": "references/saracino1976.pdf",
+      "pages": 8,
+      "sha256": "584f4fed02a81d9e88de1cce1862fa31464c0620c3c8054d2eb73e5c7e7fab7b",
+      "acquisition": "user-supplied 2026-09-24; published edition; original filename preserved"
+    },
+    {
+      "key": "SaracinoWood1979",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "Theorem 3.9, p.198",
+      "pdf": "references/publications/saracino-wood-1979-periodic-existentially-closed-nilpotent-groups-published.pdf",
+      "sha256": "0821a6cb5866bae51df4572e05036ca9f76dc357c9f9a297c9eb8a1e001d0060",
+      "pages": 19
+    },
+    {
+      "key": "Takeuchi2022",
+      "active_citation": true,
+      "held_version": "publisher",
+      "locator": "Theorem 17, PDF p.5; introduction PDF p.2",
+      "pdf": "references/publications/takeuchi-2022-model-companions-of-some-classes-of-groups-published.pdf",
+      "sha256": "a41f35c6afa86d9984059ddd566bc923945d28a1ffa2fe7eb6567471cf452b94",
+      "pages": 6
+    }
+  ],
+  "missing_publisher_full_text": [
+    "ChangKeisler1990",
+    "dElbeeMuellerRamseySiniora2025"
+  ],
+  "additional_candidate_not_in_v8": {
+    "author": "P. C. Eklof",
+    "title": "Some model theory of abelian groups",
+    "year": 1972,
+    "doi": "10.2307/2272976",
+    "held_version": "publisher",
+    "pdf": "references/2272976.pdf",
+    "sha256": "91fae6e207bab26578c4d961b868a35208725cdf5ef959af8716c6ca71ddc4e7",
+    "pages": 9,
+    "printed_pages": "335-342, plus JSTOR cover",
+    "locator": "Theorem 4, p.336; Theorem 7(a),(d), pp.339-340",
+    "acquisition": "user-supplied 2026-09-24; original file preserved",
+    "derived_corollary_review": "notes/audit-artifacts/2026-09-24/v8-reference-review/eklof-1972-fulltext-review.md"
+  },
+  "latest_update": "2026-09-24: Eklof solo 1972 supplied and full text verified; current v8 bibliography remains 13 entries",
+  "evidence_storage": {
+    "parent_git_policy": "/references/ remains ignored; no gitlink"
+  },
+  "history_redaction": "Historical record edited to omit private development locations and identifiers. Recorded verification results and input hashes refer to the original snapshot."
+}

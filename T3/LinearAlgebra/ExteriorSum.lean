@@ -18,7 +18,7 @@ basis blocks used in the paper's exterior decomposition before taking the relati
 Identification of the mixed blocks with tensor products is a separate step.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof, lines 964–991.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, proof, lines 969–996.
 -/
 
 @[expose] public section
@@ -33,7 +33,7 @@ variable {R M I J : Type*} [CommRing R] [AddCommGroup M] [Module R M]
 /-- Count the left indices in an exterior-basis index on a disjoint union.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 def leftCount {n : ℕ} (s : Set.powersetCard (I ⊕ J) n) : ℕ :=
   ((s : Finset (I ⊕ J)).filter (fun z => z.isLeft = true)).card
@@ -41,7 +41,7 @@ def leftCount {n : ℕ} (s : Set.powersetCard (I ⊕ J) n) : ℕ :=
 /-- The coordinate projection of a finitely supported family onto a predicate.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, supporting `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, supporting `proposition:gr of free product`, exterior blocks.
 -/
 def filterLinearMap {ι : Type*} (p : ι → Prop) [DecidablePred p] :
     (ι →₀ R) →ₗ[R] (ι →₀ R) where
@@ -55,7 +55,7 @@ def filterLinearMap {ι : Type*} (p : ι → Prop) [DecidablePred p] :
 /-- An exterior-basis index has at most its total degree many left indices.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 theorem leftCount_le {n : ℕ} (s : Set.powersetCard (I ⊕ J) n) : leftCount s ≤ n :=
   (Finset.card_filter_le _ _).trans_eq s.property
@@ -65,7 +65,7 @@ variable [LinearOrder (I ⊕ J)] (b : Basis (I ⊕ J) R M)
 /-- Keep exactly the exterior-basis coordinates containing `k` left indices.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 noncomputable def projection (n k : ℕ) : (⋀[R]^n M) →ₗ[R] (⋀[R]^n M) :=
   (b.exteriorPower n).repr.symm.toLinearMap.comp <|
@@ -75,7 +75,7 @@ noncomputable def projection (n k : ℕ) : (⋀[R]^n M) →ₗ[R] (⋀[R]^n M) :
 /-- The block projection filters the exterior coordinates by the number of left indices.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 @[simp]
 theorem projection_repr (n k : ℕ) (x : ⋀[R]^n M) (s : Set.powersetCard (I ⊕ J) n) :
@@ -90,7 +90,7 @@ theorem projection_repr (n k : ℕ) (x : ⋀[R]^n M) (s : Set.powersetCard (I �
 /-- The finitely many possible block projections sum to the original exterior vector.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior decomposition.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior decomposition.
 -/
 theorem sum_projection (n : ℕ) (x : ⋀[R]^n M) :
     (∑ k ∈ Finset.range (n + 1), projection b n k x) = x := by
@@ -106,7 +106,7 @@ theorem sum_projection (n : ℕ) (x : ⋀[R]^n M) :
 /-- Each block projection is idempotent.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 @[simp]
 theorem projection_idem (n k : ℕ) (x : ⋀[R]^n M) :
@@ -119,7 +119,7 @@ theorem projection_idem (n k : ℕ) (x : ⋀[R]^n M) :
 /-- Distinct blocks have orthogonal projections.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 theorem projection_orthogonal (n k l : ℕ) (hkl : k ≠ l) (x : ⋀[R]^n M) :
     projection b n k (projection b n l x) = 0 := by
@@ -134,7 +134,7 @@ theorem projection_orthogonal (n k l : ℕ) (hkl : k ≠ l) (x : ⋀[R]^n M) :
 /-- The subspace with exactly `k` left indices in degree `n`.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 noncomputable def block (n : ℕ) (k : Fin (n + 1)) : Submodule R (⋀[R]^n M) :=
   LinearMap.range (projection b n k)
@@ -142,7 +142,7 @@ noncomputable def block (n : ℕ) (k : Fin (n + 1)) : Submodule R (⋀[R]^n M) :
 /-- The exterior projection with its codomain restricted to the corresponding block.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior blocks.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior blocks.
 -/
 noncomputable def blockProjection (n : ℕ) (k : Fin (n + 1)) :
     (⋀[R]^n M) →ₗ[R] block b n k :=
@@ -151,7 +151,7 @@ noncomputable def blockProjection (n : ℕ) (k : Fin (n + 1)) :
 /-- Collect the block projections in the external direct sum of their ranges.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior decomposition.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior decomposition.
 -/
 noncomputable def decompositionMap (n : ℕ) :
     (⋀[R]^n M) →ₗ[R] ⨁ k : Fin (n + 1), block b n k :=
@@ -160,7 +160,7 @@ noncomputable def decompositionMap (n : ℕ) :
 /-- The component of the decomposition map is the corresponding exterior projection.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior decomposition.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior decomposition.
 -/
 theorem decompositionMap_apply (n : ℕ) (x : ⋀[R]^n M) (k : Fin (n + 1)) :
     ((decompositionMap b n x) k : ⋀[R]^n M) = projection b n k x := by
@@ -183,7 +183,7 @@ theorem decompositionMap_apply (n : ℕ) (x : ⋀[R]^n M) (k : Fin (n + 1)) :
 /-- The exterior blocks form an internal direct-sum decomposition in every degree.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior decomposition.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior decomposition.
 -/
 noncomputable instance blockDecomposition (n : ℕ) : DirectSum.Decomposition (block b n) := by
   apply DirectSum.Decomposition.ofLinearMap _ (decompositionMap b n)
@@ -219,7 +219,7 @@ noncomputable instance blockDecomposition (n : ℕ) : DirectSum.Decomposition (b
 /-- The standard decomposition exposes precisely the count-based exterior projections.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, exterior decomposition.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, exterior decomposition.
 -/
 theorem coe_decompose (n : ℕ) (x : ⋀[R]^n M) (k : Fin (n + 1)) :
     (DirectSum.decompose (block b n) x k : ⋀[R]^n M) = projection b n k x :=

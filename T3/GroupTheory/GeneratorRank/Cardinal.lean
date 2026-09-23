@@ -16,7 +16,7 @@ group this agrees with mathlib's natural-number-valued `Group.rank`. The cardina
 also treats groups with no finite generating set, without assigning them a default finite value.
 
 Paper-ID: preliminaries.notation.generator_rank
-TeX: T3_modelcompanion_v7.tex, Notation 2.1, item 7, line 234.
+TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 7, line 239.
 -/
 
 @[expose] public noncomputable section
@@ -30,7 +30,7 @@ variable (G : Type u) [Group G]
 /-- The least cardinality of a generating set of a group, including infinitely generated groups.
 
 Paper-ID: preliminaries.notation.generator_rank
-TeX: T3_modelcompanion_v7.tex, Notation 2.1, item 7, line 234.
+TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 7, line 239.
 -/
 def cardinalRank : Cardinal.{u} :=
   sInf {c | ∃ s : Set G, Subgroup.closure s = ⊤ ∧ Cardinal.mk s = c}
@@ -42,7 +42,7 @@ private theorem generatingCardinals_nonempty :
 /-- The minimum generating cardinal is attained by an actual generating subset.
 
 Paper-ID: preliminaries.notation.generator_rank
-TeX: T3_modelcompanion_v7.tex, Notation 2.1, item 7, line 234.
+TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 7, line 239.
 -/
 theorem cardinalRank_spec :
     ∃ s : Set G, Cardinal.mk s = cardinalRank G ∧ Subgroup.closure s = ⊤ := by
@@ -52,7 +52,7 @@ theorem cardinalRank_spec :
 /-- Every generating set bounds the minimum generating cardinal from above.
 
 Paper-ID: preliminaries.notation.generator_rank
-TeX: T3_modelcompanion_v7.tex, Notation 2.1, item 7, line 234.
+TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 7, line 239.
 -/
 theorem cardinalRank_le {s : Set G} (hs : Subgroup.closure s = ⊤) :
     cardinalRank G ≤ Cardinal.mk s :=
@@ -62,7 +62,7 @@ theorem cardinalRank_le {s : Set G} (hs : Subgroup.closure s = ⊤) :
 set with at most that many elements generates the group.
 
 Paper-ID: preliminaries.notation.generator_rank
-TeX: T3_modelcompanion_v7.tex, Notation 2.1, item 7, line 234.
+TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 7, line 239.
 -/
 theorem cardinalRank_le_nat_iff (n : ℕ) :
     cardinalRank G ≤ n ↔
@@ -93,7 +93,7 @@ theorem cardinalRank_le_nat_iff (n : ℕ) :
 the group is finitely generated.
 
 Paper-ID: preliminaries.notation.generator_rank
-TeX: T3_modelcompanion_v7.tex, Notation 2.1, item 7, and every finite generator bound.
+TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 7, and every finite generator bound.
 -/
 theorem cardinalRank_eq_rank [FG G] : cardinalRank G = (rank G : Cardinal.{u}) := by
   apply le_antisymm
@@ -117,7 +117,7 @@ theorem cardinalRank_eq_rank [FG G] : cardinalRank G = (rank G : Cardinal.{u}) :
 /-- Finitely generated groups are exactly those with a finite generating cardinal.
 
 Paper-ID: preliminaries.notation.generator_rank
-TeX: T3_modelcompanion_v7.tex, Notation 2.1, item 7.
+TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 7.
 -/
 theorem cardinalRank_lt_aleph0_iff : cardinalRank G < Cardinal.aleph0 ↔ FG G := by
   constructor

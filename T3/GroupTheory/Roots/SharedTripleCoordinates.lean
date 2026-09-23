@@ -12,7 +12,7 @@ public import Mathlib.LinearAlgebra.Basis.Basic
 # Independent central coordinates for shared root relations
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 
 @[expose] public section
@@ -24,7 +24,7 @@ namespace T3.SharedTriple
 /-- The increasing triple commutator as an element of the actual third central term.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 def triple (t : IncreasingTriple (Fin 4)) : AssociatedGraded.term (Free (Fin 4)) 3 :=
   ⟨⁅⁅Free.of t.first, Free.of t.second⁆, Free.of t.third⁆,
@@ -34,7 +34,7 @@ def triple (t : IncreasingTriple (Fin 4)) : AssociatedGraded.term (Free (Fin 4))
 /-- The four increasing triple initial forms are linearly independent in the actual third quotient.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 theorem independent : LinearIndependent (ZMod 3)
     (fun t : IncreasingTriple (Fin 4) => AssociatedGraded.mk (Free (Fin 4)) 3 (triple t)) := by
@@ -47,7 +47,7 @@ theorem independent : LinearIndependent (ZMod 3)
 /-- There are exactly four increasing triples on four generator indices.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v7.tex, Remark 4.11, lines 1258–1262.
+TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
 -/
 theorem number_of_triples : Nat.card (IncreasingTriple (Fin 4)) = 4 := by
   norm_num [IncreasingTriple.natCard_eq_choose]

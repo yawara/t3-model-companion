@@ -19,7 +19,7 @@ image in the existentially closed model before applying the bounded-witness theo
 These conclusions use the canonical semantic universe documented in the model-theory modules.
 
 Paper-ID: main.model_companion
-TeX: T3_modelcompanion_v7.tex, Corollary 3.4, lines 820–823.
+TeX: T3_modelcompanion_v8.tex, Corollary 3.4, lines 825–828.
 -/
 
 @[expose] public section
@@ -43,7 +43,7 @@ private theorem generatedByAtMost_of_rank_le {M : Type*} [Group M] [CompatibleGr
 The finite structures in the criterion receive their group laws from their embeddings.
 
 Paper-ID: main.model_companion
-TeX: T3_modelcompanion_v7.tex, applying Fact 2.6 after Theorem 3.3, line 820.
+TeX: T3_modelcompanion_v8.tex, applying Fact 2.6 after Theorem 3.3, line 825.
 -/
 theorem exponentThreeTheory_boundedAmalgamationObstructions :
     exponentThreeTheory.BoundedAmalgamationObstructions := by
@@ -117,7 +117,7 @@ theorem exponentThreeTheory_boundedAmalgamationObstructions :
 /-- The theory of groups of exponent three has a model companion.
 
 Paper-ID: main.model_companion
-TeX: T3_modelcompanion_v7.tex, Corollary 3.4, lines 821–823.
+TeX: T3_modelcompanion_v8.tex, Corollary 3.4, lines 826–828.
 -/
 theorem has_model_companion : exponentThreeTheory.HasModelCompanion :=
   exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions

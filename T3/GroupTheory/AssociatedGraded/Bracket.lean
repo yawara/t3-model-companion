@@ -16,7 +16,7 @@ Its value on representatives is the initial form of their commutator. The constr
 the additive bracket uses the lower central degree bound for arbitrary groups.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, item 2.
 -/
 
 @[expose] public section
@@ -30,7 +30,7 @@ variable {G : Type*} [Group G]
 /-- A commutator of representatives has the sum of their positive central degrees.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, item 2.
 -/
 def termCommutator {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
     (x : term G i) (y : term G j) : term G (i + j) :=
@@ -145,7 +145,7 @@ def commutatorLift {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
 /-- The biadditive commutator on two positive lower central quotients.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, item 2.
 -/
 def bracketAdd {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
     Layer G i →+ (Layer G j →+ Layer G (i + j)) where
@@ -164,7 +164,7 @@ def bracketAdd {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
 /-- The descended bracket is the initial form of the group commutator.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, item 2.
 -/
 @[simp]
 theorem bracketAdd_mk {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
@@ -177,7 +177,7 @@ variable [Fact (HasExponentThree G)]
 /-- The bilinear bracket between two positive degrees of the associated graded.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, item 2.
 -/
 def bracketLayer {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
     Layer G i →ₗ[ZMod 3] (Layer G j →ₗ[ZMod 3] Layer G (i + j)) :=
@@ -186,7 +186,7 @@ def bracketLayer {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
 /-- The bilinear bracket has precisely the paper's value on representatives.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, item 2.
 -/
 @[simp]
 theorem bracketLayer_mk {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
@@ -196,7 +196,7 @@ theorem bracketLayer_mk {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
 /-- The bracket of a degree-one vector with itself is zero.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, alternation.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, alternation.
 -/
 @[simp]
 theorem bracketLayer_one_self (x : Layer G 1) : bracketLayer (by decide) (by decide) x x = 0 := by
@@ -208,7 +208,7 @@ theorem bracketLayer_one_self (x : Layer G 1) : bracketLayer (by decide) (by dec
 /-- The bracket in degree one changes sign when its arguments are exchanged.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, alternation.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, alternation.
 -/
 theorem bracketLayer_one_swap (x y : Layer G 1) :
     bracketLayer (by decide) (by decide) x y = -bracketLayer (by decide) (by decide) y x := by
@@ -220,7 +220,7 @@ theorem bracketLayer_one_swap (x y : Layer G 1) :
 /-- The two mixed-degree brackets are negatives of one another.
 
 Paper-ID: preliminaries.associated_graded
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.18, alternation.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.18, alternation.
 -/
 theorem bracketLayer_one_two (x : Layer G 1) (y : Layer G 2) :
     bracketLayer (by decide) (by decide) x y = -bracketLayer (by decide) (by decide) y x := by
@@ -235,7 +235,7 @@ theorem bracketLayer_one_two (x : Layer G 1) (y : Layer G 2) :
 /-- The triple bracket of degree-one vectors is cyclically invariant.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Lemma 2.19, item 2.
 -/
 theorem bracketLayer_triple_cyclic (x y z : Layer G 1) :
     bracketLayer (by decide) (by decide) (bracketLayer (by decide) (by decide) x y) z =
@@ -250,7 +250,7 @@ theorem bracketLayer_triple_cyclic (x y z : Layer G 1) :
 /-- A repeated final argument annihilates the degree-one triple bracket.
 
 Paper-ID: preliminaries.associated_graded_properties
-TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19, item 2.
+TeX: T3_modelcompanion_v8.tex, v8 Lemma 2.19, item 2.
 -/
 @[simp]
 theorem bracketLayer_triple_self (x y : Layer G 1) :
@@ -260,7 +260,7 @@ theorem bracketLayer_triple_self (x y : Layer G 1) :
 /-- Group homomorphisms preserve the bracket of initial forms in every positive degree.
 
 Paper-ID: preliminaries.associated_graded_map
-TeX: T3_modelcompanion_v7.tex, v7 Definition 2.22.
+TeX: T3_modelcompanion_v8.tex, v8 Definition 2.22.
 -/
 theorem mapLayer_bracketLayer {H : Type*} [Group H] [Fact (HasExponentThree H)]
     (f : G →* H) {i j : ℕ} (hi : 0 < i) (hj : 0 < j) (x : Layer G i) (y : Layer G j) :

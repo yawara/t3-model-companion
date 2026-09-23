@@ -21,7 +21,7 @@ Neither the base nor either factor is assumed to model `T₃`, and no finiteness
 on the intersection of the two factor images is imposed.
 
 Paper-ID: main.bounded_witness, main.model_companion
-TeX: T3_modelcompanion_v7.tex, `thm:main`, lines 781–823, and
+TeX: T3_modelcompanion_v8.tex, `thm:main`, lines 786–828, and
 `fact:locally finiteness and model companion`, the amalgamation criterion.
 -/
 
@@ -36,7 +36,7 @@ namespace Amalgamation
 /-- Ordinary group amalgamation is symmetric in its factors, in arbitrary universes.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v7.tex, `thm:main`, the symmetric witness cases.
+TeX: T3_modelcompanion_v8.tex, `thm:main`, the symmetric witness cases.
 -/
 theorem AmalgamableOver.symm {A G H : Type*} [Group A] [Group G] [Group H]
     {f : A →* G} {g : A →* H} (h : AmalgamableOver f g) : AmalgamableOver g f := by
@@ -46,7 +46,7 @@ theorem AmalgamableOver.symm {A G H : Type*} [Group A] [Group G] [Group H]
 /-- Interchanging the two factors does not change group amalgamability.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v7.tex, `thm:main`, the symmetric witness cases.
+TeX: T3_modelcompanion_v8.tex, `thm:main`, the symmetric witness cases.
 -/
 theorem amalgamableOver_comm {A G H : Type*} [Group A] [Group G] [Group H]
     (f : A →* G) (g : A →* H) : AmalgamableOver f g ↔ AmalgamableOver g f :=
@@ -65,7 +65,7 @@ variable {A : Type*} {G H : Type} [Group A] [Group G] [Group H]
 are equivalent. Only the target is required to have exponent three.
 
 Paper-ID: main.bounded_witness, main.model_companion
-TeX: T3_modelcompanion_v7.tex, `thm:main`, and the deduction from the amalgamation criterion.
+TeX: T3_modelcompanion_v8.tex, `thm:main`, and the deduction from the amalgamation criterion.
 -/
 theorem amalgamableOver_iff (f : A →* G) (g : A →* H)
     (hf : Function.Injective f) (hg : Function.Injective g) :
@@ -98,7 +98,7 @@ theorem amalgamableOver_iff (f : A →* G) (g : A →* H)
 The base need not satisfy `T₃` or any finiteness hypothesis.
 
 Paper-ID: main.bounded_witness, main.model_companion
-TeX: T3_modelcompanion_v7.tex, `thm:main`, and the deduction from the amalgamation criterion.
+TeX: T3_modelcompanion_v8.tex, `thm:main`, and the deduction from the amalgamation criterion.
 -/
 theorem amalgamableOver_embeddings_iff (f : A ↪[Language.group] G)
     (g : A ↪[Language.group] H) :
@@ -112,7 +112,7 @@ theorem amalgamableOver_embeddings_iff (f : A ↪[Language.group] G)
 of the general model-companion criterion.
 
 Paper-ID: main.bounded_witness, main.model_companion
-TeX: T3_modelcompanion_v7.tex, `thm:main`, applying the amalgamation criterion.
+TeX: T3_modelcompanion_v8.tex, `thm:main`, applying the amalgamation criterion.
 -/
 theorem amalgamableOver_embeddings_swap_iff (f : A ↪[Language.group] G)
     (g : A ↪[Language.group] H) :

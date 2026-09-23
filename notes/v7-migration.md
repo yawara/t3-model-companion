@@ -1,6 +1,8 @@
 # v7 原稿への移行と出典照合
 
-2026-09-22。現行原稿を [T3_modelcompanion_v7.tex](../T3_modelcompanion_v7.tex) とする。
+> 履歴資料（v7 原稿）。原稿と PDF は [archives](../archives/README.md) に保存。現行版への移行は [v8 移行記録](v8-migration.md) を参照。
+
+2026-09-22。現行原稿を [T3_modelcompanion_v7.tex](../archives/T3_modelcompanion_v7.tex) とする。
 SHA256 は `fb32d367e325f081eaeaf77b0c680662c9f58d1e8bc2a45adb0436cbe17c3ad6`。
 原稿本文は変更していない。
 

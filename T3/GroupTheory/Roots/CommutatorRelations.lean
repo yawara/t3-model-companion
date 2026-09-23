@@ -16,7 +16,7 @@ consists of products of relator powers and one commutator per relator. This is t
 normal-form step of the paper's commutator-root construction.
 
 Paper-ID: structure.simultaneous_commutator_roots
-TeX: T3_modelcompanion_v7.tex, `lemma:basic commutator root`, Claim A.
+TeX: T3_modelcompanion_v8.tex, `lemma:basic commutator root`, Claim A.
 -/
 
 @[expose] public section
@@ -32,7 +32,7 @@ local instance : IsMulCommutative (commutator G) := isMulCommutative_commutator 
 /-- The commutator with a derived element is a homomorphism into the abelian derived subgroup.
 
 Paper-ID: structure.simultaneous_commutator_roots
-TeX: T3_modelcompanion_v7.tex, `lemma:basic commutator root`, Claim A.
+TeX: T3_modelcompanion_v8.tex, `lemma:basic commutator root`, Claim A.
 -/
 def derivedBracketHom (r : commutator G) : G →* commutator G where
   toFun h := ⟨⁅(r : G), h⁆,
@@ -53,7 +53,7 @@ def derivedBracketHom (r : commutator G) : G →* commutator G where
 Integer exponents are subsequently read modulo three in the actual second graded layer.
 
 Paper-ID: structure.simultaneous_commutator_roots
-TeX: T3_modelcompanion_v7.tex, `lemma:basic commutator root`, Claim A.
+TeX: T3_modelcompanion_v8.tex, `lemma:basic commutator root`, Claim A.
 -/
 noncomputable def normalWord (r : Fin n → commutator G) (m : Fin n → ℤ) (h : Fin n → G) :
     commutator G := ∏ i, r i ^ m i * derivedBracketHom (r i) (h i)
@@ -89,7 +89,7 @@ private theorem normalWord_single (r : Fin n → commutator G) (i : Fin n) (g : 
 single simultaneous product expression. No iterative adjunction is used.
 
 Paper-ID: structure.simultaneous_commutator_roots
-TeX: T3_modelcompanion_v7.tex, `lemma:basic commutator root`, Claim A.
+TeX: T3_modelcompanion_v8.tex, `lemma:basic commutator root`, Claim A.
 -/
 theorem exists_normalWord (r : Fin n → commutator G) {a : G}
     (ha : a ∈ Subgroup.normalClosure (Set.range fun i => (r i : G))) :

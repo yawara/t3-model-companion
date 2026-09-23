@@ -20,7 +20,7 @@ equivalent to the existence of a copy of that extension over the base inside the
 finite-diagram API expresses this by a single existential formula.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 299–341.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 304–346.
 -/
 
 @[expose] public section
@@ -37,7 +37,7 @@ variable {L : Language.{u, v}}
 assignment of finitely many parameters.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, line 310.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, line 315.
 -/
 noncomputable def extensionFormula [Finite L.Symbols] {A : Type w} [Finite A]
     {B : Type w'} [L.Structure B] [Finite B] (i : A → B) : L.Formula A :=
@@ -46,7 +46,7 @@ noncomputable def extensionFormula [Finite L.Symbols] {A : Type w} [Finite A]
 /-- The finite extension formula is existential, with the finite diagram as its matrix.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 310–313.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 315–318.
 -/
 theorem extensionFormula_isExistential [Finite L.Symbols] {A : Type w} [Finite A]
     {B : Type w'} [L.Structure B] [Finite B] (i : A → B) :
@@ -57,7 +57,7 @@ theorem extensionFormula_isExistential [Finite L.Symbols] {A : Type w} [Finite A
 parameter assignment. No model assumption is made on the finite structure.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, line 310.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, line 315.
 -/
 theorem realize_extensionFormula_iff [Finite L.Symbols] {A : Type w} [Finite A]
     {B : Type w'} [L.Structure B] [Finite B] (i : A → B)
@@ -71,7 +71,7 @@ namespace Theory
 The structure itself may be empty and need not satisfy the theory.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 299, 327.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 304, 332.
 -/
 def Embeddable (T : L.Theory) (C : Type w) [L.Structure C] : Prop :=
   ∃ N : T.ModelType.{u, v, max u v}, Nonempty (C ↪[L] N)
@@ -80,7 +80,7 @@ def Embeddable (T : L.Theory) (C : Type w) [L.Structure C] : Prop :=
 on the base. There is no restriction on the intersection of their images.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 301–304.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 306–309.
 -/
 def AmalgamableOver (T : L.Theory)
     {A : Type w} {B : Type w'} {C : Type w''}
@@ -93,7 +93,7 @@ variable {T : L.Theory} {A : Type w} {B : Type w'} {C : Type w''} {D : Type w'''
 /-- Amalgamation is symmetric in the two extensions.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, amalgamation over A.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, amalgamation over A.
 -/
 theorem AmalgamableOver.symm {i : A ↪[L] B} {j : A ↪[L] C}
     (h : T.AmalgamableOver i j) : T.AmalgamableOver j i := by
@@ -103,7 +103,7 @@ theorem AmalgamableOver.symm {i : A ↪[L] B} {j : A ↪[L] C}
 /-- Restricting an amalgam along an embedding on its right side gives an amalgam.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 339–341.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 344–346.
 -/
 theorem AmalgamableOver.of_comp_right {i : A ↪[L] B} {j : A ↪[L] C}
     (e : C ↪[L] D) (h : T.AmalgamableOver i (e.comp j)) : T.AmalgamableOver i j := by
@@ -114,7 +114,7 @@ theorem AmalgamableOver.of_comp_right {i : A ↪[L] B} {j : A ↪[L] C}
 an embedding of that extension back into the model over the finite base.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 317, 336.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 322, 341.
 -/
 theorem IsExistentiallyClosed.amalgamableOver_iff_exists_embedding [Finite L.Symbols]
     [Finite A] [Finite B] {M : Type (max u v)} [L.Structure M]
@@ -133,7 +133,7 @@ theorem IsExistentiallyClosed.amalgamableOver_iff_exists_embedding [Finite L.Sym
 /-- The finite extension formula expresses amalgamation with an existentially closed model.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v7.tex, `fact:locally finiteness and model companion`, lines 317, 336.
+TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 322, 341.
 -/
 theorem IsExistentiallyClosed.amalgamableOver_iff_realize_extensionFormula [Finite L.Symbols]
     [Finite A] [Finite B] {M : Type (max u v)} [L.Structure M]

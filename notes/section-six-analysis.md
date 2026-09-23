@@ -1,6 +1,8 @@
 # v7 第6節の検討と形式化境界
 
-2026-09-22。対象は [T3_modelcompanion_v7.tex](../T3_modelcompanion_v7.tex)
+> v8 では旧第6節は非出力となり、Takeuchi 予想は Conjecture 1.1 として序論に残る。このノートはアーカイブした v7 第6節の検討を保存する。
+
+2026-09-22。対象は [T3_modelcompanion_v7.tex](../archives/T3_modelcompanion_v7.tex)
 第6節、特に Questions 6.1–6.2 と Takeuchi 予想である。
 本ノートは、実装済みの既知の還元、参照文献の適用範囲、今後必要な数学的入力を区別する。
 一般の質問への肯定・否定を新たに証明したという主張はしない。

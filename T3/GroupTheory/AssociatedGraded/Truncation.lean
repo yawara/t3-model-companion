@@ -16,7 +16,7 @@ central quotients to the finite product of those three quotients. It is used to 
 the three maps in the paper's exterior description of a free group's associated graded.
 
 Paper-ID: preliminaries.associated_graded_properties, preliminaries.free_graded_equiv
-TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19(1) and Proposition 2.29,
+TeX: T3_modelcompanion_v8.tex, v8 Lemma 2.19(1) and Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`.
 -/
 
@@ -31,7 +31,7 @@ variable (G : Type*) [Group G] [Fact (HasExponentThree G)]
 /-- The associated graded is the product of its three possibly nonzero components.
 
 Paper-ID: preliminaries.associated_graded_properties, preliminaries.free_graded_equiv
-TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19(1) and Proposition 2.29,
+TeX: T3_modelcompanion_v8.tex, v8 Lemma 2.19(1) and Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`.
 -/
 def truncationEquiv : GradedModule G ≃ₗ[ZMod 3] Layer G 1 × Layer G 2 × Layer G 3 where
@@ -64,7 +64,7 @@ def truncationEquiv : GradedModule G ≃ₗ[ZMod 3] Layer G 1 × Layer G 2 × La
 /-- Truncation reads the three homogeneous coordinates.
 
 Paper-ID: preliminaries.free_graded_equiv
-TeX: T3_modelcompanion_v7.tex, v7 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem truncationEquiv_apply (x : GradedModule G) : truncationEquiv G x = (x 1, x 2, x 3) := rfl
@@ -72,7 +72,7 @@ theorem truncationEquiv_apply (x : GradedModule G) : truncationEquiv G x = (x 1,
 /-- The inverse truncation inserts the three homogeneous coordinates into the direct sum.
 
 Paper-ID: preliminaries.free_graded_equiv
-TeX: T3_modelcompanion_v7.tex, v7 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem truncationEquiv_symm_apply (x : Layer G 1 × Layer G 2 × Layer G 3) :
@@ -82,7 +82,7 @@ theorem truncationEquiv_symm_apply (x : Layer G 1 × Layer G 2 × Layer G 3) :
 /-- The degree-three coordinate of a bracket is the sum of its two mixed-degree terms.
 
 Paper-ID: preliminaries.associated_graded_properties, preliminaries.free_graded_equiv
-TeX: T3_modelcompanion_v7.tex, v7 Lemma 2.19 and Proposition 2.29,
+TeX: T3_modelcompanion_v8.tex, v8 Lemma 2.19 and Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]

@@ -1,6 +1,6 @@
 # Working on this formalization
 
-- The source is `T3_modelcompanion_v7.tex`. Follow its statements, hypotheses, constants, and
+- The source is `T3_modelcompanion_v8.tex`. Follow its statements, hypotheses, constants, and
   principal constructions. Read the relevant source passage before implementing a paper result.
 - Read `notes/lean-architecture.md` for the module and namespace policy. Track implementation in
   `docs/paper-map.toml` and regenerate `docs/paper-map.md` with `python3 scripts/paper_map.py --write`.

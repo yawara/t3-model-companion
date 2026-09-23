@@ -1,7 +1,7 @@
 # Fact 2.6 の実装 frontier
 
 > 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
-> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+> 現行 v8 の対応は [対応表](../docs/paper-map.md) と [v8 移行記録](v8-migration.md) を参照。
 
 2026-09-10。本稿は作成時点の実装済み定理と次に作る API を区別した設計記録。
 現在の実装・検証状況は [論文対応表](../docs/paper-map.md) を参照する。

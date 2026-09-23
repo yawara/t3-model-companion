@@ -17,7 +17,7 @@ and three. Its bracket is the bilinear extension of exterior multiplication, wit
 for the product of degree one with degree two. No dimension or basis is assumed.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9.
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9.
 -/
 
 @[expose] public section
@@ -31,7 +31,7 @@ variable (V : Type*) [AddCommGroup V] [Module (ZMod 3) V]
 /-- The vector space `Λ¹V ⊕ Λ²V ⊕ Λ³V`, represented as a finite product.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 def TruncatedExterior := (⋀[ZMod 3]^1 V) × (⋀[ZMod 3]^2 V) × (⋀[ZMod 3]^3 V)
 
 namespace TruncatedExterior
@@ -129,7 +129,7 @@ private theorem add_add_self (z : ⋀[ZMod 3]^3 V) : z + z + z = 0 := by
 /-- The paper's signed exterior bracket satisfies the Lie axioms.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 instance instLieRing : LieRing (TruncatedExterior V) where
   add_lie x y z := by
     apply ext <;> simp only [one_lie, two_lie, three_lie, one_add, two_add, three_add,
@@ -156,7 +156,7 @@ instance instLieRing : LieRing (TruncatedExterior V) where
 /-- The signed exterior bracket is bilinear over `𝔽₃`.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 instance instLieAlgebra : LieAlgebra (ZMod 3) (TruncatedExterior V) where
   lie_smul r x y := by
     apply ext <;> simp [gradedMul_smul_left, gradedMul_smul_right, smul_sub]
@@ -209,7 +209,7 @@ theorem three_ofThree (a : ⋀[ZMod 3]^3 V) : three (ofThree a) = a := rfl
 /-- The bracket of degree-one elements is their exterior product.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 @[simp]
 theorem ofOne_lie_ofOne (a b : ⋀[ZMod 3]^1 V) :
     ⁅ofOne a, ofOne b⁆ = ofTwo (gradedMul a b) := by ext <;> simp
@@ -217,7 +217,7 @@ theorem ofOne_lie_ofOne (a b : ⋀[ZMod 3]^1 V) :
 /-- The bracket in degrees two and one is their exterior product.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 @[simp]
 theorem ofTwo_lie_ofOne (q : ⋀[ZMod 3]^2 V) (a : ⋀[ZMod 3]^1 V) :
     ⁅ofTwo q, ofOne a⁆ = ofThree (gradedMul q a) := by ext <;> simp
@@ -225,7 +225,7 @@ theorem ofTwo_lie_ofOne (q : ⋀[ZMod 3]^2 V) (a : ⋀[ZMod 3]^1 V) :
 /-- The bracket in degrees one and two is the negative exterior product.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 @[simp]
 theorem ofOne_lie_ofTwo (a : ⋀[ZMod 3]^1 V) (q : ⋀[ZMod 3]^2 V) :
     ⁅ofOne a, ofTwo q⁆ = ofThree (-gradedMul a q) := by
@@ -249,7 +249,7 @@ theorem ofTwo_lie_ofTwo (a b : ⋀[ZMod 3]^2 V) :
 /-- A triple bracket is the triple exterior product of the degree-one coordinates.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 theorem triple_lie (x y z : TruncatedExterior V) :
     ⁅⁅x, y⁆, z⁆ = ofThree (gradedMul (gradedMul (one x) (one y)) (one z)) := by
   apply ext <;> simp only [one_lie, two_lie, three_lie, one_ofThree, two_ofThree,
@@ -258,21 +258,21 @@ theorem triple_lie (x y z : TruncatedExterior V) :
 /-- Triple brackets are invariant under cyclic permutation.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 theorem triple_lie_cyclic (x y z : TruncatedExterior V) : ⁅⁅x, y⁆, z⁆ = ⁅⁅y, z⁆, x⁆ := by
   rw [triple_lie, triple_lie, gradedMul_one_cyclic]
 
 /-- A triple bracket with its last two arguments equal vanishes.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 theorem triple_lie_repeat (x y : TruncatedExterior V) : ⁅⁅x, y⁆, y⁆ = 0 := by
   rw [triple_lie, gradedMul_one_repeat, map_zero]
 
 /-- Every bracket of length four vanishes.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 theorem quadruple_lie (x y z w : TruncatedExterior V) : ⁅⁅⁅x, y⁆, z⁆, w⁆ = 0 := by
   rw [triple_lie x y z, ofThree_lie]
 
@@ -285,7 +285,7 @@ variable (V)
 /-- The homogeneous submodule of degree `n`, zero outside degrees one, two, and three.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 def grade (n : ℕ) : Submodule (ZMod 3) (TruncatedExterior V) where
   carrier := {x | (n ≠ 1 → one x = 0) ∧ (n ≠ 2 → two x = 0) ∧ (n ≠ 3 → three x = 0)}
   zero_mem' := by simp
@@ -426,7 +426,7 @@ instance instDecomposition : DirectSum.Decomposition (grade V) := by
 /-- The paper's truncated exterior algebra is an internally graded Lie algebra over `𝔽₃`.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v7.tex, `example:Grassmann algebra`, v7 Example 2.9. -/
+TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9. -/
 instance instGradedLieAlgebra : GradedLieAlgebra (grade V) where
 
 end TruncatedExterior

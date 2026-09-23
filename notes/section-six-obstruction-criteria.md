@@ -49,7 +49,7 @@ Theorem 2、pp. 8–9 を、局所有限群 variety と有限群の包含へ特�
 
 ## 2. v7 Fact 2.6 との正確な対応
 
-原稿 [T3_modelcompanion_v7.tex](../T3_modelcompanion_v7.tex) の Fact 2.6、
+原稿 [T3_modelcompanion_v7.tex](../archives/T3_modelcompanion_v7.tex) の Fact 2.6、
 TeX 293–344、label `fact:locally finiteness and model companion` は、
 有限言語の局所有限な `Π₂` 理論について、e.c. モデル内部の障害の生成元数を特徴付ける。
 Lipparini の普遍理論への仮定と原稿の `Π₂` 仮定を同一視せず、ここでは両方が適用できる

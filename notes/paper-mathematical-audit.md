@@ -1,7 +1,7 @@
 # T3 論文 v4 の数学的検証
 
 > 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
-> 現行 v7 の対応は [対応表](../docs/paper-map.md) と [v7 移行記録](v7-migration.md) を参照。
+> 現行 v8 の対応は [対応表](../docs/paper-map.md) と [v8 移行記録](v8-migration.md) を参照。
 
 検証日: 2026-09-09。
 

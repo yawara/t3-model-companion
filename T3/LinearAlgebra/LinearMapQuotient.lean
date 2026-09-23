@@ -15,7 +15,7 @@ when its kernels correspond. This formulation keeps the canonical maps when pass
 the free exterior decomposition to a coproduct of presented groups.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, proof lines 979–1007.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, proof lines 984–1012.
 -/
 
 @[expose] public section
@@ -30,7 +30,7 @@ variable {R A B C D : Type*} [Ring R]
 The resulting bijection is the given map making the square commute.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v7.tex, `proposition:gr of free product`, block quotient identifications.
+TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, block quotient identifications.
 -/
 theorem bijective_of_bijective_of_ker_map
     (u : A →ₗ[R] B) (p : A →ₗ[R] C) (q : B →ₗ[R] D) (v : C →ₗ[R] D)

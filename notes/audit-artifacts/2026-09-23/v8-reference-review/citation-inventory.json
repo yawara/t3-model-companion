@@ -1,0 +1,123 @@
+{
+  "manuscript": "T3_modelcompanion_v8.tex",
+  "sha256": "9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c",
+  "bibliography_count": 13,
+  "active_citation_commands": 13,
+  "active_cited_reference_count": 12,
+  "active_citations": [
+    {
+      "line": 133,
+      "keys": [
+        "EklofFischer1972"
+      ]
+    },
+    {
+      "line": 136,
+      "keys": [
+        "ChangKeisler1990"
+      ]
+    },
+    {
+      "line": 137,
+      "keys": [
+        "Takeuchi2022"
+      ]
+    },
+    {
+      "line": 138,
+      "keys": [
+        "Saracino1974"
+      ]
+    },
+    {
+      "line": 139,
+      "keys": [
+        "Saracino1976"
+      ]
+    },
+    {
+      "line": 143,
+      "keys": [
+        "SaracinoWood1979"
+      ]
+    },
+    {
+      "line": 144,
+      "keys": [
+        "Maier1989"
+      ]
+    },
+    {
+      "line": 144,
+      "keys": [
+        "dElbeeMuellerRamseySiniora2025"
+      ]
+    },
+    {
+      "line": 147,
+      "keys": [
+        "HoffmannKowalskiTranYe2023",
+        "FracekKowalski2025"
+      ]
+    },
+    {
+      "line": 167,
+      "keys": [
+        "LeviVanDerWaerden1933"
+      ]
+    },
+    {
+      "line": 172,
+      "keys": [
+        "Takeuchi2022"
+      ]
+    },
+    {
+      "line": 183,
+      "keys": [
+        "Ivanov1992"
+      ]
+    },
+    {
+      "line": 609,
+      "keys": [
+        "LeviVanDerWaerden1933"
+      ]
+    }
+  ],
+  "disabled_citations": [
+    {
+      "line": 1473,
+      "keys": [
+        "SaracinoWood1979"
+      ]
+    },
+    {
+      "line": 1476,
+      "keys": [
+        "Maier1989"
+      ]
+    },
+    {
+      "line": 1478,
+      "keys": [
+        "dElbeeMuellerRamseySiniora2025"
+      ]
+    },
+    {
+      "line": 1481,
+      "keys": [
+        "Saracino1976"
+      ]
+    },
+    {
+      "line": 1502,
+      "keys": [
+        "EklofSabbagh1971"
+      ]
+    }
+  ],
+  "bibliography_not_cited_in_active_text": [
+    "EklofSabbagh1971"
+  ]
+}

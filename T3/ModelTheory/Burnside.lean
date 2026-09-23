@@ -14,11 +14,12 @@ public import T3.ModelTheory.LocallyFinite.Universes
 
 The usual group theory with the exponent law is locally finite exactly when its free
 Burnside groups of all positive finite ranks are finite. This is the established equivalence
-used to state Takeuchi's conjecture in Section 6. Neither implication between local finiteness
+used to interpret Conjecture 1.1 in the v8 introduction. Its detailed source remains the
+archived v7 Section 6, which is disabled in v8. Neither implication between local finiteness
 and the existence of a model companion is asserted here for a general exponent.
 
 Paper-ID: questions.burnside_local_finiteness
-TeX: T3_modelcompanion_v7.tex, Section 6, lines 1520–1525.
+TeX: archives/T3_modelcompanion_v7.tex, Section 6, lines 1520–1525.
 -/
 
 @[expose] public section
@@ -33,7 +34,7 @@ open FirstOrder FirstOrder.Language
 group of that exponent finite.
 
 Paper-ID: questions.burnside_local_finiteness
-TeX: T3_modelcompanion_v7.tex, Section 6, lines 1522–1525.
+TeX: archives/T3_modelcompanion_v7.tex, Section 6, lines 1522–1525.
 -/
 theorem finite_closure_of_finite_burnside {n : ℕ}
     (hfree : ∀ r : ℕ, 0 < r → Finite (Burnside n (Fin r)))
@@ -47,7 +48,7 @@ theorem finite_closure_of_finite_burnside {n : ℕ}
 finite-rank free Burnside group. The statement uses the ordinary first-order group language.
 
 Paper-ID: questions.burnside_local_finiteness
-TeX: T3_modelcompanion_v7.tex, Section 6, lines 1520–1525.
+TeX: archives/T3_modelcompanion_v7.tex, Section 6, lines 1520–1525.
 -/
 theorem exponentGroupTheory_isLocallyFinite_iff_finite_burnside (n : ℕ) :
     (exponentGroupTheory n).IsLocallyFinite ↔
