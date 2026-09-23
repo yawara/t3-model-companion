@@ -1,0 +1,499 @@
+{
+  "review_date": "2026-09-24",
+  "review_note": "notes/v8-paper-review-2026-09-24.md",
+  "manuscript": "T3_modelcompanion_v8.tex",
+  "manuscript_sha256": "9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c",
+  "build_check": {
+    "engine": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+    "command": "pdflatex -interaction=nonstopmode T3_modelcompanion_v8.tex (run twice in a temporary copy)",
+    "warnings_overfull_underfull": 0,
+    "pages": 21
+  },
+  "cited_references": [
+    {
+      "key": "ChangKeisler1990",
+      "manuscript_lines": [
+        136
+      ],
+      "locator": "Example 3.5.16, p.199; historical note p.609 credits Eklof and Sabbagh (1971)",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/chang-keisler-google-uiHq0EmaFp0C-EXAMPLE-3.5.16.json",
+          "sha256": "1eaa8e3325e83495c1854add6c89ad3adc8ce83c8d4f741197df617c88d88c40"
+        }
+      ],
+      "evidence_note": "Google Books in-volume search re-run on 2026-09-24 returned the same pages; not re-saved.",
+      "verdict": "match",
+      "action": "cite EklofSabbagh1971 Theorem 7.17 as the primary source; label CK90 -> CK1990"
+    },
+    {
+      "key": "dElbeeMuellerRamseySiniora2025",
+      "manuscript_lines": [
+        144
+      ],
+      "locator": "Corollary 4.42 in arXiv v3 (Section 4.1 assumes a prime p > c)",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs2025.pdf",
+          "sha256": "54ff26d744f7314a57268279a85114c9d5777b86e30276e5957470387ed32cdb"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/demrs-2025.json",
+          "sha256": "0e78280391ee50fe031735f222031738745d0a63270c4387ab2b2306b4172442"
+        }
+      ],
+      "verdict": "match_author_version",
+      "action": "journal numbering unverified (publisher and AUC repository returned HTTP 403)"
+    },
+    {
+      "key": "EklofFischer1972",
+      "manuscript_lines": [
+        133,
+        1575,
+        1576
+      ],
+      "locator": "no model-companion, JEP or inductive-theory result; pp.115-116",
+      "evidence": [
+        {
+          "path": "references/publications/eklof-fischer-1972-elementary-theory-of-abelian-groups-published.pdf",
+          "sha256": "46396663dd3da750c95cf1e2ade3979dca18c23c8e8ca79a466e22fc121a2f9b"
+        },
+        {
+          "path": "references/rendered-pages/eklof-fischer-1972/p0115-title-and-introduction.png",
+          "sha256": "23312029b561aa63f6d46fef3593c9e8f7fd56bc26668f640be62dcc7fccb5e5"
+        },
+        {
+          "path": "references/rendered-pages/eklof-fischer-1972/p0116-summary-of-results.png",
+          "sha256": "bfea0e81fbb1264fe0d3639e2b5a4a01143c17b2fbb6e534e1eb384a04199cfc"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/eklof-fischer-1972.json",
+          "sha256": "49a2ed897a12cec4356cb60e27dc77fdc4ae11129484ba1f2a612c60aa84ba52"
+        }
+      ],
+      "verdict": "misattribution",
+      "action": "attribute to Eklof1972 Theorems 4 and 7 or delete; if kept, spell the coauthor Fisher (title-page byline misprint FISCHER)"
+    },
+    {
+      "key": "EklofSabbagh1971",
+      "manuscript_lines": [
+        1502
+      ],
+      "locator": "Theorem 2.4 p.256; Theorem 7.17 p.291",
+      "evidence": [
+        {
+          "path": "references/publications/eklof-sabbagh-1971-model-completions-and-modules-published.pdf",
+          "sha256": "2889f9fdadc4d9462971ae5a26a86e09fa805abc91c27a6a93cc9e956cbb4b92"
+        },
+        {
+          "path": "references/rendered-pages/eklof-sabbagh-1971/p0256-theorem-2-4-abelian-groups.png",
+          "sha256": "8db5855d60c718d818990640cc22576567aa52fd32314a3c8b86770174978111"
+        },
+        {
+          "path": "references/rendered-pages/eklof-sabbagh-1971/p0291-theorem-7-17-groups.png",
+          "sha256": "46b80b83806aa17e6dafd3eaefd181c73df40dcd6db9766625e2e65228273f78"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/eklof-sabbagh-1971.json",
+          "sha256": "53ce186329f1b1c69560d733b9c9e9c3e8f03ffeb7f5ce41114b3160a56cbc69"
+        }
+      ],
+      "verdict": "match_but_uncited_in_visible_text",
+      "action": "cite at lines 132 and 136"
+    },
+    {
+      "key": "FracekKowalski2025",
+      "manuscript_lines": [
+        147
+      ],
+      "locator": "Theorem 3.6 (arXiv v2)",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/fk-2512.09414v2.pdf",
+          "sha256": "3450f37f578126582da6f4e1a62cdfa0ea2032dea136044503b9d84bb84d540e"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/arxiv/arxiv-api-2026-09-24.xml",
+          "sha256": "6fd1cc17fb296eee71d92c245b3c3a4a3a338a5f811311fa3cf6a73d72da6fd1"
+        }
+      ],
+      "verdict": "match",
+      "action": "add locator and version; still a preprint on 2026-09-24"
+    },
+    {
+      "key": "HoffmannKowalskiTranYe2023",
+      "manuscript_lines": [
+        147
+      ],
+      "locator": "Theorem 3.3 (arXiv v2): G(K) and G(K)' model complete for split semisimple G over a model-complete field K",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/sources/hkty-2312.08988v2.pdf",
+          "sha256": "46ac1a8d7aac13bb4d193c6b51386b76f3b6ec30d1efe9d8c06db7f448ed96c4"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/arxiv/arxiv-api-2026-09-24.xml",
+          "sha256": "6fd1cc17fb296eee71d92c245b3c3a4a3a338a5f811311fa3cf6a73d72da6fd1"
+        }
+      ],
+      "verdict": "match",
+      "action": "state the hypotheses precisely; add locator and version"
+    },
+    {
+      "key": "Ivanov1992",
+      "manuscript_lines": [
+        183,
+        1601,
+        1602,
+        1603,
+        1604
+      ],
+      "locator": "Theorem A, p.258 (m > 1, n >= 2^48); p.258 credits odd exponents with an odd divisor >= 665 to Novikov and Adian",
+      "evidence": [
+        {
+          "path": "references/on-the-burnside-problem-on-periodic-groups-5fnzsr8mqf.pdf",
+          "sha256": "65a841d38331a1376b5c54988a9ab4ceee1e6186b92a39b14db78aa7db737ec2"
+        },
+        {
+          "path": "references/rendered-pages/ivanov-1992/p0257-title-and-abstract.png",
+          "sha256": "8b87de954dcb5906f642bb816837a9dd01b2f5c96c8cbe3d0df6c33f00870c0b"
+        },
+        {
+          "path": "references/rendered-pages/ivanov-1992/p0258-theorem-a.png",
+          "sha256": "3f6fef4166f2ae21d40e794a2b2a0f0240622c0d51de994397f515b07fe54afc"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/ivanov-1992.json",
+          "sha256": "c630d0acbac145de31fc4af389be44de64a8d7beed6c9be5f6752c4b11d0306d"
+        }
+      ],
+      "verdict": "supports_claim_but_wrong_primary_attribution",
+      "action": "state rank >= 2; cite NovikovAdian1968 and Adian1979; add DOI if kept"
+    },
+    {
+      "key": "LeviVanDerWaerden1933",
+      "manuscript_lines": [
+        167,
+        609
+      ],
+      "locator": "p.155 (5), (6), class at most 3; p.157 Satz 1",
+      "evidence": [
+        {
+          "path": "references/publications/levi-van-der-waerden-1933-besondere-klasse-von-gruppen-published.pdf",
+          "sha256": "1c7a7c744d1e79f952acdb4be321bc1aca4b258515fcdd2493ae838ea578847a"
+        },
+        {
+          "path": "references/rendered-pages/levi-van-der-waerden-1933/p0155-commutator-relations-and-upper-bound.png",
+          "sha256": "d3898f19fac1a581ca70843866967574cfe91a9669efaa6b029a6702a12581ee"
+        },
+        {
+          "path": "references/rendered-pages/levi-van-der-waerden-1933/p0157-satz-1-order-and-uniqueness.png",
+          "sha256": "04e5f70ffd8584d4b4bf8c872f17eb64fc91ea86159b8dca4b76a863cc6ef79e"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/levi-van-der-waerden-1933.json",
+          "sha256": "06e2b965e35915c3049f8133b6a3bcea1c6a456765b2193ab9fe8afc2af30df6"
+        }
+      ],
+      "verdict": "match",
+      "action": "optional locator Satz 1"
+    },
+    {
+      "key": "Maier1989",
+      "manuscript_lines": [
+        144
+      ],
+      "locator": "Theorem 3.5, p.285; summary p.280",
+      "evidence": [
+        {
+          "path": "references/publications/maier-1989-nilpotent-groups-of-exponent-p-published.pdf",
+          "sha256": "4a13a6dba2eadf35423b0c2fe89a6ca10abbd31a89ddb59950d89f4dc3eac63d"
+        },
+        {
+          "path": "references/rendered-pages/maier-1989/p0280-model-companion-summary.png",
+          "sha256": "7e18f8d4542a0021e533d2f96df6418b322dea45cfd854601e1c8dcb4c2b6cfd"
+        },
+        {
+          "path": "references/rendered-pages/maier-1989/p0285-theorem-3-5-model-companion.png",
+          "sha256": "c3bd4ed215fa40dca993d2fcf80a4bbe481a87e8c8272125048e49e179b20c06"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/maier-1989.json",
+          "sha256": "55ce342b5862b38fed43e42da9e8bd9795cc59bca02baf25362794e07220096b"
+        }
+      ],
+      "verdict": "match",
+      "action": "attribute the existence directly to Theorem 3.5"
+    },
+    {
+      "key": "Saracino1974",
+      "manuscript_lines": [
+        138
+      ],
+      "locator": "Theorem 1, p.327 (derived length at most n, every n >= 2)",
+      "evidence": [
+        {
+          "path": "references/publications/saracino-1974-wreath-products-existentially-complete-solvable-groups-published.pdf",
+          "sha256": "c21795385728a024229f52a718adb777a7e65b77e0c5130ea23e5ca26e5e3b9e"
+        },
+        {
+          "path": "references/rendered-pages/saracino-1974/p0327-abstract-and-theorem-1.png",
+          "sha256": "cb652acaca7791ce8ec55b7adaa83a99176c3b7ef99c3f06eb25313f343bcee5"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/saracino-1974.json",
+          "sha256": "88d7be3371338eeaf145f635092df05e8185852214f64b7409597ee90bcb465b"
+        }
+      ],
+      "verdict": "match",
+      "action": "state the upper bound on derived length"
+    },
+    {
+      "key": "Saracino1976",
+      "manuscript_lines": [
+        139
+      ],
+      "locator": "Theorem 1 p.241; Theorem 2 p.242",
+      "evidence": [
+        {
+          "path": "references/saracino1976.pdf",
+          "sha256": "584f4fed02a81d9e88de1cce1862fa31464c0620c3c8054d2eb73e5c7e7fab7b"
+        },
+        {
+          "path": "references/rendered-pages/saracino-1976/p0241-title-and-theorem-1.png",
+          "sha256": "33cc0ea5d6cffe1595d4b2fffad102fd9c2c02aab512816bac447ae738c4e538"
+        },
+        {
+          "path": "references/rendered-pages/saracino-1976/p0242-theorem-2-and-group-language.png",
+          "sha256": "59589caec8a3de6dfa760fbbd7a3fe9192dad4152634ef64cc6c615e7601977e"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/saracino-1976.json",
+          "sha256": "b3c15557055de1f0bad13599fb6dc19758d50f543631518516d462cfdabc043e"
+        }
+      ],
+      "verdict": "match",
+      "action": "add issue no. 3-4"
+    },
+    {
+      "key": "SaracinoWood1979",
+      "manuscript_lines": [
+        143
+      ],
+      "locator": "Theorem 3.9, p.198 (2 <= m < infinity); definitions p.189",
+      "evidence": [
+        {
+          "path": "references/publications/saracino-wood-1979-periodic-existentially-closed-nilpotent-groups-published.pdf",
+          "sha256": "0821a6cb5866bae51df4572e05036ca9f76dc357c9f9a297c9eb8a1e001d0060"
+        },
+        {
+          "path": "references/rendered-pages/saracino-wood-1979/p0198-theorem-3-9-model-companion.png",
+          "sha256": "8fbeec7fbe15654ae4127caa60363b53ff6c36bfebc69c1a5d79eb17088607fe"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/saracino-wood-1979.json",
+          "sha256": "c48584fdd0223b2dfcf0e2e6e955981821bd9c6d0de45de237265d0a780ec407"
+        }
+      ],
+      "verdict": "match",
+      "action": "optional locator Theorem 3.9"
+    },
+    {
+      "key": "Takeuchi2022",
+      "manuscript_lines": [
+        137,
+        172
+      ],
+      "locator": "p.80 (Burnside connection; first proof credited to A. Tsuboi); Theorem 17, p.83",
+      "evidence": [
+        {
+          "path": "references/publications/takeuchi-2022-model-companions-of-some-classes-of-groups-published.pdf",
+          "sha256": "a41f35c6afa86d9984059ddd566bc923945d28a1ffa2fe7eb6567471cf452b94"
+        },
+        {
+          "path": "references/rendered-pages/takeuchi-2022/p0080-burnside-remark.png",
+          "sha256": "78411a93cca2e274dfb46b188cc19133cf5f0e5d9f19b5f82b1f66f1806441df"
+        },
+        {
+          "path": "references/rendered-pages/takeuchi-2022/p0083-theorem-17.png",
+          "sha256": "960ff78a2dafac793f020dc9f0601402d702c2dd670bf71d30dbbac21154a898"
+        }
+      ],
+      "verdict": "match",
+      "action": "add locator Theorem 17; add URL"
+    }
+  ],
+  "proposed_additions": [
+    {
+      "key": "Eklof1972",
+      "bibliography": "P. C. Eklof, Some model theory of abelian groups, J. Symbolic Logic 37 (1972), no. 2, 335-342",
+      "locator": "Theorem 4 p.336; Theorem 7 pp.339-340",
+      "evidence": [
+        {
+          "path": "references/2272976.pdf",
+          "sha256": "91fae6e207bab26578c4d961b868a35208725cdf5ef959af8716c6ca71ddc4e7"
+        },
+        {
+          "path": "references/rendered-pages/eklof-1972/p0336-theorem-4-universal-theories.png",
+          "sha256": "5415b0d19570c309fd524ce3b7cafe8906d15c77da820ff6ec2c064769ed961c"
+        },
+        {
+          "path": "references/rendered-pages/eklof-1972/p0339-theorem-7-start.png",
+          "sha256": "c63df589e47e67bf1c780e9d648e7cd4330612ea21644e49394cbe52ae8d167b"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/eklof-1972.json",
+          "sha256": "b410d66a1ad8dcbcb6a9c577d706498e8f7fb1c1b2c0ec9160c02caeddfc0f0b"
+        }
+      ],
+      "purpose": "source for line 133 (derived corollary; derivation recorded in the review note)"
+    },
+    {
+      "key": "NovikovAdian1968",
+      "bibliography": "P. S. Novikov and S. I. Adian, Infinite periodic groups I-III, Math. USSR-Izv. 2 (1968), 209-236, 241-479, 665-685",
+      "locator": "Part I, p.209: m >= 2 and odd n >= 4381",
+      "evidence": [
+        {
+          "path": "references/publications/novikov-adian-1968-infinite-periodic-groups-i-published.pdf",
+          "sha256": "8a2fe11d83582cfff7b43cf0f213e9b71b3f53b11ab002995a1eca2a20e7fda5"
+        },
+        {
+          "path": "references/rendered-pages/novikov-adian-1968/p0209-part-i-title.png",
+          "sha256": "d6193758d875857965561f036d41ee6d7317b61cdf2ffb755f96664b37b716a5"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/novikov-adian-1968-i.json",
+          "sha256": "01c8b22a3be84d4bc0cfd7d685a856579b83409c19d28b5c36d6bc708e5020d0"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/novikov-adian-1968-ii.json",
+          "sha256": "c35dfad91445b9499e704bb21d28e65871fb6b13c6571db953795baa564a48fc"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/novikov-adian-1968-iii.json",
+          "sha256": "3f944e21120792cba59abc3868d2ccea11531d988d249c05033ec8070ad1250f"
+        }
+      ],
+      "purpose": "primary source for line 183"
+    },
+    {
+      "key": "Adian1979",
+      "bibliography": "S. I. Adian, The Burnside Problem and Identities in Groups, Ergebnisse der Mathematik und ihrer Grenzgebiete 95, Springer, 1979",
+      "locator": "odd exponents n >= 665 (as reported by Ivanov 1992, p.257)",
+      "evidence": [],
+      "purpose": "improved bound for line 183; bibliographic data from references MANIFEST"
+    },
+    {
+      "key": "Burnside1902",
+      "bibliography": "W. Burnside, On an unsettled question in the theory of discontinuous groups, Quart. J. Pure Appl. Math. 33 (1902), 230-238",
+      "locator": "finiteness for exponent 3 (as reported by Levi-van der Waerden 1933, p.154, footnote 2, and Novikov-Adian 1968, p.209)",
+      "evidence": [],
+      "purpose": "optional source for line 181"
+    },
+    {
+      "key": "BurrisWerner1979",
+      "bibliography": "S. Burris and H. Werner, Sheaf constructions and their elementary properties, Trans. Amer. Math. Soc. 248 (1979), no. 2, 269-309",
+      "locator": "Section 8 (as cited in Burris 1984, p.69)",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/burris-werner-1979.json",
+          "sha256": "77e9c5489c2446bfacdb261d15b6dd111c8e245c2e3accb53042d12e026bb1d2"
+        }
+      ],
+      "purpose": "general existence theorem for finitely generated universal Horn classes (line 151)"
+    },
+    {
+      "key": "Burris1984",
+      "bibliography": "S. Burris, Model companions for finitely generated universal Horn classes, J. Symbolic Logic 49 (1984), no. 1, 68-74",
+      "locator": "abstract p.68; Theorems 1.1-1.2 p.69; Example (2) p.74",
+      "evidence": [
+        {
+          "path": "references/publications/burris-1984-model-companions.pdf",
+          "sha256": "04986c4b7df3d17362a0b31ae4e4e0e86383dc583a252f0d2eebff955a230d2c"
+        },
+        {
+          "path": "references/rendered-pages/burris-1984/p0068-title-and-abstract.png",
+          "sha256": "cc04add67cb04c8cb67731b685f87bca1dadae7834923070290875db9346a9ac"
+        },
+        {
+          "path": "references/rendered-pages/burris-1984/p0069-theorems-1-1-and-1-2.png",
+          "sha256": "b07e1a24029d4c167ec1d407f63fb456c432e23387b85c8560ccddae745328ca"
+        },
+        {
+          "path": "references/rendered-pages/burris-1984/p0074-group-example-and-references.png",
+          "sha256": "6ea01cdbf6dc966f8f9ebcd60205a6ba88c0bbf691009f47b9cfc5bc8c61dc14"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/crossref/burris-1984.json",
+          "sha256": "7462073224ef5097efceb59af34952015f9d6f58fe323e719a2529b0d5738ec9"
+        }
+      ],
+      "purpose": "line 151"
+    },
+    {
+      "key": "dElbeeMuellerRamseySiniora2026",
+      "bibliography": "C. d'Elbee, I. Mueller, N. Ramsey and D. Siniora, Shirshov's amalgamated free product and generic nilpotent groups, arXiv:2609.05789v1 (2026)",
+      "locator": "pp.2-3 (Question 1.1 and the UL-equivalent embedding theorem for p > c); Theorem 4.1; Proposition 4.6",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/arxiv/demrs-2026-arxiv-2609.05789v1.pdf",
+          "sha256": "ddb804244ead6a6de9c76cbbd45408e576349869620c3a38075ab182d1cfe1bb"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/arxiv/demrs-2026-arxiv-2609.05789v1.txt",
+          "sha256": "88ee2305b92e79080253138d0ffe474eb6b20be21a41e2d2e9ba1d2301e5c07a"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/arxiv/arxiv-api-2026-09-24.xml",
+          "sha256": "6fd1cc17fb296eee71d92c245b3c3a4a3a338a5f811311fa3cf6a73d72da6fd1"
+        }
+      ],
+      "purpose": "recent related work; parallel to Lemma 4.6 and Proposition 4.13 outside c = p = 3"
+    },
+    {
+      "key": "IvanovMajcher2024",
+      "bibliography": "A. Ivanov and K. Majcher, Generic groups and the weak amalgamation property, arXiv:2402.02143 (v3, 2025)",
+      "locator": "cited by arXiv:2609.05789 for the weak amalgamation property of c-nilpotent groups of exponent p > c",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/arxiv/arxiv-api-2026-09-24.xml",
+          "sha256": "6fd1cc17fb296eee71d92c245b3c3a4a3a338a5f811311fa3cf6a73d72da6fd1"
+        }
+      ],
+      "purpose": "optional"
+    }
+  ],
+  "other_checks": [
+    {
+      "item": "MSC2020 codes 03C60, 20A15 (valid); 03C10, 20F50 suggested",
+      "evidence": [
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/msc2020.pdf",
+          "sha256": "532d86f87b042b1fbc30b72be174c98db8d2fb8e28b4150733956998363bcbe7"
+        },
+        {
+          "path": "references/audit-artifacts/t3-model-companion/2026-09-24/v8-paper-review/sources/msc2020-excerpt.txt",
+          "sha256": "aefe6586d0b01f6a89e1deb4bc2d1f4395ff2941f24b749001e8b6df2e04af70"
+        }
+      ]
+    },
+    {
+      "item": "EF coauthor spelling: byline FISCHER (p.115) versus running head Fisher (p.116), Eklof 1972 reference [1] E. FISHER (p.341), LNM 616 chapter by Edward R. Fisher",
+      "evidence": [
+        {
+          "path": "references/rendered-pages/eklof-fischer-1972/p0115-title-and-introduction.png",
+          "sha256": "23312029b561aa63f6d46fef3593c9e8f7fd56bc26668f640be62dcc7fccb5e5"
+        },
+        {
+          "path": "references/rendered-pages/eklof-fischer-1972/p0116-summary-of-results.png",
+          "sha256": "bfea0e81fbb1264fe0d3639e2b5a4a01143c17b2fbb6e534e1eb384a04199cfc"
+        },
+        {
+          "path": "references/rendered-pages/eklof-1972/p0341-remarks-and-references.png",
+          "sha256": "486a4977a2450be006d248ba2b2148620fd8636557dada2027c29af5f8a9b900"
+        }
+      ]
+    }
+  ],
+  "history_redaction": "Historical record edited to omit private development locations and identifiers. Recorded verification results and input hashes refer to the original snapshot."
+}

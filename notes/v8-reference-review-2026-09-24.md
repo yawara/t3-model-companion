@@ -1,5 +1,9 @@
 # v8 参考文献再レビュー（2026-09-24）
 
+後続の記録: 同日に論文全体をあらためてレビューした [v8 論文の再レビュー](v8-paper-review-2026-09-24.md) がある。
+183行の帰属（Novikov–Adian／Adian）、201行の論理の向き、151行の先行研究（Burris–Werner、
+arXiv:2609.05789）、144行の Maier の直接帰属、EF の共著者名の表記（Fisher）は、そちらで追加・更新した。
+
 更新：同日追加された `references/saracino1976.pdf` と `references/on-the-burnside-problem-on-periodic-groups-5fnzsr8mqf.pdf` も照合済み。Saracino 1976の全文確認とIvanov 1992の出版版確認の保留を解消した。原本は提供された場所に保持し、資料台帳・不足一覧を更新した。
 
 追加更新：`references/2272976.pdf`（Eklof単著）も全文照合した。**133行の一般命題は同論文のTheorems 4 and 7から導ける**ことを、下記の追加論証で確認した。現行のEklof–Fischerへの直接帰属は修正が必要だが、数学的主張をcomplete theoriesの場合に狭める必要はない。単著論文も不足一覧から除いた。
