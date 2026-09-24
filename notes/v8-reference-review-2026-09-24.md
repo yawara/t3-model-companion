@@ -1,5 +1,7 @@
 # v8 参考文献再レビュー（2026-09-24）
 
+追加資料更新：d’Elbéeほかの出版社配布著者原稿版（AM、46頁）を受領し、**Corollary 4.42、pp.33–34** の番号・主張・証明の対象範囲を確認した。通常の群言語での結論はv8:144と一致する。これは最終組版版（Version of Record、pp.640–701）とは区別する。[追加照合記録](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/demrs-accepted-manuscript-review.md)。
+
 後続の記録: 同日に論文全体をあらためてレビューした [v8 論文の再レビュー](v8-paper-review-2026-09-24.md) がある。
 183行の帰属（Novikov–Adian／Adian）、201行の論理の向き、151行の先行研究（Burris–Werner、
 arXiv:2609.05789）、144行の Maier の直接帰属、EF の共著者名の表記（Fisher）は、そちらで追加・更新した。
@@ -94,7 +96,7 @@ Saracino 1976の追加確認：[全文監査](/home/ywr/t3-model-companion/notes
 | 文献 | 手元の資料 | 数学的照合・残る境界 |
 |---|---|---|
 | Chang–Keisler 1990 | 出版本文の公開抜粋 | Example 3.5.16、p.199の全群の非存在主張は一致。書籍全文はないが、証明の一次出典ES1971は今回入手済み。 |
-| d’Elbée–Müller–Ramsey–Siniora 2025 | arXiv v3全文 | Corollary 4.42、pp.33–34で群言語の結果を確認済み。奇素数 `p > c` の範囲。`p=2, c=1` は別途アーベル群のケース。出版版の定理番号・掲載位置は未確認。 |
+| d’Elbée–Müller–Ramsey–Siniora 2025 | 出版社配布AM全文（arXiv v3も保存） | AMのCorollary 4.42、pp.33–34で群言語の結果を確認。arXiv v3と同番号・同内容。奇素数 `p > c` の範囲。`p=2, c=1` は別途アーベル群のケース。最終組版版での番号・掲載位置のみ未確認。 |
 | Eklof–Fischer 1972 | 出版版全文 | **133行の直接帰属に不一致。** 命題自体は別論文のEklof単著Theorems 4 and 7から導出できる。上記参照。 |
 | Eklof–Sabbagh 1971 | 出版版全文 | Theorems 2.4 / 7.17と一致。現状の引用は非表示部分のみなので、表示本文に適切な引用を置くとよい。 |
 | Frącek–Kowalski 2025 | arXiv v2全文 | Theorem 3.6、p.10。任意の体KについてH(K)のmodel completenessとKのmodel completenessが同値。147行の一方向の主張と一致。標数の追加条件なし。 |
@@ -107,19 +109,19 @@ Saracino 1976の追加確認：[全文監査](/home/ywr/t3-model-companion/notes
 | Saracino–Wood 1979 | 出版版全文 | Theorem 3.9、p.198で直接一致。 |
 | Takeuchi 2022 | 出版版全文 | Theorem 17、PDF p.5がtorsion-free群の非存在を支持。PDF p.2はBurnside問題との関連を指摘しており172行と一致。v8の具体的iff予想がこの既刊論文に載るという帰属ではない。 |
 
-合計は出版版全文9件、著者版／preprint全文のみ3件、公開抜粋のみ1件（CK）。PDFの実在、ページ数、SHA-256は今回再確認し、[資料台帳](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/source-inventory.json)に保存した。書誌年がpreprint初版の年でも、ここに記した定理番号は所蔵するv2の番号である。
+合計は最終出版版全文9件、出版社配布AM全文1件（dEMRS）、preprint全文2件、公開抜粋のみ1件（CK）。PDFの実在、ページ数、SHA-256は今回再確認し、[資料台帳](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/source-inventory.json)に保存した。書誌年がpreprint初版の年でも、ここに記した定理番号は所蔵するv2の番号である。
 
 この13件とは別に、引用修正候補のEklof単著1972も出版版全文を所蔵し、Theorems 4 and 7を確認済み。
 
-## まだ不足している資料
+## 残る資料・版の確認
 
-### 現行v8の文献で、優先して入手したいもの
+### 最終組版版との照合のみ残るもの（本文は入手・確認済み）
 
 | 文献 | 入手したい版・範囲 | 残っている確認 |
 |---|---|---|
-| **C. d’Elbée, I. Müller, N. Ramsey, D. Siniora, Model-theoretic properties of nilpotent groups and Lie algebras**, J. Algebra 662 (2025), 640–701 | **出版版**全文。[DOI](https://doi.org/10.1016/j.jalgebra.2024.08.012) | 著者版v3は所蔵・照合済み。v8が指定するCorollary 4.42の番号を出版版と照合する。 |
+| **C. d’Elbée, I. Müller, N. Ramsey, D. Siniora, Model-theoretic properties of nilpotent groups and Lie algebras**, J. Algebra 662 (2025), 640–701 | **最終組版版（Version of Record）**。[DOI](https://doi.org/10.1016/j.jalgebra.2024.08.012) | 出版社配布AMでもCorollary 4.42の番号・主張を確認済み。残るのは最終組版版での番号とページ対応だけ。 |
 
-dEMRSの[所属機関の書誌ページ](https://fount.aucegypt.edu/faculty_journal_articles/6073/)は同日の先行レビューで読めたが、そのDownload先は403で本文を取得できなかった。その後の提供資料にも含まれないため、この保留は残る。
+今回提供された `1-s2.0-S0021869324004757-am.pdf` は、2024年8月28日付の著者原稿46頁で、先頭に別途Version of RecordへのリンクとManuscript識別子がある。これを「最終組版版も確認済み」とは扱わないが、文献本文が未入手という状況ではない。登録先は `references/alternatives/delbee-muller-ramsey-siniora-2025-publisher-accepted-manuscript.pdf`。出版社のVoRリンクは今回の取得試行でも403だった。
 
 ### 出版版の保存を揃える目的なら追加できるもの（優先度低）
 
@@ -132,4 +134,4 @@ dEMRSの[所属機関の書誌ページ](https://fount.aucegypt.edu/faculty_jour
 - 今回の保存・更新物は本ノート、個別監査ノート、抽出テキスト、必要な原頁画像、資料台帳（references/MANIFEST.mdを含む）のみ。原PDFは保持し、原稿・Leanは編集していない。
 - 未入手の全文を確認済みとはしていない。出版版の定理番号と著者版の番号も区別した。
 - 原稿の独自の主定理・別稿の予告・先行研究全体に関する網羅的な新規性判断は、この引用照合だけでは検証されない。
-- TeXのコンパイルやLeanビルドは本レビューでは実施していない。
+- AM追加後に `python3 scripts/check.py` を実行し、Leanビルド・lint・公理監査・paper-map等の全7項目が警告0で通過した。これはリポジトリの検証であり、本ノートの文献照合をLeanで形式化したという意味ではない。TeXの再コンパイルは実施していない。

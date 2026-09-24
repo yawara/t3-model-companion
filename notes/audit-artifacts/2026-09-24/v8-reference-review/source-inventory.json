@@ -12,11 +12,19 @@
     {
       "key": "dElbeeMuellerRamseySiniora2025",
       "active_citation": true,
-      "held_version": "author_preprint_v3",
-      "locator": "Corollary 4.42, pp.33-34; journal numbering pending",
-      "pdf": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs2025.pdf",
-      "sha256": "54ff26d744f7314a57268279a85114c9d5777b86e30276e5957470387ed32cdb",
-      "pages": 45
+      "held_version": "publisher_accepted_manuscript",
+      "locator": "Corollary 4.42, AM pp.33-34; journal Version of Record numbering remains unverified",
+      "pdf": "references/alternatives/delbee-muller-ramsey-siniora-2025-publisher-accepted-manuscript.pdf",
+      "sha256": "241e5f99376967a32488919b165a47cdb3432089b0c05d2fc652032a21946356",
+      "pages": 46,
+      "previous_checked_copy": {
+        "held_version": "author_preprint_v3",
+        "locator": "Corollary 4.42, pp.33-34; journal numbering pending",
+        "pdf": "references/audit-artifacts/t3-model-companion/2026-09-23/v8-reference-review/demrs2025.pdf",
+        "sha256": "54ff26d744f7314a57268279a85114c9d5777b86e30276e5957470387ed32cdb",
+        "pages": 45
+      },
+      "acquisition": "User-supplied attachment 1-s2.0-S0021869324004757-am.pdf on 2026-09-24; retained byte-identically."
     },
     {
       "key": "EklofFischer1972",
@@ -145,9 +153,17 @@
     "acquisition": "user-supplied 2026-09-24; original file preserved",
     "derived_corollary_review": "notes/audit-artifacts/2026-09-24/v8-reference-review/eklof-1972-fulltext-review.md"
   },
-  "latest_update": "2026-09-24: Eklof solo 1972 supplied and full text verified; current v8 bibliography remains 13 entries",
+  "latest_update": "2026-09-24: dEMRS publisher-distributed AM supplied and checked; Version of Record numbering is a separate remaining boundary",
+  "missing_publisher_full_text_meaning": "Final published editions: publisher-distributed AM does not count as the journal Version of Record.",
+  "missing_reference_full_text": [
+    "ChangKeisler1990"
+  ],
+  "pending_version_only_checks": [
+    "dElbeeMuellerRamseySiniora2025: journal Version of Record Corollary number and pagination; AM number/content verified"
+  ],
   "evidence_storage": {
-    "parent_git_policy": "/references/ remains ignored; no gitlink"
+    "parent_git_policy": "/references/ remains ignored; no gitlink",
+    "scope": "Includes the inventory's source files and the dEMRS publisher AM, extracted text, page renders, and provenance retained with their source provenance."
   },
   "history_redaction": "Historical record edited to omit private development locations and identifiers. Recorded verification results and input hashes refer to the original snapshot."
 }

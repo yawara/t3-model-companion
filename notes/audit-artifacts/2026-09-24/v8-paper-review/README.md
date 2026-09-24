@@ -38,8 +38,10 @@ no overfull or underfull boxes, and produced 21 pages. The build products were n
 - The derivation of the line-133 statement from Eklof (1972), Theorems 4 and 7, is recorded in
   the review note. It is a corollary obtained in this review, not a statement printed in that
   paper.
-- Not verified: the journal numbering of Corollary 4.42 in d'Elbée-Müller-Ramsey-Siniora
-  (2025), since the publisher and the AUC repository returned HTTP 403; and possible overlap with
+- Subsequent same-day update: the user supplied the publisher-distributed author manuscript
+  of d'Elbée-Müller-Ramsey-Siniora (2025); its Corollary 4.42, pp.33-34, agrees. The numbering
+  in the journal Version of Record remains unverified. See the adjacent reference review's
+  `demrs-accepted-manuscript-review.md`. Also unverified: possible overlap with
   F. Leinen's work on existentially closed groups in locally finite classes, whose texts could
   not be obtained. The novelty search was not exhaustive.
 

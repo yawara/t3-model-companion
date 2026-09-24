@@ -282,7 +282,7 @@ v8 の記載（著者、題、誌名、巻、号、頁、年）はすべて一�
 | Sar1976 | Theorem 1 p.241、Theorem 2 p.242 | 一致 |
 | SW1979 | Theorem 3.9 p.198（`2 ≤ m < ∞`、定義は p.189） | 一致 |
 | Mai1989 | Theorem 3.5 p.285、要約 p.280 | 一致（直接の帰属に直す） |
-| dEMRS2025 | arXiv v3 の Corollary 4.42（§4.1 で素数 `p > c` を仮定） | 一致（出版版の番号は未確認） |
+| dEMRS2025 | arXiv v3、および同日追加入手した出版社配布AMのCorollary 4.42、pp.33–34（Lazard対応の条件は奇素数 `p > c`） | 一致。AMの番号も確認済み。最終組版版の番号は未確認。 |
 | HKTY2023 | arXiv v2 の Theorem 3.3 | 一致 |
 | FK2025 | arXiv v2 の Theorem 3.6 | 一致 |
 | LW1933 | p.155（交換子規約 (5)、(6)、class ≤ 3）、p.157 の Satz 1 | 一致 |
@@ -291,8 +291,9 @@ v8 の記載（著者、題、誌名、巻、号、頁、年）はすべて一�
 
 ## 6. 未確認・残課題
 
-- dEMRS2025 の出版版での Corollary 4.42 という番号。出版社と AUC の機関リポジトリのどちらも
-  HTTP 403 を返した。
+- dEMRS2025 の最終組版版（Version of Record）での Corollary 4.42 という番号。同日追加入手した
+  出版社配布AMのpp.33–34では番号・内容を確認したが、最終組版版との対応は未確認。
+  [AMの照合記録](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/demrs-accepted-manuscript-review.md)。
 - F. Leinen による、局所有限な群のクラスにおける e.c. 群の一連の研究（Comm. Algebra 13 (1985)、
   サーベイ *Existentially closed groups in specific classes*, 1995, pp.285–326）。
   本文を入手できず、v8 との重なりの有無を確認していない。
