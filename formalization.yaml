@@ -27,16 +27,16 @@ sources:
       - Yawara Ishida
       - Ryosuke Mizuno
       - Kota Takeuchi
-    id: T3_modelcompanion_v8.tex
+    id: T3_modelcompanion_v9.tex
     type: paper
     location: >-
       Theorem 3.3 (TeX label thm:main), Corollary 3.4, and their supporting
-      results in Sections 2-5. Conjecture 1.1 is open; the disabled former
-      Section 6 questions and reduction are tracked separately in the paper map.
+      results in Sections 2-5. Conjecture 1.1 is open; the former Section 6
+      questions and reduction are retained from the archived v8 source in the paper map.
     relationship: formalizes
     note: >-
       The manuscript is included at the repository root. Its SHA256 is
-      9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c.
+      d48f10716bcc7963b654c6fe27013ac75eaa9cbdf6593683a0efc513dd062952.
       The source identifier is a repository-relative path; no external
       publication identifier is asserted. This is a source-based
       formalization, not a claim that the Lean development first presents
@@ -44,8 +44,8 @@ sources:
 
 status:
   scope: >-
-    The paper map tracks 57 active v8 items and three retained inactive
-    entries from the disabled former Section 6, with 80 parts in total.
+    The paper map tracks 57 active v9 items and three retained inactive
+    entries from the archived v8 Section 6, removed in v9, with 80 parts in total.
     The active scope contains 56 proved items and the open Conjecture 1.1,
     including every Section 5 result and the universe bridges used to
     interpret the model-theoretic statements. The inactive entries retain
@@ -109,9 +109,10 @@ review:
     - OpenAI Codex agents
   notes: >-
     Agents compared source statements, hypotheses, constants, and principal
-    constructions with the Lean development. The v8 migration and its
-    source comparison are recorded in notes/v8-migration.md; the mathematical
-    statements and proofs in Sections 2-5 are unchanged from v7.
+    constructions with the Lean development. The v9 migration and its
+    source comparison are recorded in notes/v9-migration.md. The received v9
+    manuscript is preserved byte-for-byte. Sections 2-5 are identical to v8;
+    suggested clarifications remain in review notes and are not applied to the paper.
     The historical v7 source migration and
     the boundary of prior v4 verification are recorded in notes/v7-migration.md.
     Section 5 and the known Section 6 reduction are documented with the new

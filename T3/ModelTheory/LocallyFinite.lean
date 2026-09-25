@@ -21,8 +21,8 @@ uses the actual finite generated substructure and its function and relation tabl
 It makes no assertion that the full syntactic diagram is finite.
 
 Paper-ID: model_theory.local_finiteness
-TeX: T3_modelcompanion_v8.tex, Definition 2.4, lines 287–290; no label.
-The finite-diagram consequence is Definition 2.2, item 6, lines 276–277.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4, lines 297–300; no label.
+The finite-diagram consequence is Definition 2.2, item 6, lines 286–287.
 -/
 
 @[expose] public section
@@ -39,7 +39,7 @@ variable {L : Language.{u, v}} (T : L.Theory)
 finite substructure. Models here lie in the canonical semantic universe `max u v`.
 
 Paper-ID: model_theory.local_finiteness
-TeX: T3_modelcompanion_v8.tex, Definition 2.4, lines 287–290; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4, lines 297–300; no label.
 -/
 def IsLocallyFinite : Prop :=
   ∀ (M : T.ModelType.{u, v, max u v}) (s : Set M),
@@ -50,7 +50,7 @@ variable {T}
 /-- A finite tuple in a model of a locally finite theory generates a finite substructure.
 
 Paper-ID: model_theory.local_finiteness
-TeX: T3_modelcompanion_v8.tex, Definition 2.4; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4; no label.
 -/
 theorem IsLocallyFinite.finite_closure_range (hT : T.IsLocallyFinite)
     (M : T.ModelType.{u, v, max u v}) {α : Type w} [Finite α] (a : α → M) :
@@ -63,7 +63,7 @@ structure, so in particular it holds modulo the theory. This does not claim that
 of all true quantifier-free formulas is itself finite.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, Definition 2.2, item 6, lines 276–277; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.2, item 6, lines 286–287; no label.
 -/
 theorem IsLocallyFinite.exists_finite_tupleQfDiagram [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (M : T.ModelType.{u, v, max u v})

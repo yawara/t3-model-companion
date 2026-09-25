@@ -21,7 +21,7 @@ coefficients, and the right pure coefficient in that order. The mixed brackets h
 paper's signs, and their nonvanishing is read through the canonical degree-three equivalence.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, Claims A and B.
+TeX: T3_modelcompanion_v9.tex, `lemma:coincidence of central series`, Claims A and B.
 -/
 
 @[expose] public section
@@ -81,7 +81,7 @@ private theorem triple_inr_inl_inr (β w : Layer (Free (Fin 2)) 1) (g : Layer G 
 The two cases are the paper's nonzero left component and nonzero right component.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, Claim A, lines 1060–1073.
+TeX: T3_modelcompanion_v9.tex, `lemma:coincidence of central series`, Claim A, lines 1070–1083.
 -/
 theorem exists_triple_bracket_ne_zero [Nontrivial G]
     (a : Layer (Coproduct G (Free (Fin 2))) 1) (ha : a ≠ 0) :
@@ -122,7 +122,7 @@ private theorem bracket_two_inr (α₂ : Layer G 2) (α₁ α₁' : Layer G 1)
 The proof follows the paper's four coefficients `α₂`, `α₁`, `α₁'`, and `β₂`.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series`, Claim B, lines 1074–1087.
+TeX: T3_modelcompanion_v9.tex, `lemma:coincidence of central series`, Claim B, lines 1084–1097.
 -/
 theorem exists_bracket_ne_zero [Nontrivial G]
     (a : Layer (Coproduct G (Free (Fin 2))) 2) (ha : a ≠ 0) :

@@ -14,7 +14,7 @@ Finite Skolem hulls transfer the quantifier-free existential neighborhoods used 
 Tarski-Vaught proof to arbitrary models. The source of the embedding need not model the theory.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, Definition 2.2, items 2 and 4, lines 265–267; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.2, items 2 and 4, lines 275–277; no label.
 -/
 
 @[expose] public section
@@ -31,7 +31,7 @@ variable {L : Language.{u, v}} {T : L.Theory}
 quantifier-free existential neighborhood implying it over the theory.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 2; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 2; no label.
 -/
 theorem AllEmbeddingsElementary.exists_qf_existential_imp_of_model
     (h : T.AllEmbeddingsElementary) (M : Type w) [L.Structure M] [Nonempty M] [M ⊨ T]
@@ -59,7 +59,7 @@ formulas. The source is not assumed to satisfy the theory. The Tarski-Vaught wit
 obtained from the finite quantifier-free matrices constructed above.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, items 2 and 4; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, items 2 and 4; no label.
 -/
 theorem IsModelComplete.exists_elementaryEmbedding_of_reflects_existential
     (h : T.IsModelComplete) {M : Type w} [L.Structure M]

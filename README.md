@@ -6,7 +6,7 @@ Lean formalization of *Existence of a Model Companion for Groups of Exponent 3*.
 - Formalization author and responsible maintainer: **Yawara Ishida**.
 - License: [Apache-2.0](LICENSE).
 
-The [manuscript](T3_modelcompanion_v8.tex) proves that the theory of groups satisfying
+The [manuscript](T3_modelcompanion_v9.tex) proves that the theory of groups satisfying
 `x^3 = 1` has a model companion. The main group-theoretic theorem bounds the number
 of generators needed to witness non-amalgamation with an existentially closed group by
 `15 * ((3*m+4) * (m + choose(m,2) + choose(m,3)) + 1)^2`.
@@ -18,10 +18,10 @@ on 2026-09-22. Palomar files prepare a future submission. No submission or regis
 ## Reading the formalization
 
 - [Paper-order Lean entrypoint](T3/Paper.lean)
-- [Paper map: 57 active v8 items and 3 retained inactive items](docs/paper-map.md)
+- [Paper map: 57 active v9 items and 3 retained inactive items](docs/paper-map.md)
 - [Module and namespace policy](notes/lean-architecture.md)
-- [v8 manuscript PDF](T3_modelcompanion_v8.pdf)
-- [v8 source migration and verification](notes/v8-migration.md)
+- [v9 manuscript PDF](T3_modelcompanion_v9.pdf)
+- [v9 source migration and verification](notes/v9-migration.md)
 - [Historical v7 formalization and verification](notes/v7-formalization.md)
 - [Archived v7 Section 6 analysis and remaining questions](notes/section-six-analysis.md)
 - [Paper correspondence](notes/paper-faithfulness-audit.md)
@@ -34,8 +34,9 @@ on 2026-09-22. Palomar files prepare a future submission. No submission or regis
 are specification placeholders outside the mathematical import graph; all proof-library
 and Solution declarations use only `propext`, `Classical.choice`, and `Quot.sound`.
 The full paper map and the two selected Comparator declarations have distinct scopes.
-The map records 56 proved active items and the open Conjecture 1.1 in v8,
-including every Section 5 example and result. The disabled former Section 6
+The map records 56 proved active items and the open Conjecture 1.1 in v9,
+including every Section 5 example and result. The former Section 6, removed
+from v9 and preserved in the archived v8 source,
 retains three separately marked inactive entries: its two open questions and
 the proved Burnside/local-finiteness equivalence. Across both scopes, 57 items
 and all 80 parts are proved. The separate-paper announcement about sufficiently
@@ -54,7 +55,9 @@ Agent fidelity review is distinct from Lean's kernel checks and from human peer 
 ## Verification
 
 Lean is pinned to v4.34.0 and mathlib to `5ed2965256430c3649e86755f9576b54eca72435`.
-The [v8 migration record](notes/v8-migration.md) records the current source update.
+The [v9 migration and review](notes/v9-migration.md) records the current source update,
+mathematical correspondence review, and verification. The received TeX is preserved unchanged;
+editorial suggestions are recorded separately and are not applied to the manuscript.
 The [readiness checkpoint](notes/palomar-readiness-2026-09-22.md) records
 verification of the v7 snapshot on these pins. The earlier [v7 checks](notes/v7-formalization.md)
 used v4.33.1 and remain available as historical evidence.
@@ -66,7 +69,8 @@ lake exe cache get
 python3 scripts/check.py
 ```
 
-This checks metadata, builds the proof library and Solution, checks imports and mathlib lint,
+This checks metadata and source-map regression fixtures, builds the proof library and Solution,
+checks imports and mathlib lint,
 audits all proof declarations, and checks the paper map. Warnings fail the proof-library gate.
 The text linters also cover Challenge and Solution. Logs and input hashes are in `.audit/`.
 

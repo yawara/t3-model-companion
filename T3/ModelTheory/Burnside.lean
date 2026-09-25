@@ -14,8 +14,8 @@ public import T3.ModelTheory.LocallyFinite.Universes
 
 The usual group theory with the exponent law is locally finite exactly when its free
 Burnside groups of all positive finite ranks are finite. This is the established equivalence
-used to interpret Conjecture 1.1 in the v8 introduction. Its detailed source remains the
-archived v7 Section 6, which is disabled in v8. Neither implication between local finiteness
+used to interpret Conjecture 1.1 in the v9 introduction. Its detailed source remains the
+archived v7 Section 6, which is removed from v9. Neither implication between local finiteness
 and the existence of a model companion is asserted here for a general exponent.
 
 Paper-ID: questions.burnside_local_finiteness

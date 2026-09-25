@@ -25,7 +25,7 @@ The final theorem specializes Fact 2.6 to `T₃`; existence of a model companion
 the bounded-amalgamation-obstruction hypothesis furnished by the paper's main theorem.
 
 Paper-ID: preliminaries.exponent_three, main.model_companion
-TeX: T3_modelcompanion_v8.tex, lines 220–226 and 825–828.
+TeX: T3_modelcompanion_v9.tex, lines 230–236 and 825–828.
 -/
 
 @[expose] public section
@@ -41,7 +41,7 @@ variable {α : Type*}
 /-- The group-language term for the natural power of a term.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, the sentence defining `Tₙ`, lines 222–225.
+TeX: T3_modelcompanion_v9.tex, the sentence defining `Tₙ`, lines 232–235.
 -/
 def powerTerm (n : ℕ) (t : Language.group.Term α) : Language.group.Term α :=
   match n with
@@ -51,7 +51,7 @@ def powerTerm (n : ℕ) (t : Language.group.Term α) : Language.group.Term α :=
 /-- Realizing the power term gives the corresponding group power.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, the exponent law, lines 222–226.
+TeX: T3_modelcompanion_v9.tex, the exponent law, lines 232–236.
 -/
 @[simp]
 theorem realize_powerTerm {G : Type*} [Group G] [CompatibleGroup G]
@@ -65,7 +65,7 @@ theorem realize_powerTerm {G : Type*} [Group G] [CompatibleGroup G]
 The explicit zero index keeps its definition independent of generated auxiliary-proof names.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, the definition of `Tₙ`, lines 222–225.
+TeX: T3_modelcompanion_v9.tex, the definition of `Tₙ`, lines 232–235.
 -/
 def exponentSentence (n : ℕ) : Language.group.Sentence :=
   ∀' ((powerTerm n &⟨0, Nat.zero_lt_one⟩) =' (1 : Language.group.Term _))
@@ -73,7 +73,7 @@ def exponentSentence (n : ℕ) : Language.group.Sentence :=
 /-- The exponent sentence has exactly the paper's exponent-dividing interpretation.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, the convention including the trivial group, line 226.
+TeX: T3_modelcompanion_v9.tex, the convention including the trivial group, line 236.
 -/
 theorem realize_exponentSentence_iff {G : Type*} [Group G] [CompatibleGroup G] (n : ℕ) :
     G ⊨ exponentSentence n ↔ ∀ x : G, x ^ n = 1 := by
@@ -82,7 +82,7 @@ theorem realize_exponentSentence_iff {G : Type*} [Group G] [CompatibleGroup G] (
 /-- The exponent law is a universal sentence.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, lines 222–225.
+TeX: T3_modelcompanion_v9.tex, lines 232–235.
 -/
 theorem exponentSentence_isUniversal (n : ℕ) : (exponentSentence n).IsUniversal :=
   (BoundedFormula.IsAtomic.equal _ _).isUniversal.all
@@ -96,7 +96,7 @@ open FirstOrder FirstOrder.Language
 /-- The group theory together with `∀ x, xⁿ = 1`. For `n > 1` this is the paper's `Tₙ`.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, definition of `Tₙ`, lines 220–226.
+TeX: T3_modelcompanion_v9.tex, definition of `Tₙ`, lines 230–236.
 -/
 def exponentGroupTheory (n : ℕ) : Language.group.Theory :=
   insert (FirstOrder.Group.exponentSentence n) Language.Theory.group
@@ -104,7 +104,7 @@ def exponentGroupTheory (n : ℕ) : Language.group.Theory :=
 /-- The theory `Tₙ` is universally axiomatized.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, group and exponent laws, lines 220–226.
+TeX: T3_modelcompanion_v9.tex, group and exponent laws, lines 230–236.
 -/
 instance (n : ℕ) : (exponentGroupTheory n).IsUniversal :=
   Theory.IsUniversal.insert (FirstOrder.Group.exponentSentence_isUniversal n)
@@ -112,7 +112,7 @@ instance (n : ℕ) : (exponentGroupTheory n).IsUniversal :=
 /-- A compatible group models `Tₙ` precisely when every element has `n`-th power one.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, the exponent convention, line 226.
+TeX: T3_modelcompanion_v9.tex, the exponent convention, line 236.
 -/
 theorem exponentGroupTheory_model_iff {G : Type*} [Group G]
     [FirstOrder.Group.CompatibleGroup G] (n : ℕ) :
@@ -123,7 +123,7 @@ theorem exponentGroupTheory_model_iff {G : Type*} [Group G]
 /-- The first-order theory `T₃` from the paper.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, lines 220–226.
+TeX: T3_modelcompanion_v9.tex, lines 230–236.
 -/
 abbrev exponentThreeTheory : Language.group.Theory := exponentGroupTheory 3
 
@@ -131,7 +131,7 @@ abbrev exponentThreeTheory : Language.group.Theory := exponentGroupTheory 3
 trivial group and groups of arbitrary cardinality.
 
 Paper-ID: preliminaries.exponent_three
-TeX: T3_modelcompanion_v8.tex, line 226 and Notation 2.1, item 4.
+TeX: T3_modelcompanion_v9.tex, line 236 and Notation 2.1, item 4.
 -/
 theorem exponentThreeTheory_model_iff {G : Type*} [Group G]
     [FirstOrder.Group.CompatibleGroup G] : G ⊨ exponentThreeTheory ↔ HasExponentThree G :=
@@ -140,7 +140,7 @@ theorem exponentThreeTheory_model_iff {G : Type*} [Group G]
 /-- The universal axiomatization of `T₃` supplies the Pi-two hypothesis of Fact 2.6.
 
 Paper-ID: preliminaries.exponent_three, main.model_companion
-TeX: T3_modelcompanion_v8.tex, applying Fact 2.6 on line 825.
+TeX: T3_modelcompanion_v9.tex, applying Fact 2.6 on line 835.
 -/
 theorem exponentThreeTheory_isPiTwo : exponentThreeTheory.IsPiTwo :=
   Theory.IsUniversal.isPiTwo
@@ -149,7 +149,7 @@ theorem exponentThreeTheory_isPiTwo : exponentThreeTheory.IsPiTwo :=
 choice of an order on the generator type.
 
 Paper-ID: preliminaries.finite_normal_form, model_theory.local_finiteness
-TeX: T3_modelcompanion_v8.tex, Fact 2.27 and its application to local finiteness.
+TeX: T3_modelcompanion_v9.tex, Fact 2.27 and its application to local finiteness.
 -/
 theorem finite_free_of_finite (I : Type*) [Finite I] : Finite (Free I) := by
   classical
@@ -160,7 +160,7 @@ theorem finite_free_of_finite (I : Type*) [Finite I] : Finite (Free I) := by
 of the free group on its given finite generating set.
 
 Paper-ID: model_theory.local_finiteness, preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, Definition 2.4 and the finite free-group theorem, Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4 and the finite free-group theorem, Fact 2.27.
 -/
 theorem finite_closure_of_exponent_three {G : Type*} [Group G] (hG : HasExponentThree G)
     {s : Set G} (hs : s.Finite) : Finite (Subgroup.closure s) := by
@@ -179,7 +179,7 @@ theorem finite_closure_of_exponent_three {G : Type*} [Group G] (hG : HasExponent
 substructure. The group structure is recovered from the model's given operations.
 
 Paper-ID: model_theory.local_finiteness, main.model_companion
-TeX: T3_modelcompanion_v8.tex, Definition 2.4 and the application of Fact 2.6, line 825.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4 and the application of Fact 2.6, line 835.
 -/
 theorem finite_substructure_closure_of_model_exponentThreeTheory
     {M : Type*} [Language.group.Structure M] [hM : M ⊨ exponentThreeTheory]
@@ -196,7 +196,7 @@ theorem finite_substructure_closure_of_model_exponentThreeTheory
 hypothesis for applying the general bounded-amalgamation criterion.
 
 Paper-ID: model_theory.local_finiteness, main.model_companion
-TeX: T3_modelcompanion_v8.tex, Definition 2.4 and the application of Fact 2.6, line 825.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4 and the application of Fact 2.6, line 835.
 -/
 theorem exponentThreeTheory_isLocallyFinite : exponentThreeTheory.IsLocallyFinite :=
   fun _ _ hs => finite_substructure_closure_of_model_exponentThreeTheory hs
@@ -205,7 +205,7 @@ theorem exponentThreeTheory_isLocallyFinite : exponentThreeTheory.IsLocallyFinit
 The model-companion conclusion still requires the bounded obstruction condition.
 
 Paper-ID: main.model_companion
-TeX: T3_modelcompanion_v8.tex, the deduction from Fact 2.6, lines 825–828.
+TeX: T3_modelcompanion_v9.tex, the deduction from Fact 2.6, lines 835–838.
 -/
 theorem exponentThreeTheory_hasModelCompanion_iff :
     exponentThreeTheory.HasModelCompanion ↔ exponentThreeTheory.BoundedAmalgamationObstructions :=
@@ -216,7 +216,7 @@ theorem exponentThreeTheory_hasModelCompanion_iff :
 This is the final model-theoretic implication, conditional on the paper's group-theoretic bound.
 
 Paper-ID: main.model_companion
-TeX: T3_modelcompanion_v8.tex, lines 825–828.
+TeX: T3_modelcompanion_v9.tex, lines 835–838.
 -/
 theorem exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions
     (h : exponentThreeTheory.BoundedAmalgamationObstructions) :
@@ -226,7 +226,7 @@ theorem exponentThreeTheory_hasModelCompanion_of_boundedAmalgamationObstructions
 /-- Every finitely generated exponent-three group is finite, in any universe.
 
 Paper-ID: structure.strict_envelope, model_theory.local_finiteness
-TeX: T3_modelcompanion_v8.tex, `proposition:bdd LCS`, the finiteness of D₃ on line 1340.
+TeX: T3_modelcompanion_v9.tex, `proposition:bdd LCS`, the finiteness of D₃ on line 1350.
 -/
 theorem finite_of_fg_of_exponent_three {G : Type*} [Group G] [Group.FG G]
     (hG : HasExponentThree G) : Finite G := by

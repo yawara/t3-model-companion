@@ -20,7 +20,7 @@ the graded images of the combined normal closure. This proves bijectivity of the
 maps already defined in `Coproduct.Graded`, for arbitrary groups and arbitrary rank.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 1, lines 929–1012.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 1, lines 939–1022.
 -/
 
 @[expose] public section
@@ -76,7 +76,7 @@ private theorem exists_basis_presentation (G : Type u) [Group G]
 Its mixed component is the bracket of the factor inclusions on pure tensors.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, bijectivity of `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, bijectivity of `η₂`.
 -/
 theorem layerTwoMap_bijective : Function.Bijective (layerTwoMap (G := G) (H := H)) := by
   obtain ⟨I, f, hf, hKf⟩ := exists_basis_presentation G
@@ -87,7 +87,7 @@ theorem layerTwoMap_bijective : Function.Bijective (layerTwoMap (G := G) (H := H
 The `(1,2)` component retains the paper's bracket order and its corresponding exterior sign.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, bijectivity of `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, bijectivity of `η₃`.
 -/
 theorem layerThreeMap_bijective : Function.Bijective (layerThreeMap (G := G) (H := H)) := by
   obtain ⟨I, f, hf, hKf⟩ := exists_basis_presentation G
@@ -97,7 +97,7 @@ theorem layerThreeMap_bijective : Function.Bijective (layerThreeMap (G := G) (H 
 /-- **Proposition 4.4(1), degree two.** The canonical isomorphism `η₂`.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, `η₂`.
 -/
 noncomputable def layerTwoEquiv :
     LayerTwoBlocks (G := G) (H := H) ≃ₗ[ZMod 3] Layer (Coproduct G H) 2 :=
@@ -106,7 +106,7 @@ noncomputable def layerTwoEquiv :
 /-- **Proposition 4.4(1), degree three.** The canonical isomorphism `η₃`.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, `η₃`.
 -/
 noncomputable def layerThreeEquiv :
     LayerThreeBlocks (G := G) (H := H) ≃ₗ[ZMod 3] Layer (Coproduct G H) 3 :=
@@ -115,7 +115,7 @@ noncomputable def layerThreeEquiv :
 /-- The isomorphism has the previously specified canonical degree-two map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₂`.
 -/
 @[simp]
 theorem layerTwoEquiv_apply (x : LayerTwoBlocks (G := G) (H := H)) :
@@ -124,7 +124,7 @@ theorem layerTwoEquiv_apply (x : LayerTwoBlocks (G := G) (H := H)) :
 /-- The isomorphism has the previously specified canonical degree-three map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₃`.
 -/
 @[simp]
 theorem layerThreeEquiv_apply (x : LayerThreeBlocks (G := G) (H := H)) :
@@ -133,7 +133,7 @@ theorem layerThreeEquiv_apply (x : LayerThreeBlocks (G := G) (H := H)) :
 /-- The degree-two inverse reads the left pure component in its first coordinate.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₂`.
 -/
 @[simp]
 theorem layerTwoEquiv_symm_inl (x : Layer G 2) :
@@ -145,7 +145,7 @@ theorem layerTwoEquiv_symm_inl (x : Layer G 2) :
 /-- The degree-two inverse reads the tensor component in its middle coordinate.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₂`.
 -/
 @[simp]
 theorem layerTwoEquiv_symm_mixed (x : TensorProduct (ZMod 3) (Layer G 1) (Layer H 1)) :
@@ -158,7 +158,7 @@ theorem layerTwoEquiv_symm_mixed (x : TensorProduct (ZMod 3) (Layer G 1) (Layer 
 /-- The degree-two inverse reads the right pure component in its last coordinate.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₂`.
 -/
 @[simp]
 theorem layerTwoEquiv_symm_inr (x : Layer H 2) :
@@ -170,7 +170,7 @@ theorem layerTwoEquiv_symm_inr (x : Layer H 2) :
 /-- The degree-three inverse reads the left pure component in its first coordinate.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₃`.
 -/
 @[simp]
 theorem layerThreeEquiv_symm_inl (x : Layer G 3) :
@@ -182,7 +182,7 @@ theorem layerThreeEquiv_symm_inl (x : Layer G 3) :
 /-- The degree-three inverse reads the `(2,1)` tensor in its second coordinate.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₃`.
 -/
 @[simp]
 theorem layerThreeEquiv_symm_mixed_two_one
@@ -197,7 +197,7 @@ theorem layerThreeEquiv_symm_mixed_two_one
 canonical bracket order already included in the map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₃`.
 -/
 @[simp]
 theorem layerThreeEquiv_symm_mixed_one_two
@@ -211,7 +211,7 @@ theorem layerThreeEquiv_symm_mixed_one_two
 /-- The degree-three inverse reads the right pure component in its last coordinate.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical `η₃`.
 -/
 @[simp]
 theorem layerThreeEquiv_symm_inr (x : Layer H 3) :

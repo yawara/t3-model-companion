@@ -3,7 +3,7 @@
 > Historical T3 revision identifiers have been omitted for publication. Recorded commands, outcomes, and source hashes describe the original checks; this edited record does not certify the rewritten historical snapshots.
 
 > 履歴資料（v4 原稿）。原稿は [archives/T3_modelcompanion_v4.tex](../archives/T3_modelcompanion_v4.tex) に保存。以下の番号・行・検証結果は当時のもの。
-> 現行 v8 の対応は [対応表](../docs/paper-map.md) と [v8 移行記録](v8-migration.md) を参照。
+> 現行 v9 の対応は [対応表](../docs/paper-map.md) と [v9 移行記録](v9-migration.md) を参照。
 
 2026-09-10. The selected target is the newest stable Lean/mathlib release
 meeting Palomar's current version-support conditions. The starting revision

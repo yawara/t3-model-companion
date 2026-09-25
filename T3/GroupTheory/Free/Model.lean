@@ -40,7 +40,7 @@ It supplies the coordinate calculations used in proving the paper's normal form.
   triple commutator.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 Primary source: Levi–van der Waerden (1933), pp. 155–156, equations (5)–(9).
 -/
 
@@ -55,7 +55,7 @@ A coordinate system over `ZMod 3`, with arbitrary generator, pair, and triple co
 This is an auxiliary comparison model for the normal form.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 @[ext]
 structure LvdW (I : Type*) where
@@ -76,7 +76,7 @@ protected theorem three_eq_zero : (3 : ZMod 3) = 0 := by decide
 /-- Law (9) of Levi–van der Waerden (1933), p. 156, applied to all index tuples.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 instance : Mul (LvdW I) where
   mul x y :=
@@ -113,7 +113,7 @@ instance : One (LvdW I) where
 /-- The inverse formula of Levi–van der Waerden (1933), p. 156, below law (9).
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 instance : Inv (LvdW I) where
   inv x :=
@@ -163,7 +163,7 @@ instance : Group (LvdW I) := Group.ofLeftAxioms LvdW.mul_assoc' LvdW.one_mul' Lv
 /-- Every model element has cube one, as in Levi–van der Waerden (1933), p. 156.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 theorem pow_three (x : LvdW I) : x ^ 3 = 1 := by
   rw [pow_succ, pow_succ, pow_one]
@@ -192,7 +192,7 @@ theorem commutator_gen (x y : LvdW I) (i : I) : ⁅x, y⁆.gen i = 0 := by
 /-- The pair coordinate of a commutator is the determinant of its generator coordinates.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 theorem commutator_pair (x y : LvdW I) (i j : I) :
     ⁅x, y⁆.pair i j = x.gen i * y.gen j - x.gen j * y.gen i := by
@@ -208,7 +208,7 @@ theorem triple_commutator_pair (x y z : LvdW I) (i j : I) : ⁅⁅x, y⁆, z⁆.
 The triple coordinate of a triple commutator is the determinant of the generator coordinates.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 theorem triple_commutator_triple (x y z : LvdW I) (i j k : I) :
     ⁅⁅x, y⁆, z⁆.triple i j k =
@@ -225,7 +225,7 @@ variable [DecidableEq I]
 /-- The model element corresponding to a free generator.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 def of (i : I) : LvdW I where
   gen j := if j = i then 1 else 0
@@ -245,7 +245,7 @@ theorem of_gen_of_ne {i j : I} (h : j ≠ i) : (of i).gen j = 0 := ite_eq_right 
 /-- Three distinct generator elements have a triple commutator with triple coordinate `1`.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 theorem triple_commutator_of_triple {i j k : I} (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k) :
     ⁅⁅of i, of j⁆, of k⁆.triple i j k = 1 := by
@@ -258,7 +258,7 @@ theorem triple_commutator_of_triple {i j k : I} (hij : i ≠ j) (hik : i ≠ k) 
 Three distinct generator elements have a nontrivial triple commutator.
 
 Paper-ID: preliminaries.finite_normal_form
-TeX: T3_modelcompanion_v8.tex, `fact:Levi and van der Waerden`, v8 Fact 2.27.
+TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 theorem triple_commutator_of_ne_one {i j k : I} (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k) :
     ⁅⁅of i, of j⁆, of k⁆ ≠ 1 := by

@@ -14,9 +14,9 @@ public import Mathlib.GroupTheory.Finiteness
 For an arbitrary exponent, the relatively free group is the quotient of the ordinary free
 group by all exponent relations. Its universal property shows that finiteness of all finite-rank
 free Burnside groups implies finiteness of every finitely generated group of that exponent.
-This is the group-theoretic equivalence used in the archived v7 Section 6 and the v8
+This is the group-theoretic equivalence used in the archived v7 Section 6 and the v9
 introduction's interpretation of Conjecture 1.1. It makes no model-companion existence claim.
-The detailed source below remains in the archive because Section 6 is disabled in v8.
+The detailed source below remains in the archive because Section 6 is removed from v9.
 
 Paper-ID: questions.burnside_local_finiteness
 TeX: archives/T3_modelcompanion_v7.tex, Section 6, lines 1520–1525.

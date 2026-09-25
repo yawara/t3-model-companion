@@ -2,15 +2,15 @@
 
 このファイルは `docs/paper-map.toml` から生成する。変更後は `python3 scripts/paper_map.py --write`、整合性検査は `--check` を使う。
 
-対象: [T3_modelcompanion_v8.tex](../T3_modelcompanion_v8.tex)。SHA256: `9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`。
+対象: [T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex)。SHA256: `d48f10716bcc7963b654c6fe27013ac75eaa9cbdf6593683a0efc513dd062952`。
 
-v8 の有効な本文は番号付き 54 項目（Conjecture 1.1 を含む）、Proposition A、§2 の無番号定義 2 項目の計 57 項目を登録する。`\if0` 内の旧 §6 から Questions 6.1–6.2 と Burnside 群による還元の3 項目を `inactive` として保持し、PDF 本文の項目数には含めない。行・表示番号は補助情報で、安定 ID を主キーとする。
+v9 の有効な本文は番号付き 54 項目（Conjecture 1.1 を含む）、Proposition A、§2 の無番号定義 2 項目の計 57 項目を登録する。アーカイブ v8 の旧 §6 から Questions 6.1–6.2 と Burnside 群による還元の3 項目を `inactive` として保持し、PDF 本文の項目数には含めない。行・表示番号は補助情報で、安定 ID を主キーとする。
 
 有効な本文の状態: `planned` 0, `partial` 0, `stated` 0, `proved` 56, `open` 1。
 
 非表示の保持項目: `proved` 1, `open` 2。
 
-v7 からの出典差分と照合の範囲は [v8 移行記録](../notes/v8-migration.md) を参照する。既存の `verification` と `proof_checked` は過去の検証・照合記録を保持しており、v8 全文を新たに数学的監査したという意味ではない。
+v8 からの出典差分と今回の照合の範囲は [v9 移行・レビュー記録](../notes/v9-migration.md) を参照する。既存の `verification` と `proof_checked` は過去の検証・照合記録を保持しており、今回の再照合・Lean の再検証とは区別する。
 
 `formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は原稿との照合状況である。`open` は原稿の未解決の質問・予想であり、証明済み結果や今回の実装予定を意味しない。
 
@@ -18,66 +18,66 @@ v7 からの出典差分と照合の範囲は [v8 移行記録](../notes/v8-migr
 
 | 論文項目 / 安定 ID | 内容 | 原文 label / 行 | source_status | 公開モジュール（予定を含む） | formalization | fidelity |
 | --- | --- | --- | --- | --- | --- | --- |
-| Conjecture 1.1<br>`questions.takeuchi_conjecture` | Takeuchi予想：Tₙのmodel companionと指数nのBurnside問題の肯定解の同値 | `conj:burnside-model-companion`<br>175–177 | active | — | open | statement_checked |
-| §2 冒頭<br>`preliminaries.exponent_three` | 指数は 3 を割る条件を用い、自明群を含める | label なし<br>220–226 | active | `T3.GroupTheory.Basic`<br>`T3.ModelTheory.GroupLanguage`<br>`T3.ModelTheory.ExponentThree` | proved | proof_checked |
-| Notation 2.1<br>`preliminaries.notation` | 群の記法、生成元数、自由指数群、coproduct | label なし<br>229–256 | active | `T3.GroupTheory.Basic`<br>`T3.GroupTheory.Free.Basic`<br>`T3.GroupTheory.Coproduct.Basic`<br>`T3.GroupTheory.CentralSeries`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ModelTheory.ExponentThree`<br>`T3.GroupTheory.Notation`<br>`T3.GroupTheory.GeneratorRank.Cardinal` | proved | proof_checked |
-| Definition 2.2<br>`model_theory.basic_definitions` | companion、model completeness、e.c.、Π₂、有限図式 | label なし<br>262–277 | active | `T3.ModelTheory.ModelCompanion`<br>`T3.ModelTheory.Inductive`<br>`T3.ModelTheory.FiniteDiagram`<br>`T3.ModelTheory.ModelCompleteness`<br>`T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.ModelEmbeddings`<br>`T3.ModelTheory.LocallyFinite.Universes`<br>`T3.ModelTheory.UniformLocalFiniteness.Universes`<br>`T3.ModelTheory.ExistentialClosedness`<br>`T3.ModelTheory.ElementaryReflection` | proved | proof_checked |
-| Fact 2.3<br>`model_theory.companion_iff_ec` | Π₂ 理論の model companion と e.c. class の一致 | label なし<br>279–285 | active | `T3.ModelTheory.Inductive`<br>`T3.ModelTheory.PiTwoDirectLimit`<br>`T3.ModelTheory.ExistentiallyClosedExtension`<br>`T3.ModelTheory.ElementaryChain`<br>`T3.ModelTheory.RobinsonTest`<br>`T3.ModelTheory.ModelCompanionCriterion`<br>`T3.ModelTheory.ExistentialClosedness` | proved | proof_checked |
-| Definition 2.4<br>`model_theory.local_finiteness` | 理論の局所有限性 | label なし<br>287–290 | active | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.LocallyFinite.Universes` | proved | proof_checked |
-| Fact 2.5<br>`model_theory.uniform_local_finiteness` | 有限言語における一様な生成部分構造の位数評価 | label なし<br>293–296 | active | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.UniformLocalFiniteness.Universes` | proved | proof_checked |
-| Fact 2.6<br>`model_theory.bounded_amalgamation_criterion` | model companion の存在と有界非 amalgamation 障害の同値 | `fact:locally finiteness and model companion`<br>298–312 | active | `T3.ModelTheory.ExistentialWitness`<br>`T3.ModelTheory.Amalgamation`<br>`T3.ModelTheory.BoundedAmalgamation`<br>`T3.ModelTheory.FiniteObstructions`<br>`T3.ModelTheory.ExtensionAxioms`<br>`T3.ModelTheory.BoundedAmalgamationCriterion`<br>`T3.ModelTheory.Amalgamation.Universes`<br>`T3.ModelTheory.BoundedAmalgamation.Universes` | proved | proof_checked |
-| Definition 2.7<br>`linear_algebra.graded_lie` | graded Lie ring と graded Lie algebra | label なし<br>351–363 | active | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
-| Remark 2.8<br>`linear_algebra.degree_one_generation` | 反対称性と次数 1 からの生成の特徴づけ | label なし<br>365–371 | active | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
-| Example 2.9<br>`linear_algebra.truncated_exterior` | 次数 1–3 の外冪と符号付き Lie bracket | `example:Grassmann algebra`<br>373–390 | active | `T3.LinearAlgebra.Wedge`<br>`T3.LinearAlgebra.TruncatedExterior` | proved | proof_checked |
-| Definition 2.10<br>`linear_algebra.block_homogeneous` | block-homogeneous subspace | label なし<br>392–396 | active | `T3.LinearAlgebra.BlockDecomposition` | proved | proof_checked |
-| Proposition 2.11<br>`linear_algebra.block_quotient` | block-homogeneous quotient の直和分解 | label なし<br>398–401 | active | `T3.LinearAlgebra.BlockDecomposition` | proved | proof_checked |
-| §2 群論の無番号定義<br>`preliminaries.set_commutator` | 任意の二つの集合の交換子が生成する部分群 | label なし<br>408–409 | active | `T3.GroupTheory.Basic` | proved | proof_checked |
-| Definition 2.12<br>`preliminaries.central_series` | 下部中心列と上部中心列 | label なし<br>410–423 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
-| Remark 2.13<br>`preliminaries.upper_central_recursive` | 上部中心列の反復交換子による定義と再帰的定義の同値 | label なし<br>424–426 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
-| Fact 2.14<br>`preliminaries.central_series_properties` | 中心列の交換子評価と nilpotent 群の上下中心列の包含 | label なし<br>428–433 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
-| Fact 2.15<br>`preliminaries.elementary_identities` | 指数 3 群の基本恒等式 11 項目 | `fact:elementary equations`<br>439–455 | active | `T3.GroupTheory.Identities`<br>`T3.GroupTheory.Free.Examples` | proved | proof_checked |
-| Fact 2.16<br>`preliminaries.free_coproduct` | 生成集合の非交和の自由群と coproduct | label なし<br>458–460 | active | `T3.GroupTheory.Coproduct.Basic` | proved | proof_checked |
-| Lemma 2.17<br>`preliminaries.coproduct_factor_injective` | coproduct の因子写像の単射性 | label なし<br>462–466 | active | `T3.GroupTheory.Coproduct.Basic` | proved | proof_checked |
-| Definition 2.18<br>`preliminaries.associated_graded` | 群の associated graded Lie algebra | label なし<br>475–492 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
-| Lemma 2.19<br>`preliminaries.associated_graded_properties` | 次数 4 の消滅、三重 bracket 恒等式、次数 1 による生成 | label なし<br>495–504 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie`<br>`T3.GroupTheory.AssociatedGraded.Generation` | proved | proof_checked |
-| Notation 2.20<br>`preliminaries.graded_image` | 元の初期成分と部分群の graded image | label なし<br>506–521 | active | `T3.GroupTheory.AssociatedGraded` | proved | proof_checked |
-| Example 2.21<br>`preliminaries.associated_graded_examples` | 可換群・直積・2 生成自由群の graded | label なし<br>523–529 | active | `T3.GroupTheory.AssociatedGradedExamples`<br>`T3.GroupTheory.AssociatedGraded.Product` | proved | proof_checked |
-| Definition 2.22<br>`preliminaries.associated_graded_map` | 準同型が誘導する gr(f) | label なし<br>533–540 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
-| Definition 2.23<br>`preliminaries.lcs_strictness` | lower-central strict inclusion | label なし<br>544–552 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
-| Proposition 2.24<br>`preliminaries.graded_injectivity_strictness` | gr(f) の単射性、f の単射性、strictness | `proposition:gr(f) and LCS`<br>554–564 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
-| Definition 2.25<br>`preliminaries.central_series_coincide` | 上下中心列が逆順に一致する条件 | label なし<br>587–592 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
-| Lemma 2.26<br>`preliminaries.strict_of_internal` | 内部中心列一致から任意 ambient における strictness | label なし<br>594–601 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
-| Fact 2.27<br>`preliminaries.finite_normal_form` | Levi–van der Waerden の有限 rank 正規形と位数 | `fact:Levi and van der Waerden`<br>609–617 | active | `T3.GroupTheory.Free.Basic`<br>`T3.GroupTheory.Free.Model`<br>`T3.GroupTheory.Free.ModelComparison`<br>`T3.GroupTheory.Free.Collection`<br>`T3.GroupTheory.Free.NormalForm` | proved | proof_checked |
-| Remark 2.28<br>`preliminaries.infinite_normal_form` | 任意 rank の有限支持正規形 | `remark:infinite dim`<br>619–629 | active | `T3.GroupTheory.Free.FiniteSupport`<br>`T3.GroupTheory.Free.InfiniteNormalForm` | proved | proof_checked |
-| Proposition 2.29<br>`preliminaries.free_graded_equiv` | 自由指数 3 群の associated graded と truncated exterior Lie algebra | `proposition:gr(F) is Grassmann algebra`<br>634–654 | active | `T3.GroupTheory.Free.Graded`<br>`T3.GroupTheory.Free.Exterior`<br>`T3.GroupTheory.Free.ExteriorBracket`<br>`T3.GroupTheory.Free.ExteriorLie` | proved | proof_checked |
-| Remark 2.30<br>`preliminaries.infinite_free_graded` | 無限 rank の graded 同型 | label なし<br>684–686 | active | `T3.GroupTheory.Free.Exterior`<br>`T3.GroupTheory.Free.ExteriorLie` | proved | proof_checked |
-| Lemma 2.31<br>`preliminaries.graded_quotient` | quotient の associated graded | `lemma:gr of quotient`<br>707–710 | active | `T3.GroupTheory.GradedQuotient` | proved | proof_checked |
-| Proposition 3.1<br>`main.conjugate_width` | principal normal closure の共役幅 3 | `proposition:bounded number of conjugates`<br>736–742 | active | `T3.GroupTheory.ConjugateWidth` | proved | proof_checked |
-| Lemma 3.2<br>`main.bounded_support` | 生成元数による support bound 3(m+1)n | `lemma:witness in bdd support`<br>751–760 | active | `T3.GroupTheory.Support`<br>`T3.GroupTheory.Support.Collection`<br>`T3.GroupTheory.Support.Conjugator` | proved | proof_checked |
-| Proposition A<br>`main.proposition_a` | 一様に有界な LCS strict envelope の存在 | label なし<br>780–782 | active | `T3.ModelTheory.StrictEnvelope` | proved | proof_checked |
-| Theorem 3.3<br>`main.bounded_witness` | B の生成元数のみによる非 amalgamation 障害の総生成元数評価 | `thm:main`<br>785–795 | active | `T3.Main.BoundedWitness`<br>`T3.GroupTheory.Amalgamation`<br>`T3.GroupTheory.GeneratorRank.Cardinality`<br>`T3.GroupTheory.Coproduct.Support`<br>`T3.GroupTheory.Support.Transport` | proved | proof_checked |
-| Corollary 3.4<br>`main.model_companion` | 指数 3 群の理論は model companion をもつ | label なし<br>826–828 | active | `T3.Main.ModelCompanion`<br>`T3.ModelTheory.ExponentThree`<br>`T3.ModelTheory.GroupAmalgamation` | proved | proof_checked |
-| Proposition 4.1<br>`structure.basis_lift` | abelianization の基底 lift による全射自由表示 | `proposition:lift`<br>842–846 | active | `T3.GroupTheory.Generation`<br>`T3.GroupTheory.Presentation` | proved | proof_checked |
-| Remark 4.2<br>`structure.generation_mod_derived` | abelianizationを覆う部分群は群全体 | `remark:G=H`<br>884–886 | active | `T3.GroupTheory.Generation` | proved | proof_checked |
-| Lemma 4.3<br>`structure.normal_closure_graded` | derived 内の normal closure とその graded image | `lemma:gr of normal closure`<br>888–897 | active | `T3.GroupTheory.GradedNormalClosure` | proved | proof_checked |
-| Proposition 4.4<br>`structure.graded_coproduct` | coproduct の η₁–η₃、tensor block 分解と bracket | `proposition:gr of free product`<br>929–950 | active | `T3.GroupTheory.Coproduct.Graded`<br>`T3.GroupTheory.Coproduct.Presentation`<br>`T3.GroupTheory.Coproduct.Relations`<br>`T3.GroupTheory.AssociatedGraded.Subgroup`<br>`T3.GroupTheory.Free.ExteriorNaturality`<br>`T3.LinearAlgebra.ExteriorSum`<br>`T3.LinearAlgebra.ExteriorTensor`<br>`T3.LinearAlgebra.ExteriorLowDegree`<br>`T3.GroupTheory.Coproduct.FreeGraded`<br>`T3.GroupTheory.Coproduct.QuotientMaps`<br>`T3.GroupTheory.Coproduct.GradedEquiv`<br>`T3.GroupTheory.Coproduct.BlockBracket`<br>`T3.GroupTheory.GradedQuotient`<br>`T3.LinearAlgebra.LinearMapQuotient`<br>`T3.LinearAlgebra.TensorProduct` | proved | proof_checked |
-| Lemma 4.5<br>`structure.strict_coproduct` | strict inclusion が coproduct の単射性を保存する | `lemma:free-product-amalgam`<br>1032–1037 | active | `T3.GroupTheory.Coproduct.Strict` | proved | proof_checked |
-| Lemma 4.6<br>`structure.free_two_stabilization` | 非自明群と F₂ の coproduct の strictness と内部中心列一致 | `lemma:coincidence of central series`<br>1048–1053 | active | `T3.GroupTheory.Coproduct.CentralSeries`<br>`T3.GroupTheory.Coproduct.CentralSeriesCriterion`<br>`T3.GroupTheory.Coproduct.FreeTwoSeparation`<br>`T3.GroupTheory.Coproduct.FreeTwo`<br>`T3.LinearAlgebra.TensorProduct` | proved | proof_checked |
-| Lemma 4.7<br>`structure.simultaneous_commutator_roots` | G * F₂ₙ の quotient における同時 commutator roots と単射性 | `lemma:basic commutator root`<br>1096–1103 | active | `T3.GroupTheory.Roots.Commutator`<br>`T3.GroupTheory.Roots.CommutatorRelations` | proved | proof_checked |
-| Lemma 4.8<br>`structure.derived_strictification` | 高々 2m 元を付加する derived strictification | `lemma:commutator root`<br>1162–1168 | active | `T3.GroupTheory.Roots.DerivedStrictification`<br>`T3.GroupTheory.Roots.DefectBasis`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.GroupTheory.Subgroup` | proved | proof_checked |
-| Lemma 4.9<br>`structure.simultaneous_triple_roots` | G × F₃ₙ の quotient における同時 triple roots と単射性 | `lemma:triple commutator root`<br>1196–1203 | active | `T3.GroupTheory.Roots.Triple` | proved | proof_checked |
-| Lemma 4.10<br>`structure.lcs_strictification` | 高々 3·binom(n,2) 元を付加する γ₃ strictification | `lemma:number of generators for triple commutator roots`<br>1219–1227 | active | `T3.GroupTheory.Roots.LowerCentralStrictification`<br>`T3.GroupTheory.Roots.DefectBasis`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.GroupTheory.Subgroup` | proved | proof_checked |
-| Remark 4.11<br>`structure.shared_triple_roots` | triple roots で生成元を共有する refinement | label なし<br>1263–1268 | active | `T3.GroupTheory.Roots.CentralRelations`<br>`T3.GroupTheory.Roots.SharedTripleCoordinates`<br>`T3.GroupTheory.Roots.SharedTriple`<br>`T3.GroupTheory.Roots.SharedLowerCentralStrictification`<br>`T3.GroupTheory.Roots.SharedCommutator`<br>`T3.GroupTheory.Roots.SharedDerivedStrictification` | proved | proof_checked |
-| Proposition 4.12<br>`structure.ec_central_series` | e.c. 群の内部中心列一致と単一の交換子・三重交換子表示 | `proposition:structure of e.c. model`<br>1271–1281 | active | `T3.ModelTheory.ExistentiallyClosedGroups` | proved | proof_checked |
-| Proposition 4.13<br>`structure.strict_envelope` | 総生成元数 15n²、内部中心列一致、LCS strict envelope | `proposition:bdd LCS`<br>1298–1306 | active | `T3.ModelTheory.StrictEnvelope` | proved | proof_checked |
-| Example 5.1<br>`examples.non_strict_coproduct` | B(3,3)内の非strictなB(2,3)とcoproduct比較の非単射性 | label なし<br>1351–1364 | active | `T3.GroupTheory.Free.NonStrictExamples` | proved | proof_checked |
-| Remark 5.2<br>`examples.strictness_necessity` | strict coproduct定理でstrictnessを省けない | label なし<br>1366–1372 | active | `T3.GroupTheory.Free.NonStrictExamples` | proved | proof_checked |
-| Lemma 5.3<br>`examples.commutator_rank_lower_bound` | 独立なn組の交換子の積をderived subgroupに含む部分群の生成元数は2n以上 | `lemma:D can be large`<br>1378–1382 | active | `T3.GroupTheory.Free.CommutatorRank`<br>`T3.LinearAlgebra.ExteriorContraction` | proved | proof_checked |
-| Lemma 5.4<br>`examples.cyclic_amalgamation` | 非自明巡回基底と自由3生成群のamalgamationをderived所属で判定 | `lemma:amalgam over the cyclic group`<br>1416–1420 | active | `T3.GroupTheory.Amalgamation.Cyclic` | proved | proof_checked |
-| Proposition 5.5<br>`examples.unbounded_witness_rank` | e.c.仮定なしではstrict envelopeとamalgamation障害の生成元数を一様に抑えられない | label なし<br>1443–1449 | active | `T3.GroupTheory.Free.UnboundedWitnessRank` | proved | proof_checked |
-| Question 6.1<br>`questions.locally_finite_varieties` | 局所有限な群varietyの理論は常にmodel companionを持つか | `question:locally-finite-varieties`<br>1487–1490 | inactive | — | open | statement_checked |
-| Question 6.2<br>`questions.bounded_exponent_varieties` | 有界指数の群varietyではmodel companionの存在から局所有限性が従うか | `question:bounded-exponent-varieties`<br>1512–1516 | inactive | — | open | statement_checked |
-| §6 Burnside 群による還元<br>`questions.burnside_local_finiteness` | 指数nのvarietyの局所有限性と全有限rank Burnside群の有限性の同値 | label なし<br>1524–1530 | inactive | `T3.GroupTheory.Free.Burnside`<br>`T3.ModelTheory.Burnside` | proved | proof_checked |
+| Conjecture 1.1<br>`questions.takeuchi_conjecture` | Takeuchi予想：Tₙのmodel companionと指数nのBurnside問題の肯定解の同値 | `conj:burnside-model-companion`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L180)<br>180–182 | active | — | open | statement_checked |
+| §2 冒頭<br>`preliminaries.exponent_three` | 指数は 3 を割る条件を用い、自明群を含める | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L230)<br>230–236 | active | `T3.GroupTheory.Basic`<br>`T3.ModelTheory.GroupLanguage`<br>`T3.ModelTheory.ExponentThree` | proved | proof_checked |
+| Notation 2.1<br>`preliminaries.notation` | 群の記法、生成元数、自由指数群、coproduct | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L239)<br>239–266 | active | `T3.GroupTheory.Basic`<br>`T3.GroupTheory.Free.Basic`<br>`T3.GroupTheory.Coproduct.Basic`<br>`T3.GroupTheory.CentralSeries`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.ModelTheory.ExponentThree`<br>`T3.GroupTheory.Notation`<br>`T3.GroupTheory.GeneratorRank.Cardinal` | proved | proof_checked |
+| Definition 2.2<br>`model_theory.basic_definitions` | companion、model completeness、e.c.、Π₂、有限図式 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L272)<br>272–287 | active | `T3.ModelTheory.ModelCompanion`<br>`T3.ModelTheory.Inductive`<br>`T3.ModelTheory.FiniteDiagram`<br>`T3.ModelTheory.ModelCompleteness`<br>`T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.ModelEmbeddings`<br>`T3.ModelTheory.LocallyFinite.Universes`<br>`T3.ModelTheory.UniformLocalFiniteness.Universes`<br>`T3.ModelTheory.ExistentialClosedness`<br>`T3.ModelTheory.ElementaryReflection` | proved | proof_checked |
+| Fact 2.3<br>`model_theory.companion_iff_ec` | Π₂ 理論の model companion と e.c. class の一致 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L289)<br>289–295 | active | `T3.ModelTheory.Inductive`<br>`T3.ModelTheory.PiTwoDirectLimit`<br>`T3.ModelTheory.ExistentiallyClosedExtension`<br>`T3.ModelTheory.ElementaryChain`<br>`T3.ModelTheory.RobinsonTest`<br>`T3.ModelTheory.ModelCompanionCriterion`<br>`T3.ModelTheory.ExistentialClosedness` | proved | proof_checked |
+| Definition 2.4<br>`model_theory.local_finiteness` | 理論の局所有限性 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L297)<br>297–300 | active | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.LocallyFinite.Universes` | proved | proof_checked |
+| Fact 2.5<br>`model_theory.uniform_local_finiteness` | 有限言語における一様な生成部分構造の位数評価 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L303)<br>303–306 | active | `T3.ModelTheory.LocallyFinite`<br>`T3.ModelTheory.UniformLocalFiniteness`<br>`T3.ModelTheory.UniformLocalFiniteness.Universes` | proved | proof_checked |
+| Fact 2.6<br>`model_theory.bounded_amalgamation_criterion` | model companion の存在と有界非 amalgamation 障害の同値 | `fact:locally finiteness and model companion`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L308)<br>308–322 | active | `T3.ModelTheory.ExistentialWitness`<br>`T3.ModelTheory.Amalgamation`<br>`T3.ModelTheory.BoundedAmalgamation`<br>`T3.ModelTheory.FiniteObstructions`<br>`T3.ModelTheory.ExtensionAxioms`<br>`T3.ModelTheory.BoundedAmalgamationCriterion`<br>`T3.ModelTheory.Amalgamation.Universes`<br>`T3.ModelTheory.BoundedAmalgamation.Universes` | proved | proof_checked |
+| Definition 2.7<br>`linear_algebra.graded_lie` | graded Lie ring と graded Lie algebra | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L361)<br>361–373 | active | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
+| Remark 2.8<br>`linear_algebra.degree_one_generation` | 反対称性と次数 1 からの生成の特徴づけ | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L375)<br>375–381 | active | `T3.LinearAlgebra.GradedLie` | proved | proof_checked |
+| Example 2.9<br>`linear_algebra.truncated_exterior` | 次数 1–3 の外冪と符号付き Lie bracket | `example:Grassmann algebra`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L383)<br>383–400 | active | `T3.LinearAlgebra.Wedge`<br>`T3.LinearAlgebra.TruncatedExterior` | proved | proof_checked |
+| Definition 2.10<br>`linear_algebra.block_homogeneous` | block-homogeneous subspace | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L402)<br>402–406 | active | `T3.LinearAlgebra.BlockDecomposition` | proved | proof_checked |
+| Proposition 2.11<br>`linear_algebra.block_quotient` | block-homogeneous quotient の直和分解 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L408)<br>408–411 | active | `T3.LinearAlgebra.BlockDecomposition` | proved | proof_checked |
+| §2 群論の無番号定義<br>`preliminaries.set_commutator` | 任意の二つの集合の交換子が生成する部分群 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L418)<br>418–419 | active | `T3.GroupTheory.Basic` | proved | proof_checked |
+| Definition 2.12<br>`preliminaries.central_series` | 下部中心列と上部中心列 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L420)<br>420–433 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
+| Remark 2.13<br>`preliminaries.upper_central_recursive` | 上部中心列の反復交換子による定義と再帰的定義の同値 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L434)<br>434–436 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
+| Fact 2.14<br>`preliminaries.central_series_properties` | 中心列の交換子評価と nilpotent 群の上下中心列の包含 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L438)<br>438–443 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
+| Fact 2.15<br>`preliminaries.elementary_identities` | 指数 3 群の基本恒等式 11 項目 | `fact:elementary equations`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L449)<br>449–465 | active | `T3.GroupTheory.Identities`<br>`T3.GroupTheory.Free.Examples` | proved | proof_checked |
+| Fact 2.16<br>`preliminaries.free_coproduct` | 生成集合の非交和の自由群と coproduct | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L468)<br>468–470 | active | `T3.GroupTheory.Coproduct.Basic` | proved | proof_checked |
+| Lemma 2.17<br>`preliminaries.coproduct_factor_injective` | coproduct の因子写像の単射性 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L472)<br>472–476 | active | `T3.GroupTheory.Coproduct.Basic` | proved | proof_checked |
+| Definition 2.18<br>`preliminaries.associated_graded` | 群の associated graded Lie algebra | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L485)<br>485–502 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
+| Lemma 2.19<br>`preliminaries.associated_graded_properties` | 次数 4 の消滅、三重 bracket 恒等式、次数 1 による生成 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L505)<br>505–514 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie`<br>`T3.GroupTheory.AssociatedGraded.Generation` | proved | proof_checked |
+| Notation 2.20<br>`preliminaries.graded_image` | 元の初期成分と部分群の graded image | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L516)<br>516–531 | active | `T3.GroupTheory.AssociatedGraded` | proved | proof_checked |
+| Example 2.21<br>`preliminaries.associated_graded_examples` | 可換群・直積・2 生成自由群の graded | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L533)<br>533–539 | active | `T3.GroupTheory.AssociatedGradedExamples`<br>`T3.GroupTheory.AssociatedGraded.Product` | proved | proof_checked |
+| Definition 2.22<br>`preliminaries.associated_graded_map` | 準同型が誘導する gr(f) | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L543)<br>543–550 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Bracket`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
+| Definition 2.23<br>`preliminaries.lcs_strictness` | lower-central strict inclusion | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L554)<br>554–562 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
+| Proposition 2.24<br>`preliminaries.graded_injectivity_strictness` | gr(f) の単射性、f の単射性、strictness | `proposition:gr(f) and LCS`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L564)<br>564–574 | active | `T3.GroupTheory.AssociatedGraded`<br>`T3.GroupTheory.AssociatedGraded.Lie` | proved | proof_checked |
+| Definition 2.25<br>`preliminaries.central_series_coincide` | 上下中心列が逆順に一致する条件 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L597)<br>597–602 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
+| Lemma 2.26<br>`preliminaries.strict_of_internal` | 内部中心列一致から任意 ambient における strictness | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L604)<br>604–611 | active | `T3.GroupTheory.CentralSeries` | proved | proof_checked |
+| Fact 2.27<br>`preliminaries.finite_normal_form` | Levi–van der Waerden の有限 rank 正規形と位数 | `fact:Levi and van der Waerden`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L619)<br>619–627 | active | `T3.GroupTheory.Free.Basic`<br>`T3.GroupTheory.Free.Model`<br>`T3.GroupTheory.Free.ModelComparison`<br>`T3.GroupTheory.Free.Collection`<br>`T3.GroupTheory.Free.NormalForm` | proved | proof_checked |
+| Remark 2.28<br>`preliminaries.infinite_normal_form` | 任意 rank の有限支持正規形 | `remark:infinite dim`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L629)<br>629–639 | active | `T3.GroupTheory.Free.FiniteSupport`<br>`T3.GroupTheory.Free.InfiniteNormalForm` | proved | proof_checked |
+| Proposition 2.29<br>`preliminaries.free_graded_equiv` | 自由指数 3 群の associated graded と truncated exterior Lie algebra | `proposition:gr(F) is Grassmann algebra`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L644)<br>644–664 | active | `T3.GroupTheory.Free.Graded`<br>`T3.GroupTheory.Free.Exterior`<br>`T3.GroupTheory.Free.ExteriorBracket`<br>`T3.GroupTheory.Free.ExteriorLie` | proved | proof_checked |
+| Remark 2.30<br>`preliminaries.infinite_free_graded` | 無限 rank の graded 同型 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L694)<br>694–696 | active | `T3.GroupTheory.Free.Exterior`<br>`T3.GroupTheory.Free.ExteriorLie` | proved | proof_checked |
+| Lemma 2.31<br>`preliminaries.graded_quotient` | quotient の associated graded | `lemma:gr of quotient`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L717)<br>717–720 | active | `T3.GroupTheory.GradedQuotient` | proved | proof_checked |
+| Proposition 3.1<br>`main.conjugate_width` | principal normal closure の共役幅 3 | `proposition:bounded number of conjugates`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L746)<br>746–752 | active | `T3.GroupTheory.ConjugateWidth` | proved | proof_checked |
+| Lemma 3.2<br>`main.bounded_support` | 生成元数による support bound 3(m+1)n | `lemma:witness in bdd support`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L761)<br>761–770 | active | `T3.GroupTheory.Support`<br>`T3.GroupTheory.Support.Collection`<br>`T3.GroupTheory.Support.Conjugator` | proved | proof_checked |
+| Proposition A<br>`main.proposition_a` | 一様に有界な LCS strict envelope の存在 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L790)<br>790–792 | active | `T3.ModelTheory.StrictEnvelope` | proved | proof_checked |
+| Theorem 3.3<br>`main.bounded_witness` | B の生成元数のみによる非 amalgamation 障害の総生成元数評価 | `thm:main`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L795)<br>795–805 | active | `T3.Main.BoundedWitness`<br>`T3.GroupTheory.Amalgamation`<br>`T3.GroupTheory.GeneratorRank.Cardinality`<br>`T3.GroupTheory.Coproduct.Support`<br>`T3.GroupTheory.Support.Transport` | proved | proof_checked |
+| Corollary 3.4<br>`main.model_companion` | 指数 3 群の理論は model companion をもつ | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L836)<br>836–838 | active | `T3.Main.ModelCompanion`<br>`T3.ModelTheory.ExponentThree`<br>`T3.ModelTheory.GroupAmalgamation` | proved | proof_checked |
+| Proposition 4.1<br>`structure.basis_lift` | abelianization の基底 lift による全射自由表示 | `proposition:lift`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L852)<br>852–856 | active | `T3.GroupTheory.Generation`<br>`T3.GroupTheory.Presentation` | proved | proof_checked |
+| Remark 4.2<br>`structure.generation_mod_derived` | abelianizationを覆う部分群は群全体 | `remark:G=H`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L894)<br>894–896 | active | `T3.GroupTheory.Generation` | proved | proof_checked |
+| Lemma 4.3<br>`structure.normal_closure_graded` | derived 内の normal closure とその graded image | `lemma:gr of normal closure`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L898)<br>898–907 | active | `T3.GroupTheory.GradedNormalClosure` | proved | proof_checked |
+| Proposition 4.4<br>`structure.graded_coproduct` | coproduct の η₁–η₃、tensor block 分解と bracket | `proposition:gr of free product`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L939)<br>939–960 | active | `T3.GroupTheory.Coproduct.Graded`<br>`T3.GroupTheory.Coproduct.Presentation`<br>`T3.GroupTheory.Coproduct.Relations`<br>`T3.GroupTheory.AssociatedGraded.Subgroup`<br>`T3.GroupTheory.Free.ExteriorNaturality`<br>`T3.LinearAlgebra.ExteriorSum`<br>`T3.LinearAlgebra.ExteriorTensor`<br>`T3.LinearAlgebra.ExteriorLowDegree`<br>`T3.GroupTheory.Coproduct.FreeGraded`<br>`T3.GroupTheory.Coproduct.QuotientMaps`<br>`T3.GroupTheory.Coproduct.GradedEquiv`<br>`T3.GroupTheory.Coproduct.BlockBracket`<br>`T3.GroupTheory.GradedQuotient`<br>`T3.LinearAlgebra.LinearMapQuotient`<br>`T3.LinearAlgebra.TensorProduct` | proved | proof_checked |
+| Lemma 4.5<br>`structure.strict_coproduct` | strict inclusion が coproduct の単射性を保存する | `lemma:free-product-amalgam`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1042)<br>1042–1047 | active | `T3.GroupTheory.Coproduct.Strict` | proved | proof_checked |
+| Lemma 4.6<br>`structure.free_two_stabilization` | 非自明群と F₂ の coproduct の strictness と内部中心列一致 | `lemma:coincidence of central series`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1058)<br>1058–1063 | active | `T3.GroupTheory.Coproduct.CentralSeries`<br>`T3.GroupTheory.Coproduct.CentralSeriesCriterion`<br>`T3.GroupTheory.Coproduct.FreeTwoSeparation`<br>`T3.GroupTheory.Coproduct.FreeTwo`<br>`T3.LinearAlgebra.TensorProduct` | proved | proof_checked |
+| Lemma 4.7<br>`structure.simultaneous_commutator_roots` | G * F₂ₙ の quotient における同時 commutator roots と単射性 | `lemma:basic commutator root`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1106)<br>1106–1113 | active | `T3.GroupTheory.Roots.Commutator`<br>`T3.GroupTheory.Roots.CommutatorRelations` | proved | proof_checked |
+| Lemma 4.8<br>`structure.derived_strictification` | 高々 2m 元を付加する derived strictification | `lemma:commutator root`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1172)<br>1172–1178 | active | `T3.GroupTheory.Roots.DerivedStrictification`<br>`T3.GroupTheory.Roots.DefectBasis`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.GroupTheory.Subgroup` | proved | proof_checked |
+| Lemma 4.9<br>`structure.simultaneous_triple_roots` | G × F₃ₙ の quotient における同時 triple roots と単射性 | `lemma:triple commutator root`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1206)<br>1206–1213 | active | `T3.GroupTheory.Roots.Triple` | proved | proof_checked |
+| Lemma 4.10<br>`structure.lcs_strictification` | 高々 3·binom(n,2) 元を付加する γ₃ strictification | `lemma:number of generators for triple commutator roots`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1229)<br>1229–1237 | active | `T3.GroupTheory.Roots.LowerCentralStrictification`<br>`T3.GroupTheory.Roots.DefectBasis`<br>`T3.GroupTheory.GeneratorRank`<br>`T3.GroupTheory.Subgroup` | proved | proof_checked |
+| Remark 4.11<br>`structure.shared_triple_roots` | triple roots で生成元を共有する refinement | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1273)<br>1273–1278 | active | `T3.GroupTheory.Roots.CentralRelations`<br>`T3.GroupTheory.Roots.SharedTripleCoordinates`<br>`T3.GroupTheory.Roots.SharedTriple`<br>`T3.GroupTheory.Roots.SharedLowerCentralStrictification`<br>`T3.GroupTheory.Roots.SharedCommutator`<br>`T3.GroupTheory.Roots.SharedDerivedStrictification` | proved | proof_checked |
+| Proposition 4.12<br>`structure.ec_central_series` | e.c. 群の内部中心列一致と単一の交換子・三重交換子表示 | `proposition:structure of e.c. model`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1281)<br>1281–1291 | active | `T3.ModelTheory.ExistentiallyClosedGroups` | proved | proof_checked |
+| Proposition 4.13<br>`structure.strict_envelope` | 総生成元数 15n²、内部中心列一致、LCS strict envelope | `proposition:bdd LCS`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1308)<br>1308–1316 | active | `T3.ModelTheory.StrictEnvelope` | proved | proof_checked |
+| Example 5.1<br>`examples.non_strict_coproduct` | B(3,3)内の非strictなB(2,3)とcoproduct比較の非単射性 | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1361)<br>1361–1374 | active | `T3.GroupTheory.Free.NonStrictExamples` | proved | proof_checked |
+| Remark 5.2<br>`examples.strictness_necessity` | strict coproduct定理でstrictnessを省けない | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1376)<br>1376–1382 | active | `T3.GroupTheory.Free.NonStrictExamples` | proved | proof_checked |
+| Lemma 5.3<br>`examples.commutator_rank_lower_bound` | 独立なn組の交換子の積をderived subgroupに含む部分群の生成元数は2n以上 | `lemma:D can be large`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1388)<br>1388–1392 | active | `T3.GroupTheory.Free.CommutatorRank`<br>`T3.LinearAlgebra.ExteriorContraction` | proved | proof_checked |
+| Lemma 5.4<br>`examples.cyclic_amalgamation` | 非自明巡回基底と自由3生成群のamalgamationをderived所属で判定 | `lemma:amalgam over the cyclic group`<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1426)<br>1426–1430 | active | `T3.GroupTheory.Amalgamation.Cyclic` | proved | proof_checked |
+| Proposition 5.5<br>`examples.unbounded_witness_rank` | e.c.仮定なしではstrict envelopeとamalgamation障害の生成元数を一様に抑えられない | label なし<br>[T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex#L1453)<br>1453–1459 | active | `T3.GroupTheory.Free.UnboundedWitnessRank` | proved | proof_checked |
+| Question 6.1<br>`questions.locally_finite_varieties` | 局所有限な群varietyの理論は常にmodel companionを持つか | `question:locally-finite-varieties`<br>[archives/T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex#L1487)<br>1487–1490 | inactive | — | open | statement_checked |
+| Question 6.2<br>`questions.bounded_exponent_varieties` | 有界指数の群varietyではmodel companionの存在から局所有限性が従うか | `question:bounded-exponent-varieties`<br>[archives/T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex#L1512)<br>1512–1516 | inactive | — | open | statement_checked |
+| §6 Burnside 群による還元<br>`questions.burnside_local_finiteness` | 指数nのvarietyの局所有限性と全有限rank Burnside群の有限性の同値 | label なし<br>[archives/T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex#L1524)<br>1524–1530 | inactive | `T3.GroupTheory.Free.Burnside`<br>`T3.ModelTheory.Burnside` | proved | proof_checked |
 
 ## 宣言と項目内の進捗
 
@@ -87,9 +87,9 @@ v7 からの出典差分と照合の範囲は [v8 移行記録](../notes/v8-migr
 
 実在宣言: なし。
 
-n>1を維持するv8のConjecture 1.1。179行で局所有限性・全有限生成群の有限性との同値を説明し、非表示の旧§6には全有限rank Burnside群による形を残す。n=3の既存定理やBurnsideの還元は一般予想の解決を意味しない。182–184行の大素数に関する別論文予告は本リポジトリの証明済み結果に含めない。
+n>1を維持するv9のConjecture 1.1。184行で局所有限性・全有限生成群の有限性との同値を説明する。削除された旧§6の全有限rank Burnside群による形はアーカイブv8に保持する。n=3の既存定理やBurnsideの還元は一般予想の解決を意味しない。187–194行の大素数に関する別論文予告は本リポジトリの証明済み結果に含めない。
 
-追加出典: Inactive Further questions: finite-rank Burnside groups formulation、1532–1535 行（`inactive`）。
+追加出典: Inactive Further questions: finite-rank Burnside groups formulation、[archives/T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex#L1532)、1532–1535 行（`inactive`）。
 
 ### `preliminaries.exponent_three`
 
@@ -109,15 +109,15 @@ n>1を維持するv8のConjecture 1.1。179行で局所有限性・全有限生�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| commutator | 交換子 aba⁻¹b⁻¹ / 231 | proved | proof_checked | [T3.commutator_eq](../T3/GroupTheory/Notation.lean#L33) |
-| iterated_commutator | 左結合の反復交換子 / 232 | proved | proof_checked | [T3.iteratedCommutator](../T3/GroupTheory/CentralSeries.lean#L161) |
-| conjugation | 共役 aᵇ=b⁻¹ab / 233 | proved | proof_checked | [T3.right_conjugation_eq](../T3/GroupTheory/Notation.lean#L41) |
-| variety | 指数 3 の variety V₃ / 234 | proved | proof_checked | [T3.exponentThreeTheory_model_iff](../T3/ModelTheory/ExponentThree.lean#L136) |
-| free_product | 通常の自由積 / 235 | proved | proof_checked | [Monoid.Coprod.existsUnique_lift](../T3/GroupTheory/Notation.lean#L54) |
-| normal_closure | 集合の normal closure / 236 | proved | proof_checked | [Subgroup.isLeast_normalClosure](../T3/GroupTheory/Notation.lean#L70) |
-| generator_rank | 最小生成元数 d(G) / 239 | proved | proof_checked | [Group.fg_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L43), [T3.AssociatedGraded.finrank_layerOne_le_rank](../T3/GroupTheory/GeneratorRank.lean#L195), [T3.AssociatedGraded.finrank_layerTwo_le_rank](../T3/GroupTheory/GeneratorRank.lean#L207), [Group.cardinalRank](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L35), [Group.cardinalRank_spec](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L47), [Group.cardinalRank_le](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L57), [Group.cardinalRank_le_nat_iff](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L67), [Group.cardinalRank_eq_rank](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L98), [Group.cardinalRank_lt_aleph0_iff](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L122) |
-| coproduct | variety 内の coproduct と quotient 表示 / 240 | proved | proof_checked | [T3.Coproduct](../T3/GroupTheory/Coproduct/Basic.lean#L33), [T3.Coproduct.lift](../T3/GroupTheory/Coproduct/Basic.lean#L69), [T3.Coproduct.hom_ext](../T3/GroupTheory/Coproduct/Basic.lean#L86) |
-| free_group | 自由指数群と Burnside 群 B(r,3) / 246 | proved | proof_checked | [T3.Free](../T3/GroupTheory/Free/Basic.lean#L118), [T3.Free.of](../T3/GroupTheory/Free/Basic.lean#L128), [T3.Free.lift](../T3/GroupTheory/Free/Basic.lean#L153), [T3.Free.hom_ext](../T3/GroupTheory/Free/Basic.lean#L166) |
+| commutator | 交換子 aba⁻¹b⁻¹ / 241 | proved | proof_checked | [T3.commutator_eq](../T3/GroupTheory/Notation.lean#L33) |
+| iterated_commutator | 左結合の反復交換子 / 242 | proved | proof_checked | [T3.iteratedCommutator](../T3/GroupTheory/CentralSeries.lean#L161) |
+| conjugation | 共役 aᵇ=b⁻¹ab / 243 | proved | proof_checked | [T3.right_conjugation_eq](../T3/GroupTheory/Notation.lean#L41) |
+| variety | 指数 3 の variety V₃ / 244 | proved | proof_checked | [T3.exponentThreeTheory_model_iff](../T3/ModelTheory/ExponentThree.lean#L136) |
+| free_product | 通常の自由積 / 245 | proved | proof_checked | [Monoid.Coprod.existsUnique_lift](../T3/GroupTheory/Notation.lean#L54) |
+| normal_closure | 集合の normal closure / 246 | proved | proof_checked | [Subgroup.isLeast_normalClosure](../T3/GroupTheory/Notation.lean#L70) |
+| generator_rank | 最小生成元数 d(G) / 249 | proved | proof_checked | [Group.fg_of_generating_family](../T3/GroupTheory/GeneratorRank.lean#L43), [T3.AssociatedGraded.finrank_layerOne_le_rank](../T3/GroupTheory/GeneratorRank.lean#L195), [T3.AssociatedGraded.finrank_layerTwo_le_rank](../T3/GroupTheory/GeneratorRank.lean#L207), [Group.cardinalRank](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L35), [Group.cardinalRank_spec](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L47), [Group.cardinalRank_le](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L57), [Group.cardinalRank_le_nat_iff](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L67), [Group.cardinalRank_eq_rank](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L98), [Group.cardinalRank_lt_aleph0_iff](../T3/GroupTheory/GeneratorRank/Cardinal.lean#L122) |
+| coproduct | variety 内の coproduct と quotient 表示 / 250 | proved | proof_checked | [T3.Coproduct](../T3/GroupTheory/Coproduct/Basic.lean#L33), [T3.Coproduct.lift](../T3/GroupTheory/Coproduct/Basic.lean#L69), [T3.Coproduct.hom_ext](../T3/GroupTheory/Coproduct/Basic.lean#L86) |
+| free_group | 自由指数群と Burnside 群 B(r,3) / 256 | proved | proof_checked | [T3.Free](../T3/GroupTheory/Free/Basic.lean#L118), [T3.Free.of](../T3/GroupTheory/Free/Basic.lean#L128), [T3.Free.lift](../T3/GroupTheory/Free/Basic.lean#L153), [T3.Free.hom_ext](../T3/GroupTheory/Free/Basic.lean#L166) |
 
 ### `model_theory.basic_definitions`
 
@@ -129,12 +129,12 @@ n>1を維持するv8のConjecture 1.1。179行で局所有限性・全有限生�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| companion | 双方のモデルへの埋込み / 264 | proved | proof_checked | [FirstOrder.Language.Theory.ModelsEmbedInto](../T3/ModelTheory/ModelCompanion.lean#L44), [FirstOrder.Language.Theory.IsCompanion](../T3/ModelTheory/ModelCompanion.lean#L65), [FirstOrder.Language.Theory.ModelsEmbedInto.exists_embedding](../T3/ModelTheory/ModelEmbeddings.lean#L100) |
-| model_complete | 全式を existential formula に書き換える model completeness / 265 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelComplete](../T3/ModelTheory/ModelCompanion.lean#L99), [FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff](../T3/ModelTheory/ModelCompanion.lean#L131), [FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails](../T3/ModelTheory/ModelCompleteness.lean#L292), [FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete](../T3/ModelTheory/ModelCompleteness.lean#L393), [FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary](../T3/ModelTheory/ModelCompleteness.lean#L455), [FirstOrder.Language.Theory.IsModelComplete.exists_elementaryEmbedding_of_reflects_existential](../T3/ModelTheory/ElementaryReflection.lean#L64) |
-| model_companion | model-complete companion / 266 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelCompanionOf](../T3/ModelTheory/ModelCompanion.lean#L157), [FirstOrder.Language.Theory.HasModelCompanion](../T3/ModelTheory/ModelCompanion.lean#L183) |
-| existentially_closed | QF 行列をもつ existential formula に関する閉性 / 267 | proved | proof_checked | [FirstOrder.Language.Theory.IsExistentiallyClosed](../T3/ModelTheory/ModelCompanion.lean#L192), [FirstOrder.Language.Theory.IsExistentiallyClosedAt](../T3/ModelTheory/ExistentialClosedness.lean#L44), [FirstOrder.Language.Theory.isExistentiallyClosedAt_iff](../T3/ModelTheory/ExistentialClosedness.lean#L55), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.reflects_of_model](../T3/ModelTheory/ExistentialClosedness.lean#L64), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.realize_of_finite](../T3/ModelTheory/ExistentialClosedness.lean#L149), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.exists_embedding_over_tuple](../T3/ModelTheory/ExistentialClosedness.lean#L176) |
-| pi_two | ∀∃ 文による同値な公理化 / 268 | proved | proof_checked | [FirstOrder.Language.BoundedFormula.IsUniversalExistential](../T3/ModelTheory/Inductive.lean#L51), [FirstOrder.Language.Theory.IsPiTwo](../T3/ModelTheory/Inductive.lean#L109) |
-| finite_diagram | 有限 tuple の QF 図式と有限言語・局所有限性の下での有限性 / 269 | proved | proof_checked | [FirstOrder.Language.tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L227), [FirstOrder.Language.realize_finiteGeneratedDiagram_iff_tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L319), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram](../T3/ModelTheory/LocallyFinite.lean#L68), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qf_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L208), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L241), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_of_model](../T3/ModelTheory/LocallyFinite/Universes.lean#L66), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives_of_model](../T3/ModelTheory/UniformLocalFiniteness/Universes.lean#L113) |
+| companion | 双方のモデルへの埋込み / 274 | proved | proof_checked | [FirstOrder.Language.Theory.ModelsEmbedInto](../T3/ModelTheory/ModelCompanion.lean#L44), [FirstOrder.Language.Theory.IsCompanion](../T3/ModelTheory/ModelCompanion.lean#L65), [FirstOrder.Language.Theory.ModelsEmbedInto.exists_embedding](../T3/ModelTheory/ModelEmbeddings.lean#L100) |
+| model_complete | 全式を existential formula に書き換える model completeness / 275 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelComplete](../T3/ModelTheory/ModelCompanion.lean#L99), [FirstOrder.Language.Theory.IsModelComplete.realize_embedding_iff](../T3/ModelTheory/ModelCompanion.lean#L131), [FirstOrder.Language.Theory.AllEmbeddingsElementary.exists_finset_qfDiagram_entails](../T3/ModelTheory/ModelCompleteness.lean#L292), [FirstOrder.Language.Theory.AllEmbeddingsElementary.isModelComplete](../T3/ModelTheory/ModelCompleteness.lean#L393), [FirstOrder.Language.Theory.isModelComplete_iff_allEmbeddingsElementary](../T3/ModelTheory/ModelCompleteness.lean#L455), [FirstOrder.Language.Theory.IsModelComplete.exists_elementaryEmbedding_of_reflects_existential](../T3/ModelTheory/ElementaryReflection.lean#L64) |
+| model_companion | model-complete companion / 276 | proved | proof_checked | [FirstOrder.Language.Theory.IsModelCompanionOf](../T3/ModelTheory/ModelCompanion.lean#L157), [FirstOrder.Language.Theory.HasModelCompanion](../T3/ModelTheory/ModelCompanion.lean#L183) |
+| existentially_closed | QF 行列をもつ existential formula に関する閉性 / 277 | proved | proof_checked | [FirstOrder.Language.Theory.IsExistentiallyClosed](../T3/ModelTheory/ModelCompanion.lean#L192), [FirstOrder.Language.Theory.IsExistentiallyClosedAt](../T3/ModelTheory/ExistentialClosedness.lean#L44), [FirstOrder.Language.Theory.isExistentiallyClosedAt_iff](../T3/ModelTheory/ExistentialClosedness.lean#L55), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.reflects_of_model](../T3/ModelTheory/ExistentialClosedness.lean#L64), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.realize_of_finite](../T3/ModelTheory/ExistentialClosedness.lean#L149), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.exists_embedding_over_tuple](../T3/ModelTheory/ExistentialClosedness.lean#L176) |
+| pi_two | ∀∃ 文による同値な公理化 / 278 | proved | proof_checked | [FirstOrder.Language.BoundedFormula.IsUniversalExistential](../T3/ModelTheory/Inductive.lean#L51), [FirstOrder.Language.Theory.IsPiTwo](../T3/ModelTheory/Inductive.lean#L109) |
+| finite_diagram | 有限 tuple の QF 図式と有限言語・局所有限性の下での有限性 / 279 | proved | proof_checked | [FirstOrder.Language.tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L227), [FirstOrder.Language.realize_finiteGeneratedDiagram_iff_tupleQfDiagram](../T3/ModelTheory/FiniteDiagram.lean#L319), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram](../T3/ModelTheory/LocallyFinite.lean#L68), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_qf_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L208), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives](../T3/ModelTheory/UniformLocalFiniteness.lean#L241), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_of_model](../T3/ModelTheory/LocallyFinite/Universes.lean#L66), [FirstOrder.Language.Theory.IsLocallyFinite.exists_finite_tupleQfDiagram_representatives_of_model](../T3/ModelTheory/UniformLocalFiniteness/Universes.lean#L113) |
 
 ### `model_theory.companion_iff_ec`
 
@@ -170,8 +170,8 @@ compactnessで得る有限QF型coverを任意宇宙のtupleへ移し、同じ有
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| model_companion | model companion の存在 / 303 | proved | proof_checked | [FirstOrder.Language.Theory.hasModelCompanion_of_boundedAmalgamationObstructions](../T3/ModelTheory/BoundedAmalgamationCriterion.lean#L172), [FirstOrder.Language.Theory.AmalgamableOverAt](../T3/ModelTheory/Amalgamation/Universes.lean#L39), [FirstOrder.Language.Theory.AmalgamableOverAt.of_amalgam](../T3/ModelTheory/Amalgamation/Universes.lean#L87), [FirstOrder.Language.Theory.amalgamableOverAt_iff](../T3/ModelTheory/Amalgamation/Universes.lean#L99), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.amalgamableOverAt_iff_exists_embedding](../T3/ModelTheory/Amalgamation/Universes.lean#L136), [FirstOrder.Language.Theory.IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction_in_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L58), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L172), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt.to_canonical](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L185), [FirstOrder.Language.Theory.BoundedAmalgamationObstructions.to_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L231), [FirstOrder.Language.Theory.hasModelCompanion_iff_boundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L244) |
-| bounded_obstruction | e.c. モデル内の総生成元数が有界な非 amalgamation 障害 / 304 | proved | proof_checked | [FirstOrder.Language.Theory.BoundedAmalgamationObstructions](../T3/ModelTheory/BoundedAmalgamation.lean#L101), [FirstOrder.Language.Theory.HasModelCompanion.boundedAmalgamationObstructions](../T3/ModelTheory/BoundedAmalgamation.lean#L183), [FirstOrder.Language.Theory.IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction](../T3/ModelTheory/BoundedAmalgamation.lean#L118), [FirstOrder.Language.Theory.AmalgamableOverAt](../T3/ModelTheory/Amalgamation/Universes.lean#L39), [FirstOrder.Language.Theory.AmalgamableOverAt.of_amalgam](../T3/ModelTheory/Amalgamation/Universes.lean#L87), [FirstOrder.Language.Theory.amalgamableOverAt_iff](../T3/ModelTheory/Amalgamation/Universes.lean#L99), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.amalgamableOverAt_iff_exists_embedding](../T3/ModelTheory/Amalgamation/Universes.lean#L136), [FirstOrder.Language.Theory.IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction_in_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L58), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L172), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt.to_canonical](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L185), [FirstOrder.Language.Theory.BoundedAmalgamationObstructions.to_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L231), [FirstOrder.Language.Theory.hasModelCompanion_iff_boundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L244) |
+| model_companion | model companion の存在 / 313 | proved | proof_checked | [FirstOrder.Language.Theory.hasModelCompanion_of_boundedAmalgamationObstructions](../T3/ModelTheory/BoundedAmalgamationCriterion.lean#L172), [FirstOrder.Language.Theory.AmalgamableOverAt](../T3/ModelTheory/Amalgamation/Universes.lean#L39), [FirstOrder.Language.Theory.AmalgamableOverAt.of_amalgam](../T3/ModelTheory/Amalgamation/Universes.lean#L87), [FirstOrder.Language.Theory.amalgamableOverAt_iff](../T3/ModelTheory/Amalgamation/Universes.lean#L99), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.amalgamableOverAt_iff_exists_embedding](../T3/ModelTheory/Amalgamation/Universes.lean#L136), [FirstOrder.Language.Theory.IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction_in_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L58), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L172), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt.to_canonical](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L185), [FirstOrder.Language.Theory.BoundedAmalgamationObstructions.to_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L231), [FirstOrder.Language.Theory.hasModelCompanion_iff_boundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L244) |
+| bounded_obstruction | e.c. モデル内の総生成元数が有界な非 amalgamation 障害 / 314 | proved | proof_checked | [FirstOrder.Language.Theory.BoundedAmalgamationObstructions](../T3/ModelTheory/BoundedAmalgamation.lean#L101), [FirstOrder.Language.Theory.HasModelCompanion.boundedAmalgamationObstructions](../T3/ModelTheory/BoundedAmalgamation.lean#L183), [FirstOrder.Language.Theory.IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction](../T3/ModelTheory/BoundedAmalgamation.lean#L118), [FirstOrder.Language.Theory.AmalgamableOverAt](../T3/ModelTheory/Amalgamation/Universes.lean#L39), [FirstOrder.Language.Theory.AmalgamableOverAt.of_amalgam](../T3/ModelTheory/Amalgamation/Universes.lean#L87), [FirstOrder.Language.Theory.amalgamableOverAt_iff](../T3/ModelTheory/Amalgamation/Universes.lean#L99), [FirstOrder.Language.Theory.IsExistentiallyClosedAt.amalgamableOverAt_iff_exists_embedding](../T3/ModelTheory/Amalgamation/Universes.lean#L136), [FirstOrder.Language.Theory.IsModelCompanionOf.exists_bounded_nonamalgamation_obstruction_in_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L58), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L172), [FirstOrder.Language.Theory.BoundedAmalgamationObstructionsAt.to_canonical](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L185), [FirstOrder.Language.Theory.BoundedAmalgamationObstructions.to_universe](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L231), [FirstOrder.Language.Theory.hasModelCompanion_iff_boundedAmalgamationObstructionsAt](../T3/ModelTheory/BoundedAmalgamation/Universes.lean#L244) |
 
 ### `linear_algebra.graded_lie`
 
@@ -183,10 +183,10 @@ native LieRing/LieAlgebra/GradedLieAlgebraと次数0=⊥により原稿の正次
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| grading | bracket の次数整合性 / 356 | proved | proof_checked | [GradedLieAlgebra.map₂_le_grade](../T3/LinearAlgebra/GradedLie.lean#L157) |
-| bilinear | bracket の双加法性 / 357 | proved | proof_checked | [LieRing.bracket_biadditive](../T3/LinearAlgebra/GradedLie.lean#L106) |
-| alternating | 交代性 / 358 | proved | proof_checked | [LieRing.bracket_alternating](../T3/LinearAlgebra/GradedLie.lean#L115) |
-| jacobi | Jacobi 恒等式 / 359 | proved | proof_checked | [LieRing.cyclic_jacobi](../T3/LinearAlgebra/GradedLie.lean#L123) |
+| grading | bracket の次数整合性 / 366 | proved | proof_checked | [GradedLieAlgebra.map₂_le_grade](../T3/LinearAlgebra/GradedLie.lean#L157) |
+| bilinear | bracket の双加法性 / 367 | proved | proof_checked | [LieRing.bracket_biadditive](../T3/LinearAlgebra/GradedLie.lean#L106) |
+| alternating | 交代性 / 368 | proved | proof_checked | [LieRing.bracket_alternating](../T3/LinearAlgebra/GradedLie.lean#L115) |
+| jacobi | Jacobi 恒等式 / 369 | proved | proof_checked | [LieRing.cyclic_jacobi](../T3/LinearAlgebra/GradedLie.lean#L123) |
 
 ### `linear_algebra.degree_one_generation`
 
@@ -198,8 +198,8 @@ native LieRing/LieAlgebra/GradedLieAlgebraと次数0=⊥により原稿の正次
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| antisymmetry | bracket の反対称性 / 367 | proved | proof_checked | [LieRing.bracket_eq_neg_swap](../T3/LinearAlgebra/GradedLie.lean#L133) |
-| generation | 次数 1 からの生成と各次数の bracket による生成 / 368 | proved | proof_checked | [GradedLieAlgebra.lieSpan_eq_top_iff_map₂_eq_grade](../T3/LinearAlgebra/GradedLie.lean#L263) |
+| antisymmetry | bracket の反対称性 / 377 | proved | proof_checked | [LieRing.bracket_eq_neg_swap](../T3/LinearAlgebra/GradedLie.lean#L133) |
+| generation | 次数 1 からの生成と各次数の bracket による生成 / 378 | proved | proof_checked | [GradedLieAlgebra.lieSpan_eq_top_iff_map₂_eq_grade](../T3/LinearAlgebra/GradedLie.lean#L263) |
 
 ### `linear_algebra.truncated_exterior`
 
@@ -243,8 +243,8 @@ mathlib のlower index nは原稿γₙ₊₁、upper index nはZₙ。任意群�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| lower | 下部中心列 γ₁=G, γₙ₊₁=[γₙ,G] / 412 | proved | proof_checked | [T3.lowerCentralSeries_initial](../T3/GroupTheory/CentralSeries.lean#L208), [T3.lowerCentralSeries_step](../T3/GroupTheory/CentralSeries.lean#L217) |
-| upper | 反復交換子による上部中心列 Zₙ / 416 | proved | proof_checked | [T3.mem_upperCentralSeries_iff_forall_fin](../T3/GroupTheory/CentralSeries.lean#L192) |
+| lower | 下部中心列 γ₁=G, γₙ₊₁=[γₙ,G] / 422 | proved | proof_checked | [T3.lowerCentralSeries_initial](../T3/GroupTheory/CentralSeries.lean#L208), [T3.lowerCentralSeries_step](../T3/GroupTheory/CentralSeries.lean#L217) |
+| upper | 反復交換子による上部中心列 Zₙ / 426 | proved | proof_checked | [T3.mem_upperCentralSeries_iff_forall_fin](../T3/GroupTheory/CentralSeries.lean#L192) |
 
 ### `preliminaries.upper_central_recursive`
 
@@ -262,8 +262,8 @@ mathlib のlower index nは原稿γₙ₊₁、upper index nはZₙ。任意群�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| commutator_degree | [γᵢ,γⱼ]≤γᵢ₊ⱼ と次数商の可換性 / 430 | proved | proof_checked | [Subgroup.commutator_lowerCentralSeries_le](../T3/GroupTheory/CentralSeries.lean#L65), [Subgroup.isMulCommutative_lowerCentralSeries_quotient](../T3/GroupTheory/CentralSeries.lean#L137) |
-| upper_bound | class≤n の群の γᵢ≤Zₙ₊₁₋ᵢ / 431 | proved | proof_checked | [Subgroup.lowerCentralSeries_le_upperCentralSeries](../T3/GroupTheory/CentralSeries.lean#L103) |
+| commutator_degree | [γᵢ,γⱼ]≤γᵢ₊ⱼ と次数商の可換性 / 440 | proved | proof_checked | [Subgroup.commutator_lowerCentralSeries_le](../T3/GroupTheory/CentralSeries.lean#L65), [Subgroup.isMulCommutative_lowerCentralSeries_quotient](../T3/GroupTheory/CentralSeries.lean#L137) |
+| upper_bound | class≤n の群の γᵢ≤Zₙ₊₁₋ᵢ / 441 | proved | proof_checked | [Subgroup.lowerCentralSeries_le_upperCentralSeries](../T3/GroupTheory/CentralSeries.lean#L103) |
 
 ### `preliminaries.elementary_identities`
 
@@ -275,17 +275,17 @@ mathlib のlower index nは原稿γₙ₊₁、upper index nはZₙ。任意群�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| quadruple_commutator | 四重交換子の消滅、nilpotency class≤3 / 443 | proved | proof_checked | [T3.commutator_quadruple](../T3/GroupTheory/Identities.lean#L662), [T3.lowerCentralSeries_three_eq_bot](../T3/GroupTheory/Identities.lean#L618) |
-| central_series_inclusions | γ₃≤Z と γ₂≤Z₂ / 444 | proved | proof_checked | [T3.lowerCentralSeries_two_le_center](../T3/GroupTheory/Identities.lean#L606), [T3.commutator_le_upperCentralSeries_two](../T3/GroupTheory/Identities.lean#L670) |
-| derived_abelian | γ₂ の可換性と、一般には Z₂ が可換でないこと / 445 | proved | proof_checked | [T3.isMulCommutative_commutator](../T3/GroupTheory/Identities.lean#L654), [T3.Free.not_isMulCommutative_upperCentralSeries_two_fin_two](../T3/GroupTheory/Free/Examples.lean#L69) |
-| triple_cyclic | 三重交換子の巡回対称性と 2-Engel 性 / 446 | proved | proof_checked | [T3.commutator_triple_cyclic](../T3/GroupTheory/Identities.lean#L501), [T3.commutator_self_right](../T3/GroupTheory/Identities.lean#L136) |
-| commutator_inverse | 各引数の逆元と交換子の逆元 / 447 | proved | proof_checked | [T3.commutator_inv_left](../T3/GroupTheory/Identities.lean#L683), [T3.commutator_inv_right](../T3/GroupTheory/Identities.lean#L691) |
-| normal_closure_abelian | 同じ元の共役同士の可換性と principal normal closure の可換性 / 448 | proved | proof_checked | [T3.commutator_conjugates](../T3/GroupTheory/Identities.lean#L700), [T3.isMulCommutative_normalClosure](../T3/GroupTheory/Identities.lean#L708) |
-| triple_swap | 三重交換子の第 1・2 引数交換による反転 / 449 | proved | proof_checked | [T3.commutator_triple_swap](../T3/GroupTheory/Identities.lean#L489) |
-| commutator_mul_right | 右引数の積に対する交換子展開 / 450 | proved | proof_checked | [T3.commutator_mul_right](../T3/GroupTheory/Identities.lean#L717) |
-| commutator_mul_left | 左引数の積に対する交換子展開 / 451 | proved | proof_checked | [T3.commutator_mul_left](../T3/GroupTheory/Identities.lean#L727) |
-| subgroup_product_right | 集合の右積に対する交換子部分群包含 / 452 | proved | proof_checked | [T3.commutatorOfSets_mul_right](../T3/GroupTheory/Identities.lean#L760) |
-| subgroup_product_left | 集合の左積に対する交換子部分群包含 / 453 | proved | proof_checked | [T3.commutatorOfSets_mul_left](../T3/GroupTheory/Identities.lean#L794) |
+| quadruple_commutator | 四重交換子の消滅、nilpotency class≤3 / 453 | proved | proof_checked | [T3.commutator_quadruple](../T3/GroupTheory/Identities.lean#L662), [T3.lowerCentralSeries_three_eq_bot](../T3/GroupTheory/Identities.lean#L618) |
+| central_series_inclusions | γ₃≤Z と γ₂≤Z₂ / 454 | proved | proof_checked | [T3.lowerCentralSeries_two_le_center](../T3/GroupTheory/Identities.lean#L606), [T3.commutator_le_upperCentralSeries_two](../T3/GroupTheory/Identities.lean#L670) |
+| derived_abelian | γ₂ の可換性と、一般には Z₂ が可換でないこと / 455 | proved | proof_checked | [T3.isMulCommutative_commutator](../T3/GroupTheory/Identities.lean#L654), [T3.Free.not_isMulCommutative_upperCentralSeries_two_fin_two](../T3/GroupTheory/Free/Examples.lean#L69) |
+| triple_cyclic | 三重交換子の巡回対称性と 2-Engel 性 / 456 | proved | proof_checked | [T3.commutator_triple_cyclic](../T3/GroupTheory/Identities.lean#L501), [T3.commutator_self_right](../T3/GroupTheory/Identities.lean#L136) |
+| commutator_inverse | 各引数の逆元と交換子の逆元 / 457 | proved | proof_checked | [T3.commutator_inv_left](../T3/GroupTheory/Identities.lean#L683), [T3.commutator_inv_right](../T3/GroupTheory/Identities.lean#L691) |
+| normal_closure_abelian | 同じ元の共役同士の可換性と principal normal closure の可換性 / 458 | proved | proof_checked | [T3.commutator_conjugates](../T3/GroupTheory/Identities.lean#L700), [T3.isMulCommutative_normalClosure](../T3/GroupTheory/Identities.lean#L708) |
+| triple_swap | 三重交換子の第 1・2 引数交換による反転 / 459 | proved | proof_checked | [T3.commutator_triple_swap](../T3/GroupTheory/Identities.lean#L489) |
+| commutator_mul_right | 右引数の積に対する交換子展開 / 460 | proved | proof_checked | [T3.commutator_mul_right](../T3/GroupTheory/Identities.lean#L717) |
+| commutator_mul_left | 左引数の積に対する交換子展開 / 461 | proved | proof_checked | [T3.commutator_mul_left](../T3/GroupTheory/Identities.lean#L727) |
+| subgroup_product_right | 集合の右積に対する交換子部分群包含 / 462 | proved | proof_checked | [T3.commutatorOfSets_mul_right](../T3/GroupTheory/Identities.lean#L760) |
+| subgroup_product_left | 集合の左積に対する交換子部分群包含 / 463 | proved | proof_checked | [T3.commutatorOfSets_mul_left](../T3/GroupTheory/Identities.lean#L794) |
 
 ### `preliminaries.free_coproduct`
 
@@ -313,8 +313,8 @@ mathlib のlower index nは原稿γₙ₊₁、upper index nはZₙ。任意群�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| degree_piece | 次数 n の中心列商 / 478 | proved | proof_checked | [T3.AssociatedGraded.Layer](../T3/GroupTheory/AssociatedGraded.lean#L99), [T3.AssociatedGraded.layerModule](../T3/GroupTheory/AssociatedGraded.lean#L165), [T3.AssociatedGraded.GradedModule](../T3/GroupTheory/AssociatedGraded.lean#L557) |
-| bracket | 代表元による bracket と graded Lie algebra 構造 / 479 | proved | proof_checked | [T3.AssociatedGraded.bracketLayer](../T3/GroupTheory/AssociatedGraded/Bracket.lean#L182), [T3.AssociatedGraded.bracketLayer_mk](../T3/GroupTheory/AssociatedGraded/Bracket.lean#L192), [T3.AssociatedGraded.gradedLieRing](../T3/GroupTheory/AssociatedGraded/Lie.lean#L106), [T3.AssociatedGraded.gradedLieAlgebra](../T3/GroupTheory/AssociatedGraded/Lie.lean#L121), [T3.AssociatedGraded.grade](../T3/GroupTheory/AssociatedGraded/Lie.lean#L203), [T3.AssociatedGraded.gradedLieGrading](../T3/GroupTheory/AssociatedGraded/Lie.lean#L220), [T3.AssociatedGraded.bracket_lof_mk](../T3/GroupTheory/AssociatedGraded/Lie.lean#L190), [T3.AssociatedGraded.grade_zero](../T3/GroupTheory/AssociatedGraded/Lie.lean#L238) |
+| degree_piece | 次数 n の中心列商 / 488 | proved | proof_checked | [T3.AssociatedGraded.Layer](../T3/GroupTheory/AssociatedGraded.lean#L99), [T3.AssociatedGraded.layerModule](../T3/GroupTheory/AssociatedGraded.lean#L165), [T3.AssociatedGraded.GradedModule](../T3/GroupTheory/AssociatedGraded.lean#L557) |
+| bracket | 代表元による bracket と graded Lie algebra 構造 / 489 | proved | proof_checked | [T3.AssociatedGraded.bracketLayer](../T3/GroupTheory/AssociatedGraded/Bracket.lean#L182), [T3.AssociatedGraded.bracketLayer_mk](../T3/GroupTheory/AssociatedGraded/Bracket.lean#L192), [T3.AssociatedGraded.gradedLieRing](../T3/GroupTheory/AssociatedGraded/Lie.lean#L106), [T3.AssociatedGraded.gradedLieAlgebra](../T3/GroupTheory/AssociatedGraded/Lie.lean#L121), [T3.AssociatedGraded.grade](../T3/GroupTheory/AssociatedGraded/Lie.lean#L203), [T3.AssociatedGraded.gradedLieGrading](../T3/GroupTheory/AssociatedGraded/Lie.lean#L220), [T3.AssociatedGraded.bracket_lof_mk](../T3/GroupTheory/AssociatedGraded/Lie.lean#L190), [T3.AssociatedGraded.grade_zero](../T3/GroupTheory/AssociatedGraded/Lie.lean#L238) |
 
 ### `preliminaries.associated_graded_properties`
 
@@ -326,9 +326,9 @@ mathlib のlower index nは原稿γₙ₊₁、upper index nはZₙ。任意群�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| degree_four | gr₄=0 / 498 | proved | proof_checked | [T3.AssociatedGraded.layer_four_subsingleton](../T3/GroupTheory/AssociatedGraded.lean#L310) |
-| triple_identities | 三重 bracket の巡回性と反復引数の消滅 / 499 | proved | proof_checked | [T3.AssociatedGraded.triple_bracket_cyclic](../T3/GroupTheory/AssociatedGraded/Lie.lean#L141), [T3.AssociatedGraded.triple_bracket_self](../T3/GroupTheory/AssociatedGraded/Lie.lean#L149) |
-| generation | gr₁ による Lie algebra の生成 / 501 | proved | proof_checked | [T3.AssociatedGraded.lieSubalgebra_eq_top_of_degree_one](../T3/GroupTheory/AssociatedGraded/Generation.lean#L69), [T3.AssociatedGraded.lieSpan_range_lof_one_eq_top](../T3/GroupTheory/AssociatedGraded/Generation.lean#L95) |
+| degree_four | gr₄=0 / 508 | proved | proof_checked | [T3.AssociatedGraded.layer_four_subsingleton](../T3/GroupTheory/AssociatedGraded.lean#L310) |
+| triple_identities | 三重 bracket の巡回性と反復引数の消滅 / 509 | proved | proof_checked | [T3.AssociatedGraded.triple_bracket_cyclic](../T3/GroupTheory/AssociatedGraded/Lie.lean#L141), [T3.AssociatedGraded.triple_bracket_self](../T3/GroupTheory/AssociatedGraded/Lie.lean#L149) |
+| generation | gr₁ による Lie algebra の生成 / 511 | proved | proof_checked | [T3.AssociatedGraded.lieSubalgebra_eq_top_of_degree_one](../T3/GroupTheory/AssociatedGraded/Generation.lean#L69), [T3.AssociatedGraded.lieSpan_range_lof_one_eq_top](../T3/GroupTheory/AssociatedGraded/Generation.lean#L95) |
 
 ### `preliminaries.graded_image`
 
@@ -340,8 +340,8 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| initial_form | 元の次数 i の像 / 508 | proved | proof_checked | [T3.AssociatedGraded.mk](../T3/GroupTheory/AssociatedGraded.lean#L106), [T3.AssociatedGraded.mk_eq_zero](../T3/GroupTheory/AssociatedGraded.lean#L123) |
-| subgroup_image | 部分群 K の graded image と中心列商の同型 / 510 | proved | proof_checked | [T3.AssociatedGraded.subgroupImage](../T3/GroupTheory/AssociatedGraded.lean#L461), [T3.AssociatedGraded.mem_subgroupImage](../T3/GroupTheory/AssociatedGraded.lean#L469), [T3.AssociatedGraded.subgroupLayerEquiv](../T3/GroupTheory/AssociatedGraded.lean#L483), [T3.AssociatedGraded.subgroupLayerEquiv_mk](../T3/GroupTheory/AssociatedGraded.lean#L500) |
+| initial_form | 元の次数 i の像 / 518 | proved | proof_checked | [T3.AssociatedGraded.mk](../T3/GroupTheory/AssociatedGraded.lean#L106), [T3.AssociatedGraded.mk_eq_zero](../T3/GroupTheory/AssociatedGraded.lean#L123) |
+| subgroup_image | 部分群 K の graded image と中心列商の同型 / 520 | proved | proof_checked | [T3.AssociatedGraded.subgroupImage](../T3/GroupTheory/AssociatedGraded.lean#L461), [T3.AssociatedGraded.mem_subgroupImage](../T3/GroupTheory/AssociatedGraded.lean#L469), [T3.AssociatedGraded.subgroupLayerEquiv](../T3/GroupTheory/AssociatedGraded.lean#L483), [T3.AssociatedGraded.subgroupLayerEquiv_mk](../T3/GroupTheory/AssociatedGraded.lean#L500) |
 
 ### `preliminaries.associated_graded_examples`
 
@@ -353,9 +353,9 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| abelian | 可換群の graded / 525 | proved | proof_checked | [T3.AssociatedGraded.abelianLieEquiv](../T3/GroupTheory/AssociatedGradedExamples.lean#L193), [T3.AssociatedGraded.abelianEquiv_lof_mk](../T3/GroupTheory/AssociatedGradedExamples.lean#L145), [T3.AssociatedGraded.grade_one_eq_top_of_commutative](../T3/GroupTheory/AssociatedGradedExamples.lean#L205), [T3.AssociatedGraded.grade_eq_bot_of_commutative](../T3/GroupTheory/AssociatedGradedExamples.lean#L215), [T3.AssociatedGraded.abelianEquiv_mapLie](../T3/GroupTheory/AssociatedGradedExamples.lean#L229) |
-| product | 直積の中心列と graded 直和 / 526 | proved | proof_checked | [T3.AssociatedGraded.term_prod](../T3/GroupTheory/AssociatedGraded/Product.lean#L45), [T3.AssociatedGraded.layerProdEquiv](../T3/GroupTheory/AssociatedGraded/Product.lean#L84), [T3.AssociatedGraded.layerProdEquiv_apply](../T3/GroupTheory/AssociatedGraded/Product.lean#L93) |
-| free_two | F₂ の中心列と gr₁・gr₂ / 527 | proved | proof_checked | [T3.FreeTwo.mem_term_two_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L369), [T3.FreeTwo.term_three_eq_bot](../T3/GroupTheory/AssociatedGradedExamples.lean#L327), [T3.FreeTwo.firstLayerBasis](../T3/GroupTheory/AssociatedGradedExamples.lean#L291), [T3.FreeTwo.secondLayerBasis](../T3/GroupTheory/AssociatedGradedExamples.lean#L299), [T3.FreeTwo.firstLayerBasis_apply](../T3/GroupTheory/AssociatedGradedExamples.lean#L307), [T3.FreeTwo.secondLayerBasis_apply](../T3/GroupTheory/AssociatedGradedExamples.lean#L316), [T3.FreeTwo.coordinates](../T3/GroupTheory/AssociatedGradedExamples.lean#L456), [T3.FreeTwo.coordinates_bracket](../T3/GroupTheory/AssociatedGradedExamples.lean#L501), [T3.FreeTwo.mem_grade_one_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L513), [T3.FreeTwo.mem_grade_two_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L530), [T3.FreeTwo.grade_eq_bot](../T3/GroupTheory/AssociatedGradedExamples.lean#L550) |
+| abelian | 可換群の graded / 535 | proved | proof_checked | [T3.AssociatedGraded.abelianLieEquiv](../T3/GroupTheory/AssociatedGradedExamples.lean#L193), [T3.AssociatedGraded.abelianEquiv_lof_mk](../T3/GroupTheory/AssociatedGradedExamples.lean#L145), [T3.AssociatedGraded.grade_one_eq_top_of_commutative](../T3/GroupTheory/AssociatedGradedExamples.lean#L205), [T3.AssociatedGraded.grade_eq_bot_of_commutative](../T3/GroupTheory/AssociatedGradedExamples.lean#L215), [T3.AssociatedGraded.abelianEquiv_mapLie](../T3/GroupTheory/AssociatedGradedExamples.lean#L229) |
+| product | 直積の中心列と graded 直和 / 536 | proved | proof_checked | [T3.AssociatedGraded.term_prod](../T3/GroupTheory/AssociatedGraded/Product.lean#L45), [T3.AssociatedGraded.layerProdEquiv](../T3/GroupTheory/AssociatedGraded/Product.lean#L84), [T3.AssociatedGraded.layerProdEquiv_apply](../T3/GroupTheory/AssociatedGraded/Product.lean#L93) |
+| free_two | F₂ の中心列と gr₁・gr₂ / 537 | proved | proof_checked | [T3.FreeTwo.mem_term_two_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L369), [T3.FreeTwo.term_three_eq_bot](../T3/GroupTheory/AssociatedGradedExamples.lean#L327), [T3.FreeTwo.firstLayerBasis](../T3/GroupTheory/AssociatedGradedExamples.lean#L291), [T3.FreeTwo.secondLayerBasis](../T3/GroupTheory/AssociatedGradedExamples.lean#L299), [T3.FreeTwo.firstLayerBasis_apply](../T3/GroupTheory/AssociatedGradedExamples.lean#L307), [T3.FreeTwo.secondLayerBasis_apply](../T3/GroupTheory/AssociatedGradedExamples.lean#L316), [T3.FreeTwo.coordinates](../T3/GroupTheory/AssociatedGradedExamples.lean#L456), [T3.FreeTwo.coordinates_bracket](../T3/GroupTheory/AssociatedGradedExamples.lean#L501), [T3.FreeTwo.mem_grade_one_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L513), [T3.FreeTwo.mem_grade_two_iff](../T3/GroupTheory/AssociatedGradedExamples.lean#L530), [T3.FreeTwo.grade_eq_bot](../T3/GroupTheory/AssociatedGradedExamples.lean#L550) |
 
 ### `preliminaries.associated_graded_map`
 
@@ -373,8 +373,8 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| derived | γ₂ の交わり条件 / 549 | proved | proof_checked | [T3.IsStrict](../T3/GroupTheory/CentralSeries.lean#L228), [T3.isStrict_iff_comap_subtype](../T3/GroupTheory/CentralSeries.lean#L334) |
-| third | γ₃ の交わり条件 / 550 | proved | proof_checked | [T3.IsStrict](../T3/GroupTheory/CentralSeries.lean#L228), [T3.isStrict_iff_comap_subtype](../T3/GroupTheory/CentralSeries.lean#L334) |
+| derived | γ₂ の交わり条件 / 559 | proved | proof_checked | [T3.IsStrict](../T3/GroupTheory/CentralSeries.lean#L228), [T3.isStrict_iff_comap_subtype](../T3/GroupTheory/CentralSeries.lean#L334) |
+| third | γ₃ の交わり条件 / 560 | proved | proof_checked | [T3.IsStrict](../T3/GroupTheory/CentralSeries.lean#L228), [T3.isStrict_iff_comap_subtype](../T3/GroupTheory/CentralSeries.lean#L334) |
 
 ### `preliminaries.graded_injectivity_strictness`
 
@@ -386,8 +386,8 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| injective | gr(f) の単射性から f の単射性 / 557 | proved | proof_checked | [T3.AssociatedGraded.injective_of_mapLie_injective](../T3/GroupTheory/AssociatedGraded/Lie.lean#L324) |
-| strict_iff | 単射 f に対する gr(f) の単射性と strictness の同値 / 558 | proved | proof_checked | [T3.AssociatedGraded.mapLie_injective_iff_isStrict](../T3/GroupTheory/AssociatedGraded/Lie.lean#L332) |
+| injective | gr(f) の単射性から f の単射性 / 567 | proved | proof_checked | [T3.AssociatedGraded.injective_of_mapLie_injective](../T3/GroupTheory/AssociatedGraded/Lie.lean#L324) |
+| strict_iff | 単射 f に対する gr(f) の単射性と strictness の同値 / 568 | proved | proof_checked | [T3.AssociatedGraded.mapLie_injective_iff_isStrict](../T3/GroupTheory/AssociatedGraded/Lie.lean#L332) |
 
 ### `preliminaries.central_series_coincide`
 
@@ -403,8 +403,8 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| inclusions | 部分群の下部中心列から上部中心列への包含鎖 / 597 | proved | proof_checked | [T3.centralSeries_inclusions](../T3/GroupTheory/CentralSeries.lean#L299) |
-| strict | 内部中心列一致から strictness / 598 | proved | proof_checked | [T3.isStrict_of_centralSeriesCoincide](../T3/GroupTheory/CentralSeries.lean#L316) |
+| inclusions | 部分群の下部中心列から上部中心列への包含鎖 / 607 | proved | proof_checked | [T3.centralSeries_inclusions](../T3/GroupTheory/CentralSeries.lean#L299) |
+| strict | 内部中心列一致から strictness / 608 | proved | proof_checked | [T3.isStrict_of_centralSeriesCoincide](../T3/GroupTheory/CentralSeries.lean#L316) |
 
 ### `preliminaries.finite_normal_form`
 
@@ -432,9 +432,9 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| degree_one | 次数 1 の同型 / 640 | proved | proof_checked | [T3.Free.sigmaOne](../T3/GroupTheory/Free/Exterior.lean#L105), [T3.Free.sigmaOne_of](../T3/GroupTheory/Free/Exterior.lean#L162) |
-| degree_two | 次数 2 の同型 / 641 | proved | proof_checked | [T3.Free.sigmaTwo](../T3/GroupTheory/Free/Exterior.lean#L114), [T3.Free.sigmaTwo_commutator](../T3/GroupTheory/Free/Exterior.lean#L172), [T3.Free.sigmaTwo_bracketLayer](../T3/GroupTheory/Free/ExteriorBracket.lean#L127) |
-| degree_three | 次数 3 の同型と Lie 構造の整合 / 643 | proved | proof_checked | [T3.Free.sigmaThree](../T3/GroupTheory/Free/Exterior.lean#L124), [T3.Free.sigmaThree_tripleCommutator](../T3/GroupTheory/Free/Exterior.lean#L184), [T3.Free.sigmaThree_bracketLayer](../T3/GroupTheory/Free/ExteriorBracket.lean#L197) |
+| degree_one | 次数 1 の同型 / 650 | proved | proof_checked | [T3.Free.sigmaOne](../T3/GroupTheory/Free/Exterior.lean#L105), [T3.Free.sigmaOne_of](../T3/GroupTheory/Free/Exterior.lean#L162) |
+| degree_two | 次数 2 の同型 / 651 | proved | proof_checked | [T3.Free.sigmaTwo](../T3/GroupTheory/Free/Exterior.lean#L114), [T3.Free.sigmaTwo_commutator](../T3/GroupTheory/Free/Exterior.lean#L172), [T3.Free.sigmaTwo_bracketLayer](../T3/GroupTheory/Free/ExteriorBracket.lean#L127) |
+| degree_three | 次数 3 の同型と Lie 構造の整合 / 653 | proved | proof_checked | [T3.Free.sigmaThree](../T3/GroupTheory/Free/Exterior.lean#L124), [T3.Free.sigmaThree_tripleCommutator](../T3/GroupTheory/Free/Exterior.lean#L184), [T3.Free.sigmaThree_bracketLayer](../T3/GroupTheory/Free/ExteriorBracket.lean#L197) |
 
 ### `preliminaries.infinite_free_graded`
 
@@ -470,8 +470,8 @@ Prop 2.29の同じσとgraded LieEquivが任意の線形順序付き生成集合
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | d(C)≤3(m+1)n / 756 | proved | proof_checked | [T3.Support.exists_bounded_support_rank](../T3/GroupTheory/Support.lean#L216) |
-| certificate | H₀=〈C,B,Δ〉内で normal-closure certificate が成立 / 757 | proved | proof_checked | [T3.Support.exists_bounded_support_set](../T3/GroupTheory/Support.lean#L197) |
+| bound | d(C)≤3(m+1)n / 766 | proved | proof_checked | [T3.Support.exists_bounded_support_rank](../T3/GroupTheory/Support.lean#L216) |
+| certificate | H₀=〈C,B,Δ〉内で normal-closure certificate が成立 / 767 | proved | proof_checked | [T3.Support.exists_bounded_support_set](../T3/GroupTheory/Support.lean#L197) |
 
 ### `main.proposition_a`
 
@@ -491,8 +491,8 @@ f(m)=15((3m+4)t(m)+1)²を明示。rank/log/cardinalの連鎖、3(m+1)nのsuppor
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| obstruction | D と B が A 上で amalgamate しない / 792 | proved | proof_checked | [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112) |
-| bound | 総生成元数 d(D)≤f(m) / 793 | proved | proof_checked | [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112) |
+| obstruction | D と B が A 上で amalgamate しない / 802 | proved | proof_checked | [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112) |
+| bound | 総生成元数 d(D)≤f(m) / 803 | proved | proof_checked | [T3.exists_bounded_nonamalgamation_witness](../T3/Main/BoundedWitness.lean#L112) |
 
 ### `main.model_companion`
 
@@ -528,9 +528,9 @@ Theorem3.3からbounded obstructionを供給しFact2.6を適用、追加仮定�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| normal_closure | L=K[K,G] / 893 | proved | proof_checked | [T3.normalClosure_eq_sup_commutator](../T3/GroupTheory/GradedNormalClosure.lean#L61), [T3.mem_normalClosure_iff_mul_commutator](../T3/GroupTheory/GradedNormalClosure.lean#L105), [T3.normalClosure_le_commutator](../T3/GroupTheory/GradedNormalClosure.lean#L118) |
-| degree_two | normal closure の次数 2 の像 / 894 | proved | proof_checked | [T3.AssociatedGraded.subgroupImage_normalClosure_two](../T3/GroupTheory/GradedNormalClosure.lean#L267) |
-| degree_three | normal closure の次数 3 の像 / 895 | proved | proof_checked | [T3.AssociatedGraded.normalClosure_inf_term_three](../T3/GroupTheory/GradedNormalClosure.lean#L280), [T3.AssociatedGraded.subgroupImage_commutator_top](../T3/GroupTheory/GradedNormalClosure.lean#L222), [T3.AssociatedGraded.subgroupImage_normalClosure_three](../T3/GroupTheory/GradedNormalClosure.lean#L304) |
+| normal_closure | L=K[K,G] / 903 | proved | proof_checked | [T3.normalClosure_eq_sup_commutator](../T3/GroupTheory/GradedNormalClosure.lean#L61), [T3.mem_normalClosure_iff_mul_commutator](../T3/GroupTheory/GradedNormalClosure.lean#L105), [T3.normalClosure_le_commutator](../T3/GroupTheory/GradedNormalClosure.lean#L118) |
+| degree_two | normal closure の次数 2 の像 / 904 | proved | proof_checked | [T3.AssociatedGraded.subgroupImage_normalClosure_two](../T3/GroupTheory/GradedNormalClosure.lean#L267) |
+| degree_three | normal closure の次数 3 の像 / 905 | proved | proof_checked | [T3.AssociatedGraded.normalClosure_inf_term_three](../T3/GroupTheory/GradedNormalClosure.lean#L280), [T3.AssociatedGraded.subgroupImage_commutator_top](../T3/GroupTheory/GradedNormalClosure.lean#L222), [T3.AssociatedGraded.subgroupImage_normalClosure_three](../T3/GroupTheory/GradedNormalClosure.lean#L304) |
 
 ### `structure.graded_coproduct`
 
@@ -542,8 +542,8 @@ Theorem3.3からbounded obstructionを供給しFact2.6を適用、追加仮定�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| isomorphisms | η₁,η₂,η₃ の次数別同型 / 932 | proved | proof_checked | [T3.Coproduct.layerOneEquiv](../T3/GroupTheory/Coproduct/Graded.lean#L152), [T3.Coproduct.layerTwoMap](../T3/GroupTheory/Coproduct/Graded.lean#L217), [T3.Coproduct.layerThreeMap](../T3/GroupTheory/Coproduct/Graded.lean#L233), [T3.Coproduct.mixedMap_tmul](../T3/GroupTheory/Coproduct/Graded.lean#L200), [T3.Coproduct.layerOneEquiv_natural](../T3/GroupTheory/Coproduct/Graded.lean#L292), [T3.Coproduct.layerTwoMap_natural](../T3/GroupTheory/Coproduct/Graded.lean#L327), [T3.Coproduct.layerThreeMap_natural](../T3/GroupTheory/Coproduct/Graded.lean#L340), [T3.Coproduct.layerTwoEquiv](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L102), [T3.Coproduct.layerThreeEquiv](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L111), [T3.Coproduct.layerTwoEquiv_apply](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L121), [T3.Coproduct.layerThreeEquiv_apply](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L130) |
-| bracket | 直和・tensor block 上の bracket / 944 | proved | proof_checked | [T3.Coproduct.block](../T3/GroupTheory/Coproduct/BlockBracket.lean#L66), [T3.Coproduct.bracket_block_le](../T3/GroupTheory/Coproduct/BlockBracket.lean#L268), [T3.Coproduct.bracket_mem_block](../T3/GroupTheory/Coproduct/BlockBracket.lean#L340), [T3.Coproduct.bracket_mixedMap_tmul_inl](../T3/GroupTheory/Coproduct/BlockBracket.lean#L208), [T3.Coproduct.bracket_mixedMap_tmul_inr](../T3/GroupTheory/Coproduct/BlockBracket.lean#L222) |
+| isomorphisms | η₁,η₂,η₃ の次数別同型 / 942 | proved | proof_checked | [T3.Coproduct.layerOneEquiv](../T3/GroupTheory/Coproduct/Graded.lean#L152), [T3.Coproduct.layerTwoMap](../T3/GroupTheory/Coproduct/Graded.lean#L217), [T3.Coproduct.layerThreeMap](../T3/GroupTheory/Coproduct/Graded.lean#L233), [T3.Coproduct.mixedMap_tmul](../T3/GroupTheory/Coproduct/Graded.lean#L200), [T3.Coproduct.layerOneEquiv_natural](../T3/GroupTheory/Coproduct/Graded.lean#L292), [T3.Coproduct.layerTwoMap_natural](../T3/GroupTheory/Coproduct/Graded.lean#L327), [T3.Coproduct.layerThreeMap_natural](../T3/GroupTheory/Coproduct/Graded.lean#L340), [T3.Coproduct.layerTwoEquiv](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L102), [T3.Coproduct.layerThreeEquiv](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L111), [T3.Coproduct.layerTwoEquiv_apply](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L121), [T3.Coproduct.layerThreeEquiv_apply](../T3/GroupTheory/Coproduct/GradedEquiv.lean#L130) |
+| bracket | 直和・tensor block 上の bracket / 954 | proved | proof_checked | [T3.Coproduct.block](../T3/GroupTheory/Coproduct/BlockBracket.lean#L66), [T3.Coproduct.bracket_block_le](../T3/GroupTheory/Coproduct/BlockBracket.lean#L268), [T3.Coproduct.bracket_mem_block](../T3/GroupTheory/Coproduct/BlockBracket.lean#L340), [T3.Coproduct.bracket_mixedMap_tmul_inl](../T3/GroupTheory/Coproduct/BlockBracket.lean#L208), [T3.Coproduct.bracket_mixedMap_tmul_inr](../T3/GroupTheory/Coproduct/BlockBracket.lean#L222) |
 
 ### `structure.strict_coproduct`
 
@@ -579,8 +579,8 @@ Theorem3.3からbounded obstructionを供給しFact2.6を適用、追加仮定�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | C に追加する生成元数≤2m / 1165 | proved | proof_checked | [T3.DerivedStrictification.newGenerators_card_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L108), [T3.DerivedStrictification.rank_enlarged_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L278), [T3.DerivedStrictification.exists_derived_strictification](../T3/GroupTheory/Roots/DerivedStrictification.lean#L308) |
-| strict | D∩γ₂(H)=γ₂(D) / 1166 | proved | proof_checked | [T3.DerivedStrictification.inf_commutator_eq](../T3/GroupTheory/Roots/DerivedStrictification.lean#L187), [T3.DerivedStrictification.derived_strict](../T3/GroupTheory/Roots/DerivedStrictification.lean#L250), [T3.DerivedStrictification.exists_derived_strictification](../T3/GroupTheory/Roots/DerivedStrictification.lean#L308) |
+| bound | C に追加する生成元数≤2m / 1175 | proved | proof_checked | [T3.DerivedStrictification.newGenerators_card_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L108), [T3.DerivedStrictification.rank_enlarged_le](../T3/GroupTheory/Roots/DerivedStrictification.lean#L278), [T3.DerivedStrictification.exists_derived_strictification](../T3/GroupTheory/Roots/DerivedStrictification.lean#L308) |
+| strict | D∩γ₂(H)=γ₂(D) / 1176 | proved | proof_checked | [T3.DerivedStrictification.inf_commutator_eq](../T3/GroupTheory/Roots/DerivedStrictification.lean#L187), [T3.DerivedStrictification.derived_strict](../T3/GroupTheory/Roots/DerivedStrictification.lean#L250), [T3.DerivedStrictification.exists_derived_strictification](../T3/GroupTheory/Roots/DerivedStrictification.lean#L308) |
 
 ### `structure.simultaneous_triple_roots`
 
@@ -600,8 +600,8 @@ Theorem3.3からbounded obstructionを供給しFact2.6を適用、追加仮定�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | C に追加する生成元数≤3·binom(n,2) / 1224 | proved | proof_checked | [T3.LowerCentralStrictification.exists_generating_finset](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L235), [T3.LowerCentralStrictification.rank_enlargedSubgroup_le](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L266), [T3.LowerCentralStrictification.exists_strict_extension](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L299) |
-| strict | D が γ₂ と γ₃ で strict / 1225 | proved | proof_checked | [T3.LowerCentralStrictification.isStrict_enlargedSubgroup](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L183), [T3.LowerCentralStrictification.exists_strict_extension](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L299) |
+| bound | C に追加する生成元数≤3·binom(n,2) / 1234 | proved | proof_checked | [T3.LowerCentralStrictification.exists_generating_finset](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L235), [T3.LowerCentralStrictification.rank_enlargedSubgroup_le](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L266), [T3.LowerCentralStrictification.exists_strict_extension](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L299) |
+| strict | D が γ₂ と γ₃ で strict / 1235 | proved | proof_checked | [T3.LowerCentralStrictification.isStrict_enlargedSubgroup](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L183), [T3.LowerCentralStrictification.exists_strict_extension](../T3/GroupTheory/Roots/LowerCentralStrictification.lean#L299) |
 
 ### `structure.shared_triple_roots`
 
@@ -621,9 +621,9 @@ F₄の4つの昇順tripleがactual gr₃で独立であることから、(G×F�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| central_series | 上下中心列の逆順での一致 / 1272 | proved | proof_checked | [T3.ExistentiallyClosedGroups.centralSeriesCoincide](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L279) |
-| commutator_width | γ₂ の各元が単一の交換子 / 1276 | proved | proof_checked | [T3.ExistentiallyClosedGroups.commutator_eq_setOf_commutator](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L323) |
-| triple_width | γ₃ の各元が単一の三重交換子 / 1279 | proved | proof_checked | [T3.ExistentiallyClosedGroups.lowerCentralSeries_two_eq_setOf_triple_commutator](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L308) |
+| central_series | 上下中心列の逆順での一致 / 1282 | proved | proof_checked | [T3.ExistentiallyClosedGroups.centralSeriesCoincide](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L279) |
+| commutator_width | γ₂ の各元が単一の交換子 / 1286 | proved | proof_checked | [T3.ExistentiallyClosedGroups.commutator_eq_setOf_commutator](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L323) |
+| triple_width | γ₃ の各元が単一の三重交換子 / 1289 | proved | proof_checked | [T3.ExistentiallyClosedGroups.lowerCentralSeries_two_eq_setOf_triple_commutator](../T3/ModelTheory/ExistentiallyClosedGroups.lean#L308) |
 
 ### `structure.strict_envelope`
 
@@ -635,8 +635,8 @@ F₄の4つの昇順tripleがactual gr₃で独立であることから、(G×F�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| bound | d(D)≤15n² / 1303 | proved | proof_checked | [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129) |
-| internal | D 自身の上下中心列が逆順に一致し、D≤LCS M / 1304 | proved | proof_checked | [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129) |
+| bound | d(D)≤15n² / 1313 | proved | proof_checked | [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129) |
+| internal | D 自身の上下中心列が逆順に一致し、D≤LCS M / 1314 | proved | proof_checked | [T3.exists_strict_envelope](../T3/ModelTheory/StrictEnvelope.lean#L129) |
 
 ### `examples.non_strict_coproduct`
 
@@ -648,9 +648,9 @@ F₄の4つの昇順tripleがactual gr₃で独立であることから、(G×F�
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| not_strict | AはGにlower-central strictに含まれない / 1360 | proved | proof_checked | [T3.Free.nonStrictSubgroup_not_isStrict](../T3/GroupTheory/Free/NonStrictExamples.lean#L239) |
-| no_amalgam | A∐F₂とGはA上のamalgamを持たない / 1361 | proved | proof_checked | [T3.Free.nonStrictWitness_ne_one](../T3/GroupTheory/Free/NonStrictExamples.lean#L264), [T3.Free.nonStrict_not_amalgamable](../T3/GroupTheory/Free/NonStrictExamples.lean#L308) |
-| comparison_not_injective | A∐F₂→G∐F₂は単射でない / 1362 | proved | proof_checked | [T3.Free.map_nonStrictWitness](../T3/GroupTheory/Free/NonStrictExamples.lean#L285), [T3.Free.nonStrict_coproduct_map_not_injective](../T3/GroupTheory/Free/NonStrictExamples.lean#L297) |
+| not_strict | AはGにlower-central strictに含まれない / 1370 | proved | proof_checked | [T3.Free.nonStrictSubgroup_not_isStrict](../T3/GroupTheory/Free/NonStrictExamples.lean#L239) |
+| no_amalgam | A∐F₂とGはA上のamalgamを持たない / 1371 | proved | proof_checked | [T3.Free.nonStrictWitness_ne_one](../T3/GroupTheory/Free/NonStrictExamples.lean#L264), [T3.Free.nonStrict_not_amalgamable](../T3/GroupTheory/Free/NonStrictExamples.lean#L308) |
+| comparison_not_injective | A∐F₂→G∐F₂は単射でない / 1372 | proved | proof_checked | [T3.Free.map_nonStrictWitness](../T3/GroupTheory/Free/NonStrictExamples.lean#L285), [T3.Free.nonStrict_coproduct_map_not_injective](../T3/GroupTheory/Free/NonStrictExamples.lean#L297) |
 
 ### `examples.strictness_necessity`
 
@@ -686,12 +686,12 @@ a≠1の巡回基底からF₃への指定された単射a↦sを構成。必要
 
 | part ID | 内容 / 原文行 | formalization | fidelity | 実在宣言 |
 | --- | --- | --- | --- | --- |
-| strict_envelope | Aₙ≤D≤LCS Fωならd(D)≥2n / 1445 | proved | proof_checked | [T3.Free.pairedCyclic_strict_cardinalRank_le](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L143), [T3.Free.exists_cyclic_without_bounded_strict_envelope](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L176) |
-| nonamalgamation_witness | Aₙ≤D≤FωでDとF₃がAₙ上でamalgamateしなければd(D)≥2n / 1446 | proved | proof_checked | [T3.Free.pairedCyclic_obstruction_cardinalRank_le](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L156), [T3.Free.exists_cyclic_without_bounded_obstruction](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L192) |
+| strict_envelope | Aₙ≤D≤LCS Fωならd(D)≥2n / 1455 | proved | proof_checked | [T3.Free.pairedCyclic_strict_cardinalRank_le](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L143), [T3.Free.exists_cyclic_without_bounded_strict_envelope](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L176) |
+| nonamalgamation_witness | Aₙ≤D≤FωでDとF₃がAₙ上でamalgamateしなければd(D)≥2n / 1456 | proved | proof_checked | [T3.Free.pairedCyclic_obstruction_cardinalRank_le](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L156), [T3.Free.exists_cyclic_without_bounded_obstruction](../T3/GroupTheory/Free/UnboundedWitnessRank.lean#L192) |
 
 ### `questions.locally_finite_varieties`
 
-出典状態: `inactive`（v8 の `\if0` 内。PDF 本文には表示されない）。
+出典状態: `inactive`（[archives/T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex) の旧 §6。現行 v9 本文には含まれない）。
 
 予定宣言: 型の設計時に決める。
 
@@ -701,7 +701,7 @@ a≠1の巡回基底からF₃への指定された単射a↦sを構成。必要
 
 ### `questions.bounded_exponent_varieties`
 
-出典状態: `inactive`（v8 の `\if0` 内。PDF 本文には表示されない）。
+出典状態: `inactive`（[archives/T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex) の旧 §6。現行 v9 本文には含まれない）。
 
 予定宣言: 型の設計時に決める。
 
@@ -711,7 +711,7 @@ a≠1の巡回基底からF₃への指定された単射a↦sを構成。必要
 
 ### `questions.burnside_local_finiteness`
 
-出典状態: `inactive`（v8 の `\if0` 内。PDF 本文には表示されない）。
+出典状態: `inactive`（[archives/T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex) の旧 §6。現行 v9 本文には含まれない）。
 
 予定宣言: 型の設計時に決める。
 

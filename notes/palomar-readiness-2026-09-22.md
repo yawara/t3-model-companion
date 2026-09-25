@@ -2,7 +2,7 @@
 
 > Historical T3 revision identifiers have been omitted for publication. Recorded commands, outcomes, and source hashes describe the original checks; this edited record does not certify the rewritten historical snapshots.
 
-> 履歴資料（v7 原稿）。原稿と PDF は [archives](../archives/README.md) に保存。現行版への移行は [v8 移行記録](v8-migration.md) を参照。
+> 履歴資料（v7 原稿）。原稿と PDF は [archives](../archives/README.md) に保存。現行版への移行は [v9 移行記録](v9-migration.md) を参照。
 
 2026-09-22. This checkpoint reviews local submission preparation against current
 Palomar requirements. It does not record a submission, editorial review, or

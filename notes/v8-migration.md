@@ -1,7 +1,9 @@
 # v8 への出典移行
 
+> 履歴資料（v8 原稿）。TeX/PDF は archives に保存。現行版は [v9 移行記録](v9-migration.md) を参照。
+
 2026-09-23。利用者から受領した `main_v8.tex` を内容を変更せず
-[T3_modelcompanion_v8.tex](../T3_modelcompanion_v8.tex) として配置した。
+[T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex) として配置した。
 SHA256 は `9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`。
 旧版は [archives/T3_modelcompanion_v7.tex](../archives/T3_modelcompanion_v7.tex) と
 [PDF](../archives/T3_modelcompanion_v7.pdf) を移動し、TeX の SHA256
@@ -51,7 +53,7 @@ PDF 生成、対応表の整合性、Lean の全体 gate、Palomar の別検査�
 
 ## PDF と今回の検証
 
-ルートの [T3_modelcompanion_v8.pdf](../T3_modelcompanion_v8.pdf) は21ページ。
+ルートの [T3_modelcompanion_v8.pdf](../archives/T3_modelcompanion_v8.pdf) は21ページ。
 原稿本文を変更せず、次のコマンドで生成してルートへコピーした。
 
 ```sh

@@ -24,8 +24,8 @@ The finite substructures need not be models of the theory. As in `Theory.IsLocal
 the models quantified over are in the canonical semantic universe `max u v`.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v8.tex, Fact 2.5, lines 293–296; no label.
-The finite-representative consequence is Definition 2.2, item 6, lines 276–277.
+TeX: T3_modelcompanion_v9.tex, Fact 2.5, lines 303–306; no label.
+The finite-representative consequence is Definition 2.2, item 6, lines 286–287.
 -/
 
 @[expose] public section
@@ -42,7 +42,7 @@ variable {L : Language.{u, v}}
 at most that of the finite structure.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v8.tex, supporting Fact 2.5; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Fact 2.5; no label.
 -/
 theorem Substructure.card_closure_range_le_of_embedding {A : Type w} {N : Type w'}
     [L.Structure A] [L.Structure N] [Finite A] {α : Type*} (a : α → A) (f : A ↪[L] N) :
@@ -62,7 +62,7 @@ theorem Substructure.card_closure_range_le_of_embedding {A : Type w} {N : Type w
 generates a substructure of at most the same cardinality.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v8.tex, supporting Fact 2.5; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Fact 2.5; no label.
 -/
 theorem Substructure.card_closure_range_le_of_qfType [Finite L.Symbols]
     {M : Type w} {N : Type w'} [L.Structure M] [L.Structure N]
@@ -84,7 +84,7 @@ variable {T : L.Theory}
 locally finite theory in a finite language. Compactness selects them from the finite diagrams.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v8.tex, Fact 2.5, lines 293–296; no label.
+TeX: T3_modelcompanion_v9.tex, Fact 2.5, lines 303–306; no label.
 -/
 theorem IsLocallyFinite.exists_finite_qfType_cover [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (n : ℕ) :
@@ -154,7 +154,7 @@ theorem IsLocallyFinite.exists_finite_qfType_cover [Finite L.Symbols]
 substructures of `n`-tuples, by taking the maximum size among the representative tuples.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v8.tex, Fact 2.5, lines 293–296; no label.
+TeX: T3_modelcompanion_v9.tex, Fact 2.5, lines 303–306; no label.
 -/
 theorem IsLocallyFinite.exists_card_closure_range_le [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (n : ℕ) :
@@ -177,7 +177,7 @@ of at most `n` elements in any model of a locally finite theory in a finite lang
 The finite generated substructure is not assumed to be a model of the theory.
 
 Paper-ID: model_theory.uniform_local_finiteness
-TeX: T3_modelcompanion_v8.tex, Fact 2.5, lines 293–296; no label.
+TeX: T3_modelcompanion_v9.tex, Fact 2.5, lines 303–306; no label.
 -/
 theorem exists_card_closure_le_of_isLocallyFinite [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (n : ℕ) :
@@ -203,7 +203,7 @@ over a locally finite theory in a finite language. This gives finite representat
 the equivalence classes, not merely one finite conjunction generating a given diagram.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, Definition 2.2, item 6, lines 276–277; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.2, item 6, lines 286–287; no label.
 -/
 theorem IsLocallyFinite.exists_finite_qf_representatives [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (n : ℕ) :
@@ -236,7 +236,7 @@ sense that every one of its formulas is equivalent over the theory to a member o
 finite subset of that diagram.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, Definition 2.2, item 6, lines 269–277; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.2, item 6, lines 279–287; no label.
 -/
 theorem IsLocallyFinite.exists_finite_tupleQfDiagram_representatives [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (M : T.ModelType.{u, v, max u v}) {n : ℕ} (a : Fin n → M) :

@@ -16,7 +16,7 @@ arbitrary nonempty models. Each finite part of the quantifier-free diagram lives
 Skolem hull, to which the original embedding hypothesis applies.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, v8 Definition 2.2, item 1, line 264; no label.
+TeX: T3_modelcompanion_v9.tex, v9 Definition 2.2, item 1, line 274; no label.
 -/
 
 @[expose] public section
@@ -35,7 +35,7 @@ variable {L : Language.{u, v}}
 canonical semantic universe, up to equivalence.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 1; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 1; no label.
 -/
 theorem exists_small_elementarySubstructure_containing_finset (M : Type w)
     [L.Structure M] [Nonempty M] (s : Finset M) :
@@ -53,7 +53,7 @@ variable {T T' : L.Theory}
 simultaneously in a canonical-universe model of the target theory.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 1; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 1; no label.
 -/
 theorem ModelsEmbedInto.exists_finite_assignment (h : T.ModelsEmbedInto T')
     (M : Type w) [L.Structure M] [Nonempty M] [M ⊨ T]
@@ -95,7 +95,7 @@ condition holds in the canonical semantic universe. The target lies in the maxim
 language and source universes.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, Definition 2.2, item 1, line 264; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.2, item 1, line 274; no label.
 -/
 theorem ModelsEmbedInto.exists_embedding (h : T.ModelsEmbedInto T')
     (M : Type w) [L.Structure M] [Nonempty M] [M ⊨ T] :

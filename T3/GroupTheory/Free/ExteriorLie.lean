@@ -18,7 +18,7 @@ the associated graded of the actual free group; the target is the truncated exte
 of any vector space with the specified basis. The construction works in arbitrary rank.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29,
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`, and Remark 2.30.
 -/
 
@@ -35,7 +35,7 @@ variable {I V : Type*} [LinearOrder I] [AddCommGroup V] [Module (ZMod 3) V]
 /-- The direct sum `σ₁ ⊕ σ₂ ⊕ σ₃`, as a linear equivalence with the truncated exterior algebra.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29,
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`, and Remark 2.30.
 -/
 noncomputable def exteriorLinearEquiv : GradedModule (Free I) ≃ₗ[ZMod 3] TruncatedExterior V :=
@@ -45,7 +45,7 @@ noncomputable def exteriorLinearEquiv : GradedModule (Free I) ≃ₗ[ZMod 3] Tru
 /-- The first component of the direct-sum comparison is `σ₁`.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem exteriorLinearEquiv_one (x : GradedModule (Free I)) :
@@ -54,7 +54,7 @@ theorem exteriorLinearEquiv_one (x : GradedModule (Free I)) :
 /-- The second component of the direct-sum comparison is `σ₂`.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem exteriorLinearEquiv_two (x : GradedModule (Free I)) :
@@ -63,7 +63,7 @@ theorem exteriorLinearEquiv_two (x : GradedModule (Free I)) :
 /-- The third component of the direct-sum comparison is `σ₃`.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem exteriorLinearEquiv_three (x : GradedModule (Free I)) :
@@ -72,7 +72,7 @@ theorem exteriorLinearEquiv_three (x : GradedModule (Free I)) :
 /-- The comparison inserts `σ₁` into the first homogeneous exterior summand.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem exteriorLinearEquiv_lof_one (x : Layer (Free I) 1) :
@@ -84,7 +84,7 @@ theorem exteriorLinearEquiv_lof_one (x : Layer (Free I) 1) :
 /-- The comparison inserts `σ₂` into the second homogeneous exterior summand.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem exteriorLinearEquiv_lof_two (x : Layer (Free I) 2) :
@@ -96,7 +96,7 @@ theorem exteriorLinearEquiv_lof_two (x : Layer (Free I) 2) :
 /-- The comparison inserts `σ₃` into the third homogeneous exterior summand.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem exteriorLinearEquiv_lof_three (x : Layer (Free I) 3) :
@@ -108,7 +108,7 @@ theorem exteriorLinearEquiv_lof_three (x : Layer (Free I) 3) :
 /-- The comparison identifies each homogeneous subspace with the corresponding exterior degree.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29,
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`, and Remark 2.30.
 -/
 theorem exteriorLinearEquiv_mem_grade_iff (n : ℕ) (x : GradedModule (Free I)) :
@@ -140,7 +140,7 @@ theorem exteriorLinearEquiv_mem_grade_iff (n : ℕ) (x : GradedModule (Free I)) 
 /-- The direct sum of the three exterior identifications preserves the paper's signed bracket.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29,
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`, and Remark 2.30.
 -/
 theorem exteriorLinearEquiv_map_bracket (x y : GradedModule (Free I)) :
@@ -157,7 +157,7 @@ theorem exteriorLinearEquiv_map_bracket (x y : GradedModule (Free I)) :
 the truncated exterior algebra of a vector space with the prescribed basis.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29,
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`, and Remark 2.30. No finite-rank assumption is used.
 -/
 noncomputable def exteriorLieEquiv : GradedModule (Free I) ≃ₗ⁅ZMod 3⁆ TruncatedExterior V :=
@@ -166,7 +166,7 @@ noncomputable def exteriorLieEquiv : GradedModule (Free I) ≃ₗ⁅ZMod 3⁆ Tr
 /-- The Lie isomorphism is the direct sum of the three specified maps `σ₁`, `σ₂`, and `σ₃`.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29, `proposition:gr(F) is Grassmann algebra`.
 -/
 @[simp]
 theorem exteriorLieEquiv_apply (x : GradedModule (Free I)) :
@@ -175,7 +175,7 @@ theorem exteriorLieEquiv_apply (x : GradedModule (Free I)) :
 /-- The exterior Lie isomorphism preserves and reflects the homogeneous degree.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29,
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`, and Remark 2.30.
 -/
 theorem exteriorLieEquiv_mem_grade_iff (n : ℕ) (x : GradedModule (Free I)) :
@@ -185,7 +185,7 @@ theorem exteriorLieEquiv_mem_grade_iff (n : ℕ) (x : GradedModule (Free I)) :
 /-- The exterior Lie isomorphism maps each entire homogeneous subspace onto its counterpart.
 
 Paper-ID: preliminaries.free_graded_equiv, preliminaries.infinite_free_graded
-TeX: T3_modelcompanion_v8.tex, v8 Proposition 2.29,
+TeX: T3_modelcompanion_v9.tex, v9 Proposition 2.29,
 `proposition:gr(F) is Grassmann algebra`, and Remark 2.30.
 -/
 theorem exteriorLieEquiv_grade (n : ℕ) :

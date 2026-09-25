@@ -47,8 +47,8 @@ a group satisfying `x^3 = 1` for every element, so the trivial group is included
    hypothesis from the first theorem; no unproved structural hypothesis is
    added to the conclusion.
 
-The [source manuscript](../T3_modelcompanion_v8.tex) is identified by SHA256
-`9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`.
+The [source manuscript](../T3_modelcompanion_v9.tex) is identified by SHA256
+`d48f10716bcc7963b654c6fe27013ac75eaa9cbdf6593683a0efc513dd062952`.
 No DOI, arXiv identifier, or external publication status is asserted.
 
 ## Statement boundary and fidelity
@@ -66,8 +66,8 @@ The deliberate Challenge holes are excluded from the proof-development
 free of holes. The permitted axioms are `propext`, `Classical.choice`, and
 `Quot.sound`.
 
-The [paper map](paper-map.md) tracks 57 active v8 items and three retained
-inactive entries from the disabled former Section 6, with 80 parts in total.
+The [paper map](paper-map.md) tracks 57 active v9 items and three retained
+inactive entries from the archived v8 Section 6, removed in v9, with 80 parts in total.
 The active scope contains 56 proved items and the open Conjecture 1.1.
 The inactive entries retain two open questions and the proved
 Burnside/local-finiteness equivalence. Their registration does not assert
@@ -114,7 +114,7 @@ the full project, the independent comparison, and Challenge rendering on these
 pins is recorded in
 [Palomar readiness, 2026-09-22](../notes/palomar-readiness-2026-09-22.md).
 That checkpoint identifies the v7 inputs and the scope of each check.
-The [v8 migration record](../notes/v8-migration.md) records the current source
+The [v9 migration record](../notes/v9-migration.md) records the current source
 update and its checks; earlier runs remain evidence for their own snapshots.
 No Palomar editorial review, submission, or registration has occurred.
 
@@ -129,7 +129,7 @@ that exact Lean toolchain. The exporter source is pinned to
 `076e8e57707e813375e8f9da8bf989799ace9680`, which also declares Lean v4.34.0.
 The local comparison script builds it with the project's exact toolchain.
 
-Palomar's recorded minimum remains v4.28.0. Its current policy also requires
+At the 2026-09-22 check, Palomar's recorded minimum was v4.28.0. The checked policy required
 the project's Lean version to match the authenticated Mathlib revision's
 `lean-toolchain` exactly. Compatible exporter and rendering support are
 separate requirements. See the
@@ -137,11 +137,11 @@ separate requirements. See the
 and [minimum version](https://github.com/PalomarRegistry/PalomarSubmission/blob/a09f5c38ee58bf92c459b974b174ff4063ebea5f/toolchains.json).
 
 The metadata audit used those same policy and submission revisions.
-The upstream `formalization.yaml` schema remains v0.4 at commit
+That audit found the upstream `formalization.yaml` schema at v0.4, commit
 `99c678e569c7c4c0772db297c5ddd5e4c9b6322e`; the vendored schema and the extracted
-arXiv and MSC2020 taxonomy keys still match the current upstream files.
-The independent Challenge remains below the policy's size and line-count
-warning thresholds. This read-only policy audit is distinct from executing
+arXiv and MSC2020 taxonomy keys matched the upstream files checked on that date.
+The independent Challenge was below the policy's size and line-count
+warning thresholds. This dated, read-only policy audit is distinct from executing
 Palomar's own verifier and editorial review.
 
 ## Before a future submission

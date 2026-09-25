@@ -26,7 +26,7 @@ Both the model-theoretic conclusion and the preceding algebraic extension constr
 work in every universe.
 
 Paper-ID: structure.strict_envelope, main.proposition_a
-TeX: T3_modelcompanion_v8.tex, `proposition:bdd LCS`, v8 Proposition 4.13, and Proposition A.
+TeX: T3_modelcompanion_v9.tex, `proposition:bdd LCS`, v9 Proposition 4.13, and Proposition A.
 -/
 
 @[expose] public section
@@ -38,14 +38,14 @@ namespace T3
 /-- The bound supplied by the paper's strict-envelope construction.
 
 Paper-ID: structure.strict_envelope, main.proposition_a
-TeX: T3_modelcompanion_v8.tex, `proposition:bdd LCS`, the function `f₀(n) = 15n²`.
+TeX: T3_modelcompanion_v9.tex, `proposition:bdd LCS`, the function `f₀(n) = 15n²`.
 -/
 def strictEnvelopeBound (n : ℕ) : ℕ := 15 * n ^ 2
 
 /-- The three generator counts fit the paper's quadratic bound for nontrivial input.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v8.tex, `proposition:bdd LCS`, lines 1333–1337.
+TeX: T3_modelcompanion_v9.tex, `proposition:bdd LCS`, lines 1343–1347.
 -/
 theorem three_stage_rank_le_strictEnvelopeBound {n : ℕ} (hn : 0 < n) :
     3 * n + 3 * (3 * n).choose 2 + 2 ≤ strictEnvelopeBound n := by
@@ -63,7 +63,7 @@ variable {G : Type u} [Group G]
 The finite group `A = D₂ ∐ F₂` embeds in an extension of `G` over the given subgroup.
 
 Paper-ID: structure.strict_envelope
-TeX: T3_modelcompanion_v8.tex, `proposition:bdd LCS`, lines 1309–1339.
+TeX: T3_modelcompanion_v9.tex, `proposition:bdd LCS`, lines 1319–1349.
 -/
 theorem exists_centralSeries_extension (hG : HasExponentThree G) (C : Subgroup G)
     [Group.FG C] [Nontrivial C] {n : ℕ} (hC : Group.rank C ≤ n) :
@@ -124,7 +124,7 @@ The finite-diagram transfer fixes every element of `C`. The returned subgroup is
 an actual overgroup of `C` inside `M`, with its intrinsic central-series structure intact.
 
 Paper-ID: structure.strict_envelope, main.proposition_a
-TeX: T3_modelcompanion_v8.tex, `proposition:bdd LCS`, v8 Proposition 4.13, and Proposition A.
+TeX: T3_modelcompanion_v9.tex, `proposition:bdd LCS`, v9 Proposition 4.13, and Proposition A.
 -/
 theorem exists_strict_envelope {M : Type*} [Group M] [CompatibleGroup M]
     (hM : exponentThreeTheory.IsExistentiallyClosedAt M) (C : Subgroup M) [Group.FG C]
@@ -164,7 +164,7 @@ model. It is the explicit function from Proposition 4.13 and is independent of t
 the subgroup, and its chosen generating family.
 
 Paper-ID: main.proposition_a
-TeX: T3_modelcompanion_v8.tex, Proposition A, lines 780–782.
+TeX: T3_modelcompanion_v9.tex, Proposition A, lines 790–792.
 -/
 theorem exists_bounded_strict_envelope :
     ∃ f₀ : ℕ → ℕ, ∀ (n : ℕ) (M : Type u) [Group M] [CompatibleGroup M],

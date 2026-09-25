@@ -1,10 +1,10 @@
 # 原稿と形式化の対応
 
-2026-09-23。現行の出典は [T3_modelcompanion_v8.tex](../T3_modelcompanion_v8.tex)。
-SHA256 は `9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`。
+2026-09-25。現行の出典は [T3_modelcompanion_v9.tex](../T3_modelcompanion_v9.tex)。
+SHA256 は `d48f10716bcc7963b654c6fe27013ac75eaa9cbdf6593683a0efc513dd062952`。
 原稿の著者は Yawara Ishida、Ryosuke Mizuno、Kota Takeuchi、形式化の著者は Yawara Ishida。
 
-[論文対応表](../docs/paper-map.md)は、v8 の有効57項目と非出力3項目、計80部分項目について原文の所在、
+[論文対応表](../docs/paper-map.md)は、v9 の有効57項目と非出力3項目、計80部分項目について原文の所在、
 公開宣言、Lean の証明状態、原稿との照合状態を別々に記録する。
 有効な56項目と旧 §6 の既知の還元を含む57項目・全80部分項目に証明がある。
 有効な Conjecture 1.1 と非出力の旧 §6 の2つの質問は `open` として区別する。
@@ -30,14 +30,16 @@ SHA256 は `9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`。
 
 ## 版と検証範囲
 
-[v8 移行記録](v8-migration.md)に §2–5 の数学的同一性、移動した行、Conjecture 1.1 と
-旧 §6 の表示範囲、今回の確認範囲を記録する。
+[v9 移行記録](v9-migration.md)に受領版と v8 の §2–5 の一致、未適用の記法・説明の指摘、
+Conjecture 1.1 とアーカイブ由来の旧 §6 の範囲、再照合と検査結果を記録する。
+具体的な照合は [§2–3](v9-prelim-main-review.md)、[§4–5](v9-constructions-review.md)、
+[序論・参考文献](v9-reference-publication-review.md) に残す。
 過去の新規実装と統合検証は [v7形式化記録](v7-formalization.md)、
 未解決問題の検討は [旧第6節の考察](section-six-analysis.md) にまとめる。
 既存の v4 数学的読解は [数学的検証](paper-mathematical-audit.md)、
 v4 完成時点の範囲と符号化は [履歴の完成記録](paper-faithful-completion.md)に残す。
 その原稿は [archives](../archives/README.md) に保存した。履歴の行・番号・入力hashは
-当時の出典を指し、v8 の検証済みという意味に書き換えない。
+当時の出典を指し、v9 の検証済みという意味に書き換えない。
 
 各時点の機械検証は対応表が指す入力 revision と検証記録に限定される。
 過去の検証成功から、変更後のソースの検証成功を推定しない。

@@ -1,0 +1,194 @@
+--- received/main_v9.tex
++++ T3_modelcompanion_v9.tex
+@@ -14,7 +14,7 @@
+ % Lists, diagrams, and references
+ \usepackage[shortlabels]{enumitem}
+ \usepackage{tikz-cd}
+-\usepackage{xcolor}
++\usepackage{xcolor,xurl}
+ \usepackage[
+   colorlinks=true,
+   linkcolor=blue!55!black,
+@@ -89,7 +89,7 @@
+ \hyphenation{de-fin-able type-de-fin-able auto-mor-phism}
+ 
+ \title{Existence of a Model Companion for Groups of Exponent $3$}
+-\author{Yawara Ishida\thanks{A.I. Systems Research Institute Co., Ltd.}, Ryosuke Mizuno\thanks{A.I. Systems Research Institute Co., Ltd.} and Kota Takeuchi\thanks{Institute of Mathematics, University of Tsukuba. Partially supported by JSPS KAKENHI
++\author{Yawara Ishida\thanks{A.I. Systems Research Institute Co., Ltd.}, Ryosuke Mizuno\thanks{A.I. Systems Research Institute Co., Ltd.}\hspace{0.75em}and Kota Takeuchi\thanks{Institute of Mathematics, University of Tsukuba. Partially supported by JSPS KAKENHI
+ Grant Number 25K00213. kota@math.tsukuba.ac.jp}}
+ \date{September, 2026}
+ 
+@@ -129,23 +129,23 @@
+ \label{sec:introduction}
+ The question of whether a given theory has a model companion has been studied for many classes of groups.
+ In the abelian case, many standard theories have model companions.
+-This is known for the theory of all abelian groups, the theory of torsion-free abelian groups, and the theory of abelian groups of any fixed finite exponent.
+-More generally, Eklof proved that every inductive theory of abelian
++This is known for the theory of all abelian groups~\cite[Theorem~2.4]{EklofSabbagh1971}, as well as the theory of torsion-free abelian groups and the theory of abelian groups of any fixed finite exponent.
++More generally, it follows from Eklof's criteria for universal equivalence and model completeness that every inductive theory of abelian
+ groups with the joint embedding property has a model
+-companion~\cite{Eklof1972}.
++companion~\cite[Theorems~4 and~7]{Eklof1972}.
+ %More generally, Eklof and Fischer proved that every inductive theory of abelian groups with the joint embedding property has a model companion~\cite{EklofFischer1972}.
+ 
+ The nonabelian case is less uniform. 
+-The theory of all groups has no model companion \cite[Example~3.5.16]{ChangKeisler1990}.
++The theory of all groups has no model companion~\cite[Theorem~7.17]{EklofSabbagh1971}; see also \cite[Example~3.5.16]{ChangKeisler1990}.
+ The same is true for the theory of torsion-free groups; see, for example, \cite{Takeuchi2022}.
+-Saracino obtained non-existence results for the theories of solvable groups of fixed derived length at least $2$ \cite{Saracino1974}. 
++Saracino proved that, for every $n\geq2$, the theory of solvable groups of derived length at most $n$ has no model companion~\cite[Theorem~1]{Saracino1974}.
+ He also proved that, for every $c\geq2$, neither the theory of nilpotent groups of class at most $c$ nor its torsion-free version has a model companion~\cite{Saracino1976}. 
+-Thus, standard conditions such as solvability or a fixed bound on nilpotency class are not enough to ensure the existence of a model companion.
++Thus, a fixed bound on the derived length or on the nilpotency class is not enough to ensure the existence of a model companion.
+ 
+ Finite exponent changes the answer for some nilpotent classes.
+ Saracino and Wood proved that the theory of groups of fixed finite exponent and nilpotency class at most $2$ has a model companion~\cite{SaracinoWood1979}.
+ For prime exponent $p$ and nilpotency class at most $c<p$, Maier proved that the theory has an
+-$\aleph_0$-categorical model companion~\cite{Maier1989}; see also
++$\aleph_0$-categorical model companion~\cite[Theorem~3.5]{Maier1989}; see also
+ \cite[Corollary~4.42]{dElbeeMuellerRamseySiniora2025}.
+ 
+ There are also positive results of a different type.
+@@ -153,7 +153,7 @@
+ These results show that noncommutativity itself is not an obstruction.
+ However, they concern complete theories of particular groups.
+ They do not give a criterion for broad classes of groups defined by simple group-theoretic axioms.
+-In contrast with the abelian case, no general result is known that describes the boundary between existence and non-existence for such nonabelian classes.
++These results do not provide a general criterion deciding which nonabelian group varieties have a model companion.
+ 
+ One way to study this boundary is to consider universal theories, and in particular varieties of groups.
+ The results above suggest that finite exponent is an important condition to examine.
+@@ -199,7 +199,7 @@
+ We therefore study finite witnesses to failure of amalgamation.
+ Let $M$ be an existentially closed model of $T_3$, let $A\leq M$, and let $A\leq B\in\mathcal V_3$ be finite.
+ If $M$ and $B$ have no amalgam over $A$, we show that the same failure already occurs between $B$ and a finite subgroup $D$ of $M$ containing $A$, where the number of generators of $D$ is bounded in terms of the number of generators of $B$.
+-In other words, the failure of amalgamation in the coproduct $M*_{\mathcal V_3}B$ can be reproduced in a coproduct involving only boundedly many generators.
++In other words, a nontrivial element of one of the factors killed in the quotient of $M*_{\mathcal V_3}B$ identifying the two copies of $A$ can already be found in the corresponding quotient of a coproduct involving only boundedly many generators.
+ By Fact~\ref{fact:locally finiteness and model companion}, this uniform bound gives the model companion.
+ 
+ For this purpose, we prove a finite strict-envelope theorem.
+@@ -214,15 +214,15 @@
+ We compute the graded Lie algebras of coproducts in $\mathcal V_3$ and use these computations to construct the required extensions.
+ 
+ Section~\ref{sec:preliminaries} contains the preliminaries.
+-Section~\ref{sec:main-results} proves the main theorem from the bounded-witness and strict-envelope results.
++Section~\ref{sec:main-results} proves the bounded-witness theorem (Theorem~\ref{thm:main}) from Proposition A and deduces the Main Theorem as Corollary 3.4.
+ Section~\ref{sec:structure} proves the structural results used in the argument.
+ Section~\ref{sec:examples} gives examples showing that lower-central strictness and existential closedness are needed.
+ 
+-We have also fully formalized all the results in this paper in Lean 4.
++The first author has formalized in Lean 4 the mathematical results proved in Sections~\ref{sec:preliminaries}--\ref{sec:examples}, including the main theorem. The formalization does not include a proof of Conjecture~\ref{conj:burnside-model-companion} in general or of the separate result announced above for sufficiently large primes.
+ The formalization depends only on the three standard axioms
+ (\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}),
+ with no \texttt{sorryAx} or project-specific axioms.
+-The formalization will be released on GitHub soon.
++The formalization is prepared in a separate repository; its public release will be announced separately.
+ 
+ \section{Preliminaries}
+ \label{sec:preliminaries}
+@@ -268,14 +268,14 @@
+ 
+ \subsection{Model-theoretic background}
+ 
+-Let $T$ and $T'$ be $L$-theories.
++Fix a language $L$. All theories in this subsection are $L$-theories.
+ \begin{definition}
+     \begin{enumerate}
+         \item $T_0$ and $T_1$ are called companions if for $i=0,1$, for every $M_i\models T_i$ there is $M_{1-i}\models T_{1-i}$ such that $M_i\subset M_{1-i}$.
+         \item $T$ is said to be model complete if for every formula $\theta(\bar x)$ there is an existential formula $\psi(\bar x)$ such that $T\models \forall \bar x(\theta(\bar x)\leftrightarrow \psi(\bar x))$.
+         \item $T^*$ is called a model companion of $T$ if $T^*$ is a companion of $T$ and is model complete.
+         \item $M\models T$ is an existentially closed model (e.c. model) of $T$ if for any $\bar a\in M$ and any extension $M\subset N\models T$, $N\models \exists \bar x\varphi(\bar x,\bar a)$ implies $M\models \exists \bar x\varphi(\bar x,\bar a)$ where $\varphi(\bar x,\bar y)$ is quantifier-free.
+-        \item $T$ is a $\Pi_2$-theory if there is a set $T'$ of $\forall\exists$-sentences such that $T\equiv T'$.
++        \item $T$ is a $\Pi_2$-theory if there is a set $T'$ of $\forall\exists$-sentences such that $T$ and $T'$ have the same models.
+         \item Let $M\models T$ and let $A\subset M$ be a finite subset. Set
+         \[
+             \Diag_A(\bar x)=\{\theta(\bar x)\mid M\models\theta(A),
+@@ -353,7 +353,7 @@
+     Then there is $\bar b\in N$ such that $N\models \varphi(\bar b,\bar a)$, so let $B=\langle \bar b,\bar a\rangle_N$ and $A=\langle \bar a\rangle_M$.
+     This means $N$ is an amalgam of $M$ and $B$ over $A$.
+     For every $C\in K(A,B)$, the definition of $K(A,B)$ gives $N\models \neg\exists \bar z\theta_{C,A}(\bar z, A)$.
+-    Because $M\subset N$ and $\theta_{C,A}$ is quantifier-free, $M\models \neg\exists \bar z\theta_{C,A}(\bar z, A)$. Hence we can find $B'\subset M\models \theta_{B,A}(B',A)$ and $\bar b'\in B'$ such that $M\models\varphi(\bar b',\bar a)$.
++    Because $M\subset N$ and $\theta_{C,A}$ is quantifier-free, $M\models \neg\exists \bar z\theta_{C,A}(\bar z, A)$. Hence we can find $B'\subset M$ with $M\models \theta_{B,A}(B',A)$ and $\bar b'\in B'$ such that $M\models\varphi(\bar b',\bar a)$.
+ \end{proof}
+ 
+ 
+@@ -635,7 +635,7 @@
+     \]
+     where $l_i,m_{i,j},n_{i,j,k}\in\mathbb F_3$ and the coefficient families
+     $(l_i)$, $(m_{i,j})$, and $(n_{i,j,k})$ have finite support.
+-    This follows from the identity $F_{\mathcal V_3}(\mathcal I\sqcup \mathcal J)=F_{\mathcal V_3}(\mathcal I)*_{\mathcal V_3}F_{\mathcal V_3}(\mathcal J)$.
++    Every group word involves only finitely many generators. For each finite $\mathcal J\subset\mathcal I$, the natural map $F_{\mathcal V_3}(\mathcal J)\to F_{\mathcal V_3}(\mathcal I)$ is injective, since it has a retraction sending all generators outside $\mathcal J$ to $1$. The finite-rank normal form therefore gives existence and uniqueness: any two finite-support expressions lie in a common finite-rank free subgroup.
+ \end{remark}
+ 
+ We use this normal form to identify the associated graded Lie algebra of
+@@ -792,7 +792,7 @@
+ \end{customproposition}
+ 
+ 
+-\begin{theorem}[Main theorem]
++\begin{theorem}[Bounded-witness theorem]
+ \label{thm:main}
+ There is a function $f:\mathbb N\to \mathbb N$ satisfying the following:
+ Let $T_3$ be the theory of groups of exponent $3$ and $M$ an existentially closed model of $T_3$.
+@@ -818,8 +818,8 @@
+ 
+ Recall that $d(A)=n$ and $d(B)\leq m$.
+ By Lemma \ref{lemma:witness in bdd support},
+-there is $C_0\leq M$ generated by $3(m+1)n$ elements such that, by letting $H_0=\langle j_M(C_0),j_B(B),\Delta\rangle \leq H$, $j_M(g)\in \llangle \Delta\rrangle_{H_0}$.
+-Let $C=\langle C_0,A,g\rangle_M$, which is generated by $3(m+1)n+n+1$ elements.
++there is $C_0\leq M$ generated by at most $3(m+1)n$ elements such that, by letting $H_0=\langle j_M(C_0),j_B(B),\Delta\rangle \leq H$, $j_M(g)\in \llangle \Delta\rrangle_{H_0}$.
++Let $C=\langle C_0,A,g\rangle_M$, which is generated by at most $3(m+1)n+n+1$ elements.
+ Since $n= d(A)\leq \log_3(|A|) \leq \log_3(|B|) \leq t(m)$ where $t(m)=m+\binom m2+\binom m3$,
+ we have $3(m+1)n+n+1\leq (3m+4)t(m)+1$.
+ By Proposition A, we can find $C\leq D\leq_\LCS M$ such that $D$ is generated by at most $f(m):=f_0((3m+4)t(m)+1)$ elements.
+@@ -832,7 +832,7 @@
+ Hence $D\to D*_{\mathcal V_3}B/\llangle \Delta\rrangle_{D*_{\mathcal V_3}B}$ is not an embedding. This shows that $A\leq D$ and $A\leq B$ do not have an amalgam over $A$.
+ \end{proof}
+ 
+-By Fact \ref{fact:locally finiteness and model companion}, we have the following.
++The group language is finite, $T_3$ is universal and hence a $\Pi_2$-theory, and Fact \ref{fact:Levi and van der Waerden} shows that $T_3$ is locally finite. Thus Theorem \ref{thm:main} and Fact \ref{fact:locally finiteness and model companion} give the following.
+ \begin{corollary}
+     Let $T_3$ be the theory of groups of exponent $3$. Then $T_3$ has a model companion.
+ \end{corollary}
+@@ -841,7 +841,7 @@
+ \section{Structural analysis}
+ \label{sec:structure}
+ 
+-We first construct a relatively free presentation of $G$.
++We first construct a relatively free presentation of a group of exponent $3$.
+ 
+ Let $G$ be a group of exponent $3$.
+ Since $V_G=G/\gamma_2(G)$ is abelian, it is a vector space over $\mathbb F_3$.
+@@ -1368,7 +1368,7 @@
+     Then
+     \begin{enumerate}
+         \item $A\not\leq_\LCS G$,
+-        \item The groups $A*_{\mathcal V_3}F_2$ and $G$ do not have an amalgam over $A$ in $T_3$, because $[a,v,w]\neq 1$ in $A*_{\mathcal V_3}F_2$ but $[a,b,c]=[[x,y],b,c]=1$ for any $b,c\in H\geq G$,
++        \item The groups $A*_{\mathcal V_3}F_2$ and $G$ do not have an amalgam over $A$ in $T_3$, because $[a,v,w]\neq 1$ in $A*_{\mathcal V_3}F_2$ but $[a,b,c]=[[x,y],b,c]=1$ for any $H\in\mathcal V_3$ containing $G$ and any $b,c\in H$,
+         \item $A*_{\mathcal V_3} F_2 \to G*_{\mathcal V_3}F_2$ is not an embedding, because $[a,v,w]\mapsto 1$.
+     \end{enumerate}
+ \end{example}
+@@ -1448,7 +1448,7 @@
+ 
+ Let $F_\omega=F_{\mathcal V_3}(\{x_i\mid i\in\mathbb N\})\in \mathcal V_3$, $n\geq 1$, $a_n=\prod_{i<n}[x_{2i},x_{2i+1}]$ and let $A_n=\langle a_n\rangle \leq F_\omega$.
+ (Clearly, $A_n\cong A_m$ for every $n,m>0$ because $A_n$ is non-trivial and $a_n^3=1$.)
+-Let $F_3=F_{\mathcal V_3}(s,y,z)\in\mathcal V_3$ and identify $A_n$ with $\langle s\rangle\leq F_3$ via $a_n\mapsto s$. Then $F_3$ and $F_\omega$ do not have an amalgam over $A_n$ by the previous lemma.
++Let $F_3=F_{\mathcal V_3}(s,x,y)\in\mathcal V_3$ and identify $A_n$ with $\langle s\rangle\leq F_3$ via $a_n\mapsto s$. Then $F_3$ and $F_\omega$ do not have an amalgam over $A_n$ by the previous lemma.
+ 
+ \begin{proposition}
+     \begin{enumerate}
+@@ -1565,11 +1565,11 @@
+ no.~2, 241--479;
+ no.~3, 665--685.
+ \href{https://doi.org/10.1070/IM1968v002n01ABEH000637}
+-     {doi:10.1070/IM1968v002n01ABEH000637};
++     {\urlstyle{same}\nolinkurl{doi:10.1070/IM1968v002n01ABEH000637}};
+ \href{https://doi.org/10.1070/IM1968v002n02ABEH000640}
+-     {doi:10.1070/IM1968v002n02ABEH000640};
++     {\urlstyle{same}\nolinkurl{doi:10.1070/IM1968v002n02ABEH000640}};
+ \href{https://doi.org/10.1070/IM1968v002n03ABEH000653}
+-     {doi:10.1070/IM1968v002n03ABEH000653}.
++     {\urlstyle{same}\nolinkurl{doi:10.1070/IM1968v002n03ABEH000653}}.
+ 
+ \bibitem[Sar1974]{Saracino1974}
+ D.~Saracino,

@@ -11,6 +11,7 @@ import re
 import subprocess
 import sys
 import time
+import tomllib
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,10 +29,13 @@ def source_hashes() -> dict[str, str]:
     """Record inputs independently of the current Git staging state."""
     files = [ROOT / name for name in [
         "T3.lean", "Challenge.lean", "Solution.lean", "lean-toolchain", "lakefile.toml",
-        "lake-manifest.json", "T3_modelcompanion_v8.tex", "formalization.yaml", "comparator.json",
+        "lake-manifest.json", "formalization.yaml", "comparator.json",
         "requirements-palomar.txt", "LICENSE", "scripts/palomar-schema/LICENSE",
         "scripts/palomar-schema/PALOMAR-LICENSE",
     ]]
+    paper_map = tomllib.loads((ROOT / "docs/paper-map.toml").read_text())
+    files.extend(ROOT / source["path"] for source in
+                 [paper_map["source"], *paper_map.get("archived_sources", [])])
     for directory, suffix in [("T3", ".lean"), ("Tests", ".lean"),
                               ("scripts", ".py"), ("scripts", ".sh"), ("scripts", ".json"),
                               ("docs", ".toml"), ("docs", ".md")]:
@@ -71,6 +75,7 @@ def main() -> int:
     report_path.write_text(json.dumps(report, indent=2) + "\n")
     steps = [
         ("palomar-metadata", [sys.executable, "scripts/check_palomar_metadata.py"]),
+        ("paper-map-fixtures", [sys.executable, "scripts/test_paper_map.py"]),
         ("build", ["lake", "build"]),
         ("imports", ["lake", "exe", "mk_all", "--check", "--lib", "T3"]),
         ("environment-lint", ["lake", "lint", "--", "--no-build", "T3"]),

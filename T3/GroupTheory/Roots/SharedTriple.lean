@@ -16,7 +16,7 @@ coordinates. Quotienting the direct product by the four indicated root relations
 the base group and supplies all four root equations.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277.
 -/
 
 @[expose] public noncomputable section
@@ -32,7 +32,7 @@ variable {G : Type*} [Group G]
 /-- The four increasing triples on four generators, in the paper's lexicographic order.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, line 1266.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, line 1276.
 -/
 def tripleIndex (i : Fin 4) : IncreasingTriple (Fin 4) :=
   ![⟨0, 1, 2, by decide, by decide⟩, ⟨0, 1, 3, by decide, by decide⟩,
@@ -45,7 +45,7 @@ private theorem tripleIndex_injective : Function.Injective tripleIndex := by
 /-- The shared triple commutator realizing one prescribed root.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1265–1266.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1275–1276.
 -/
 def witness (i : Fin 4) : Free (Fin 4) :=
   ⁅⁅Free.of (tripleIndex i).first, Free.of (tripleIndex i).second⁆,
@@ -54,7 +54,7 @@ def witness (i : Fin 4) : Free (Fin 4) :=
 /-- The four shared triples are independent in the actual third graded quotient.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, line 1265.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, line 1275.
 -/
 theorem independent : LinearIndependent (ZMod 3)
     (fun i : Fin 4 => mk (Free (Fin 4)) 3 (SharedTriple.triple (tripleIndex i))) :=
@@ -63,7 +63,7 @@ theorem independent : LinearIndependent (ZMod 3)
 /-- Each shared witness is central.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, the same construction as Lemma 4.9.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, the same construction as Lemma 4.9.
 -/
 theorem witness_mem_center (i : Fin 4) : witness i ∈ Subgroup.center (Free (Fin 4)) :=
   T3.commutator_mem_center_of_mem_commutator Free.pow_three
@@ -72,14 +72,14 @@ theorem witness_mem_center (i : Fin 4) : witness i ∈ Subgroup.center (Free (Fi
 /-- The shared root relator, with the prescribed inverse on the base element.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, line 1266.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, line 1276.
 -/
 def relator (z : Fin 4 → G) (i : Fin 4) : G × Free (Fin 4) := ((z i)⁻¹, witness i)
 
 /-- The four simultaneous shared-root relations.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, line 1266.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, line 1276.
 -/
 def kernel (z : Fin 4 → G) : Subgroup (G × Free (Fin 4)) :=
   Subgroup.normalClosure (Set.range (relator z))
@@ -89,7 +89,7 @@ instance kernel_normal (z : Fin 4 → G) : (kernel z).Normal := Subgroup.normalC
 /-- The relators are central, so their normal closure is their ordinary generated subgroup.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, line 1266.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, line 1276.
 -/
 theorem kernel_eq_closure (z : Fin 4 → G) (hz : ∀ i, z i ∈ Subgroup.center G) :
     kernel z = Subgroup.closure (Set.range (relator z)) :=
@@ -122,7 +122,7 @@ private theorem coordinate_witness (i j : Fin 4) :
 /-- No nontrivial base element is killed by the four shared-root relations.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, line 1266, applying the Lemma 4.9 argument.
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, line 1276, applying the Lemma 4.9 argument.
 -/
 theorem eq_one_of_inl_mem_kernel (hG : HasExponentThree G) (z : Fin 4 → G)
     (hz : ∀ i, z i ∈ Subgroup.center G) {g : G}
@@ -135,28 +135,28 @@ theorem eq_one_of_inl_mem_kernel (hG : HasExponentThree G) (z : Fin 4 → G)
 /-- The paper's quotient of the direct product by the simultaneous triple root relations.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267. -/
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277. -/
 abbrev Extension (z : Fin 4 → G) :=
   (G × Free (Fin 4)) ⧸ kernel z
 
 /-- The canonical map from the original group to the simultaneous root extension.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267. -/
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277. -/
 def baseMap (z : Fin 4 → G) : G →* Extension z :=
   (QuotientGroup.mk' (kernel z)).comp (MonoidHom.inl G _)
 
 /-- The four free generators shared by all four prescribed roots.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267. -/
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277. -/
 def generator (z : Fin 4 → G) (j : Fin 4) : Extension z :=
   (QuotientGroup.mk' (kernel z)) (MonoidHom.inr G _ (Free.of j))
 
 /-- The simultaneous root extension again has exponent dividing three.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267. -/
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277. -/
 theorem hasExponentThree_extension (hG : HasExponentThree G) (z : Fin 4 → G) :
     HasExponentThree (Extension z) := by
   let : Fact (HasExponentThree G) := ⟨hG⟩
@@ -165,7 +165,7 @@ theorem hasExponentThree_extension (hG : HasExponentThree G) (z : Fin 4 → G) :
 /-- The natural map into the paper's concrete simultaneous root quotient has trivial kernel.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267. -/
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277. -/
 theorem baseMap_ker (hG : HasExponentThree G) (z : Fin 4 → G)
     (hz : ∀ i, z i ∈ Subgroup.center G) : (baseMap z).ker = ⊥ := by
   apply le_antisymm _ bot_le
@@ -179,7 +179,7 @@ theorem baseMap_ker (hG : HasExponentThree G) (z : Fin 4 → G)
 There is no nontriviality or rank assumption on `G`, nor any independence assumption on `z`.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267. -/
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277. -/
 theorem baseMap_injective (hG : HasExponentThree G) (z : Fin 4 → G)
     (hz : ∀ i, z i ∈ Subgroup.center G) : Function.Injective (baseMap z) :=
   (MonoidHom.ker_eq_bot_iff _).mp (baseMap_ker hG z hz)
@@ -187,7 +187,7 @@ theorem baseMap_injective (hG : HasExponentThree G) (z : Fin 4 → G)
 /-- Each designated base element becomes its prescribed triple commutator in the quotient.
 
 Paper-ID: structure.shared_triple_roots
-TeX: T3_modelcompanion_v8.tex, Remark 4.11, lines 1263–1267. -/
+TeX: T3_modelcompanion_v9.tex, Remark 4.11, lines 1273–1277. -/
 theorem baseMap_root (z : Fin 4 → G) (i : Fin 4) :
     baseMap z (z i) =
       ⁅⁅generator z (tripleIndex i).first, generator z (tripleIndex i).second⁆,

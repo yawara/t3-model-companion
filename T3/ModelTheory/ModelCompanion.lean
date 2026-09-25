@@ -23,7 +23,7 @@ formulas. The theory's Pi-two condition and the finite-diagram assertions of Def
 separate later developments.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, v8 Definition 2.2, items 1–4, lines 264–267; no label.
+TeX: T3_modelcompanion_v9.tex, v9 Definition 2.2, items 1–4, lines 274–277; no label.
 -/
 
 @[expose] public section
@@ -39,7 +39,7 @@ variable {L : Language.{u, v}} {T T' T'' : L.Theory}
 /-- Every bundled nonempty model of `T` embeds into a bundled nonempty model of `T'`.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, v8 Definition 2.2, item 1, line 264; no label.
+TeX: T3_modelcompanion_v9.tex, v9 Definition 2.2, item 1, line 274; no label.
 -/
 def ModelsEmbedInto (T T' : L.Theory) : Prop :=
   ∀ M : T.ModelType.{u, v, max u v},
@@ -48,7 +48,7 @@ def ModelsEmbedInto (T T' : L.Theory) : Prop :=
 /-- Composition of the model-embedding property.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 1; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 1; no label.
 -/
 theorem ModelsEmbedInto.trans (hTT' : T.ModelsEmbedInto T')
     (hT'T'' : T'.ModelsEmbedInto T'') : T.ModelsEmbedInto T'' := by
@@ -60,7 +60,7 @@ theorem ModelsEmbedInto.trans (hTT' : T.ModelsEmbedInto T')
 /-- Two theories are companions when every model of either embeds into a model of the other.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, v8 Definition 2.2, item 1, line 264; no label.
+TeX: T3_modelcompanion_v9.tex, v9 Definition 2.2, item 1, line 274; no label.
 -/
 def IsCompanion (T T' : L.Theory) : Prop :=
   T.ModelsEmbedInto T' ∧ T'.ModelsEmbedInto T
@@ -68,7 +68,7 @@ def IsCompanion (T T' : L.Theory) : Prop :=
 /-- Every theory is a companion of itself.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 1; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 1; no label.
 -/
 theorem IsCompanion.refl (T : L.Theory) : T.IsCompanion T := by
   constructor <;> intro M <;> exact ⟨M, ⟨Embedding.refl L M⟩⟩
@@ -76,7 +76,7 @@ theorem IsCompanion.refl (T : L.Theory) : T.IsCompanion T := by
 /-- The companion relation is symmetric.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 1; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 1; no label.
 -/
 theorem IsCompanion.symm (h : T.IsCompanion T') : T'.IsCompanion T :=
   ⟨h.2, h.1⟩
@@ -84,7 +84,7 @@ theorem IsCompanion.symm (h : T.IsCompanion T') : T'.IsCompanion T :=
 /-- The companion relation is transitive.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 1; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 1; no label.
 -/
 theorem IsCompanion.trans (hTT' : T.IsCompanion T') (hT'T'' : T'.IsCompanion T'') :
     T.IsCompanion T'' :=
@@ -94,7 +94,7 @@ theorem IsCompanion.trans (hTT' : T.IsCompanion T') (hT'T'' : T'.IsCompanion T''
 an existential formula. Mathlib's theory equivalence universally quantifies the free variables.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, v8 Definition 2.2, item 2, line 265; no label.
+TeX: T3_modelcompanion_v9.tex, v9 Definition 2.2, item 2, line 275; no label.
 -/
 def IsModelComplete (T : L.Theory) : Prop :=
   ∀ {n : ℕ} (φ : L.Formula (Fin n)),
@@ -103,7 +103,7 @@ def IsModelComplete (T : L.Theory) : Prop :=
 /-- The semantic formulation of model completeness, kept separate from the paper's definition.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, semantic comparison for Definition 2.2, item 2; no label.
+TeX: T3_modelcompanion_v9.tex, semantic comparison for Definition 2.2, item 2; no label.
 -/
 def AllEmbeddingsElementary (T : L.Theory) : Prop :=
   ∀ (M N : T.ModelType.{u, v, max u v}) (f : M ↪[L] N),
@@ -112,7 +112,7 @@ def AllEmbeddingsElementary (T : L.Theory) : Prop :=
 /-- Existential rewriting makes every formula persist along an embedding between models.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 2; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 2; no label.
 -/
 theorem IsModelComplete.realize_embedding (h : T.IsModelComplete)
     {M : Type w} {N : Type w'} [L.Structure M] [L.Structure N] [Nonempty M] [Nonempty N]
@@ -126,7 +126,7 @@ theorem IsModelComplete.realize_embedding (h : T.IsModelComplete)
 /-- In a model-complete theory, embeddings preserve and reflect all formulas.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 2; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 2; no label.
 -/
 theorem IsModelComplete.realize_embedding_iff (h : T.IsModelComplete)
     {M : Type w} {N : Type w'} [L.Structure M] [L.Structure N] [Nonempty M] [Nonempty N]
@@ -142,7 +142,7 @@ theorem IsModelComplete.realize_embedding_iff (h : T.IsModelComplete)
 /-- The paper's syntactic definition implies the semantic elementary-embedding condition.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, semantic comparison for Definition 2.2, item 2; no label.
+TeX: T3_modelcompanion_v9.tex, semantic comparison for Definition 2.2, item 2; no label.
 -/
 theorem IsModelComplete.allEmbeddingsElementary (h : T.IsModelComplete) :
     T.AllEmbeddingsElementary := by
@@ -152,7 +152,7 @@ theorem IsModelComplete.allEmbeddingsElementary (h : T.IsModelComplete) :
 /-- A model companion is a model-complete companion, using the paper's model completeness.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, v8 Definition 2.2, item 3, line 266; no label.
+TeX: T3_modelcompanion_v9.tex, v9 Definition 2.2, item 3, line 276; no label.
 -/
 def IsModelCompanionOf (Tstar T : L.Theory) : Prop :=
   Tstar.IsCompanion T ∧ Tstar.IsModelComplete
@@ -160,7 +160,7 @@ def IsModelCompanionOf (Tstar T : L.Theory) : Prop :=
 /-- A model companion is a companion.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 3; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 3; no label.
 -/
 theorem IsModelCompanionOf.isCompanion {Tstar : L.Theory}
     (h : Tstar.IsModelCompanionOf T) : Tstar.IsCompanion T :=
@@ -169,7 +169,7 @@ theorem IsModelCompanionOf.isCompanion {Tstar : L.Theory}
 /-- A model companion is model complete in the paper's sense.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 3; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 3; no label.
 -/
 theorem IsModelCompanionOf.isModelComplete {Tstar : L.Theory}
     (h : Tstar.IsModelCompanionOf T) : Tstar.IsModelComplete :=
@@ -178,7 +178,7 @@ theorem IsModelCompanionOf.isModelComplete {Tstar : L.Theory}
 /-- A theory has a model companion if it has some model-complete companion.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 3; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 3; no label.
 -/
 def HasModelCompanion (T : L.Theory) : Prop :=
   ∃ Tstar : L.Theory, Tstar.IsModelCompanionOf T
@@ -187,7 +187,7 @@ def HasModelCompanion (T : L.Theory) : Prop :=
 that holds in an extension model already holds in the original model.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, v8 Definition 2.2, item 4, line 267; no label.
+TeX: T3_modelcompanion_v9.tex, v9 Definition 2.2, item 4, line 277; no label.
 -/
 def IsExistentiallyClosed (T : L.Theory) (M : Type (max u v)) [L.Structure M] : Prop :=
   Nonempty M ∧ M ⊨ T ∧
@@ -199,7 +199,7 @@ def IsExistentiallyClosed (T : L.Theory) (M : Type (max u v)) [L.Structure M] : 
 This does not assert the Pi-two model-companion criterion of Fact 2.3.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, items 2 and 4; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, items 2 and 4; no label.
 -/
 theorem IsModelComplete.isExistentiallyClosed (h : T.IsModelComplete)
     (M : T.ModelType.{u, v, max u v}) : T.IsExistentiallyClosed M := by
@@ -212,7 +212,7 @@ closed among models of the original theory. The second model assumption is expli
 does not supply the Pi-two implication that appears in Fact 2.3.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, items 3 and 4; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, items 3 and 4; no label.
 -/
 theorem IsModelCompanionOf.isExistentiallyClosed_of_models {Tstar : L.Theory}
     (h : Tstar.IsModelCompanionOf T) (M : Tstar.ModelType.{u, v, max u v}) [M ⊨ T] :
@@ -230,7 +230,7 @@ The universal hypothesis is used only in this auxiliary result, not as a replace
 paper's Pi-two hypothesis.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 1; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 1; no label.
 -/
 theorem IsCompanion.models_of_isUniversal [T.IsUniversal] (h : T.IsCompanion T')
     (M : T'.ModelType.{u, v, max u v}) : M ⊨ T := by
@@ -240,7 +240,7 @@ theorem IsCompanion.models_of_isUniversal [T.IsUniversal] (h : T.IsCompanion T')
 /-- Every model of a model companion of a universal theory satisfies the original theory.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, item 3; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, item 3; no label.
 -/
 theorem IsModelCompanionOf.models_of_isUniversal [T.IsUniversal]
     (h : T'.IsModelCompanionOf T) (M : T'.ModelType.{u, v, max u v}) : M ⊨ T :=
@@ -250,7 +250,7 @@ theorem IsModelCompanionOf.models_of_isUniversal [T.IsUniversal]
 of the original theory. This auxiliary special case does not prove Fact 2.3 for Pi-two theories.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, supporting Definition 2.2, items 3 and 4; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Definition 2.2, items 3 and 4; no label.
 -/
 theorem IsModelCompanionOf.isExistentiallyClosed_of_isUniversal [T.IsUniversal]
     (h : T'.IsModelCompanionOf T) (M : T'.ModelType.{u, v, max u v}) :

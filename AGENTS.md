@@ -1,7 +1,9 @@
 # Working on this formalization
 
-- The source is `T3_modelcompanion_v8.tex`. Follow its statements, hypotheses, constants, and
+- The source is `T3_modelcompanion_v9.tex`. Follow its statements, hypotheses, constants, and
   principal constructions. Read the relevant source passage before implementing a paper result.
+- Preserve the supplied TeX verbatim. Record manuscript corrections as unapplied review notes;
+  edit the TeX only when the user separately instructs you to do so.
 - Read `notes/lean-architecture.md` for the module and namespace policy. Track implementation in
   `docs/paper-map.toml` and regenerate `docs/paper-map.md` with `python3 scripts/paper_map.py --write`.
 - Every paper-facing declaration has a docstring with its `Paper-ID` and original TeX label when

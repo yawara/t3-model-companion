@@ -16,7 +16,7 @@ projections and inclusions therefore give inverse maps between the associated gr
 of the product and the product of the two layers. No finite generation is assumed.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v8.tex, v8 Example 2.21, item 2, line 526.
+TeX: T3_modelcompanion_v9.tex, v9 Example 2.21, item 2, line 536.
 -/
 
 @[expose] public section
@@ -28,7 +28,7 @@ variable {G H : Type*} [Group G] [Group H]
 /-- A direct product of exponent-three groups has exponent dividing three.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v8.tex, v8 Example 2.21, item 2.
+TeX: T3_modelcompanion_v9.tex, v9 Example 2.21, item 2.
 -/
 instance productHasExponentThree [Fact (HasExponentThree G)] [Fact (HasExponentThree H)] :
     Fact (HasExponentThree (G × H)) :=
@@ -40,7 +40,7 @@ namespace AssociatedGraded
 /-- The paper's lower central term commutes with direct products.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v8.tex, v8 Example 2.21, item 2.
+TeX: T3_modelcompanion_v9.tex, v9 Example 2.21, item 2.
 -/
 theorem term_prod (n : ℕ) : term (G × H) n = (term G n).prod (term H n) :=
   Subgroup.top_lowerCentralSeries_prod (n - 1)
@@ -48,7 +48,7 @@ theorem term_prod (n : ℕ) : term (G × H) n = (term G n).prod (term H n) :=
 /-- The canonical additive identification of a product's layer with the product of its layers.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v8.tex, v8 Example 2.21, item 2.
+TeX: T3_modelcompanion_v9.tex, v9 Example 2.21, item 2.
 -/
 def layerProdAddEquiv (n : ℕ) : Layer (G × H) n ≃+ Layer G n × Layer H n where
   toFun x := (mapAdd (MonoidHom.fst G H) n x, mapAdd (MonoidHom.snd G H) n x)
@@ -79,7 +79,7 @@ variable [Fact (HasExponentThree G)] [Fact (HasExponentThree H)]
 /-- The canonical vector-space identification of the degree quotient of a product.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v8.tex, v8 Example 2.21, item 2.
+TeX: T3_modelcompanion_v9.tex, v9 Example 2.21, item 2.
 -/
 def layerProdEquiv (n : ℕ) : Layer (G × H) n ≃ₗ[ZMod 3] Layer G n × Layer H n :=
   { layerProdAddEquiv n with map_smul' := ZMod.map_smul (layerProdAddEquiv n) }
@@ -87,7 +87,7 @@ def layerProdEquiv (n : ℕ) : Layer (G × H) n ≃ₗ[ZMod 3] Layer G n × Laye
 /-- The product equivalence is induced by the two group projections.
 
 Paper-ID: preliminaries.associated_graded_examples
-TeX: T3_modelcompanion_v8.tex, v8 Example 2.21, item 2.
+TeX: T3_modelcompanion_v9.tex, v9 Example 2.21, item 2.
 -/
 @[simp]
 theorem layerProdEquiv_apply (n : ℕ) (x : Layer (G × H) n) :

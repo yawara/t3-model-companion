@@ -22,7 +22,7 @@ a conjugate uses the paper's convention `a^g = g⁻¹ * a * g`; every factor is 
 itself. The empty product is included in the final set equality.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`, v8 Proposition 3.1.
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`, v9 Proposition 3.1.
 -/
 
 @[expose] public section
@@ -38,8 +38,8 @@ include hG
 /-- A commutator in the right argument is a triple commutator, with the required cyclic order.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem commutator_commutator_right (a g h : G) : ⁅a, ⁅g, h⁆⁆ = ⁅⁅a, h⁆, g⁆ := by
   have hah : ⁅a, h⁆ ∈ Subgroup.normalClosure ({a} : Set G) :=
     commutator_mem_normalClosure (Subgroup.subset_normalClosure (Set.mem_singleton a)) h
@@ -52,8 +52,8 @@ theorem commutator_commutator_right (a g h : G) : ⁅a, ⁅g, h⁆⁆ = ⁅⁅a,
 /-- Commutators with fixed left argument are closed under multiplication by the paper’s formula.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem commutator_mul_commutator (a g h : G) : ⁅a, g⁆ * ⁅a, h⁆ = ⁅a, g * h * ⁅g, h⁆⁆ := by
   have hsplit : ⁅a, g⁆ * ⁅a, h⁆ = ⁅a, g * h⁆ * ⁅⁅a, h⁆, g⁆ := by
     rw [commutator_mul_right_aux hG a g h]; group
@@ -64,16 +64,16 @@ theorem commutator_mul_commutator (a g h : G) : ⁅a, g⁆ * ⁅a, h⁆ = ⁅a, 
 /-- A conjugate in the paper’s convention is the element times its commutator.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem conj_eq_mul_commutator (a g : G) : g⁻¹ * a * g = a * ⁅a, g⁆ := by
   simpa only [commutator_inv_right hG, inv_inv] using (mul_commutator_inv hG a g⁻¹).symm
 
 /-- The paper’s subgroup `Eₐ`, using exponents in `𝔽₃`.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 def principalNormalForm (a : G) : Subgroup G where
   carrier := {x | ∃ (k : ZMod 3) (g : G), x = a ^ k.val * ⁅a, g⁆}
   one_mem' := ⟨0, 1, by simp⟩
@@ -101,16 +101,16 @@ def principalNormalForm (a : G) : Subgroup G where
 /-- Membership in `Eₐ` is the paper’s exponent-and-commutator expression.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem mem_principalNormalForm (a x : G) : x ∈ principalNormalForm hG a ↔
     ∃ (k : ZMod 3) (g : G), x = a ^ k.val * ⁅a, g⁆ := Iff.rfl
 
 /-- The subgroup `Eₐ` is exactly the normal closure of its defining element.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem principalNormalForm_eq_normalClosure (a : G) :
     principalNormalForm hG a = Subgroup.normalClosure ({a} : Set G) := by
   apply le_antisymm
@@ -131,8 +131,8 @@ theorem principalNormalForm_eq_normalClosure (a : G) :
 /-- Every element of a principal normal closure has the paper’s `Eₐ` expression.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem mem_normalClosure_iff (a x : G) :
     x ∈ Subgroup.normalClosure ({a} : Set G) ↔
       ∃ (k : ZMod 3) (g : G), x = a ^ k.val * ⁅a, g⁆ := by
@@ -141,8 +141,8 @@ theorem mem_normalClosure_iff (a x : G) :
 /-- Every element of a principal normal closure is a product of at most three conjugates.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem exists_conjList_of_mem_normalClosure {a x : G}
     (hx : x ∈ Subgroup.normalClosure ({a} : Set G)) :
     ∃ l : List G, l.length ≤ 3 ∧ x = (l.map fun g => g⁻¹ * a * g).prod := by
@@ -173,8 +173,8 @@ omit hG in
 /-- Every finite product of conjugates lies in the principal normal closure.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem conjList_prod_mem (a : G) (l : List G) :
     (l.map fun g => g⁻¹ * a * g).prod ∈ Subgroup.normalClosure ({a} : Set G) := by
   induction l with
@@ -188,8 +188,8 @@ theorem conjList_prod_mem (a : G) (l : List G) :
 /-- A principal normal closure is precisely the products of at most three positive conjugates.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem normalClosure_eq_conjList (a : G) :
     (Subgroup.normalClosure ({a} : Set G) : Set G) =
       {x | ∃ l : List G, l.length ≤ 3 ∧ x = (l.map fun g => g⁻¹ * a * g).prod} := by
@@ -202,8 +202,8 @@ theorem normalClosure_eq_conjList (a : G) :
 /-- Every finite product of conjugates compresses to at most three positive conjugates.
 
 Paper-ID: main.conjugate_width
-TeX: T3_modelcompanion_v8.tex, `proposition:bounded number of conjugates`,
-v8 Proposition 3.1. -/
+TeX: T3_modelcompanion_v9.tex, `proposition:bounded number of conjugates`,
+v9 Proposition 3.1. -/
 theorem exists_conjList_compression (a : G) (l : List G) :
     ∃ l' : List G, l'.length ≤ 3 ∧
       (l.map fun g => g⁻¹ * a * g).prod = (l'.map fun g => g⁻¹ * a * g).prod :=

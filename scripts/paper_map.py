@@ -45,6 +45,15 @@ def repo_path(relative: str) -> Path:
     return path
 
 
+def source_span(source: str, locator: dict, context: str) -> list[str]:
+    """Validate a one-based inclusive locator before slicing a manuscript."""
+    lines = source.splitlines()
+    start, end = locator["line_start"], locator["line_end"]
+    require(type(start) is int and type(end) is int and 1 <= start <= end <= len(lines),
+            f"{context}: source locator outside manuscript")
+    return lines[start - 1:end]
+
+
 def uncomment_tex(source: str) -> str:
     return re.sub(r"(?<!\\)%[^\n]*", "", source)
 
@@ -52,7 +61,7 @@ def uncomment_tex(source: str) -> str:
 def active_tex(source: str) -> str:
     """Mask the manuscript's literal conditionals, preserving source positions.
 
-    The v8 manuscript uses a false ``\\if0 ... \\fi`` block. Literal
+    The archived v8 manuscript uses a false ``\\if0 ... \\fi`` block. Literal
     ``\\iffalse``/``\\iftrue`` and nesting are also supported. Other TeX
     conditionals need explicit support rather than guessed source coverage.
     """
@@ -292,13 +301,22 @@ def validate(data: dict, manifest: dict | None = None) -> None:
     require(digest == source["sha256"], "TeX SHA256 changed; review and repin the source map")
     tex = path.read_text()
     active_source_lines = active_tex(uncomment_tex(tex)).splitlines()
+    archived_sources = {}
+    for archived in data.get("archived_sources", []):
+        archived_path = archived["path"]
+        require(archived_path != source["path"] and archived_path not in archived_sources,
+                f"Duplicate source path: {archived_path}")
+        archived_file = repo_path(archived_path)
+        require(hashlib.sha256(archived_file.read_bytes()).hexdigest() == archived["sha256"],
+                f"Archived TeX SHA256 changed: {archived_path}")
+        archived_sources[archived_path] = archived_file.read_text()
     scanned = source_items(tex)
     active_lines = {item["line_start"] for item in scanned}
     inactive_scanned = [item for item in source_items(tex, include_inactive=True)
                         if item["line_start"] not in active_lines]
     numbered = [item for item in scanned if item["environment"] != "customproposition"]
     custom = [item for item in scanned if item["environment"] == "customproposition"]
-    require(len(numbered) == source["numbered_items"] == 54, "Expected all 54 active numbered v8 items")
+    require(len(numbered) == source["numbered_items"] == 54, "Expected all 54 active numbered v9 items")
     require(len(custom) == source["custom_items"] == 1, "Expected Proposition A")
     items = data["items"]
     ids = [item["id"] for item in items]
@@ -308,16 +326,32 @@ def validate(data: dict, manifest: dict | None = None) -> None:
     require(len(active) + len(inactive) == len(items), "Invalid source_status")
     require(source["unnumbered_items"] == 2 and len(active) == len(scanned) + 2,
             "Expected 54 active numbered items, Proposition A, and two unnumbered items")
-    require(len(inactive_scanned) == source["inactive_numbered_items"] == 2
-            and source["inactive_unnumbered_items"] == 1 and len(inactive) == 3,
-            "Expected two inactive questions and the inactive Burnside reduction")
+    require(len(inactive_scanned) == source["inactive_numbered_items"] == 0
+            and source["inactive_unnumbered_items"] == 0 and len(inactive) == 3,
+            "Expected no disabled v9 items and three retained archived items")
+    archived_scanned = []
+    for item in inactive:
+        source_path = item.get("source_path")
+        require(source_path in archived_sources, f"{item['id']}: missing archived source")
+        require(source_path == "archives/T3_modelcompanion_v8.tex",
+                f"{item['id']}: retained item must use archived v8 source")
+        if item["environment"] != "prose":
+            matches = [entry for entry in source_items(archived_sources[source_path],
+                                                       include_inactive=True)
+                       if (entry["environment"], entry["number"]) ==
+                       (item["environment"], item["number"])]
+            require(len(matches) == 1, f"{item['id']}: archived source item missing or ambiguous")
+            archived_scanned.extend(matches)
+    require(len(archived_scanned) == 2, "Expected both archived questions")
     by_location = {(item["environment"], item["number"]): item for item in items}
     require(len(by_location) == len(items), "Duplicate source item")
-    for item in scanned + inactive_scanned:
+    for item, expected_status in ([(entry, "active") for entry in scanned]
+                                  + [(entry, "inactive") for entry in archived_scanned]):
         key = item["environment"], item["number"]
         require(key in by_location, f"Unregistered TeX item: {key}")
         registered = by_location[key]
-        expected_status = "active" if item["line_start"] in active_lines else "inactive"
+        require(bool(registered.get("source_path")) == (expected_status == "inactive"),
+                f"{registered['id']}: incorrect source path")
         require(registered.get("source_status", "active") == expected_status,
                 f"{registered['id']}: incorrect source_status")
         for field in ("line_start", "line_end", "tex_label"):
@@ -331,15 +365,19 @@ def validate(data: dict, manifest: dict | None = None) -> None:
                     f"{registered['id']}: invalid part source locator")
     exponent = next((item for item in items if item["id"] == "preliminaries.exponent_three"), None)
     require(exponent is not None, "Missing separate exponent-three convention")
+    exponent_lines = source_span(tex, exponent, exponent["id"])
     require(exponent["environment"] == "prose" and exponent["number"] == "2.preamble"
-            and exponent["line_start"] == 220 and exponent["line_end"] == 226
+            and exponent["line_end"] - exponent["line_start"] == 6
+            and "Throughout, groups" in exponent_lines[0]
             and exponent["tex_label"] == "" and "T3.GroupTheory.Basic" in exponent["modules"],
             "Incorrect exponent-three convention locator or module")
     set_commutator = next((item for item in items if item["id"] == "preliminaries.set_commutator"), None)
     require(set_commutator is not None, "Missing separate set commutator definition")
+    commutator_lines = source_span(tex, set_commutator, set_commutator["id"])
     require(set_commutator["environment"] == "prose"
             and set_commutator["number"] == "2.group_preamble"
-            and set_commutator["line_start"] == 408 and set_commutator["line_end"] == 409
+            and set_commutator["line_end"] - set_commutator["line_start"] == 1
+            and "For subsets" in commutator_lines[0]
             and set_commutator["tex_label"] == ""
             and set_commutator["modules"] == ["T3.GroupTheory.Basic"],
             "Incorrect set commutator definition locator or module")
@@ -352,8 +390,9 @@ def validate(data: dict, manifest: dict | None = None) -> None:
     takeuchi = next(item for item in items if item["id"] == "questions.takeuchi_conjecture")
     require(takeuchi["environment"] == "conjecture" and takeuchi["number"] == "1.1"
             and takeuchi["tex_label"] == "conj:burnside-model-companion",
-            "Takeuchi conjecture must track active v8 Conjecture 1.1")
+            "Takeuchi conjecture must track active v9 Conjecture 1.1")
     require(takeuchi.get("additional_source_locations") == [{
+        "source_path": "archives/T3_modelcompanion_v8.tex",
         "line_start": 1532, "line_end": 1535, "source_status": "inactive",
         "description": "Inactive Further questions: finite-rank Burnside groups formulation",
     }], "Takeuchi conjecture must retain its inactive Burnside formulation")
@@ -367,8 +406,10 @@ def validate(data: dict, manifest: dict | None = None) -> None:
             and identities["number"] == "2.15"
             and "T3.GroupTheory.Identities" in identities["modules"],
             "Incorrect elementary-identities entry")
-    require([item["line_start"] for item in items] == sorted(item["line_start"] for item in items),
-            "Items must be in paper order")
+    require(items == active + inactive, "Archived items must follow the active manuscript")
+    for group in [active, inactive]:
+        require([item["line_start"] for item in group] == sorted(item["line_start"] for item in group),
+                "Items must be in paper order within each source")
     cache = {}
     for item in items:
         context = item["id"]
@@ -377,7 +418,19 @@ def validate(data: dict, manifest: dict | None = None) -> None:
         require(bool(item["title"]) and (bool(item["modules"]) or item["formalization"] == "open"),
                 f"{context}: missing title or modules")
         for locator in [item] + item.get("additional_source_locations", []):
-            selected_lines = active_source_lines[locator["line_start"] - 1:locator["line_end"]]
+            source_path = locator.get("source_path", source["path"])
+            require(source_path == source["path"] or source_path in archived_sources,
+                    f"{context}: unregistered source path")
+            archived = source_path in archived_sources
+            source_text = archived_sources[source_path] if archived else tex
+            require(any(line.strip() for line in
+                        source_span(uncomment_tex(source_text), locator, context)),
+                    f"{context}: empty source locator")
+            if archived:
+                require(locator.get("source_status") == "inactive",
+                        f"{context}: archived source cannot be an active manuscript item")
+            selected_lines = (active_tex(uncomment_tex(source_text)).splitlines()
+                              if archived else active_source_lines)[locator["line_start"] - 1:locator["line_end"]]
             is_active = any(line.strip() for line in selected_lines)
             require(is_active == (locator.get("source_status", "active") == "active"),
                     f"{context}: source locator does not match active TeX")
@@ -411,18 +464,18 @@ def render(data: dict) -> str:
         "このファイルは `docs/paper-map.toml` から生成する。変更後は "
         "`python3 scripts/paper_map.py --write`、整合性検査は `--check` を使う。", "",
         f"対象: [{source['path']}](../{source['path']})。SHA256: `{source['sha256']}`。", "",
-        "v8 の有効な本文は番号付き 54 項目（Conjecture 1.1 を含む）、Proposition A、"
+        "v9 の有効な本文は番号付き 54 項目（Conjecture 1.1 を含む）、Proposition A、"
         "§2 の無番号定義 2 項目の計 57 項目を登録する。"
-        "`\\if0` 内の旧 §6 から Questions 6.1–6.2 と Burnside 群による還元の"
+        "アーカイブ v8 の旧 §6 から Questions 6.1–6.2 と Burnside 群による還元の"
         "3 項目を `inactive` として保持し、PDF 本文の項目数には含めない。"
         "行・表示番号は補助情報で、安定 ID を主キーとする。", "",
         "有効な本文の状態: " + ", ".join(f"`{state}` {counts[state]}" for state in
                                        ("planned", "partial", "stated", "proved", "open")) + "。", "",
         "非表示の保持項目: " + ", ".join(f"`{state}` {inactive_counts[state]}" for state in
                                            ("proved", "open")) + "。", "",
-        "v7 からの出典差分と照合の範囲は [v8 移行記録](../notes/v8-migration.md) を参照する。"
+        "v8 からの出典差分と今回の照合の範囲は [v9 移行・レビュー記録](../notes/v9-migration.md) を参照する。"
         "既存の `verification` と `proof_checked` は過去の検証・照合記録を保持しており、"
-        "v8 全文を新たに数学的監査したという意味ではない。", "",
+        "今回の再照合・Lean の再検証とは区別する。", "",
         "`formalization` と `fidelity` は別々に記録する。`partial` は項目の一部だけに"
         "実在宣言がある状態、`stated` は型・定義の記述まで、`proved` は別の検証記録を"
         "伴う完成状態を表す。`unchecked` / `statement_checked` / `proof_checked` は"
@@ -436,7 +489,9 @@ def render(data: dict) -> str:
     ]
     for item in items:
         label = f"`{item['tex_label']}`" if item["tex_label"] else "label なし"
-        locator = f"{label}<br>{item['line_start']}–{item['line_end']}"
+        source_path = item.get("source_path", source["path"])
+        locator = (f"{label}<br>[{source_path}](../{source_path}#L{item['line_start']})"
+                   f"<br>{item['line_start']}–{item['line_end']}")
         modules = "<br>".join(f"`{module}`" for module in item["modules"]) or "—"
         if item["environment"] == "prose":
             name = {
@@ -453,14 +508,17 @@ def render(data: dict) -> str:
     for item in items:
         lines.extend([f"### `{item['id']}`", ""])
         if item.get("source_status") == "inactive":
-            lines.extend(["出典状態: `inactive`（v8 の `\\if0` 内。PDF 本文には表示されない）。", ""])
+            lines.extend([f"出典状態: `inactive`（[{item['source_path']}](../{item['source_path']})"
+                          " の旧 §6。現行 v9 本文には含まれない）。", ""])
         planned = ", ".join(f"`{name}`" for name in item["planned_declarations"]) or "型の設計時に決める"
         actual = ", ".join(declaration_link(binding) for binding in item["declarations"]) or "なし"
         lines.extend([f"予定宣言: {planned}。", "", f"実在宣言: {actual}。", ""])
         if item.get("notes"):
             lines.extend([item["notes"], ""])
         for locator in item.get("additional_source_locations", []):
+            source_path = locator.get("source_path", source["path"])
             lines.extend([f"追加出典: {locator['description']}、"
+                          f"[{source_path}](../{source_path}#L{locator['line_start']})、"
                           f"{locator['line_start']}–{locator['line_end']} 行"
                           f"（`{locator.get('source_status', 'active')}`）。", ""])
         if item.get("parts"):

@@ -15,7 +15,7 @@ subgroup. If that subgroup lies in the range of an injective homomorphism, the c
 pulls back, including its conjugating elements. No exponent or finiteness assumption is needed.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v8.tex, `thm:main`, the passage from `H₀` to `D ∐ B`, line 821.
+TeX: T3_modelcompanion_v9.tex, `thm:main`, the passage from `H₀` to `D ∐ B`, line 831.
 -/
 
 @[expose] public section
@@ -28,7 +28,7 @@ variable {G H : Type*} [Group G] [Group H]
 The relators need not all belong to the smaller subgroup.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v8.tex, `thm:main`, the inclusion of `H₀` in the smaller coproduct.
+TeX: T3_modelcompanion_v9.tex, `thm:main`, the inclusion of `H₀` in the smaller coproduct.
 -/
 theorem normalClosureIn_mono_ambient {E F : Subgroup H} (hEF : E ≤ F) (Δ : Set H) :
     normalClosureIn E Δ ≤ normalClosureIn F Δ := by
@@ -45,7 +45,7 @@ theorem normalClosureIn_mono_ambient {E F : Subgroup H} (hEF : E ≤ F) (Δ : Se
 of the inverse-image relators. The embedding's inverse on its range also lifts the conjugators.
 
 Paper-ID: main.bounded_witness
-TeX: T3_modelcompanion_v8.tex, `thm:main`, the certificate in `D ∐ B` on line 821.
+TeX: T3_modelcompanion_v9.tex, `thm:main`, the certificate in `D ∐ B` on line 831.
 -/
 theorem mem_normalClosure_of_mem_normalClosureIn (f : G →* H) (hf : Function.Injective f)
     (E : Subgroup H) (hE : E ≤ f.range) (Δ : Set H) {x : G}

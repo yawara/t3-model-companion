@@ -17,7 +17,7 @@ canonical tensor maps, all embedded in the actual graded Lie algebra. Only the n
 of positive total degree at most three can be nonzero. The bracket adds both factor degrees.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 
 @[expose] public section
@@ -34,7 +34,7 @@ variable {G H : Type*} [Group G] [Group H]
 /-- The left pure component in the actual graded Lie algebra of the coproduct.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, block `Bᵢ,₀`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, block `Bᵢ,₀`.
 -/
 def pureLeftBlock (i : ℕ) : Submodule (ZMod 3) (GradedModule (Coproduct G H)) :=
   LinearMap.range ((DirectSum.lof (ZMod 3) ℕ (Layer (Coproduct G H)) i).comp (mapLayer inl i))
@@ -42,7 +42,7 @@ def pureLeftBlock (i : ℕ) : Submodule (ZMod 3) (GradedModule (Coproduct G H)) 
 /-- The right pure component in the actual graded Lie algebra of the coproduct.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, block `B₀,ⱼ`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, block `B₀,ⱼ`.
 -/
 def pureRightBlock (j : ℕ) : Submodule (ZMod 3) (GradedModule (Coproduct G H)) :=
   LinearMap.range ((DirectSum.lof (ZMod 3) ℕ (Layer (Coproduct G H)) j).comp (mapLayer inr j))
@@ -50,7 +50,7 @@ def pureRightBlock (j : ℕ) : Submodule (ZMod 3) (GradedModule (Coproduct G H))
 /-- The mixed tensor component in the actual graded Lie algebra, in positive factor degrees.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, block `Bᵢ,ⱼ`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, block `Bᵢ,ⱼ`.
 -/
 def mixedBlock {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
     Submodule (ZMod 3) (GradedModule (Coproduct G H)) :=
@@ -61,7 +61,7 @@ def mixedBlock {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
 Degree zero and degrees at least four vanish in the actual graded quotients.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 def block : ℕ → ℕ → Submodule (ZMod 3) (GradedModule (Coproduct G H))
   | 0, j => pureRightBlock j
@@ -98,7 +98,7 @@ private theorem pureRightBlock_zero : pureRightBlock (G := G) (H := H) 0 = ⊥ :
 /-- On the right axis the blocks are the canonical right pure images.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 @[simp]
 theorem block_zero_left (j : ℕ) : block (G := G) (H := H) 0 j = pureRightBlock j := rfl
@@ -106,7 +106,7 @@ theorem block_zero_left (j : ℕ) : block (G := G) (H := H) 0 j = pureRightBlock
 /-- On the left axis the blocks are the canonical left pure images.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 @[simp]
 theorem block_zero_right (i : ℕ) : block (G := G) (H := H) i 0 = pureLeftBlock i := by
@@ -117,7 +117,7 @@ theorem block_zero_right (i : ℕ) : block (G := G) (H := H) i 0 = pureLeftBlock
 /-- In positive factor degrees the block is exactly the canonical mixed tensor image.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 theorem block_of_pos {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
     block (G := G) (H := H) i j = mixedBlock hi hj := by
@@ -130,7 +130,7 @@ theorem block_of_pos {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
 /-- The total homogeneous degree of a block is the sum of its factor degrees.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 theorem block_le_grade (i j : ℕ) :
     block (G := G) (H := H) i j ≤ grade (Coproduct G H) (i + j) := by
@@ -143,14 +143,14 @@ theorem block_le_grade (i j : ℕ) :
 /-- There is no block of total degree zero.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, positive grading.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, positive grading.
 -/
 theorem block_zero_zero : block (G := G) (H := H) 0 0 = ⊥ := pureRightBlock_zero
 
 /-- All blocks of total degree at least four vanish, as specified in the paper.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 theorem block_eq_bot_of_four_le {i j : ℕ} (h : 4 ≤ i + j) :
     block (G := G) (H := H) i j = ⊥ :=
@@ -203,7 +203,7 @@ private theorem bracket_swap_le
 The left arguments occur in the cyclic order `c, a`.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2, mixed bracket formula.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2, mixed bracket formula.
 -/
 theorem bracket_mixedMap_tmul_inl (a c : Layer G 1) (b : Layer H 1) :
     bracketLayer (i := 2) (j := 1) (by decide) (by decide)
@@ -217,7 +217,7 @@ theorem bracket_mixedMap_tmul_inl (a c : Layer G 1) (b : Layer H 1) :
 `(1,2)` component, with the right arguments in their original order.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2, mixed bracket formula.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2, mixed bracket formula.
 -/
 theorem bracket_mixedMap_tmul_inr (a : Layer G 1) (b c : Layer H 1) :
     bracketLayer (i := 2) (j := 1) (by decide) (by decide)
@@ -263,7 +263,7 @@ The mixed degree-three cases follow from cyclic invariance of the triple bracket
 total degrees vanish in the actual associated graded Lie algebra.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 theorem bracket_block_le (i j k l : ℕ) :
     Submodule.map₂ bracketLinear (block (G := G) (H := H) i j) (block k l) ≤
@@ -335,7 +335,7 @@ theorem bracket_block_le (i j k l : ℕ) :
 /-- Elementwise form of the two-factor grading law for the actual Lie bracket.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, item 2.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, item 2.
 -/
 theorem bracket_mem_block {i j k l : ℕ} {x y : GradedModule (Coproduct G H)}
     (hx : x ∈ block i j) (hy : y ∈ block k l) : ⁅x, y⁆ ∈ block (i + k) (j + l) :=

@@ -16,7 +16,7 @@ from the paper, through the general central-series criterion. The natural copy o
 strict, as follows from injectivity on the graded layers.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series` (Lemma 4.6).
+TeX: T3_modelcompanion_v9.tex, `lemma:coincidence of central series` (Lemma 4.6).
 -/
 
 @[expose] public section
@@ -29,7 +29,7 @@ variable {G : Type*} [Group G] [Fact (HasExponentThree G)] [Nontrivial G]
 reverse order. Both graded separation claims apply to arbitrary nontrivial `G`.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series` (Lemma 4.6).
+TeX: T3_modelcompanion_v9.tex, `lemma:coincidence of central series` (Lemma 4.6).
 -/
 theorem centralSeriesCoincide_freeTwo : CentralSeriesCoincide (Coproduct G (Free (Fin 2))) :=
   AssociatedGraded.centralSeriesCoincide_of_bracket_separation
@@ -39,7 +39,7 @@ theorem centralSeriesCoincide_freeTwo : CentralSeriesCoincide (Coproduct G (Free
 central series. This is the full statement of the paper's stabilization lemma.
 
 Paper-ID: structure.free_two_stabilization
-TeX: T3_modelcompanion_v8.tex, `lemma:coincidence of central series` (Lemma 4.6).
+TeX: T3_modelcompanion_v9.tex, `lemma:coincidence of central series` (Lemma 4.6).
 -/
 theorem freeTwo_stabilization :
     IsStrict (inl (G := G) (H := Free (Fin 2))).range ∧

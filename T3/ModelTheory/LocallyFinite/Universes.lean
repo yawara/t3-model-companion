@@ -15,7 +15,7 @@ A small elementary hull containing a finite parameter set allows local finitenes
 from the canonical semantic universe to every nonempty model of the theory.
 
 Paper-ID: model_theory.local_finiteness
-TeX: T3_modelcompanion_v8.tex, Definition 2.4, lines 287–290; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4, lines 297–300; no label.
 -/
 
 @[expose] public section
@@ -32,7 +32,7 @@ variable {L : Language.{u, v}} {T : L.Theory}
 generate finite substructures in every nonempty model, without a cardinality hypothesis.
 
 Paper-ID: model_theory.local_finiteness
-TeX: T3_modelcompanion_v8.tex, Definition 2.4, lines 287–290; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.4, lines 297–300; no label.
 -/
 theorem IsLocallyFinite.finite_closure (hT : T.IsLocallyFinite) (M : Type w)
     [L.Structure M] [Nonempty M] [M ⊨ T] (s : Set M) (hs : s.Finite) :
@@ -61,7 +61,7 @@ theorem IsLocallyFinite.finite_closure (hT : T.IsLocallyFinite) (M : Type w)
 quantifier-free diagram basis. Its equivalence is valid in arbitrary target structures.
 
 Paper-ID: model_theory.basic_definitions
-TeX: T3_modelcompanion_v8.tex, Definition 2.2, item 6, lines 276–277; no label.
+TeX: T3_modelcompanion_v9.tex, Definition 2.2, item 6, lines 286–287; no label.
 -/
 theorem IsLocallyFinite.exists_finite_tupleQfDiagram_of_model [Finite L.Symbols]
     (hT : T.IsLocallyFinite) (M : Type w) [L.Structure M] [Nonempty M] [M ⊨ T]

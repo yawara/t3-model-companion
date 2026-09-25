@@ -1,0 +1,10 @@
+{
+  "modules": 117,
+  "declarations": 3120,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "manifest_sha256": "d475691d2a893f10d5255e0b9e3501d1d0d294e03f413aa28797c2d5151c2ed0"
+}

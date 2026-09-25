@@ -20,7 +20,7 @@ by descending their bilinear commutator to the tensor product. These maps do not
 The degree-one map is an isomorphism, with inverse induced by the factor retractions.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, v8 Proposition 4.4.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, v9 Proposition 4.4.
 -/
 
 @[expose] public section
@@ -37,7 +37,7 @@ variable {G H : Type*} [Group G] [Group H]
 /-- The sum of the two factor maps on a graded layer.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, pure components of `η`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, pure components of `η`.
 -/
 def factorMap (n : ℕ) : Layer G n × Layer H n →ₗ[ZMod 3] Layer (Coproduct G H) n :=
   (mapLayer inl n).coprod (mapLayer inr n)
@@ -45,7 +45,7 @@ def factorMap (n : ℕ) : Layer G n × Layer H n →ₗ[ZMod 3] Layer (Coproduct
 /-- The pair of maps induced by the two factor retractions.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, inverse on pure components.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, inverse on pure components.
 -/
 def factorProjection (n : ℕ) : Layer (Coproduct G H) n →ₗ[ZMod 3] Layer G n × Layer H n :=
   (mapLayer (fst Fact.out) n).prod (mapLayer (snd Fact.out) n)
@@ -99,7 +99,7 @@ theorem factorProjection_inr (n : ℕ) (x : Layer H n) :
 /-- The two factor components embed as a direct sum in every graded layer.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, pure components.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, pure components.
 -/
 @[simp]
 theorem factorProjection_factorMap (n : ℕ) (x : Layer G n × Layer H n) :
@@ -109,7 +109,7 @@ theorem factorProjection_factorMap (n : ℕ) (x : Layer G n × Layer H n) :
 /-- Injectivity of the sum of the pure factor components, without finite generation.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, pure components.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, pure components.
 -/
 theorem factorMap_injective (n : ℕ) : Function.Injective (factorMap (G := G) (H := H) n) :=
   (show Function.LeftInverse (factorProjection n) (factorMap (G := G) (H := H) n) from
@@ -118,7 +118,7 @@ theorem factorMap_injective (n : ℕ) : Function.Injective (factorMap (G := G) (
 /-- In degree one the two factor components exhaust the coproduct's quotient.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, degree-one identification.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, degree-one identification.
 -/
 @[simp]
 theorem factorMap_one_factorProjection (x : Layer (Coproduct G H) 1) :
@@ -147,7 +147,7 @@ theorem factorMap_one_factorProjection (x : Layer (Coproduct G H) 1) :
 Its inverse consists of the two factor retractions.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, `η₁`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, `η₁`.
 -/
 def layerOneEquiv : (Layer G 1 × Layer H 1) ≃ₗ[ZMod 3] Layer (Coproduct G H) 1 :=
   { factorMap 1 with
@@ -167,7 +167,7 @@ omit [Fact (HasExponentThree H)] in
 /-- The canonical left factor inclusion is strict for the lower central series.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, pure left component.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, pure left component.
 -/
 theorem isStrict_inl : IsStrict (inl (G := G) (H := H)).range :=
   isStrict_range_of_leftInverse inl (fst Fact.out) rfl
@@ -176,7 +176,7 @@ omit [Fact (HasExponentThree G)] in
 /-- The canonical right factor inclusion is strict for the lower central series.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, pure right component.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, pure right component.
 -/
 theorem isStrict_inr : IsStrict (inr (G := G) (H := H)).range :=
   isStrict_range_of_leftInverse inr (snd Fact.out) rfl
@@ -185,7 +185,7 @@ theorem isStrict_inr : IsStrict (inr (G := G) (H := H)).range :=
 In particular the degree `(1,2)` component uses the bracket in the printed order.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, the tensor formula for `η`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, the tensor formula for `η`.
 -/
 def mixedMap {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
     Layer G i ⊗[ZMod 3] Layer H j →ₗ[ZMod 3] Layer (Coproduct G H) (i + j) :=
@@ -194,7 +194,7 @@ def mixedMap {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
 /-- The mixed component sends a pure tensor to the bracket of its two factor images.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, defining tensor formula.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, defining tensor formula.
 -/
 @[simp]
 theorem mixedMap_tmul {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
@@ -205,14 +205,14 @@ theorem mixedMap_tmul {i j : ℕ} (hi : 0 < i) (hj : 0 < j)
 /-- The three components in the domain of the paper's degree-two map, in printed order.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, domain of `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, domain of `η₂`.
 -/
 abbrev LayerTwoBlocks := Layer G 2 × (Layer G 1 ⊗[ZMod 3] Layer H 1) × Layer H 2
 
 /-- The canonical map `η₂`, defined before proving that it is an isomorphism.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, `η₂`.
 -/
 def layerTwoMap : LayerTwoBlocks (G := G) (H := H) →ₗ[ZMod 3] Layer (Coproduct G H) 2 :=
   (mapLayer inl 2).coprod ((mixedMap (by decide) (by decide)).coprod (mapLayer inr 2))
@@ -220,7 +220,7 @@ def layerTwoMap : LayerTwoBlocks (G := G) (H := H) →ₗ[ZMod 3] Layer (Coprodu
 /-- The four components in the domain of the paper's degree-three map, in printed order.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, domain of `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, domain of `η₃`.
 -/
 abbrev LayerThreeBlocks := Layer G 3 × (Layer G 2 ⊗[ZMod 3] Layer H 1) ×
   (Layer G 1 ⊗[ZMod 3] Layer H 2) × Layer H 3
@@ -228,7 +228,7 @@ abbrev LayerThreeBlocks := Layer G 3 × (Layer G 2 ⊗[ZMod 3] Layer H 1) ×
 /-- The canonical map `η₃`, with the `(1,2)` component given by `[inl x, inr q]`.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, `η₃`.
 -/
 def layerThreeMap : LayerThreeBlocks (G := G) (H := H) →ₗ[ZMod 3] Layer (Coproduct G H) 3 :=
   (mapLayer inl 3).coprod ((mixedMap (by decide) (by decide)).coprod
@@ -246,7 +246,7 @@ theorem layerThreeMap_apply (x : LayerThreeBlocks (G := G) (H := H)) :
 /-- A mixed tensor component is killed by the retraction onto either pure factor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, mixed and pure components.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, mixed and pure components.
 -/
 theorem factorProjection_comp_mixedMap {i j : ℕ} (hi : 0 < i) (hj : 0 < j) :
     (factorProjection (G := G) (H := H) (i + j)).comp (mixedMap hi hj) = 0 := by
@@ -276,7 +276,7 @@ theorem mapLayer_map_inr (f : G →* G') (g : H →* H') (n : ℕ) (x : Layer H 
 /-- Naturality of the sum of the pure components in every degree.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, naturality of the pure maps.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, naturality of the pure maps.
 -/
 theorem mapLayer_factorMap (f : G →* G') (g : H →* H') (n : ℕ)
     (x : Layer G n × Layer H n) :
@@ -287,7 +287,7 @@ theorem mapLayer_factorMap (f : G →* G') (g : H →* H') (n : ℕ)
 /-- The degree-one isomorphism is natural in both factors.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, naturality of `η₁`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, naturality of `η₁`.
 -/
 theorem layerOneEquiv_natural (f : G →* G') (g : H →* H') (x : Layer G 1 × Layer H 1) :
     mapLayer (map f g) 1 (layerOneEquiv x) =
@@ -297,7 +297,7 @@ theorem layerOneEquiv_natural (f : G →* G') (g : H →* H') (x : Layer G 1 × 
 /-- Naturality of the mixed tensor component as an equality of linear maps.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, naturality of the tensor maps.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, naturality of the tensor maps.
 -/
 theorem mapLayer_comp_mixedMap (f : G →* G') (g : H →* H') {i j : ℕ}
     (hi : 0 < i) (hj : 0 < j) :
@@ -311,7 +311,7 @@ theorem mapLayer_comp_mixedMap (f : G →* G') (g : H →* H') {i j : ℕ}
 /-- Naturality of a mixed tensor component, evaluated on an arbitrary tensor.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, naturality of the tensor maps.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, naturality of the tensor maps.
 -/
 theorem mapLayer_mixedMap (f : G →* G') (g : H →* H') {i j : ℕ}
     (hi : 0 < i) (hj : 0 < j) (x : Layer G i ⊗[ZMod 3] Layer H j) :
@@ -322,7 +322,7 @@ theorem mapLayer_mixedMap (f : G →* G') (g : H →* H') {i j : ℕ}
 /-- Naturality of the entire degree-two map, including its mixed tensor component.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, naturality of `η₂`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, naturality of `η₂`.
 -/
 theorem layerTwoMap_natural (f : G →* G') (g : H →* H')
     (x : LayerTwoBlocks (G := G) (H := H)) :
@@ -335,7 +335,7 @@ theorem layerTwoMap_natural (f : G →* G') (g : H →* H')
 /-- Naturality of the entire degree-three map, with both mixed components in printed order.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, naturality of `η₃`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, naturality of `η₃`.
 -/
 theorem layerThreeMap_natural (f : G →* G') (g : H →* H')
     (x : LayerThreeBlocks (G := G) (H := H)) :

@@ -16,7 +16,7 @@ is exactly the transported graded image. The latter statement is needed for the 
 relation subgroups in the coproduct proof; it makes no homogeneity assumption on those subgroups.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, proof, lines 985–1006.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, proof, lines 995–1016.
 -/
 
 @[expose] public section
@@ -28,7 +28,7 @@ variable {G H : Type*} [Group G] [Group H]
 /-- A group embedding with a left inverse reflects the lower central filtration.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, factor retractions.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, factor retractions.
 -/
 theorem mem_term_map_iff_of_leftInverse (f : G →* H) (r : H →* G)
     (h : r.comp f = MonoidHom.id G) (n : ℕ) (x : G) : f x ∈ term H n ↔ x ∈ term G n := by
@@ -45,7 +45,7 @@ variable [Fact (HasExponentThree G)] [Fact (HasExponentThree H)]
 /-- A retraction induces a left inverse on every actual graded quotient.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, factor graded inclusions.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, factor graded inclusions.
 -/
 theorem mapLayer_leftInverse (f : G →* H) (r : H →* G)
     (h : r.comp f = MonoidHom.id G) (n : ℕ) :
@@ -57,7 +57,7 @@ theorem mapLayer_leftInverse (f : G →* H) (r : H →* G)
 /-- A group homomorphism with a retraction induces an injective map on each graded layer.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, factor graded inclusions.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, factor graded inclusions.
 -/
 theorem mapLayer_injective_of_leftInverse (f : G →* H) (r : H →* G)
     (h : r.comp f = MonoidHom.id G) (n : ℕ) : Function.Injective (mapLayer f n) :=
@@ -66,7 +66,7 @@ theorem mapLayer_injective_of_leftInverse (f : G →* H) (r : H →* G)
 /-- A subgroup which is the range of a group retraction is strict for the lower central series.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, factor inclusions.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, factor inclusions.
 -/
 theorem isStrict_range_of_leftInverse (f : G →* H) (r : H →* G)
     (h : r.comp f = MonoidHom.id G) : IsStrict f.range := by
@@ -79,7 +79,7 @@ theorem isStrict_range_of_leftInverse (f : G →* H) (r : H →* G)
 ambient graded image. No normality or homogeneous decomposition of the subgroup is assumed.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, identification of `Rₙ` and `Sₙ`.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, identification of `Rₙ` and `Sₙ`.
 -/
 theorem subgroupImage_map_of_leftInverse (f : G →* H) (r : H →* G)
     (h : r.comp f = MonoidHom.id G) (K : Subgroup G) (n : ℕ) :

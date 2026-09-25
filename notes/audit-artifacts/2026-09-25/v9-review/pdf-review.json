@@ -1,0 +1,66 @@
+{
+  "source_sha256": "d48f10716bcc7963b654c6fe27013ac75eaa9cbdf6593683a0efc513dd062952",
+  "pdf_sha256": "92a0840d195a2b96507427b1a31d8ef8e84b8fe9ea090ecf53054e445d7c4954",
+  "pages": 21,
+  "all_pages_visually_inspected": true,
+  "review_groups": {
+    "prelim_main": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "constructions": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "references": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "latex_warnings": 0,
+  "overfull_hboxes": 1,
+  "underfull_hboxes": 3,
+  "known_issues": [
+    "Page 1 author name/and spacing is tight in received source.",
+    "Page 21 Novikov-Adian bibliography: 19.07228pt beyond text margin and three loose lines; fully inside page, no overlap or clipping."
+  ],
+  "manuscript_changes_applied": false,
+  "rendered_page_hashes": {
+    "page-01.png": "db3c57ddeb4aa28fb2e4c6ba6bbc352991636bbf0fbcd8d1049ec20fc51295da",
+    "page-02.png": "61fc43222c9fd2af6f7543a1d96096f173aea228054f75626e72012ad79f0738",
+    "page-03.png": "186cffb58a517fd758c13f6eebe8a19b9350a6cf14c4c38c6c98889868553005",
+    "page-04.png": "534ec932ca5263e2bb561da88f53f4053ff6b48ea2228361d9b060b415797ba7",
+    "page-05.png": "875b0dfd7498ca6217f449c4edaaae829bf2465401d6b61d3a77d5fbb36f0d63",
+    "page-06.png": "0c301b47afef15efc702f818e3a7b68dd45019740cf05d31923d2952fd4a233a",
+    "page-07.png": "e30975353a8e5e67db5db7e197c8217f23db5d0384c3dfac19ce7cdb9ee8dd57",
+    "page-08.png": "c3143600262bec4aa691d69fa3438200e1717491906ce885933e853a207f165a",
+    "page-09.png": "38b75738a2a1805fea4729a2e70764b1c54b840d9809d2e1884796bf0fddf524",
+    "page-10.png": "145a6d8c74a18efdd58ac1f256eff6c05f89d10a4996d078e8eac816200af021",
+    "page-11.png": "d8ccaf3a6af3c245a4a4a9fc5c969e7879231b3b5f3fe434bff6769a04c151ef",
+    "page-12.png": "d0d23e9390178f9386bfa95b7d8bb4a706b83c079ff6345258ca4167c3d49d30",
+    "page-13.png": "f12f9cb213c14c73b905a5d39725b7c5096f47b75d3de4a222b02e09729ca43e",
+    "page-14.png": "6e18f9ef2d87803b6c2727b6f03371db45f20920b54dd14f3f64f2657a36301b",
+    "page-15.png": "2be5b8a950169fdb7c5ddaac2d36bba36f29ac3d3d67e9fb2eab8ee8c8268b80",
+    "page-16.png": "5fb8eb148982d089e050f55e5b93b4c5a9c33d1f59907d9f276cb4540456397b",
+    "page-17.png": "a81d2ee5d785a55663220ceaeb403bcb20bbb7952b133b49c5edf8c7e35221b4",
+    "page-18.png": "648015530fb0128502419c67f227520ceb62f264638388131e3c34b51f490cc2",
+    "page-19.png": "5c0e7c6532a79ab36b4506608a62fc5ee9fd92e5c5d7c7101f43dfaf9bf674bb",
+    "page-20.png": "7891bdf77f3aa7a096acb38c74f1f6fd83a5a3a9b1d7b0faabd476201d32b60f",
+    "page-21.png": "2cf91d4a7b9e6f2d8d8d91fb7f4f4c4fcf7fc28f0bae58c14b82c4fce6026c9e"
+  }
+}

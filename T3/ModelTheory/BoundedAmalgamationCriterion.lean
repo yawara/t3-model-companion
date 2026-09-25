@@ -22,7 +22,7 @@ for an arbitrary Pi-two theory. The finite structures may be empty and need not 
 Model and amalgam universes are the canonical semantic universe `max u v`.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 298–347.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, lines 308–357.
 -/
 
 @[expose] public noncomputable section
@@ -38,7 +38,7 @@ variable {L : Language.{u, v}} [Finite L.Symbols] {T : L.Theory}
 /-- A cardinal bound making the finite marked obstruction family complete.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 335–336.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, lines 345–346.
 -/
 def obstructionCardBound (hLF : T.IsLocallyFinite) (d : FiniteInclusion T) (n : ℕ) : ℕ :=
   (hLF.exists_finite_bad_marked_cover d n).choose
@@ -47,7 +47,7 @@ def obstructionCardBound (hLF : T.IsLocallyFinite) (d : FiniteInclusion T) (n : 
 chosen finite family, with all base elements fixed.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 330–336.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, lines 340–346.
 -/
 theorem exists_badMarkedStructure (hLF : T.IsLocallyFinite) (d : FiniteInclusion T) (n : ℕ)
     (M : T.ModelType.{u, v, max u v}) (C : L.Substructure M) (j : d.base ↪[L] C)
@@ -59,7 +59,7 @@ theorem exists_badMarkedStructure (hLF : T.IsLocallyFinite) (d : FiniteInclusion
 /-- The extension axiom excluding the complete finite family of obstructions with bound `n`.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, line 339.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, line 349.
 -/
 def extensionScheme (hLF : T.IsLocallyFinite) (d : FiniteInclusion T) (n : ℕ) : L.Sentence :=
   extensionAxiom d.incl
@@ -68,7 +68,7 @@ def extensionScheme (hLF : T.IsLocallyFinite) (d : FiniteInclusion T) (n : ℕ) 
 /-- The extension scheme applies exactly to base embeddings admitting no forbidden copy.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 339–346.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, lines 349–356.
 -/
 theorem realize_extensionScheme_iff (hLF : T.IsLocallyFinite) (d : FiniteInclusion T) (n : ℕ)
     {M : Type*} [L.Structure M] :
@@ -83,7 +83,7 @@ theorem realize_extensionScheme_iff (hLF : T.IsLocallyFinite) (d : FiniteInclusi
 The given bounds count the total number of generators, including the marked base.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, line 339.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, line 349.
 -/
 def extensionTheory (hLF : T.IsLocallyFinite) (bound : FiniteInclusion T → ℕ) : L.Theory :=
   Set.range (fun d => extensionScheme hLF d (bound d))
@@ -92,7 +92,7 @@ def extensionTheory (hLF : T.IsLocallyFinite) (bound : FiniteInclusion T → ℕ
 of amalgamation admit obstructions with the specified total generator bound.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, line 341.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, line 351.
 -/
 theorem IsExistentiallyClosed.realize_extensionScheme_of_bound (hLF : T.IsLocallyFinite)
     (d : FiniteInclusion T) (n : ℕ) (M : T.ModelType.{u, v, max u v})
@@ -119,7 +119,7 @@ theorem IsExistentiallyClosed.realize_extensionScheme_of_bound (hLF : T.IsLocall
 the forbidden families is used here; the chosen generator bounds may be arbitrary.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 342–346.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, lines 352–356.
 -/
 theorem isExistentiallyClosed_of_models_extensionTheory (hLF : T.IsLocallyFinite)
     (bound : FiniteInclusion T → ℕ) (M : T.ModelType.{u, v, max u v})
@@ -167,7 +167,7 @@ existentially closed class of a locally finite Pi-two theory in a finite languag
 produce a model companion. No universality assumption on the theory is used.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, implication 2 → 1.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, implication 2 → 1.
 -/
 theorem hasModelCompanion_of_boundedAmalgamationObstructions (hPi : T.IsPiTwo)
     (hLF : T.IsLocallyFinite) (hbound : T.BoundedAmalgamationObstructions) :
@@ -191,7 +191,7 @@ theorem hasModelCompanion_of_boundedAmalgamationObstructions (hPi : T.IsPiTwo)
 model companion is equivalent to the bounded-amalgamation-obstruction condition.
 
 Paper-ID: model_theory.bounded_amalgamation_criterion
-TeX: T3_modelcompanion_v8.tex, `fact:locally finiteness and model companion`, lines 298–311.
+TeX: T3_modelcompanion_v9.tex, `fact:locally finiteness and model companion`, lines 308–321.
 -/
 theorem hasModelCompanion_iff_boundedAmalgamationObstructions (hPi : T.IsPiTwo)
     (hLF : T.IsLocallyFinite) : T.HasModelCompanion ↔ T.BoundedAmalgamationObstructions :=

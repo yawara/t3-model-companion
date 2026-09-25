@@ -21,7 +21,7 @@ on initial forms fix the canonical map. The construction works in every rank and
 the additional degree zero in the Lean grading is zero on both sides.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31.
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31.
 -/
 
 @[expose] public section
@@ -33,7 +33,7 @@ variable {G : Type*} [Group G]
 /-- A quotient of an exponent-three group again has exponent dividing three.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 theorem hasExponentThree_quotient (hG : HasExponentThree G) (N : Subgroup G) [N.Normal] :
     HasExponentThree (G ⧸ N) := by
   intro x
@@ -43,7 +43,7 @@ theorem hasExponentThree_quotient (hG : HasExponentThree G) (N : Subgroup G) [N.
 /-- The canonical exponent-three condition on a quotient group.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 instance quotientHasExponentThree [Fact (HasExponentThree G)] (N : Subgroup G) [N.Normal] :
     Fact (HasExponentThree (G ⧸ N)) := ⟨hasExponentThree_quotient Fact.out N⟩
 
@@ -54,7 +54,7 @@ variable {H : Type*} [Group H]
 /-- A surjective group homomorphism maps each lower central term onto the target term.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 theorem map_term_eq_of_surjective (f : G →* H) (hf : Function.Surjective f) (n : ℕ) :
     (term G n).map f = term H n := by
   rw [term, term, Subgroup.map_lowerCentralSeries, Subgroup.map_top_of_surjective f hf]
@@ -62,7 +62,7 @@ theorem map_term_eq_of_surjective (f : G →* H) (hf : Function.Surjective f) (n
 /-- Restriction of a surjective homomorphism to corresponding central terms is surjective.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 theorem termMap_surjective (f : G →* H) (hf : Function.Surjective f) (n : ℕ) :
     Function.Surjective (termMap f n) := by
   intro y
@@ -75,7 +75,7 @@ theorem termMap_surjective (f : G →* H) (hf : Function.Surjective f) (n : ℕ)
 /-- A surjective group homomorphism induces a surjective additive map on every layer.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 theorem mapAdd_surjective (f : G →* H) (hf : Function.Surjective f) (n : ℕ) :
     Function.Surjective (mapAdd f n) := by
   intro y
@@ -88,7 +88,7 @@ variable [Fact (HasExponentThree G)]
 /-- A surjective homomorphism of exponent-three groups induces surjective linear maps on layers.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 theorem mapLayer_surjective [Fact (HasExponentThree H)] (f : G →* H)
     (hf : Function.Surjective f) (n : ℕ) : Function.Surjective (mapLayer f n) :=
   mapAdd_surjective f hf n
@@ -97,8 +97,8 @@ theorem mapLayer_surjective [Fact (HasExponentThree H)] (f : G →* H)
 of its group kernel. This is the quotient formula for a specified presentation map.
 
 Paper-ID: preliminaries.graded_quotient, structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, applied in
-`proposition:gr of free product`, proof lines 961–967.
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, applied in
+`proposition:gr of free product`, proof lines 971–977.
 -/
 theorem mapLayer_ker [Fact (HasExponentThree H)] (f : G →* H)
     (hf : Function.Surjective f) (n : ℕ) :
@@ -133,7 +133,7 @@ theorem mapLayer_ker [Fact (HasExponentThree H)] (f : G →* H)
 /-- The quotient homomorphism induces a surjection on every associated graded layer.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 theorem mapLayer_quotient_surjective (N : Subgroup G) [N.Normal] (n : ℕ) :
     Function.Surjective (mapLayer (QuotientGroup.mk' N) n) :=
   mapLayer_surjective (QuotientGroup.mk' N) (QuotientGroup.mk'_surjective N) n
@@ -141,7 +141,7 @@ theorem mapLayer_quotient_surjective (N : Subgroup G) [N.Normal] (n : ℕ) :
 /-- The kernel of the quotient map on a layer is exactly the ambient graded image of `N`.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 theorem mapLayer_quotient_ker (N : Subgroup G) [N.Normal] (n : ℕ) :
     (mapLayer (QuotientGroup.mk' N) n).ker = subgroupImage N n := by
   ext x
@@ -175,7 +175,7 @@ theorem mapLayer_quotient_ker (N : Subgroup G) [N.Normal] (n : ℕ) :
 /-- The canonical equivalence `grₙ(G/N) ≃ grₙ(G) / grₙᴳ(N)` from the paper.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 noncomputable def quotientLayerEquiv (N : Subgroup G) [N.Normal] (n : ℕ) :
     Layer (G ⧸ N) n ≃ₗ[ZMod 3] (Layer G n ⧸ subgroupImage N n) :=
   ((mapLayer (QuotientGroup.mk' N) n).quotKerEquivOfSurjective
@@ -185,7 +185,7 @@ noncomputable def quotientLayerEquiv (N : Subgroup G) [N.Normal] (n : ℕ) :
 /-- The canonical equivalence sends the image of a layer element to its class modulo `grₙᴳ(N)`.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 @[simp]
 theorem quotientLayerEquiv_mapLayer (N : Subgroup G) [N.Normal] (n : ℕ) (x : Layer G n) :
     quotientLayerEquiv N n (mapLayer (QuotientGroup.mk' N) n x) =
@@ -195,7 +195,7 @@ theorem quotientLayerEquiv_mapLayer (N : Subgroup G) [N.Normal] (n : ℕ) (x : L
 /-- On initial forms, the quotient equivalence sends a representative to its ambient layer class.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 @[simp]
 theorem quotientLayerEquiv_mk (N : Subgroup G) [N.Normal] (n : ℕ) (x : term G n) :
     quotientLayerEquiv N n (mk (G ⧸ N) n (termMap (QuotientGroup.mk' N) n x)) =
@@ -205,7 +205,7 @@ theorem quotientLayerEquiv_mk (N : Subgroup G) [N.Normal] (n : ℕ) (x : term G 
 /-- The inverse equivalence is induced by the natural quotient homomorphism.
 
 Paper-ID: preliminaries.graded_quotient
-TeX: T3_modelcompanion_v8.tex, `lemma:gr of quotient`, v8 Lemma 2.31. -/
+TeX: T3_modelcompanion_v9.tex, `lemma:gr of quotient`, v9 Lemma 2.31. -/
 @[simp]
 theorem quotientLayerEquiv_symm_mk (N : Subgroup G) [N.Normal] (n : ℕ) (x : Layer G n) :
     (quotientLayerEquiv N n).symm (Submodule.Quotient.mk x) =

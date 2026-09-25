@@ -21,7 +21,7 @@ So both maps come from the algebra product together with `SetLike.mul_mem_graded
 map has to be built by hand.
 
 Paper-ID: linear_algebra.truncated_exterior
-TeX: T3_modelcompanion_v8.tex, `example:Grassmann algebra`, v8 Example 2.9.
+TeX: T3_modelcompanion_v9.tex, `example:Grassmann algebra`, v9 Example 2.9.
 
 ## Main definitions
 
@@ -68,7 +68,7 @@ theorem exteriorPower_map_coe (f : M →ₗ[R] N) (n : ℕ) (x : ⋀[R]^n M) :
 /-- Exterior multiplication commutes with the maps induced by a linear map.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, natural exterior decomposition.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, natural exterior decomposition.
 -/
 theorem exteriorPower_map_gradedMul (f : M →ₗ[R] N) {i j : ℕ}
     (a : ⋀[R]^i M) (b : ⋀[R]^j M) :

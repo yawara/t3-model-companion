@@ -22,7 +22,7 @@ the paper's two commutator inclusions from `T3.GroupTheory.Generation`; the kern
 uses the actual degree-one coordinate basis.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, v8 Proposition 4.1, lines 836–882.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, v9 Proposition 4.1, lines 846–892.
 -/
 
 @[expose] public section
@@ -38,7 +38,7 @@ variable (G : Type*) [Group G]
 /-- The canonical group homomorphism to the multiplicative first graded quotient.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, abelianization quotient.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, abelianization quotient.
 -/
 def quotientOne : G →* MulLayer G 1 where
   toFun g := QuotientGroup.mk' (relation G 1) ⟨g, Subgroup.mem_top _⟩
@@ -48,7 +48,7 @@ def quotientOne : G →* MulLayer G 1 where
 /-- The first quotient homomorphism is the multiplicative form of the initial-form map.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, abelianization quotient.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, abelianization quotient.
 -/
 theorem quotientOne_apply (g : G) :
     quotientOne G g = (mk G 1 ⟨g, Subgroup.mem_top _⟩).toMul := rfl
@@ -56,7 +56,7 @@ theorem quotientOne_apply (g : G) :
 /-- The first quotient has exactly the derived subgroup as kernel.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, abelianization quotient.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, abelianization quotient.
 -/
 theorem quotientOne_ker : (quotientOne G).ker = commutator G := by
   ext g
@@ -76,7 +76,7 @@ include b ha
 /-- The image of the prescribed lifted basis covers the abelianization of the target group.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, equality `G = H γ₂(G)`.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, equality `G = H γ₂(G)`.
 -/
 theorem lift_range_sup_commutator_of_basis : (lift hG a).range ⊔ commutator G = ⊤ := by
   classical
@@ -108,7 +108,7 @@ theorem lift_range_sup_commutator_of_basis : (lift hG a).range ⊔ commutator G 
 the corresponding free exponent-three homomorphism is surjective.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, surjectivity assertion.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, surjectivity assertion.
 -/
 theorem lift_surjective_of_basis : Function.Surjective (lift hG a) := by
   rw [← MonoidHom.range_eq_top]
@@ -118,7 +118,7 @@ theorem lift_surjective_of_basis : Function.Surjective (lift hG a) := by
 generator basis to the specified basis of `G / γ₂(G)`.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, induced abelianization isomorphism.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, induced abelianization isomorphism.
 -/
 theorem mapLayer_lift_bijective_of_basis : Function.Bijective (mapLayer (lift hG a) 1) := by
   classical
@@ -144,7 +144,7 @@ theorem mapLayer_lift_bijective_of_basis : Function.Bijective (mapLayer (lift hG
 equivalence. Its underlying map is the induced quotient map, without changing representatives.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, induced abelianization isomorphism.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, induced abelianization isomorphism.
 -/
 noncomputable def liftLayerOneEquiv : Layer (Free I) 1 ≃ₗ[ZMod 3] Layer G 1 :=
   LinearEquiv.ofBijective (mapLayer (lift hG a) 1) (mapLayer_lift_bijective_of_basis hG b a ha)
@@ -152,7 +152,7 @@ noncomputable def liftLayerOneEquiv : Layer (Free I) 1 ≃ₗ[ZMod 3] Layer G 1 
 /-- The presentation's first-layer equivalence is the map induced by the given free lift.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, induced abelianization isomorphism.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, induced abelianization isomorphism.
 -/
 @[simp]
 theorem liftLayerOneEquiv_apply (x : Layer (Free I) 1) :
@@ -162,7 +162,7 @@ theorem liftLayerOneEquiv_apply (x : Layer (Free I) 1) :
 exponent-three group.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, kernel assertion.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, kernel assertion.
 -/
 theorem lift_ker_le_commutator_of_basis : (lift hG a).ker ≤ commutator (Free I) := by
   intro x hx
@@ -178,7 +178,7 @@ theorem lift_ker_le_commutator_of_basis : (lift hG a).ker ≤ commutator (Free I
 is surjective, with all its defining relations in the derived subgroup.
 
 Paper-ID: structure.basis_lift
-TeX: T3_modelcompanion_v8.tex, `proposition:lift`, v8 Proposition 4.1.
+TeX: T3_modelcompanion_v9.tex, `proposition:lift`, v9 Proposition 4.1.
 -/
 theorem presentation_of_basis : Function.Surjective (lift hG a) ∧
     (lift hG a).ker ≤ commutator (Free I) :=

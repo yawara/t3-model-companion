@@ -1,0 +1,740 @@
+{
+  "raw_source_and_evidence_preserved": true,
+  "issues": [
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 138,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 141,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 142,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 207,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 249,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 291,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 314,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 315,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 320,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 336,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 337,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 345,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 349,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 455,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 478,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 520,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 529,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 565,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 598,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 609,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 695,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 723,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 749,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 751,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 769,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 800,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 808,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 810,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 950,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 952,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 959,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 974,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 980,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 981,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 982,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 986,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 987,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 998,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 999,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1000,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1001,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1005,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1016,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1018,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1020,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1030,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1053,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1054,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1074,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1077,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1078,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1090,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1092,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1108,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1116,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1117,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1118,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1120,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1121,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1124,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1148,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1149,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1160,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1162,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1163,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1177,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1185,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1195,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1198,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1200,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1201,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1202,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1223,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1250,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1251,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1252,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1254,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1263,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1264,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1277,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1298,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1301,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1311,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1314,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1321,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1323,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1343,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1346,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1364,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1366,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1367,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1381,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1392,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1437,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1456,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "T3_modelcompanion_v9.tex",
+      "line": 1457,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latex.log",
+      "line": 778,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latex.log",
+      "line": 822,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latex.log",
+      "line": 874,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latex.log",
+      "line": 880,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latex.log",
+      "line": 973,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latex.log",
+      "line": 983,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latex.log",
+      "line": 1014,
+      "issue": "new blank line at EOF."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 245,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 263,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 268,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 312,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 325,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 330,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 343,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 356,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 364,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 373,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 383,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 387,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 395,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 412,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 477,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 742,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/latexmk.log",
+      "line": 768,
+      "issue": "new blank line at EOF."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 14,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 20,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 33,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 34,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 38,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 40,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 43,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 50,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 58,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 68,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 72,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 78,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 86,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 90,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 92,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 113,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 114,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 122,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 126,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 127,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 134,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 147,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 156,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 159,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 172,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 177,
+      "issue": "trailing whitespace."
+    },
+    {
+      "file": "notes/audit-artifacts/2026-09-25/v9-review/unapplied-manuscript-suggestions.patch",
+      "line": 192,
+      "issue": "trailing whitespace."
+    }
+  ]
+}

@@ -19,7 +19,7 @@ gives preservation for `Theory.IsPiTwo`, with no universality or finite-language
 This supplies the limit-model step in the construction of existentially closed extensions.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Fact 2.3, lines 289–295; no label.
 -/
 
 @[expose] public section
@@ -39,7 +39,7 @@ variable {L : Language.{u, v}} {ι : Type w'} [Preorder ι]
 every tuple of the directed limit. Existential witnesses are transported from a component.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Fact 2.3, lines 289–295; no label.
 -/
 theorem realize_of_isUniversalExistential :
     ∀ {n : ℕ} {φ : L.BoundedFormula Empty n}, φ.IsUniversalExistential →
@@ -69,7 +69,7 @@ of that theory. The given axioms need not themselves be universal-existential se
 The index and structure universes are arbitrary.
 
 Paper-ID: model_theory.companion_iff_ec
-TeX: T3_modelcompanion_v8.tex, supporting Fact 2.3, lines 279–285; no label.
+TeX: T3_modelcompanion_v9.tex, supporting Fact 2.3, lines 289–295; no label.
 -/
 theorem models_of_isPiTwo {T : L.Theory} [∀ i, Nonempty (G i)] (hT : T.IsPiTwo)
     (h : ∀ i, G i ⊨ T) : DirectLimit G f ⊨ T := by

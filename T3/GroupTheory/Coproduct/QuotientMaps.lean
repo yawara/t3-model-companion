@@ -19,7 +19,7 @@ kernels through the free decomposition gives the ambient graded image of the nor
 This identifies the quotient of the free decomposition with the canonical coproduct maps.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, proof lines 984–1012.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, proof lines 994–1022.
 -/
 
 @[expose] public section
@@ -40,7 +40,7 @@ variable {G H G' H' : Type*} [Group G] [Group H] [Group G'] [Group H']
 /-- The maps on the three blocks induced by homomorphisms of both factors.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, quotient of the degree-two blocks.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, quotient of the degree-two blocks.
 -/
 def layerTwoBlockMap : LayerTwoBlocks (G := G) (H := H) →ₗ[ZMod 3]
     LayerTwoBlocks (G := G') (H := H') :=
@@ -50,7 +50,7 @@ def layerTwoBlockMap : LayerTwoBlocks (G := G) (H := H) →ₗ[ZMod 3]
 /-- The maps on the four blocks induced by homomorphisms of both factors.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, degree-three block quotients.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, degree-three block quotients.
 -/
 def layerThreeBlockMap : LayerThreeBlocks (G := G) (H := H) →ₗ[ZMod 3]
     LayerThreeBlocks (G := G') (H := H') :=
@@ -60,7 +60,7 @@ def layerThreeBlockMap : LayerThreeBlocks (G := G) (H := H) →ₗ[ZMod 3]
 /-- Surjective presentations induce a surjection on the degree-two blocks.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, block quotient maps.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, block quotient maps.
 -/
 theorem layerTwoBlockMap_surjective (hf : Function.Surjective f) (hg : Function.Surjective g) :
     Function.Surjective (layerTwoBlockMap f g) :=
@@ -71,7 +71,7 @@ theorem layerTwoBlockMap_surjective (hf : Function.Surjective f) (hg : Function.
 /-- Surjective presentations induce a surjection on the degree-three blocks.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, block quotient maps.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, block quotient maps.
 -/
 theorem layerThreeBlockMap_surjective (hf : Function.Surjective f) (hg : Function.Surjective g) :
     Function.Surjective (layerThreeBlockMap f g) :=
@@ -85,7 +85,7 @@ theorem layerThreeBlockMap_surjective (hf : Function.Surjective f) (hg : Functio
 The presentations are required to preserve the first layer, as supplied by the lifted bases.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, lines 985–992.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, lines 995–1002.
 -/
 theorem layerTwoBlockMap_ker (hf : Function.Surjective f) (hg : Function.Surjective g)
     (hKf : f.ker ≤ commutator G) (hKg : g.ker ≤ commutator H) :
@@ -102,7 +102,7 @@ theorem layerTwoBlockMap_ker (hf : Function.Surjective f) (hg : Function.Surject
 mixed tensor relation spaces. All kernels are computed in their source groups.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, lines 1002–1012.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, lines 1012–1022.
 -/
 theorem layerThreeBlockMap_ker (hf : Function.Surjective f) (hg : Function.Surjective g)
     (hKf : f.ker ≤ commutator G) (hKg : g.ker ≤ commutator H) :
@@ -158,7 +158,7 @@ variable (f : Free I →* G) (g : Free J →* H)
 second-degree relations of the coproduct presentation.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, lines 985–992.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, lines 995–1002.
 -/
 theorem layerTwoBlockMap_ker_map_freeSum (hf : Function.Surjective f)
     (hg : Function.Surjective g) (hKf : f.ker ≤ commutator (Free I))
@@ -175,7 +175,7 @@ theorem layerTwoBlockMap_ker_map_freeSum (hf : Function.Surjective f)
 relation spaces of the normal closure, with the mixed bracket in the paper's order.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, lines 1002–1012.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, lines 1012–1022.
 -/
 theorem layerThreeBlockMap_ker_map_freeSum (hf : Function.Surjective f)
     (hg : Function.Surjective g) (hKf : f.ker ≤ commutator (Free I))
@@ -197,7 +197,7 @@ omit [Fact (HasExponentThree G)] [Fact (HasExponentThree H)] in
 /-- The combined free presentation is compatible with the coproduct of the two factor maps.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical quotient presentation.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical quotient presentation.
 -/
 theorem presentationMap_comp_coproductToSum :
     (Presentation.presentationMap f g).comp Free.coproductToSum = map f g := by
@@ -210,7 +210,7 @@ theorem presentationMap_comp_coproductToSum :
 /-- The degree-two free decomposition commutes with the presentation quotient maps.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical degree-two quotient.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical degree-two quotient.
 -/
 theorem freeSumLayerTwoMap_quotient_square :
     (mapLayer (Presentation.presentationMap f g) 2).comp freeSumLayerTwoMap =
@@ -225,7 +225,7 @@ theorem freeSumLayerTwoMap_quotient_square :
 /-- The degree-three free decomposition commutes with the presentation quotient maps.
 
 Paper-ID: structure.graded_coproduct
-TeX: T3_modelcompanion_v8.tex, `proposition:gr of free product`, canonical degree-three quotient.
+TeX: T3_modelcompanion_v9.tex, `proposition:gr of free product`, canonical degree-three quotient.
 -/
 theorem freeSumLayerThreeMap_quotient_square :
     (mapLayer (Presentation.presentationMap f g) 3).comp freeSumLayerThreeMap =

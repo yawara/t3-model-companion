@@ -17,7 +17,7 @@ It preserves the supporting subspace. Applied to a sum of disjoint pairs of basi
 the coordinate contractions recover all vectors in those pairs.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 
 @[expose] public noncomputable section
@@ -31,7 +31,7 @@ variable {R V : Type*} [CommRing R] [AddCommGroup V] [Module R V]
 /-- The alternating map inducing contraction.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 def contractionAlternating (φ : Module.Dual R V) : V [⋀^Fin 2]→ₗ[R] V where
   toFun v := φ (v 0) • v 1 - φ (v 1) • v 0
@@ -45,7 +45,7 @@ def contractionAlternating (φ : Module.Dual R V) : V [⋀^Fin 2]→ₗ[R] V whe
 /-- Contraction of a two-form by an arbitrary linear functional.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 def contraction (φ : Module.Dual R V) : ⋀[R]^2 V →ₗ[R] V :=
   alternatingMapLinearEquiv (contractionAlternating φ)
@@ -53,7 +53,7 @@ def contraction (φ : Module.Dual R V) : ⋀[R]^2 V →ₗ[R] V :=
 /-- The defining contraction formula on a decomposable two-form.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 @[simp]
 theorem contraction_wedge (φ : Module.Dual R V) (u v : V) :
@@ -68,7 +68,7 @@ theorem contraction_wedge (φ : Module.Dual R V) (u v : V) :
 /-- The ambient exterior square of a subspace, expressed as the span of its wedges.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3), `Λ²U` inside `Λ²V`.
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3), `Λ²U` inside `Λ²V`.
 -/
 def wedgeSpan (U : Submodule R V) : Submodule R (⋀[R]^2 V) :=
   Submodule.span R {q | ∃ u ∈ U, ∃ v ∈ U, T3.wedgeVV R V u v = q}
@@ -76,7 +76,7 @@ def wedgeSpan (U : Submodule R V) : Submodule R (⋀[R]^2 V) :=
 /-- Contraction of the exterior square of a subspace takes values in that subspace.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 theorem contraction_mem (φ : Module.Dual R V) (U : Submodule R V)
     {q : ⋀[R]^2 V} (hq : q ∈ wedgeSpan U) : contraction φ q ∈ U := by
@@ -94,7 +94,7 @@ variable (b : Module.Basis ℕ R V)
 /-- The two-form consisting of the first `n` disjoint pairs of basis vectors.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3), `αₙ`.
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3), `αₙ`.
 -/
 def pairedForm (n : ℕ) : ⋀[R]^2 V :=
   ∑ i ∈ Finset.range n, T3.wedgeVV R V (b (2 * i)) (b (2 * i + 1))
@@ -102,7 +102,7 @@ def pairedForm (n : ℕ) : ⋀[R]^2 V :=
 /-- Contraction by an even coordinate recovers the next odd basis vector.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 theorem contraction_pairedForm_even {n k : ℕ} (hk : k < n) :
     contraction (b.coord (2 * k)) (pairedForm b n) = b (2 * k + 1) := by
@@ -120,7 +120,7 @@ theorem contraction_pairedForm_even {n k : ℕ} (hk : k < n) :
 /-- Contraction by an odd coordinate recovers the negative of the preceding basis vector.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 theorem contraction_pairedForm_odd {n k : ℕ} (hk : k < n) :
     contraction (b.coord (2 * k + 1)) (pairedForm b n) = -b (2 * k) := by
@@ -137,7 +137,7 @@ theorem contraction_pairedForm_odd {n k : ℕ} (hk : k < n) :
 /-- Every vector in the first `2n` basis positions lies in a subspace supporting the paired form.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 theorem basis_mem_of_pairedForm_mem {n : ℕ} {U : Submodule R V}
     (h : pairedForm b n ∈ wedgeSpan U) {j : ℕ} (hj : j < 2 * n) : b j ∈ U := by
@@ -157,7 +157,7 @@ theorem basis_mem_of_pairedForm_mem {n : ℕ} {U : Submodule R V}
 /-- A finite-dimensional supporting subspace has dimension at least twice the number of pairs.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 theorem pairedForm_finrank_le [StrongRankCondition R] {n : ℕ} {U : Submodule R V}
     [Module.Finite R U] (h : pairedForm b n ∈ wedgeSpan U) :
@@ -170,7 +170,7 @@ theorem pairedForm_finrank_le [StrongRankCondition R] {n : ℕ} {U : Submodule R
 /-- A paired form with at least one pair is nonzero.
 
 Paper-ID: examples.commutator_rank_lower_bound
-TeX: T3_modelcompanion_v8.tex, `lemma:D can be large` (Lemma 5.3).
+TeX: T3_modelcompanion_v9.tex, `lemma:D can be large` (Lemma 5.3).
 -/
 theorem pairedForm_ne_zero [Nontrivial R] {n : ℕ} (hn : 0 < n) : pairedForm b n ≠ 0 := by
   intro hz

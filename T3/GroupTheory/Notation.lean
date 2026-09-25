@@ -16,7 +16,7 @@ mathlib's operations, and characterize the ordinary free product and normal clos
 their universal properties. There is no exponent or finiteness assumption.
 
 Paper-ID: preliminaries.notation
-TeX: T3_modelcompanion_v8.tex, Notation 2.1, items 1, 3, 5 and 6, lines 231–237.
+TeX: T3_modelcompanion_v9.tex, Notation 2.1, items 1, 3, 5 and 6, lines 241–247.
 -/
 
 @[expose] public section
@@ -28,7 +28,7 @@ namespace T3
 /-- Mathlib's commutator uses exactly the paper's `a * b * a⁻¹ * b⁻¹` convention.
 
 Paper-ID: preliminaries.notation.commutator
-TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 1, line 231.
+TeX: T3_modelcompanion_v9.tex, Notation 2.1, item 1, line 241.
 -/
 theorem commutator_eq {G : Type*} [Group G] (a b : G) :
     ⁅a, b⁆ = a * b * a⁻¹ * b⁻¹ := commutatorElement_def a b
@@ -36,7 +36,7 @@ theorem commutator_eq {G : Type*} [Group G] (a b : G) :
 /-- The paper's right conjugation `a^b` is mathlib's inner automorphism at `b⁻¹`.
 
 Paper-ID: preliminaries.notation.conjugation
-TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 3, line 233.
+TeX: T3_modelcompanion_v9.tex, Notation 2.1, item 3, line 243.
 -/
 theorem right_conjugation_eq {G : Type*} [Group G] (a b : G) :
     MulAut.conj b⁻¹ a = b⁻¹ * a * b := by simp only [MulAut.conj_apply, inv_inv]
@@ -49,7 +49,7 @@ namespace Monoid.Coprod
 In the group case, mathlib's coproduct is itself a group, so this is the group free product.
 
 Paper-ID: preliminaries.notation.free_product
-TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 5, line 235.
+TeX: T3_modelcompanion_v9.tex, Notation 2.1, item 5, line 245.
 -/
 theorem existsUnique_lift {G H K : Type*} [Monoid G] [Monoid H] [Monoid K]
     (f : G →* K) (g : H →* K) :
@@ -65,7 +65,7 @@ namespace Subgroup
 /-- The normal closure is the actual least normal subgroup containing the prescribed set.
 
 Paper-ID: preliminaries.notation.normal_closure
-TeX: T3_modelcompanion_v8.tex, Notation 2.1, item 6, lines 236–238.
+TeX: T3_modelcompanion_v9.tex, Notation 2.1, item 6, lines 246–248.
 -/
 theorem isLeast_normalClosure {G : Type*} [Group G] (s : Set G) :
     IsLeast {N : Subgroup G | N.Normal ∧ s ⊆ N} (normalClosure s) := by

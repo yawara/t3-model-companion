@@ -79,7 +79,7 @@ public import T3.Main.ModelCompanion
 # Guide to the paper
 
 This library follows *Existence of a Model Companion for Groups of Exponent 3*,
-by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi, in `T3_modelcompanion_v8.tex`.
+by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi, in `T3_modelcompanion_v9.tex`.
 
 The source revision and the status of each paper item are recorded in
 `docs/paper-map.toml`; `docs/paper-map.md` is its generated reading index.
@@ -258,12 +258,12 @@ base is preserved when moving to its image in the model and back to language str
 
 ## Retained material from the archived manuscript
 
-The former Section 6 is disabled in the v8 TeX source. Questions 6.1 and 6.2 from
+The former Section 6 is removed from v9 and preserved in the archives. Questions 6.1 and 6.2 from
 `archives/T3_modelcompanion_v7.tex` concern locally finite and bounded-exponent
 varieties and remain recorded as open problems, not asserted theorems.
 `T3.GroupTheory.Free.Burnside` constructs the free group of any exponent.
 `T3.ModelTheory.Burnside` proves the equivalence between local finiteness of the
 exponent theory and finiteness of every positive finite-rank Burnside group.
-This known reduction supports the interpretation of Conjecture 1.1 in the v8
+This known reduction supports the interpretation of Conjecture 1.1 in the v9
 introduction; its detailed source remains the archived Section 6.
 -/
