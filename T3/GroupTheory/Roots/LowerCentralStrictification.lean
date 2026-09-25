@@ -256,7 +256,7 @@ instance enlargedSubgroup_fg [Group.FG C] : Group.FG (enlargedSubgroup C g) := b
       inferInstance
     rw [MonoidHom.range_comp, Subgroup.range_subtype] at h
     exact (Group.fg_iff_subgroup_fg _).mp h
-  · exact ⟨Y, rfl⟩
+  · exact Subgroup.isMulFG_iff.mpr ⟨Y, rfl⟩
 
 /-- The total number of generators increases by at most three per defect basis element.
 

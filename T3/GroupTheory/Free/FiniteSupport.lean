@@ -219,6 +219,7 @@ def supportedOn (s : Set I) : Subgroup (LvdW I) where
     · intro i j k hijk
       rcases hijk with hi | hj | hk <;> simp_all
   inv_mem' := by
+    let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
     rintro x ⟨hx₁, hx₂, hx₃⟩
     refine ⟨?_, ?_, ?_⟩
     · intro i hi

@@ -135,9 +135,12 @@ def check(root: Path) -> None:
     paper = paper_map["source"]
     paper_hash = hashlib.sha256(regular_file(root, paper["path"]).read_bytes()).hexdigest()
     require(paper_hash == paper["sha256"], "manuscript hash differs from the paper map")
-    paper_sources = [item for item in sources if item.get("id") == paper["path"]]
+    paper_sources = [item for item in sources
+                     if item.get("id") == "https://arxiv.org/abs/2609.30061"]
     require(len(paper_sources) == 1 and paper_sources[0]["relationship"] == "formalizes",
-            "metadata must formalize the paper-map source at its repository-relative path")
+            "metadata must formalize the public arXiv paper")
+    require(paper["path"] in paper_sources[0].get("note", ""),
+            "source note omits the paper-map manuscript path")
     require(paper_hash in paper_sources[0].get("note", ""), "source note omits manuscript SHA256")
 
     raw_config = regular_file(root, "comparator.json").read_bytes()

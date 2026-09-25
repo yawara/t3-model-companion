@@ -1,67 +1,52 @@
 # t3-model-companion
 
-Lean formalization of *Existence of a Model Companion for Groups of Exponent 3*.
+Lean 4 formalization of
+[*Existence of a Model Companion for Groups of Exponent 3*](https://arxiv.org/abs/2609.30061)
+by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi.
 
-- Manuscript authors: **Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi**.
+This repository contains the formal proofs accompanying the paper and includes
+a Challenge/Solution pair for submission to the **Palomar Registry**.
+
 - Formalization author and responsible maintainer: **Yawara Ishida**.
 - License: [Apache-2.0](LICENSE).
 
-The [manuscript](T3_modelcompanion_v9.tex) proves that the theory of groups satisfying
-`x^3 = 1` has a model companion. The main group-theoretic theorem bounds the number
-of generators needed to witness non-amalgamation with an existentially closed group by
-`15 * ((3*m+4) * (m + choose(m,2) + choose(m,3)) + 1)^2`.
-The proof includes the trivial group and arbitrary ranks and model universes as documented.
+## Mathematical scope
 
-This repository contains the substantive formal proof development. GitHub confirmed it was private
-on 2026-09-22. Palomar files prepare a future submission. No submission or registration has occurred.
+The paper proves that the first-order theory of groups satisfying `x^3 = 1`
+has a model companion. The main group-theoretic result gives an explicit bound
+on the number of generators needed to witness failure of amalgamation with
+an existentially closed group.
 
-## Reading the formalization
+| Paper result | Lean declaration |
+| --- | --- |
+| Theorem 3.3: bounded witnesses to non-amalgamation | [`T3.exists_bounded_nonamalgamation_witness`](T3/Main/BoundedWitness.lean) |
+| Corollary 3.4: existence of a model companion | [`T3.has_model_companion`](T3/Main/ModelCompanion.lean) |
 
-- [Paper-order Lean entrypoint](T3/Paper.lean)
-- [Paper map: 57 active v9 items and 3 retained inactive items](docs/paper-map.md)
-- [Module and namespace policy](notes/lean-architecture.md)
-- [v9 manuscript PDF](T3_modelcompanion_v9.pdf)
-- [v9 source migration and verification](notes/v9-migration.md)
-- [Historical v7 formalization and verification](notes/v7-formalization.md)
-- [Archived v7 Section 6 analysis and remaining questions](notes/section-six-analysis.md)
-- [Paper correspondence](notes/paper-faithfulness-audit.md)
-- [Historical v4 completion and encodings](notes/paper-faithful-completion.md)
-- [Palomar statements, process, and verification scope](docs/palomar.md)
-- [Structured authorship and review metadata](formalization.yaml)
+The formalization covers the mathematical results proved in Sections 2–5,
+including the supporting constructions and examples. Conjecture 1.1 and the
+announced results for sufficiently large prime exponents are outside its proved scope.
+The exponent condition includes the trivial group.
 
-`Challenge.lean` states Theorem 3.3 and Corollary 3.4 independently of the proof library.
-`Solution.lean` imports their complete proofs. The two deliberate Challenge proof holes
-are specification placeholders outside the mathematical import graph; all proof-library
-and Solution declarations use only `propext`, `Classical.choice`, and `Quot.sound`.
-The full paper map and the two selected Comparator declarations have distinct scopes.
-The map records 56 proved active items and the open Conjecture 1.1 in v9,
-including every Section 5 example and result. The former Section 6, removed
-from v9 and preserved in the archived v8 source,
-retains three separately marked inactive entries: its two open questions and
-the proved Burnside/local-finiteness equivalence. Across both scopes, 57 items
-and all 80 parts are proved. The separate-paper announcement about sufficiently
-large prime exponents is outside this library's proof scope.
-The additional notes on [finite residuals](notes/section-six-finite-residual.md),
-[coprime joins](notes/section-six-coprime-joins.md),
-[obstruction criteria](notes/section-six-obstruction-criteria.md), and
-[finite A-groups](notes/section-six-a-groups.md) are mathematical research notes;
-their arguments have not been formalized in Lean.
-The previous manuscripts and PDFs are preserved in [archives](archives/README.md).
+The proof library contains no `sorry` or project-specific axioms. Its axiom
+dependencies are limited to `propext`, `Classical.choice`, and `Quot.sound`.
 
-OpenAI Codex agents implemented and reviewed the Lean development under Yawara Ishida's
-direction. The manuscript separately records its authors' mathematical work and use of AI.
-Agent fidelity review is distinct from Lean's kernel checks and from human peer review.
+## Reading the proofs
 
-## Verification
+- [Paper-order entrypoint](T3/Paper.lean): a guide to the development following the paper.
+- [Paper map](docs/paper-map.md): correspondence between paper statements and Lean declarations.
+- [Challenge](Challenge.lean): independent statements of the two main results, importing only Mathlib.
+- [Solution](Solution.lean): the corresponding completed proofs from the library.
 
-Lean is pinned to v4.34.0 and mathlib to `5ed2965256430c3649e86755f9576b54eca72435`.
-The [v9 migration and review](notes/v9-migration.md) records the current source update,
-mathematical correspondence review, and verification. The received TeX is preserved unchanged;
-editorial suggestions are recorded separately and are not applied to the manuscript.
-The [readiness checkpoint](notes/palomar-readiness-2026-09-22.md) records
-verification of the v7 snapshot on these pins. The earlier [v7 checks](notes/v7-formalization.md)
-used v4.33.1 and remain available as historical evidence.
-With elan and Python 3.11 or later:
+Challenge contains two deliberate proof holes, one for each selected theorem.
+They serve as specification placeholders for Comparator; the proofs are supplied
+by Solution. Comparing these two declarations and reviewing the full paper
+correspondence are separate checks.
+
+## Build and verification
+
+Install elan and Python 3.11 or later. The Lean version is fixed by
+[lean-toolchain](lean-toolchain), and dependency revisions are pinned in
+[lake-manifest.json](lake-manifest.json).
 
 ```sh
 python3 -m pip install -r requirements-palomar.txt
@@ -69,30 +54,27 @@ lake exe cache get
 python3 scripts/check.py
 ```
 
-This checks metadata and source-map regression fixtures, builds the proof library and Solution,
-checks imports and mathlib lint,
-audits all proof declarations, and checks the paper map. Warnings fail the proof-library gate.
-The text linters also cover Challenge and Solution. Logs and input hashes are in `.audit/`.
+This builds the proof library and Solution, checks imports and mathlib lint,
+audits axiom dependencies, and validates the metadata and paper map.
+Warnings fail the library checks. Logs and input hashes are written to `.audit/`.
 
-The separate statement comparison needs Linux, Cargo, Go, Git, Lake, and Python:
+The separate statement comparison uses Lean's bundled Comparator, with Lean,
+NanoDa, and con-ron checking the proofs:
 
 ```sh
 scripts/verify-comparator.sh
 ```
 
-The script builds pinned Comparator, an exporter built with Lean v4.34.0, NanoDa, and Landrun in `.cache/`.
-It verifies the selected statements and runs the independent NanoDa kernel checker.
-Challenge's two intentional proof-hole warnings are expected only in this separate gate.
-GitHub Actions runs both verification jobs without submitting or registering anything.
+This requires Linux and bubblewrap 0.12.0 with working user namespaces.
+See [Palomar verification requirements](docs/palomar.md) for setup details
+and the scope of the verification performed so far.
 
-After adding mathematical modules or changing paper bindings:
+## Palomar submission
 
-```sh
-lake exe mk_all --lib T3 --module
-python3 scripts/paper_map.py --write
-```
+The proposed submission selects Theorem 3.3 and Corollary 3.4 through
+[comparator.json](comparator.json). Palomar submission and registration are pending.
+[Palomar documentation](docs/palomar.md) describes the statements, verification
+status, and submission requirements.
 
-`mk_all` may return nonzero when it updates `T3.lean`; its `--check` mode must subsequently pass.
-Numerical functions remain in the normal-form, strict-envelope, and main-theorem modules.
-The manuscript's bibliography identifies the mathematical references. Locally stored reference
-materials and build caches are not part of the submitted source tree.
+AI agents contributed to the implementation and review under Yawara Ishida's direction.
+See [formalization.yaml](formalization.yaml) for provenance and review details.

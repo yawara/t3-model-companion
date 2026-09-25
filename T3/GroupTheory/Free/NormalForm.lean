@@ -126,6 +126,7 @@ TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 theorem triple_inv_mul_eq_zero {x y : LvdW I} (hgen : x.gen = y.gen) {a b c : I}
     (htriple : x.triple a b c = y.triple a b c) : (y⁻¹ * x).triple a b c = 0 := by
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   simp only [mul_triple, inv_triple, inv_pair, inv_gen]
   rw [htriple, congrFun hgen a, congrFun hgen b, congrFun hgen c]
   linear_combination (-(y.gen a * y.gen b * y.gen c)) * LvdW.three_eq_zero
@@ -143,6 +144,7 @@ def pairHom : (genHom (I := I)).ker →* Multiplicative (IncreasingPair I → ZM
   toFun x := Multiplicative.ofAdd fun p => (x : LvdW I).pair p.first p.second
   map_one' := rfl
   map_mul' x y := by
+    let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
     have hy := mem_genHom_ker.mp y.2
     rw [← ofAdd_add]
     refine congrArg Multiplicative.ofAdd (funext fun p => ?_)
@@ -199,6 +201,7 @@ TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 -/
 theorem commutator_of_pair_of_lt {i j a b : I} (hij : i < j) (hab : a < b) :
     ⁅of i, of j⁆.pair a b = if a = i ∧ b = j then 1 else 0 := by
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   rw [commutator_pair]
   have h₂ : (of i).gen b * (of j).gen a = 0 := by
     rcases eq_or_ne b i with rfl | hbi
@@ -218,6 +221,7 @@ TeX: T3_modelcompanion_v9.tex, `fact:Levi and van der Waerden`, v9 Fact 2.27.
 theorem triple_commutator_of_triple_of_lt {i j k a b c : I}
     (hij : i < j) (hjk : j < k) (hab : a < b) (hbc : b < c) :
     ⁅⁅of i, of j⁆, of k⁆.triple a b c = if a = i ∧ b = j ∧ c = k then 1 else 0 := by
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   rw [triple_commutator_triple]
   have h₁ : (of j).gen c * (of k).gen b = 0 := by
     rcases eq_or_ne c j with rfl | hcj

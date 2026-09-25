@@ -6,9 +6,12 @@ The formalization's author and responsible maintainer is Yawara Ishida.
 The manuscript's authors are Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi.
 The structured account is [formalization.yaml](../formalization.yaml).
 
-GitHub reported this repository as private on 2026-09-22. These files prepare a future submission;
-they do not submit the project, publish the repository, or register a result.
-Public availability and the exact submitted commit will be decided separately.
+The paper is publicly available as [arXiv:2609.30061](https://arxiv.org/abs/2609.30061),
+with [v1](https://arxiv.org/abs/2609.30061v1) submitted on 2026-09-24.
+GitHub reported this formalization repository as private on 2026-09-25.
+These files prepare a future Palomar submission; repository publication,
+submission, and registration remain separate actions. The public paper does
+not establish public availability or Palomar registration of the formalization.
 
 ## Mathematical claims
 
@@ -47,9 +50,12 @@ a group satisfying `x^3 = 1` for every element, so the trivial group is included
    hypothesis from the first theorem; no unproved structural hypothesis is
    added to the conclusion.
 
-The [source manuscript](../T3_modelcompanion_v9.tex) is identified by SHA256
+The [local source manuscript](../T3_modelcompanion_v9.tex) is byte-identical to
+`main_v9.tex` in the [arXiv v1 source archive](https://arxiv.org/src/2609.30061v1)
+and is identified by SHA256
 `d48f10716bcc7963b654c6fe27013ac75eaa9cbdf6593683a0efc513dd062952`.
-No DOI, arXiv identifier, or external publication status is asserted.
+The public arXiv record supplies the bibliographic identifier in the metadata;
+the pinned local file supplies reproducible line locators for the paper map.
 
 ## Statement boundary and fidelity
 
@@ -95,11 +101,13 @@ Comparator declarations. They do not assert solutions to the general open questi
 
 ## Production and verification
 
-OpenAI Codex agents implemented and reviewed the formalization under Yawara
-Ishida's direction. Agent fidelity reviews and Lean's kernel and axiom checks
-are distinct kinds of evidence. No independent human peer review of the Lean
-formalization is claimed. The manuscript separately describes its use of a
-GPT-5.6 Sol proof outline and subsequent work by the paper's authors.
+AI agents contributed to implementation and review under Yawara Ishida's
+direction. The tools used include OpenAI Codex and Claude; the metadata
+records these at the tool or model-family level. Agent fidelity reviews and
+Lean's kernel and axiom checks are distinct kinds of evidence. No independent
+human peer review of the Lean formalization is claimed. The manuscript
+separately describes its use of an AI-generated proof outline and subsequent
+work by the paper's authors.
 
 The [v7 verification checkpoint](../notes/v7-formalization.md) records the
 2026-09-22 build, lint, import, paper-map, and axiom audits on Lean and mathlib
@@ -109,44 +117,68 @@ the Solution. The separate
 [2026-09-10 upgrade checkpoint](../notes/lean-mathlib-4-33-1-upgrade.md)
 preserves the earlier v4 verification; it does not certify the v7 additions.
 
-The project uses Lean and mathlib v4.34.0. Verification of
-the full project, the independent comparison, and Challenge rendering on these
-pins is recorded in
+The earlier Lean and mathlib v4.34.0 verification of the full project,
+the independent comparison, and Challenge rendering is recorded in
 [Palomar readiness, 2026-09-22](../notes/palomar-readiness-2026-09-22.md).
 That checkpoint identifies the v7 inputs and the scope of each check.
 The [v9 migration record](../notes/v9-migration.md) records the current source
 update and its checks; earlier runs remain evidence for their own snapshots.
+The project now selects Lean and mathlib v4.35.0-rc2. The
+[arXiv publication checkpoint](../notes/arxiv-publication-2026-09-25.md) records
+the source identity, this toolchain migration, and its local verification limits.
 No Palomar editorial review, submission, or registration has occurred.
 
 The repository license is [Apache-2.0](../LICENSE), as declared in the metadata.
 
 ## Lean version support
 
-As checked on 2026-09-22, this preparation selects Lean and mathlib v4.34.0,
-the [latest stable Lean release](https://github.com/leanprover/lean4/releases/tag/v4.34.0).
-The mathlib revision is `5ed2965256430c3649e86755f9576b54eca72435` and declares
-that exact Lean toolchain. The exporter source is pinned to
-`076e8e57707e813375e8f9da8bf989799ace9680`, which also declares Lean v4.34.0.
-The local comparison script builds it with the project's exact toolchain.
-
-At the 2026-09-22 check, Palomar's recorded minimum was v4.28.0. The checked policy required
-the project's Lean version to match the authenticated Mathlib revision's
-`lean-toolchain` exactly. Compatible exporter and rendering support are
-separate requirements. See the
+As checked on 2026-09-25, Palomar requires at least Lean v4.35.0-rc2.
+The project selects that release candidate and mathlib revision
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`, whose toolchain matches exactly.
+This replaces the v4.34.0 pins used by the historical readiness checkpoint.
+See the
 [version policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md#21-lean-and-lake-files)
-and [minimum version](https://github.com/PalomarRegistry/PalomarSubmission/blob/a09f5c38ee58bf92c459b974b174ff4063ebea5f/toolchains.json).
+and [minimum version](https://github.com/PalomarRegistry/PalomarSubmission/blob/a59f25bd8a66bf6faf3a4f4260d412989c0185ea/toolchains.json).
 
-The metadata audit used those same policy and submission revisions.
-That audit found the upstream `formalization.yaml` schema at v0.4, commit
+The [current verifier](https://github.com/PalomarRegistry/PalomarSubmission/blob/a59f25bd8a66bf6faf3a4f4260d412989c0185ea/scripts/verify_submission.py)
+uses the selected Lean release's bundled `lake comparator`, `leanexport`,
+and `leanchecker`, with both bundled NanoDa and con-ron as independent kernels.
+[scripts/verify-comparator.sh](../scripts/verify-comparator.sh) uses those same
+tools and kernel selections. It generates a temporary local configuration;
+the submitted `comparator.json` remains in Palomar's accepted metadata format.
+The script requires Linux, Git, Python 3, and bubblewrap 0.12.0 with working
+user namespaces. Cargo, Go, and separately built checker repositories are no
+longer prerequisites for this script.
+
+Palomar's pinned
+[bubblewrap installer](https://github.com/PalomarRegistry/PalomarSubmission/blob/a59f25bd8a66bf6faf3a4f4260d412989c0185ea/scripts/install_bwrap.sh)
+has SHA256 `c290df6cebdf1cb26edb69ed4164d9551062bfeb65243b93d1d1d3b77eac0a35`.
+The [CI comparison job](../.github/workflows/lean.yml) checks that digest and
+uses this installer to build bubblewrap 0.12.0 on its hosted runner. When
+AppArmor restricts user namespaces, the installer configures a profile for
+that specific binary. Locally, `COMPARATOR_BWRAP` selects an already prepared
+binary; the comparison script does not alter host security settings.
+
+The current local host has bubblewrap 0.9.0 and rejects the user-namespace
+probe. The current sandboxed comparison therefore remains locally blocked.
+The publication checkpoint distinguishes any supplemental historical checker
+run from the current Palomar gate. No sandbox bypass is used.
+
+Verso publishes a matching v4.35.0-rc2 release at commit
+`9f8096e40b31715b1d8d5997f15a0bd832f7e37d`. Rendering verification is recorded
+separately in the publication checkpoint.
+
+The 2026-09-22 metadata audit found the upstream `formalization.yaml` schema at v0.4, commit
 `99c678e569c7c4c0772db297c5ddd5e4c9b6322e`; the vendored schema and the extracted
 arXiv and MSC2020 taxonomy keys matched the upstream files checked on that date.
-The independent Challenge was below the policy's size and line-count
-warning thresholds. This dated, read-only policy audit is distinct from executing
-Palomar's own verifier and editorial review.
+The schema revision is unchanged at the 2026-09-25 recheck. The independent
+Challenge remains below the policy's size and line-count warning thresholds.
+These policy and local metadata checks are distinct from executing Palomar's
+complete verifier and editorial review.
 
 ## Before a future submission
 
-1. Rerun the project checks and the comparison with NanoDa enabled on the exact
+1. Rerun the project checks and the comparison with NanoDa and con-ron on the exact
    intended submission snapshot, using the committed Lean and dependency pins.
 2. Review the exact Challenge statements, metadata, provenance, and any
    remaining manuscript editorial placeholders as they will be presented.

@@ -3,6 +3,8 @@ set -euo pipefail
 
 # Adapted from PalomarRegistry/PalomarTemplate (Apache-2.0),
 # commit 128a6c5ce5f48622e69927ccd639cbff401022e8, scripts/landrun-wrapper.sh.
+# Retained for historical external Comparator checks. The current
+# scripts/verify-comparator.sh uses the bundled checker and bubblewrap.
 
 # Preserve the outer command delimiter, including with Comparator versions that
 # already supply it. Without it, Landrun consumes lean4export's own separator.

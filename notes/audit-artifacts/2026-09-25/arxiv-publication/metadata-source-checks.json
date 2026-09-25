@@ -1,0 +1,18 @@
+[
+  {
+    "case": "current-public-source",
+    "outcome": "accepted"
+  },
+  {
+    "case": "old-local-only-source",
+    "outcome": "rejected as expected"
+  },
+  {
+    "case": "missing-local-path",
+    "outcome": "rejected as expected"
+  },
+  {
+    "case": "missing-source-hash",
+    "outcome": "rejected as expected"
+  }
+]

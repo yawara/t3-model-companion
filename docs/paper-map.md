@@ -410,7 +410,7 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.freeOrderExponent](../T3/GroupTheory/Free/NormalForm.lean#L64), [T3.Free.finite](../T3/GroupTheory/Free/Collection.lean#L1083), [T3.Free.natCard_eq_pow_freeOrderExponent](../T3/GroupTheory/Free/NormalForm.lean#L596), [T3.Free.normalWord](../T3/GroupTheory/Free/NormalForm.lean#L753), [T3.Free.existsUnique_normalWord](../T3/GroupTheory/Free/NormalForm.lean#L879)。
+実在宣言: [T3.freeOrderExponent](../T3/GroupTheory/Free/NormalForm.lean#L64), [T3.Free.finite](../T3/GroupTheory/Free/Collection.lean#L1083), [T3.Free.natCard_eq_pow_freeOrderExponent](../T3/GroupTheory/Free/NormalForm.lean#L600), [T3.Free.normalWord](../T3/GroupTheory/Free/NormalForm.lean#L757), [T3.Free.existsUnique_normalWord](../T3/GroupTheory/Free/NormalForm.lean#L883)。
 
 任意の有限線形順序付き生成集合について正確な位数と原稿の三ブロック積の存在一意性を証明。生成元の積は昇順。座標群全体を自由群と同一視しない。
 
@@ -418,7 +418,7 @@ ambient のK∩γₙによるfiltrationを用いる。原稿の商とのcanonica
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.Free.exists_finset_map](../T3/GroupTheory/Free/FiniteSupport.lean#L51), [T3.Free.collect_toLvdW_injective](../T3/GroupTheory/Free/FiniteSupport.lean#L175), [T3.Free.normalWordFinsupp](../T3/GroupTheory/Free/InfiniteNormalForm.lean#L104), [T3.Free.existsUnique_normalWordFinsupp](../T3/GroupTheory/Free/InfiniteNormalForm.lean#L279)。
+実在宣言: [T3.Free.exists_finset_map](../T3/GroupTheory/Free/FiniteSupport.lean#L51), [T3.Free.collect_toLvdW_injective](../T3/GroupTheory/Free/FiniteSupport.lean#L175), [T3.Free.normalWordFinsupp](../T3/GroupTheory/Free/InfiniteNormalForm.lean#L104), [T3.Free.existsUnique_normalWordFinsupp](../T3/GroupTheory/Free/InfiniteNormalForm.lean#L281)。
 
 任意の線形順序付き生成集合について、有限支持の三係数族による実際の昇順積の存在一意性。有限・可算・非空の仮定なし。有限版と有限生成支持への還元を再利用。
 
@@ -456,7 +456,7 @@ Prop 2.29の同じσとgraded LieEquivが任意の線形順序付き生成集合
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.principalNormalForm](../T3/GroupTheory/ConjugateWidth.lean#L77), [T3.principalNormalForm_eq_normalClosure](../T3/GroupTheory/ConjugateWidth.lean#L114), [T3.exists_conjList_of_mem_normalClosure](../T3/GroupTheory/ConjugateWidth.lean#L146), [T3.normalClosure_eq_conjList](../T3/GroupTheory/ConjugateWidth.lean#L193)。
+実在宣言: [T3.principalNormalForm](../T3/GroupTheory/ConjugateWidth.lean#L77), [T3.principalNormalForm_eq_normalClosure](../T3/GroupTheory/ConjugateWidth.lean#L115), [T3.exists_conjList_of_mem_normalClosure](../T3/GroupTheory/ConjugateWidth.lean#L147), [T3.normalClosure_eq_conjList](../T3/GroupTheory/ConjugateWidth.lean#L194)。
 
 原稿のEₐ={aᵏ[a,g]}の部分群性とnormal closureとの一致を経て、全ての元を高々3個のg⁻¹*a*gの積として表す。逆元a⁻¹を別の共役因子として許してはいない。k=0,1,2に応じた原稿の圧縮を使い、自明なaと任意rankを含む。
 
@@ -536,7 +536,7 @@ Theorem3.3からbounded obstructionを供給しFact2.6を適用、追加仮定�
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.Coproduct.Presentation.quotientEquiv](../T3/GroupTheory/Coproduct/Presentation.lean#L364), [T3.Coproduct.Presentation.presentationMap_ker](../T3/GroupTheory/Coproduct/Presentation.lean#L409), [T3.Coproduct.Presentation.relationSubgroup_inf_term](../T3/GroupTheory/Coproduct/Presentation.lean#L508), [T3.Coproduct.Presentation.subgroupImage_relationKernel_two](../T3/GroupTheory/Coproduct/Relations.lean#L268), [T3.Coproduct.Presentation.subgroupImage_relationKernel_three](../T3/GroupTheory/Coproduct/Relations.lean#L283), [T3.AssociatedGraded.bracketLayer_subgroupImage_top_le](../T3/GroupTheory/Coproduct/Relations.lean#L40), [T3.AssociatedGraded.subgroupImage_map_of_leftInverse](../T3/GroupTheory/AssociatedGraded/Subgroup.lean#L84), [T3.Free.sigmaThree_mapLayer](../T3/GroupTheory/Free/ExteriorNaturality.lean#L82), [T3.Free.sigmaThree_bracket_factors_one_two](../T3/GroupTheory/Free/ExteriorNaturality.lean#L216), [T3.ExteriorTensor.tensorEquiv](../T3/LinearAlgebra/ExteriorTensor.lean#L287), [T3.ExteriorTensor.tensorEquiv_symm_comp_lof](../T3/LinearAlgebra/ExteriorTensor.lean#L322), [T3.ExteriorTensor.blockTensorEquiv](../T3/LinearAlgebra/ExteriorTensor.lean#L441), [T3.Coproduct.Presentation.subgroupImage_relationKernel_three_eq_four_blocks](../T3/GroupTheory/Coproduct/Relations.lean#L329), [T3.Coproduct.freeSumLayerTwoMap_bijective](../T3/GroupTheory/Coproduct/FreeGraded.lean#L326), [T3.Coproduct.freeSumLayerThreeMap_bijective](../T3/GroupTheory/Coproduct/FreeGraded.lean#L353), [T3.Coproduct.layerThreeBlockMap_ker_map_freeSum](../T3/GroupTheory/Coproduct/QuotientMaps.lean#L180), [T3.Coproduct.freeSumLayerThreeMap_quotient_square](../T3/GroupTheory/Coproduct/QuotientMaps.lean#L230), [T3.AssociatedGraded.mapLayer_ker](../T3/GroupTheory/GradedQuotient.lean#L103)。
+実在宣言: [T3.Coproduct.Presentation.quotientEquiv](../T3/GroupTheory/Coproduct/Presentation.lean#L364), [T3.Coproduct.Presentation.presentationMap_ker](../T3/GroupTheory/Coproduct/Presentation.lean#L409), [T3.Coproduct.Presentation.relationSubgroup_inf_term](../T3/GroupTheory/Coproduct/Presentation.lean#L508), [T3.Coproduct.Presentation.subgroupImage_relationKernel_two](../T3/GroupTheory/Coproduct/Relations.lean#L268), [T3.Coproduct.Presentation.subgroupImage_relationKernel_three](../T3/GroupTheory/Coproduct/Relations.lean#L283), [T3.AssociatedGraded.bracketLayer_subgroupImage_top_le](../T3/GroupTheory/Coproduct/Relations.lean#L40), [T3.AssociatedGraded.subgroupImage_map_of_leftInverse](../T3/GroupTheory/AssociatedGraded/Subgroup.lean#L84), [T3.Free.sigmaThree_mapLayer](../T3/GroupTheory/Free/ExteriorNaturality.lean#L82), [T3.Free.sigmaThree_bracket_factors_one_two](../T3/GroupTheory/Free/ExteriorNaturality.lean#L216), [T3.ExteriorTensor.tensorEquiv](../T3/LinearAlgebra/ExteriorTensor.lean#L287), [T3.ExteriorTensor.tensorEquiv_symm_comp_lof](../T3/LinearAlgebra/ExteriorTensor.lean#L322), [T3.ExteriorTensor.blockTensorEquiv](../T3/LinearAlgebra/ExteriorTensor.lean#L441), [T3.Coproduct.Presentation.subgroupImage_relationKernel_three_eq_four_blocks](../T3/GroupTheory/Coproduct/Relations.lean#L329), [T3.Coproduct.freeSumLayerTwoMap_bijective](../T3/GroupTheory/Coproduct/FreeGraded.lean#L326), [T3.Coproduct.freeSumLayerThreeMap_bijective](../T3/GroupTheory/Coproduct/FreeGraded.lean#L354), [T3.Coproduct.layerThreeBlockMap_ker_map_freeSum](../T3/GroupTheory/Coproduct/QuotientMaps.lean#L180), [T3.Coproduct.freeSumLayerThreeMap_quotient_square](../T3/GroupTheory/Coproduct/QuotientMaps.lean#L230), [T3.AssociatedGraded.mapLayer_ker](../T3/GroupTheory/GradedQuotient.lean#L103)。
 
 全項目完成。自由表示・関係像の四成分分解・符号付き外積tensor同型・kernel輸送によりcanonical η₂/η₃の全単射性を証明。η₁–η₃は基底非依存の元の写像と自然性を保ち任意群/任意rankを許す。実際のgraded Lie algebraの全次数blockでbracket包含も証明。η₁だけは原稿のpresentation経由を短縮し同じ写像をcoproduct普遍性とretractionで直接証明する。
 
@@ -586,7 +586,7 @@ Theorem3.3からbounded obstructionを供給しFact2.6を適用、追加仮定�
 
 予定宣言: 型の設計時に決める。
 
-実在宣言: [T3.TripleRoots.relator](../T3/GroupTheory/Roots/Triple.lean#L72), [T3.TripleRoots.kernel](../T3/GroupTheory/Roots/Triple.lean#L79), [T3.TripleRoots.Extension](../T3/GroupTheory/Roots/Triple.lean#L224), [T3.TripleRoots.baseMap](../T3/GroupTheory/Roots/Triple.lean#L231), [T3.TripleRoots.baseMap_injective](../T3/GroupTheory/Roots/Triple.lean#L268), [T3.TripleRoots.baseMap_root](../T3/GroupTheory/Roots/Triple.lean#L276)。
+実在宣言: [T3.TripleRoots.relator](../T3/GroupTheory/Roots/Triple.lean#L72), [T3.TripleRoots.kernel](../T3/GroupTheory/Roots/Triple.lean#L79), [T3.TripleRoots.Extension](../T3/GroupTheory/Roots/Triple.lean#L225), [T3.TripleRoots.baseMap](../T3/GroupTheory/Roots/Triple.lean#L232), [T3.TripleRoots.baseMap_injective](../T3/GroupTheory/Roots/Triple.lean#L269), [T3.TripleRoots.baseMap_root](../T3/GroupTheory/Roots/Triple.lean#L277)。
 
 原稿どおりG×Free(Fin(3*n))を全関係式((gᵢ)⁻¹,[xᵢ,yᵢ,zᵢ])のnormal closureで一括して割る。中心性からclosureに落とし、独立な三重座標で有限積の整数係数をmod3で回収してGとの交叉が自明と証明。任意G、空族、重複する中心元、自明な中心元を含み、逐次の単一root構成には置き換えない。
 

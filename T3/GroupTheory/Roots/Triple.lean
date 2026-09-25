@@ -177,6 +177,7 @@ private theorem coordinate_bundledRelator (z : Fin n → G)
 private theorem coordinate_relationWord (z : Fin n → G)
     (hz : ∀ i, z i ∈ Subgroup.center G) (m : Fin n → ℤ) (i : Fin n) :
     coordinate i (relationWord z hz m) = Multiplicative.ofAdd (m i : ZMod 3) := by
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   rw [relationWord, map_prod]
   simp only [map_zpow, coordinate_bundledRelator]
   rw [Finset.prod_eq_single i]

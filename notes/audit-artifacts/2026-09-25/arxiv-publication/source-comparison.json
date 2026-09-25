@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-09-25",
+  "paper_url": "https://arxiv.org/abs/2609.30061",
+  "version_url": "https://arxiv.org/abs/2609.30061v1",
+  "source_url": "https://arxiv.org/src/2609.30061v1",
+  "title": "Existence of a Model Companion for Groups of Exponent 3",
+  "authors": [
+    "Yawara Ishida",
+    "Ryosuke Mizuno",
+    "Kota Takeuchi"
+  ],
+  "version_submitted_utc": "2026-09-24T16:20:58Z",
+  "archive_members": [
+    "00README.json",
+    "main_v9.tex"
+  ],
+  "local_source": "T3_modelcompanion_v9.tex",
+  "arxiv_source": "main_v9.tex",
+  "source_bytes": 73483,
+  "source_sha256": "d48f10716bcc7963b654c6fe27013ac75eaa9cbdf6593683a0efc513dd062952",
+  "byte_identical": true,
+  "normalization_applied": false,
+  "archive_sha256": "dbc4aba94c2e3aeebb0f260b942ccc9bf3e4724c987b0c77de8fcb25529286eb"
+}

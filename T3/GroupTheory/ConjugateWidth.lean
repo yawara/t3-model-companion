@@ -92,7 +92,8 @@ def principalNormalForm (a : G) : Subgroup G where
     refine ⟨-k, g⁻¹, ?_⟩
     have hpow : (a ^ k.val)⁻¹ = a ^ (-k).val := by
       refine (eq_inv_of_mul_eq_one_left ?_).symm
-      rw [← pow_add, pow_eq_pow_mod _ (hG a), ← ZMod.val_add, neg_add_cancel]
+      have hk : (-k + k : ZMod 3) = 0 := neg_add_cancel k
+      rw [← pow_add, pow_eq_pow_mod _ (hG a), ← ZMod.val_add, hk]
       simp
     have hcomm : Commute ⁅a, g⁻¹⁆ (a ^ (-k).val) :=
       (commute_commutator_left hG a g⁻¹).symm.pow_right _

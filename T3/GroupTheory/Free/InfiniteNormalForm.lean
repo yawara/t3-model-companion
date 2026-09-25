@@ -241,13 +241,15 @@ theorem normalWordFinsupp_surjective : Function.Surjective
   have hl : genReadout (generatorWordFinsupp l) = genReadout g :=
     genReadout_generatorWordFinsupp l
   let x : (genReadout (I := I)).ker := ⟨(generatorWordFinsupp l)⁻¹ * g, by
-    rw [MonoidHom.mem_ker, map_mul, map_inv, hl, inv_mul_cancel]⟩
+    rw [MonoidHom.mem_ker, map_mul, map_inv, hl]
+    exact inv_mul_cancel _⟩
   let m : IncreasingPair I →₀ ZMod 3 := Finsupp.ofSupportFinite
     (fun p => (toLvdW x.val).pair p.first p.second) (finite_support_pair x.val)
   have hm : pairReadout (pairWordFinsupp m) = pairReadout x :=
     pairReadout_pairWordFinsupp m
   let y : (pairReadout (I := I)).ker := ⟨(pairWordFinsupp m)⁻¹ * x, by
-    rw [MonoidHom.mem_ker, map_mul, map_inv, hm, inv_mul_cancel]⟩
+    rw [MonoidHom.mem_ker, map_mul, map_inv, hm]
+    exact inv_mul_cancel _⟩
   let n : IncreasingTriple I →₀ ZMod 3 := Finsupp.ofSupportFinite
     (fun t => (toLvdW y.val.val).triple t.first t.second t.third)
     (finite_support_triple y.val.val)

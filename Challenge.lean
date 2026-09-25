@@ -16,6 +16,10 @@ This independent specification imports only Mathlib. Its concrete definitions re
 used by the mathematical library; Comparator checks their agreement through the theorem types.
 Only the two theorem proofs are holes. `Solution` imports their complete proofs separately.
 
+The paper is *Existence of a Model Companion for Groups of Exponent 3* by
+Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi, available as
+[arXiv:2609.30061](https://arxiv.org/abs/2609.30061).
+
 The bounded-witness statement uses groups in arbitrary universes. Existential closedness is
 tested in the maximum of the model and language universes. Companions use Mathlib's canonical
 semantic universe of bundled nonempty models, here `Type` for the finite group language.

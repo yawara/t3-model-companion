@@ -329,6 +329,7 @@ theorem freeSumLayerTwoMap_bijective :
   let : LinearOrder I := linearOrderOfSTO WellOrderingRel
   let : LinearOrder J := linearOrderOfSTO WellOrderingRel
   let : LinearOrder (I ⊕ J) := linearOrderOfSTO WellOrderingRel
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   let b : Basis I (ZMod 3) (I →₀ ZMod 3) := Finsupp.basisSingleOne
   let c : Basis J (ZMod 3) (J →₀ ZMod 3) := Finsupp.basisSingleOne
   have he : (Free.sigmaTwo (b.prod c)) ∘ freeSumLayerTwoMap =
@@ -356,6 +357,7 @@ theorem freeSumLayerThreeMap_bijective :
   let : LinearOrder I := linearOrderOfSTO WellOrderingRel
   let : LinearOrder J := linearOrderOfSTO WellOrderingRel
   let : LinearOrder (I ⊕ J) := linearOrderOfSTO WellOrderingRel
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   let b : Basis I (ZMod 3) (I →₀ ZMod 3) := Finsupp.basisSingleOne
   let c : Basis J (ZMod 3) (J →₀ ZMod 3) := Finsupp.basisSingleOne
   have he : (Free.sigmaThree (b.prod c)) ∘ freeSumLayerThreeMap =

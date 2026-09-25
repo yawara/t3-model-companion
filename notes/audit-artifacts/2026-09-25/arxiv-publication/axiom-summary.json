@@ -1,0 +1,11 @@
+{
+  "declarations": 3120,
+  "source_modules": 117,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "text_lint_modules": 118,
+  "text_lint_exceptions": 0
+}

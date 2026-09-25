@@ -1,111 +1,62 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Adapted from PalomarRegistry/PalomarTemplate (Apache-2.0),
+# Originally adapted from PalomarRegistry/PalomarTemplate (Apache-2.0),
 # commit 128a6c5ce5f48622e69927ccd639cbff401022e8, scripts/verify-comparator.sh.
+# The current Palomar verifier uses the selected Lean release's bundled tools.
+# Reference: PalomarRegistry/PalomarSubmission commit
+# a59f25bd8a66bf6faf3a4f4260d412989c0185ea, scripts/verify_submission.py.
+# This local comparison is not the complete Palomar verification workflow.
 
 repository_root=$(cd "$(dirname "$0")/.." && pwd)
 cache_root=${PALOMAR_COMPARATOR_CACHE:-"$repository_root/.cache/palomar-comparator"}
-bin_dir="$cache_root/bin"
-comparator_dir="$cache_root/comparator"
-lean4export_dir="$cache_root/lean4export"
-nanoda_dir="$cache_root/nanoda"
 
-comparator_commit=575674928e239f5bc452aab72d1dd7b0f1326494
-# v4.34.0 source, built below with the project's exact Lean v4.34.0 toolchain.
-lean4export_commit=076e8e57707e813375e8f9da8bf989799ace9680
-landrun_commit=811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
-nanoda_commit=68d5ca9db226849b41a6fff59d796ff19d0a8840
-
-for required_command in cargo git go lake python3; do
+for required_command in git lean python3; do
   if ! command -v "$required_command" >/dev/null 2>&1; then
     echo "error: $required_command is required to run Comparator" >&2
     exit 1
   fi
 done
 
-python3 - "$repository_root/comparator.json" <<'PY'
+cd "$repository_root"
+project_toolchain=$(tr -d '[:space:]' < lean-toolchain)
+lean_prefix=$(ELAN_TOOLCHAIN="$project_toolchain" lean --print-prefix)
+for tool in lake leanexport leanchecker nanoda_bin con-ron; do
+  if [ ! -x "$lean_prefix/bin/$tool" ]; then
+    echo "error: the selected Lean release does not bundle $tool" >&2
+    exit 1
+  fi
+done
+
+# Match the reviewed verifier's fixed bubblewrap release. Older distribution
+# packages may lack the sandbox fix that Palomar requires.
+bwrap_binary=$(command -v "${COMPARATOR_BWRAP:-bwrap}" || true)
+if [ -z "$bwrap_binary" ] || [ "$("$bwrap_binary" --version)" != "bubblewrap 0.12.0" ]; then
+  echo "error: bubblewrap 0.12.0 is required; set COMPARATOR_BWRAP to its binary" >&2
+  echo "see docs/palomar.md for the pinned upstream installer and host requirements" >&2
+  exit 1
+fi
+
+mkdir -p "$cache_root"
+local_config=$(mktemp "$cache_root/comparator.XXXXXX.json")
+trap 'rm -f "$local_config"' EXIT
+python3 - "$repository_root/comparator.json" "$local_config" "$lean_prefix" <<'PY'
 import json
-import pathlib
+from pathlib import Path
 import sys
 
-config_path = pathlib.Path(sys.argv[1])
-try:
-    config = json.loads(config_path.read_text(encoding="utf-8"))
-except (OSError, UnicodeError, json.JSONDecodeError) as error:
-    print(f"error: cannot read valid Comparator config {config_path}: {error}", file=sys.stderr)
-    raise SystemExit(1)
-
-if not isinstance(config, dict) or config.get("enable_nanoda") is not True:
-    print(
-        f"error: {config_path}: enable_nanoda must be exactly true; "
-        "the NanoDa replay is required",
-        file=sys.stderr,
-    )
-    raise SystemExit(1)
+source, destination, prefix = map(Path, sys.argv[1:])
+config = json.loads(source.read_text(encoding="utf-8"))
+if not isinstance(config, dict) or config.pop("enable_nanoda", None) is not True:
+    raise SystemExit("error: comparator.json must require NanoDa replay")
+if "external_kernels" in config:
+    raise SystemExit("error: external_kernels belongs only in the generated local configuration")
+config["external_kernels"] = {
+    "nanoda": [str((prefix / "bin/nanoda_bin").resolve())],
+    "con-ron": [str((prefix / "bin/con-ron").resolve())],
+}
+destination.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
 PY
 
-mkdir -p "$cache_root" "$bin_dir"
-
-checkout_exact() {
-  local repository=$1
-  local destination=$2
-  local commit=$3
-  if [ ! -d "$destination/.git" ]; then
-    git clone --filter=blob:none "$repository" "$destination"
-  fi
-  git -C "$destination" fetch --depth 1 origin "$commit"
-  git -C "$destination" checkout --detach "$commit"
-}
-
-checkout_exact https://github.com/leanprover/lean4export.git "$lean4export_dir" "$lean4export_commit"
-
-if [ ! -f "$lean4export_dir/lean-toolchain" ]; then
-  echo "error: pinned lean4export revision $lean4export_commit has no lean-toolchain file" >&2
-  echo "select a lean4export revision that declares its Lean toolchain" >&2
-  exit 1
-fi
-
-project_toolchain=$(tr -d '[:space:]' < "$repository_root/lean-toolchain")
-lean4export_toolchain=$(tr -d '[:space:]' < "$lean4export_dir/lean-toolchain")
-
-# Follow Palomar's compatible_lean4export_toolchain rule: exact toolchains, or
-# stable positive patch releases using patch-zero source from the same major/minor.
-# Release candidates and other release lines must match exactly.
-# https://github.com/PalomarRegistry/PalomarSubmission/blob/a09f5c38ee58bf92c459b974b174ff4063ebea5f/scripts/verify_submission.py
-compatible_exporter_toolchain() {
-  local project=$1
-  local exporter=$2
-  if [ "$project" = "$exporter" ]; then
-    [[ "$project" =~ ^leanprover/lean4:v[0-9]+\.[0-9]+\.[0-9]+(-rc[0-9]+)?$ ]]
-  elif [[ "$project" =~ ^leanprover/lean4:v([0-9]+)\.([0-9]+)\.([1-9][0-9]*)$ ]]; then
-    [ "$exporter" = "leanprover/lean4:v${BASH_REMATCH[1]}.${BASH_REMATCH[2]}.0" ]
-  else
-    return 1
-  fi
-}
-
-if ! compatible_exporter_toolchain "$project_toolchain" "$lean4export_toolchain"; then
-  echo "error: project toolchain $project_toolchain is incompatible with" >&2
-  echo "the pinned lean4export source toolchain $lean4export_toolchain" >&2
-  echo "update lean4export_commit when changing lean-toolchain, then review" >&2
-  echo "Comparator and NanoDa compatibility with the export format" >&2
-  exit 1
-fi
-echo "Building lean4export source $lean4export_toolchain with $project_toolchain"
-
-checkout_exact https://github.com/leanprover/comparator.git "$comparator_dir" "$comparator_commit"
-checkout_exact https://github.com/robsimmons/nanoda_lib.git "$nanoda_dir" "$nanoda_commit"
-
-CGO_ENABLED=0 GOBIN="$bin_dir" go install "github.com/zouuup/landrun/cmd/landrun@$landrun_commit"
-
-(cd "$comparator_dir" && lake build comparator)
-(cd "$lean4export_dir" && ELAN_TOOLCHAIN="$project_toolchain" lake build lean4export)
-(cd "$nanoda_dir" && cargo build --release --locked)
-
-cd "$repository_root"
-PALOMAR_LANDRUN_BIN="$bin_dir/landrun" \
-COMPARATOR_LEAN4EXPORT="$lean4export_dir/.lake/build/bin/lean4export" \
-COMPARATOR_NANODA="$nanoda_dir/target/release/nanoda_bin" \
-COMPARATOR_LANDRUN="$repository_root/scripts/landrun-wrapper.sh" \
-  lake env "$comparator_dir/.lake/build/bin/comparator" comparator.json
+COMPARATOR_BWRAP="$bwrap_binary" \
+  "$lean_prefix/bin/lake" comparator --config "$local_config"

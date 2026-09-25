@@ -1,0 +1,20 @@
+{
+  "files_sha256": {
+    "README.md": "54eccc184c531022c6b131b125da8f025154ec732aacf921412056f061de5acd",
+    "formalization.yaml": "ff29a76d26ee27864738b2b92a008f0e862e648508ee4a5c2755d5b61d1fc1a4",
+    "Challenge.lean": "0bd230aff3055f25a12ca87b69bc3bc395a36bfd2f949fb3d5ebf155112cb718",
+    "Solution.lean": "b1d812bde0122293b4e97296a84399a21342422dedd84ebbafc94340ae638b3a",
+    "docs/palomar.md": "59490dd908e20c6f69da62d01827b8b6ec584cc17bf9eb3f82930d75d61cd5bf",
+    "docs/paper-map.toml": "55a3c460f38f7d7bf9fb4c7819bbd54bae0488995c6bab29d0392de383ba50f1",
+    "docs/paper-map.md": "19f9faca245e835c8ff46c37ef205008077ef6581b462b20a7d417e310948135",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "lakefile.toml": "bcd6f435a3d8dc48e76fb65c17b47019473b18dc02f2fef42e012fb95f3d0b63",
+    "lake-manifest.json": "039cc79a81661a592a8b16ca710e19a49c1380efccb372448bd119a289dbaceb",
+    "scripts/verify-comparator.sh": "20d3e128555a3b580b2a370fa6844a47657d6305ffa96e914d2818143c4ff158",
+    "scripts/check_palomar_metadata.py": "087f069a623f662b66283e201dac238805cc7a5170291d8b4d2fbca414b86770",
+    "scripts/landrun-wrapper.sh": "12829b6fd4b2e178101488e0f85701d1b84bfa780ba790f40fd2abba132bb6b5",
+    ".github/workflows/lean.yml": "2234bd2765c579b2e902d59d2ed1dc388a1471e5fe258a69d446290e119b487d"
+  },
+  "declarations_manifest_sha256": "ae0c567599af821f2f2f47a7b879f52cf869a1da9df642fec611cb530be06231",
+  "all_gate_inputs_still_match": true
+}

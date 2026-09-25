@@ -139,6 +139,7 @@ theorem coordinate_relationWord [DecidableEq I] (c : I → S →* Multiplicative
     (m : I → ℤ) (i : I) :
     c i (projection S (relationWord S hS z hz w m)) = Multiplicative.ofAdd (m i : ZMod 3) := by
   classical
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   change ((c i).comp (projection S)) (relationWord S hS z hz w m) = _
   rw [relationWord, map_prod]
   simp only [map_zpow, MonoidHom.comp_apply]

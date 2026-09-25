@@ -1,0 +1,58 @@
+{
+  "checked_at_utc": "2026-09-25T10:26:02.065870+00:00",
+  "palomar_submission_commit": "a59f25bd8a66bf6faf3a4f4260d412989c0185ea",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "lean_commit": "11acb17ec6b07a8f9e9173e6845197929540936b",
+  "current_comparison": {
+    "command": "scripts/verify-comparator.sh",
+    "status": "blocked",
+    "exit_code": 1,
+    "stage": "bubblewrap version preflight",
+    "required_bubblewrap": "0.12.0",
+    "installed_bubblewrap": "0.9.0",
+    "expected_external_kernels": [
+      "nanoda",
+      "con-ron"
+    ],
+    "comparison_executed": false,
+    "sandbox_bypass_used": false,
+    "tool_binaries_sha256": {
+      "lake": "8ba83c98f76562d03b8dbc33f1057151ba6cbb121679dde76b2260ccc90495e1",
+      "leanexport": "c5bc1a10a21e22cbb3671d65987cdef2076833b14182d823ccb2153adf2fa954",
+      "leanchecker": "9e36e955a251b1313c8eb5b7fa101282d51df109d34d8bb7c1cfdf51985aba29",
+      "nanoda_bin": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8",
+      "con-ron": "4e5616d94374cae37324dad2594f6230c2bb2297240249fc78ff508f3bc5acef"
+    },
+    "installer_sha256": "c290df6cebdf1cb26edb69ed4164d9551062bfeb65243b93d1d1d3b77eac0a35"
+  },
+  "legacy_supplemental_comparison": {
+    "status": "passed",
+    "current_palomar_gate": false,
+    "comparator_commit": "575674928e239f5bc452aab72d1dd7b0f1326494",
+    "lean4export_commit": "6cea97789dc088ea47fcea15692db85685aedac5",
+    "nanoda_commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+    "landrun_commit": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+    "exit_code": 0,
+    "checked_at_utc": "2026-09-25T10:41:46.621611+00:00",
+    "scope": "Historical external Comparator and NanoDa with the v4.35.0-rc2 exporter; supplementary evidence, not the current bundled Palomar verifier and not a con-ron check.",
+    "accepted_kernels": [
+      "nanoda",
+      "Lean default"
+    ],
+    "selected_declarations": [
+      "T3.exists_bounded_nonamalgamation_witness",
+      "T3.has_model_companion"
+    ],
+    "challenge_intentional_hole_warnings": 2,
+    "script_sha256": "b5fef9bcdc3203f8cdca734ecf6f99b99f4ee0a35fb707f08c7097f498ce4cd8",
+    "log_sha256": "cc3c7be270d855d7bdbb137be939a0204859f401d8f865f71fd59514c757dd33",
+    "sandbox": "Landrun with existing scripts/landrun-wrapper.sh",
+    "sandbox_bypass_used": false,
+    "verdict_lines": [
+      "nanoda kernel accepts the solution",
+      "Lean default kernel accepts the solution",
+      "Your solution is okay!"
+    ]
+  },
+  "remote_ci_executed": false
+}

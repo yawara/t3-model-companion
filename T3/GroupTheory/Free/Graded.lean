@@ -49,6 +49,7 @@ def tripleLayer : Subgroup (LvdW I) where
     · rw [mul_pair, hxp, hyp, hyg]
       ring
   inv_mem' := by
+    let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
     rintro x ⟨hxg, hxp⟩
     refine ⟨fun i => ?_, fun i j => ?_⟩
     · rw [inv_gen, hxg, neg_zero]
@@ -474,6 +475,7 @@ noncomputable def layerEquivOfReadout {J : Type*} (n : ℕ)
     (f : AssociatedGraded.term (Free I) n →* Multiplicative (J →₀ ZMod 3))
     (hker : f.ker = AssociatedGraded.relation (Free I) n) (hsurj : Function.Surjective f) :
     AssociatedGraded.Layer (Free I) n ≃ₗ[ZMod 3] (J →₀ ZMod 3) := by
+  let : AddCommGroup (ZMod 3) := (ZMod.commRing 3).toAddCommGroup
   let e := (QuotientGroup.quotientMulEquivOfEq hker.symm).trans
     (QuotientGroup.quotientKerEquivOfSurjective f hsurj)
   let a := e.toAdditiveLeft

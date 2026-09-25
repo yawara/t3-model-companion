@@ -81,10 +81,10 @@ theorem normalClosure_eq_sup_commutator (hG : HasExponentThree G) {K : Subgroup 
         exact Subgroup.inv_mem _
           (Subgroup.commutator_mem_commutator hk (Subgroup.mem_top g))
       exact Subgroup.mul_mem _
-        (Subgroup.mul_mem _ (SetLike.le_def.mp le_sup_right hgk)
-          (SetLike.le_def.mp le_sup_left hk))
-        (SetLike.le_def.mp le_sup_right hc)
-    exact Subgroup.normalClosure_le_normal fun x hx => SetLike.le_def.mp le_sup_left hx
+        (Subgroup.mul_mem _ (Subgroup.mem_sup_right hgk)
+          (Subgroup.mem_sup_left hk))
+        (Subgroup.mem_sup_right hc)
+    exact Subgroup.normalClosure_le_normal fun _ hx => Subgroup.mem_sup_left hx
   · refine sup_le Subgroup.le_normalClosure
       (Subgroup.commutator_le.mpr fun k hk z _ => ?_)
     have h1 : k ∈ Subgroup.normalClosure (K : Set G) := Subgroup.subset_normalClosure hk

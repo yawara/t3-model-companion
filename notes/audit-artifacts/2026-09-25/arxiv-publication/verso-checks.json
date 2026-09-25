@@ -1,0 +1,69 @@
+{
+  "checked_at_utc": "2026-09-25T10:32:50.947208+00:00",
+  "status": "passed",
+  "scope": "Isolated actual Challenge elaboration, literate extraction, raw HTML rendering, and current upstream static declaration-anchor parser. Not the complete Palomar renderer, asset sanitization, sandbox, or editorial review.",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "verso_commit": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+  "palomar_submission_commit": "a59f25bd8a66bf6faf3a4f4260d412989c0185ea",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "root_project_build_output_excluded": true,
+  "actual_challenge_matches_repository_source": true,
+  "commands": [
+    {
+      "log": "actual-elaboration.log",
+      "exit_code": 0
+    },
+    {
+      "log": "actual-literate.log",
+      "exit_code": 0
+    },
+    {
+      "log": "actual-html.log",
+      "exit_code": 0
+    }
+  ],
+  "expected_challenge_hole_warnings": 2,
+  "diagnostics": {
+    "setup.log": {
+      "warnings": 1,
+      "errors": 0
+    },
+    "literate-build.log": {
+      "warnings": 6,
+      "errors": 0
+    },
+    "actual-elaboration.log": {
+      "warnings": 2,
+      "errors": 0
+    },
+    "actual-literate.log": {
+      "warnings": 0,
+      "errors": 0
+    },
+    "actual-html.log": {
+      "warnings": 0,
+      "errors": 0
+    }
+  },
+  "found_declarations": [
+    "T3.exists_bounded_nonamalgamation_witness",
+    "T3.has_model_companion"
+  ],
+  "base_urls": [
+    "../"
+  ],
+  "sha256": {
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "lake-manifest.json": "7cf89f74d70a28989a85db106bbf99a72cb0c2a7446f1bac247b33de3271ecb1",
+    "actual/Challenge.lean": "0bd230aff3055f25a12ca87b69bc3bc395a36bfd2f949fb3d5ebf155112cb718",
+    "actual/Challenge.olean": "3c3b53ada34a431b3e34eb5b468a88cb89146334c5af8c567a61e5ce049fce6f",
+    "actual/literate/Challenge.json": "b687586215856816789a917a21836398f00d9783c2c2864fb02154f4f1c074cb",
+    "actual/render-raw/Challenge/index.html": "16391290efea3ec0eaeb8e002430b3ecfedb803d08157516d0b4952987b09e79",
+    "setup.log": "f1f45c40c6cfbc7addfbc3406ab8b28fc5b3d88f9a06431f7c333b54872adb63",
+    "literate-build.log": "047835e98004538ebef1a9ad3fd215a6555d0e81f651d059065f4b55700169b0",
+    "actual-elaboration.log": "63474c2dc765f6e19c0e55576f2530815796ec529e739f91b21e9901bb1c0ad3",
+    "actual-literate.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-html.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "upstream_renderer_sha256": "9f702f736c87133a9535aa19b89e073ae84c45edf8b165d417bf34709232f9c1"
+}
