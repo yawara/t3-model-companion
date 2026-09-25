@@ -20,3 +20,12 @@ After the cleanup, `python3 scripts/check.py` passed all eight checks with zero
 warnings and unchanged inputs. This validates the current tree independently of
 the historical records above. It does not establish a successful remote CI run,
 Comparator acceptance, or Palomar registration.
+
+Before transferring the cleaned history to an independent repository, historical
+T3 commit identifiers and their abbreviations were also omitted from the audit
+documents throughout the history. All 24 commits then present were retained with
+their authorship, dates, and messages. This second edit changed only historical
+audit prose and revision metadata; mathematical sources, manuscripts, dependency
+pins, and recorded source hashes remained unchanged in every corresponding
+commit. Edited records explicitly distinguish their original verification results
+from the rewritten snapshots.
