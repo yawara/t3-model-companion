@@ -293,7 +293,7 @@ v8 の記載（著者、題、誌名、巻、号、頁、年）はすべて一�
 
 - dEMRS2025 の最終組版版（Version of Record）での Corollary 4.42 という番号。同日追加入手した
   出版社配布AMのpp.33–34では番号・内容を確認したが、最終組版版との対応は未確認。
-  [AMの照合記録](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/demrs-accepted-manuscript-review.md)。
+  [AMの照合記録](audit-artifacts/2026-09-24/v8-reference-review/demrs-accepted-manuscript-review.md)。
 - F. Leinen による、局所有限な群のクラスにおける e.c. 群の一連の研究（Comm. Algebra 13 (1985)、
   サーベイ *Existentially closed groups in specific classes*, 1995, pp.285–326）。
   本文を入手できず、v8 との重なりの有無を確認していない。

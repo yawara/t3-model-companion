@@ -1,6 +1,6 @@
 # v8 参考文献再レビュー（2026-09-24）
 
-追加資料更新：d’Elbéeほかの出版社配布著者原稿版（AM、46頁）を受領し、**Corollary 4.42、pp.33–34** の番号・主張・証明の対象範囲を確認した。通常の群言語での結論はv8:144と一致する。これは最終組版版（Version of Record、pp.640–701）とは区別する。[追加照合記録](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/demrs-accepted-manuscript-review.md)。
+追加資料更新：d’Elbéeほかの出版社配布著者原稿版（AM、46頁）を受領し、**Corollary 4.42、pp.33–34** の番号・主張・証明の対象範囲を確認した。通常の群言語での結論はv8:144と一致する。これは最終組版版（Version of Record、pp.640–701）とは区別する。[追加照合記録](audit-artifacts/2026-09-24/v8-reference-review/demrs-accepted-manuscript-review.md)。
 
 後続の記録: 同日に論文全体をあらためてレビューした [v8 論文の再レビュー](v8-paper-review-2026-09-24.md) がある。
 183行の帰属（Novikov–Adian／Adian）、201行の論理の向き、151行の先行研究（Burris–Werner、
@@ -12,7 +12,7 @@ arXiv:2609.05789）、144行の Maier の直接帰属、EF の共著者名の表
 
 追加された出版版PDFを原文と照合した結果、**Eklof–Fischerへの帰属は修正が必要**であり、**Ivanovの引用には階数条件の明記が必要**である。Saracino 1974、Saracino–Wood 1979、Maier 1989、Eklof–Sabbagh 1971の保留は、今回の原著確認で解消した。
 
-対象は [T3_modelcompanion_v8.tex](/home/ywr/t3-model-companion/T3_modelcompanion_v8.tex)。SHA-256は `9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`。以下の行番号はこのファイルに対応する。原稿・Leanは変更していない。
+対象は [T3_modelcompanion_v8.tex](../archives/T3_modelcompanion_v8.tex)。SHA-256は `9546045ccd5cb0170ac54fe1485d356765400ed938c57442da558c41c51fa38c`。以下の行番号はこのファイルに対応する。原稿・Leanは変更していない。
 
 参考文献は13件、表示本文で引用される文献は12件。Eklof–Sabbaghの引用は現在 `\if0` 内にある。今回追加分は独立に再読し、既確認分は同一の原稿・資料ハッシュに対応する前回の照合記録を引き継いだ。全参考文献の証明を再証明したという判定ではなく、原稿が引用する主張の仮定・結論・量化範囲・言語・参照箇所の監査である。
 
@@ -41,7 +41,7 @@ Eklof単著 *Some model theory of abelian groups*, JSL 37 (1972), 335–342 は�
 3. Cの各p成分を、Theorem 7(b)の条件を満たすように選べる。具体的には上の列が初めて有限になる位置を唯一の無限重複度の巡回成分とし、それ以降の有限差分と最終定数値を有限巡回成分・Prüfer成分で実現する。全項が∞なら可算個のPrüfer群で実現する。
 4. Theorem 4によりCとAは普遍同値、Theorem 7によりTh(C)はmodel complete。従ってTh(C)はTと同じ普遍的帰結をもつmodel-complete theoryで、v8の定義におけるmodel companionとなる。
 
-完全な構成と各条件の確認は[Eklof単著の全文監査・導出証明](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/eklof-1972-fulltext-review.md)に記録した。これは**今回、原著の結果から導いた系**であり、原著のTheorem 7にJEP版がそのまま印刷されているという意味ではない。
+完全な構成と各条件の確認は[Eklof単著の全文監査・導出証明](audit-artifacts/2026-09-24/v8-reference-review/eklof-1972-fulltext-review.md)に記録した。これは**今回、原著の結果から導いた系**であり、原著のTheorem 7にJEP版がそのまま印刷されているという意味ではない。
 
 修正案（未実施）：
 
@@ -51,7 +51,7 @@ theory of abelian groups with the joint embedding property has a model
 companion~\cite[Theorems~4 and~7]{Eklof1972}.
 ```
 
-この文に対応するEklof単著の書誌を追加し、上の導出を短い補足として添えれば、主張を狭めずに根拠を明確にできる。前回提案した一般文の暫定削除・complete theoriesへの変更は、もはや必須ではない。旧評価の経緯は[アーベル群文献の先行監査](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/abelian-review.md)に保持する。
+この文に対応するEklof単著の書誌を追加し、上の導出を短い補足として添えれば、主張を狭めずに根拠を明確にできる。前回提案した一般文の暫定削除・complete theoriesへの変更は、もはや必須ではない。旧評価の経緯は[アーベル群文献の先行監査](audit-artifacts/2026-09-24/v8-reference-review/abelian-review.md)に保持する。
 
 ### 2. Ivanovの階数条件（183行）
 
@@ -66,7 +66,7 @@ primes \cite[Theorem~A]{Ivanov1992}, ...
 
 非局所有限性についての意図した議論には階数2で十分なので、この補足でその論点は保たれる。なお182行で予告する別稿の非存在証明は、この参考文献監査の検証対象に含めていない。
 
-出版版の確認記録：[Ivanov 1992](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/ivanov-published-review.md)。1992年の論文は結果と証明の概説を載せる短報であり、その全文所蔵とBurnside定理の詳細な全証明の監査は区別する。
+出版版の確認記録：[Ivanov 1992](audit-artifacts/2026-09-24/v8-reference-review/ivanov-published-review.md)。1992年の論文は結果と証明の概説を載せる短報であり、その全文所蔵とBurnside定理の詳細な全証明の監査は区別する。
 
 ## 追加資料によって確認できたこと
 
@@ -85,9 +85,9 @@ SWの抽出テキストはTheorem 3.9の下限を `2 < m` と誤読している�
 
 Saracino 1974について、現行の「fixed derived length at least 2」を厳密にexactly nと読む場合も、可解長nの群との直積への埋込みを使えば対応する非存在結果が従う。このため誤った数学的主張とは判定せず、原著と同じ上界表現への改善とする。
 
-詳細：[冪零群文献の独立監査](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/nilpotent-review.md)、[可解群文献・所蔵一覧の独立監査](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/solvable-review.md)。
+詳細：[冪零群文献の独立監査](audit-artifacts/2026-09-24/v8-reference-review/nilpotent-review.md)、[可解群文献・所蔵一覧の独立監査](audit-artifacts/2026-09-24/v8-reference-review/solvable-review.md)。
 
-Saracino 1976の追加確認：[全文監査](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/saracino-1976-fulltext-review.md)。通常の群言語、classの上界、torsion-freeの場合の証明の修正を原頁で確認した。引用は `\cite[Theorems~1 and~2]{Saracino1976}` と精密化できる。交換子規約はv8と異なるが、引用されているclassの上界と非存在結果には影響しない。
+Saracino 1976の追加確認：[全文監査](audit-artifacts/2026-09-24/v8-reference-review/saracino-1976-fulltext-review.md)。通常の群言語、classの上界、torsion-freeの場合の証明の修正を原頁で確認した。引用は `\cite[Theorems~1 and~2]{Saracino1976}` と精密化できる。交換子規約はv8と異なるが、引用されているclassの上界と非存在結果には影響しない。
 
 ## 全13文献の現在の状態
 
@@ -109,7 +109,7 @@ Saracino 1976の追加確認：[全文監査](/home/ywr/t3-model-companion/notes
 | Saracino–Wood 1979 | 出版版全文 | Theorem 3.9、p.198で直接一致。 |
 | Takeuchi 2022 | 出版版全文 | Theorem 17、PDF p.5がtorsion-free群の非存在を支持。PDF p.2はBurnside問題との関連を指摘しており172行と一致。v8の具体的iff予想がこの既刊論文に載るという帰属ではない。 |
 
-合計は最終出版版全文9件、出版社配布AM全文1件（dEMRS）、preprint全文2件、公開抜粋のみ1件（CK）。PDFの実在、ページ数、SHA-256は今回再確認し、[資料台帳](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/source-inventory.json)に保存した。書誌年がpreprint初版の年でも、ここに記した定理番号は所蔵するv2の番号である。
+合計は最終出版版全文9件、出版社配布AM全文1件（dEMRS）、preprint全文2件、公開抜粋のみ1件（CK）。PDFの実在、ページ数、SHA-256は今回再確認し、[資料台帳](audit-artifacts/2026-09-24/v8-reference-review/source-inventory.json)に保存した。書誌年がpreprint初版の年でも、ここに記した定理番号は所蔵するv2の番号である。
 
 この13件とは別に、引用修正候補のEklof単著1972も出版版全文を所蔵し、Theorems 4 and 7を確認済み。
 

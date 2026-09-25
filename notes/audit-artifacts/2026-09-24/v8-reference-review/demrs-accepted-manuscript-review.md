@@ -10,7 +10,7 @@ The new file verifies the numbering in a **publisher-provided accepted manuscrip
 
 ## Evidence identity and edition boundary
 
-- Supplied attachment: `/home/ywr/.codex/attachments/083c5017-6795-4bd1-bd4e-9f01b666fde3/1-s2.0-S0021869324004757-am.pdf`.
+- Supplied attachment filename: `1-s2.0-S0021869324004757-am.pdf`.
 - Preserved PDF: `references/alternatives/delbee-muller-ramsey-siniora-2025-publisher-accepted-manuscript.pdf`.
 - PDF SHA-256: `241e5f99376967a32488919b165a47cdb3432089b0c05d2fc652032a21946356`.
 - Extracted text: `references/extracted-text/delbee-muller-ramsey-siniora-2025-publisher-accepted-manuscript.txt`.

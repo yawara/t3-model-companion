@@ -1,6 +1,6 @@
 # v8 文献再監査: Eklof–Fischer / Eklof–Sabbagh
 
-> 後続更新（同日、Eklof単著の全文到着後）：以下は到着前の判定記録である。Eklof–Fischerへの直接帰属に不一致という点は維持するが、単著のTheorems 4 and 7を組み合わせるとinductive＋JEP版を導けることを確認した。本文をcomplete theoriesに狭めることは必須ではない。現在の結論と追加論証は [Eklof単著の全文監査](/home/ywr/t3-model-companion/notes/audit-artifacts/2026-09-24/v8-reference-review/eklof-1972-fulltext-review.md) を参照。
+> 後続更新（同日、Eklof単著の全文到着後）：以下は到着前の判定記録である。Eklof–Fischerへの直接帰属に不一致という点は維持するが、単著のTheorems 4 and 7を組み合わせるとinductive＋JEP版を導けることを確認した。本文をcomplete theoriesに狭めることは必須ではない。現在の結論と追加論証は [Eklof単著の全文監査](eklof-1972-fulltext-review.md) を参照。
 
 日付: 2026-09-24。追加された出版社PDFを独立に再照合した。TeX、Lean、前日の監査メモは変更していない。
 
