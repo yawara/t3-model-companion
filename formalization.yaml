@@ -58,9 +58,11 @@ status:
     sufficiently large primes belongs to a separate paper and is outside
     this library's proof scope. The Comparator selection consists
     of Theorem 3.3 and Corollary 3.4 only.
-    Version 1 is registered as PALOMAR-2026-09-26-000004 at commit
-    dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6. The current title distinguishes
-    the formalization from its source paper for the proposed version 2.
+    PALOMAR-2026-09-26-000004 version 2, at commit
+    7d38e7d9fe9d131e713ce160853983321970e598, uses the current title, which
+    distinguishes the formalization from its source paper. Version 1, at
+    commit dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6, retains the original
+    title; the two versions have the same Lean statements and proofs.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: [propext, Classical.choice, Quot.sound]
@@ -134,13 +136,14 @@ review:
     notes/arxiv-publication-2026-09-25.md. The current Palomar comparison uses
     the bundled Lean, NanoDa, and con-ron kernels and requires a supported
     bubblewrap sandbox. The 2026-09-25 local sandbox check was blocked by the
-    host. The official Palomar verification for the registered version 1
-    subsequently passed with Lean, NanoDa, and con-ron at commit
-    dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6. Its automated editorial review
-    reported no blocking problems, warnings, or requested changes. That
-    evidence concerns the version 1 snapshot; a later submission is checked
-    separately. No independent human peer review of the Lean formalization
-    is claimed. See docs/palomar.md for the version 1 records and update process.
+    host. The official Palomar verifications for registered version 1, at
+    commit dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6, and version 2, at commit
+    7d38e7d9fe9d131e713ce160853983321970e598, subsequently passed with Lean,
+    NanoDa, and con-ron. Their separate automated editorial reviews reported
+    no blocking problems, warnings, or requested changes. That evidence
+    concerns those snapshots; a later submission is checked separately. No
+    independent human peer review of the Lean formalization is claimed. See
+    docs/palomar.md for the registration records and update process.
 
 alignment:
   namespace: T3

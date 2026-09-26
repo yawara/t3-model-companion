@@ -71,16 +71,19 @@ and the scope of the verification performed so far.
 
 ## Palomar registration and citation
 
-Version 1 is registered as
-[PALOMAR-2026-09-26-000004 v1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=1),
-at commit `dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6`. The registration selects
-Theorem 3.3 and Corollary 3.4 through [comparator.json](comparator.json).
-The current title adds **Lean Formalization** for the proposed version 2,
-so citations can distinguish the formalization from the source paper.
+The formalization is registered as
+[PALOMAR-2026-09-26-000004](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004).
+[Version 2](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=2),
+at commit `7d38e7d9fe9d131e713ce160853983321970e598`, adds **Lean Formalization**
+to the title so that citations can distinguish the formalization from the source paper.
+[Version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=1),
+at commit `dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6`, retains the original title,
+which matched the paper's. Both versions select Theorem 3.3 and Corollary 3.4
+through [comparator.json](comparator.json) and have the same Lean statements and proofs.
 
 Cite [the paper](https://arxiv.org/abs/2609.30061) by Yawara Ishida, Ryosuke Mizuno,
 and Kota Takeuchi for the mathematical result, and the relevant Palomar version
-by Yawara Ishida for this formalization. Version 1 retains its original title.
+by Yawara Ishida for this formalization.
 [Palomar documentation](docs/palomar.md) describes the statements, verification
 history, and version-update requirements.
 

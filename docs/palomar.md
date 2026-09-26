@@ -12,11 +12,13 @@ The suffix distinguishes this work from its source paper in citations.
 The paper is publicly available as [arXiv:2609.30061](https://arxiv.org/abs/2609.30061),
 with [v1](https://arxiv.org/abs/2609.30061v1) submitted on 2026-09-24.
 The formalization repository is public. Commit
-`dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6` is registered as
-[PALOMAR-2026-09-26-000004 version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=1).
+`7d38e7d9fe9d131e713ce160853983321970e598` is registered under the current title as
+[PALOMAR-2026-09-26-000004 version 2](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=2).
+Commit `dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6` remains registered as
+[version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=1).
 That immutable version retains the original title, which matched the paper's.
-The current metadata prepares a version 2 update with the distinguishing suffix;
-it does not change the manuscript, Lean statements, or proofs.
+Version 2 changes only the title and documentation; it does not change the
+manuscript, Lean statements, or proofs.
 
 ## Mathematical claims
 
@@ -137,8 +139,14 @@ For registered version 1, the
 passed with Lean, NanoDa, and con-ron. The subsequent automated editorial review
 reported no blocking problems, warnings, or requested changes. The
 [public record](https://data.palomar-registry.org/entries/PALOMAR-2026-09-26-000004-v1.json)
-identifies the source commit and review. These results concern that exact
-version; a later submission undergoes its own verification and review.
+identifies the source commit and review. Version 2 received its own
+[official mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/36241998935),
+which passed with the same kernels, and a new automated editorial review, which
+likewise reported no blocking problems, warnings, or requested changes. Its
+[public record](https://data.palomar-registry.org/entries/PALOMAR-2026-09-26-000004-v2.json)
+identifies that commit and review, and records the same Challenge and Solution
+hashes as version 1. These results concern those exact versions; a later
+submission undergoes its own verification and review.
 
 The repository license is [Apache-2.0](../LICENSE), as declared in the metadata.
 
@@ -173,7 +181,7 @@ binary; the comparison script does not alter host security settings.
 
 The 2026-09-25 local host check found bubblewrap 0.9.0 and a rejected
 user-namespace probe, which blocked the sandboxed comparison on that host.
-The official version 1 run above subsequently passed on Palomar's infrastructure.
+The official version 1 and version 2 runs above subsequently passed on Palomar's infrastructure.
 The publication checkpoint preserves the earlier local verification boundary.
 No sandbox bypass is used.
 
