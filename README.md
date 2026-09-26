@@ -1,11 +1,11 @@
-# t3-model-companion
+# Existence of a Model Companion for Groups of Exponent 3: Lean Formalization
 
 Lean 4 formalization of
 [*Existence of a Model Companion for Groups of Exponent 3*](https://arxiv.org/abs/2609.30061)
 by Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi.
 
 This repository contains the formal proofs accompanying the paper and includes
-a Challenge/Solution pair for submission to the **Palomar Registry**.
+the Challenge/Solution pair used by the **Palomar Registry**.
 
 - Formalization author and responsible maintainer: **Yawara Ishida**.
 - License: [Apache-2.0](LICENSE).
@@ -69,12 +69,20 @@ This requires Linux and bubblewrap 0.12.0 with working user namespaces.
 See [Palomar verification requirements](docs/palomar.md) for setup details
 and the scope of the verification performed so far.
 
-## Palomar submission
+## Palomar registration and citation
 
-The proposed submission selects Theorem 3.3 and Corollary 3.4 through
-[comparator.json](comparator.json). Palomar submission and registration are pending.
+Version 1 is registered as
+[PALOMAR-2026-09-26-000004 v1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=1),
+at commit `dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6`. The registration selects
+Theorem 3.3 and Corollary 3.4 through [comparator.json](comparator.json).
+The current title adds **Lean Formalization** for the proposed version 2,
+so citations can distinguish the formalization from the source paper.
+
+Cite [the paper](https://arxiv.org/abs/2609.30061) by Yawara Ishida, Ryosuke Mizuno,
+and Kota Takeuchi for the mathematical result, and the relevant Palomar version
+by Yawara Ishida for this formalization. Version 1 retains its original title.
 [Palomar documentation](docs/palomar.md) describes the statements, verification
-status, and submission requirements.
+history, and version-update requirements.
 
 AI agents contributed to the implementation and review under Yawara Ishida's direction.
 See [formalization.yaml](formalization.yaml) for provenance and review details.

@@ -1,21 +1,26 @@
-# Palomar preparation
+# Palomar registration and version updates
 
 This repository contains the substantive Lean formalization of
 *Existence of a Model Companion for Groups of Exponent 3*.
 The formalization's author and responsible maintainer is Yawara Ishida.
 The manuscript's authors are Yawara Ishida, Ryosuke Mizuno, and Kota Takeuchi.
 The structured account is [formalization.yaml](../formalization.yaml).
+The formalization's current title is
+*Existence of a Model Companion for Groups of Exponent 3: Lean Formalization*.
+The suffix distinguishes this work from its source paper in citations.
 
 The paper is publicly available as [arXiv:2609.30061](https://arxiv.org/abs/2609.30061),
 with [v1](https://arxiv.org/abs/2609.30061v1) submitted on 2026-09-24.
-GitHub reported this formalization repository as private on 2026-09-25.
-These files prepare a future Palomar submission; repository publication,
-submission, and registration remain separate actions. The public paper does
-not establish public availability or Palomar registration of the formalization.
+The formalization repository is public. Commit
+`dfefd8dab8a1f818dfe0ea2238d9edf086c6f8a6` is registered as
+[PALOMAR-2026-09-26-000004 version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-26-000004&version=1).
+That immutable version retains the original title, which matched the paper's.
+The current metadata prepares a version 2 update with the distinguishing suffix;
+it does not change the manuscript, Lean statements, or proofs.
 
 ## Mathematical claims
 
-The proposed [Comparator configuration](../comparator.json) selects two
+The [Comparator configuration](../comparator.json) selects two
 declarations from the manuscript. Throughout, an exponent-three group means
 a group satisfying `x^3 = 1` for every element, so the trivial group is included.
 
@@ -126,7 +131,14 @@ update and its checks; earlier runs remain evidence for their own snapshots.
 The project now selects Lean and mathlib v4.35.0-rc2. The
 [arXiv publication checkpoint](../notes/arxiv-publication-2026-09-25.md) records
 the source identity, this toolchain migration, and its local verification limits.
-No Palomar editorial review, submission, or registration has occurred.
+
+For registered version 1, the
+[official mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/36167073153)
+passed with Lean, NanoDa, and con-ron. The subsequent automated editorial review
+reported no blocking problems, warnings, or requested changes. The
+[public record](https://data.palomar-registry.org/entries/PALOMAR-2026-09-26-000004-v1.json)
+identifies the source commit and review. These results concern that exact
+version; a later submission undergoes its own verification and review.
 
 The repository license is [Apache-2.0](../LICENSE), as declared in the metadata.
 
@@ -159,10 +171,11 @@ AppArmor restricts user namespaces, the installer configures a profile for
 that specific binary. Locally, `COMPARATOR_BWRAP` selects an already prepared
 binary; the comparison script does not alter host security settings.
 
-The current local host has bubblewrap 0.9.0 and rejects the user-namespace
-probe. The current sandboxed comparison therefore remains locally blocked.
-The publication checkpoint distinguishes any supplemental historical checker
-run from the current Palomar gate. No sandbox bypass is used.
+The 2026-09-25 local host check found bubblewrap 0.9.0 and a rejected
+user-namespace probe, which blocked the sandboxed comparison on that host.
+The official version 1 run above subsequently passed on Palomar's infrastructure.
+The publication checkpoint preserves the earlier local verification boundary.
+No sandbox bypass is used.
 
 Verso publishes a matching v4.35.0-rc2 release at commit
 `9f8096e40b31715b1d8d5997f15a0bd832f7e37d`. Rendering verification is recorded
@@ -176,7 +189,7 @@ Challenge remains below the policy's size and line-count warning thresholds.
 These policy and local metadata checks are distinct from executing Palomar's
 complete verifier and editorial review.
 
-## Before a future submission
+## Submitting a version update
 
 1. Rerun the project checks and the comparison with NanoDa and con-ron on the exact
    intended submission snapshot, using the committed Lean and dependency pins.
@@ -184,7 +197,10 @@ complete verifier and editorial review.
    remaining manuscript editorial placeholders as they will be presented.
 3. When publication is authorized, make the reviewed repository snapshot
    publicly available and identify its full 40-character commit SHA.
-4. Follow the [current Palomar submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md).
+4. Run the [official preflight workflow](../.github/workflows/palomar-preflight.yml)
+   in full mode for that exact commit and require a passing mechanical report.
+5. Follow the [current Palomar submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md),
+   passing `existing_id: PALOMAR-2026-09-26-000004` for a new version of this entry.
    Submission and final registration remain separate actions.
 
 The conventional project paths are repository root, `comparator.json`, and
